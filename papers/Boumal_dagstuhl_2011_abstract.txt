@@ -1,0 +1,10 @@
+Dagstuhl Seminar 11451 on Data mining, networks and dynamics
+Dagstuhl, Germany, November 6-11, 2011
+
+Title: Synchronization of rotations on a graph
+Speaker: Nicolas Boumal
+Time: November 9, 2011 @ 11:15 am
+
+I will start by informally describing two application problems. These will motivate the study of an estimation problem in which the quantities to estimate are N rotations and the measurements to help us do so are noisy observations of relative rotations. The measurements induce a graph which consists of N nodes (each associated to one of the unknown rotations) and such that each edge corresponds to a noisy measurement of the relative rotation between the two incident nodes. I will then state a few results we have obtained on the theoretical and algorithmic aspects of this problem, and try to gradually transform the presentation into a group discussion.
+
+The material I will talk about is joint work with Amit Singer (Princeton University) and Pierre-Antoine Absil (UCLouvain).

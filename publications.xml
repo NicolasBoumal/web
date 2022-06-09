@@ -1,0 +1,1971 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<publications>
+
+<object id="1029">
+	<type>preprint</type>
+	<title>Computing second-order points under equality constraints: revisiting Fletcher's augmented Lagrangian</title>
+	<authors>F. Goyens, A. Eftekhari and N. Boumal</authors>
+	<year>2022</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{goyens2022fletcher,
+  author  = {Goyens, F. and Eftekhari, A. and Boumal, N.},
+  journal = {arXiv 2204.01448},
+  title   = {Computing second-order points under equality constraints: revisiting {F}letcher's augmented {L}agrangian},
+  year    = {2022}
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/2204.01448</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
+<object id="1028">
+	<type>preprint</type>
+	<title>Negative curvature obstructs acceleration for geodesically convex optimization, even with exact first-order oracles</title>
+	<authors>C. Criscitiello and N. Boumal</authors>
+	<year>2021</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{criscitiello2021negativecurvature,
+  author  = {Criscitiello, C. and Boumal, N.},
+  journal = {arXiv 2111.13263},
+  title   = {Negative curvature obstructs acceleration for geodesically convex optimization, even with exact first-order oracles},
+  year    = {2021}
+}
+	</bibtex>
+	<comment>An abridged version will appear in the proceedings of COLT 2022.</comment>
+	<link>http://arxiv.org/abs/2111.13263</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
+<object id="1017">
+	<type>preprint</type>
+	<title>Toward single particle reconstruction without particle picking: Breaking the detection limit</title>
+	<authors>T. Bendory, N. Boumal, W. Leeb, E. Levin and A. Singer</authors>
+	<year>2018</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@article{bendory2018toward,
+  author  = {Bendory, T. and Boumal, N. and Leeb, W. and Levin, E. and Singer, A.},
+  title   = {Toward single particle reconstruction without particle picking: Breaking the detection limit},
+  journal = {arXiv preprint arXiv:1810.00226},
+  year    = {2018}
+}
+	</bibtex>
+	<comment>Also on &lt;a href="https://www.biorxiv.org/content/early/2018/10/02/431080"&gt;bioRxiv&lt;/a&gt;.</comment>
+	<link>http://arxiv.org/abs/1810.00226</link>
+	<publisherlink></publisherlink>
+	<tag>cryoem</tag>
+	<tag>MRA</tag>
+</object>
+<object id="1009">
+	<type>preprint</type>
+	<title>A Riemannian low-rank method for optimization over semidefinite matrices with block-diagonal constraints</title>
+	<authors>N. Boumal</authors>
+	<year>2015</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@article{boumal2015staircase,
+  author  = {Boumal, N.},
+  title   = {A {R}iemannian low-rank method for optimization over semidefinite matrices with block-diagonal constraints},
+  journal = {arXiv preprint arXiv:1506.00575},
+  year    = {2015}
+}
+	</bibtex>
+	<comment>This is a technical report. The core theoretical results appear (generalized) in &lt;i&gt;Deterministic guarantees for Burer-Monteiro factorizations of smooth semidefinite programs&lt;/i&gt;.</comment>
+	<link>http://arxiv.org/abs/1506.00575</link>
+	<publisherlink></publisherlink>
+	<tag>synchro</tag>
+</object>
+
+
+<object id="1027">
+	<type>journal</type>
+	<title>Finding stationary points on bounded-rank matrices: A geometric hurdle and a smooth remedy</title>
+	<authors>E. Levin, J. Kileel and N. Boumal</authors>
+	<year>2022</year>
+	<status>to appear in Mathematical Programming</status>
+	<bibtex>
+@Article{levin2022stationaryrank,
+  author  = {Levin, E. and Kileel, J. and Boumal, N.},
+  journal = {Mathematical Programming, to appear},
+  title   = {Finding stationary points on bounded-rank matrices: A geometric hurdle and a smooth remedy},
+  year    = {2022}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2107.03877</link>
+	<publisherlink></publisherlink>
+	<tag>optim</tag>
+</object>
+<object id="1026">
+	<type>journal</type>
+	<title>Random Conical Tilt Reconstruction without Particle Picking in Cryo-electron Microscopy</title>
+	<authors>T.-Y. Lan, N. Boumal and A. Singer</authors>
+	<year>2022</year>
+	<status>to appear in Acta Crystallographica Section A</status>
+	<bibtex>
+@Article{lan2022RCT,
+  author  = {Lan, T.-Y. and Boumal, N. and Singer, A.},
+  journal = {Acta Crystallographica Section A, to appear},
+  title   = {Random Conical Tilt Reconstruction without Particle Picking in Cryo-electron Microscopy},
+  year    = {2022}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2101.03500</link>
+	<publisherlink></publisherlink>
+	<tag>cryoem</tag>
+</object>
+<object id="1025">
+	<type>journal</type>
+	<title>An accelerated first-order method for non-convex optimization on manifolds</title>
+	<authors>C. Criscitiello and N. Boumal</authors>
+	<year>2022</year>
+	<status>in the Journal of Foundations of Computational Mathematics</status>
+	<bibtex>
+@Article{criscitiello2022accelerated,
+  author  = {Criscitiello, C. and Boumal, N.},
+  journal = {Journal of Foundations of Computational Mathematics},
+  title   = {An accelerated first-order method for non-convex optimization on manifolds},
+  doi     = {10.1007/s10208-022-09573-9},
+  year    = {2022}
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/2008.02252</link>
+	<publisherlink>https://link.springer.com/article/10.1007/s10208-022-09573-9</publisherlink>
+	<tag>optimization</tag>
+</object>
+<object id="1024">
+	<type>journal</type>
+	<title>The generalized orthogonal Procrustes problem in the high noise regime</title>
+	<authors>T. Pumir, A. Singer and N. Boumal</authors>
+	<year>2021</year>
+	<status>in Information and Inference, a journal of the IMA</status>
+	<bibtex>
+@Article{pumir2021procrustes,
+  author    = {Pumir, T. and Singer, A. and Boumal, N.},
+  journal   = {Information and {I}nference, a journal of the {IMA}},
+  title     = {The generalized orthogonal {P}rocrustes problem in the high noise regime},
+  year      = {2021},
+  doi       = {10.1093/imaiai/iaaa035},
+  publisher = {Oxford University Press ({OUP})},
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/1907.01145</link>
+	<publisherlink>https://academic.oup.com/imaiai/advance-article/doi/10.1093/imaiai/iaaa035/6109735?guestAccessKey=83f1b1cc-922d-4b4f-af06-2710b9f198fd</publisherlink>
+	<tag>MRA</tag>
+</object>
+<object id="1020">
+	<type>journal</type>
+	<title>Adaptive regularization with cubics on manifolds</title>
+	<authors>N. Agarwal, N. Boumal, B. Bullins and C. Cartis</authors>
+	<year>2020</year>
+	<status>in Mathematical Programming</status>
+	<bibtex>
+@article{agarwal2020arc,
+  author    = {Agarwal, N. and Boumal, N. and Bullins, B. and Cartis, C.},
+  title     = {Adaptive regularization with cubics on manifolds},
+  journal   = {Mathematical Programming},
+  publisher = {Springer Science and Business Media {LLC}},
+  year      = {2020},
+  doi       = {10.1007/s10107-020-01505-1}
+}
+	</bibtex>
+	<comment>This is a significantly extended version of an earlier report. The former title was &lt;i&gt;"Adaptive regularization with cubics on manifolds with a first-order analysis,"&lt;/i&gt; available as v1 on arXiv. A second major extension was posted as v3 on Nov. 7, 2019. Freely accessible published version &lt;a href="https://rdcu.be/b39XL"&gt;here&lt;/a&gt;.</comment>
+	<link>http://arxiv.org/abs/1806.00065</link>
+	<publisherlink>https://link.springer.com/article/10.1007/s10107-020-01505-1</publisherlink>
+	<tag>optimization</tag>
+</object>
+<object id="1023">
+	<type>journal</type>
+	<title>Multi-target detection with an arbitrary spacing distribution</title>
+	<authors>T.-Y. Lan, T. Bendory, N. Boumal and A. Singer</authors>
+	<year>2020</year>
+	<status>in IEEE Transactions on Signal Processing</status>
+	<bibtex>
+@article{lan2020multitargetdetection,
+  author = {Ti-Yen Lan and Tamir Bendory and Nicolas Boumal and Amit Singer},
+  title = {Multi-Target Detection With an Arbitrary Spacing Distribution},
+  journal = {{IEEE} Transactions on Signal Processing},
+  volume = {68},
+  pages = {1589--1601},
+  doi = {10.1109/tsp.2020.2975943},
+  year = {2020},
+  publisher = {{IEEE}}
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/1905.03176</link>
+	<publisherlink>https://ieeexplore.ieee.org/document/9007472</publisherlink>
+	<tag>cryoem</tag>
+	<tag>MRA</tag>
+</object>
+<object id="1022">
+	<type>journal</type>
+	<title>Multi-target detection with application to cryo-electron microscopy</title>
+	<authors>T. Bendory, N. Boumal, W. Leeb, E. Levin and A. Singer</authors>
+	<year>2019</year>
+	<status>in Inverse Problems</status>
+	<bibtex>
+@article{bendory2019multitargetdetection,
+	title = {Multi-target detection with application to cryo-electron microscopy},
+	author = {Tamir Bendory and Nicolas Boumal and William Leeb and Eitan Levin and Amit Singer},
+	journal = {Inverse Problems},
+	year = {2019},
+	month = {sep},
+	publisher = {{IOP} Publishing},
+	volume = {35},
+	number = {10},
+	pages = {104003},
+	doi = {10.1088/1361-6420/ab2aec}
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/1903.06022</link>
+	<publisherlink>https://iopscience.iop.org/article/10.1088/1361-6420/ab2aec</publisherlink>
+	<tag>cryoem</tag>
+	<tag>MRA</tag>
+</object>
+<object id="1018">
+	<type>journal</type>
+	<title>Heterogeneous multireference alignment for images with application to 2-D classification in single particle reconstruction</title>
+	<authors>C. Ma, T. Bendory, N. Boumal, F. Sigworth and A. Singer</authors>
+	<year>2020</year>
+	<status>in IEEE Transactions on Image Processing</status>
+	<bibtex>
+@article{ma2020mra2D,
+  author  = {Ma, C. and Bendory, T. and Boumal, N. and Sigworth, F. and Singer, A.},
+  title   = {Heterogeneous multireference alignment for images with application to {2-D} classification in single particle reconstruction},
+  journal = {IEEE Transactions on Image Processing},
+  year    = {2020},
+  pages   = {1699--1710},
+  volume  = {9},
+  issue   = {1},
+  doi     = {10.1109/TIP.2019.2945686}
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/1811.10382</link>
+	<publisherlink>https://ieeexplore.ieee.org/document/8864095</publisherlink>
+	<tag>cryoem</tag>
+	<tag>MRA</tag>
+</object>
+<object id="1021">
+	<type>journal</type>
+	<title>Simple algorithms for optimization on Riemannian manifolds with constraints</title>
+	<authors>C. Liu and N. Boumal</authors>
+	<year>2020</year>
+	<status>in Applied Mathematics and Optimization</status>
+	<bibtex>
+@Article{liu2020riemannianconstraints,
+  author    = {Liu, C. and Boumal, N.},
+  journal   = {Applied Mathematics and Optimization},
+  title     = {Simple algorithms for optimization on {R}iemannian manifolds with constraints},
+  year      = {2020},
+  number    = {3},
+  pages     = {949--981},
+  volume    = {82},
+  doi       = {10.1007/s00245-019-09564-3},
+  publisher = {Springer Science and Business Media {LLC}},
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/1901.10000</link>
+	<publisherlink>https://rdcu.be/btNPd</publisherlink>
+	<tag>optimization</tag>
+</object>
+<object id="1016">
+	<type>journal</type>
+	<title>Deterministic guarantees for Burer-Monteiro factorizations of smooth semidefinite programs</title>
+	<authors>N. Boumal, V. Voroninski and A. S. Bandeira</authors>
+	<year>2019</year>
+	<status>in Communications on Pure and Applied Mathematics</status>
+	<bibtex>
+@article{boumal2019deterministicbm,
+	author = {Boumal, N. and Voroninski, V. and Bandeira, A.S.},
+	title = {Deterministic Guarantees for {B}urer-{M}onteiro Factorizations of Smooth Semidefinite Programs},
+	journal = {Communications on Pure and Applied Mathematics},
+	volume = {73},
+	number = {3},
+	pages = {581--608},
+	year = {2019},
+    publisher = {Wiley},
+	doi = {10.1002/cpa.21830}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/1804.02008</link>
+	<publisherlink>https://onlinelibrary.wiley.com/doi/abs/10.1002/cpa.21830</publisherlink>
+	<tag>optim</tag>
+	<tag>sdplr</tag>
+	<tag>BM</tag>
+</object>
+<object id="1019">
+	<type>journal</type>
+	<title>Computational Complexity versus Statistical Performance on Sparse Recovery Problems</title>
+	<authors>V. Roulet, N. Boumal and A. d'Aspremont</authors>
+	<year>2019</year>
+	<status>in Information and Inference, a journal of the IMA</status>
+	<bibtex>
+@article{roulet2019renegar,
+  author  = {Roulet, V. and Boumal, N. and d'Aspremont, A.},
+  title   = {Computational Complexity versus Statistical Performance on Sparse Recovery Problems},
+  journal = {Information and Inference: A Journal of the IMA},
+  year = {2019},
+  doi = {10.1093/imaiai/iay020}
+}
+	</bibtex>
+	<comment>Extended from a shorter preprint titled "Renegar's Condition Number and Compressed Sensing Performance".</comment>
+	<link>http://arxiv.org/abs/1506.03295</link>
+	<publisherlink>https://academic.oup.com/imaiai/advance-article/doi/10.1093/imaiai/iay020/5288445</publisherlink>
+	<tag>conditionnumber</tag>
+</object>
+<object id="1015">
+	<type>journal</type>
+	<title>Non-convex phase retrieval from STFT measurements</title>
+	<authors>T. Bendory, Y.C. Eldar and N. Boumal</authors>
+	<year>2018</year>
+	<status>in IEEE Transactions on Information Theory</status>
+	<bibtex>
+@Article{bendory2018stft,
+  author  = {Bendory, T. and Eldar, Y.C. and Boumal, N.},
+  title   = {Non-convex phase retrieval from {STFT} measurements},
+  journal = {IEEE Transactions on Information Theory},
+  year    = {2018},
+  volume  = {64},
+  number  = {1},
+  pages   = {467--484},
+  month   = jan,
+  doi     = {10.1109/TIT.2017.2745623},
+}
+	</bibtex>
+	<comment>&lt;a href="https://github.com/TamirBendory/STFT-phase-retrieval"&gt;GitHub Code&lt;/a&gt;</comment>
+	<link>https://arxiv.org/abs/1607.08218</link>
+	<publisherlink>http://ieeexplore.ieee.org/document/8017440/</publisherlink>
+	<tag></tag>
+</object>
+<object id="1014">
+	<type>journal</type>
+	<title>Bispectrum Inversion with Application to Multireference Alignment</title>
+	<authors>T. Bendory, N. Boumal, C. Ma, Z. Zhao and A. Singer</authors>
+	<year>2018</year>
+	<status>in IEEE Transactions on Signal Processing</status>
+	<bibtex>
+@Article{bendory2018bispectruminversion,
+  author  = {Bendory, T. and Boumal, N. and Ma, C. and Zhao, Z. and Singer, A.},
+  title   = {Bispectrum Inversion With Application to Multireference Alignment},
+  journal = {IEEE Transactions on Signal Processing},
+  year    = {2018},
+  volume  = {66},
+  number  = {4},
+  pages   = {1037--1050},
+  doi     = {10.1109/TSP.2017.2775591}
+}
+	</bibtex>
+	<comment>&lt;a href="https://github.com/NicolasBoumal/MRA"&gt;GitHub Code&lt;/a&gt;; Typo: eq. (VI.1), $\log p(X, r | x_k)$ should be $\log p(X, r | x)$ instead.</comment>
+	<link>https://arxiv.org/abs/1705.00641</link>
+	<publisherlink>http://ieeexplore.ieee.org/document/8115200/</publisherlink>
+	<tag>MRA</tag>
+</object>
+<object id="1013">
+	<type>journal</type>
+	<title>Near-optimal bounds for phase synchronization</title>
+	<authors>Y. Zhong and N. Boumal</authors>
+	<year>2018</year>
+	<status>in SIAM Journal on Optimization</status>
+	<bibtex>
+@article{zhong2018nearoptimal,
+  author  = {Zhong, Y. and Boumal, N.},
+  title   = {Near-optimal bounds for phase synchronization},
+  journal = {SIAM Journal on Optimization},
+  year    = {2018},
+  volume  = {28},
+  number  = {2},
+  pages   = {989--1016},
+  doi     = {10.1137/17M1122025}
+}
+	</bibtex>
+	<comment>Congratulations to Yiqiao (Joe) for his &lt;a href="https://www.siam.org/conferences/CM/P/SE/an18-special-events"&gt;SIAM best student paper prize!</comment>
+	<link>https://arxiv.org/abs/1703.06605</link>
+	<publisherlink>https://epubs.siam.org/doi/abs/10.1137/17M1122025</publisherlink>
+	<tag>synchro</tag>
+</object>
+<object id="1012">
+	<type>journal</type>
+	<title>Global rates of convergence for nonconvex optimization on manifolds</title>
+	<authors>N. Boumal, P.-A. Absil and C. Cartis</authors>
+	<year>2018</year>
+	<status>in IMA Journal of Numerical Analysis</status>
+	<bibtex>
+@Article{boumal2018globalrates,
+  author    = {Boumal, N. and Absil, P.-A. and Cartis, C.},
+  journal   = {{IMA} Journal of Numerical Analysis},
+  title     = {Global rates of convergence for nonconvex optimization on manifolds},
+  year      = {2018},
+  month     = feb,
+  number    = {1},
+  pages     = {1--33},
+  volume    = {39},
+  doi       = {10.1093/imanum/drx080},
+  publisher = {Oxford University Press ({OUP})},
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/1605.08101</link>
+	<publisherlink>https://doi.org/10.1093/imanum/drx080</publisherlink>
+	<tag>optim</tag>
+</object>
+<object id="1011">
+	<type>journal</type>
+	<title>Nonconvex phase synchronization</title>
+	<authors>N. Boumal</authors>
+	<year>2016</year>
+	<status>in SIAM Journal on Optimization</status>
+	<bibtex>
+@Article{boumal2016nonconvexphase,
+	author  = {Boumal, N.},
+	title   = {Nonconvex Phase Synchronization},
+	journal = {SIAM Journal on Optimization},
+	volume  = {26},
+	number  = {4},
+	pages   = {2355--2377},
+	year    = {2016},
+	doi     = {10.1137/16M105808X}
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/1601.06114</link>
+	<publisherlink>http://epubs.siam.org/doi/abs/10.1137/16M105808X</publisherlink>
+	<tag>synchro</tag>
+</object>
+<object id="1008">
+	<type>journal</type>
+	<title>Tightness of the maximum likelihood semidefinite relaxation for angular synchronization</title>
+	<authors>A. S. Bandeira, N. Boumal and A. Singer</authors>
+	<year>2017</year>
+	<status>in Mathematical Programming Series A</status>
+	<bibtex>
+@Article{bandeira2016tightness,
+	Title                    = {Tightness of the maximum likelihood semidefinite relaxation for angular synchronization},
+	Author                   = {Bandeira, A.S. and Boumal, N. and Singer, A.},
+	Journal                  = {Mathematical Programming},
+	Year                     = {2017},
+	pages                    = {145--167},
+	volume                   = {163},
+	number                   = {1},
+	doi                      = {10.1007/s10107-016-1059-6}
+}
+	</bibtex>
+	<comment>Submitted Nov. 2014. Updated Oct. 2015, with a better rate and simpler proof. Accepted in July 2016.</comment>
+	<link>http://arxiv.org/abs/1411.3272</link>
+	<publisherlink>http://link.springer.com/article/10.1007/s10107-016-1059-6</publisherlink>
+	<tag>synchro</tag>
+</object>
+<object id="1003">
+	<type>journal</type>
+	<title>Low-rank matrix completion via preconditioned optimization on the Grassmann manifold</title>
+	<authors>N. Boumal and P.-A. Absil</authors>
+	<year>2015</year>
+	<status>in Linear Algebra and its Applications</status>
+	<bibtex>
+@article{boumal2015rtrmcextended,
+  Title                    = {Low-rank matrix completion via preconditioned optimization on the {G}rassmann manifold},
+  Author                   = {Boumal, N. and Absil, P.-A.},
+  Journal                  = {Linear Algebra and its Applications},
+  Year                     = {2015},
+  Pages                    = {200--239},
+  Volume                   = {475},
+  Doi                      = {10.1016/j.laa.2015.02.027},
+  Url                      = {http://www.sciencedirect.com/science/article/pii/S0024379515001342}
+}
+	</bibtex>
+	<comment>Former title: Low-rank matrix completion via trust-regions on the Grassmann manifold; &lt;a href="RTRMC/index.html"&gt;Code&lt;/a&gt;</comment>
+	<link>http://www.optimization-online.org/DB_HTML/2012/09/3619.html</link>
+	<publisherlink>http://www.sciencedirect.com/science/article/pii/S0024379515001342</publisherlink>
+	<tag>lowrank</tag>
+</object>
+<object id="1010">
+	<type>journal</type>
+	<title>Improved Fidelity of Brain Microstructure Mapping from Single-Shell Diffusion MRI</title>
+	<authors>M. Taquet, B. Scherrer, N. Boumal, J. Peters, B. Macq and S. Warfield</authors>
+	<year>2015</year>
+	<status>in Medical Image Analysis</status>
+	<bibtex>
+@Article{taquet2015improved,
+  Title                    = {Improved fidelity of brain microstructure mapping from single-shell diffusion {MRI}},
+  Author                   = {Taquet, M. and Scherrer, B. and Boumal, N. and Peters, J.M. and Macq, B. and Warfield, S.K.},
+  Journal                  = {Medical Image Analysis },
+  Year                     = {2015},
+  Number                   = {1},
+  Pages                    = {268--286},
+  Volume                   = {26},
+  Doi                      = {10.1016/j.media.2015.10.004}
+}
+	</bibtex>
+	<comment></comment>
+	<link></link>
+	<publisherlink>http://www.sciencedirect.com/science/article/pii/S1361841515001450</publisherlink>
+	<tag>DTI</tag>
+</object>
+<object id="1007">
+	<type>journal</type>
+	<title>Manopt: a Matlab toolbox for optimization on manifolds</title>
+	<authors>N. Boumal, B. Mishra, P.-A. Absil and R. Sepulchre</authors>
+	<year>2014</year>
+	<status>in the Journal of Machine Learning Research</status>
+	<bibtex>
+@Article{manopt,
+    author = {Boumal, N. and Mishra, B. and Absil, P.-A. and Sepulchre, R.},
+    journal = {Journal of Machine Learning Research},
+    title = {{M}anopt, a {M}atlab Toolbox for Optimization on Manifolds},
+    year = {2014},
+    number = {42},
+    pages = {1455--1459},
+    volume = {15},
+    url = {https://www.manopt.org},
+}
+	</bibtex>
+	<comment>&lt;a href="http://www.manopt.org"&gt;Manopt website&lt;/a&gt;</comment>
+	<link>http://arxiv.org/abs/1308.5200</link>
+	<publisherlink>http://jmlr.org/papers/v15/boumal14a.html</publisherlink>
+	<tag>manopt</tag>
+</object>
+<object id="1006">
+	<type>journal</type>
+	<title>Concentration of the Kirchhoff index for Erdos-Renyi graphs</title>
+	<authors>N. Boumal and X. Cheng</authors>
+	<year>2014</year>
+	<status>in Systems and Control Letters</status>
+	<bibtex>
+@article{boumal2014kirchhoff,
+  Title                    = {Concentration of the {K}irchhoff index for {E}rdos-{R}enyi graphs},
+  Author                   = {Boumal, N. and Cheng, X.},
+  Journal                  = {Systems and Control Letters},
+  Year                     = {2014},
+  Pages                    = {74--80},
+  Volume                   = {74},
+
+  Doi                      = {10.1016/j.sysconle.2014.10.006},
+  Url                      = {http://www.sciencedirect.com/science/article/pii/S016769111400228X}
+}
+	</bibtex>
+	<comment>Former title: Expected performance bounds for estimation on graphs from random relative measurements.</comment>
+	<link>http://arxiv.org/abs/1307.6398</link>
+	<publisherlink>http://www.sciencedirect.com/science/article/pii/S016769111400228X</publisherlink>
+	<tag>synchro</tag>
+</object>
+<object id="1005">
+	<type>journal</type>
+	<title>Cramér-Rao bounds for synchronization of rotations</title>
+	<authors>N. Boumal, A. Singer, P.-A. Absil and V.D. Blondel</authors>
+	<year>2014</year>
+	<status>in Information and Inference, a journal of the IMA</status>
+	<bibtex>
+@article{boumal2014crbsynch,
+  author = {Boumal, N. and Singer, A. and Absil, P.-A. and Blondel, V.D.},
+  title = {{C}ram{\'e}r-{R}ao bounds for synchronization of rotations},
+  journal = {Information and Inference},
+  year = {2014},
+  volume = {3},
+  pages = {1--39},
+  doi = {10.1093/imaiai/iat006},
+  eprint = {http://imaiai.oxfordjournals.org/content/early/2013/09/23/imaiai.iat006.full.pdf+html},
+  url = {http://imaiai.oxfordjournals.org/content/3/1/1}
+}
+	</bibtex>
+	<comment>Second prize at the &lt;a href="http://people.maths.ox.ac.uk/tanner/i_and_i_paper_prize.shtml"&gt;Information and Inference best paper prize&lt;/a&gt;.</comment>
+	<link>http://arxiv.org/abs/1211.1621</link>
+	<publisherlink>http://imaiai.oxfordjournals.org/content/early/2013/09/23/imaiai.iat006.abstract</publisherlink>
+	<tag>synchro</tag>
+</object>
+<object id="1004">
+	<type>journal</type>
+	<title>A Riemannian subgradient algorithm for economic dispatch with valve-point effect</title>
+	<authors>P.B. Borckmans, S.E. Selvan, N. Boumal and P.-A. Absil</authors>
+	<year>2014</year>
+	<status>in the Journal of Computational and Applied Mathematics</status>
+	<bibtex>
+@article{borckmans2013riemannian,
+title = "A {R}iemannian subgradient algorithm for economic dispatch with valve-point effect",
+journal = "Journal of Computational and Applied Mathematics ",
+volume = "255",
+pages = "848--866",
+year = "2014",
+note = "",
+issn = "0377-0427",
+doi = "http://dx.doi.org/10.1016/j.cam.2013.07.002",
+url = "http://www.sciencedirect.com/science/article/pii/S0377042713003464",
+author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. Absil",
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://sites.uclouvain.be/absil/2012.01</link>
+	<publisherlink>http://www.sciencedirect.com/science/article/pii/S0377042713003464</publisherlink>
+</object>
+<object id="1002">
+	<type>journal</type>
+	<title>On intrinsic Cramér-Rao bounds for Riemannian submanifolds and quotient manifolds</title>
+	<authors>N. Boumal</authors>
+	<year>2013</year>
+	<status>in IEEE Transactions on Signal Processing</status>
+	<bibtex>
+@ARTICLE{boumal2013intrinsiccrb,
+	author={Boumal, N.}, 
+	journal={Signal Processing, IEEE Transactions on}, 
+	title={On Intrinsic {C}ram{\'e}r-{R}ao Bounds for {R}iemannian Submanifolds and Quotient Manifolds}, 
+	year={2013}, 
+	volume={61}, 
+	number={7}, 
+	pages={1809--1821},
+	doi={10.1109/TSP.2013.2242068}, 
+	ISSN={1053-587X}
+}
+	</bibtex>
+	<comment></comment>
+	<link>papers/Boumal_On_intrinsic_Cramer_Rao_bounds_for_Riemannian_submanifolds_and_quotient_manifolds.htm</link>
+	<publisherlink>http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6418045</publisherlink>
+	<tag>synchro</tag>
+</object>
+<object id="1001">
+	<type>journal</type>
+	<title>Matrix probing: a randomized preconditioner for the wave-equation Hessian</title>
+	<authors>L. Demanet, P.D. Létourneau, N. Boumal, H. Calandra, J. Chiu and S. Snelson</authors>
+	<year>2012</year>
+	<status>in Applied and Computational Harmonic Analysis</status>
+	<bibtex>
+@article{demanet2012probing,
+	title = {Matrix probing: A randomized preconditioner for the wave-equation {H}essian},
+	author = "Demanet, L. and Létourneau, P.-D. and Boumal, N. and Calandra, H. and Chiu, J. and Snelson, S.",
+	journal = "Applied and Computational Harmonic Analysis",
+	volume = "32",
+	number = "2",
+	pages = "155--168",
+	year = "2012",
+	issn = "1063-5203",
+	doi = "http://dx.doi.org/10.1016/j.acha.2011.03.006",
+}
+	</bibtex>
+	<comment></comment>
+	<link>papers/Boumal_On_intrinsic_Cramer_Rao_bounds_for_Riemannian_submanifolds_and_quotient_manifolds.htm</link>
+	<publisherlink>http://www.sciencedirect.com/science/article/pii/S1063520311000479</publisherlink>
+</object>
+
+
+
+<object id="2017">
+	<type>conference</type>
+	<title>Generalization of Quasi-Newton Methods: Application to Robust Symmetric Multisecant Updates</title>
+	<authors>D. Scieur, L. Liu, T. Pumir and N. Boumal</authors>
+	<year>2021</year>
+	<status>in the proceedings of AISTATS</status>
+	<bibtex>
+@InProceedings{scieur2021quasinewton,
+    title = {Generalization of Quasi-{N}ewton Methods: Application to Robust Symmetric Multisecant Updates},
+    author = {Scieur, D. and Liu, L. and Pumir, T. and Boumal, N.},
+    booktitle = {Proceedings of The 24th International Conference on Artificial Intelligence and Statistics},
+    pages = {550--558},
+    year = {2021},
+    editor = {Banerjee, A. and Fukumizu, K.},
+    volume = {130},
+    series = {Proceedings of Machine Learning Research},
+    month = {13--15 Apr},
+    publisher = {{PMLR}},
+    pdf = {http://proceedings.mlr.press/v130/scieur21a/scieur21a.pdf},
+    url = {http://proceedings.mlr.press/v130/scieur21a.html},
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/2011.03358</link>
+	<publisherlink>http://proceedings.mlr.press/v130/scieur21a.html</publisherlink>
+	<tag>optimization</tag>
+</object>
+<object id="2018">
+	<type>conference</type>
+	<title>Second-order optimization for tensors with fixed tensor-train rank</title>
+	<authors>M. Psenka and N. Boumal</authors>
+	<year>2020</year>
+	<status>presented at the NeurIPS Optimization workshop</status>
+	<bibtex>
+@Article{psenka2020secondorderttrank,
+  author  = {Psenka, M. and Boumal, N.},
+  journal = {NeurIPS Optimization workshop, arXiv 2011.13395},
+  title   = {Second-order optimization for tensors with fixed tensor-train rank},
+  year    = {2020}
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/2011.13395</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
+<object id="2016">
+	<type>conference</type>
+	<title>Efficiently escaping saddle points on manifolds</title>
+	<authors>C. Criscitiello and N. Boumal</authors>
+	<year>2019</year>
+	<status>in the proceedings of NeurIPS</status>
+	<bibtex>
+@InCollection{criscitiello2019escapingsaddles,
+	author  = {Criscitiello, C. and Boumal, N.},
+	title   = {Efficiently escaping saddle points on manifolds},
+	booktitle = {Advances in Neural Information Processing Systems 32},
+	editor = {H. Wallach and H. Larochelle and A. Beygelzimer and F. d'Alch\'{e}-Buc and E. Fox and R. Garnett},
+	pages = {5985--5995},
+	year = {2019},
+	publisher = {Curran Associates, Inc.},
+	url = {http://papers.nips.cc/paper/8832-efficiently-escaping-saddle-points-on-manifolds}
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/1906.04321</link>
+	<publisherlink>https://papers.nips.cc/paper/8832-efficiently-escaping-saddle-points-on-manifolds</publisherlink>
+	<tag>optimization</tag>
+</object>
+<object id="2015">
+	<type>conference</type>
+	<title>Smoothed analysis of the low-rank approach for smooth semidefinite programs</title>
+	<authors>T. Pumir, S. Jelassi and N. Boumal</authors>
+	<year>2018</year>
+	<status>in the proceedings of NeurIPS (oral presentation, one of 30 among 1100 accepted papers)</status>
+	<bibtex>
+@incollection{pumir2018smoothedsmoothsdp,
+  author  = {Pumir, T. and Jelassi, S. and Boumal, N.},
+  title   = {Smoothed analysis of the low-rank approach for smooth semidefinite programs},
+  booktitle = {Advances in Neural Information Processing Systems 31},
+  editor = {S. Bengio and H. Wallach and H. Larochelle and K. Grauman and N. Cesa-Bianchi and R. Garnett},
+  pages = {2283--2292},
+  year = {2018},
+  publisher = {Curran Associates, Inc.},
+  url = {http://papers.nips.cc/paper/7496-smoothed-analysis-of-the-low-rank-approach-for-smooth-semidefinite-programs.pdf}
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/1806.03763</link>
+	<publisherlink>http://papers.nips.cc/paper/7496-smoothed-analysis-of-the-low-rank-approach-for-smooth-semidefinite-programs</publisherlink>
+	<tag>optimization</tag>
+	<tag>BM</tag>
+</object>
+<object id="2013">
+	<type>conference</type>
+	<title>Smoothed analysis for low-rank solutions to semidefinite programs in quadratic penalty form</title>
+	<authors>S. Bhojanapalli, N. Boumal, P. Jain, P. Netrapalli</authors>
+	<year>2018</year>
+	<status>in the proceedings of COLT</status>
+	<bibtex>@InProceedings{bhojanapalli2018smoothedsdp,
+  title = 	 {Smoothed analysis for low-rank solutions to semidefinite programs in quadratic penalty form},
+  author = {Bhojanapalli, S. and Boumal, N. and Jain, P. and Netrapalli, P.},
+  booktitle = 	 {Proceedings of the 31st  {C}onference {O}n {L}earning {T}heory},
+  pages = 	 {3243--3270},
+  year = 	 {2018},
+  editor = 	 {Bubeck, S. and Perchet, V. and Rigollet, P.},
+  volume = 	 {75},
+  series = 	 {Proceedings of Machine Learning Research},
+  address = 	 {},
+  month = 	 {06--09 Jul},
+  publisher = 	 {PMLR},
+  url = 	 {http://proceedings.mlr.press/v75/bhojanapalli18a.html}
+}
+	</bibtex>
+	<comment>Featured in an &lt;a href="https://dustingmixon.wordpress.com/2018/03/19/smoothed-analysis-for-low-rank-solutions-to-semidefinite-programs-in-quadratic-penalty-form/" target="_blank"&gt;interview&lt;/a&gt; on Dustin Mixon's blog. See also a &lt;a href="https://www.youtube.com/watch?v=9jlYzUnK7tY"  target="_blank"&gt;video of the talk&lt;/a&gt; given by Prateek at COLT.</comment>
+	<link>https://arxiv.org/abs/1803.00186</link>
+	<publisherlink>http://proceedings.mlr.press/v75/bhojanapalli18a.html</publisherlink>
+	<tag>optim</tag>
+	<tag>sdplr</tag>
+	<tag>BM</tag>
+</object>
+<object id="2012">
+	<type>conference</type>
+	<title>3D ab initio modeling in cryo-EM by autocorrelation analysis</title>
+	<authors>E. Levin, T. Bendory, N. Boumal, J. Kileel, A. Singer</authors>
+	<year>2018</year>
+	<status>in the proceedings of ISBI</status>
+	<bibtex>
+@InProceedings{levin2018abinitio,
+  author    = {Levin, E. and Bendory, T. and Boumal, N. and Kileel, J. and Singer, A.},
+  title     = {{3D} ab initio modeling in cryo-{EM} by autocorrelation analysis},
+  booktitle = {2018 IEEE 15th International Symposium on Biomedical Imaging (ISBI 2018)},
+  year      = {2018},
+  pages     = {1569--1573},
+  month     = {April},
+  doi       = {10.1109/ISBI.2018.8363873}
+}
+	</bibtex>
+	<comment>&lt;a href="https://github.com/eitangl/kam_cryo"&gt;GitHub Code&lt;/a&gt;; congratulations to Eitan for the best student paper prize!</comment>
+	<link>https://arxiv.org/abs/1710.08076</link>
+	<publisherlink>https://ieeexplore.ieee.org/document/8363873/</publisherlink>
+	<tag>cryoem</tag>
+	<tag>nonconvex</tag>
+</object>
+<object id="2011">
+	<type>conference</type>
+	<title>Heterogeneous multireference alignment: a single pass approach</title>
+	<authors>N. Boumal, T. Bendory, R. R. Lederman and A. Singer</authors>
+	<year>2018</year>
+	<status>in the proceedings of CISS</status>
+	<bibtex>
+@InProceedings{boumal2018heterogeneous,
+  author    = {Boumal, N. and Bendory, T. and Lederman, R.R. and Singer, A.},
+  title     = {Heterogeneous multireference alignment: A single pass approach},
+  booktitle = {2018 52nd Annual Conference on Information Sciences and Systems ({CISS})},
+  year      = {2018},
+  pages     = {1--6},
+  month     = {March},
+  doi       = {10.1109/CISS.2018.8362313}
+}
+	</bibtex>
+	<comment>&lt;a href="http://ee-ciss.princeton.edu/"&gt;CISS website&lt;/a&gt;</comment>
+	<link>https://arxiv.org/abs/1710.02590</link>
+	<publisherlink>https://ieeexplore.ieee.org/document/8362313/</publisherlink>
+	<tag>MRA</tag>
+	<tag>nonconvex</tag>
+</object>
+<object id="2010">
+	<type>conference</type>
+	<title>The non-convex Burer-Monteiro approach works on smooth semidefinite programs</title>
+	<authors>N. Boumal, V. Voroninski and A. S. Bandeira</authors>
+	<year>2016</year>
+	<status>in the proceedings of NIPS</status>
+	<bibtex>
+@incollection{boumal2016bmapproach,
+  author  = {Boumal, N. and Voroninski, V. and Bandeira, A.S.},
+  title   = {The non-convex {B}urer--{M}onteiro approach works on smooth semidefinite programs},
+  booktitle = {Advances in Neural Information Processing Systems 29},
+  editor = {D. D. Lee and M. Sugiyama and U. V. Luxburg and I. Guyon and R. Garnett},
+  pages = {2757--2765},
+  year = {2016},
+  publisher = {Curran Associates, Inc.}
+}
+	</bibtex>
+	<comment>An extension of this paper appears in &lt;i&gt;Deterministic guarantees for Burer-Monteiro factorizations of smooth semidefinite programs&lt;/i&gt;.</comment>
+	<link>https://arxiv.org/abs/1606.04970</link>
+	<publisherlink>https://papers.nips.cc/paper/6517-the-non-convex-burer-monteiro-approach-works-on-smooth-semidefinite-programs</publisherlink>
+	<tag>optim</tag>
+	<tag>sdplr</tag>
+	<tag>BM</tag>
+</object>
+<object id="2009">
+	<type>conference</type>
+	<title>On the low-rank approach for semidefinite programs arising in synchronization and community detection</title>
+	<authors>A. S. Bandeira, N. Boumal and V. Voroninski</authors>
+	<year>2016</year>
+	<status>in the proceedings of COLT</status>
+	<bibtex>
+@inproceedings{bandeira2016lowrankmaxcut,
+  author    = {Bandeira, A.S. and Boumal, N. and Voroninski, V.},
+  title     = {On the low-rank approach for semidefinite programs arising in synchronization and community detection},
+  booktitle = {Proceedings of The 29th Conference on Learning Theory, {COLT} 2016,
+               New York, NY, June 23--26},
+  pages     = {},
+  year      = {2016}
+}
+	</bibtex>
+	<comment>Featured in an &lt;a href="https://dustingmixon.wordpress.com/2016/03/10/on-the-low-rank-approach-for-semidefinite-programs-arising-in-synchronization-and-community-detection/" target="_blank"&gt;interview&lt;/a&gt; on Dustin Mixon's blog. &lt;a href="https://www.youtube.com/watch?v=N_bR03acjqc" target="_blank"&gt;Video of the talk&lt;/a&gt; (17').</comment>
+	<link>http://arxiv.org/abs/1602.04426</link>
+	<publisherlink>http://jmlr.csail.mit.edu/proceedings/papers/v49/bandeira16.html</publisherlink>
+	<tag>sdplr</tag>
+	<tag>synchro</tag>
+</object>
+<object id="2007">
+	<type>conference</type>
+	<title>Riemannian trust regions with finite-difference Hessian approximations are globally convergent</title>
+	<authors>N. Boumal</authors>
+	<year>2015</year>
+	<status>in the proceedings of Geometric Science of Information (GSI)</status>
+	<bibtex>
+@InCollection{boumal2015rtrfd,
+  Title                    = {{R}iemannian Trust Regions with Finite-Difference {H}essian Approximations are Globally Convergent},
+  Author                   = {Boumal, N.},
+  Booktitle                = {{G}eometric {S}cience of {I}nformation},
+  Publisher                = {Springer International Publishing},
+  Year                     = {2015},
+  Editor                   = {Nielsen, F. and Barbaresco, F.},
+  Pages                    = {467--475},
+  Series                   = {Lecture Notes in Computer Science},
+  Volume                   = {9389},
+
+  Doi                      = {10.1007/978-3-319-25040-3_50},
+  Keywords                 = {RTR-FD; Optimization on manifolds; Convergence; Manopt}
+}
+	</bibtex>
+	<comment>&lt;a href="https://www.youtube.com/watch?v=eTnrGDmdvAM"&gt;Video of the talk&lt;/a&gt; (20')</comment>
+	<link>papers/Boumal_-_Riemannian_trust_regions_with_finite_difference_Hessian_approximations_are_globally_convergent_-_2015.pdf</link>
+	<publisherlink>http://link.springer.com/chapter/10.1007/978-3-319-25040-3_50#</publisherlink>
+	<tag>manopt</tag>
+</object>
+<object id="2006">
+	<type>conference</type>
+	<title>Robust estimation of rotations from relative measurements by maximum likelihood</title>
+	<authors>N. Boumal, A. Singer and P.-A. Absil</authors>
+	<year>2013</year>
+	<status>in the proceedings of the 52nd Conference on Decision and Control (CDC)</status>
+	<bibtex>
+@inproceedings{boumal2013MLE,
+    author={Boumal, N. and Singer, A. and Absil, P.-A.}, 
+    booktitle={{Decision and Control (CDC), 2013 IEEE 52nd Annual Conference on}},
+    title={Robust estimation of rotations from relative measurements by maximum likelihood}, 
+    year={2013}, 
+    month={Dec}, 
+    pages={1156--1161},
+    doi={10.1109/CDC.2013.6760038}, 
+    ISSN={0743-1546}
+}
+	</bibtex>
+	<comment>Typo: the upperbound on the MSE (as given just before section IV.B) is $2\pi^2/3 + 4$, not $2\pi^2/4 + 3$ as stated in the published version.</comment>
+	<link>papers/Boumal_Singer_Absil_Robust_estimation_of_rotations_from_relative_measurements_by_maximum_likelihood_2013.htm</link>
+	<publisherlink>http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6760038</publisherlink>
+	<tag>synchro</tag>
+</object>
+<object id="2005">
+	<type>conference</type>
+	<title>Estimation of a multi-fascicle model from single B-value data with a population-informed prior</title>
+	<authors>M. Taquet, B. Scherrer, N. Boumal, B. Macq and S.K. Warfield</authors>
+	<year>2013</year>
+	<status>in the proceedings of the 16th conference on Medical Image Computing and Computer Assisted Intervention (MICCAI)</status>
+	<bibtex>
+@incollection{taquet2013multifascicle
+	year={2013},
+	isbn={978-3-642-40810-6},
+	booktitle={Medical Image Computing and Computer-Assisted Intervention - MICCAI 2013},
+	volume={8149},
+	series={Lecture Notes in Computer Science},
+	editor={Mori, K. and Sakuma, I. and Sato, Y. and Barillot, C. and Navab, N.},
+	doi={10.1007/978-3-642-40811-3_87},
+	title={Estimation of a Multi-fascicle Model from Single B-Value Data with a Population-Informed Prior},
+	url={http://dx.doi.org/10.1007/978-3-642-40811-3_87},
+	publisher={Springer Berlin Heidelberg},
+	keywords={Diffusion; Single-Shell; Generative Models; Estimation},
+	author={Taquet, M. and Scherrer, B. and Boumal, N. and Macq, B. and Warfield, S.K.},
+	pages={695--702}
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://perso.uclouvain.be/maxime.taquet/documents/taquet_miccai2013.pdf</link>
+	<publisherlink>http://link.springer.com/chapter/10.1007%2F978-3-642-40811-3_87</publisherlink>
+</object>
+<object id="2004">
+	<type>conference</type>
+	<title>Interpolation and regression of rotation matrices</title>
+	<authors>N. Boumal</authors>
+	<year>2013</year>
+	<status>in the proceedings of Geometric Science of Information (GSI)</status>
+	<bibtex>
+@incollection{boumal2013rotations
+	author={Boumal, N.},
+	title={Interpolation and Regression of Rotation Matrices},
+	year={2013},
+	booktitle={Geometric Science of Information},
+	volume={8085},
+	series={Lecture Notes in Computer Science},
+	editor={Nielsen, F. and Barbaresco, F.},
+	doi={10.1007/978-3-642-40020-9_37},
+	publisher={Springer Berlin Heidelberg},
+	keywords={optimization on manifolds; non-parametric regression; denoising of rotations; video stabilization; 3D motion planning},
+	pages={345--352}
+}
+	</bibtex>
+	<comment>&lt;a href="https://github.com/NicolasBoumal/SOn_regression"&gt;GitHub Code&lt;/a&gt;</comment>
+	<link>papers/Boumal_Interpolation_and_regression_of_rotation_matrices_2013.htm</link>
+	<publisherlink>http://link.springer.com/chapter/10.1007%2F978-3-642-40020-9_37</publisherlink>
+	<tag>curvefitting</tag>
+</object>
+<object id="2003">
+	<type>conference</type>
+	<title>RTRMC: A Riemannian trust-region method for low-rank matrix completion</title>
+	<authors>N. Boumal and P.-A. Absil</authors>
+	<year>2011</year>
+	<status>in the proceedings of the Neural Information Processing Systems conference (NIPS)</status>
+	<bibtex>
+@incollection{boumal2011rtrmc,
+title={{RTRMC}: A {R}iemannian trust-region method for low-rank matrix completion},
+author={Boumal, N. and Absil, P.-A.},
+booktitle={Advances in Neural Information Processing Systems 24 ({NIPS})},
+editor={J. Shawe-Taylor and R.S. Zemel and P. Bartlett and F.C.N. Pereira and K.Q. Weinberger},
+pages={406--414},
+year = {2011}
+}
+	</bibtex>
+	<comment>An extended version is available: see full papers.&lt;br&gt;This work was presented as a &lt;a href="papers/nips2011poster.htm"&gt;poster&lt;/a&gt;. &lt;a href="RTRMC/index.html"&gt;Code&lt;/a&gt;.</comment>
+	<link>papers/boumal_absil_RTRMC_a_Riemannian_trust_region_method_for_low_rank_matrix_completion.htm</link>
+	<publisherlink>https://papers.nips.cc/paper/4402-rtrmc-a-riemannian-trust-region-method-for-low-rank-matrix-completion</publisherlink>
+	<tag>lowrank</tag>
+</object>
+<object id="2002">
+	<type>conference</type>
+	<title>Discrete regression methods on the cone of positive-definite matrices</title>
+	<authors>N. Boumal and P.-A. Absil</authors>
+	<year>2011</year>
+	<status>in the proceedings of the 36th International Conference on Acoustics, Speech and Signal Processing (ICASSP)</status>
+	<bibtex>
+@inproceedings{boumal2011icassp,
+title={Discrete regression methods on the cone of positive-definite matrices},
+author={Boumal, N. and Absil, P.-A.},
+booktitle={Acoustics, Speech and Signal Processing (ICASSP), 2011 IEEE International Conference on},
+pages={4232--4235},
+year={2011},
+organization={IEEE}
+}
+	</bibtex>
+	<comment>This work was presented as a &lt;a href="papers/icassp2011poster.htm"&gt;poster&lt;/a&gt;.</comment>
+	<link>papers/Boumal_Absil_Discrete_regression_methods_on_the_cone_of_positive_definite_matrices.htm</link>
+	<publisherlink>https://ieeexplore.ieee.org/document/5947287/</publisherlink>
+	<tag>curvefitting</tag>
+</object>
+<object id="2001">
+	<type>conference</type>
+	<title>A discrete regression method on manifolds and its application to data on SO(n)</title>
+	<authors>N. Boumal and P.-A. Absil</authors>
+	<year>2011</year>
+	<status>in the proceedings of the 18th IFAC World Congress (IFAC)</status>
+	<bibtex>
+@inproceedings{boumal2011ifac,
+author = {Boumal, N. and Absil, P.-A.},
+title = {A discrete regression method on manifolds and its application to data on {SO(n)}},
+booktitle = {Proceedings of the 18th IFAC World Congress (Milan)},
+volume={18},
+number={1},
+pages={2284--2289},
+year = {2011}
+}
+	</bibtex>
+	<comment></comment>
+	<link>papers/Boumal_Absil_A_discrete_regression_method_on_manifolds_and_its_application_to_data_on_SOn.htm</link>
+	<publisherlink>https://www.sciencedirect.com/science/article/pii/S1474667016439534</publisherlink>
+	<tag>curvefitting</tag>
+</object>
+
+
+
+<object id="3043">
+	<type>talk</type>
+	<title>An Introduction to Optimization on Smooth Manifolds</title>
+	<with></with>
+	<event>
+		<venue>Simons Institute Geometric Methods in Optimization and Sampling Boot Camp</venue>
+		<city>Berkeley (online)</city><country>USA</country>
+		<year>2021</year><month>8</month><day>30</day>
+		<video>https://www.youtube.com/watch?v=UjaoZE0GBpg</video>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>https://simons.berkeley.edu/talks/tbd-337</link>
+</object>
+<object id="3042">
+	<type>talk</type>
+	<title>An Introduction to Optimization on Smooth Manifolds</title>
+	<with></with>
+	<event>
+		<venue>EPFL/ETHZ Summer school on mathematical guarantees for data-driven control</venue>
+		<city>Online</city><country>Switzerland</country>
+		<year>2021</year><month>6</month><day>15</day>
+		<video>https://www.youtube.com/watch?v=lK62DwSIjXA</video>
+	</event>
+	<comment></comment>
+	<abstract>https://sites.google.com/view/fmg-data-driven-control/schedule?authuser=0</abstract>
+	<link>https://www.youtube.com/watch?v=lK62DwSIjXA&#38;t=0</link>
+</object>
+<object id="3041">
+	<type>talk</type>
+	<title>Riemannian geometry for numerical optimization: 
+the tools we use and some geometry questions that arise</title>
+	<with></with>
+	<event>
+		<venue>Lausanne-Jena seminar in geometry</venue>
+		<city>Online</city><country>Switzerland/Germany</country>
+		<year>2021</year><month>5</month><day>12</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link></link>
+</object>
+<object id="3040">
+	<type>talk</type>
+	<title>Geometry and symmetry in non-convex optimization</title>
+	<with></with>
+	<event>
+		<venue>CIS Get To Know Your Neighbors seminar at EPFL</venue>
+		<city>Online</city><country>Switzerland</country>
+		<year>2021</year><month>3</month><day>29</day>
+		<video>https://www.youtube.com/watch?v=r-AEOWzCxYs</video>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>https://www.epfl.ch/research/domains/cis/center-for-intelligent-systems-cis/events/gtkyn/prof-nicolas-boumal/</link>
+</object>
+<object id="3039">
+	<type>talk</type>
+	<title>Optimizating till stationarity on the bounded-rank variety</title>
+	<with></with>
+	<event>
+		<venue>UCLouvain Applied Mathematics Seminar (remote)</venue>
+		<city>Online</city><country>Belgium</country>
+		<year>2021</year><month>2</month><day>9</day>
+	</event>
+	<event>
+		<venue>Cambridge University Seminar (remote)</venue>
+		<city>Online</city><country>UK</country>
+		<year>2021</year><month>5</month><day>5</day>
+	</event>
+	<event>
+		<venue>SIAM Conference on Applied Linear Algebra (remote)</venue>
+		<city>Online</city><country>USA</country>
+		<year>2021</year><month>5</month><day>20</day>
+	</event>
+	<event>
+		<venue>Inria seminar, MokaPlan (remote)</venue>
+		<city>Online</city><country>France</country>
+		<year>2021</year><month>6</month><day>2</day>
+	</event>
+	<event>
+		<venue>SIAM Conference on Optimization (remote)</venue>
+		<city>Online</city><country>USA</country>
+		<year>2021</year><month>7</month><day>22</day>
+	</event>
+	<event>
+		<venue>SIAM Conference on Applied Algebraic Geometry (remote)</venue>
+		<city>Online</city><country>USA</country>
+		<year>2021</year><month>8</month><day>17</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>papers/StationaryBoundedRank.pdf</link>
+</object>
+<object id="3038">
+	<type>talk</type>
+	<title>Apocalypse on singular sets: optimization with bounded rank</title>
+	<with></with>
+	<event>
+		<venue>ManifLearn workshop at ICPR 2020 (remote)</venue>
+		<city>Online</city><country>Italy</country>
+		<year>2021</year><month>1</month><day>11</day>
+	</event>
+	<comment></comment>
+	<abstract>https://sites.google.com/view/manlearn2020/program</abstract>
+	<link>papers/Apocalypses.pdf</link>
+</object>
+<object id="3038">
+	<type>talk</type>
+	<title>Optimization on nonsmooth sets: what's the worst that could happen?</title>
+	<with></with>
+	<event>
+		<venue>Oberwolfach workshop (remote)</venue>
+		<city>Online</city><country>Germany</country>
+		<year>2020</year><month>11</month><day>17</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>papers/IntroOptimManifoldsSlides2020.htm</link>
+</object>
+<object id="3037">
+	<type>talk</type>
+	<title>An introduction to optimization on smooth manifolds</title>
+	<with></with>
+	<event>
+		<venue>Low Rank 2020 Winter School (EPFL/UGeneva)</venue>
+		<city>Villars-sur-Ollon</city><country>Switzerland</country>
+		<year>2020</year><month>1</month><day>16</day>
+	</event>
+	<event>
+		<venue>GdR Géométrie différentielle et estimation sur variétés</venue>
+		<city>Online</city><country>France</country>
+		<year>2020</year><month>7</month><day>10</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>papers/IntroOptimManifoldsSlides2020.htm</link>
+</object>
+<object id="3036">
+	<type>talk</type>
+	<title>What is the role of curvature in complexity of nonconvex optimization on manifolds?</title>
+	<with></with>
+	<event>
+		<venue>CMO-BIRS Workshop on Computational Harmonic Analysis and Data Science</venue>
+		<city>Oaxaca</city><country>Mexico</country>
+		<year>2019</year><month>10</month><day>31</day>
+		<video>http://www.birs.ca/events/2019/5-day-workshops/19w5061/videos/watch/201910311103-Boumal.html</video>
+	</event>
+	<event>
+		<venue>CalTech EE Systems Seminar</venue>
+		<city>Pasadena, CA</city><country>USA</country>
+		<year>2020</year><month>2</month><day>21</day>
+		<video></video>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>papers/CalTech_2020_curvature_optimization.pdf</link>
+</object>
+<object id="3035">
+	<type>talk</type>
+	<title>What is the role of curvature in complexity of nonconvex optimization on manifolds?</title>
+	<with></with>
+	<event>
+		<venue>ICCOPT 2019</venue>
+		<city>Berlin</city><country>Germany</country>
+		<year>2019</year><month>8</month><day>7</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>papers/ICCOPT_2019_Worst_case_convergence_on_manifolds.pdf</link>
+</object>
+<object id="3034">
+	<type>talk</type>
+	<title>Geometry for reliable and efficient non-convex optimization</title>
+	<with></with>
+	<event>
+		<venue>Operations research seminar at EPFL</venue>
+		<city>Lausanne</city><country>Switzerland</country>
+		<year>2019</year><month>5</month><day>20</day>
+	</event>
+	<comment></comment>
+	<abstract>Non-convexity is both a challenge and an opportunity for continuous optimization, with notable applications in statistical estimation, machine learning, and inverse problems. I will illustrate how Riemannian geometry has a role to play both for analysis of non-convexity, and as a foundation for practical algorithms. As a salient example, we will see how to use Riemannian optimization to solve certain large-scale convex problems (semidefinite programs that arise as relaxations of non-convex problems) through non-convex, low-rank factorizations, with formal guarantees. This approach requires a fraction of the memory and computation time to produce a fully accurate solution.</abstract>
+	<link></link>
+</object>
+<object id="3033">
+	<type>talk</type>
+	<title>A bit of smooth geometry and a bit of smoothed analysis for semidefinite programs in low-rank form</title>
+	<with></with>
+	<event>
+		<venue>Séminaire d'analyse numérique à l'université de Genève</venue>
+		<city>Geneva</city><country>Switzerland</country>
+		<year>2019</year><month>3</month><day>22</day>
+	</event>
+	<event>
+		<venue>Optimization seminar at ORFE</venue>
+		<city>Princeton, NJ</city><country>USA</country>
+		<year>2019</year><month>4</month><day>4</day>
+	</event>
+	<comment></comment>
+	<abstract>Semidefinite programs are optimization problems of the form: minimize a linear function of X, where X is a positive semidefinite matrix subject to linear constraints. Enforcing positive semidefiniteness can be computationally challenging. A popular heuristic is to factor X as YY*, where Y is a tall and narrow matrix. This ensures semidefiniteness for free, but breaks convexity. I will describe why, if the search space in Y is a smooth manifold, then the non-convexity is almost never an issue. Then, I will argue through smoothed analysis that the zero-measure set of bad problems is not a serious threat even for algorithms which have to terminate in finite time. As these concepts involve optimization on smooth manifolds, I will touch upon recent complexity bounds in this domain.</abstract>
+	<link></link>
+</object>
+<object id="3032">
+	<type>talk</type>
+	<title>Estimating a cloud of points under rotations and huge noise: variations on Procrustes</title>
+	<with></with>
+	<event>
+		<venue>What's happening in Fine Hall? (Math department lunch talk)</venue>
+		<city>Princeton, NJ</city><country>USA</country>
+		<year>2018</year><month>11</month><day>30</day>
+	</event>
+	<comment></comment>
+	<abstract>We want to estimate a cloud of k points in R^d, that is, a matrix X of size
+d by k. What we get to see is randomly rotated versions of that cloud,
+corrupted by Gaussian noise. We see many independent such realizations.
+Surely, if the noise level isn't too bad, then we can estimate the
+rotations, undo them, and average the aligned clouds. That will reduce the
+noise level. But what if the noise level is so high that it is
+fundamentally impossible to estimate the rotations? Can we still estimate
+the cloud is such conditions? The answer is yes: I will show a practical
+algorithm to do it. The algorithm is based on elementary notions of
+invariant theory and linear algebra. Then, I will argue that no algorithm
+can do significantly better. This is joint work with Thomas Pumir, who is a
+graduate student in ORFE.</abstract>
+	<link></link>
+</object>
+<object id="3031">
+	<type>talk</type>
+	<title>Handling non-convexity in low-rank approaches for semidefinite programming</title>
+	<with></with>
+	<event>
+		<venue>Colloquium Series for the Program in Applied and Computational Mathematics</venue>
+		<city>Princeton, NJ</city><country>USA</country>
+		<year>2018</year><month>10</month><day>8</day>
+	</event>
+	<comment></comment>
+	<abstract>A semidefinite program (SDP) is an optimization problem where one seeks to minimize a linear function of a positive semidefinite matrix X under linear constraints. SDPs have generated sustained interest since the nineties owing to their powerful expressiveness. Standard algorithms solve SDPs in polynomial time, but they fail in practice for large problems.
+
+To address scaling issues, in the early 2000s, Burer and Monteiro proposed the following heuristic: factorize X as YY*, where Y is a 'tall and narrow' matrix of size n x p. Not only is positive semidefiniteness now mechanically enforced at no cost, but also one gets better control over the dimensionality of the problem through p. However, the optimization problem in Y is non-convex: it is a priori unclear how to solve it.
+
+In this talk, I will show that the Burer-Monteiro heuristic is sound, under certain geometric conditions. Specifically, my collaborators and I proved that if the constraints on Y regularly define a smooth manifold, then, for almost any linear cost function, standard necessary optimality conditions turn out to be sufficient as well: non-convexity is benign. We established this result with optimally small p. I will further mention extensions of such results based on smoothed analysis.
+
+Under the regularity condition, we get an optimization problem in Y on a smooth manifold: I will also mention recent results regarding the complexity of practical algorithms for such problems.
+
+
+The main parts are joint work with Afonso Bandeira and Vlad Voroninski.</abstract>
+	<link>papers/PACM_Colloquium_2018.pdf</link>
+</object>
+<object id="3030">
+	<type>talk</type>
+	<title>Worst-case complexity bounds for optimization on manifolds</title>
+	<with></with>
+	<event>
+		<venue>International Symposium on Mathematical Programming (ISMP)</venue>
+		<city>Bordeaux</city><country>France</country>
+		<year>2018</year><month>7</month><day>2</day>
+	</event>
+	<comment></comment>
+	<abstract>I will present some recent bounds on the number of iterations one might need to compute approximate stationary points (both first and second order) for optimization problems on smooth manifolds. In particular, I will present reasonable assumptions one can make about a problem so that the classical proofs from unconstrained optimization carry over painlessly. The talk will focus on gradient descent and trust-region methods on manifolds. Such bounds are relevant to understand the worst-case computational cost of learning algorithms when the sought parameters live on a smooth, known manifold.</abstract>
+	<link>papers/ISMP%202018%20Worst%20case%20convergence%20on%20manifolds.pdf</link>
+</object>
+<object id="3029">
+	<type>talk</type>
+	<title>A quick analysis of Riemannian gradient descent</title>
+	<with></with>
+	<event>
+		<venue>52nd annual Conference on Information Sciences and Systems (CISS)</venue>
+		<city>Princeton, NJ</city><country>USA</country>
+		<year>2018</year><month>3</month><day>22</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link></link>
+</object>
+<object id="3028">
+	<type>talk</type>
+	<title>Near optimal bounds for phase synchronization</title>
+	<with></with>
+	<event>
+		<venue>Alan Turing Institute Theory and Algorithms in Data Science Seminar</venue>
+		<city>London</city><country>UK</country>
+		<year>2017</year><month>12</month><day>20</day>
+	</event>
+	<event>
+		<venue>Machine Learning Seminar series at MIT</venue>
+		<city>Cambridge, Massachusetts</city><country>USA</country>
+		<year>2018</year><month>1</month><day>18</day>
+	</event>
+	<comment>This was a whiteboard talk--slides only for support.</comment>
+	<abstract>Phase synchronization consists in estimating n phases (unit-modulus complex numbers) given measurements of all relative phases. We assume the measurements are corrupted by i.i.d. Gaussian noise. The maximum likelihood estimator is the solution to a non-convex optimization problem, NP-hard in general. Yet, it has been observed some years ago that the maximum likelihood estimator can be computed in polynomial time through semidefinite relaxation, even in the face of tremendous amounts of noise.
+
+In this talk, I will present proof techniques that allow to explain this observation. This is based on the generalized power method, replicas to reduce statistical dependence, and dual certificates.
+
+Joint work with Yiqiao Zhong, Afonso Bandeira and Amit Singer.</abstract>
+	<link>papers/Phase_Synchronization_ATI.pdf</link>
+</object>
+<object id="3027">
+	<type>talk</type>
+	<title>Multireference alignment: invariant features and heterogeneity</title>
+	<with></with>
+	<event>
+		<venue>Simons Algorithms and Geometry meeting on multi-reference alignment</venue>
+		<city>New York City, NY</city><country>USA</country>
+		<year>2017</year><month>11</month><day>10</day>
+	</event>
+	<event>
+		<venue>IMA Data Science Lab Seminar</venue>
+		<city>Minneapolis, Minnesota</city><country>USA</country>
+		<year>2017</year><month>10</month><day>31</day>
+		<video>https://www.ima.umn.edu/2017-2018/DSS9.5.17-5.29.18/26405</video>
+	</event>
+	<comment></comment>
+	<abstract>Consider the problem of estimating a signal x in R^n from numerous noisy observations of it, where each observation has been cyclically shifted in an unknown way. In the absence of shifts, one could simply average the observations. Thus, one natural approach is to try first to align (undo the shifts), then average. Unfortunately, beyond a certain noise level, aligning is impossible.
+
+I will show how the signal x can be estimated from the observations directly, without alignment. The technique relies on so-called invariant features: moments of the data that are invariant under cyclic shifts. Recovering the signal from these moments is a non-convex problem and I'll discuss some ideas that allow to solve it in practice.
+
+Going a few steps further, we will get into a heterogeneous variant of this problem and a 2D version of it. At that point, I will show the connections with cryo electron microscopy---the motivating application for this work.</abstract>
+	<link></link>
+</object>
+<object id="3026">
+	<type>talk</type>
+	<title>Multireference alignment: an invariant features approach</title>
+	<with></with>
+	<event>
+		<venue>Optimization and Statistical Learning (OSL 2017)</venue>
+		<city>Les Houches</city><country>France</country>
+		<year>2017</year><month>4</month><day>10</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>http://ljk.imag.fr/membres/Jerome.Malick/osl2017/program.html</link>
+</object>
+<object id="3025">
+	<type>talk</type>
+	<title>Semidefinite programs with a dash of smoothness: why the low-rank approach works</title>
+	<with></with>
+	<event>
+		<venue>Meeting of the International Linear Algebra Society (ILAS 2017)</venue>
+		<city>Ames, Iowa</city><country>USA</country>
+		<year>2017</year><month>7</month><day>27</day>
+	</event>
+	<event>
+		<venue>Foundations of Computational Mathematics</venue>
+		<city>Barcelona</city><country>Spain</country>
+		<year>2017</year><month>7</month><day>17</day>
+	</event>
+	<event>
+		<venue>SIAM Conference on Optimization</venue>
+		<city>Vancouver</city><country>Canada</country>
+		<year>2017</year><month>5</month><day>25</day>
+	</event>
+	<event>
+		<venue>NIPS Workshop OptML (Optimization in Machine Learning)</venue>
+		<city>Barcelona</city><country>Spain</country>
+		<year>2016</year><month>12</month><day>10</day>
+	</event>
+	<event>
+		<venue>IDeAS seminar, Program in Applied and Computational Mathematics at Princeton University</venue>
+		<city>Princeton, NJ</city><country>USA</country>
+		<year>2016</year><month>3</month><day>2</day>
+	</event>
+	<comment></comment>
+	<abstract>Semidefinite programs (SDPs) can be solved in polynomial time by interior point methods, but scalability can be an issue. To address this shortcoming, over a decade ago, Burer and Monteiro proposed to solve SDPs with few equality constraints via low-rank, non-convex surrogates. Remarkably, for some applications, local optimization methods seem to converge to global optima of these non-convex surrogates reliably.
+
+In this presentation, we show that the Burer-Monteiro formulation of SDPs in a certain class almost never has any spurious local optima, that is: the non-convexity of the low-rank formulation is benign (even saddles are strict). This class of SDPs covers applications such as max-cut, community detection in the stochastic block model, robust PCA, phase retrieval and synchronization of rotations.
+
+The crucial assumption we make is that the low-rank problem lives on a manifold. Then, theory and algorithms from optimization on manifolds can be used.
+
+Optimization on manifolds is about minimizing a cost function over a smooth manifold, such as spheres, low-rank matrices, orthonormal frames, rotations, etc. We will present the basic framework as well as parts of the more general convergence theory, including recent complexity results. (Toolbox: http://www.manopt.org)
+
+Select parts are joint work with P.-A. Absil, A. Bandeira, C. Cartis and V. Voroninski.</abstract>
+	<link></link>
+</object>
+<object id="3024">
+	<type>talk</type>
+	<title>A non-convex approach to synchronization and community detection</title>
+	<with></with>
+	<event>
+		<venue>Conference on Learning Theory (COLT) 2016</venue>
+		<city>New York City, NY</city><country>USA</country>
+		<year>2016</year><month>6</month><day>23</day>
+		<video>https://www.youtube.com/watch?v=N_bR03acjqc</video>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>papers/COLT_2016.pdf</link>
+</object>
+<object id="3023">
+	<type>talk</type>
+	<title>Optimization on manifolds and semidefinite relaxations</title>
+	<with></with>
+	<event>
+		<venue>Machine Learning reading group at Princeton University</venue>
+		<city>Princeton, NJ</city><country>USA</country>
+		<year>2016</year><month>4</month><day>19</day>
+	</event>
+	<event>
+		<venue>CEPSR seminar at Columbia University</venue>
+		<city>New York City, NY</city><country>USA</country>
+		<year>2016</year><month>5</month><day>6</day>
+	</event>
+	<event>
+		<venue>ICML Workshop 'Geometry in Machine Learning (&lt;a href="https://sites.google.com/site/gimliworkshop/"&gt;Gimli&lt;/a&gt;)' invited speaker</venue>
+		<city>New York City, NY</city><country>USA</country>
+		<year>2016</year><month>6</month><day>23</day>
+	</event>
+	<event>
+		<venue>Applied Math Seminar at Courant Institute of Mathematical Sciences</venue>
+		<city>New York City, NY</city><country>USA</country>
+		<year>2016</year><month>10</month><day>28</day>
+	</event>
+	<comment></comment>
+	<abstract>Optimization on manifolds is about minimizing a cost function over a smooth manifold, such as spheres, low-rank matrices, orthonormal frames, rotations, etc. I will present the basic framework as well as some of the more general convergence results, including recent complexity results.
+
+This is nonconvex optimization; there are no global optimality guarantees in general. Nevertheless, I will discuss a class of problems related to semidefinite relaxations for Max-Cut and community detection in the stochastic block model for which standard optimization algorithms on manifolds converge to global optimizers. This is part of a growing set of applications on manifolds with stronger theoretical backup.
+
+Experiments with Manopt: our Matlab toolbox for optimization on manifolds available at www.manopt.org.</abstract>
+	<link>papers/ICML_Gimli_2016.pdf</link>
+</object>
+<object id="3021">
+	<type>talk</type>
+	<title>Ditch the Hessian Hassle with Riemannian Trust Regions</title>
+	<with></with>
+	<event>
+		<venue>Geometric Science of Information (GSI)</venue>
+		<city>Paris</city><country>France</country>
+		<year>2015</year><month>10</month><day>30</day>
+		<video>https://www.youtube.com/watch?v=eTnrGDmdvAM</video>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>https://www.see.asso.fr/node/14349</link>
+</object>
+<object id="3020">
+	<type>talk</type>
+	<title>Phase synchronization: an example of global optimality on manifolds</title>
+	<with></with>
+	<event>
+		<venue>One-day workshop on Riemannian and nonsmooth optimization (RANSO 2015)</venue>
+		<city>Louvain-la-Neuve</city><country>Belgium</country>
+		<year>2015</year><month>9</month><day>25</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>https://sites.uclouvain.be/absil/RANSO-2015-09-25/agenda.html</link>
+</object>
+<object id="3019">
+	<type>talk</type>
+	<title>Cramér-Rao bounds for synchronisation of rotations</title>
+	<with></with>
+	<event>
+		<venue>Information and Inference Best Paper Prize</venue>
+		<city>Oxford</city><country>UK</country>
+		<year>2015</year><month>8</month><day>24</day>
+	</event>
+	<comment>Our paper was awarded &lt;a href="http://people.maths.ox.ac.uk/tanner/i_and_i_paper_prize.shtml"&gt;second prize&lt;/a&gt;. Congratulations to Michael McCoy for a well-deserved first place!</comment>
+	<abstract></abstract>
+	<link>papers/Oxford_CRB_Talk_2015.pdf</link>
+</object>
+<object id="3018">
+	<type>talk</type>
+	<title>Tight relaxations for phase synchronization</title>
+	<with></with>
+	<event>
+		<venue>International Symposium on Mathematical Programming (ISMP)</venue>
+		<city>Pittsburgh, PA</city><country>USA</country>
+		<year>2015</year><month>7</month><day>17</day>
+	</event>
+	<event>
+		<venue>Séminaire d'analyse numérique à l'Université de Genève</venue>
+		<city>Geneva</city><country>Switzerland</country>
+		<year>2015</year><month>12</month><day>15</day>
+	</event>
+	<comment></comment>
+	<abstract>We consider the problem of estimating phases (points on a circle) from noisy, pairwise, relative phase measurements. Assuming Gaussian noise, the maximum likelihood estimator (MLE) is the solution of a hard, nonconvex quadratically constrained quadratic program. The latter can be relaxed into a semidefinite program (SDP) by lifting (dropping a rank 1 constraint). Remarkably, this SDP turns out to be tight (i.e., it reveals the true MLE in polynomial time) with high probability, even in the face of large noise. We provide a proof of this statement in a preprint: http://arxiv.org/abs/1411.3272. Come see the talk for a quick tour and intuition!</abstract>
+	<link></link>
+</object>
+<object id="3017">
+	<type>talk</type>
+	<title>A tale of convex and Riemannian geometry for low-rank optimization</title>
+	<with></with>
+	<event>
+		<venue>HCM Workshop: Low-rank Optimization and Applications</venue>
+		<city>Bonn</city><country>Germany</country>
+		<year>2015</year><month>6</month><day>11</day>
+	</event>
+	<comment></comment>
+	<abstract>Motivated by applications involving orthogonal matrices, I will discuss optimization over the set of positive semidefinite matrices whose diagonal blocks are small identity matrices. This is a convex set. Interestingly, the subsets of feasible matrices of bounded rank admit a nice Riemannian geometry, making it relatively simple to optimize over them directly. This is especially interesting given that the optimizers of the full problem often have low-rank (a phenomenon we will study). I will show how, combining insights from both convex and Riemannian geometry, we can attain a better understanding of this class of problems (chiefly relating critical points of the rank-restricted problem to KKT points of the full problem) and develop better algorithms.</abstract>
+	<link>http://www.hcm.uni-bonn.de/events/eventpages/2015/workshop-low-rank-optimization-and-applications/</link>
+</object>
+<object id="3016">
+	<type>talk</type>
+	<title>Optimization on manifolds &lt;3 convex optimization</title>
+	<with></with>
+	<event>
+		<venue>SIERRA Seminar at INRIA</venue>
+		<city>Paris</city><country>France</country>
+		<year>2014</year><month>10</month><day>22</day>
+	</event>
+	<event>
+		<venue>Séminaire "Statistique et imagerie" à Paris-Dauphine</venue>
+		<city>Paris</city><country>France</country>
+		<year>2015</year><month>3</month><day>2</day>
+	</event>
+	<comment></comment>
+	<abstract>Hello! I'm Nicolas. I just joined SIERRA @ INRIA to work with Alexandre d'Aspremont as a postdoc. I will talk about optimization on manifolds, its ties with convex optimization, and semidefinite relaxations.
+
+Optimization on manifolds is about solving problems of the form "minimize f(x), where x belongs to a nice, known manifold". This comes up in applications all the time (think: orthogonality or low-rank constraints). We develop a Matlab toolbox to tackle such problems: http://www.manopt.org (it is documented).
+
+The boundary of convex sets sometimes has a nice differentiable geometry. For example, the boundary of a ball is a sphere; the boundary of the semidefinite cone is a union of fixed-rank matrices. Since solutions often lie on the boundary of the search space, this leads to interesting cross-fertilizations between convex optimization and optimization on manifolds.
+
+As an example, we will estimate a collection of rotations based on noisy measurements of pairwise relative rotations (think: cameras). The group of rotations is a smooth manifold, hence the corresponding maximum likelihood estimation problem lives on a manifold too. Additionally, it admits a beautiful semidefinite relaxation (via lifting). I will show how optimization on manifolds can help both solve this relaxation fast, and refine its output. Then, I will show evidence that this relaxation is tight incredibly often, and I will outline elements of a proof for this phenomenon.
+
+Core parts of this talk are joint work with P.-A. Absil and V. Blondel (UCLouvain), B. Mishra (Univ. de Liège), R. Sepulchre (Univ. of Cambridge), and A. Singer and A. Bandeira (Princeton U.).</abstract>
+	<link></link>
+</object>
+<object id="3015">
+	<type>talk</type>
+	<title>Preconditioning for low-rank matrix completion via trust-regions over one Grassmannian</title>
+	<with></with>
+	<event>
+		<venue>Householder Symposium XIX</venue>
+		<city>Spa</city><country>Belgium</country>
+		<year>2014</year><month>6</month><day>12</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link></link>
+</object>
+<object id="3014">
+	<type>talk</type>
+	<title>Lift me up but not too high: fast algorithms to solve semidefinite programs with block-diagonal constraints</title>
+	<with></with>
+	<event>
+		<venue>IDeAS seminar, Program in Applied and Computational Mathematics at Princeton University</venue>
+		<city>Princeton, NJ</city><country>USA</country>
+		<year>2014</year><month>5</month><day>13</day>
+	</event>
+	<event>
+		<venue>SIAM Conference on Optimization</venue>
+		<city>San Diego, CA</city><country>USA</country>
+		<year>2014</year><month>5</month><day>19</day>
+	</event>
+	<event>
+		<venue>UCL Large Graphs and Networks Research Retreat</venue>
+		<city>Daverdisse</city><country>Belgium</country>
+		<year>2014</year><month>5</month><day>26</day>
+	</event>
+	<comment></comment>
+	<abstract>We consider optimization problems of the following form (sometimes called Orthogonal-Cut):
+
+minimize f(X) such that X is positive semidefinite and the diagonal blocks of X are identity matrices.
+
+Such programs notably come about as relaxations of certain quadratically constrained quadratic programs. When f(X) is linear, this is a semidefinite program (SDP), and it can thus be solved in polynomial time with interior point methods (IPM's). Nevertheless, IPM's are still rather slow. The main reason for this is that IPM's deal internally with full-rank matrices X of large size. This is a waste, considering that (in the targeted applications) we expect low-rank solutions to exist. One way to address this is to factor X = YY^T with Y, a tall and skinny matrix. Then, attempt to solve the new problem in Y. As long as Y is not square, this is still hard to solve globally. But fortunately, one can show that as soon as we find a merely local optimizer of the problem in Y that is also rank-deficient, then, the associated X = YY^T is a global optimizer of the convex program. The strategy is thus to start with skinny Y's, find a local optimizer and check its rank. Do over with a fatter Y until rank deficiency is detected. This idea is already exploited in the solver SDPLR. We further leverage the fact that for the program under consideration, the factors Y live on a Riemannian manifold. Using Riemannian optimization algorithms, we can then solve the intermediate problems orders of magnitude faster than the competition. We show numerical results on the generalized Procrustes problem using Manopt, our Riemannian optimization toolbox.
+</abstract>
+	<link>papers/The_staircase_method.pdf</link>
+</object>
+<object id="3013">
+	<type>talk</type>
+	<title>Robust estimation of rotations from relative measurements</title>
+	<with></with>
+	<event>
+		<venue>52nd Conference on Decision and Control (CDC)</venue>
+		<city>Florence</city><country>Italy</country>
+		<year>2013</year><month>12</month><day>10</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link></link>
+</object>
+<object id="3012">
+	<type>talk</type>
+	<title>Relax, project and refine: accurate and robust estimation of rotations from relative measurements</title>
+	<with></with>
+	<event>
+		<venue>Imaging and Computing Seminar, Mathematics department at MIT</venue>
+		<city>Cambridge, MA</city><country>USA</country>
+		<year>2013</year><month>4</month><day>30</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link></link>
+</object>
+<object id="3011">
+	<type>talk</type>
+	<title>Relaxation is not the end of the story</title>
+	<with></with>
+	<event>
+		<venue>IDeAS seminar, Program in Applied and Computational Mathematics at Princeton University</venue>
+		<city>Princeton, NJ</city><country>USA</country>
+		<year>2013</year><month>4</month><day>18</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link></link>
+</object>
+<object id="3010">
+	<type>talk</type>
+	<title>Manopt: a toolbox for optimization on manifolds</title>
+	<with></with>
+	<event>
+		<venue>32nd Benelux Meeting on Systems and Control</venue>
+		<city>Houffalize</city><country>Belgium</country>
+		<year>2013</year><month>3</month><day>26</day>
+	</event>
+	<event>
+		<venue>ORBEL 28, national conference on operational research</venue>
+		<city>Mons</city><country>Belgium</country>
+		<year>2014</year><month>1</month><day>31</day>
+	</event>
+	<event>
+		<venue>iTwist again: international traveling workshop on interactions between sparse models and technology</venue>
+		<city>Namur</city><country>Belgium</country>
+		<year>2014</year><month>8</month><day>28</day>
+	</event>
+	<event>
+		<venue>TCMM 2014 (Software Demonstration) : International Workshop on Technical Computing for Machine Learning and Mathematical Engineering</venue>
+		<city>Leuven</city><country>Belgium</country>
+		<year>2014</year><month>9</month><day>11</day>
+	</event>
+	<event>
+		<venue>Journée conjointe des GDR MIA et ISIS: Optimisation Géométrique sur les Variétés</venue>
+		<city>Paris</city><country>France</country>
+		<year>2014</year><month>11</month><day>21</day>
+	</event>
+	<comment>This is a presentation about &lt;a href="http://www.manopt.org"&gt;www.manopt.org&lt;/a&gt;.</comment>
+	<abstract>&lt;a href="papers/manopt_bnlx2013.htm"&gt;abstract&lt;/a&gt;</abstract>
+	<link>papers/manopt_slides.htm</link>
+</object>
+<object id="3009">
+	<type>talk</type>
+	<title>Cramér-Rao bounds for synchronization of rotations (are structured by the pseudoinverse of the Laplacian)</title>
+	<with></with>
+	<event>
+		<venue>IDeAS seminar, Program in Applied and Computational Mathematics at Princeton University</venue>
+		<city>Princeton, NJ</city><country>USA</country>
+		<year>2012</year><month>10</month><day>3</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link></link>
+</object>
+<object id="3008">
+	<type>talk</type>
+	<title>Riemannian algorithms and estimation bounds for synchronization of rotations</title>
+	<with></with>
+	<event>
+		<venue>International Symposium on Mathematical Programming (ISMP)</venue>
+		<city>Berlin</city><country>Germany</country>
+		<year>2012</year><month>8</month><day>20</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link></link>
+</object>
+<object id="3007">
+	<type>talk</type>
+	<title>Synchronization of rotations via Riemannian trust-regions</title>
+	<with></with>
+	<event>
+		<venue>SIAM Conference on Applied Linear Algebra (SIAM/LA)</venue>
+		<city>Valencia</city><country>Spain</country>
+		<year>2012</year><month>6</month><day>19</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link></link>
+</object>
+<object id="3006">
+	<type>talk</type>
+	<title>Synchronization of rotations for Cryo-EM imaging</title>
+	<with></with>
+	<event>
+		<venue>UCL Large Graphs and Networks Research Retreat</venue>
+		<city>Knokke</city><country>Belgium</country>
+		<year>2012</year><month>5</month><day>22</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link></link>
+</object>
+<object id="3005">
+	<type>talk</type>
+	<title>Synchronization of rotations on a graph</title>
+	<with></with>
+	<event>
+		<venue>Dagstuhl seminar 11451 on data mining, networks and dynamics</venue>
+		<city>Dagstuhl</city><country>Germany</country>
+		<year>2011</year><month>11</month><day>9</day>
+	</event>
+	<comment></comment>
+	<abstract>
+Dagstuhl Seminar 11451 on Data mining, networks and dynamics
+Dagstuhl, Germany, November 6-11, 2011
+
+Title: Synchronization of rotations on a graph
+Speaker: Nicolas Boumal
+Time: November 9, 2011 @ 11:15 am
+
+I will start by informally describing two application problems. These will motivate the study of an estimation problem in which the quantities to estimate are N rotations and the measurements to help us do so are noisy observations of relative rotations. The measurements induce a graph which consists of N nodes (each associated to one of the unknown rotations) and such that each edge corresponds to a noisy measurement of the relative rotation between the two incident nodes. I will then state a few results we have obtained on the theoretical and algorithmic aspects of this problem, and try to gradually transform the presentation into a group discussion.
+
+The material I will talk about is joint work with Amit Singer (Princeton University) and Pierre-Antoine Absil (UCLouvain).
+	</abstract>
+	<link>http://www.dagstuhl.de/11451</link>
+</object>
+<object id="3004">
+	<type>talk</type>
+	<title>Low-rank matrix completion: optimization on manifolds at work</title>
+	<with></with>
+	<event>
+		<venue>Optimization 2011</venue>
+		<city>Lisbon</city><country>Portugal</country>
+		<year>2011</year><month>7</month><day>25</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>papers/Boumal_Optimization2011LisbonSeminar250711.htm</link>
+</object>
+<object id="3003">
+	<type>talk</type>
+	<title>A Riemannian trust-region method for low-rank matrix completion</title>
+	<with></with>
+	<event>
+		<venue>CSP group seminar of the EEE department at Imperial College London</venue>
+		<city>London</city><country>UK</country>
+		<year>2011</year><month>6</month><day>14</day>
+	</event>
+	<event>
+		<venue>IDeAS seminar, Program in Applied and Computational Mathematics at Princeton University</venue>
+		<city>Princeton, NJ</city><country>USA</country>
+		<year>2011</year><month>4</month><day>12</day>
+	</event>
+	<event>
+		<venue>UCL-INGI Machine Learning Group seminar</venue>
+		<city>Louvain-la-Neuve</city><country>Belgium</country>
+		<year>2011</year><month>3</month><day>25</day>
+	</event>
+	<comment></comment>
+	<abstract>/papers/Boumal_ImperialSeminar_14062011.htm</abstract>
+	<link></link>
+</object>
+<object id="3002">
+	<type>talk</type>
+	<title>Discrete curve fitting on manifolds</title>
+	<with></with>
+	<event>
+		<venue>Geometric Science of Information (GSI)</venue>
+		<city>Paris</city><country>France</country>
+		<year>2013</year><month>8</month><day>29</day>
+	</event>
+	<event>
+		<venue>18th IFAC World Congress</venue>
+		<city>Milan</city><country>Italy</country>
+		<year>2011</year><month>8</month><day>29</day>
+	</event>
+	<event>
+		<venue>30th Benelux Meeting on Systems and Control</venue>
+		<city>Lommel</city><country>Belgium</country>
+		<year>2011</year><month>3</month><day>16</day>
+	</event>
+	<event>
+		<venue>UCL-INMA Large Graphs and Networks seminar</venue>
+		<city>Louvain-la-Neuve</city><country>Belgium</country>
+		<year>2010</year><month>11</month><day>3</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>papers/Boumal_graphseminar_03112010.htm</link>
+</object>
+<object id="3001">
+	<type>talk</type>
+	<title>Inversion of the wave equation Hessian via discrete symbol calculus</title>
+	<with>L. Demanet</with>
+	<event>
+		<venue>Total SA Mathias conference</venue>
+		<city>Cannes</city><country>France</country>
+		<year>2009</year><month>10</month><day>16</day>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link></link>
+</object>
+
+
+
+
+
+<object id="4007">
+	<type>poster</type>
+	<title>Escaping Saddle Points on Manifolds</title>
+	<with>C. Criscitiello</with>
+	<event>
+		<venue>Annual Conference on Neural Information Processing Systems (NIPS)</venue>
+		<city>Vancouver</city><country>Canada</country>
+		<year>2019</year><month>12</month><day>x</day>
+	</event>
+	<link>papers/NeurIPS2019_PRGD_poster.pdf</link>
+	<tag>manopt</tag>
+	<tag>optim</tag>
+</object>
+
+<object id="4006">
+	<type>poster</type>
+	<title>Iteration complexity of optimization on smooth manifolds</title>
+	<with></with>
+	<event>
+		<venue>Optimization and Statistical Learning 2019</venue>
+		<city>Les Houches</city><country>France</country>
+		<year>2019</year><month>3</month><day>27</day>
+	</event>
+	<link>papers/Iteration_complexity_of_optimization_on_smooth_manifolds.pdf</link>
+	<tag>manopt</tag>
+	<tag>optim</tag>
+	<tag>complexity</tag>
+</object>
+
+<object id="4005">
+	<type>poster</type>
+	<title>Smoothed analysis of the low-rank approach for smooth semidefinite programs</title>
+	<with>T. Pumir and S. Jelassi</with>
+	<event>
+		<venue>Annual Conference on Neural Information Processing Systems (NIPS)</venue>
+		<city>Montréal</city><country>Canada</country>
+		<year>2018</year><month>12</month><day>6</day>
+	</event>
+	<link>papers/NeurIPS2018sdp.pdf</link>
+	<tag>manopt</tag>
+	<tag>optim</tag>
+</object>
+
+<object id="4004">
+	<type>poster</type>
+	<title>The non-convex Burer-Monteiro approach works on smooth semidefinite programs</title>
+	<with>V. Voroninski and A. Bandeira</with>
+	<event>
+		<venue>Annual Conference on Neural Information Processing Systems (NIPS)</venue>
+		<city>Barcelona</city><country>Spain</country>
+		<year>2016</year><month>12</month><day>5</day>
+	</event>
+	<link>papers/BM_poster.pdf</link>
+	<tag>manopt</tag>
+	<tag>optim</tag>
+	<tag>sdplr</tag>
+</object>
+
+<object id="4003">
+	<type>poster</type>
+	<title>The Manopt toolbox, optimization on manifolds in 3 minutes</title>
+	<with>B. Mishra, P.-A. Absil, Y. Nesterov and R. Sepulchre</with>
+	<event>
+		<venue>International conference on continuous optimization (ICCOPT)</venue>
+		<city>Lisbon</city><country>Portugal</country>
+		<year>2013</year><month>7</month><day>29</day>
+	</event>
+	<link>papers/manopt_poster.pdf</link>
+	<tag>manopt</tag>
+</object>
+
+<object id="4002">
+	<type>poster</type>
+	<title>RTRMC: low-rank matrix completion via trust-regions on the Grassmannian</title>
+	<with>P.-A. Absil</with>
+	<event>
+		<venue>Twenty-Fifth Annual Conference on Neural Information Processing Systems (NIPS)</venue>
+		<city>Granada</city><country>Spain</country>
+		<year>2011</year><month>12</month><day>14</day>
+	</event>
+	<link>papers/nips2011poster.htm</link>
+	<tag>lowrank</tag>
+</object>
+
+<object id="4001">
+	<type>poster</type>
+	<title>Regression methods on the cone of positive-definite matrices</title>
+	<with>P.-A. Absil</with>
+	<event>
+		<venue>36th International Conference on Acoustics, Speech and Signal Processing (ICASSP)</venue>
+		<city>Prague</city><country>Czech Republic</country>
+		<year>2011</year><month>5</month><day>26</day>
+	</event>
+	<link>papers/icassp2011poster.htm</link>
+	<tag>curvefitting</tag>
+</object>
+
+
+
+
+<object id="5002">
+	<type>thesis</type>
+	<title>Optimization and estimation on manifolds</title>
+	<authors>N. Boumal</authors>
+	<year>2014</year>
+	<status>Ph.D. thesis</status>
+	<bibtex>
+@phdthesis{boumal2014thesis,
+  author = {Boumal, N.},
+  title = {Optimization and estimation on manifolds},
+  school = {Universit\'e catholique de Louvain},
+  year = {2014},
+  month = {feb}
+}
+	</bibtex>
+	<comment></comment>
+	<link>papers/boumal_optimization_and_estimation_on_manifolds_phd_thesis.htm</link>
+	<publisherlink></publisherlink>
+	<tag></tag>
+</object>
+
+<object id="5001">
+	<type>thesis</type>
+	<title>Discrete curve fitting on manifolds</title>
+	<authors>N. Boumal</authors>
+	<year>2010</year>
+	<status>Master thesis</status>
+	<bibtex>
+@mastersthesis{boumal2010discrete,
+  author = {Boumal, N.},
+  title = {Discrete curve fitting on manifolds},
+  school = {Universit\'e catholique de Louvain},
+  year = {2010},
+  month = {jun}
+}
+	</bibtex>
+	<comment></comment>
+	<link>papers/Boumal_Discrete_curve_fitting_on_manifolds_Master_Thesis.htm</link>
+	<publisherlink></publisherlink>
+	<tag>curvefitting</tag>
+</object>
+
+</publications>

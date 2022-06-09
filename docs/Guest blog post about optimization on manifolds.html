@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>Guest blog post about optimization on manifolds</title>
+  </head>
+  <body>
+    <h1>Optimization on manifolds</h1>
+    <p>This is a guest post by <a target="_blank" href="http://www.nicolasboumal.net">Nicolas
+        Boumal</a>, a friend and collaborator from Université catholique de
+      Louvain (Belgium), now at Inria in Paris (France), who develops <a target="_blank"
+
+        href="http://www.manopt.org">Manopt</a><span style="text-decoration: underline;"></span>:
+      a toolbox for optimization on manifolds.</p>
+    <p> Optimization on manifolds is about solving problems of the form<br>
+      $\mathrm{minimize}_{x\in\mathcal{M}} f(x),$<br>
+      where $\mathcal{M}$ is a nice, known manifold. By "nice", I mean a smooth,
+      finite-dimensional Riemannian manifold. Practical examples include the
+      following (and all possible products of these):</p>
+    <ul>
+      <li>Euclidean spaces</li>
+      <li>The sphere (set of vectors or matrices with unit Euclidean norm)</li>
+      <li>The Stiefel manifold (set of orthonormal matrices)</li>
+      <li>The Grassmann manifold (set of linear subspaces of a given dimension;
+        this is a quotient space)</li>
+      <li>The rotation group (set of orthogonal matrices with determinant +1)</li>
+      <li>The manifold of fixed-rank matrices</li>
+      <li>The same, further restricted to positive semidefinite matrices</li>
+      <li>The cone of (strictly) positive definite matrices</li>
+      <li>...</li>
+    </ul>
+    <p>Conceptually, the key point is to think of optimization on manifolds as <em>unconstrained</em>
+      optimization: we do not think of $\mathcal{M}$ as being embedded in a
+      Euclidean space. Rather, we think of $\mathcal{M}$ as being "the only
+      thing that exists," and we strive for <em>intrinsic</em> methods. Besides
+      making for elegant theory, it also makes it clear how to handle abstract
+      spaces numerically (such as the Grassmann manifold for example); and it
+      gives algorithms the "right" invariances (computations do not depend on an
+      arbitrarily chosen representation of the manifold).</p>
+    <p>There are at least two reasons why this class of problems is getting much
+      attention lately. First, it is because optimization problems over the
+      aforementioned sets (mostly matrix sets) come up pervasively in
+      applications, and at some point it became clear that the intrinsic
+      viewpoint leads to better algorithms, as compared to general-purpose
+      constrained optimization methods (where $\mathcal{M}$ is considered as
+      being inside a Euclidean space $\mathcal{E}$, and algorithms move in
+      $\mathcal{E}$, while penalizing distance to $\mathcal{M}$). The second is
+      that, as I will argue momentarily, Riemannian manifolds are "the right
+      setting" to talk about unconstrained optimization. And indeed, there is a
+      beautiful book by <a target="_blank" href="http://sites.uclouvain.be/absil/">P.-A.
+        Absil</a> (my PhD advisor), <a target="_blank" href="https://sites.google.com/site/rsepulchre/">R.
+        Sepulchre</a> (his advisor) and <a target="_blank" href="http://users.cecs.anu.edu.au/%7ERobert.Mahony/">R.
+        Mahony</a>, called <a target="_blank" href="http://press.princeton.edu/chapters/absil/">Optimization
+        algorithms on matrix manifolds</a> (freely available), that shows how
+      the classical methods for unconstrained optimization (gradient descent,
+      Newton, trust-regions, conjugate gradients...) carry over seamlessly to
+      the more general Riemannian framework. So we can have one theory to cover
+      optimization over a huge class of sets.</p>
+    <p>To help practitioners and researchers experiment with these ideas, with
+      as gentle a learning curve as we could manage, <a target="_blank" href="https://sites.google.com/site/bamdevm/">Bamdev
+        Mishra</a> and I, together with our former advisors, develop <a target="_blank"
+
+        href="http://www.manopt.org">Manopt</a>: a Matlab toolbox that comes
+      with online documentation, flexible features, friendly debugging tools and
+      a help forum.<br>
+    </p>
+    <h2>Optimization on manifolds is just as easy as unconstrained nonlinear
+      optimization</h2>
+    <img title="Optimization methods on Euclidean spaces often generalize to manifolds in a natural way"
+
+      alt="" src="steepestdescent_compare_euclidean_sphere.png" width="100%">
+    <p>Consider the gradient descent method on a Euclidean space $\mathcal{E}$
+      for a moment. The method proceeds, from a starting point $x_0 \in
+      \mathcal{E}$, by iterating:</p>
+    <p>$x_{k+1} = x_k - \alpha_k \nabla f(x_k),$</p>
+    <p>where $\nabla f(x_k)$ is the gradient of $f$ at $x_k$ and $\alpha_k &gt;
+      0$ is the step size. It is well-known that if $\alpha_k$ is chosen
+      appropriately, under mild conditions, the iterates converge to critical
+      points, i.e., $\nabla f(x_k) \to 0$ as $k \to \infty$. The rationale
+      underlying this method is: at the current iterate $x_k$, among all
+      possible directions, let us select the locally most promising one (the
+      negative gradient), and move along that one for an appropriate distance.</p>
+    <p>Nothing about this procedure truly requires the search space to be a
+      vector space.</p>
+    <p>This time, consider $\mathcal{M}$ is a sphere. We would like to move away
+      from the current point $x_k$ to improve our predicament. Bearing in mind
+      that, ultimately, we want to remain on the sphere, it certainly makes no
+      sense to consider directions that move radially away from the sphere. So
+      we'll restrict our attention to the vectors at $x_k$ that are tangent to
+      the sphere (they form the <em>tangent space</em>). Among all of these, we
+      want to select the (locally) most promising direction. This requires the
+      ability to compare tangent vectors. What better way to do this than to
+      equip the tangent space with an inner product? Doing so in a principled
+      way (so that tangent spaces close-by have "similar" inner products) endows
+      the sphere with a Riemannian structure. This gives rise to a notion of
+      gradient on the sphere, called the <em>Riemannian gradient</em>, denoted
+      by $\mathrm{grad} f(x_k)$. Finally, it wouldn't be okay to move to $x_k -
+      \alpha_k \mathrm{grad} f(x_k)$: $x_k$ doesn't live on a vector space, so
+      that this subtraction makes no sense. Instead, we want to follow a
+      geodesic, starting at $x_k$ and aligned with the chosen direction
+      $-\mathrm{grad} f(x_k)$. In practice though, geodesics can be expensive to
+      compute. Fortunately, we can make do with a crude approximation of
+      geodesics, through the concept of <em>retractions</em>:</p>
+    <p>$x_{k+1} = \mathrm{Retraction}_{x_k}(\alpha_k \mathrm{grad} f(x_k)).$</p>
+    <p>With the obvious Riemannian geometry on the sphere (obtained by
+      restricting the Euclidean metric to the individual tangent spaces), the
+      Riemannian gradient is simply the orthogonal projection of the classical
+      gradient:</p>
+    <p>$\mathrm{grad} f(x) = (I - xx^T) \nabla f(x),$</p>
+    <p>and a typical retraction is to renormalize:</p>
+    <p>$\mathrm{Retraction}_x(u) = \frac{x+u}{\|x+u\|}.$</p>
+    <p>That's it: the general theory provides global and local convergence
+      results to first-order critical points with these simple ingredients
+      (under mild conditions on $f$). The first-order necessary optimality
+      conditions are simply $\mathrm{grad} f(x) = 0$ (compare this with the
+      extra work needed if we go through Lagrange multipliers to establish KKT
+      conditions). Manopt includes a library of manifolds to pick from, that
+      come with metrics, projections, retractions and the likes, for a quick and
+      easy start.</p>
+    <p>Notice that an optimization problem is posed on a set, not on a
+      Riemannian manifold. In effect, the geometry we put on the set affects the
+      algorithm (much like preconditioning), but is not intrinsic to a specific
+      problem. Finding out which geometries work best is an active area of
+      research.</p>
+    <h2>It's also just as hard</h2>
+    <p>Manifolds of interest are typically non convex, so that very little is
+      known when it comes to computing <em>global optimizers</em>. In practice,
+      it often works, though. One nice touch is to use spectral or convex
+      relaxations to obtain a good initial iterate, and to refine it with
+      optimization on manifolds. See for example this paper about <a target="_blank"
+
+        href="http://arxiv.org/abs/1410.6852">noisy sensor network localization</a>
+      and a short one about <a target="_blank" href="http://dx.doi.org/10.1109/CDC.2013.6760038">synchronization
+        of rotations</a>.</p>
+    <p>There are some early successes where, under specific assumptions on the
+      distribution of the data, researchers were able to show convergence to
+      global optimizers with high probability, for example in <a target="_blank"
+
+        href="http://www.jmlr.org/papers/v11/keshavan10a.html">low-rank matrix
+        completion</a><span style="text-decoration: underline;"></span> and <a
+
+        target="_blank" href="http://sunju.org/docs/DL_LSE_15.pdf">dictionary
+        learning</a>; see also results involving <a target="_blank" href="http://arxiv.org/abs/1312.1039v3">geodesic
+        convexity</a>. The former are problems for which convex relaxations are
+      known to work too, but solving those relaxations is often too expensive.
+      Since in comparison the manifold approach (non convex but low dimensional)
+      is faster and often yields the same answer, understanding the limits of
+      this technique is a challenge worth undertaking.</p>
+    <p>With Manopt, one of our goals is to make it easy to experiment with
+      optimization on manifolds, to help find (and push) its limits.<br>
+    </p>
+  </body>
+</html>

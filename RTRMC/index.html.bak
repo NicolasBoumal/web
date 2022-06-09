@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <title>RTRMC - A Riemannian Trust-Region method for low-rank Matrix
+      Completion</title>
+  </head>
+  <body>
+    <h1>RTRMC : Low-rank matrix completion via preconditioned optimization on
+      the Grassmann manifold</h1>
+    RTRMC is an algorithm developed by <a href="http://perso.uclouvain.be/nicolas.boumal/">Nicolas
+      Boumal</a> (contact person) and <a href="http://www.inma.ucl.ac.be/%7Eabsil/">Pierre-Antoine
+      Absil</a> at <a href="http://www.uclouvain.be">UCLouvain</a> to solve
+    low-rank matrix completion problems.<br>
+    <br>
+    The associated paper is available here:<br>
+    <br>
+    N. Boumal and P.-A. Absil, <a href="../papers/boumal_absil_RTRMC_a_Riemannian_trust_region_method_for_low_rank_matrix_completion.htm"><span
+        style="font-style: italic;">RTRMC : A Riemannian trust-region method for
+        low-rank matrix completion</span></a>, NIPS 2011,<br>
+    <br>
+    with a corresponding <a href="../papers/bibtex_rtrmc.html">BibTex entry</a>.<br>
+    <br>
+    An extended version of the paper, with more detailed mathematical
+    developments and numerical experiments, is available too:<br>
+    <br>
+    N. Boumal and P.-A. Absil, <a target="_blank" style="font-style: italic;" href="http://www.sciencedirect.com/science/article/pii/S0024379515001342#">Low-rank
+      matrix completion via preconditioned optimization on the Grassmann
+      manifold</a>, in Linear Algebra and its Applications, 2015.<br>
+    <br>
+    <strong>This version includes a preconditioner for RTRMC and adds Riemannian
+      conjugate gradients support, thanks to the </strong><strong><a href="http://www.manopt.org">Manopt</a></strong><strong>
+      toolbox.</strong><strong><br>
+      As a consequence, the code changed significantly: please see below to
+      download version 3.2 of RTRMC and RCGMC (released July 22, 2015).<br>
+    </strong>This version of the algorithms is also described in <a href="../papers/boumal_optimization_and_estimation_on_manifolds_phd_thesis.htm">Nicolas
+      Boumal's PhD thesis</a>.
+    <p style="margin: 0px; text-indent: 0px;">The abstract of the extended paper
+      reads:</p>
+    <table style="text-align: left; width: 807px; margin-left: 40px;" border="0"
+      cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td style="text-align: justify;">We address the numerical problem of <span
+              style="font-weight: bold;">recovering large matrices of low rank
+              when most of the entries are unknown</span>. We exploit the <span
+              style="font-weight: bold;">geometry of the low-rank constraint</span>
+            to recast the problem as an unconstrained optimization problem on a
+            single Grassmann manifold. We then apply second-order Riemannian
+            trust-region methods (RTRMC 2) and Riemannian conjugate gradient
+            methods (RCGMC) to solve it. A <span style="font-weight: bold;">preconditioner
+              for the Hessian</span> is introduced that helps control the
+            conditioning of the problem and we detail preconditioned versions of
+            <span style="font-weight: bold;">Riemannian optimization</span>
+            algorithms. The cost of each iteration is linear in the number of
+            known entries. The proposed methods are competitive with
+            state-of-the-art algorithms on a wide range of problem instances. In
+            particular, they <span style="font-weight: bold;">perform well on
+              rectangular matrices</span>. We further note that second-order and
+            preconditioned methods are <span style="font-weight: bold;">well
+              suited to solve badly conditioned matrix completion tasks</span>.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    Here is the <a href="rtrmc_v32_download.htm">Matlab code for RTRMC v3.2</a>
+    under <a href="licence.txt">BSD licence</a>.<br>
+    This version of the code was put online on July 22, 2015. It changed
+    significantly since version 1.1 and now uses <a href="http://www.manopt.org">Manopt 2.0</a>.<br>
+    Changes since version 2: now bundled with Manopt 1.0.5 instead of 1.0.4, and
+    the buildproblem function now allows the data I, J, X, C to be given in any
+    order.<br>
+    Changes since version 3: a bug prevented the code from working <span style="font-weight: bold;">when
+      the weights <em>C</em><sub>ij</sub> were not all the same</span>. This
+    was corrected by patching spbuildmatrix.c. And moved to Manopt 2.0.<br>
+    <br>
+    <span style="font-weight: bold;">To install and use the software:</span>
+    <ul>
+      <li>Unzip the archive on your disk and launch the script <span style="font-style: italic;">main.m</span>.</li>
+      <ul>
+        <li>If this works, you're done.</li>
+        <li>If this fails, then the C-Mex codes probably need to be compiled for
+          your platform:</li>
+        <ul>
+          <li>Edit the script <span style="font-style: italic;">installrtrmc.m</span>
+            and set the flag&nbsp;<span style="font-style: italic;">I_launched_main_and_it_failed</span>
+            to true.</li>
+          <li>Launch the script <span style="font-style: italic;">installrtrmc.m</span>.</li>
+          <li>Launch the script <span style="font-style: italic;">main.m</span>
+            once again.</li>
+        </ul>
+      </ul>
+      <li>Use the functions in <span style="font-style: italic;">buildproblem.m</span>,
+        <span style="font-style: italic;">initialguess.m</span> and <span style="font-style: italic;">rtrmc.m</span>
+        as shown in <span style="font-style: italic;">main.m</span> to apply
+        RTRMC to your problem instances.</li>
+      <li>Ideally, download the latest version of <a href="http://www.manopt.org">Manopt</a>,
+        to be used instead of the version bundled in the zip-file above.</li>
+    </ul>
+    <table style="text-align: left; width: 867px;" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td style="text-align: left; vertical-align: top;">If this procedure
+            fails (quite probably somewhere in the <span style="font-style: italic;">installrtrmc.m</span>
+            script), then either there is trouble with the C compiler Matlab
+            tries to use, which you can check by typing 'mex -setup' at the
+            Matlab prompt, or the installation script is incompatible with your
+            OS (it was written for Windows users, but has been found to work as
+            is on a MacOS and a Linux computer).<span style="font-weight: bold;">
+              If you need help, please feel free to contact us.</span> If you
+            successfully ran <span style="font-style: italic;">installrtrmc.m</span>
+            on your computer, we'd love to know about any, if any, difficulties
+            you may have resolved.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    If you get this error:<samp> </samp>
+    <blockquote><samp>??? Error using ==&gt; spbuildmatrix</samp><br>
+      <samp>dpotrf (in spbuildmatrix): a leading minor is not positive definite.</samp><br>
+      <samp>Error in ==&gt; lsqfit&gt;buildmatrix at 132</samp><br>
+      <samp>&nbsp;&nbsp;&nbsp; Achol = spbuildmatrix(problem.mask, U, lambda^2);</samp><br>
+      <samp>Error in ==&gt; lsqfit at 65</samp><br>
+      <samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compumem.Achol =
+        buildmatrix(problem, U);</samp><br>
+      <samp>Error in ==&gt; rtrmcobjective at 66</samp><br>
+      <samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [W, compumem] = lsqfit(problem,
+        U, compumem);</samp> </blockquote>
+    then try to raise the value of lambda (the regularization parameter). This
+    error triggers when the least-squares problem (the computation of W<sub>U</sub>)
+    does not have a unique solution, so that one of the diagonal blocks of the
+    large matrix A does not have a proper Cholesky factorization.<br>
+    <br>
+    Raghunandan Keshavan, co-author of OptSpace, maintains an interesting web
+    page listing <a href="http://www.stanford.edu/%7Eraghuram/optspace/papers.html">matrix
+      completion-related papers and software</a>.<br>
+    The blog <a href="http://nuit-blanche.blogspot.com/2011/09/rtrmc-exploiting-manifolds-smoothness.html">Nuit-Blanche</a>
+    featured a post about RTRMC on Sept. 12, 2011. The <a href="https://sites.google.com/site/igorcarron2/matrixfactorizations">Matrix
+      Factorization Jungle</a> is another list of related software.
+    <address><small> Last update: July 22, 2015 </small></address>
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-19509417-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> </body>
+</html>
