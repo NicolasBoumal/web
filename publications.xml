@@ -91,7 +91,8 @@
   author  = {Levin, E. and Kileel, J. and Boumal, N.},
   journal = {Mathematical Programming, to appear},
   title   = {Finding stationary points on bounded-rank matrices: A geometric hurdle and a smooth remedy},
-  year    = {2022}
+  year    = {2022},
+  doi     = {10.1007/s10107-022-01851-2}
 }
 	</bibtex>
 	<comment></comment>
