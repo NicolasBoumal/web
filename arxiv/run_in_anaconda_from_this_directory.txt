@@ -1,0 +1,7 @@
+Run this from the right directory in anaconda prompt:
+
+python -m http.server
+
+then go to:
+
+http://localhost:8000/

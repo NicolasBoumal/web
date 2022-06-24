@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ArXiv filter</title>
+    <link href="http://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet" crossorigin="anonymous">
+	<script src="http://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="http://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js" crossorigin="anonymous"></script>
+	<script>
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']]
+		  }
+		};
+	</script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">		</script>
+  </head>
+  <body>
+	
+	<!-- Test MathJax $x^2$. -->
+  
+    <h1>New papers</h1>
+	
+	<table id="tablenew" class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Title</th>
+				<th scope="col">Authors</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+  
+    <h1>Updated papers</h1>
+	
+	<table id="tableupdates" class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">v</th>
+				<th scope="col">Title</th>
+				<th scope="col">Authors</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	
+	<script>
+	
+		$("#tableupdates").DataTable();
+		$("#tablenew").DataTable();
+	
+		var entityMap = {
+		  '&': '&amp;',
+		  '<': '&lt;',
+		  '>': '&gt;',
+		  '"': '&quot;',
+		  "'": '&#39;',
+		  '/': '&#x2F;',
+		  '`': '&#x60;',
+		  '=': '&#x3D;'
+		};
+
+		function escapeHtml(string) {
+		  return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+			return entityMap[s];
+		  });
+		}
+	
+		// To temporarily unlock the proxy (which by-passes CORS issues),
+		// go here: https://cors-anywhere.herokuapp.com/corsdemo
+		var proxy = 'https://cors-anywhere.herokuapp.com/';
+		var rssurls = ["http://export.arxiv.org/rss/math.NA", 
+					    "http://export.arxiv.org/rss/math.OC"];
+		for(var k = 0; k < rssurls.length; ++k) {
+			$.get(proxy + rssurls[k], function(data) {
+				// console.log(data);
+				var re = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
+				var $xml = $(data);
+				$xml.find("item").each(function() {
+					var $this = $(this);
+					var fulltitle = $this.find("title").text();
+					var titleparts = re.exec(fulltitle);
+					var item = {
+						title: titleparts[1],
+						arxivid: titleparts[2],
+						version: Number(titleparts[3]),
+						category: titleparts[4],
+						updated: (titleparts[5] === 'UPDATED'),
+						crosslisted: (titleparts[5] === 'CROSS LISTED'), // not sure what happens if both UPDATED & CROSS-LISTED...
+						link: $this.find("link").text(),
+						summary: $this.find("description").text(),
+						creator: $this.find("dc\\:creator").text()   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
+					}
+					
+					var addit = true;
+					
+					if(item.title.includes("Helmholtz")){
+						addit = false;
+					}
+					
+					if(addit) {
+					
+						if(item.version == 1) {
+							$("#tablenew").append("<tr>" + 
+									"<td>"+item.arxivid+"</td>" + 
+									"<td><a href=\"" + item.link + "\" title=\"" + escapeHtml(item.summary) + "\">" + item.title + "</a></td>" +
+									"<td>" + item.creator + "</td>" +
+									"</tr>");
+						}
+						
+					
+						if(item.version > 1) {
+							$("#tableupdates").append("<tr>" + 
+									"<td>"+item.arxivid+"</td>" + 
+									"<td>"+item.version+"</td>" + 
+									"<td><a href=\"" + item.link + "\" title=\"" + item.summary + "\">" + item.title + "</a></td>" +
+									"<td>" + item.creator + "</td>" +
+									"</tr>");
+						}
+						
+								
+					}
+					else {
+						console.log(item);
+					}
+				});
+				//MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+				MathJax.typeset();
+			});
+		}
+	</script>
+	
+  </body>
+</html>
