@@ -107,13 +107,16 @@
 						creator: $this.find("dc\\:creator").text()   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
 					}
 					
+					// By default, we'll add the paper to a table.
 					var addit = true;
 					
-					if(item.title.includes("Helmholtz")){
-						addit = false;
-					}
+					// But we don't if the title contains a word from the following list
+					var exclusion = ["Helmholtz", "Galerkin"];					
+					addit = addit && !exclusion.some(word => item.title.includes(word));
+
 					
-					// Check for duplicates
+					// Since we may be checking more than on arXiv digest, duplicates may occur.
+					// So, check if this particular arXiv id is already in a table.
 					$("#tablenew tr").each(function() {
 						if($(this).find('td:first').text() === item.arxivid){
 							addit = false;
