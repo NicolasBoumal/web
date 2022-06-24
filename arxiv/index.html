@@ -110,9 +110,22 @@
 					// By default, we'll add the paper to a table.
 					var addit = true;
 					
-					// But we don't if the title contains a word from the following list
-					var exclusion = ["Helmholtz", "Galerkin"];					
-					addit = addit && !exclusion.some(word => item.title.includes(word));
+					// But we don't if the title contains a word from the following list.
+					// The title is converted to lower case, so list should be too.
+					var exclusion = [
+						"helmholtz",
+						"galerkin",
+						"portfolio",
+						"dividend",
+						"policy gradient",
+						"model predictive control",
+						"boundary conditions",
+						"magnetic field",
+						"fokker",
+						"mean field",
+						"insurance",
+					];					
+					addit = addit && !exclusion.some(word => item.title.toLowerCase().includes(word));
 
 					
 					// Since we may be checking more than on arXiv digest, duplicates may occur.
