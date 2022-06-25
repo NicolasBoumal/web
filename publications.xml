@@ -85,19 +85,19 @@
 	<title>Finding stationary points on bounded-rank matrices: A geometric hurdle and a smooth remedy</title>
 	<authors>E. Levin, J. Kileel and N. Boumal</authors>
 	<year>2022</year>
-	<status>to appear in Mathematical Programming</status>
+	<status>in Mathematical Programming</status>
 	<bibtex>
 @Article{levin2022stationaryrank,
   author  = {Levin, E. and Kileel, J. and Boumal, N.},
-  journal = {Mathematical Programming, to appear},
+  journal = {Mathematical Programming},
   title   = {Finding stationary points on bounded-rank matrices: A geometric hurdle and a smooth remedy},
   year    = {2022},
   doi     = {10.1007/s10107-022-01851-2}
 }
 	</bibtex>
-	<comment></comment>
+	<comment>The arXiv version contains a few details omitted in the published version.</comment>
 	<link>https://arxiv.org/abs/2107.03877</link>
-	<publisherlink></publisherlink>
+	<publisherlink>https://link.springer.com/article/10.1007/s10107-022-01851-2</publisherlink>
 	<tag>optim</tag>
 </object>
 <object id="1026">
