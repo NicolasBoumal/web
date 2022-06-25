@@ -29,6 +29,8 @@
   </head>
   <body>
 	
+	To re-activate CORS work-around, go <a href="https://cors-anywhere.herokuapp.com/corsdemo">here</a>.
+	
 	<!-- Test MathJax $x^2$. -->
   
     <h1>New papers</h1>
@@ -83,8 +85,8 @@
 	
 		// To temporarily unlock the proxy (which by-passes CORS issues),
 		// go here: https://cors-anywhere.herokuapp.com/corsdemo
-		//var proxy = 'https://cors-anywhere.herokuapp.com/';
-		var proxy = '';
+		var proxy = 'https://cors-anywhere.herokuapp.com/';
+		//var proxy = '';
 		var rssurls = ["https://export.arxiv.org/rss/math.NA", 
 					    "https://export.arxiv.org/rss/math.OC"];
 		for(var k = 0; k < rssurls.length; ++k) {
