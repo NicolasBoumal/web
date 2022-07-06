@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
-<object id="1029">
+<object id="1028">
 	<type>preprint</type>
 	<title>Computing second-order points under equality constraints: revisiting Fletcher's augmented Lagrangian</title>
 	<authors>F. Goyens, A. Eftekhari and N. Boumal</authors>
@@ -17,25 +17,6 @@
 	</bibtex>
 	<comment></comment>
 	<link>http://arxiv.org/abs/2204.01448</link>
-	<publisherlink></publisherlink>
-	<tag>optimization</tag>
-</object>
-<object id="1028">
-	<type>preprint</type>
-	<title>Negative curvature obstructs acceleration for geodesically convex optimization, even with exact first-order oracles</title>
-	<authors>C. Criscitiello and N. Boumal</authors>
-	<year>2021</year>
-	<status>available on ArXiv</status>
-	<bibtex>
-@Article{criscitiello2021negativecurvature,
-  author  = {Criscitiello, C. and Boumal, N.},
-  journal = {arXiv 2111.13263},
-  title   = {Negative curvature obstructs acceleration for geodesically convex optimization, even with exact first-order oracles},
-  year    = {2021}
-}
-	</bibtex>
-	<comment>An abridged version will appear in the proceedings of COLT 2022.</comment>
-	<link>http://arxiv.org/abs/2111.13263</link>
 	<publisherlink></publisherlink>
 	<tag>optimization</tag>
 </object>
@@ -657,6 +638,33 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 
 
 
+
+<object id="2018">
+	<type>conference</type>
+	<title>Negative curvature obstructs acceleration for geodesically convex optimization, even with exact first-order oracles</title>
+	<authors>C. Criscitiello and N. Boumal</authors>
+	<year>2022</year>
+	<status>in the proceedings of COLT</status>
+	<bibtex>
+@InProceedings{criscitiello2022negativecurvature,
+  title = 	 {Negative curvature obstructs acceleration for strongly geodesically convex optimization, even with exact first-order oracles},
+  author =       {Criscitiello, C. and Boumal, N.},
+  booktitle = 	 {Proceedings of Thirty Fifth Conference on Learning Theory},
+  pages = 	 {496--542},
+  year = 	 {2022},
+  editor = 	 {Loh, P.-L. and Raginsky, M.},
+  volume = 	 {178},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {02--05 Jul},
+  publisher =    {PMLR},
+  url = 	 {https://proceedings.mlr.press/v178/criscitiello22a.html}
+}
+	</bibtex>
+	<comment>An extended version is available on arXiv.</comment>
+	<link>http://arxiv.org/abs/2111.13263</link>
+	<publisherlink>https://proceedings.mlr.press/v178/criscitiello22a</publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="2017">
 	<type>conference</type>
 	<title>Generalization of Quasi-Newton Methods: Application to Robust Symmetric Multisecant Updates</title>
