@@ -194,7 +194,7 @@
 							$("#tableupdates").append("<tr>" + 
 									"<td>"+item.arxivid+"</td>" + 
 									"<td>"+item.version+"</td>" + 
-									"<td><a href=\"" + item.link + "\" title=\"" + item.summary + "\">" + item.title + "</a></td>" +
+									"<td><a href=\"" + item.link + "\" title=\"" + escapeHtml(item.summary) + "\">" + item.title + "</a></td>" +
 									"<td>" + item.creator + "</td>" +
 									"</tr>");
 						}
