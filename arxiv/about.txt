@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Cambo
+- Font Author: Copyright (c) 2011, Carolina Giovagnoli (caro@huertatipografica.com.ar), Copyright (c) 2011, Andres Torresi (andres@huertatipografica.com.ar), with Reserved Font Name Cambo.
+- Font Source: http://fonts.gstatic.com/s/cambo/v14/IFSqHeNEk8FJk416ok7xkPm8.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
