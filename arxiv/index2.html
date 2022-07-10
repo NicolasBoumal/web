@@ -39,7 +39,9 @@
 	<br/>
 	
 	<p>
-		Today's announcements on arXiv lists math.NA and math.OC, with some filtered out based on keywords.
+		Recent announcements on arXiv lists, with some filtered out based on keywords.
+		<ul id="listdigests">
+		</ul>
 	</p>
 	
 	<!--
@@ -114,13 +116,19 @@
 		// https://css-tricks.com/proxying-third-party-javascript-as-first-party-javascript-and-the-potential-effect-on-analytics/
 		// https://developers.cloudflare.com/workers/examples/alter-headers/
 		// https://developers.cloudflare.com/workers/examples/cors-header-proxy/
-		var rssurls = ["https://arxiv-math-na.nicolasboumal.workers.dev/",
-                       "https://arxiv-math-oc.nicolasboumal.workers.dev/"];
+		var rssurls = ["https://arxiv-math-oc.nicolasboumal.workers.dev/",
+                       "https://arxiv-math-na.nicolasboumal.workers.dev/"];
 		for(var k = 0; k < rssurls.length; ++k) {
 			$.get(proxy + rssurls[k], function(data) {
 				// console.log(data);
 				var re = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
 				var $xml = $(data);
+				var date = new Date($xml.find("channel").find("dc\\:date").text());
+				$("#listdigests").append('<li>' + 
+											$xml.find("channel").find("dc\\:subject").text() +
+											', ' + 
+											date.toDateString() +
+										 '</li>');
 				$xml.find("item").each(function() {
 					var $this = $(this);
 					var fulltitle = $this.find("title").text();
