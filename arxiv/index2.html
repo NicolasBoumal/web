@@ -123,7 +123,8 @@
 		for(var k = 0; k < rssurls.length; ++k) {
 			$.get(proxy + rssurls[k], function(data) {
 				// console.log(data);
-				var re = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
+				var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
+				var re_summary = /^<p>([^]+)\n<\/p>\n$/; // RegExp to parse abstract; could also just remove the first 3 and last 6 characters...
 				var $xml = $(data);
 				var date = new Date($xml.find("channel").find("dc\\:date").text());
 				$("#listdigests").append('<li>' + 
@@ -134,7 +135,7 @@
 				$xml.find("item").each(function() {
 					var $this = $(this);
 					var fulltitle = $this.find("title").text();
-					var titleparts = re.exec(fulltitle);
+					var titleparts = re_title.exec(fulltitle);
 					var item = {
 						title: titleparts[1],
 						arxivid: titleparts[2],
@@ -143,7 +144,7 @@
 						updated: (titleparts[5] === 'UPDATED'),
 						crosslisted: (titleparts[5] === 'CROSS LISTED'), // not sure what happens if both UPDATED & CROSS-LISTED...
 						link: $this.find("link").text(),
-						summary: $this.find("description").text(),
+						summary: re_summary.exec($this.find("description").text())[1],
 						creator: $this.find("dc\\:creator").text()   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
 					}
 					
@@ -217,7 +218,7 @@
 							
 							$("#tablenew").append("<tr>" + 
 									"<td>"+item.arxivid+"</td>" + 
-									"<td><a href=\"" + item.link + "\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"" + escapeHtml(item.summary) + "\">" + item.title + "</a></td>" +
+									"<td><a target=\"_blank\" href=\"" + item.link + "\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"" + escapeHtml(item.summary) + "\">" + item.title + "</a></td>" +
 									"<td>" + item.creator + "</td>" +
 									"</tr>");
 						}
@@ -227,7 +228,7 @@
 							$("#tableupdates").append("<tr>" + 
 									"<td>"+item.arxivid+"</td>" + 
 									"<td>"+item.version+"</td>" + 
-									"<td><a href=\"" + item.link + "\" title=\"" + escapeHtml(item.summary) + "\">" + item.title + "</a></td>" +
+									"<td><a target=\"_blank\" href=\"" + item.link + "\" title=\"" + escapeHtml(item.summary) + "\">" + item.title + "</a></td>" +
 									"<td>" + item.creator + "</td>" +
 									"</tr>");
 						}
