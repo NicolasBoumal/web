@@ -679,7 +679,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
   url = 	 {https://proceedings.mlr.press/v178/criscitiello22a.html}
 }
 	</bibtex>
-	<comment>An extended version is available on arXiv. Congratulations to Chris for the &lt;a href="https://twitter.com/iccopt2022/status/1552130561719865345?s=20"&gt;ICCOPT 2022 Best Paper for Young Researchers Prize&lt;/a&gt;!</comment>
+	<comment>An extended version is available on arXiv. Congratulations to Chris for the &lt;a target="_blank" href="https://twitter.com/iccopt2022/status/1552130561719865345?s=20"&gt;ICCOPT 2022 Best Paper for Young Researchers Prize&lt;/a&gt;!</comment>
 	<link>http://arxiv.org/abs/2111.13263</link>
 	<publisherlink>https://proceedings.mlr.press/v178/criscitiello22a</publisherlink>
 	<tag>optimization</tag>
