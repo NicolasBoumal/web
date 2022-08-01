@@ -390,7 +390,7 @@
   doi     = {10.1137/17M1122025}
 }
 	</bibtex>
-	<comment>Congratulations to Yiqiao (Joe) for his &lt;a href="https://www.siam.org/conferences/CM/P/SE/an18-special-events"&gt;SIAM best student paper prize!</comment>
+	<comment>Congratulations to Yiqiao (Joe) for his &lt;a href="https://www.siam.org/conferences/CM/P/SE/an18-special-events"&gt;SIAM best student paper prize!&lt;/a&gt;</comment>
 	<link>https://arxiv.org/abs/1703.06605</link>
 	<publisherlink>https://epubs.siam.org/doi/abs/10.1137/17M1122025</publisherlink>
 	<tag>synchro</tag>
@@ -679,7 +679,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
   url = 	 {https://proceedings.mlr.press/v178/criscitiello22a.html}
 }
 	</bibtex>
-	<comment>An extended version is available on arXiv.</comment>
+	<comment>An extended version is available on arXiv. Congratulations to Chris for the &lt;a href="https://twitter.com/iccopt2022/status/1552130561719865345?s=20&t=LZnh5E-CKmJdWGX__0dVnA"&gt;ICCOPT 2022 Best Paper for Young Researcher Prize&lt;/a&gt;!</comment>
 	<link>http://arxiv.org/abs/2111.13263</link>
 	<publisherlink>https://proceedings.mlr.press/v178/criscitiello22a</publisherlink>
 	<tag>optimization</tag>
