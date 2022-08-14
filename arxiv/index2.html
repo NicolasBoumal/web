@@ -272,7 +272,7 @@
 					
 						if(item.version == 1) {
 							
-							$("#tablenew").append("<tr>" + 
+							$("#tablenew").append("<tr onclick='$(this).toggleClass(\"table-info\")'>" + 
 									"<td>"+item.arxivid+"</td>" + 
 									"<td><a target=\"_blank\" href=\"" + item.link + "\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"" + escapeHtml(item.summary) + "\">" + item.title + "</a></td>" +
 									"<td>" + item.creator + "</td>" +
@@ -281,7 +281,7 @@
 						
 					
 						if(item.version > 1) {
-							$("#tableupdates").append("<tr>" + 
+							$("#tableupdates").append("<tr onclick='$(this).toggleClass(\"table-info\")'>" + 
 									"<td>"+item.arxivid+"</td>" + 
 									"<td>"+item.version+"</td>" + 
 									"<td><a target=\"_blank\" href=\"" + item.link + "\" title=\"" + escapeHtml(item.summary) + "\">" + item.title + "</a></td>" +
