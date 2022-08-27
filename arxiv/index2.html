@@ -32,6 +32,11 @@
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js" crossorigin="anonymous"></script>
 	-->
 	
+	<!--
+	<link href="jquery-dynatable-master/jquery.dynatable.css" rel="stylesheet" />
+	<script src="jquery-dynatable-master/jquery.dynatable.js"> $('#tablenew').dynatable(); </script>
+	-->
+	
 	<script>
 		MathJax = {
 		  tex: {
@@ -39,7 +44,8 @@
 		  }
 		};
 	</script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">		</script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
   </head>
   <body>
   <div class="container">
@@ -55,22 +61,20 @@
 	
 	<table>
 		<tr>
-			<td># papers filtered out (may be multi-counted if duplicate across lists):&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td id="counter-filtered">0</td>
+			<td># new papers shown:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td id="counter-new-shown">0</td>
 		</tr>
 		<tr>
-			<td># papers that occurred in a list after being displayed from an earlier one (hence not displayed again):&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td id="counter-duplicate">0</td>
+			<td># updated papers shown:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td id="counter-updated-shown">0</td>
+		</tr>
+		<tr>
+			<td># papers filtered out:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td id="counter-filtered">0</td>
 		</tr>
 	</table>
 	
 	<br/>
-	
-	<!--
-	To re-activate CORS work-around, go <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="_blank">here</a>.
-	-->
-	
-	<!-- Test MathJax $x^2$. -->
   
     <h1>New papers</h1>
 	
@@ -107,46 +111,160 @@
 	
 	<script>
 	
-		/*
-		var entityMap = {
-		  '&': '&amp;',
-		  '<': '&lt;',
-		  '>': '&gt;',
-		  '"': '&quot;',
-		  "'": '&#39;',
-		  '/': '&#x2F;',
-		  '`': '&#x60;',
-		  '=': '&#x3D;'
-		};
-
-		function escapeHtml(string) {
-		  return String(string).replace(/[&<>"'`=\/]/g, function (s) {
-			return entityMap[s];
-		  });
-		}
-		*/
+		// This table is meant to contain the full list of papers in today's arXiv digest, for the selected categories.
+		// Each element is a {} with fields:
+		//  id, version, title, authors, category, updated, crosslisted, link, summary, hide, selected
+		var digest = [];
 		
 		const escapeHtml = (unsafe) => {
-			return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+			return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;')
+			             .replaceAll('>', '&gt;').replaceAll('"', '&quot;')
+						 .replaceAll("'", '&#039;').replaceAll("/", '&#x2F;')
+						 .replaceAll("`", '&#x60;').replaceAll("=", '&#x3D;');
 		}
 	
-		// To temporarily unlock the proxy (which by-passes CORS issues),
-		// go here: https://cors-anywhere.herokuapp.com/corsdemo
-		//var proxy = 'https://cors-anywhere.herokuapp.com/';
-		var proxy = '';
-		//var rssurls = ["https://export.arxiv.org/rss/math.NA", 
-		//			    "https://export.arxiv.org/rss/math.OC"];
+		const filterOut = (article) => {
+			// We want to hide this paper if the title contains a word from the following list.
+			// The title is converted to lower case, so the list should be too.
+			var exclusion = [
+				"helmholtz",
+				"galerkin",
+				"fokker",
+				"navier",
+				"stokes",
+				"volterra",
+				"pontryagin",
+				"koopman",
+				"karhunen",
+				"runge-kutta",
+				"runge kutta",
+				"hilliard",
+				"maxwell",
+				"burgers",
+				"portfolio",
+				"dividend",
+				"black-scholes",
+				"stock option",
+				"policy gradient",
+				"model predictive control",
+				"boundary conditions",
+				"boundary integral",
+				"boundary element",
+				"boundary value problem",
+				"magnetic field",
+				"elastic scatering",
+				"hyperelastic",
+				"wave equation",
+				"reduced basis",
+				"mean field",
+				"insurance",
+				"revenue",
+				"investment",
+				"finite element",
+				"finite-element",
+				"hydroelastic",
+				"elastodynamic",
+				"physics informed",
+				"physics-informed",
+				"fuzzy logic",
+				"model order reduction",
+				"mesh adaptation",
+				"dirichlet energy",
+				"dirichlet problem",
+				"elliptic operator",
+				"turbulen",
+				"laminar",
+				"conservation laws",
+				"hydrodynamic",
+				"lubrication",
+				"multigrid",
+				"covid-19",
+				"covid 19",
+				"pandemic",
+				"mixed integer",
+				"mixed-integer",
+				"mesh refinement",
+				"pde ",
+				" pde",
+				"pdes ",
+				"pde-constrain",
+				"partial differential",	
+				"seismic",
+				"vehicle",
+				"waveguide",
+				"parabolic differential",
+				"parabolic problem",
+				"porous medi",
+				"federated learning",
+				"bandit",
+				"integro-differential",
+				"shallow water",
+				"convection diffusion",
+				"multiobjective",
+				"multi-objective",
+				"isogeometric",
+			];
+			// If the title contains any word from the list, return true.
+			return exclusion.some(word => article.title.toLowerCase().includes(word));
+		}
+
+
+		const containsId = (id) => {
+			return digest.some(article => article.id === id);
+		}
+		
+		const addToDigest = (article) => {
+	
+			// If the article is already in the list, skip.
+			if(containsId(article.id)) {
+				return;
+			}
+			
+			digest.push(article);
+
+			if(!article.hide && article.version == 1) {
+				$("#tablenew").append("<tr onclick='$(this).toggleClass(\"table-info\")'>" + 
+						"<td>" + article.id + "</td>" + 
+						"<td><a target=\"_blank\" href=\"" + article.link + "\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"" + escapeHtml(article.summary) + "\">" + article.title + "</a></td>" +
+						"<td>" + article.authors + "</td>" +
+						"</tr>");
+			}
+			
+		
+			if(!article.hide && article.version > 1) {
+				$("#tableupdates").append("<tr onclick='$(this).toggleClass(\"table-info\")'>" + 
+						"<td>" + article.id + "</td>" + 
+						"<td>" + article.version + "</td>" + 
+						"<td><a target=\"_blank\" href=\"" + article.link + "\" title=\"" + escapeHtml(article.summary) + "\">" + article.title + "</a></td>" +
+						"<td>" + article.authors + "</td>" +
+						"</tr>");
+			}
+			
+			//MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+			MathJax.typeset();
+
+		}
+
+		const updateCounters = () => {
+			var counter_new_shown = digest.filter(article => !article.hide && !article.updated).length;
+			var counter_updated_shown = digest.filter(article => !article.hide && article.updated).length;
+			var counter_filtered = digest.filter(article => article.hide).length;
+
+			$("#counter-new-shown").text(counter_new_shown);
+			$("#counter-updated-shown").text(counter_updated_shown);
+			$("#counter-filtered").text(counter_filtered);
+		}
 		
 		// https://css-tricks.com/proxying-third-party-javascript-as-first-party-javascript-and-the-potential-effect-on-analytics/
 		// https://developers.cloudflare.com/workers/examples/alter-headers/
 		// https://developers.cloudflare.com/workers/examples/cors-header-proxy/
 		var rssurls = ["https://arxiv-math-oc.nicolasboumal.workers.dev/",
                        "https://arxiv-math-na.nicolasboumal.workers.dev/"];
-		for(var k = 0; k < rssurls.length; ++k) {
-			$.get(proxy + rssurls[k], function(data) {
-				// console.log(data);
-				var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
-				var re_summary = /^<p>([^]+)\n<\/p>\n$/; // RegExp to parse abstract; could also just remove the first 3 and last 6 characters...
+		var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
+		var re_summary = /^<p>([^]+)\n<\/p>\n$/; // RegExp to parse abstract; could also just remove the first 3 and last 6 characters...
+		
+		rssurls.forEach(url => {
+			$.get(url, function(data) {
 				var $xml = $(data);
 				var date = new Date($xml.find("channel").find("dc\\:date").text());
 				$("#listdigests").append('<li>' + 
@@ -158,156 +276,34 @@
 					var $this = $(this);
 					var fulltitle = $this.find("title").text();
 					var titleparts = re_title.exec(fulltitle);
-					var item = {
-						title: titleparts[1],
-						arxivid: titleparts[2],
+					var article = {
+						id: titleparts[2],
 						version: Number(titleparts[3]),
+						title: titleparts[1],
+						authors: $this.find("dc\\:creator").text(),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
 						category: titleparts[4],
 						updated: (titleparts[5] === 'UPDATED'),
 						crosslisted: (titleparts[5] === 'CROSS LISTED'), // not sure what happens if both UPDATED & CROSS-LISTED...
 						link: $this.find("link").text(),
 						summary: re_summary.exec($this.find("description").text())[1],
-						creator: $this.find("dc\\:creator").text()   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
-					}
-					
-					// By default, we'll add the paper to a table.
-					var addit = true;
-					
-					// But we don't if the title contains a word from the following list.
-					// The title is converted to lower case, so list should be too.
-					var exclusion = [
-						"helmholtz",
-						"galerkin",
-						"fokker",
-						"navier",
-						"stokes",
-						"volterra",
-						"pontryagin",
-						"koopman",
-						"karhunen",
-						"runge-kutta",
-						"runge kutta",
-						"hilliard",
-						"maxwell",
-						"burgers",
-						"portfolio",
-						"dividend",
-						"black-scholes",
-						"stock option",
-						"policy gradient",
-						"model predictive control",
-						"boundary conditions",
-						"boundary integral",
-						"boundary element",
-						"boundary value problem",
-						"magnetic field",
-						"elastic scatering",
-						"hyperelastic",
-						"wave equation",
-						"reduced basis",
-						"mean field",
-						"insurance",
-						"revenue",
-						"investment",
-						"finite element",
-						"finite-element",
-						"hydroelastic",
-						"elastodynamic",
-						"physics informed",
-						"physics-informed",
-						"fuzzy logic",
-						"model order reduction",
-						"mesh adaptation",
-						"dirichlet energy",
-						"dirichlet problem",
-						"elliptic operator",
-						"turbulen",
-						"laminar",
-						"conservation laws",
-						"hydrodynamic",
-						"lubrication",
-						"multigrid",
-						"covid-19",
-						"covid 19",
-						"pandemic",
-						"mixed integer",
-						"mixed-integer",
-						"mesh refinement",
-						"pde ",
-						" pde",
-						"pdes ",
-						"pde-constrain",
-						"partial differential",	
-						"seismic",
-						"vehicle",
-						"waveguide",
-						"parabolic differential",
-						"parabolic problem",
-						"porous medi",
-						"federated learning",
-						"bandit",
-						"integro-differential",
-						"shallow water",
-						"convection diffusion",
-						"multiobjective",
-						"multi-objective",
-						"isogeometric",
-					];					
-					addit = addit && !exclusion.some(word => item.title.toLowerCase().includes(word));
+						hide: false,
+						selected: false
+					};
 
+					// Determine whether it should be hidden or not.
+					article.hide = filterOut(article);
+					
+					// Add to the collection (this takes care of updating html).
+					addToDigest(article);
 
-					if(!addit) {
-						$("#counter-filtered").text(Number($("#counter-filtered").text())+1);
-					}
+				}); // end for each item in xml
 
-					
-					// Since we may be checking more than on arXiv digest, duplicates may occur.
-					// So, check if this particular arXiv id is already in a table.
-					$("#tablenew tr").each(function() {
-						if($(this).find('td:first').text() === item.arxivid){
-							addit = false;
-							$("#counter-duplicate").text(Number($("#counter-duplicate").text())+1);
-						}
-					});
-					$("#tableupdates tr").each(function() {
-						if($(this).find('td:first').text() === item.arxivid){
-							addit = false;
-							$("#counter-duplicate").text(Number($("#counter-duplicate").text())+1);
-						}
-					});
-					
-					
-					if(addit) {
-					
-						if(item.version == 1) {
-							
-							$("#tablenew").append("<tr onclick='$(this).toggleClass(\"table-info\")'>" + 
-									"<td>"+item.arxivid+"</td>" + 
-									"<td><a target=\"_blank\" href=\"" + item.link + "\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"" + escapeHtml(item.summary) + "\">" + item.title + "</a></td>" +
-									"<td>" + item.creator + "</td>" +
-									"</tr>");
-						}
-						
-					
-						if(item.version > 1) {
-							$("#tableupdates").append("<tr onclick='$(this).toggleClass(\"table-info\")'>" + 
-									"<td>"+item.arxivid+"</td>" + 
-									"<td>"+item.version+"</td>" + 
-									"<td><a target=\"_blank\" href=\"" + item.link + "\" title=\"" + escapeHtml(item.summary) + "\">" + item.title + "</a></td>" +
-									"<td>" + item.creator + "</td>" +
-									"</tr>");
-						}
-						
-								
-					}
-					else {
-						console.log(item);
-					}
-				});
-				//MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-				MathJax.typeset();
-			});
-		}
+				// The digest likely changed substantially: update displayed counters.
+				updateCounters();
+
+			}); // end get url
+		}); // end for each url
+
 	</script>
 	
   </div>
