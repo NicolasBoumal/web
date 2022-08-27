@@ -90,7 +90,7 @@
 		</tbody>
 	</table>
 	
-	<br>
+	<br/>
   
     <h1>Updated papers</h1>
 	
@@ -107,6 +107,24 @@
 		</tbody>
 	</table>
 	
+	<br/>
+  
+    <h1>Selected papers</h1>
+	
+	<table id="tableselected" class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Title</th>
+				<th scope="col">Authors</th>
+				<th scope="col">Abstract</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	
+	<br/>
 	<br/>
 	
 	<script>
@@ -209,21 +227,21 @@
 		}
 
 
-		const containsId = (id) => {
+		const digestContains = (id) => {
 			return digest.some(article => article.id === id);
 		}
 		
 		const addToDigest = (article) => {
 	
 			// If the article is already in the list, skip.
-			if(containsId(article.id)) {
+			if(digestContains(article.id)) {
 				return;
 			}
 			
 			digest.push(article);
 
 			if(!article.hide && article.version == 1) {
-				$("#tablenew").append("<tr onclick='$(this).toggleClass(\"table-info\")'>" + 
+				$("#tablenew").append("<tr onclick='toggleSelection($(this))'>" +  // $(this).toggleClass(\"table-info\")
 						"<td>" + article.id + "</td>" + 
 						"<td><a target=\"_blank\" href=\"" + article.link + "\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"" + escapeHtml(article.summary) + "\">" + article.title + "</a></td>" +
 						"<td>" + article.authors + "</td>" +
@@ -232,7 +250,7 @@
 			
 		
 			if(!article.hide && article.version > 1) {
-				$("#tableupdates").append("<tr onclick='$(this).toggleClass(\"table-info\")'>" + 
+				$("#tableupdates").append("<tr onclick='toggleSelection($(this))'>" + 
 						"<td>" + article.id + "</td>" + 
 						"<td>" + article.version + "</td>" + 
 						"<td><a target=\"_blank\" href=\"" + article.link + "\" title=\"" + escapeHtml(article.summary) + "\">" + article.title + "</a></td>" +
@@ -242,8 +260,8 @@
 			
 			//MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 			MathJax.typeset();
-
 		}
+
 
 		const updateCounters = () => {
 			var counter_new_shown = digest.filter(article => !article.hide && !article.updated).length;
@@ -254,6 +272,33 @@
 			$("#counter-updated-shown").text(counter_updated_shown);
 			$("#counter-filtered").text(counter_filtered);
 		}
+
+
+		const toggleSelection = ($row) => {
+			$row.toggleClass("table-info");
+			var id = $row.find('td:first').text();
+			var k = digest.findIndex(article => article.id === id);
+			digest[k].selected = !digest[k].selected;
+			var article = digest[k];
+			if(article.selected) {
+				$("#tableselected").append("<tr>" +
+						"<td>" + article.id + "</td>" + 
+						"<td><a target=\"_blank\" href=\"" + article.link + "\">" + article.title + "</a></td>" +
+						"<td>" + article.authors + "</td>" +
+						"<td>" + escapeHtml(article.summary) + "</td>" +
+						"</tr>");
+			}
+			else {
+				$("#tableselected").find("tr").each(function() {
+					$thisrow = $(this);
+					if($thisrow.find('td:first').text() === id) {
+						$thisrow.remove();
+					}
+				});
+			}
+		}
+
+
 		
 		// https://css-tricks.com/proxying-third-party-javascript-as-first-party-javascript-and-the-potential-effect-on-analytics/
 		// https://developers.cloudflare.com/workers/examples/alter-headers/
