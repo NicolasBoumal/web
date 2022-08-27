@@ -920,7 +920,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 }
 	</bibtex>
 	<comment>&lt;a href="https://www.youtube.com/watch?v=eTnrGDmdvAM"&gt;Video of the talk&lt;/a&gt; (20')</comment>
-	<link>papers/Boumal_-_Riemannian_trust_regions_with_finite_difference_Hessian_approximations_are_globally_convergent_-_2015.pdf</link>
+	<link>papers/Boumal_Riemannian_trust_regions_with_finite_difference_Hessian_approximations_are_globally_convergent_2015.pdf</link>
 	<publisherlink>http://link.springer.com/chapter/10.1007/978-3-319-25040-3_50#</publisherlink>
 	<tag>manopt</tag>
 </object>
