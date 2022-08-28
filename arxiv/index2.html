@@ -125,16 +125,18 @@
 	</table>
 	
 	<br/>
-	
+
 	<!-- https://help.socialintents.com/article/148-how-to-find-your-slack-team-id-and-slack-channel-id -->
 	<!-- #general on optimepfl: https://app.slack.com/client/T01B6UR5KME/C01AABV7X70 -->
 	<!-- https://api.slack.com/messaging/webhooks -->
 	<!-- https://api.slack.com/reference/deep-linking -->
+	<!--
 	Best on mobile: <a href="slack://channel?team=T01B6UR5KME&id=C01AABV7X70" target="_blank">open #general slack channel with slack://</a><br/>
 	Not sure about this one: <a href="https://slack.com/app_redirect?channel=general" target="_blank">open #general slack channel with slack.com/app_redirect</a><br/>
 	Best on desktop: <a href="https://app.slack.com/client/T01B6UR5KME/C01AABV7X70" target="_blank">open #general slack channel with direct url</a>
 	<br/>
 	<br/>
+	-->
   
     <h1>Selected papers</h1>
 	
@@ -308,7 +310,7 @@
 			var article = getArticle(id);
 			var text = escapeHtml(article.title) + 
 						"\r\n" + article.authors +
-						"\r\n" + article.link + 
+						"\r\n" + article.link +
 						((article.updated) ? " (updated, v" + article.version + ")" : "") +
 						"\r\n" +
 						"\r\n" + extractTextFromHtml(article.summary);
@@ -318,15 +320,38 @@
 			setTimeout(() => {$button.html(oldtext);}, 1000);
 		}
 
+		const toSlack = (id, $button) => {
+			var article = getArticle(id);
+			var text = escapeHtml(article.title) + 
+						"\r\n" + article.authors +
+						"\r\n" + article.link +
+						((article.updated) ? " (updated, v" + article.version + ")" : "") +
+						"\r\n" +
+						"\r\n>" + extractTextFromHtml(article.summary);
+			
+			var scrambled = 'ksmGKsdCEmW2nsbHkRcR0V85/3imNhBree/uvtspo604UDM/sa/w:TL0lR./.6bw1W/TcohopBczWltGc';
+			var clarity = [71, 79, 38, 73, 49, 53, 25, 60, 30, 70, 72, 1, 6, 61, 14, 78, 50, 75, 17, 59, 69, 41, 28, 48, 39, 34, 32, 37, 27, 19, 33, 2, 35, 54, 43, 65, 31, 62, 45, 18, 24, 5, 47, 9, 67, 74, 21, 44, 56, 20, 55, 68, 26, 12, 16, 11, 51, 46, 52, 81, 7, 36, 3, 58, 80, 42, 29, 23, 4, 64, 15, 10, 63, 66, 57, 40, 76, 77, 22, 8, 13];
+			var url = '';
+			clarity.forEach((k) => { url = url + scrambled[k-1]; });
+			var data = {text: text};
+			$.post(url, JSON.stringify(data))
+					.done(() => { var oldtext = $button.html(); $button.html("&#x2713;"); setTimeout(() => {$button.html(oldtext);}, 1000); })
+					.fail(function(jqxhr, settings, ex) { var oldtext = $button.html(); $button.html("&#10060;"); setTimeout(() => {$button.html(oldtext);}, 1000); });
+		}
+
 		const toggleSelection = (id) => {
 			var k = digest.findIndex(article => article.id === id);
 			digest[k].selected = !digest[k].selected;
 			var article = digest[k];
 			if(article.selected) {
 				$("#listselected").append("<li id=\"" + sanitizeId(article.id) + "\">" +
+						//"<div style=\"align-items:center;\">" + // so buttons are aligned with text; didn't work
 						"<a target=\"_blank\" href=\"" + article.link + "\">" + escapeHtml(article.title) + "</a>" +
 						((article.updated) ? " (updated, v" + article.version + ")" : "") +
-						" <a href=\"\" style=\"text-decoration: none\" title=\"Copy to clipboard\" onclick=\"toClipboard('" + article.id + "', $(this)); return false;\">&#x1F4CB;</a>" + // https://stackoverflow.com/questions/2409836/how-to-set-cursor-style-to-pointer-for-links-without-hrefs
+						// https://stackoverflow.com/questions/2409836/how-to-set-cursor-style-to-pointer-for-links-without-hrefs
+						" <a href=\"\" style=\"text-decoration: none\" title=\"Copy to clipboard\" onclick=\"toClipboard('" + article.id + "', $(this)); return false;\">&#x1F4CB;</a>" +
+						" <a href=\"\" style=\"text-decoration: none\" title=\"Send to slack\" onclick=\"toSlack('" + article.id + "', $(this)); return false;\"><img src=\"slack.png\" width=\"16px\" style=\"padding-bottom: 4px;\"/></a>" +
+						//"</div>" +
 						"<br/><i>" + article.authors + "</i>" +
 						"<br/>" + article.summary +
 						"</li>");
