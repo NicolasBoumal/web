@@ -137,18 +137,7 @@
   
     <h1>Selected papers</h1>
 	
-	<table id="tableselected" class="table table-striped">
-		<thead>
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">Title</th>
-				<th scope="col">Authors</th>
-				<th scope="col">Abstract</th>
-			</tr>
-		</thead>
-		<tbody>
-		</tbody>
-	</table>
+	<ul id="listselected"></ul>
 	
 	<br/>
 	<br/>
@@ -299,6 +288,9 @@
 			$("#counter-filtered").text(counter_filtered);
 		}
 
+		const sanitizeId = (id) => {
+			return "z" + id.replaceAll(".", "");
+		}
 
 		const toggleSelection = ($row) => {
 			$row.toggleClass("table-info");
@@ -307,20 +299,21 @@
 			digest[k].selected = !digest[k].selected;
 			var article = digest[k];
 			if(article.selected) {
-				$("#tableselected").append("<tr>" +
-						"<td>" + article.id + "</td>" + 
-						"<td><a target=\"_blank\" href=\"" + article.link + "\">" + article.title + "</a></td>" +
-						"<td>" + article.authors + "</td>" +
-						"<td>" + escapeHtml(article.summary) + "</td>" +
-						"</tr>");
+				$("#listselected").append("<li id=\"" + sanitizeId(article.id) + "\">" +
+						"<a target=\"_blank\" href=\"" + article.link + "\">" + article.title + "</a><br/>" +
+						article.authors + "<br/>" +
+						escapeHtml(article.summary) + "</li>");
 			}
 			else {
-				$("#tableselected").find("tr").each(function() {
-					$thisrow = $(this);
-					if($thisrow.find('td:first').text() === id) {
-						$thisrow.remove();
+				$("#" + sanitizeId(id)).remove();
+				/*
+				$("#listselected").find("li").each(function() {
+					$thisitem = $(this);
+					if($thisitem.find('td:first').text() === id) {
+						$thisitem.remove();
 					}
 				});
+				*/
 			}
 		}
 
