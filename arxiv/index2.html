@@ -69,15 +69,6 @@
 	
 	<br/>
 	<br/>
-	<!-- https://help.socialintents.com/article/148-how-to-find-your-slack-team-id-and-slack-channel-id -->
-	<!-- #general on optimepfl: https://app.slack.com/client/T01B6UR5KME/C01AABV7X70 -->
-	<!-- https://api.slack.com/messaging/webhooks -->
-	<!-- https://api.slack.com/reference/deep-linking -->
-	Best on mobile: <a href="slack://channel?team=T01B6UR5KME&id=C01AABV7X70" target="_blank">open #general slack channel with slack://</a><br/>
-	Not sure about this one: <a href="https://slack.com/app_redirect?channel=general" target="_blank">open #general slack channel with slack.com/app_redirect</a><br/>
-	Best on desktop: <a href="https://app.slack.com/client/T01B6UR5KME/C01AABV7X70" target="_blank">open #general slack channel with direct url</a>
-	<br/>
-	<br/>
 	
 	<p>
 		Recent announcements on arXiv lists, with some filtered out based on keywords.
@@ -134,6 +125,16 @@
 	</table>
 	
 	<br/>
+	
+	<!-- https://help.socialintents.com/article/148-how-to-find-your-slack-team-id-and-slack-channel-id -->
+	<!-- #general on optimepfl: https://app.slack.com/client/T01B6UR5KME/C01AABV7X70 -->
+	<!-- https://api.slack.com/messaging/webhooks -->
+	<!-- https://api.slack.com/reference/deep-linking -->
+	Best on mobile: <a href="slack://channel?team=T01B6UR5KME&id=C01AABV7X70" target="_blank">open #general slack channel with slack://</a><br/>
+	Not sure about this one: <a href="https://slack.com/app_redirect?channel=general" target="_blank">open #general slack channel with slack.com/app_redirect</a><br/>
+	Best on desktop: <a href="https://app.slack.com/client/T01B6UR5KME/C01AABV7X70" target="_blank">open #general slack channel with direct url</a>
+	<br/>
+	<br/>
   
     <h1>Selected papers</h1>
 	
@@ -157,6 +158,7 @@
 		}
 
 		// arXiv digest surrounds each author name with an <a> tag we don't need.
+		// Likewise, abstrats have html, e.g., <p> tags.
 		// This bit of code removes the html parts.
 		const extractTextFromHtml = (text) => {
 			return $("<div>").html(text).text().trim();
@@ -262,7 +264,7 @@
 			digest.push(article);
 
 			if(!article.hide && article.version == 1) {
-				$("#tablenew").append("<tr onclick='toggleSelection($(this))'>" +  // $(this).toggleClass(\"table-info\")
+				$("#tablenew").append("<tr onclick='$(this).toggleClass(\"table-info\"); toggleSelection(\"" + article.id + "\")'>" +  // $(this).toggleClass(\"table-info\")
 						"<td>" + article.id + "</td>" + 
 						"<td><a target=\"_blank\" href=\"" + article.link + "\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"" + extractTextFromHtml(	article.summary) + "\">" + article.title + "</a></td>" +
 						"<td>" + article.authors + "</td>" +
@@ -271,7 +273,7 @@
 			
 		
 			if(!article.hide && article.version > 1) {
-				$("#tableupdates").append("<tr onclick='toggleSelection($(this))'>" + 
+				$("#tableupdates").append("<tr onclick='$(this).toggleClass(\"table-info\"); toggleSelection(\"" + article.id + "\")'>" + 
 						"<td>" + article.id + "</td>" + 
 						"<td>" + article.version + "</td>" + 
 						"<td><a target=\"_blank\" href=\"" + article.link + "\" title=\"" + extractTextFromHtml(article.summary) + "\">" + article.title + "</a></td>" +
@@ -302,26 +304,29 @@
 			return "z" + id.replaceAll(".", "");
 		}
 
-		async function toClipboard(id) {
+		async function toClipboard(id, $button) {
 			var article = getArticle(id);
 			var text = escapeHtml(article.title) + 
 						"\r\n" + article.authors +
 						"\r\n" + article.link + 
+						((article.updated) ? " (updated, v" + article.version + ")" : "") +
 						"\r\n" +
 						"\r\n" + extractTextFromHtml(article.summary);
-			await navigator.clipboard.writeText(text);
+			await navigator.clipboard.writeText(text);	
+			var oldtext = $button.html();
+			$button.html("&#x2713;");
+			setTimeout(() => {$button.html(oldtext);}, 1000);
 		}
 
-		const toggleSelection = ($row) => {
-			$row.toggleClass("table-info");
-			var id = $row.find('td:first').text();
+		const toggleSelection = (id) => {
 			var k = digest.findIndex(article => article.id === id);
 			digest[k].selected = !digest[k].selected;
 			var article = digest[k];
 			if(article.selected) {
 				$("#listselected").append("<li id=\"" + sanitizeId(article.id) + "\">" +
 						"<a target=\"_blank\" href=\"" + article.link + "\">" + escapeHtml(article.title) + "</a>" +
-						" <a onclick=\"toClipboard('" + article.id + "');\">&#x1F4CB;</a>" +
+						((article.updated) ? " (updated, v" + article.version + ")" : "") +
+						" <a href=\"\" style=\"text-decoration: none\" title=\"Copy to clipboard\" onclick=\"toClipboard('" + article.id + "', $(this)); return false;\">&#x1F4CB;</a>" + // https://stackoverflow.com/questions/2409836/how-to-set-cursor-style-to-pointer-for-links-without-hrefs
 						"<br/><i>" + article.authors + "</i>" +
 						"<br/>" + article.summary +
 						"</li>");
@@ -329,14 +334,6 @@
 			}
 			else {
 				$("#" + sanitizeId(id)).remove();
-				/*
-				$("#listselected").find("li").each(function() {
-					$thisitem = $(this);
-					if($thisitem.find('td:first').text() === id) {
-						$thisitem.remove();
-					}
-				});
-				*/
 			}
 		}
 
@@ -348,49 +345,52 @@
 		var rssurls = ["https://arxiv-math-oc.nicolasboumal.workers.dev/",
                        "https://arxiv-math-na.nicolasboumal.workers.dev/"];
 		var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
-		// var re_summary = /^<p>([^]+)\n<\/p>\n$/; // RegExp to parse abstract; could also just remove the first 3 and last 6 characters...
 		
-		rssurls.forEach(url => {
-			$.get(url, function(data) {
-				var $xml = $(data);
-				var date = new Date($xml.find("channel").find("dc\\:date").text());
-				$("#listdigests").append('<li>' + 
-											$xml.find("channel").find("dc\\:subject").text() +
-											', ' + 
-											date.toDateString() +
-										 '</li>');
-				$xml.find("item").each(function() {
-					var $this = $(this);
-					var fulltitle = $this.find("title").text();
-					var titleparts = re_title.exec(fulltitle);
-					var article = {
-						id: titleparts[2],
-						version: Number(titleparts[3]),
-						title: titleparts[1],
-						authors: extractTextFromHtml($this.find("dc\\:creator").text()),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
-						category: titleparts[4],
-						updated: (titleparts[5] === 'UPDATED'),
-						crosslisted: (titleparts[5] === 'CROSS LISTED'), // not sure what happens if both UPDATED & CROSS-LISTED...
-						link: $this.find("link").text(),
-						// summary: re_summary.exec($this.find("description").text())[1],
-						summary: $this.find("description").text(),
-						hide: false,
-						selected: false
-					};
+		$(document).ready( () => {
 
-					// Determine whether it should be hidden or not.
-					article.hide = filterOut(article);
-					
-					// Add to the collection (this takes care of updating html).
-					addToDigest(article);
+			rssurls.forEach(url => {
+				$.get(url, function(data) {
+					var $xml = $(data);
+					var date = new Date($xml.find("channel").find("dc\\:date").text());
+					$("#listdigests").append('<li>' + 
+												$xml.find("channel").find("dc\\:subject").text() +
+												', ' + 
+												date.toDateString() +
+											'</li>');
+					$xml.find("item").each(function() {
+						var $this = $(this);
+						var fulltitle = $this.find("title").text();
+						var titleparts = re_title.exec(fulltitle);
+						var article = {
+							id: titleparts[2],
+							version: Number(titleparts[3]),
+							title: titleparts[1],
+							authors: extractTextFromHtml($this.find("dc\\:creator").text()),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
+							category: titleparts[4],
+							updated: (titleparts[5] === 'UPDATED'),
+							crosslisted: (titleparts[5] === 'CROSS LISTED'), // not sure what happens if both UPDATED & CROSS-LISTED...
+							link: $this.find("link").text(),
+							// summary: re_summary.exec($this.find("description").text())[1],
+							summary: $this.find("description").text().replaceAll("\n", " "),
+							hide: false,
+							selected: false
+						};
 
-				}); // end for each item in xml
+						// Determine whether it should be hidden or not.
+						article.hide = filterOut(article);
+						
+						// Add to the collection (this takes care of updating html).
+						addToDigest(article);
 
-				// The digest likely changed substantially: update displayed counters.
-				updateCounters();
+					}); // end for each item in xml
 
-			}); // end get url
-		}); // end for each url
+					// The digest likely changed substantially: update displayed counters.
+					updateCounters();
+
+				}); // end get url
+			}); // end for each url
+
+		}); // end $(document).ready
 
 	</script>
 	
