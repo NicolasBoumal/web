@@ -74,7 +74,7 @@
 	<!-- https://api.slack.com/messaging/webhooks -->
 	<!-- https://api.slack.com/reference/deep-linking -->
 	Best on mobile: <a href="slack://channel?team=T01B6UR5KME&id=C01AABV7X70" target="_blank">open #general slack channel with slack://</a><br/>
-	<a href="https://slack.com/app_redirect?channel=general" target="_blank">open #general slack channel with slack.com/app_redirect</a><br/>
+	Not sure about this one: <a href="https://slack.com/app_redirect?channel=general" target="_blank">open #general slack channel with slack.com/app_redirect</a><br/>
 	Best on desktop: <a href="https://app.slack.com/client/T01B6UR5KME/C01AABV7X70" target="_blank">open #general slack channel with direct url</a>
 	<br/>
 	<br/>
@@ -154,6 +154,12 @@
 			             .replaceAll('>', '&gt;').replaceAll('"', '&quot;')
 						 .replaceAll("'", '&#039;').replaceAll("/", '&#x2F;')
 						 .replaceAll("`", '&#x60;').replaceAll("=", '&#x3D;');
+		}
+
+		// arXiv digest surrounds each author name with an <a> tag we don't need.
+		// This bit of code removes the html parts.
+		const extractTextFromHtml = (text) => {
+			return $("<div>").html(text).text().trim();
 		}
 	
 		const filterOut = (article) => {
@@ -258,7 +264,7 @@
 			if(!article.hide && article.version == 1) {
 				$("#tablenew").append("<tr onclick='toggleSelection($(this))'>" +  // $(this).toggleClass(\"table-info\")
 						"<td>" + article.id + "</td>" + 
-						"<td><a target=\"_blank\" href=\"" + article.link + "\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"" + escapeHtml(article.summary) + "\">" + article.title + "</a></td>" +
+						"<td><a target=\"_blank\" href=\"" + article.link + "\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"" + extractTextFromHtml(	article.summary) + "\">" + article.title + "</a></td>" +
 						"<td>" + article.authors + "</td>" +
 						"</tr>");
 			}
@@ -268,7 +274,7 @@
 				$("#tableupdates").append("<tr onclick='toggleSelection($(this))'>" + 
 						"<td>" + article.id + "</td>" + 
 						"<td>" + article.version + "</td>" + 
-						"<td><a target=\"_blank\" href=\"" + article.link + "\" title=\"" + escapeHtml(article.summary) + "\">" + article.title + "</a></td>" +
+						"<td><a target=\"_blank\" href=\"" + article.link + "\" title=\"" + extractTextFromHtml(article.summary) + "\">" + article.title + "</a></td>" +
 						"<td>" + article.authors + "</td>" +
 						"</tr>");
 			}
@@ -288,8 +294,22 @@
 			$("#counter-filtered").text(counter_filtered);
 		}
 
+		const getArticle = (id) => {
+			return digest.find(article => article.id === id);
+		}
+
 		const sanitizeId = (id) => {
 			return "z" + id.replaceAll(".", "");
+		}
+
+		async function toClipboard(id) {
+			var article = getArticle(id);
+			var text = escapeHtml(article.title) + 
+						"\r\n" + article.authors +
+						"\r\n" + article.link + 
+						"\r\n" +
+						"\r\n" + extractTextFromHtml(article.summary);
+			await navigator.clipboard.writeText(text);
 		}
 
 		const toggleSelection = ($row) => {
@@ -300,9 +320,12 @@
 			var article = digest[k];
 			if(article.selected) {
 				$("#listselected").append("<li id=\"" + sanitizeId(article.id) + "\">" +
-						"<a target=\"_blank\" href=\"" + article.link + "\">" + article.title + "</a><br/>" +
-						article.authors + "<br/>" +
-						escapeHtml(article.summary) + "</li>");
+						"<a target=\"_blank\" href=\"" + article.link + "\">" + escapeHtml(article.title) + "</a>" +
+						" <a onclick=\"toClipboard('" + article.id + "');\">&#x1F4CB;</a>" +
+						"<br/><i>" + article.authors + "</i>" +
+						"<br/>" + article.summary +
+						"</li>");
+				MathJax.typeset();
 			}
 			else {
 				$("#" + sanitizeId(id)).remove();
@@ -325,7 +348,7 @@
 		var rssurls = ["https://arxiv-math-oc.nicolasboumal.workers.dev/",
                        "https://arxiv-math-na.nicolasboumal.workers.dev/"];
 		var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
-		var re_summary = /^<p>([^]+)\n<\/p>\n$/; // RegExp to parse abstract; could also just remove the first 3 and last 6 characters...
+		// var re_summary = /^<p>([^]+)\n<\/p>\n$/; // RegExp to parse abstract; could also just remove the first 3 and last 6 characters...
 		
 		rssurls.forEach(url => {
 			$.get(url, function(data) {
@@ -344,12 +367,13 @@
 						id: titleparts[2],
 						version: Number(titleparts[3]),
 						title: titleparts[1],
-						authors: $this.find("dc\\:creator").text(),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
+						authors: extractTextFromHtml($this.find("dc\\:creator").text()),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
 						category: titleparts[4],
 						updated: (titleparts[5] === 'UPDATED'),
 						crosslisted: (titleparts[5] === 'CROSS LISTED'), // not sure what happens if both UPDATED & CROSS-LISTED...
 						link: $this.find("link").text(),
-						summary: re_summary.exec($this.find("description").text())[1],
+						// summary: re_summary.exec($this.find("description").text())[1],
+						summary: $this.find("description").text(),
 						hide: false,
 						selected: false
 					};
