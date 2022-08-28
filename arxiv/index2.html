@@ -329,14 +329,25 @@
 						"\r\n" +
 						"\r\n>" + extractTextFromHtml(article.summary);
 			
-			var scrambled = 'ksmGKsdCEmW2nsbHkRcR0V85/3imNhBree/uvtspo604UDM/sa/w:TL0lR./.6bw1W/TcohopBczWltGc';
+			var scrambled = 'ks1JKsNQE7QBAsbTkRc90cF5/7imHhBree/evtsbo303UBM/sa/v:TFVPr./.66G1a/KcohopBcWDltP7';
 			var clarity = [71, 79, 38, 73, 49, 53, 25, 60, 30, 70, 72, 1, 6, 61, 14, 78, 50, 75, 17, 59, 69, 41, 28, 48, 39, 34, 32, 37, 27, 19, 33, 2, 35, 54, 43, 65, 31, 62, 45, 18, 24, 5, 47, 9, 67, 74, 21, 44, 56, 20, 55, 68, 26, 12, 16, 11, 51, 46, 52, 81, 7, 36, 3, 58, 80, 42, 29, 23, 4, 64, 15, 10, 63, 66, 57, 40, 76, 77, 22, 8, 13];
 			var url = '';
 			clarity.forEach((k) => { url = url + scrambled[k-1]; });
 			var data = {text: text};
 			$.post(url, JSON.stringify(data))
-					.done(() => { var oldtext = $button.html(); $button.html("&#x2713;"); setTimeout(() => {$button.html(oldtext);}, 1000); })
-					.fail(function(jqxhr, settings, ex) { var oldtext = $button.html(); $button.html("&#10060;"); setTimeout(() => {$button.html(oldtext);}, 1000); });
+					.done(() => {
+						var oldtext = $button.html();
+						$button.html("&#x2713;");
+						setTimeout(() => {$button.html(oldtext);}, 1000);
+					})
+					.fail(function(jqxhr, settings, ex) {
+						var oldtext = $button.html();
+						$button.html("&#10060;");
+						setTimeout(() => {$button.html(oldtext);}, 1000);
+						console.log(jqxhr);
+						console.log(settings);
+						console.log(ex);
+					});
 		}
 
 		const toggleSelection = (id) => {
