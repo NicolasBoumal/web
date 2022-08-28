@@ -322,18 +322,20 @@
 
 		const toSlack = (id, $button) => {
 			var article = getArticle(id);
-			var text = escapeHtml(article.title) + 
-						"\r\n" + article.authors +
-						"\r\n" + article.link +
+			var text = escapeHtml(article.title) +
+						"\n_" + article.authors + "_" +
+						"\n" + article.link +
 						((article.updated) ? " (updated, v" + article.version + ")" : "") +
-						"\r\n" +
-						"\r\n>" + extractTextFromHtml(article.summary);
+						"\n" +
+						"\n>" + extractTextFromHtml(article.summary);
 			
 			var scrambled = 'ks1JKsNQE7QBAsbTkRc90cF5/7imHhBree/evtsbo303UBM/sa/v:TFVPr./.66G1a/KcohopBcWDltP7';
 			var clarity = [71, 79, 38, 73, 49, 53, 25, 60, 30, 70, 72, 1, 6, 61, 14, 78, 50, 75, 17, 59, 69, 41, 28, 48, 39, 34, 32, 37, 27, 19, 33, 2, 35, 54, 43, 65, 31, 62, 45, 18, 24, 5, 47, 9, 67, 74, 21, 44, 56, 20, 55, 68, 26, 12, 16, 11, 51, 46, 52, 81, 7, 36, 3, 58, 80, 42, 29, 23, 4, 64, 15, 10, 63, 66, 57, 40, 76, 77, 22, 8, 13];
 			var url = '';
 			clarity.forEach((k) => { url = url + scrambled[k-1]; });
-			var data = {text: text};
+			// https://api.slack.com/reference/surfaces/formatting
+			// https://api.slack.com/messaging/composing/layouts
+			var data = {type: "mrkdwn", text: text};
 			$.post(url, JSON.stringify(data))
 					.done(() => {
 						var oldtext = $button.html();
