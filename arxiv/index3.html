@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ArXiv filter</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+	
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	
+	<script src="//unpkg.com/alpinejs" defer></script>
+	
+	<script>
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']]
+		  }
+		};
+	</script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+  </head>
+  <body>
+  <div class="container">
+
+	<br/>
+	<br/>
+	
+	<p>
+		Recent announcements on arXiv lists, with some filtered out based on keywords.
+		<ul id="listdigests"></ul>
+	</p>
+	
+	<table>
+		<tr>
+			<td># new papers shown:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td x-data="{get count() { return $store.main.articlesNew.length; }}" x-text="count"></td>
+		</tr>
+		<tr>
+			<td># updated papers shown:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td x-data="{get count() { return $store.main.articlesUpdated.length; }}" x-text="count"></td>
+		</tr>
+		<tr>
+			<td># papers filtered out:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td x-data="{get count() { return $store.main.articlesHidden.length; }}" x-text="count"></td>
+		</tr>
+	</table>
+	
+	<br/>
+  
+    <h1>New papers</h1>
+	
+	<table id="tablenew" class="table table-striped" x-data="">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Title</th>
+				<th scope="col">Authors</th>
+			</tr>
+		</thead>
+		<tbody>
+			<template x-for="article in $store.main.articlesNew"> <!-- :key="article.id" -->
+				<tr x-on:click="$store.main.toggleSelection(article.id)" :class="article.selected ? 'table-info' : ''">
+					<td x-text="article.id"></td>
+					<td><a target="_blank" :href="article.link" x-text="article.title"></a></td>
+					<td x-text="article.authors"></td>
+				</tr>
+			</template>
+		</tbody>
+	</table>
+	
+	<br/>
+  
+    <h1>Updated papers</h1>
+	
+	<table id="tableupdates" class="table table-striped" x-data="">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">v</th>
+				<th scope="col">Title</th>
+				<th scope="col">Authors</th>
+			</tr>
+		</thead>
+		<tbody>
+			<template x-for="article in $store.main.articlesUpdated"> <!-- :key="article.id" -->
+				<tr x-on:click="$store.main.toggleSelection(article.id)" :class="article.selected ? 'table-info' : ''">
+					<td x-text="article.id"></td>
+					<td x-text="article.version"></td>
+					<td><a target="_blank" :href="article.link" x-text="article.title"></a></td>
+					<td x-text="article.authors"></td>
+				</tr>
+			</template>
+		</tbody>
+	</table>
+	
+	<br/>
+
+	<!-- https://help.socialintents.com/article/148-how-to-find-your-slack-team-id-and-slack-channel-id -->
+	<!-- #general on optimepfl: https://app.slack.com/client/T01B6UR5KME/C01AABV7X70 -->
+	<!-- https://api.slack.com/messaging/webhooks -->
+	<!-- https://api.slack.com/reference/deep-linking -->
+	<!--
+	Best on mobile: <a href="slack://channel?team=T01B6UR5KME&id=C01AABV7X70" target="_blank">open #general slack channel with slack://</a><br/>
+	Not sure about this one: <a href="https://slack.com/app_redirect?channel=general" target="_blank">open #general slack channel with slack.com/app_redirect</a><br/>
+	Best on desktop: <a href="https://app.slack.com/client/T01B6UR5KME/C01AABV7X70" target="_blank">open #general slack channel with direct url</a>
+	<br/>
+	<br/>
+	-->
+  
+    <h1>Selected papers</h1>
+
+	<!--
+	// https://stackoverflow.com/questions/2409836/how-to-set-cursor-style-to-pointer-for-links-without-hrefs
+	// onclick="toClipboard('" + article.id + "', $(this)); return false;\"
+	// onclick="toSlack('" + article.id + "', $(this)); return false;\"
+	-->
+
+	<ul x-data="">
+		<template x-for="article in $store.main.articlesSelected"> <!-- :key="article.id" -->
+			<li>
+				<a target="_blank" :href="article.link"
+					x-data="{ get title() { return escapeHtml(article.title) + ((article.updated) ? ' (updated, v' + article.version + ')' : '') } }"
+					x-text="title"></a>
+				<a href="" style="text-decoration: none" title="Copy to clipboard" x-on:click.prevent="toClipboard(article.id, $el)">&#x1F4CB;</a>
+				<a href="" style="text-decoration: none" title="Send to slack"><img src="slack.png" width="16px" style="padding-bottom: 4px;"/></a>
+				<br/><i x-text="article.authors"></i>
+				<br/><span x-html="article.summary"></span>
+			</li>
+		</template>
+	</ul>
+	
+	<br/>
+	<br/>
+	
+	<script>
+	
+		// This table is meant to contain the full list of papers in today's arXiv digest, for the selected categories.
+		// Each element is a {} with fields:
+		//  id, version, title, authors, category, updated, crosslisted, link, summary, hide, selected
+		//		var digest = [];
+		
+		const escapeHtml = (unsafe) => {
+			return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;')
+			             .replaceAll('>', '&gt;').replaceAll('"', '&quot;')
+						 .replaceAll("'", '&#039;').replaceAll("/", '&#x2F;')
+						 .replaceAll("`", '&#x60;').replaceAll("=", '&#x3D;');
+		}
+
+		// arXiv digest surrounds each author name with an <a> tag we don't need.
+		// Likewise, abstrats have html, e.g., <p> tags.
+		// This bit of code removes the html parts.
+		const extractTextFromHtml = (text) => {
+			return $("<div>").html(text).text().trim();
+		}
+	
+		const filterOut = (article) => {
+			// We want to hide this paper if the title contains a word from the following list.
+			// The title is converted to lower case, so the list should be too.
+			var exclusion = [
+				"helmholtz",
+				"galerkin",
+				"fokker",
+				"navier",
+				"stokes",
+				"volterra",
+				"pontryagin",
+				"koopman",
+				"karhunen",
+				"runge-kutta",
+				"runge kutta",
+				"hilliard",
+				"maxwell",
+				"burgers",
+				"portfolio",
+				"dividend",
+				"black-scholes",
+				"stock option",
+				"policy gradient",
+				"model predictive control",
+				"boundary conditions",
+				"boundary integral",
+				"boundary element",
+				"boundary value problem",
+				"magnetic field",
+				"elastic scatering",
+				"hyperelastic",
+				"wave equation",
+				"reduced basis",
+				"mean field",
+				"insurance",
+				"revenue",
+				"investment",
+				"finite element",
+				"finite-element",
+				"hydroelastic",
+				"elastodynamic",
+				"physics informed",
+				"physics-informed",
+				"fuzzy logic",
+				"model order reduction",
+				"mesh adaptation",
+				"dirichlet energy",
+				"dirichlet problem",
+				"elliptic operator",
+				"turbulen",
+				"laminar",
+				"conservation laws",
+				"hydrodynamic",
+				"lubrication",
+				"multigrid",
+				"covid-19",
+				"covid 19",
+				"pandemic",
+				"mixed integer",
+				"mixed-integer",
+				"mesh refinement",
+				"pde ",
+				" pde",
+				"pdes ",
+				"pde-constrain",
+				"partial differential",	
+				"seismic",
+				"vehicle",
+				"waveguide",
+				"parabolic differential",
+				"parabolic problem",
+				"porous medi",
+				"federated learning",
+				"bandit",
+				"integro-differential",
+				"shallow water",
+				"convection diffusion",
+				"multiobjective",
+				"multi-objective",
+				"isogeometric",
+			];
+			// If the title contains any word from the list, return true.
+			return exclusion.some(word => article.title.toLowerCase().includes(word));
+		}
+
+		const getArticle = (id) => {
+			return Alpine.store('main').digest.find(article => article.id === id);
+		}
+
+		async function toClipboard(id, $button) {
+			var article = getArticle(id);
+			var text = escapeHtml(article.title) + 
+						"\r\n" + article.authors +
+						"\r\n" + article.link +
+						((article.updated) ? " (updated, v" + article.version + ")" : "") +
+						"\r\n" +
+						"\r\n" + extractTextFromHtml(article.summary);
+			await navigator.clipboard.writeText(text);	
+			var oldtext = $button.html();
+			$button.html("&#x2713;");
+			setTimeout(() => {$button.html(oldtext);}, 1000);
+		}
+
+		const toSlack = (id, $button) => {
+			var article = getArticle(id);
+			var text = escapeHtml(article.title) +
+						"\n_" + article.authors + "_" +
+						"\n" + article.link +
+						((article.updated) ? " (updated, v" + article.version + ")" : "") +
+						"\n" +
+						"\n>" + extractTextFromHtml(article.summary);
+			
+			var scrambled = 'ks1JKsNQE7QBAsbTkRc90cF5/7imHhBree/evtsbo303UBM/sa/v:TFVPr./.66G1a/KcohopBcWDltP7';
+			var clarity = [71, 79, 38, 73, 49, 53, 25, 60, 30, 70, 72, 1, 6, 61, 14, 78, 50, 75, 17, 59, 69, 41, 28, 48, 39, 34, 32, 37, 27, 19, 33, 2, 35, 54, 43, 65, 31, 62, 45, 18, 24, 5, 47, 9, 67, 74, 21, 44, 56, 20, 55, 68, 26, 12, 16, 11, 51, 46, 52, 81, 7, 36, 3, 58, 80, 42, 29, 23, 4, 64, 15, 10, 63, 66, 57, 40, 76, 77, 22, 8, 13];
+			var url = '';
+			clarity.forEach((k) => { url = url + scrambled[k-1]; });
+			// https://api.slack.com/reference/surfaces/formatting
+			// https://api.slack.com/messaging/composing/layouts
+			var data = {type: "mrkdwn", text: text};
+			$.post(url, JSON.stringify(data))
+					.done(() => {
+						var oldtext = $button.html();
+						$button.html("&#x2713;");
+						setTimeout(() => {$button.html(oldtext);}, 1000);
+					})
+					.fail(function(jqxhr, settings, ex) {
+						var oldtext = $button.html();
+						$button.html("&#10060;");
+						setTimeout(() => {$button.html(oldtext);}, 1000);
+						console.log(jqxhr);
+						console.log(settings);
+						console.log(ex);
+					});
+		}
+		
+
+		document.addEventListener('alpine:init', () => {
+
+        	Alpine.store('main', {
+				digest: [],
+				get articlesNew() {
+					return this.digest.filter(article => !article.hide && !article.updated);
+				},
+				get articlesUpdated() {
+					return this.digest.filter(article => !article.hide && article.updated);
+				},
+				get articlesSelected() {
+					return this.digest.filter(article => article.selected);
+				},
+				get articlesHidden() {
+					return this.digest.filter(article => article.hide);
+				},
+				toggleSelection(id) {
+					var index = this.digest.findIndex(article => article.id === id);
+					this.digest[index].selected = !this.digest[index].selected;
+				}
+        	});
+
+
+			// https://css-tricks.com/proxying-third-party-javascript-as-first-party-javascript-and-the-potential-effect-on-analytics/
+			// https://developers.cloudflare.com/workers/examples/alter-headers/
+			// https://developers.cloudflare.com/workers/examples/cors-header-proxy/
+			var rssurls = ["https://arxiv-math-oc.nicolasboumal.workers.dev/",
+						   "https://arxiv-math-na.nicolasboumal.workers.dev/"];
+			var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
+
+			
+			rssurls.forEach(url => {
+				$.get(url, function(data) {
+
+					var $xml = $(data);
+					var date = new Date($xml.find("channel").find("dc\\:date").text());
+					$("#listdigests").append('<li>' + 
+												$xml.find("channel").find("dc\\:subject").text() +
+												', ' + 
+												date.toDateString() +
+											'</li>');
+					
+					$xml.find("item").each(function() {
+						var $this = $(this);
+						var fulltitle = $this.find("title").text();
+						var titleparts = re_title.exec(fulltitle);
+						var article = {
+							id: titleparts[2],
+							version: Number(titleparts[3]),
+							title: titleparts[1],
+							authors: extractTextFromHtml($this.find("dc\\:creator").text()),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
+							category: titleparts[4],
+							updated: (titleparts[5] === 'UPDATED'),
+							crosslisted: (titleparts[5] === 'CROSS LISTED'), // not sure what happens if both UPDATED & CROSS-LISTED...
+							link: $this.find("link").text(),
+							summary: $this.find("description").text().replaceAll("\n", " "),
+							hide: false,
+							selected: false
+						};
+						
+						// If we haven't seen this article yet
+						if(~Alpine.store('main').digest.some(existing_article => existing_article.id === article.id)) {
+							// Determine whether it should be hidden or not
+							article.hide = filterOut(article);
+							// And add it to the collection.
+							Alpine.store('main').digest.push(article);
+						}
+
+					}); // end for each item in xml
+
+				}); // end get url
+			}); // end for each url
+
+    	}); // end Alpine init
+
+	</script>
+	
+  </div>
+  </body>
+</html>
