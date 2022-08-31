@@ -357,6 +357,11 @@
 						};
 						
 						// If we haven't seen this article yet
+						// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+						// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+						// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  Some papers appear twice, sometimes ?
+						// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+						// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 						if(~Alpine.store('main').digest.some(existing_article => existing_article.id === article.id)) {
 							// Determine whether it should be hidden or not
 							article.hide = filterOut(article);
