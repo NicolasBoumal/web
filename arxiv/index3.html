@@ -56,7 +56,7 @@
   
     <h1>New papers</h1>
 	
-	<table id="tablenew" class="table table-striped" x-data="">
+	<table class="table table-striped" x-data="">
 		<thead>
 			<tr>
 				<th scope="col">#</th>
@@ -65,7 +65,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<template x-for="article in $store.main.articlesNew"> <!-- :key="article.id" -->
+			<template x-for="article in $store.main.articlesNew" :key="article.id">
 				<tr x-on:click="$store.main.toggleSelection(article.id)" :class="article.selected ? 'table-info' : ''">
 					<td x-text="article.id"></td>
 					<td><a target="_blank" :href="article.link" x-text="article.title"></a></td>
@@ -79,7 +79,7 @@
   
     <h1>Updated papers</h1>
 	
-	<table id="tableupdates" class="table table-striped" x-data="">
+	<table class="table table-striped" x-data="">
 		<thead>
 			<tr>
 				<th scope="col">#</th>
@@ -89,7 +89,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<template x-for="article in $store.main.articlesUpdated"> <!-- :key="article.id" -->
+			<template x-for="article in $store.main.articlesUpdated" :key="article.id">
 				<tr x-on:click="$store.main.toggleSelection(article.id)" :class="article.selected ? 'table-info' : ''">
 					<td x-text="article.id"></td>
 					<td x-text="article.version"></td>
@@ -118,7 +118,7 @@
 
 	<!-- https://stackoverflow.com/questions/2409836/how-to-set-cursor-style-to-pointer-for-links-without-hrefs -->
 	<ul x-data="">
-		<template x-for="article in $store.main.articlesSelected"> <!-- :key="article.id" -->
+		<template x-for="article in $store.main.articlesSelected" :key="article.id">
 			<li>
 				<a target="_blank" :href="article.link"
 					x-data="{ get title() { return escapeHtml(article.title) + ((article.updated) ? ' (updated, v' + article.version + ')' : '') } }"
@@ -310,6 +310,7 @@
 				toggleSelection(id) {
 					var index = this.digest.findIndex(article => article.id === id);
 					this.digest[index].selected = !this.digest[index].selected;
+					Alpine.nextTick( () => { MathJax.typeset(); });
 				}
         	});
 
@@ -361,6 +362,9 @@
 						}
 
 					}); // end for each item in xml
+
+					// await Alpine.$nextTick(); doesn't work
+					MathJax.typeset(); // This likely executes too early..
 
 				}); // end get url
 			}); // end for each url
