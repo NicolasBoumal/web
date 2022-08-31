@@ -116,12 +116,7 @@
   
     <h1>Selected papers</h1>
 
-	<!--
-	// https://stackoverflow.com/questions/2409836/how-to-set-cursor-style-to-pointer-for-links-without-hrefs
-	// onclick="toClipboard('" + article.id + "', $(this)); return false;\"
-	// onclick="toSlack('" + article.id + "', $(this)); return false;\"
-	-->
-
+	<!-- https://stackoverflow.com/questions/2409836/how-to-set-cursor-style-to-pointer-for-links-without-hrefs -->
 	<ul x-data="">
 		<template x-for="article in $store.main.articlesSelected"> <!-- :key="article.id" -->
 			<li>
@@ -129,7 +124,7 @@
 					x-data="{ get title() { return escapeHtml(article.title) + ((article.updated) ? ' (updated, v' + article.version + ')' : '') } }"
 					x-text="title"></a>
 				<a href="" style="text-decoration: none" title="Copy to clipboard" x-on:click.prevent="toClipboard(article.id, $el)">&#x1F4CB;</a>
-				<a href="" style="text-decoration: none" title="Send to slack"><img src="slack.png" width="16px" style="padding-bottom: 4px;"/></a>
+				<a href="" style="text-decoration: none" title="Send to slack" x-on:click.prevent="toSlack(article.id, $el)"><img src="slack.png" width="16px" style="padding-bottom: 4px;"/></a>
 				<br/><i x-text="article.authors"></i>
 				<br/><span x-html="article.summary"></span>
 			</li>
@@ -258,9 +253,9 @@
 						"\r\n" +
 						"\r\n" + extractTextFromHtml(article.summary);
 			await navigator.clipboard.writeText(text);	
-			var oldtext = $button.html();
-			$button.html("&#x2713;");
-			setTimeout(() => {$button.html(oldtext);}, 1000);
+			var oldtext = $button.innerHTML;
+			$button.innerHTML = "&#x2713;";
+			setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
 		}
 
 		const toSlack = (id, $button) => {
@@ -281,14 +276,14 @@
 			var data = {type: "mrkdwn", text: text};
 			$.post(url, JSON.stringify(data))
 					.done(() => {
-						var oldtext = $button.html();
-						$button.html("&#x2713;");
-						setTimeout(() => {$button.html(oldtext);}, 1000);
+						var oldtext = $button.innerHTML;
+						$button.innerHTML = "&#x2713;";
+						setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
 					})
 					.fail(function(jqxhr, settings, ex) {
-						var oldtext = $button.html();
-						$button.html("&#10060;");
-						setTimeout(() => {$button.html(oldtext);}, 1000);
+						var oldtext = $button.innerHTML;
+						$button.innerHTML = "&#10060;";
+						setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
 						console.log(jqxhr);
 						console.log(settings);
 						console.log(ex);
