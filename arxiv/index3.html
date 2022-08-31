@@ -339,6 +339,7 @@
 											'</li>');
 					
 					$xml.find("item").each(function() {
+
 						var $this = $(this);
 						var fulltitle = $this.find("title").text();
 						var titleparts = re_title.exec(fulltitle);
@@ -357,12 +358,7 @@
 						};
 						
 						// If we haven't seen this article yet
-						// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-						// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-						// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  Some papers appear twice, sometimes ?
-						// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-						// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-						if(~Alpine.store('main').digest.some(existing_article => existing_article.id === article.id)) {
+						if(!Alpine.store('main').digest.some(existing_article => existing_article.id === article.id)) {
 							// Determine whether it should be hidden or not
 							article.hide = filterOut(article);
 							// And add it to the collection.
