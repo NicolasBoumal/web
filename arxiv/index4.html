@@ -30,41 +30,41 @@
     <div id="signin-div" style="display: none">
         <button id="signin-button">Sign in</button>
     </div>
-    <div id="signout-div" style="display: none" x-data="">
+    <div id="signout-div" style="display: none" x-data="{showoptions: false}">
         Signed in as <span id="user-name"></span>.
+		<button x-on:click="showoptions = !showoptions">Toggle options</button>
         <button id="signout-button">Sign out</button>
+	
+		<div style="text-align: center;" x-show="showoptions" x-transition>
+			<br/>
+			<h2>Select the arXiv categories to track</h2>
+			<h3>You may select any number; it's recommended to pick between one an three.</h3>
+			<!-- x-init="$watch('$store.main.categories', (val) => { selectedCategoriesUpdated(val); })" -->
+			<select x-model="$store.main.categories" id="selectcategories" size="6" multiple>
+				<option value="math.NA">math.NA (numerical analysis)</option>
+				<option value="math.OC">math.OC (optimization and control)</option>
+				<option value="math.AG">math.AG (algebraic geometry)</option>
+			</select>
 
-		<br/>
-		<!--
-		<ul x-data="">
-			<template x-for="category in $store.main.categories">
-				<li x-text="category"></li>
-			</template>
-		</ul>
-		<div x-data="{categorytoadd: ''}">
-			<input type="text" placeholder="Add a category" x-model="categorytoadd">
-			<button x-on:click="$store.main.categories.push(categorytoadd); categorytoadd = '';">Add</button>
+			<br/>
+			<br/>
+			<h2>List excluded words</h2>
+			<h3>Papers whose titles contain any of the words below are exluded. One per line; case insensitive; whitespace counts.</h3>
+			
+			<textarea id="exclusion-textarea" x-model="$store.main.exclusions" rows="6" cols="50"></textarea>
+
+			<br/>
+			<br/>
+			<h2>Provide a Slack webhook url (optional)</h2>
+			<h3>Enable the "share to slack" button by providing a <a href="https://api.slack.com/messaging/webhooks" target="_blank">webhook url</a> to your favorite channel.</h3>
+			
+			<input type="text" id="slackurl" x-model="$store.main.slackurl"></input>
+
+			<br/>
+			<button id="deleteuser-button" style="display: none">Delete user</button>
 		</div>
-		-->
+	</div>
 
-		<!-- x-init="$watch('$store.main.categories', (val) => { selectedCategoriesUpdated(val); })" -->
-		<select x-model="$store.main.categories" id="selectcategories" multiple>
-			<option value="math.NA">math.NA (numerical analysis)</option>
-			<option value="math.OC">math.OC (optimization and control)</option>
-			<option value="math.AG">math.AG (algebraic geometry)</option>
-		</select>
-
-        <br/>
-        <textarea id="exclusion-textarea" x-model="$store.main.exclusions" rows="4" cols="50"></textarea>
-
-        <br/>
-        Slack webhook url: <input type="text" id="slackurl" x-model="$store.main.slackurl"></input>
-
-        <br/>
-        <button id="deleteuser-button" style="display: none">Delete user</button>
-    </div>
-
-	<br/>
 	<br/>
 	
 	<p>
