@@ -348,16 +348,16 @@
 							selected: false
 						};
 						
-						// Try to find this article in the list we have already built so far
+						// Try to find this article in the list we have already built so far.
 						var index = Alpine.store('main').digest.findIndex(existing_article => existing_article.id === article.id);
 						if(index == -1) {
-							// If the article is new, determine whether it should be hidden or not
+							// The article is new: determine whether it should be hidden or not,
 							article.hide = filterOut(article);
-							// And add it to the collection.
+							// and add it to the collection.
 							Alpine.store('main').digest.push(article);
 						}
 						else {
-							// If the article is already in the list, record the fact that we saw it in this category
+							// The article is already in the list: record the fact that we saw it in this category too.
 							Alpine.store('main').digest[index].categories.push(category);
 						}
 
