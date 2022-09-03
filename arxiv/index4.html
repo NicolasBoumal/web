@@ -34,11 +34,11 @@
         Signed in as <span id="user-name"></span>.
 		<button x-on:click="showoptions = !showoptions">Toggle options</button>
         <button id="signout-button">Sign out</button>
-	
-		<div style="text-align: center;" x-show="showoptions" x-transition>
-			<br/>
+		<br/>
+		<br/>
+		<div style="text-align: center; background-color: lightsteelblue; padding: 8px;" x-show="showoptions" x-transition>
 			<h2>Select the arXiv categories to track</h2>
-			<h3>You may select any number; it's recommended to pick between one an three.</h3>
+			<h4>You may select any number. It's recommended to pick between one an three.</h4>
 			<!-- x-init="$watch('$store.main.categories', (val) => { selectedCategoriesUpdated(val); })" -->
 			<select x-model="$store.main.categories" id="selectcategories" size="6" multiple>
 				<option value="math.NA">math.NA (numerical analysis)</option>
@@ -49,14 +49,14 @@
 			<br/>
 			<br/>
 			<h2>List excluded words</h2>
-			<h3>Papers whose titles contain any of the words below are exluded. One per line; case insensitive; whitespace counts.</h3>
+			<h4>Papers whose titles contain any of the words below are exluded. One per line; case insensitive; whitespace counts.</h4>
 			
 			<textarea id="exclusion-textarea" x-model="$store.main.exclusions" rows="6" cols="50"></textarea>
 
 			<br/>
 			<br/>
-			<h2>Provide a Slack webhook url (optional)</h2>
-			<h3>Enable the "share to slack" button by providing a <a href="https://api.slack.com/messaging/webhooks" target="_blank">webhook url</a> to your favorite channel.</h3>
+			<h2>Enable "Share to Slack" button (optional)</h2>
+			<h4>To do so, provide a <a href="https://api.slack.com/messaging/webhooks" target="_blank">webhook url</a> to your favorite channel.</h4>
 			
 			<input type="text" id="slackurl" x-model="$store.main.slackurl"></input>
 
