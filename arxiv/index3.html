@@ -309,16 +309,16 @@
         	});
 
 
-			// https://css-tricks.com/proxying-third-party-javascript-as-first-party-javascript-and-the-potential-effect-on-analytics/
-			// https://developers.cloudflare.com/workers/examples/alter-headers/
-			// https://developers.cloudflare.com/workers/examples/cors-header-proxy/
-			var rssurls = ["https://arxiv-math-oc.nicolasboumal.workers.dev/",
-						   "https://arxiv-math-na.nicolasboumal.workers.dev/"];
 			var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
 
-			
-			rssurls.forEach(url => {
-				$.get(url, function(data) {
+
+			// https://css-tricks.com/proxying-third-party-javascript-as-first-party-javascript-and-the-potential-effect-on-analytics/
+			// https://developers.cloudflare.com/workers/examples/alter-headers/
+			// https://developers.cloudflare.com/workers/examples/cors-header-proxy/			
+			var rssbaseurl = "https://arxiv-digest-fetcher.nicolasboumal.workers.dev/?category=";
+			var categories = ["math.NA", "math.OC"];
+			categories.forEach(category => {
+				$.get(rssbaseurl + category, function(data) {
 
 					var $xml = $(data);
 					var date = new Date($xml.find("channel").find("dc\\:date").text());
