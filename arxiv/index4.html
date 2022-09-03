@@ -141,8 +141,12 @@
 				<a target="_blank" :href="article.link"
 					x-data="{ get title() { return escapeHtml(article.title) + ((article.updated) ? ' (updated, v' + article.version + ')' : '') } }"
 					x-text="title"></a>
-				<a href="" style="text-decoration: none" title="Copy to clipboard" x-on:click.prevent="toClipboard(article.id, $el)">&#x1F4CB;</a>
-				<a href="" style="text-decoration: none" title="Send to slack" x-on:click.prevent="toSlack(article.id, $el)"><img src="slack.png" width="16px" style="padding-bottom: 4px;"/></a>
+				<a href="" style="text-decoration: none" title="Copy to clipboard"
+					x-on:click.prevent="toClipboard(article.id, $el)">&#x1F4CB;</a>
+				<a href="" style="text-decoration: none" title="Send to slack"
+					x-on:click.prevent="toSlack(article.id, $el)"
+					x-data="{get showSlack() {{return document.getElementById('slackurl').value.trim().length > 0;}}}"
+					x-show="showSlack"><img src="slack.png" width="16px" style="padding-bottom: 4px;"/></a>
 				<br/><i x-text="article.authors"></i>
 				<br/><span x-html="article.summary"></span>
 			</li>
