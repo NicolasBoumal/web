@@ -19,7 +19,7 @@
         <input type="checkbox" id="math.OC">math.OC</input>
 
         <br/>
-        Slack webhook url: <input type="text" id="slackurl"></input>
+        Slack webhook url: <input type="text" size="85" id="slackurl"></input>
 
         <br/>
         <button id="deleteuser-button" style="display: none">Delete user</button>
@@ -34,8 +34,9 @@
 
         // Add Firebase products that you want to use
         import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, deleteUser } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
-        import { getFirestore, collection, doc, getDoc, setDoc, addDoc, updateDoc, query, orderBy } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
-        // TODO: there is a "lite" version for FireStore
+        import { getFirestore, collection, doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
+        // Removed: addDoc, updateDoc, query, orderBy
+        // TODO: there is a "lite" version for Firestore
 
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -72,28 +73,34 @@
             return !!auth.currentUser;
         }
 
-        function categoryGet(cat) {   // REPLACE BY ONE GLOBAL GET USER DATA CALL
-            console.log("getting " + cat);
+        function reflectUserData() {
             if(userIsSignedIn()) {
                 const uid = auth.currentUser.uid;
-                console.log("user is signed in: " + uid);
                 const userdoc = doc(db, "users/" + uid);
                 getDoc(userdoc).then((obj) => {
                     if(obj.exists()) {   
                         const data = obj.data();
-                        document.getElementById(cat).checked = ( cat in data && data[cat]);
+                        categories.forEach(cat => {
+                            document.getElementById(cat).checked = ( cat in data && data[cat]);
+                        });
+                        if("slackurl" in data) {
+                            document.getElementById("slackurl").value = data.slackurl;
+                        }
                     }
                 });
+            }
+            else {
+                document.getElementById("slackurl").value = "";
             }
         }
 
         function authStateObserver(user) {
             if(user) {
+                reflectUserData();
                 var userName = auth.currentUser.displayName;
                 document.getElementById("user-name").innerText = userName;
                 document.getElementById("signin-div").style.display = "none";
                 document.getElementById("signout-div").style.display = "block";
-                categories.forEach(cat => { categoryGet(cat); });
             }
             else {
                 document.getElementById("user-name").innerText = "";
@@ -118,25 +125,32 @@
         onAuthStateChanged(auth, authStateObserver);
         authStateObserver(auth.currentUser);
 
-        // const document = doc(db, "...");
-        // const docdata = { .. };
-        // setDoc(document, docdata, {merge: true}); // create the doc if inexistent; update it if existent.
-        // add .then() and .catch().
-
         const categoryCheckboxClick = (cat) => {
             if(userIsSignedIn()) {
                 const uid = auth.currentUser.uid;
                 const userdoc = doc(db, "users/" + uid);
                 var data = { };
                 data[cat] = document.getElementById(cat).checked;
-                setDoc(userdoc, data, {merge: true});
+                setDoc(userdoc, data, {merge: true}); // create the doc if inexistent; update it if existent.
+                // TODO: add .then and .catch handlers.
             }
         };
 
+        const slackurlChange = () => {
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                const userdoc = doc(db, "users/" + uid);
+                var data = { slackurl: document.getElementById("slackurl").value };
+                setDoc(userdoc, data, {merge: true}); // create the doc if inexistent; update it if existent.
+                // TODO: add .then and .catch handlers.
+            }
+        };
 
         categories.forEach(cat => {
             document.getElementById(cat).onclick = () => { categoryCheckboxClick(cat) };
         });
+
+        document.getElementById("slackurl").onchange = slackurlChange;
 
     </script>
     
