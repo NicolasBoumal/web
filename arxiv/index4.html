@@ -25,12 +25,101 @@
 	</script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
+
+    
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyAbF2a_FSYjnN66_pQtxd8-cC9ba5wU9S8",
+        authDomain: "arxiv-digest.firebaseapp.com",
+        projectId: "arxiv-digest",
+        storageBucket: "arxiv-digest.appspot.com",
+        messagingSenderId: "403410606061",
+        appId: "1:403410606061:web:563052dd9b6e2caf1b39e4",
+        measurementId: "G-CDYH5HPQ81"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    <script>
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        ui.start('#firebaseui-auth-container', {
+        signInOptions: [
+            // List of OAuth providers supported.
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+            // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+            // firebase.auth.GithubAuthProvider.PROVIDER_ID
+        ],
+        // Other config options...
+        });
+    </script>
+
   </head>
   <body>
   <div class="container">
 
 	<br/>
 	<br/>
+
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+    <script>
+        var uiConfig = {
+            callbacks: {
+                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                // User successfully signed in.
+                // Return type determines whether we continue the redirect automatically
+                // or whether we leave that to developer to handle.
+                return true;
+                },
+                uiShown: function() {
+                // The widget is rendered.
+                // Hide the loader.
+                document.getElementById('loader').style.display = 'none';
+                }
+            },
+            // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+            signInFlow: 'popup',
+            signInSuccessUrl: '<url-to-redirect-to-on-success>',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                //firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                //firebase.auth.PhoneAuthProvider.PROVIDER_ID
+            ],
+            // Terms of service url.
+            tosUrl: '<your-tos-url>',
+            // Privacy policy url.
+            privacyPolicyUrl: '<your-privacy-policy-url>',
+            autoUpgradeAnonymousUsers: true
+        };
+
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+    <br/>
+    <br/>
 	
 	<p>
 		Recent announcements on arXiv lists, with some filtered out based on keywords.
@@ -275,19 +364,19 @@
 			// https://api.slack.com/messaging/composing/layouts
 			var data = {type: "mrkdwn", text: text};
 			$.post(url, JSON.stringify(data))
-					.done(() => {
-						var oldtext = $button.innerHTML;
-						$button.innerHTML = "&#x2713;";
-						setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
-					})
-					.fail(function(jqxhr, settings, ex) {
-						var oldtext = $button.innerHTML;
-						$button.innerHTML = "&#10060;";
-						setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
-						console.log(jqxhr);
-						console.log(settings);
-						console.log(ex);
-					});
+                .done(() => {
+                    var oldtext = $button.innerHTML;
+                    $button.innerHTML = "&#x2713;";
+                    setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
+                })
+                .fail(function(jqxhr, settings, ex) {
+                    var oldtext = $button.innerHTML;
+                    $button.innerHTML = "&#10060;";
+                    setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
+                    console.log(jqxhr);
+                    console.log(settings);
+                    console.log(ex);
+                });
 		}
 		
 
@@ -374,5 +463,6 @@
 	</script>
 	
   </div>
+
   </body>
 </html>
