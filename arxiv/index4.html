@@ -36,7 +36,7 @@
         <button id="signout-button">Sign out</button>
 		<br/>
 		<br/>
-		<div style="text-align: center; background-color: lightsteelblue; padding: 8px;" x-show="showoptions" x-transition>
+		<div style="text-align: center; background-color: lightsteelblue; padding: 1em; border-radius: 1em" x-show="showoptions" x-transition>
 			<h2>Select the arXiv categories to track</h2>
 			<h4>You may select any number. It's recommended to pick between one and three.</h4>
 			<!-- x-init="$watch('$store.main.categories', (val) => { selectedCategoriesUpdated(val); })" -->
@@ -51,7 +51,7 @@
 			<h2>List excluded words</h2>
 			<h4>Papers whose titles contain any of the words below are exluded. One per line; case insensitive; whitespace counts.</h4>
 			
-			<textarea id="exclusion-textarea" x-model="$store.main.exclusions" rows="6" cols="50"></textarea>
+			<textarea id="exclusion-textarea" x-model="$store.main.exclusions" rows="6"></textarea>
 
 			<br/>
 			<br/>
