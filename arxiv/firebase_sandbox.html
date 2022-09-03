@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Firebase</title>
+</head>
+<body>
+
+    <!-- Add the following script to the bottom of your <body> tag, but before you use any Firebase services. -->
+    <body>
+        <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+        <script type="module">
+            import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js';
+
+            // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+            import { analytics } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js';
+
+            // Add Firebase products that you want to use
+            import { auth } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
+            import { firestore } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
+        </script>
+      </body>
+    
+</body>
+</html>
