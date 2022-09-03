@@ -14,6 +14,15 @@
     <div id="signout-div" style="display: none">
         Signed in as <span id="user-name"></span>.
         <button id="signout-button">Sign out</button>
+
+        <input type="checkbox" id="math.NA">math.NA</input>
+        <input type="checkbox" id="math.OC">math.OC</input>
+
+        <br/>
+        Slack webhook url: <input type="text" id="slackurl"></input>
+
+        <br/>
+        <button id="deleteuser-button" style="display: none">Delete user</button>
     </div>
 
     <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
@@ -24,8 +33,9 @@
         // import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js';
 
         // Add Firebase products that you want to use
-        import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
-        import { getFirestore, collection, query, orderBy, limit, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
+        import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, deleteUser } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
+        import { getFirestore, collection, doc, getDoc, setDoc, addDoc, updateDoc, query, orderBy } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
+        // TODO: there is a "lite" version for FireStore
 
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -37,7 +47,7 @@
             storageBucket: "arxiv-digest.appspot.com",
             messagingSenderId: "403410606061",
             appId: "1:403410606061:web:563052dd9b6e2caf1b39e4",
-            measurementId: "G-CDYH5HPQ81"
+            //measurementId: "G-CDYH5HPQ81"
         };
 
         // Initialize Firebase
@@ -46,24 +56,44 @@
         const auth = getAuth(app);
         const db = getFirestore();
 
+        // List all arXiv categories we handle.
+        const categories = ["math.NA", "math.OC"];
+
         async function signIn() {
+            // TODO: change it so we do not request the user's profile picture nor language preferences.
             var provider = new GoogleAuthProvider();
-            await signInWithPopup(getAuth(), provider);
-        };
+            await signInWithPopup(auth, provider);   // On mobile, should prefer signInWithRedirect, https://firebase.google.com/docs/auth/web/google-signin
+        }
         function signOutUser() {
-            signOut(getAuth());
-        };
+            signOut(auth);
+        }
 
         function userIsSignedIn() {
-            return !!getAuth().currentUser;
+            return !!auth.currentUser;
+        }
+
+        function categoryGet(cat) {   // REPLACE BY ONE GLOBAL GET USER DATA CALL
+            console.log("getting " + cat);
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                console.log("user is signed in: " + uid);
+                const userdoc = doc(db, "users/" + uid);
+                getDoc(userdoc).then((obj) => {
+                    if(obj.exists()) {   
+                        const data = obj.data();
+                        document.getElementById(cat).checked = ( cat in data && data[cat]);
+                    }
+                });
+            }
         }
 
         function authStateObserver(user) {
             if(user) {
-                var userName = getAuth().currentUser.displayName;
+                var userName = auth.currentUser.displayName;
                 document.getElementById("user-name").innerText = userName;
                 document.getElementById("signin-div").style.display = "none";
                 document.getElementById("signout-div").style.display = "block";
+                categories.forEach(cat => { categoryGet(cat); });
             }
             else {
                 document.getElementById("user-name").innerText = "";
@@ -72,10 +102,41 @@
             }
         }
 
+        function deleteUserPermanent() {
+            const user = auth.currentUser;
+            deleteUser(user).then(() => {
+                console.log("User successfully deleted.");
+            }).catch((error) => {
+                console.log("User not deleted. Error:");
+                console.log(error);
+            });
+        }
+
         document.getElementById("signin-button").onclick = signIn;
         document.getElementById("signout-button").onclick = signOutUser;
-        onAuthStateChanged(getAuth(), authStateObserver);
-        authStateObserver(getAuth().currentUser);
+        document.getElementById("deleteuser-button").onclick = deleteUserPermanent;
+        onAuthStateChanged(auth, authStateObserver);
+        authStateObserver(auth.currentUser);
+
+        // const document = doc(db, "...");
+        // const docdata = { .. };
+        // setDoc(document, docdata, {merge: true}); // create the doc if inexistent; update it if existent.
+        // add .then() and .catch().
+
+        const categoryCheckboxClick = (cat) => {
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                const userdoc = doc(db, "users/" + uid);
+                var data = { };
+                data[cat] = document.getElementById(cat).checked;
+                setDoc(userdoc, data, {merge: true});
+            }
+        };
+
+
+        categories.forEach(cat => {
+            document.getElementById(cat).onclick = () => { categoryCheckboxClick(cat) };
+        });
 
     </script>
     
