@@ -21,7 +21,7 @@
 
   </head>
   <body>
-  <div class="container">
+    <div class="container">
 
 	<br/>
 	<br/>
@@ -178,7 +178,7 @@
 			var exclusion = document.getElementById('exclusion-textarea').value.split('\n');
 			// If the title contains any word from the list (case insensitive), return true.
 			var lctitle = article.title.toLowerCase();
-			return exclusion.some(word => lctitle.includes(word.toLowerCase()));
+			return exclusion.some(word => word.trim().length >= 1 && lctitle.includes(word.toLowerCase()));
 		}
 
 		const getArticle = (id) => {
@@ -320,8 +320,8 @@
     	}); // end Alpine init
 
 	</script>
-	
-  </div>
+
+	</div>
 
 
       <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
@@ -372,6 +372,10 @@
             return !!auth.currentUser;
         }
 
+		function reflectExclusionsChange() {
+			Alpine.store('main').digest.forEach((article, index) => Alpine.store('main').digest[index].hide = filterOut(article));
+		}
+
         function reflectUserData() {
             if(userIsSignedIn()) {
                 const uid = auth.currentUser.uid;
@@ -387,6 +391,7 @@
                         }
                         if("exclusions" in data) {
                             document.getElementById("exclusion-textarea").value = data.exclusions;
+							reflectExclusionsChange();
                         }
                     }
                 });
@@ -450,7 +455,7 @@
         };
 
         const exclusionChange = () => {
-			Alpine.store('main').digest.forEach((article, index) => Alpine.store('main').digest[index].hide = filterOut(article));
+			reflectExclusionsChange();
             if(userIsSignedIn()) {
                 const uid = auth.currentUser.uid;
                 const userdoc = doc(db, "users/" + uid);
