@@ -16,59 +16,8 @@
 	
 	<script src="//unpkg.com/alpinejs" defer></script>
 	
-	<script>
-		MathJax = {
-		  tex: {
-			inlineMath: [['$', '$'], ['\\(', '\\)']]
-		  }
-		};
-	</script>
+	<script> MathJax = { tex: {	inlineMath: [['$', '$'], ['\\(', '\\)']] } }; </script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-
-
-    
-
-
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-    
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-        apiKey: "AIzaSyAbF2a_FSYjnN66_pQtxd8-cC9ba5wU9S8",
-        authDomain: "arxiv-digest.firebaseapp.com",
-        projectId: "arxiv-digest",
-        storageBucket: "arxiv-digest.appspot.com",
-        messagingSenderId: "403410606061",
-        appId: "1:403410606061:web:563052dd9b6e2caf1b39e4",
-        measurementId: "G-CDYH5HPQ81"
-        };
-    
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-    </script>
-
-    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
-    <script>
-        // Initialize the FirebaseUI Widget using Firebase.
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-        ui.start('#firebaseui-auth-container', {
-        signInOptions: [
-            // List of OAuth providers supported.
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-            // firebase.auth.GithubAuthProvider.PROVIDER_ID
-        ],
-        // Other config options...
-        });
-    </script>
 
   </head>
   <body>
@@ -76,50 +25,6 @@
 
 	<br/>
 	<br/>
-
-    <!-- The surrounding HTML is left untouched by FirebaseUI.
-     Your app may use that space for branding, controls and other customizations.-->
-    <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
-    <script>
-        var uiConfig = {
-            callbacks: {
-                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-                // User successfully signed in.
-                // Return type determines whether we continue the redirect automatically
-                // or whether we leave that to developer to handle.
-                return true;
-                },
-                uiShown: function() {
-                // The widget is rendered.
-                // Hide the loader.
-                document.getElementById('loader').style.display = 'none';
-                }
-            },
-            // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-            signInFlow: 'popup',
-            signInSuccessUrl: '<url-to-redirect-to-on-success>',
-            signInOptions: [
-                // Leave the lines as is for the providers you want to offer your users.
-                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-                //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-                //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-                //firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                //firebase.auth.PhoneAuthProvider.PROVIDER_ID
-            ],
-            // Terms of service url.
-            tosUrl: '<your-tos-url>',
-            // Privacy policy url.
-            privacyPolicyUrl: '<your-privacy-policy-url>',
-            autoUpgradeAnonymousUsers: true
-        };
-
-        // The start method will wait until the DOM is loaded.
-        ui.start('#firebaseui-auth-container', uiConfig);
-    </script>
-    <br/>
-    <br/>
 	
 	<p>
 		Recent announcements on arXiv lists, with some filtered out based on keywords.
@@ -364,19 +269,19 @@
 			// https://api.slack.com/messaging/composing/layouts
 			var data = {type: "mrkdwn", text: text};
 			$.post(url, JSON.stringify(data))
-                .done(() => {
-                    var oldtext = $button.innerHTML;
-                    $button.innerHTML = "&#x2713;";
-                    setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
-                })
-                .fail(function(jqxhr, settings, ex) {
-                    var oldtext = $button.innerHTML;
-                    $button.innerHTML = "&#10060;";
-                    setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
-                    console.log(jqxhr);
-                    console.log(settings);
-                    console.log(ex);
-                });
+					.done(() => {
+						var oldtext = $button.innerHTML;
+						$button.innerHTML = "&#x2713;";
+						setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
+					})
+					.fail(function(jqxhr, settings, ex) {
+						var oldtext = $button.innerHTML;
+						$button.innerHTML = "&#10060;";
+						setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
+						console.log(jqxhr);
+						console.log(settings);
+						console.log(ex);
+					});
 		}
 		
 
@@ -404,16 +309,16 @@
         	});
 
 
-			// https://css-tricks.com/proxying-third-party-javascript-as-first-party-javascript-and-the-potential-effect-on-analytics/
-			// https://developers.cloudflare.com/workers/examples/alter-headers/
-			// https://developers.cloudflare.com/workers/examples/cors-header-proxy/
-			var rssurls = ["https://arxiv-math-oc.nicolasboumal.workers.dev/",
-						   "https://arxiv-math-na.nicolasboumal.workers.dev/"];
 			var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
 
-			
-			rssurls.forEach(url => {
-				$.get(url, function(data) {
+
+			// https://css-tricks.com/proxying-third-party-javascript-as-first-party-javascript-and-the-potential-effect-on-analytics/
+			// https://developers.cloudflare.com/workers/examples/alter-headers/
+			// https://developers.cloudflare.com/workers/examples/cors-header-proxy/			
+			var rssbaseurl = "https://arxiv-digest-fetcher.nicolasboumal.workers.dev/?category=";
+			var categories = ["math.NA", "math.OC"];
+			categories.forEach(category => {
+				$.get(rssbaseurl + category, function(data) {
 
 					var $xml = $(data);
 					var date = new Date($xml.find("channel").find("dc\\:date").text());
@@ -433,7 +338,8 @@
 							version: Number(titleparts[3]),
 							title: titleparts[1],
 							authors: extractTextFromHtml($this.find("dc\\:creator").text()),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
-							category: titleparts[4],
+							category: titleparts[4], // this is the official primary category of the article
+							categories: [category], // keep track of all digests where this article came up
 							updated: (titleparts[5] === 'UPDATED'),
 							crosslisted: (titleparts[5] === 'CROSS LISTED'), // not sure what happens if both UPDATED & CROSS-LISTED...
 							link: $this.find("link").text(),
@@ -442,12 +348,17 @@
 							selected: false
 						};
 						
-						// If we haven't seen this article yet
-						if(!Alpine.store('main').digest.some(existing_article => existing_article.id === article.id)) {
-							// Determine whether it should be hidden or not
+						// Try to find this article in the list we have already built so far.
+						var index = Alpine.store('main').digest.findIndex(existing_article => existing_article.id === article.id);
+						if(index == -1) {
+							// The article is new: determine whether it should be hidden or not,
 							article.hide = filterOut(article);
-							// And add it to the collection.
+							// and add it to the collection.
 							Alpine.store('main').digest.push(article);
+						}
+						else {
+							// The article is already in the list: record the fact that we saw it in this category too.
+							Alpine.store('main').digest[index].categories.push(category);
 						}
 
 					}); // end for each item in xml
@@ -463,6 +374,5 @@
 	</script>
 	
   </div>
-
   </body>
 </html>
