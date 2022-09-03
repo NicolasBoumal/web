@@ -25,6 +25,30 @@
 
 	<br/>
 	<br/>
+
+	
+    <div id="signin-div" style="display: none">
+        <button id="signin-button">Sign in</button>
+    </div>
+    <div id="signout-div" style="display: none">
+        Signed in as <span id="user-name"></span>.
+        <button id="signout-button">Sign out</button>
+
+        <input type="checkbox" id="math.NA">math.NA</input>
+        <input type="checkbox" id="math.OC">math.OC</input>
+
+        <br/>
+        <textarea id="exclusion-textarea"></textarea>
+
+        <br/>
+        Slack webhook url: <input type="text" size="90" id="slackurl"></input>
+
+        <br/>
+        <button id="deleteuser-button" style="display: none">Delete user</button>
+    </div>
+
+	<br/>
+	<br/>
 	
 	<p>
 		Recent announcements on arXiv lists, with some filtered out based on keywords.
@@ -150,88 +174,11 @@
 		}
 	
 		const filterOut = (article) => {
-			// We want to hide this paper if the title contains a word from the following list.
-			// The title is converted to lower case, so the list should be too.
-			var exclusion = [
-				"helmholtz",
-				"galerkin",
-				"fokker",
-				"navier",
-				"stokes",
-				"volterra",
-				"pontryagin",
-				"koopman",
-				"karhunen",
-				"runge-kutta",
-				"runge kutta",
-				"hilliard",
-				"maxwell",
-				"burgers",
-				"portfolio",
-				"dividend",
-				"black-scholes",
-				"stock option",
-				"policy gradient",
-				"model predictive control",
-				"boundary conditions",
-				"boundary integral",
-				"boundary element",
-				"boundary value problem",
-				"magnetic field",
-				"elastic scatering",
-				"hyperelastic",
-				"wave equation",
-				"reduced basis",
-				"mean field",
-				"insurance",
-				"revenue",
-				"investment",
-				"finite element",
-				"finite-element",
-				"hydroelastic",
-				"elastodynamic",
-				"physics informed",
-				"physics-informed",
-				"fuzzy logic",
-				"model order reduction",
-				"mesh adaptation",
-				"dirichlet energy",
-				"dirichlet problem",
-				"elliptic operator",
-				"turbulen",
-				"laminar",
-				"conservation laws",
-				"hydrodynamic",
-				"lubrication",
-				"multigrid",
-				"covid-19",
-				"covid 19",
-				"pandemic",
-				"mixed integer",
-				"mixed-integer",
-				"mesh refinement",
-				"pde ",
-				" pde",
-				"pdes ",
-				"pde-constrain",
-				"partial differential",	
-				"seismic",
-				"vehicle",
-				"waveguide",
-				"parabolic differential",
-				"parabolic problem",
-				"porous medi",
-				"federated learning",
-				"bandit",
-				"integro-differential",
-				"shallow water",
-				"convection diffusion",
-				"multiobjective",
-				"multi-objective",
-				"isogeometric",
-			];
-			// If the title contains any word from the list, return true.
-			return exclusion.some(word => article.title.toLowerCase().includes(word));
+			// We want to hide this paper if the title contains a word from the exclusions list.
+			var exclusion = document.getElementById('exclusion-textarea').value.split('\n');
+			// If the title contains any word from the list (case insensitive), return true.
+			var lctitle = article.title.toLowerCase();
+			return exclusion.some(word => lctitle.includes(word.toLowerCase()));
 		}
 
 		const getArticle = (id) => {
@@ -261,10 +208,7 @@
 						"\n" +
 						"\n>" + extractTextFromHtml(article.summary);
 			
-			var scrambled = 'ks1JKsNQE7QBAsbTkRc90cF5/7imHhBree/evtsbo303UBM/sa/v:TFVPr./.66G1a/KcohopBcWDltP7';
-			var clarity = [71, 79, 38, 73, 49, 53, 25, 60, 30, 70, 72, 1, 6, 61, 14, 78, 50, 75, 17, 59, 69, 41, 28, 48, 39, 34, 32, 37, 27, 19, 33, 2, 35, 54, 43, 65, 31, 62, 45, 18, 24, 5, 47, 9, 67, 74, 21, 44, 56, 20, 55, 68, 26, 12, 16, 11, 51, 46, 52, 81, 7, 36, 3, 58, 80, 42, 29, 23, 4, 64, 15, 10, 63, 66, 57, 40, 76, 77, 22, 8, 13];
-			var url = '';
-			clarity.forEach((k) => { url = url + scrambled[k-1]; });
+			var url = document.getElementById('slackurl').value;
 			// https://api.slack.com/reference/surfaces/formatting
 			// https://api.slack.com/messaging/composing/layouts
 			var data = {type: "mrkdwn", text: text};
@@ -374,5 +318,152 @@
 	</script>
 	
   </div>
+
+
+      <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+	  <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js';
+
+        // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+        // import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js';
+
+        // Add Firebase products that you want to use
+        import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, deleteUser } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
+        import { getFirestore, collection, doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
+        // Removed: addDoc, updateDoc, query, orderBy
+        // TODO: there is a "lite" version for Firestore
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAbF2a_FSYjnN66_pQtxd8-cC9ba5wU9S8",
+            authDomain: "arxiv-digest.firebaseapp.com",
+            databaseURL: "https://arxiv-digest.firebaseio.com",
+            projectId: "arxiv-digest",
+            storageBucket: "arxiv-digest.appspot.com",
+            messagingSenderId: "403410606061",
+            appId: "1:403410606061:web:563052dd9b6e2caf1b39e4",
+            //measurementId: "G-CDYH5HPQ81"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        // const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+        const db = getFirestore();
+
+        // List all arXiv categories we handle.
+        const categories = ["math.NA", "math.OC"];
+
+        async function signIn() {
+            // TODO: change it so we do not request the user's profile picture nor language preferences.
+            var provider = new GoogleAuthProvider();
+            await signInWithPopup(auth, provider);   // On mobile, should prefer signInWithRedirect, https://firebase.google.com/docs/auth/web/google-signin
+        }
+        function signOutUser() {
+            signOut(auth);
+        }
+
+        function userIsSignedIn() {
+            return !!auth.currentUser;
+        }
+
+        function reflectUserData() {
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                const userdoc = doc(db, "users/" + uid);
+                getDoc(userdoc).then((obj) => {
+                    if(obj.exists()) {   
+                        const data = obj.data();
+                        categories.forEach(cat => {
+                            document.getElementById(cat).checked = ( cat in data && data[cat]);
+                        });
+                        if("slackurl" in data) {
+                            document.getElementById("slackurl").value = data.slackurl;
+                        }
+                        if("exclusions" in data) {
+                            document.getElementById("exclusion-textarea").value = data.exclusions;
+                        }
+                    }
+                });
+            }
+            else {
+                document.getElementById("slackurl").value = "";
+                document.getElementById("exclusion-textarea").value = "";
+            }
+        }
+
+        function authStateObserver(user) {
+            if(user) {
+                reflectUserData();
+                var userName = auth.currentUser.displayName;
+                document.getElementById("user-name").innerText = userName;
+                document.getElementById("signin-div").style.display = "none";
+                document.getElementById("signout-div").style.display = "block";
+            }
+            else {
+                document.getElementById("user-name").innerText = "";
+                document.getElementById("signin-div").style.display = "block";
+                document.getElementById("signout-div").style.display = "none";
+            }
+        }
+
+        function deleteUserPermanent() {
+            const user = auth.currentUser;
+            deleteUser(user).then(() => {
+                console.log("User successfully deleted.");
+            }).catch((error) => {
+                console.log("User not deleted. Error:");
+                console.log(error);
+            });
+        }
+
+        document.getElementById("signin-button").onclick = signIn;
+        document.getElementById("signout-button").onclick = signOutUser;
+        document.getElementById("deleteuser-button").onclick = deleteUserPermanent;
+        onAuthStateChanged(auth, authStateObserver);
+        authStateObserver(auth.currentUser);
+
+        const categoryCheckboxClick = (cat) => {
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                const userdoc = doc(db, "users/" + uid);
+                var data = { };
+                data[cat] = document.getElementById(cat).checked;
+                setDoc(userdoc, data, {merge: true}); // create the doc if inexistent; update it if existent.
+                // TODO: add .then and .catch handlers.
+            }
+        };
+
+        const slackurlChange = () => {
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                const userdoc = doc(db, "users/" + uid);
+                var data = { slackurl: document.getElementById("slackurl").value };
+                setDoc(userdoc, data, {merge: true}); // create the doc if inexistent; update it if existent.
+                // TODO: add .then and .catch handlers.
+            }
+        };
+
+        const exclusionChange = () => {
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                const userdoc = doc(db, "users/" + uid);
+                var data = { exclusions: document.getElementById("exclusion-textarea").value };
+                setDoc(userdoc, data, {merge: true}); // create the doc if inexistent; update it if existent.
+                // TODO: add .then and .catch handlers.
+            }
+        };
+        
+
+        categories.forEach(cat => {
+            document.getElementById(cat).onclick = () => { categoryCheckboxClick(cat) };
+        });
+
+        document.getElementById("slackurl").onchange = slackurlChange;
+        document.getElementById("exclusion-textarea").onchange = exclusionChange;
+
+    </script>
+
   </body>
 </html>
