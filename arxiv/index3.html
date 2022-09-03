@@ -338,7 +338,8 @@
 							version: Number(titleparts[3]),
 							title: titleparts[1],
 							authors: extractTextFromHtml($this.find("dc\\:creator").text()),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
-							category: titleparts[4],
+							category: titleparts[4], // this is the official primary category of the article
+							categories: [category], // keep track of all digests where this article came up
 							updated: (titleparts[5] === 'UPDATED'),
 							crosslisted: (titleparts[5] === 'CROSS LISTED'), // not sure what happens if both UPDATED & CROSS-LISTED...
 							link: $this.find("link").text(),
@@ -347,12 +348,17 @@
 							selected: false
 						};
 						
-						// If we haven't seen this article yet
-						if(!Alpine.store('main').digest.some(existing_article => existing_article.id === article.id)) {
-							// Determine whether it should be hidden or not
+						// Try to find this article in the list we have already built so far
+						var index = Alpine.store('main').digest.findIndex(existing_article => existing_article.id === article.id);
+						if(index == -1) {
+							// If the article is new, determine whether it should be hidden or not
 							article.hide = filterOut(article);
 							// And add it to the collection.
 							Alpine.store('main').digest.push(article);
+						}
+						else {
+							// If the article is already in the list, record the fact that we saw it in this category
+							Alpine.store('main').digest[index].categories.push(category);
 						}
 
 					}); // end for each item in xml
