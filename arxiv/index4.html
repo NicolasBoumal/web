@@ -231,6 +231,10 @@
 
 		document.addEventListener('alpine:init', () => {
 
+			// The digest array is meant to contain the full list of papers in today's arXiv digest, for selected categories.
+			// Each element is an article with fields:
+			//  id, version, title, authors, category, updated, crosslisted, link, summary, hide, selected
+
         	Alpine.store('main', {
 				digest: [],
 				get articlesNew() {
@@ -446,6 +450,7 @@
         };
 
         const exclusionChange = () => {
+			Alpine.store('main').digest.forEach((article, index) => Alpine.store('main').digest[index].hide = filterOut(article));
             if(userIsSignedIn()) {
                 const uid = auth.currentUser.uid;
                 const userdoc = doc(db, "users/" + uid);
@@ -459,7 +464,6 @@
         categories.forEach(cat => {
             document.getElementById(cat).onclick = () => { categoryCheckboxClick(cat) };
         });
-
         document.getElementById("slackurl").onchange = slackurlChange;
         document.getElementById("exclusion-textarea").onchange = exclusionChange;
 
