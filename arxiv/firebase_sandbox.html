@@ -19,6 +19,9 @@
         <input type="checkbox" id="math.OC">math.OC</input>
 
         <br/>
+        <textarea id="exclusion-textarea"></textarea>
+
+        <br/>
         Slack webhook url: <input type="text" size="85" id="slackurl"></input>
 
         <br/>
@@ -86,6 +89,9 @@
                         if("slackurl" in data) {
                             document.getElementById("slackurl").value = data.slackurl;
                         }
+                        if("exclusions" in data) {
+                            document.getElementById("exclusion-textarea").value = data.exclusions;
+                        }
                     }
                 });
             }
@@ -146,11 +152,23 @@
             }
         };
 
+        const exclusionChange = () => {
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                const userdoc = doc(db, "users/" + uid);
+                var data = { exclusions: document.getElementById("exclusion-textarea").value };
+                setDoc(userdoc, data, {merge: true}); // create the doc if inexistent; update it if existent.
+                // TODO: add .then and .catch handlers.
+            }
+        };
+        
+
         categories.forEach(cat => {
             document.getElementById(cat).onclick = () => { categoryCheckboxClick(cat) };
         });
 
         document.getElementById("slackurl").onchange = slackurlChange;
+        document.getElementById("exclusion-textarea").onchange = exclusionChange;
 
     </script>
     
