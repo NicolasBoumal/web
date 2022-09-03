@@ -30,18 +30,35 @@
     <div id="signin-div" style="display: none">
         <button id="signin-button">Sign in</button>
     </div>
-    <div id="signout-div" style="display: none">
+    <div id="signout-div" style="display: none" x-data="">
         Signed in as <span id="user-name"></span>.
         <button id="signout-button">Sign out</button>
 
-        <input type="checkbox" id="math.NA">math.NA</input>
-        <input type="checkbox" id="math.OC">math.OC</input>
+		<br/>
+		<!--
+		<ul x-data="">
+			<template x-for="category in $store.main.categories">
+				<li x-text="category"></li>
+			</template>
+		</ul>
+		<div x-data="{categorytoadd: ''}">
+			<input type="text" placeholder="Add a category" x-model="categorytoadd">
+			<button x-on:click="$store.main.categories.push(categorytoadd); categorytoadd = '';">Add</button>
+		</div>
+		-->
+
+		<!-- x-init="$watch('$store.main.categories', (val) => { selectedCategoriesUpdated(val); })" -->
+		<select x-model="$store.main.categories" id="selectcategories" multiple>
+			<option value="math.NA">math.NA (numerical analysis)</option>
+			<option value="math.OC">math.OC (optimization and control)</option>
+			<option value="math.AG">math.AG (algebraic geometry)</option>
+		</select>
 
         <br/>
-        <textarea id="exclusion-textarea"></textarea>
+        <textarea id="exclusion-textarea" x-model="$store.main.exclusions" rows="4" cols="50"></textarea>
 
         <br/>
-        Slack webhook url: <input type="text" size="90" id="slackurl"></input>
+        Slack webhook url: <input type="text" id="slackurl" x-model="$store.main.slackurl"></input>
 
         <br/>
         <button id="deleteuser-button" style="display: none">Delete user</button>
@@ -145,8 +162,11 @@
 					x-on:click.prevent="toClipboard(article.id, $el)">&#x1F4CB;</a>
 				<a href="" style="text-decoration: none" title="Send to slack"
 					x-on:click.prevent="toSlack(article.id, $el)"
+					x-show="$store.main.slackurl.length > 4"><img src="slack.png" width="16px" style="padding-bottom: 4px;"/></a>
+					<!--
 					x-data="{get showSlack() {{return document.getElementById('slackurl').value.trim().length > 0;}}}"
 					x-show="showSlack"><img src="slack.png" width="16px" style="padding-bottom: 4px;"/></a>
+					-->
 				<br/><i x-text="article.authors"></i>
 				<br/><span x-html="article.summary"></span>
 			</li>
@@ -231,7 +251,73 @@
 						console.log(ex);
 					});
 		}
-		
+
+		const fetchCategory = (category) => {
+
+			// We fetch articles listed in the following rss feed:
+			// "https://export.arxiv.org/rss/" + category
+			// However, since that feed does not set CORS headers properly,
+			// we instead issue the query to a worker on cloudflare.
+			// That worker fetches the data from arxiv and add the
+			// proper headers before passing the response along.
+			// https://developers.cloudflare.com/workers/examples/alter-headers/
+			// https://developers.cloudflare.com/workers/examples/cors-header-proxy/
+			// https://css-tricks.com/proxying-third-party-javascript-as-first-party-javascript-and-the-potential-effect-on-analytics/
+			var rssbaseurl = "https://arxiv-digest-fetcher.nicolasboumal.workers.dev/?category=";
+
+			$.get(rssbaseurl + category, function(data) {
+
+				var $xml = $(data);
+				var catlongname = $xml.find("channel").find("dc\\:subject").text();
+				var date = new Date($xml.find("channel").find("dc\\:date").text());
+				$("#listdigests").append('<li>' + catlongname + ', ' + date.toDateString() + '</li>');
+
+				// RegExp to parse title of each article in the rss feed
+				var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/;
+
+				$xml.find("item").each(function() {
+
+					var $this = $(this);
+					var fulltitle = $this.find("title").text();
+					var titleparts = re_title.exec(fulltitle);
+					var article = {
+						id: titleparts[2],
+						version: Number(titleparts[3]),
+						title: titleparts[1],
+						authors: extractTextFromHtml($this.find("dc\\:creator").text()),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
+						maincategory: titleparts[4], // this is the official primary category of the article
+						incategories: [category], // keep track of all loaded categories where this article came up
+						updated: (titleparts[5] === 'UPDATED'),
+						crosslisted: (titleparts[5] === 'CROSS LISTED'), // not sure what happens if both UPDATED & CROSS-LISTED...
+						link: $this.find("link").text(),
+						summary: $this.find("description").text().replaceAll("\n", " "),
+						hide: false,
+						selected: false
+					};
+					
+					// Try to find this article in the list we have already built so far.
+					var index = Alpine.store('main').digest.findIndex(existing_article => existing_article.id === article.id);
+					if(index == -1) {
+						// The article is new: determine whether it should be hidden or not,
+						article.hide = filterOut(article);
+						// and add it to the collection.
+						Alpine.store('main').digest.push(article);
+					}
+					else {
+						// The article is already in the list: record the fact that we saw it in this category too.
+						if(!Alpine.store('main').digest[index].incategories.some(cat => cat === category)) {
+							Alpine.store('main').digest[index].incategories.push(category);
+						}
+					}
+
+				}); // end for each item in xml
+
+				MathJax.typeset(); // This likely executes too early, but "await Alpine.$nextTick();" doesn't work
+
+			}); // end get url
+
+			// TODO handle fails?
+		};
 
 		document.addEventListener('alpine:init', () => {
 
@@ -241,6 +327,9 @@
 
         	Alpine.store('main', {
 				digest: [],
+				categories: [],
+				slackurl: '',
+				exclusions: '',
 				get articlesNew() {
 					return this.digest.filter(article => !article.hide && !article.updated);
 				},
@@ -259,67 +348,6 @@
 					Alpine.nextTick( () => { MathJax.typeset(); });
 				}
         	});
-
-
-			var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
-
-
-			// https://css-tricks.com/proxying-third-party-javascript-as-first-party-javascript-and-the-potential-effect-on-analytics/
-			// https://developers.cloudflare.com/workers/examples/alter-headers/
-			// https://developers.cloudflare.com/workers/examples/cors-header-proxy/			
-			var rssbaseurl = "https://arxiv-digest-fetcher.nicolasboumal.workers.dev/?category=";
-			var categories = ["math.NA", "math.OC"];
-			categories.forEach(category => {
-				$.get(rssbaseurl + category, function(data) {
-
-					var $xml = $(data);
-					var date = new Date($xml.find("channel").find("dc\\:date").text());
-					$("#listdigests").append('<li>' + 
-												$xml.find("channel").find("dc\\:subject").text() +
-												', ' + 
-												date.toDateString() +
-											'</li>');
-					
-					$xml.find("item").each(function() {
-
-						var $this = $(this);
-						var fulltitle = $this.find("title").text();
-						var titleparts = re_title.exec(fulltitle);
-						var article = {
-							id: titleparts[2],
-							version: Number(titleparts[3]),
-							title: titleparts[1],
-							authors: extractTextFromHtml($this.find("dc\\:creator").text()),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
-							category: titleparts[4], // this is the official primary category of the article
-							categories: [category], // keep track of all digests where this article came up
-							updated: (titleparts[5] === 'UPDATED'),
-							crosslisted: (titleparts[5] === 'CROSS LISTED'), // not sure what happens if both UPDATED & CROSS-LISTED...
-							link: $this.find("link").text(),
-							summary: $this.find("description").text().replaceAll("\n", " "),
-							hide: false,
-							selected: false
-						};
-						
-						// Try to find this article in the list we have already built so far.
-						var index = Alpine.store('main').digest.findIndex(existing_article => existing_article.id === article.id);
-						if(index == -1) {
-							// The article is new: determine whether it should be hidden or not,
-							article.hide = filterOut(article);
-							// and add it to the collection.
-							Alpine.store('main').digest.push(article);
-						}
-						else {
-							// The article is already in the list: record the fact that we saw it in this category too.
-							Alpine.store('main').digest[index].categories.push(category);
-						}
-
-					}); // end for each item in xml
-
-					// await Alpine.$nextTick(); doesn't work
-					MathJax.typeset(); // This likely executes too early..
-
-				}); // end get url
-			}); // end for each url
 
     	}); // end Alpine init
 
@@ -360,9 +388,6 @@
         const auth = getAuth(app);
         const db = getFirestore();
 
-        // List all arXiv categories we handle.
-        const categories = ["math.NA", "math.OC"];
-
         async function signIn() {
             // TODO: change it so we do not request the user's profile picture nor language preferences.
             var provider = new GoogleAuthProvider();
@@ -387,16 +412,21 @@
                 getDoc(userdoc).then((obj) => {
                     if(obj.exists()) {   
                         const data = obj.data();
-                        categories.forEach(cat => {
-                            document.getElementById(cat).checked = ( cat in data && data[cat]);
-                        });
+                        Alpine.store('main').categories = data.categories;
+						//forEach(cat => {
+                        //    document.getElementById(cat).checked = ( cat in data && data[cat]);
+                        //});
                         if("slackurl" in data) {
-                            document.getElementById("slackurl").value = data.slackurl;
+                    		Alpine.store('main').slackurl = data.slackurl;
                         }
                         if("exclusions" in data) {
-                            document.getElementById("exclusion-textarea").value = data.exclusions;
+                        	Alpine.store('main').exclusions = data.exclusions;
+							// document.getElementById("exclusion-textarea").value = data.exclusions;
 							reflectExclusionsChange();
                         }
+						if("categories" in data) {
+							selectedCategoriesUpdated();
+						}
                     }
                 });
             }
@@ -437,17 +467,6 @@
         onAuthStateChanged(auth, authStateObserver);
         authStateObserver(auth.currentUser);
 
-        const categoryCheckboxClick = (cat) => {
-            if(userIsSignedIn()) {
-                const uid = auth.currentUser.uid;
-                const userdoc = doc(db, "users/" + uid);
-                var data = { };
-                data[cat] = document.getElementById(cat).checked;
-                setDoc(userdoc, data, {merge: true}); // create the doc if inexistent; update it if existent.
-                // TODO: add .then and .catch handlers.
-            }
-        };
-
         const slackurlChange = () => {
             if(userIsSignedIn()) {
                 const uid = auth.currentUser.uid;
@@ -468,13 +487,33 @@
                 // TODO: add .then and .catch handlers.
             }
         };
+		
+		const arraysHaveCommonElement = (array1, array2) => {
+			return array1.some(x => array2.includes(x));
+		};
+		const selectedCategoriesUpdated = () => {
+			// TODO: Only fetch the ones we didn't already.
+			$("#listdigests").html("");
+			Alpine.store('main').categories.forEach(category => fetchCategory(category));
+			Alpine.store('main').digest = Alpine.store('main').digest.filter(article => arraysHaveCommonElement(article.incategories, Alpine.store('main').categories));
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                const userdoc = doc(db, "users/" + uid);
+                var data = { categories: Alpine.store('main').categories };
+                setDoc(userdoc, data, {merge: true}); // create the doc if inexistent; update it if existent.
+                // TODO: add .then and .catch handlers.
+            }
+		};
         
 
-        categories.forEach(cat => {
+		/*
+        Alpine.store('main').categories.forEach(cat => {
             document.getElementById(cat).onclick = () => { categoryCheckboxClick(cat) };
         });
+		*/
         document.getElementById("slackurl").onchange = slackurlChange;
         document.getElementById("exclusion-textarea").onchange = exclusionChange;
+        document.getElementById("selectcategories").onchange = selectedCategoriesUpdated;
 
     </script>
 
