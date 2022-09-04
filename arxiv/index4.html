@@ -15,13 +15,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	
 	<script src="//unpkg.com/alpinejs" defer></script>
-	
+
 	<script> MathJax = { tex: {	inlineMath: [['$', '$'], ['\\(', '\\)']] } }; </script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
   </head>
   <body>
     <div class="container">
+
+		<br/>
+
+		<multi-select id="multiselecttest" class="border"
+			selecteditem="badge bg-primary pt-1 m-1"
+			dropdown="border"
+			dropdownitem="p-1"
+			selectallbutton="display: none"
+			selectallbuttonspan="bi-check2-all text-success"
+			clearbutton="btn btn-sm btn-light"
+			clearbuttonspan="bi-x-circle text-danger"
+		>
+			<option value="stat.ML">stat.ML (Machine Learning)</option>
+			<option value="stat.OT">stat.OT (Other Statistics)</option>
+			<option value="stat.TH">stat.TH (Theory)</option>
+		</multi-select>
+
+		<br/><br/><br/><br/>
 
 	<br/>
 	<br/>
@@ -40,7 +58,7 @@
 			<h2>Select the arXiv categories to track</h2>
 			<h4>You may select any number. It's recommended to pick between one and three.</h4>
 			<!-- x-init="$watch('$store.main.categories', (val) => { selectedCategoriesUpdated(val); })" -->
-			<select x-model="$store.main.categories" id="selectcategories" size="6" multiple>
+			<select x-model="$store.main.categories" id="selectcategories" size="8" class="form-select form-select-sm" multiple>
 				<template x-for="(description, category) in {
 					'astro-ph.CO': 'Cosmology and Nongalactic Astrophysics',
 					'astro-ph.EP': 'Earth and Planetary Astrophysics',
@@ -673,5 +691,12 @@
 
     </script>
 
+
+	<!-- https://www.webcomponents.org/element/@honatas/multi-select-webcomponent -->
+	<script src="https://cdn.jsdelivr.net/npm/@honatas/multi-select-webcomponent/dist/multi-select-webcomponent.min.js" crossorigin="anonymous"></script>
+	<script>
+		window.customElements.define('multi-select', MultiselectWebcomponent);
+		document.getElementById('multiselecttest').build();
+	</script>
   </body>
 </html>
