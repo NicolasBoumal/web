@@ -36,11 +36,11 @@
         <button id="signout-button">Sign out</button>
 		<br/>
 		<br/>
-		<div style="text-align: center; background-color: lightsteelblue; padding: 1em; border-radius: 1em" x-show="showoptions" x-transition>
-			<h2>Select the arXiv categories to track</h2>
+		<div style="background-color: lightsteelblue; padding: 2em; border-radius: 1em;" x-show="showoptions" x-transition>
+			<h2>Select arXiv categories to track</h2>
 			<h4>You may select any number. It's recommended to pick between one and three.</h4>
 			<!-- x-init="$watch('$store.main.categories', (val) => { selectedCategoriesUpdated(val); })" -->
-			<select x-model="$store.main.categories" id="selectcategories" size="8" class="form-select form-select-sm" multiple>
+			<select x-model="$store.main.categories" id="selectcategories" size="8" style="width: auto;" class="form-select form-select-sm" multiple>
 				<template x-for="(description, category) in {
 					'astro-ph.CO': 'Cosmology and Nongalactic Astrophysics',
 					'astro-ph.EP': 'Earth and Planetary Astrophysics',
@@ -205,16 +205,15 @@
 			<br/>
 			<br/>
 			<h2>List excluded words</h2>
-			<h4>Papers whose titles contain any of the words below are filtered out. One per line; case insensitive; whitespace counts.</h4>
-			
-			<textarea id="exclusion-textarea" x-model="$store.main.exclusions" rows="6"></textarea>
+			<h4>If a paper's title contains any of the lines in the box below, it is filtered out. Case insensitive; whitespace counts.</h4>
+			<textarea id="exclusion-textarea" x-model="$store.main.exclusions" rows="6" class="form-control" style="width: auto;"></textarea>
 
 			<br/>
 			<br/>
 			<h2>Enable "Share to Slack" button (optional)</h2>
 			<h4>To do so, provide a <a href="https://api.slack.com/messaging/webhooks" target="_blank">webhook url</a> to your favorite channel.</h4>
 			
-			<input type="text" id="slackurl" x-model="$store.main.slackurl"></input>
+			<input type="text" id="slackurl" x-model="$store.main.slackurl" class="form-control" style="width: auto;"></input>
 
 			<br/>
 			<button id="deleteuser-button" style="display: none">Delete user</button>
