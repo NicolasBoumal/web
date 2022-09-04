@@ -2,15 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-	<!-- Analytics (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3XP9VMHJ3"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-Z3XP9VMHJ3');
-	</script>
-	<!-- Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ArXiv filter</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -20,45 +11,254 @@
 	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	
-	<!--
-    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet" crossorigin="anonymous">
-	-->
-	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	
-	<!--
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js" crossorigin="anonymous"></script>
-	-->
-	
-	<script>
-		MathJax = {
-		  tex: {
-			inlineMath: [['$', '$'], ['\\(', '\\)']]
-		  }
-		};
-	</script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">		</script>
+	<script src="//unpkg.com/alpinejs" defer></script>
+
+	<script> MathJax = { tex: {	inlineMath: [['$', '$'], ['\\(', '\\)']] } }; </script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
   </head>
   <body>
-  <div class="container">
-	
+    <div class="container">
+
 	<br/>
+	<br/>
+
+	
+    <div id="signin-div" style="display: none">
+        <button id="signin-button" class="btn btn-primary btn-sm">Sign in</button>
+    </div>
+    <div id="signout-div" style="display: none" x-data="{showoptions: false}">
+		<button x-on:click="showoptions = !showoptions" class="btn btn-primary btn-sm">Toggle options</button>
+        <button id="signout-button" class="btn btn-secondary btn-sm">Sign out</button>
+		Signed in as <span id="user-name"></span>.
+		<br/>
+		<br/>
+		<div class="container-sm" style="background-color: gainsboro; padding: 2em; border-radius: 1em;" x-show="showoptions" x-transition>
+			<div class="row">
+				<div class="col-sm">
+					<h2>Select arXiv categories to track</h2>
+					<p>You may select any number. It's recommended to pick between one and three.</p>
+					<!-- style="width: auto;" -->
+					<select x-model="$store.main.categories" id="selectcategories" size="8" class="form-select form-select-sm" multiple>
+						<template x-for="(description, category) in {
+							'astro-ph.CO': 'Cosmology and Nongalactic Astrophysics',
+							'astro-ph.EP': 'Earth and Planetary Astrophysics',
+							'astro-ph.GA': 'Astrophysics of Galaxies',
+							'astro-ph.HE': 'High Energy Astrophysical Phenomena',
+							'astro-ph.IM': 'Instrumentation and Methods for Astrophysics',
+							'astro-ph.SR': 'Solar and Stellar Astrophysics',
+							'cond-mat.dis-nn': 'Disordered Systems and Neural Networks',
+							'cond-mat.mes-hall': 'Mesoscale and Nanoscale Physics',
+							'cond-mat.mtrl-sci': 'Materials Science',
+							'cond-mat.other': 'Other Condensed Matter',
+							'cond-mat.quant-gas': 'Quantum Gases',
+							'cond-mat.soft': 'Soft Condensed Matter',
+							'cond-mat.stat-mech': 'Statistical Mechanics',
+							'cond-mat.str-el': 'Strongly Correlated Electrons',
+							'cond-mat.supr-con': 'Superconductivity',
+							'cs.AI': 'Artificial Intelligence',
+							'cs.AR': 'Hardware Architecture',
+							'cs.CC': 'Computational Complexity',
+							'cs.CE': 'Computational Engineering, Finance, and Science',
+							'cs.CG': 'Computational Geometry',
+							'cs.CL': 'Computation and Language',
+							'cs.CR': 'Cryptography and Security',
+							'cs.CV': 'Computer Vision and Pattern Recognition',
+							'cs.CY': 'Computers and Society',
+							'cs.DB': 'Databases',
+							'cs.DC': 'Distributed, Parallel, and Cluster Computing',
+							'cs.DL': 'Digital Libraries',
+							'cs.DM': 'Discrete Mathematics',
+							'cs.DS': 'Data Structures and Algorithms',
+							'cs.ET': 'Emerging Technologies',
+							'cs.FL': 'Formal Languages and Automata Theory',
+							'cs.GL': 'General Literature',
+							'cs.GR': 'Graphics',
+							'cs.GT': 'Computer Science and Game Theory',
+							'cs.HC': 'Human-Computer Interaction',
+							'cs.IR': 'Information Retrieval',
+							'cs.IT': 'Information Theory',
+							'cs.LG': 'Learning',
+							'cs.LO': 'Logic in Computer Science',
+							'cs.MA': 'Multiagent Systems',
+							'cs.MM': 'Multimedia',
+							'cs.MS': 'Mathematical Software',
+							'cs.NA': 'Numerical Analysis',
+							'cs.NE': 'Neural and Evolutionary Computing',
+							'cs.NI': 'Networking and Internet Architecture',
+							'cs.OH': 'Other Computer Science',
+							'cs.OS': 'Operating Systems',
+							'cs.PF': 'Performance',
+							'cs.PL': 'Programming Languages',
+							'cs.RO': 'Robotics',
+							'cs.SC': 'Symbolic Computation',
+							'cs.SD': 'Sound',
+							'cs.SE': 'Software Engineering',
+							'cs.SI': 'Social and Information Networks',
+							'cs.SY': 'Systems and Control',
+							'econ.EM': 'Econometrics',
+							'econ.GN': 'General Economics',
+							'econ.TH': 'Theoretical Economics',
+							'eess.AS': 'Audio and Speech Processing',
+							'eess.IV': 'Image and Video Processing',
+							'eess.SP': 'Signal Processing',
+							'eess.SY': 'Systems and Control',
+							'gr-qc': 'General Relativity and Quantum Cosmology',
+							'hep-ex': 'High Energy Physics - Experiment',
+							'hep-lat': 'High Energy Physics - Lattice',
+							'hep-ph': 'High Energy Physics - Phenomenology',
+							'hep-th': 'High Energy Physics - Theory',
+							'math-ph': 'Mathematical Physics',
+							'math.AC': 'Commutative Algebra',
+							'math.AG': 'Algebraic Geometry',
+							'math.AP': 'Analysis of PDEs',
+							'math.AT': 'Algebraic Topology',
+							'math.CA': 'Classical Analysis and ODEs',
+							'math.CO': 'Combinatorics',
+							'math.CT': 'Category Theory',
+							'math.CV': 'Complex Variables',
+							'math.DG': 'Differential Geometry',
+							'math.DS': 'Dynamical Systems',
+							'math.FA': 'Functional Analysis',
+							'math.GM': 'General Mathematics',
+							'math.GN': 'General Topology',
+							'math.GR': 'Group Theory',
+							'math.GT': 'Geometric Topology',
+							'math.HO': 'History and Overview',
+							'math.IT': 'Information Theory',
+							'math.KT': 'K-Theory and Homology',
+							'math.LO': 'Logic',
+							'math.MG': 'Metric Geometry',
+							'math.MP': 'Mathematical Physics',
+							'math.NA': 'Numerical Analysis',
+							'math.NT': 'Number Theory',
+							'math.OA': 'Operator Algebras',
+							'math.OC': 'Optimization and Control',
+							'math.PR': 'Probability',
+							'math.QA': 'Quantum Algebra',
+							'math.RA': 'Rings and Algebras',
+							'math.RT': 'Representation Theory',
+							'math.SG': 'Symplectic Geometry',
+							'math.SP': 'Spectral Theory',
+							'math.ST': 'Statistics Theory',
+							'nlin.AO': 'Adaptation and Self-Organizing Systems',
+							'nlin.CD': 'Chaotic Dynamics',
+							'nlin.CG': 'Cellular Automata and Lattice Gases',
+							'nlin.PS': 'Pattern Formation and Solitons',
+							'nlin.SI': 'Exactly Solvable and Integrable Systems',
+							'nucl-ex': 'Nuclear Experiment',
+							'nucl-th': 'Nuclear Theory',
+							'physics.acc-ph': 'Accelerator Physics',
+							'physics.ao-ph': 'Atmospheric and Oceanic Physics',
+							'physics.app-ph': 'Applied Physics',
+							'physics.atm-clus': 'Atomic and Molecular Clusters',
+							'physics.atom-ph': 'Atomic Physics',
+							'physics.bio-ph': 'Biological Physics',
+							'physics.chem-ph': 'Chemical Physics',
+							'physics.class-ph': 'Classical Physics',
+							'physics.comp-ph': 'Computational Physics',
+							'physics.data-an': 'Data Analysis, Statistics and Probability',
+							'physics.ed-ph': 'Physics Education',
+							'physics.flu-dyn': 'Fluid Dynamics',
+							'physics.gen-ph': 'General Physics',
+							'physics.geo-ph': 'Geophysics',
+							'physics.hist-ph': 'History and Philosophy of Physics',
+							'physics.ins-det': 'Instrumentation and Detectors',
+							'physics.med-ph': 'Medical Physics',
+							'physics.optics': 'Optics',
+							'physics.plasm-ph': 'Plasma Physics',
+							'physics.pop-ph': 'Popular Physics',
+							'physics.soc-ph': 'Physics and Society',
+							'physics.space-ph': 'Space Physics',
+							'q-bio.BM': 'Biomolecules',
+							'q-bio.CB': 'Cell Behavior',
+							'q-bio.GN': 'Genomics',
+							'q-bio.MN': 'Molecular Networks',
+							'q-bio.NC': 'Neurons and Cognition',
+							'q-bio.OT': 'Other',
+							'q-bio.PE': 'Populations and Evolution',
+							'q-bio.QM': 'Quantitative Methods',
+							'q-bio.SC': 'Subcellular Processes',
+							'q-bio.TO': 'Tissues and Organs',
+							'q-fin.CP': 'Computational Finance',
+							'q-fin.EC': 'Economics',
+							'q-fin.GN': 'General Finance',
+							'q-fin.MF': 'Mathematical Finance',
+							'q-fin.PM': 'Portfolio Management',
+							'q-fin.PR': 'Pricing of Securities',
+							'q-fin.RM': 'Risk Management',
+							'q-fin.ST': 'Statistical Finance',
+							'q-fin.TR': 'Trading and Microstructure',
+							'quant-ph': 'Quantum Physics',
+							'stat.AP': 'Applications',
+							'stat.CO': 'Computation',
+							'stat.ME': 'Methodology',
+							'stat.ML': 'Machine Learning',
+							'stat.OT': 'Other Statistics',
+							'stat.TH': 'Theory'
+						}">
+							<option :value="category" x-text="category + ' (' + description + ')'"></option>
+						</template>
+					</select>
+					<br/>
+					
+				</div>
+
+				<div class="col-sm">
+					<h2>List excluded words</h2>
+					<!--  Case insensitive; whitespace counts. -->
+					<p>If a paper's title contains any of the lines in the box below, it is filtered out.</p>
+					<!-- style="width: auto;" -->
+					<textarea id="exclusion-textarea" x-model="$store.main.exclusions" rows="7" class="form-control"></textarea>
+					<br/>
+				</div>
+
+			</div>
+			
+			<div class="row">
+				<div class="col-sm">
+					<h2>Enable "Share to Slack" button (optional)</h2>
+					<p>To do so, provide a <a href="https://api.slack.com/messaging/webhooks" target="_blank">webhook url</a> to your favorite channel.</p>
+					<input type="text" id="slackurl" x-model="$store.main.slackurl" class="form-control" style="width: auto;"></input>
+					<br/>
+				</div>
+			</div>
+
+			<button id="deleteuser-button" style="display: none">Delete user</button>
+
+		</div>
+	</div>
+
 	<br/>
 	
 	<p>
-		Today's announcements on arXiv lists math.NA and math.OC, with some filtered out based on keywords.
+		Latest daily announcements on arXiv lists, with some filtered out based on keywords.
+		<ul id="listdigests"></ul>
 	</p>
 	
-	To re-activate CORS work-around, go <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="_blank">here</a>.
-	<br/>
+	<table>
+		<tr>
+			<td># new papers shown:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td x-data="{get count() { return $store.main.articlesNew.length; }}" x-text="count"></td>
+		</tr>
+		<tr>
+			<td># updated papers shown:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td x-data="{get count() { return $store.main.articlesUpdated.length; }}" x-text="count"></td>
+		</tr>
+		<tr>
+			<td># papers filtered out:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td x-data="{get count() { return $store.main.articlesHidden.length; }}" x-text="count"></td>
+		</tr>
+	</table>
 	
-	<!-- Test MathJax $x^2$. -->
+	<br/>
   
     <h1>New papers</h1>
 	
-	<table id="tablenew" class="table table-striped">
+	<table class="table table-striped" x-data="">
 		<thead>
 			<tr>
 				<th scope="col">#</th>
@@ -67,14 +267,21 @@
 			</tr>
 		</thead>
 		<tbody>
+			<template x-for="article in $store.main.articlesNew" :key="article.id">
+				<tr x-on:click="$store.main.toggleSelection(article.id)" :class="article.selected ? 'table-info' : ''">
+					<td x-text="article.id"></td>
+					<td><a target="_blank" :href="article.link" x-text="article.title"></a></td>
+					<td x-text="article.authors"></td>
+				</tr>
+			</template>
 		</tbody>
 	</table>
 	
-	<br>
+	<br/>
   
     <h1>Updated papers</h1>
 	
-	<table id="tableupdates" class="table table-striped">
+	<table class="table table-striped" x-data="">
 		<thead>
 			<tr>
 				<th scope="col">#</th>
@@ -84,158 +291,398 @@
 			</tr>
 		</thead>
 		<tbody>
+			<template x-for="article in $store.main.articlesUpdated" :key="article.id">
+				<tr x-on:click="$store.main.toggleSelection(article.id)" :class="article.selected ? 'table-info' : ''">
+					<td x-text="article.id"></td>
+					<td x-text="article.version"></td>
+					<td><a target="_blank" :href="article.link" x-text="article.title"></a></td>
+					<td x-text="article.authors"></td>
+				</tr>
+			</template>
 		</tbody>
 	</table>
 	
+	<br/>
+
+	<!-- https://help.socialintents.com/article/148-how-to-find-your-slack-team-id-and-slack-channel-id -->
+	<!-- #general on optimepfl: https://app.slack.com/client/T01B6UR5KME/C01AABV7X70 -->
+	<!-- https://api.slack.com/messaging/webhooks -->
+	<!-- https://api.slack.com/reference/deep-linking -->
+	<!--
+	Best on mobile: <a href="slack://channel?team=T01B6UR5KME&id=C01AABV7X70" target="_blank">open #general slack channel with slack://</a><br/>
+	Not sure about this one: <a href="https://slack.com/app_redirect?channel=general" target="_blank">open #general slack channel with slack.com/app_redirect</a><br/>
+	Best on desktop: <a href="https://app.slack.com/client/T01B6UR5KME/C01AABV7X70" target="_blank">open #general slack channel with direct url</a>
+	<br/>
+	<br/>
+	-->
+  
+    <h1>Selected papers</h1>
+
+	<!-- https://stackoverflow.com/questions/2409836/how-to-set-cursor-style-to-pointer-for-links-without-hrefs -->
+	<ul x-data="">
+		<template x-for="article in $store.main.articlesSelected" :key="article.id">
+			<li>
+				<a target="_blank" :href="article.link"
+					x-data="{ get title() { return escapeHtml(article.title) + ((article.updated) ? ' (updated, v' + article.version + ')' : '') } }"
+					x-text="title"></a>
+				<a href="" style="text-decoration: none" title="Copy to clipboard"
+					x-on:click.prevent="toClipboard(article.id, $el)">&#x1F4CB;</a>
+				<a href="" style="text-decoration: none" title="Send to slack"
+					x-on:click.prevent="toSlack(article.id, $el)"
+					x-show="$store.main.slackurl.length > 4"><img src="slack.png" width="16px" style="padding-bottom: 4px;"/></a>
+					<!--
+					x-data="{get showSlack() {{return document.getElementById('slackurl').value.trim().length > 0;}}}"
+					x-show="showSlack"><img src="slack.png" width="16px" style="padding-bottom: 4px;"/></a>
+					-->
+				<br/><i x-text="article.authors"></i>
+				<br/><span x-html="article.summary"></span>
+			</li>
+		</template>
+	</ul>
+	
+	<br/>
+	<br/>
+	
 	<script>
 	
-		/*
-		var entityMap = {
-		  '&': '&amp;',
-		  '<': '&lt;',
-		  '>': '&gt;',
-		  '"': '&quot;',
-		  "'": '&#39;',
-		  '/': '&#x2F;',
-		  '`': '&#x60;',
-		  '=': '&#x3D;'
-		};
-
-		function escapeHtml(string) {
-		  return String(string).replace(/[&<>"'`=\/]/g, function (s) {
-			return entityMap[s];
-		  });
-		}
-		*/
+		// This table is meant to contain the full list of papers in today's arXiv digest, for the selected categories.
+		// Each element is a {} with fields:
+		//  id, version, title, authors, category, updated, crosslisted, link, summary, hide, selected
+		//		var digest = [];
 		
 		const escapeHtml = (unsafe) => {
-			return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+			return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;')
+			             .replaceAll('>', '&gt;').replaceAll('"', '&quot;')
+						 .replaceAll("'", '&#039;').replaceAll("/", '&#x2F;')
+						 .replaceAll("`", '&#x60;').replaceAll("=", '&#x3D;');
+		}
+
+		// arXiv digest surrounds each author name with an <a> tag we don't need.
+		// Likewise, abstrats have html, e.g., <p> tags.
+		// This bit of code removes the html parts.
+		const extractTextFromHtml = (text) => {
+			return $("<div>").html(text).text().trim();
 		}
 	
-		// To temporarily unlock the proxy (which by-passes CORS issues),
-		// go here: https://cors-anywhere.herokuapp.com/corsdemo
-		var proxy = 'https://cors-anywhere.herokuapp.com/';
-		//var proxy = '';
-		var rssurls = ["https://export.arxiv.org/rss/math.NA", 
-					    "https://export.arxiv.org/rss/math.OC"];
-		for(var k = 0; k < rssurls.length; ++k) {
-			$.get(proxy + rssurls[k], function(data) {
-				// console.log(data);
-				var re = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/; // RegExp to parse title
+		const filterOut = (article) => {
+			// We want to hide this paper if the title contains a word from the exclusions list.
+			var exclusion = document.getElementById('exclusion-textarea').value.split('\n');
+			// If the title contains any word from the list (case insensitive), return true.
+			var lctitle = article.title.toLowerCase();
+			return exclusion.some(word => word.trim().length >= 1 && lctitle.includes(word.toLowerCase()));
+		}
+
+		const getArticle = (id) => {
+			return Alpine.store('main').digest.find(article => article.id === id);
+		}
+
+		async function toClipboard(id, $button) {
+			var article = getArticle(id);
+			var text = escapeHtml(article.title) + 
+						"\r\n" + article.authors +
+						"\r\n" + article.link +
+						((article.updated) ? " (updated, v" + article.version + ")" : "") +
+						"\r\n" +
+						"\r\n" + extractTextFromHtml(article.summary);
+			await navigator.clipboard.writeText(text);	
+			var oldtext = $button.innerHTML;
+			$button.innerHTML = "&#x2713;";
+			setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
+		}
+
+		const toSlack = (id, $button) => {
+			var article = getArticle(id);
+			var text = escapeHtml(article.title) +
+						"\n_" + article.authors + "_" +
+						"\n" + article.link +
+						((article.updated) ? " (updated, v" + article.version + ")" : "") +
+						"\n" +
+						"\n>" + extractTextFromHtml(article.summary);
+			
+			var url = document.getElementById('slackurl').value;
+			// https://api.slack.com/reference/surfaces/formatting
+			// https://api.slack.com/messaging/composing/layouts
+			var data = {type: "mrkdwn", text: text};
+			$.post(url, JSON.stringify(data))
+					.done(() => {
+						var oldtext = $button.innerHTML;
+						$button.innerHTML = "&#x2713;";
+						setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
+					})
+					.fail(function(jqxhr, settings, ex) {
+						var oldtext = $button.innerHTML;
+						$button.innerHTML = "&#10060;";
+						setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
+						console.log(jqxhr);
+						console.log(settings);
+						console.log(ex);
+					});
+		}
+
+		const fetchCategory = (category) => {
+
+			// We fetch articles listed in the following rss feed:
+			// "https://export.arxiv.org/rss/" + category
+			// However, since that feed does not set CORS headers properly,
+			// we instead issue the query to a worker on cloudflare.
+			// That worker fetches the data from arxiv and add the
+			// proper headers before passing the response along.
+			// https://developers.cloudflare.com/workers/examples/alter-headers/
+			// https://developers.cloudflare.com/workers/examples/cors-header-proxy/
+			// https://css-tricks.com/proxying-third-party-javascript-as-first-party-javascript-and-the-potential-effect-on-analytics/
+			var rssbaseurl = "https://arxiv-digest-fetcher.nicolasboumal.workers.dev/?category=";
+
+			$.get(rssbaseurl + category, function(data) {
+
 				var $xml = $(data);
+				var catlongname = $xml.find("channel").find("dc\\:subject").text();
+				var date = new Date($xml.find("channel").find("dc\\:date").text());
+				$("#listdigests").append('<li>' + catlongname + ', ' + date.toDateString() + '</li>');
+
+				// RegExp to parse title of each article in the rss feed
+				var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/;
+
 				$xml.find("item").each(function() {
+
 					var $this = $(this);
 					var fulltitle = $this.find("title").text();
-					var titleparts = re.exec(fulltitle);
-					var item = {
-						title: titleparts[1],
-						arxivid: titleparts[2],
+					var titleparts = re_title.exec(fulltitle);
+					var article = {
+						id: titleparts[2],
 						version: Number(titleparts[3]),
-						category: titleparts[4],
+						title: titleparts[1],
+						authors: extractTextFromHtml($this.find("dc\\:creator").text()),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
+						maincategory: titleparts[4], // this is the official primary category of the article
+						incategories: [category], // keep track of all loaded categories where this article came up
 						updated: (titleparts[5] === 'UPDATED'),
 						crosslisted: (titleparts[5] === 'CROSS LISTED'), // not sure what happens if both UPDATED & CROSS-LISTED...
 						link: $this.find("link").text(),
-						summary: $this.find("description").text(),
-						creator: $this.find("dc\\:creator").text()   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
-					}
+						summary: $this.find("description").text().replaceAll("\n", " "),
+						hide: false,
+						selected: false
+					};
 					
-					// By default, we'll add the paper to a table.
-					var addit = true;
-					
-					// But we don't if the title contains a word from the following list.
-					// The title is converted to lower case, so list should be too.
-					var exclusion = [
-						"helmholtz",
-						"galerkin",
-						"fokker",
-						"navier",
-						"stokes",
-						"volterra",
-						"pontryagin",
-						"koopman",
-						"portfolio",
-						"dividend",
-						"policy gradient",
-						"model predictive control",
-						"boundary conditions",
-						"boundary integral",
-						"boundary element",
-						"boundary value problem",
-						"magnetic field",
-						"elastic scatering",
-						"reduced basis",
-						"mean field",
-						"insurance",
-						"revenue",
-						"finite element",
-						"finite-element",
-						"hydroelastic",
-						"elastodynamic",
-						"physics informed",
-						"physics-informed",
-						"fuzzy logic",
-						"model order reduction",
-						"mesh adaptation",
-						"dirichlet energy",
-						"dirichlet problem",
-						"elliptic operator",
-						"turbulence",
-						"conservation laws",
-						"hydrodynamic",
-						"lubrication",
-						"covid-19",
-						"covid 19",
-					];					
-					addit = addit && !exclusion.some(word => item.title.toLowerCase().includes(word));
-
-					
-					// Since we may be checking more than on arXiv digest, duplicates may occur.
-					// So, check if this particular arXiv id is already in a table.
-					$("#tablenew tr").each(function() {
-						if($(this).find('td:first').text() === item.arxivid){
-							addit = false;
-						}
-					});
-					$("#tableupdates tr").each(function() {
-						if($(this).find('td:first').text() === item.arxivid){
-							addit = false;
-						}
-					});
-					
-					
-					if(addit) {
-					
-						if(item.version == 1) {
-							
-							$("#tablenew").append("<tr>" + 
-									"<td>"+item.arxivid+"</td>" + 
-									"<td><a href=\"" + item.link + "\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"" + escapeHtml(item.summary) + "\">" + item.title + "</a></td>" +
-									"<td>" + item.creator + "</td>" +
-									"</tr>");
-						}
-						
-					
-						if(item.version > 1) {
-							$("#tableupdates").append("<tr>" + 
-									"<td>"+item.arxivid+"</td>" + 
-									"<td>"+item.version+"</td>" + 
-									"<td><a href=\"" + item.link + "\" title=\"" + escapeHtml(item.summary) + "\">" + item.title + "</a></td>" +
-									"<td>" + item.creator + "</td>" +
-									"</tr>");
-						}
-						
-								
+					// Try to find this article in the list we have already built so far.
+					var index = Alpine.store('main').digest.findIndex(existing_article => existing_article.id === article.id);
+					if(index == -1) {
+						// The article is new: determine whether it should be hidden or not,
+						article.hide = filterOut(article);
+						// and add it to the collection.
+						Alpine.store('main').digest.push(article);
 					}
 					else {
-						console.log(item);
+						// The article is already in the list: record the fact that we saw it in this category too.
+						if(!Alpine.store('main').digest[index].incategories.some(cat => cat === category)) {
+							Alpine.store('main').digest[index].incategories.push(category);
+						}
 					}
-				});
-				//MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-				MathJax.typeset();
-			});
-		}
+
+				}); // end for each item in xml
+
+				MathJax.typeset(); // This likely executes too early, but "await Alpine.$nextTick();" doesn't work
+
+			}); // end get url
+
+			// TODO handle fails?
+		};
+
+		document.addEventListener('alpine:init', () => {
+
+			// The digest array is meant to contain the full list of papers in today's arXiv digest, for selected categories.
+			// Each element is an article with fields:
+			//  id, version, title, authors, category, updated, crosslisted, link, summary, hide, selected
+
+        	Alpine.store('main', {
+				digest: [],
+				categories: [],
+				slackurl: '',
+				exclusions: '',
+				get articlesNew() {
+					return this.digest.filter(article => !article.hide && !article.updated);
+				},
+				get articlesUpdated() {
+					return this.digest.filter(article => !article.hide && article.updated);
+				},
+				get articlesSelected() {
+					return this.digest.filter(article => article.selected);
+				},
+				get articlesHidden() {
+					return this.digest.filter(article => article.hide);
+				},
+				toggleSelection(id) {
+					var index = this.digest.findIndex(article => article.id === id);
+					this.digest[index].selected = !this.digest[index].selected;
+					Alpine.nextTick( () => { MathJax.typeset(); });
+				}
+        	});
+
+    	}); // end Alpine init
+
 	</script>
+
+	</div>
+
+
+      <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+	  <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js';
+
+        // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+        // import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js';
+
+        // Add Firebase products that you want to use
+        import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, deleteUser } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
+        import { getFirestore, collection, doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
+        // Removed: addDoc, updateDoc, query, orderBy
+        // TODO: there is a "lite" version for Firestore
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAbF2a_FSYjnN66_pQtxd8-cC9ba5wU9S8",
+            authDomain: "arxiv-digest.firebaseapp.com",
+            databaseURL: "https://arxiv-digest.firebaseio.com",
+            projectId: "arxiv-digest",
+            storageBucket: "arxiv-digest.appspot.com",
+            messagingSenderId: "403410606061",
+            appId: "1:403410606061:web:563052dd9b6e2caf1b39e4",
+            //measurementId: "G-CDYH5HPQ81"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        // const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+        const db = getFirestore();
+
+        async function signIn() {
+            // TODO: change it so we do not request the user's profile picture nor language preferences.
+            var provider = new GoogleAuthProvider();
+            await signInWithPopup(auth, provider);   // On mobile, should prefer signInWithRedirect, https://firebase.google.com/docs/auth/web/google-signin
+        }
+        function signOutUser() {
+            signOut(auth);
+        }
+
+        function userIsSignedIn() {
+            return !!auth.currentUser;
+        }
+
+		function reflectExclusionsChange() {
+			Alpine.store('main').digest.forEach((article, index) => Alpine.store('main').digest[index].hide = filterOut(article));
+		}
+
+        function reflectUserData() {
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                const userdoc = doc(db, "users/" + uid);
+                getDoc(userdoc).then((obj) => {
+                    if(obj.exists()) {   
+                        const data = obj.data();
+                        Alpine.store('main').categories = data.categories;
+						//forEach(cat => {
+                        //    document.getElementById(cat).checked = ( cat in data && data[cat]);
+                        //});
+                        if("slackurl" in data) {
+                    		Alpine.store('main').slackurl = data.slackurl;
+                        }
+                        if("exclusions" in data) {
+                        	Alpine.store('main').exclusions = data.exclusions;
+							// document.getElementById("exclusion-textarea").value = data.exclusions;
+							reflectExclusionsChange();
+                        }
+						if("categories" in data) {
+							selectedCategoriesUpdated();
+						}
+                    }
+                });
+            }
+            else {
+                document.getElementById("slackurl").value = "";
+                document.getElementById("exclusion-textarea").value = "";
+            }
+        }
+
+        function authStateObserver(user) {
+            if(user) {
+                reflectUserData();
+                var userName = auth.currentUser.displayName;
+                document.getElementById("user-name").innerText = userName;
+                document.getElementById("signin-div").style.display = "none";
+                document.getElementById("signout-div").style.display = "block";
+            }
+            else {
+                document.getElementById("user-name").innerText = "";
+                document.getElementById("signin-div").style.display = "block";
+                document.getElementById("signout-div").style.display = "none";
+            }
+        }
+
+        function deleteUserPermanent() {
+            const user = auth.currentUser;
+            deleteUser(user).then(() => {
+                console.log("User successfully deleted.");
+            }).catch((error) => {
+                console.log("User not deleted. Error:");
+                console.log(error);
+            });
+        }
+
+        document.getElementById("signin-button").onclick = signIn;
+        document.getElementById("signout-button").onclick = signOutUser;
+        document.getElementById("deleteuser-button").onclick = deleteUserPermanent;
+        onAuthStateChanged(auth, authStateObserver);
+        authStateObserver(auth.currentUser);
+
+        const slackurlChange = () => {
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                const userdoc = doc(db, "users/" + uid);
+                var data = { slackurl: document.getElementById("slackurl").value };
+                setDoc(userdoc, data, {merge: true}); // create the doc if inexistent; update it if existent.
+                // TODO: add .then and .catch handlers.
+            }
+        };
+
+        const exclusionChange = () => {
+			reflectExclusionsChange();
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                const userdoc = doc(db, "users/" + uid);
+                var data = { exclusions: document.getElementById("exclusion-textarea").value };
+                setDoc(userdoc, data, {merge: true}); // create the doc if inexistent; update it if existent.
+                // TODO: add .then and .catch handlers.
+            }
+        };
+		
+		const arraysHaveCommonElement = (array1, array2) => {
+			return array1.some(x => array2.includes(x));
+		};
+		const selectedCategoriesUpdated = () => {
+			// TODO: Only fetch the ones we didn't already.
+			$("#listdigests").html("");
+			Alpine.store('main').categories.forEach(category => fetchCategory(category));
+			Alpine.store('main').digest = Alpine.store('main').digest.filter(article => arraysHaveCommonElement(article.incategories, Alpine.store('main').categories));
+            if(userIsSignedIn()) {
+                const uid = auth.currentUser.uid;
+                const userdoc = doc(db, "users/" + uid);
+                var data = { categories: Alpine.store('main').categories };
+                setDoc(userdoc, data, {merge: true}); // create the doc if inexistent; update it if existent.
+                // TODO: add .then and .catch handlers.
+            }
+		};
+        
+
+		/*
+        Alpine.store('main').categories.forEach(cat => {
+            document.getElementById(cat).onclick = () => { categoryCheckboxClick(cat) };
+        });
+		*/
+        document.getElementById("slackurl").onchange = slackurlChange;
+        document.getElementById("exclusion-textarea").onchange = exclusionChange;
+        document.getElementById("selectcategories").onchange = selectedCategoriesUpdated;
+
+    </script>
 	
-  </div>
   </body>
 </html>
