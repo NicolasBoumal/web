@@ -437,7 +437,7 @@
 				var $xml = $(data);
 				var catlongname = $xml.find("channel").find("dc\\:subject").text();
 				var date = new Date($xml.find("channel").find("dc\\:date").text());
-				$("#listdigests").append('<li>' + catlongname + ', ' + date.toDateString() + '</li>');
+				$("#listdigests").append('<li><a target="_blank" href="' + "https://export.arxiv.org/rss/" + category + '">' + catlongname + '</a>, ' + date.toDateString() + '</li>');
 
 				// RegExp to parse title of each article in the rss feed
 				var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/;
