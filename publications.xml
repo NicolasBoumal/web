@@ -109,9 +109,14 @@
 	<bibtex>
 @Article{lan2022RCT,
   author  = {Lan, T.-Y. and Boumal, N. and Singer, A.},
-  journal = {Acta Crystallographica Section A, to appear},
+  journal = {Acta Crystallographica Section {A}},
   title   = {Random Conical Tilt Reconstruction without Particle Picking in Cryo-electron Microscopy},
-  year    = {2022}
+  year    = {2022},
+  doi = {10.1107/s2053273322005071},
+  publisher = {International Union of Crystallography ({IUCr})},
+  volume = {78},
+  number = {4},
+  pages = {294--301},
 }
 	</bibtex>
 	<comment></comment>
