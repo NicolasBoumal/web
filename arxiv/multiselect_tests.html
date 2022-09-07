@@ -15,6 +15,8 @@
     <!-- https://davidstutz.github.io/bootstrap-multiselect/#getting-started -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.2/css/bootstrap-multiselect.min.css" integrity="sha512-fZNmykQ6RlCyzGl9he+ScLrlU0LWeaR6MO/Kq9lelfXOw54O63gizFMSD5fVgZvU1YfDIc6mxom5n60qJ1nCrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.2/js/bootstrap-multiselect.min.js" integrity="sha512-lxQ4VnKKW7foGFV6L9zlSe+6QppP9B2t+tMMaV4s4iqAv4iHIyXED7O+fke1VeLNaRdoVkVt8Hw/jmZ+XocsXQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+	<script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
 
@@ -23,7 +25,8 @@
         $(document).ready(function() {
             // The templates are necessary for Bootstrap 5:
             // https://github.com/davidstutz/bootstrap-multiselect/issues/1230
-            $('#example-getting-started').multiselect({
+            // $('#selectcategories').onchange = () => {};
+            $('#selectcategories').multiselect({
                 templates: {
                     button: '<button type="button" class="multiselect dropdown-toggle btn btn-sm btn-primary" data-bs-toggle="dropdown" aria-expanded="false"><span class="multiselect-selected-text"></span></button>',
                 },           
@@ -31,14 +34,28 @@
         });
     </script>
 
-    <select id="example-getting-started" multiple="multiple" class="form-select">
-        <option value="cheese" selected>Cheese</option>
-        <option value="tomatoes" selected>Tomatoes</option>
-        <option value="mozarella">Mozzarella</option>
-        <option value="mushrooms">Mushrooms</option>
-        <option value="pepperoni">Pepperoni</option>
-        <option value="onions">Onions</option>
-    </select>
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('main', {
+                things: []
+            });
+        })
+    </script>
+
+    <div x-data="">
+        <!-- didn't work: x-model="$store.main.things" x-init="$watch('$store.main.things', value => console.log(value))" -->
+        <!-- didn't work: x-data="{get sel() { return $store.main.things.some(cat => cat === 'cheese');}}" :selected="sel" -->
+        <select id="selectcategories" multiple="multiple" class="form-select">
+            <option value="cheese" id="cheese">Cheese</option>
+            <option value="tomatoes">Tomatoes</option>
+            <option value="mozarella">Mozzarella</option>
+            <option value="mushrooms">Mushrooms</option>
+            <option value="pepperoni">Pepperoni</option>
+            <option value="onions">Onions</option>
+        </select>
+    </div>
+
+    <button onclick="$('#selectcategories').val(['cheese', 'tomatoes']).multiselect('refresh');">do it</button>
 
 </body>
 </html>

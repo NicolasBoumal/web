@@ -46,7 +46,8 @@
 					<h2>Select arXiv categories to track</h2>
 					<p>You may select any number (between one and three should do).</p>
 					<!-- style="width: auto;" -->
-					<select x-model="$store.main.categories" id="selectcategories" multiple="multiple" class="form-select">
+					<!-- https://github.com/alpinejs/alpine/issues/495  x-model="$store.main.categories" -->
+					<select id="selectcategories" multiple="multiple" class="form-select">
 						<template x-for="(description, category) in {
 							'astro-ph.CO': 'Cosmology and Nongalactic Astrophysics',
 							'astro-ph.EP': 'Earth and Planetary Astrophysics',
@@ -204,6 +205,7 @@
 							'stat.OT': 'Other Statistics',
 							'stat.TH': 'Theory'
 						}">
+							<!-- :selected="$store.main.categories.some(cat => cat === category)" -->
 							<option :value="category" x-text="category + ' (' + description + ')'"></option>
 						</template>
 					</select>
@@ -440,7 +442,7 @@
 				var $xml = $(data);
 				var catlongname = $xml.find("channel").find("dc\\:subject").text();
 				var date = new Date($xml.find("channel").find("dc\\:date").text());
-				$("#listdigests").append('<li>' + catlongname + ', ' + date.toDateString() + '</li>');
+				$("#listdigests").append('<li><a target="_blank" href="https://arxiv.org/list/' + category + '/recent">' + catlongname + '</a>, ' + date.toDateString() + '</li>');
 
 				// RegExp to parse title of each article in the rss feed
 				var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/;
@@ -582,10 +584,6 @@
                 getDoc(userdoc).then((obj) => {
                     if(obj.exists()) {   
                         const data = obj.data();
-                        Alpine.store('main').categories = data.categories;
-						//forEach(cat => {
-                        //    document.getElementById(cat).checked = ( cat in data && data[cat]);
-                        //});
                         if("slackurl" in data) {
                     		Alpine.store('main').slackurl = data.slackurl;
                         }
@@ -595,14 +593,18 @@
 							reflectExclusionsChange();
                         }
 						if("categories" in data) {
+							Alpine.store('main').categories = data.categories;
+							// Alpine.nextTick();
+							$('#selectcategories').val(Alpine.store('main').categories).multiselect('refresh');
 							selectedCategoriesUpdated();
 						}
                     }
                 });
             }
             else {
-                document.getElementById("slackurl").value = "";
-                document.getElementById("exclusion-textarea").value = "";
+				// Don't force empty categories if not signed in.
+                Alpine.store('main').slackurl = "";
+                Alpine.store('main').exclusions = "";
             }
         }
 
@@ -664,6 +666,7 @@
 		const selectedCategoriesUpdated = () => {
 			// TODO: Only fetch the ones we didn't already.
 			$("#listdigests").html("");
+			Alpine.store('main').categories = $('#selectcategories').val();
 			Alpine.store('main').categories.forEach(category => fetchCategory(category));
 			Alpine.store('main').digest = Alpine.store('main').digest.filter(article => arraysHaveCommonElement(article.incategories, Alpine.store('main').categories));
             if(userIsSignedIn()) {
@@ -692,6 +695,7 @@
 		$('#selectcategories').multiselect({
 			enableFiltering: true,
 			maxHeight: 400,
+			enableCaseInsensitiveFiltering: true,
 			templates: {
 				button: '<button type="button" class="multiselect dropdown-toggle btn btn-sm btn-primary" data-bs-toggle="dropdown" aria-expanded="false"><span class="multiselect-selected-text"></span></button>',
 			},           
