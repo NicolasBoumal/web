@@ -14,6 +14,10 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	
+    <!-- https://davidstutz.github.io/bootstrap-multiselect/#getting-started -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.2/css/bootstrap-multiselect.min.css" integrity="sha512-fZNmykQ6RlCyzGl9he+ScLrlU0LWeaR6MO/Kq9lelfXOw54O63gizFMSD5fVgZvU1YfDIc6mxom5n60qJ1nCrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.2/js/bootstrap-multiselect.min.js" integrity="sha512-lxQ4VnKKW7foGFV6L9zlSe+6QppP9B2t+tMMaV4s4iqAv4iHIyXED7O+fke1VeLNaRdoVkVt8Hw/jmZ+XocsXQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 	<script src="//unpkg.com/alpinejs" defer></script>
 
 	<script> MathJax = { tex: {	inlineMath: [['$', '$'], ['\\(', '\\)']] } }; </script>
@@ -40,9 +44,10 @@
 			<div class="row">
 				<div class="col-sm">
 					<h2>Select arXiv categories to track</h2>
-					<p>You may select any number. It's recommended to pick between one and three.</p>
+					<p>You may select any number (between one and three should do).</p>
 					<!-- style="width: auto;" -->
-					<select x-model="$store.main.categories" id="selectcategories" size="8" class="form-select form-select-sm" multiple>
+					<!-- https://github.com/alpinejs/alpine/issues/495  x-model="$store.main.categories" -->
+					<select id="selectcategories" multiple="multiple" class="form-select">
 						<template x-for="(description, category) in {
 							'astro-ph.CO': 'Cosmology and Nongalactic Astrophysics',
 							'astro-ph.EP': 'Earth and Planetary Astrophysics',
@@ -200,22 +205,22 @@
 							'stat.OT': 'Other Statistics',
 							'stat.TH': 'Theory'
 						}">
+							<!-- :selected="$store.main.categories.some(cat => cat === category)" -->
 							<option :value="category" x-text="category + ' (' + description + ')'"></option>
 						</template>
 					</select>
 					<br/>
-					
+					<br/>
 				</div>
-
+			</div>
+			<div class="row">
 				<div class="col-sm">
 					<h2>List excluded words</h2>
-					<!--  Case insensitive; whitespace counts. -->
-					<p>If a paper's title contains any of the lines in the box below, it is filtered out.</p>
+					<p>If a paper's title contains any of the lines in the box below, it is filtered out. Case insensitive; whitespace counts.</p>
 					<!-- style="width: auto;" -->
 					<textarea id="exclusion-textarea" x-model="$store.main.exclusions" rows="7" class="form-control"></textarea>
 					<br/>
 				</div>
-
 			</div>
 			
 			<div class="row">
@@ -437,7 +442,7 @@
 				var $xml = $(data);
 				var catlongname = $xml.find("channel").find("dc\\:subject").text();
 				var date = new Date($xml.find("channel").find("dc\\:date").text());
-				$("#listdigests").append('<li><a target="_blank" href="' + "https://export.arxiv.org/rss/" + category + '">' + catlongname + '</a>, ' + date.toDateString() + '</li>');
+				$("#listdigests").append('<li><a target="_blank" href="https://arxiv.org/list/' + category + '/recent">' + catlongname + '</a>, ' + date.toDateString() + '</li>');
 
 				// RegExp to parse title of each article in the rss feed
 				var re_title = /^([^]+).\s\(arXiv:([0-9.:]+)v(\d+)\s\[([a-zA-Z0-9.:-]+)\][\s]?([a-zA-Z0-9.: ]+)?\)$/;
@@ -579,10 +584,6 @@
                 getDoc(userdoc).then((obj) => {
                     if(obj.exists()) {   
                         const data = obj.data();
-                        Alpine.store('main').categories = data.categories;
-						//forEach(cat => {
-                        //    document.getElementById(cat).checked = ( cat in data && data[cat]);
-                        //});
                         if("slackurl" in data) {
                     		Alpine.store('main').slackurl = data.slackurl;
                         }
@@ -592,14 +593,18 @@
 							reflectExclusionsChange();
                         }
 						if("categories" in data) {
+							Alpine.store('main').categories = data.categories;
+							// Alpine.nextTick();
+							$('#selectcategories').val(Alpine.store('main').categories).multiselect('refresh');
 							selectedCategoriesUpdated();
 						}
                     }
                 });
             }
             else {
-                document.getElementById("slackurl").value = "";
-                document.getElementById("exclusion-textarea").value = "";
+				// Don't force empty categories if not signed in.
+                Alpine.store('main').slackurl = "";
+                Alpine.store('main').exclusions = "";
             }
         }
 
@@ -661,6 +666,7 @@
 		const selectedCategoriesUpdated = () => {
 			// TODO: Only fetch the ones we didn't already.
 			$("#listdigests").html("");
+			Alpine.store('main').categories = $('#selectcategories').val();
 			Alpine.store('main').categories.forEach(category => fetchCategory(category));
 			Alpine.store('main').digest = Alpine.store('main').digest.filter(article => arraysHaveCommonElement(article.incategories, Alpine.store('main').categories));
             if(userIsSignedIn()) {
@@ -681,6 +687,19 @@
         document.getElementById("slackurl").onchange = slackurlChange;
         document.getElementById("exclusion-textarea").onchange = exclusionChange;
         document.getElementById("selectcategories").onchange = selectedCategoriesUpdated;
+
+
+		// Initialize the multiselect plugin.
+		// The templates are necessary for Bootstrap 5:
+		// https://github.com/davidstutz/bootstrap-multiselect/issues/1230
+		$('#selectcategories').multiselect({
+			enableFiltering: true,
+			maxHeight: 400,
+			enableCaseInsensitiveFiltering: true,
+			templates: {
+				button: '<button type="button" class="multiselect dropdown-toggle btn btn-sm btn-primary" data-bs-toggle="dropdown" aria-expanded="false"><span class="multiselect-selected-text"></span></button>',
+			},           
+		});
 
     </script>
 	
