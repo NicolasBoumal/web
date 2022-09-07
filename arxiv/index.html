@@ -696,6 +696,33 @@
 			enableFiltering: true,
 			maxHeight: 400,
 			enableCaseInsensitiveFiltering: true,
+			// https://stackoverflow.com/questions/19004466/how-to-change-the-bootstrap-multiselect-label-instead-of-selected-all
+			buttonText: function(options, select) {
+				var numberOfOptions = $(this).children('option').length;
+				if(options.length === 0) {
+					const nonSelectedText = 'Select at least one arXiv category';
+					return nonSelectedText; // + ' <b class="caret"></b>';
+				}
+				else {
+					const numberDisplayed = 3;
+					if(options.length > numberDisplayed) {
+						if(options.length === numberOfOptions){
+							return ' All arXiv categories selected'; // + ' <b class="caret"></b>'; // This won't happen for us
+						}
+						const nSelectedText = 'arXiv categories selected';
+						return options.length + ' ' + nSelectedText; // + ' <b class="caret"></b>';
+					} else {
+						let selected = '';
+						console.log(options);
+						options.each(function() {
+							const label = ($(this).attr('value') !== undefined) ?  
+															$(this).attr('value') : $(this).html(); // choose 'label' or 'value'
+							selected += label + ', ';
+						});
+						return selected.substr(0, selected.length - 2); // + ' <b class="caret"></b>';
+					}
+				}
+			},
 			templates: {
 				button: '<button type="button" class="multiselect dropdown-toggle btn btn-sm btn-primary" data-bs-toggle="dropdown" aria-expanded="false"><span class="multiselect-selected-text"></span></button>',
 			},           
