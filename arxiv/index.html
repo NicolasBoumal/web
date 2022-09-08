@@ -41,7 +41,7 @@
     <div id="signout-div" style="display: none" x-data="{showoptions: false}">
 		<button x-on:click="showoptions = !showoptions" class="btn btn-primary btn-sm">Toggle options</button>
         <button id="signout-button" class="btn btn-secondary btn-sm">Sign out</button>
-		Signed in as <span id="user-name"></span>. <b>TODO: add "delete my data" button.</b>
+		Signed in as <span id="user-name"></span>.
 		<br/>
 		<br/>
 		<div class="container-sm" style="background-color: gainsboro; padding: 2em; border-radius: 1em;" x-show="showoptions" x-transition>
@@ -236,7 +236,7 @@
 				</div>
 			</div>
 
-			<button id="deleteuser-button" style="display: none">Delete user</button>
+			<button id="deleteuser-button" class="btn btn-secondary btn-sm">Delete user</button>
 
 		</div>
 	</div>
@@ -540,7 +540,7 @@
         // import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js';
 
         // Add Firebase products that you want to use
-        import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, deleteUser } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
+        import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, deleteUser, reauthenticateWithCredential } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
         import { getFirestore, collection, doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
         // Removed: addDoc, updateDoc, query, orderBy
         // TODO: there is a "lite" version for Firestore
@@ -629,19 +629,38 @@
             }
         }
 
-        function deleteUserPermanent() {
+        function deleteUserButton() {
             const user = auth.currentUser;
+			if(user && $("#deleteuser-button").hasClass("btn-secondary")) {
+				$("#deleteuser-button").attr("disabled", "disabled").removeClass("btn-secondary").addClass("btn-warning").text("Just a couple seconds..");
+				setTimeout(() => {
+					$("#deleteuser-button").removeAttr("disabled").removeClass("btn-warning").addClass("btn-danger").text("Click again to delete (permanent)");
+				}, 3000);
+				return;
+			}
             deleteUser(user).then(() => {
-                console.log("User successfully deleted.");
+                $("#deleteuser-button").text("That worked.").attr("disabled", "disabled");
+				$("#deleteuser-button").removeAttr("disabled").removeClass("btn-danger").addClass("btn-secondary").text("Delete user");
+				authStateObserver(user);
             }).catch((error) => {
+				$("#deleteuser-button").text("Requires a recent sign in: please sign out, sign in, and try again.");
                 console.log("User not deleted. Error:");
                 console.log(error);
+				// https://firebase.google.com/docs/auth/web/manage-users#re-authenticate_a_user
+				// Prompt the user to re-provide their sign-in credentials
+				// const credential = promptForCredentials(); // would need to implement this.
+				// reauthenticateWithCredential(user, credential).then(() => {
+				//		// User re-authenticated.
+				//	}).catch((error) => {
+				//		// An error ocurred
+				//		// ...
+				// });
             });
         }
 
         document.getElementById("signin-button").onclick = signIn;
         document.getElementById("signout-button").onclick = signOutUser;
-        document.getElementById("deleteuser-button").onclick = deleteUserPermanent;
+        document.getElementById("deleteuser-button").onclick = deleteUserButton;
         onAuthStateChanged(auth, authStateObserver);
         authStateObserver(auth.currentUser);
 
