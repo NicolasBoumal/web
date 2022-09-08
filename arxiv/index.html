@@ -37,7 +37,7 @@
     <div id="signout-div" style="display: none" x-data="{showoptions: false}">
 		<button x-on:click="showoptions = !showoptions" class="btn btn-primary btn-sm">Toggle options</button>
         <button id="signout-button" class="btn btn-secondary btn-sm">Sign out</button>
-		Signed in as <span id="user-name"></span>.
+		Signed in as <span id="user-name"></span>. <b>TODO: add "delete my data" button.</b>
 		<br/>
 		<br/>
 		<div class="container-sm" style="background-color: gainsboro; padding: 2em; border-radius: 1em;" x-show="showoptions" x-transition>
@@ -595,6 +595,8 @@
 						if("categories" in data) {
 							Alpine.store('main').categories = data.categories;
 							// Alpine.nextTick();
+							// Could also "watch" the store array in #selectcategories directly, but careful with infinite loops
+							// https://postsrc.com/code-snippets/how-to-watch-alpine-js-store-value
 							$('#selectcategories').val(Alpine.store('main').categories).multiselect('refresh');
 							selectedCategoriesUpdated();
 						}
