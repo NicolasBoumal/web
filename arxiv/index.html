@@ -240,8 +240,6 @@
 
 		</div>
 	</div>
-
-	<br/>
 	
 	<p>
 		Sign in and select arXiv lists in the options.
@@ -407,7 +405,7 @@
 						"\n_" + article.authors + "_" +
 						"\n" + article.link +
 						((article.updated) ? " (updated, v" + article.version + ")" : "") +
-						"\n" +
+						// "\n" +
 						"\n>" + extractTextFromHtml(article.summary);
 			
 			var url = document.getElementById('slackurl').value;
