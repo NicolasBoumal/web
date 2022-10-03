@@ -1,389 +1,389 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html dir="ltr" lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-	<!-- Analytics (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3XP9VMHJ3"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-Z3XP9VMHJ3');
-	</script>
-	<!-- Meta -->
-    <title>An introduction to optimization on smooth manifolds</title>
-    <meta name="description" content="Homepage of book by Nicolas Boumal">
-    <meta name="author" content="Nicolas Boumal">
-    <meta name="keywords" content="Optimization on manifolds,Riemannian optimization,Manopt">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
-    <style type="text/css">
-      body {
-              padding-top: 10px;
-              padding-bottom: 20px;
-      }
-      div .section {
-              display: auto;
-      }
-      ul {
-          list-style: disc;
-      }
-    </style>
-    <style>
-      ul.toc {
-        list-style-type: none;
-        font-weight: bold;
-      }
-      ul.toc li ul {
-        list-style-type: none;
-        font-weight: normal;
-      }
-    </style>
-    <!-- see https://github.com/davidjbradshaw/iframe-resizer // failed attempt at auto sizing iFrame; issue is: contents are from a different site, and even that github-linked package can't handle google forms.
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <!-- Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3XP9VMHJ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Z3XP9VMHJ3');
+  </script>
+  <!-- Meta -->
+  <title>An introduction to optimization on smooth manifolds</title>
+  <meta name="description" content="Homepage of book by Nicolas Boumal">
+  <meta name="author" content="Nicolas Boumal">
+  <meta name="keywords" content="Optimization on manifolds,Riemannian optimization,Manopt">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+  <style type="text/css">
+    body {
+      padding-top: 10px;
+      padding-bottom: 20px;
+    }
+
+    div .section {
+      display: auto;
+    }
+
+    ul {
+      list-style: disc;
+    }
+  </style>
+  <style>
+    ul.toc {
+      list-style-type: none;
+      font-weight: bold;
+    }
+
+    ul.toc li ul {
+      list-style-type: none;
+      font-weight: normal;
+    }
+  </style>
+  <!-- see https://github.com/davidjbradshaw/iframe-resizer // failed attempt at auto sizing iFrame; issue is: contents are from a different site, and even that github-linked package can't handle google forms.
     <style>      iframe {        width: 1px;        min-width: 100%;      }    </style>		-->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
       <script type="text/javascript" src="js/html5shiv.js"></script>      <script type="text/javascript" src="js/respond.min.js"></script>    <![endif]-->
-    <!-- Google Analytics -->
-    <script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-19509417-1']);
-	_gaq.push(['_trackPageview']);
-	(function() {
-	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-	</script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-lg-9">
-          <div class="page-header" style="display: block">
-            <h1 style="display: block">An introduction to optimization on smooth
-              manifolds<br>
-              <a href="http://www.nicolasboumal.net"><small style="display: block; margin-top:2mm;">Nicolas
-                  Boumal</small></a></h1>
-          </div>
-          <p> </p>
-          <div class="section" id="section-book">
-            <div>
-              <div><a href="IntroOptimManifolds_Boumal_2022.html" target="_blank"
-                  title="Download &quot;An introduction to optimization on smooth manifolds&quot;">Click
-                  here to download the book.</a> Last update: June 24, 2022.</div>
-              <div><br>
-              </div>
-              <div class="media-body hyphenate" align="justify">This version
-                forms the basis for a forthcoming publication with Cambridge
-                University Press. Please <a href="mailto:nicolasboumal@gmail.com">e-mail
-                  me about any mistakes</a> you spot or suspect, be it typos or
-                more serious things: I appreciate your input, and there may
-                still be time to make the change before it goes to print. For
-                general questions about geometry and optimization, please use
-                the <a href="https://groups.google.com/forum/#%21forum/manopttoolbox%20"
-                  title="Manopt forum" target="_blank">Manopt forum</a>, <a href="https://mathoverflow.net/"
-                  target="_blank">MathOverflow</a> or <a href="https://math.stackexchange.com/"
-                  target="_blank">Math StackExchange</a>, and feel free to let
-                me know about it.</div>
-              <div class="media-body hyphenate" align="justify"><br>
-              </div>
-              <div class="media-body hyphenate" align="justify">To hear about
-                updates, fill in the form below. This also helps me know my
-                audience.</div>
-              <div><br>
-              </div>
-              <div class="media row">
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                  <div class="media-body"> <a href="IntroOptimManifolds_Boumal_2022.html"
-                      target="_blank"><img alt="picture" title="Download &quot;An introduction to optimization on smooth manifolds&quot;"
-                        class="media-object img-rounded" src="../images/BoumalIntroSmoothManifolds.png"
-                        style="width:100%; max-width:220px; margin:auto; margin-bottom:8mm; display:block;"></a>
-                  </div>
-                  <!--margin: auto; display:block; is to center the image...-->
-                  <!--width: 192px; height: 250px;--> </div>
-                <div class="col-lg-9 col-md-9 col-sm-12">
-                  <div class="media-body"> <iframe id="myIframe" src="https://docs.google.com/forms/d/e/1FAIpQLSeI-HlSETuV0IPq29h7Nalcrm51xm03H-wJpn7QqmWE4b90vQ/viewform?embedded=true"
-                      marginheight="0" marginwidth="0" height="970px" frameborder="0"
-                      width="100%"></iframe> </div>
-                </div>
-              </div>
-              <div class="media-body hyphenate" align="justify">
-                <h4>About the book</h4>
-                This is a book about optimization on smooth manifolds for
-                readers who are comfortable with linear algebra and
-                multivariable calculus. There are no prerequisites in geometry
-                or optimization. Chapters 3 and 5 in particular can serve as a
-                standalone introduction to differential and Riemannian geometry.
-                They focus on embedded submanifolds of linear spaces, with full
-                proofs. A distinguishing feature is that these early chapters
-                highlight computability and do not involve charts.</div>
-              <div class="media-body hyphenate" align="justify"><br>
-              </div>
-              <div class="media-body hyphenate" align="justify">Chapter 8
-                provides the general theory so that we can build quotient
-                manifolds in Chapter 9. The optimization algorithms in Chapters
-                4 and 6 apply to the general case, but can already be understood
-                after reading Chapters 3 and 5. Chapter 7 details examples of
-                submanifolds that come up in practice. Chapter 10 covers more
-                advanced Riemannian tools, and Chapter 11 introduces geodesic
-                convexity. </div>
-              <div class="media-body hyphenate" align="justify"><br>
-              </div>
-              <div class="media-body hyphenate" align="justify">In a
-                one-semester graduate course of the mathematics department at
-                Princeton University in 2019 and 2020 (24 lectures of 80 minutes
-                each, two projects, no exercises), I covered much of Chapters
-                1&#8211;6 and select parts of Chapter 7 before the midterm
-                break, then much of Chapters 8&#8211;9 and select parts of
-                Chapters 10&#8211;11 after the break. Those chapters were
-                shorter at the time, but it still made for a sustained pace. At
-                EPFL in 2021, I discussed mostly Chapters 1&#8211;8 in 13
-                lectures of 90 minutes, plus as many exercise sessions and two
-                projects. The course is popular with applied mathematicians and
-                mathematically inclined engineering students, at the graduate
-                and advanced undergraduate level.</div>
-              <div class="media-body hyphenate" align="justify"> <br>
-                You may also be interested in the Manopt toolboxes (<a href="https://www.manopt.org"
-                  target="_blank">Matlab</a>, <a href="https://www.pymanopt.org"
-                  target="_blank">Python</a>, <a href="https://www.manoptjl.org"
-                  target="_blank">Julia</a>), and in the book <a target="_blank"
-                  href="https://press.princeton.edu/absil">Optimization
-                  Algorithms on Matrix Manifolds</a> by Absil, Mahony and
-                Sepulchre (Princeton University Press, 2008), all freely
-                available online.</div>
-              <div class="media-body hyphenate" align="justify"><br>
-              </div>
-              <div class="media-body hyphenate" align="justify"><a href="../papers/IntroOptimManifoldsSlides2020.htm"
-                  title="Slides about optimization on manifolds" target="_blank">These
-                  slides</a> hold a summary of the basic geometric tools and
-                algorithms from Chapters 3 and 5. Here are a <a href="https://www.youtube.com/watch?v=UjaoZE0GBpg&amp;ab_channel=SimonsInstitute"
-                  target="_blank">one-hour video</a> and a <a href="https://www.youtube.com/watch?v=lK62DwSIjXA&amp;t=6s&amp;ab_channel=FMGDataDrivenControlSummerSchool"
-                  target="_blank">two-hour video</a> introducing the basics of
-                differential geometry and Riemannian geometry for optimization
-                on smooth manifolds, using <a href="https://simons.berkeley.edu/talks/tbd-337"
-                  target="_blank">a variation of the slides linked here</a>.
-                These two videos have mostly the same contents.</div>
-              <div class="media-body hyphenate" align="justify"><br>
-              </div>
-              <div class="media-body">
-                <h4>How to cite this version</h4>
-                <span style="font-family: monospace;">@Booklet{boumal2022intromanifolds,<br>
-                  &#160; title&#160;&#160;&#160;&#160;&#160;&#160;&#160; = {An
-                  introduction to optimization on smooth manifolds},<br>
-                  &#160; author&#160;&#160;&#160;&#160;&#160;&#160; = {Boumal,
-                  Nicolas},<br>
-                  &#160; howpublished = {To appear with Cambridge University
-                  Press},<br>
-                  &#160; month&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
-                  {Jun},<br>
-                  &#160; year&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
-                  {2022},<br>
-                  &#160;
-                  url&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
-                  {https://www.nicolasboumal.net/book},<br>
-                  }</span></div>
-              <div class="media-body hyphenate" align="justify"><br>
-                Page numbers will change a lot between this version and the
-                forthcoming published version. For now, it is best to reference
-                section numbers as these should be stable.</div>
-              <div class="media-body hyphenate" align="justify"><br>
-                <h4>Table of contents</h4>
-                <div class="media-body">
-                  <ul class="toc">
-                    <li>Preface</li>
-                    <li>1. Introduction</li>
-                    <li>2. Simple examples
-                      <ul>
-                        <li>2.1 Sensor network localization from directions: an
-                          affine subspace</li>
-                        <li>2.2 Single extreme eigenvalue or singular value:
-                          spheres</li>
-                        <li>2.3 Dictionary learning: products of spheres</li>
-                        <li>2.4 Principal component analysis: Stiefel and
-                          Grassmann</li>
-                        <li>2.5 Synchronization of rotations: special orthogonal
-                          group</li>
-                        <li>2.6 Low-rank matrix completion: fixed-rank manifold</li>
-                        <li>2.7 Gaussian mixture models: positive definite
-                          matrices</li>
-                        <li>2.8 Smooth semidefinite programs</li>
-                      </ul>
-                    </li>
-                    <li>3. Embedded geometry: first order
-                      <ul>
-                        <li>3.1 Reminders of Euclidean space</li>
-                        <li>3.2 Embedded submanifolds of a linear space</li>
-                        <li>3.3 Smooth maps on embedded submanifolds</li>
-                        <li>3.4 The differential of a smooth map</li>
-                        <li>3.5 Vector fields and the tangent bundle</li>
-                        <li>3.6 Moving on a manifold: retractions</li>
-                        <li>3.7 Riemannian manifolds and submanifolds</li>
-                        <li>3.8 Riemannian gradients</li>
-                        <li>3.9 Local frames*</li>
-                        <li>3.10 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>4. First-order optimization algorithms
-                      <ul>
-                        <li>4.1 A first-order Taylor expansion on curves</li>
-                        <li>4.2 First-order optimality conditions</li>
-                        <li>4.3 Riemannian gradient descent</li>
-                        <li>4.4 Regularity conditions and iteration complexity</li>
-                        <li>4.5 Backtracking line-search</li>
-                        <li>4.6 Local convergence*</li>
-                        <li>4.7 Computing gradients*</li>
-                        <li>4.8 Numerically checking a gradient*</li>
-                        <li>4.9 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>5. Embedded geometry: second order
-                      <ul>
-                        <li>5.1 The case for another derivative of vector fields</li>
-                        <li>5.2 Another look at differentials of vector fields
-                          in linear spaces</li>
-                        <li>5.3 Differentiating vector fields on manifolds:
-                          connections</li>
-                        <li>5.4 Riemannian connections</li>
-                        <li>5.5 Riemannian Hessians</li>
-                        <li>5.6 Connections as pointwise derivatives*</li>
-                        <li>5.7 Differentiating vector fields on curves</li>
-                        <li>5.8 Acceleration and geodesics</li>
-                        <li>5.9 A second-order Taylor expansion on curves</li>
-                        <li>5.10 Second-order retractions</li>
-                        <li>5.11 Special case: Riemannian submanifolds*</li>
-                        <li>5.12 Special case: metric projection retractions*</li>
-                        <li>5.13 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>6. Second-order optimization algorithms
-                      <ul>
-                        <li>6.1 Second-order optimality conditions</li>
-                        <li>6.2 Riemannian Newton's method</li>
-                        <li>6.3 Computing Newton steps: conjugate gradients</li>
-                        <li>6.4 Riemannian trust regions</li>
-                        <li>6.5 The trust-region subproblem: truncated CG</li>
-                        <li>6.6 Local convergence of RTR with tCG*</li>
-                        <li>6.7 Simplified assumptions for RTR with tCG*</li>
-                        <li>6.8 Numerically checking a Hessian*</li>
-                        <li>6.9 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>7. Embedded submanifolds: examples
-                      <ul>
-                        <li>7.1 Euclidean spaces as manifolds</li>
-                        <li>7.2 The unit sphere in a Euclidean space</li>
-                        <li>7.3 The Stiefel manifold: orthonormal matrices</li>
-                        <li>7.4 The orthogonal group and rotation matrices</li>
-                        <li>7.5 Fixed-rank matrices</li>
-                        <li>7.6 The hyperboloid model</li>
-                        <li>7.7 Manifolds defined by $h(x) = 0$</li>
-                        <li>7.8 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>8. General manifolds
-                      <ul>
-                        <li>8.1 A permissive definition</li>
-                        <li>8.2 The atlas topology, and a final definition</li>
-                        <li>8.3 Embedded submanifolds are manifolds</li>
-                        <li>8.4 Tangent vectors and tangent spaces</li>
-                        <li>8.5 Differentials of smooth maps</li>
-                        <li>8.6 Tangent bundles and vector fields</li>
-                        <li>8.7 Retractions and velocity of a curve</li>
-                        <li>8.8 Coordinate vector fields as local frames</li>
-                        <li>8.9 Riemannian metrics and gradients</li>
-                        <li>8.10 Lie brackets as vector fields</li>
-                        <li>8.11 Riemannian connections and Hessians</li>
-                        <li>8.12 Covariant derivatives and geodesics</li>
-                        <li>8.13 Taylor expansions and second-order retractions</li>
-                        <li>8.14 Submanifolds embedded in manifolds</li>
-                        <li>8.15 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>9. Quotient manifolds
-                      <ul>
-                        <li>9.1 A definition and a few facts</li>
-                        <li>9.2 Quotient manifolds through group actions</li>
-                        <li>9.3 Smooth maps to and from quotient manifolds</li>
-                        <li>9.4 Tangent, vertical and horizontal spaces</li>
-                        <li>9.5 Vector fields</li>
-                        <li>9.6 Retractions</li>
-                        <li>9.7 Riemannian quotient manifolds</li>
-                        <li>9.8 Gradients</li>
-                        <li>9.9 A word about Riemannian gradient descent</li>
-                        <li>9.10 Connections</li>
-                        <li>9.11 Hessians</li>
-                        <li>9.12 A word about Riemannian Newton's method</li>
-                        <li>9.13 Total space embedded in a linear space</li>
-                        <li>9.14 Horizontal curves and covariant derivatives</li>
-                        <li>9.15 Acceleration, geodesics and second-order
-                          retractions</li>
-                        <li>9.16 Grassmann manifold: summary*</li>
-                        <li>9.17 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>10. Additional tools
-                      <ul>
-                        <li>10.1 Distance, geodesics and completeness</li>
-                        <li>10.2 Exponential and logarithmic maps</li>
-                        <li>10.3 Parallel transport</li>
-                        <li>10.4 Lipschitz conditions and Taylor expansions</li>
-                        <li>10.5 Transporters</li>
-                        <li>10.6 Finite difference approximation of the Hessian</li>
-                        <li>10.7 Tensor fields and their covariant
-                          differentiation</li>
-                        <li>10.8 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>11. Geodesic convexity
-                      <ul>
-                        <li>11.1 Convex sets and functions in linear spaces</li>
-                        <li>11.2 Geodesically convex sets and functions</li>
-                        <li>11.3 Alternative definitions of geodesically convex
-                          sets*</li>
-                        <li>11.4 Differentiable geodesically convex functions</li>
-                        <li>11.5 Geodesic strong convexity and Lipschitz
-                          continuous gradients</li>
-                        <li>11.6 Example: Positive reals and geometric
-                          programming</li>
-                        <li>11.7 Example: Positive definite matrices</li>
-                        <li>11.8 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>Bibliography</li>
-                  </ul>
-                </div>
-                <br>
-                <br>
-              </div>
-              <div class="page-footer"><small class="pull-right">Last update:
-                  June 24, 2022.</small></div>
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19509417-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-9">
+        <div class="page-header" style="display: block">
+          <h1 style="display: block">An introduction to optimization on smooth
+            manifolds<br>
+            <a href="http://www.nicolasboumal.net"><small style="display: block; margin-top:2mm;">Nicolas
+                Boumal</small></a>
+          </h1>
+        </div>
+        <p> </p>
+        <div class="section" id="section-book">
+          <div>
+            <div><a href="IntroOptimManifolds_Boumal_2022.html" target="_blank"
+                title="Download &quot;An introduction to optimization on smooth manifolds&quot;">Click
+                here to download the book.</a> Last update: June 24, 2022.</div>
+            <div><br>
             </div>
+            <div class="media-body hyphenate" align="justify">This version
+              forms the basis for a forthcoming publication with Cambridge
+              University Press. Please <a href="mailto:nicolasboumal@gmail.com">e-mail
+                me about any mistakes</a> you spot or suspect, be it typos or
+              more serious things: I appreciate your input, and there may
+              still be time to make the change before it goes to print. For
+              general questions about geometry and optimization, please use
+              the <a href="https://groups.google.com/forum/#%21forum/manopttoolbox%20" title="Manopt forum"
+                target="_blank">Manopt forum</a>, <a href="https://mathoverflow.net/" target="_blank">MathOverflow</a>
+              or <a href="https://math.stackexchange.com/" target="_blank">Math StackExchange</a>, and feel free to let
+              me know about it.</div>
+            <div class="media-body hyphenate" align="justify"><br>
+            </div>
+            <div class="media-body hyphenate" align="justify">To hear about
+              updates, fill in the form below. This also helps me know my
+              audience.</div>
+            <div><br>
+            </div>
+            <div class="media row">
+              <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="media-body"> <a href="IntroOptimManifolds_Boumal_2022.html" target="_blank"><img
+                      alt="picture" title="Download &quot;An introduction to optimization on smooth manifolds&quot;"
+                      class="media-object img-rounded" src="../images/BoumalIntroSmoothManifolds.png"
+                      style="width:100%; max-width:220px; margin:auto; margin-bottom:8mm; display:block;"></a>
+                </div>
+                <!--margin: auto; display:block; is to center the image...-->
+                <!--width: 192px; height: 250px;-->
+              </div>
+              <div class="col-lg-9 col-md-9 col-sm-12">
+                <div class="media-body"> <iframe id="myIframe"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeI-HlSETuV0IPq29h7Nalcrm51xm03H-wJpn7QqmWE4b90vQ/viewform?embedded=true"
+                    marginheight="0" marginwidth="0" height="970px" frameborder="0" width="100%"></iframe> </div>
+              </div>
+            </div>
+            <div class="media-body hyphenate" align="justify">
+              <h4>About the book</h4>
+              This is a book about optimization on smooth manifolds for
+              readers who are comfortable with linear algebra and
+              multivariable calculus. There are no prerequisites in geometry
+              or optimization. Chapters 3 and 5 in particular can serve as a
+              standalone introduction to differential and Riemannian geometry.
+              They focus on embedded submanifolds of linear spaces, with full
+              proofs. A distinguishing feature is that these early chapters
+              highlight computability and do not involve charts.
+            </div>
+            <div class="media-body hyphenate" align="justify"><br>
+            </div>
+            <div class="media-body hyphenate" align="justify">Chapter 8
+              provides the general theory so that we can build quotient
+              manifolds in Chapter 9. The optimization algorithms in Chapters
+              4 and 6 apply to the general case, but can already be understood
+              after reading Chapters 3 and 5. Chapter 7 details examples of
+              submanifolds that come up in practice. Chapter 10 covers more
+              advanced Riemannian tools, and Chapter 11 introduces geodesic
+              convexity. </div>
+            <div class="media-body hyphenate" align="justify"><br>
+            </div>
+            <div class="media-body hyphenate" align="justify">In a
+              one-semester graduate course of the mathematics department at
+              Princeton University in 2019 and 2020 (24 lectures of 80 minutes
+              each, two projects, no exercises), I covered much of Chapters
+              1&#8211;6 and select parts of Chapter 7 before the midterm
+              break, then much of Chapters 8&#8211;9 and select parts of
+              Chapters 10&#8211;11 after the break. Those chapters were
+              shorter at the time, but it still made for a sustained pace. At
+              EPFL in 2021, I discussed mostly Chapters 1&#8211;8 in 13
+              lectures of 90 minutes, plus as many exercise sessions and two
+              projects. The course is popular with applied mathematicians and
+              mathematically inclined engineering students, at the graduate
+              and advanced undergraduate level.</div>
+            <div class="media-body hyphenate" align="justify"> <br>
+              You may also be interested in the Manopt toolboxes (<a href="https://www.manopt.org"
+                target="_blank">Matlab</a>, <a href="https://www.pymanopt.org" target="_blank">Python</a>, <a
+                href="https://www.manoptjl.org" target="_blank">Julia</a>), and in the book <a target="_blank"
+                href="https://press.princeton.edu/absil">Optimization
+                Algorithms on Matrix Manifolds</a> by Absil, Mahony and
+              Sepulchre (Princeton University Press, 2008), all freely
+              available online.</div>
+            <div class="media-body hyphenate" align="justify"><br>
+            </div>
+            <div class="media-body hyphenate" align="justify"><a href="../papers/IntroOptimManifoldsSlides2020.htm"
+                title="Slides about optimization on manifolds" target="_blank">These
+                slides</a> hold a summary of the basic geometric tools and
+              algorithms from Chapters 3 and 5. Here are a <a
+                href="https://www.youtube.com/watch?v=UjaoZE0GBpg&amp;ab_channel=SimonsInstitute"
+                target="_blank">one-hour video</a> and a <a
+                href="https://www.youtube.com/watch?v=lK62DwSIjXA&amp;t=6s&amp;ab_channel=FMGDataDrivenControlSummerSchool"
+                target="_blank">two-hour video</a> introducing the basics of
+              differential geometry and Riemannian geometry for optimization
+              on smooth manifolds, using <a href="https://simons.berkeley.edu/talks/tbd-337" target="_blank">a variation
+                of the slides linked here</a>.
+              These two videos have mostly the same contents.</div>
+            <div class="media-body hyphenate" align="justify"><br>
+            </div>
+            <div class="media-body">
+              <h4>How to cite this version</h4>
+              <span style="font-family: monospace;">@Booklet{boumal2022intromanifolds,<br>
+                &#160; title&#160;&#160;&#160;&#160;&#160;&#160;&#160; = {An
+                introduction to optimization on smooth manifolds},<br>
+                &#160; author&#160;&#160;&#160;&#160;&#160;&#160; = {Boumal,
+                Nicolas},<br>
+                &#160; howpublished = {To appear with Cambridge University
+                Press},<br>
+                &#160; month&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+                {Jun},<br>
+                &#160; year&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+                {2022},<br>
+                &#160;
+                url&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+                {https://www.nicolasboumal.net/book},<br>
+                }</span>
+            </div>
+            <div class="media-body hyphenate" align="justify"><br>
+              Page numbers will change a lot between this version and the
+              forthcoming published version. For now, it is best to reference
+              section numbers as these should be stable.</div>
+            <div class="media-body hyphenate" align="justify"><br>
+              <h4>Table of contents</h4>
+              <div class="media-body">
+                <ul class="toc">
+                  <li>Preface</li>
+                  <li>1. Introduction</li>
+                  <li>2. Simple examples
+                    <ul>
+                      <li>2.1 Sensor network localization from directions: an affine subspace</li>
+                      <li>2.2 Single extreme eigenvalue or singular value: spheres</li>
+                      <li>2.3 Dictionary learning: products of spheres</li>
+                      <li>2.4 Principal component analysis: Stiefel and Grassmann</li>
+                      <li>2.5 Synchronization of rotations: special orthogonal group</li>
+                      <li>2.6 Low-rank matrix completion: fixed-rank manifold</li>
+                      <li>2.7 Gaussian mixture models: positive definite matrices</li>
+                      <li>2.8 Smooth semidefinite programs</li>
+                    </ul>
+                  </li>
+                  <li>3. Embedded geometry: first order
+                    <ul>
+                      <li>3.1 Reminders of Euclidean space</li>
+                      <li>3.2 Embedded submanifolds of a linear space</li>
+                      <li>3.3 Smooth maps on embedded submanifolds</li>
+                      <li>3.4 The differential of a smooth map</li>
+                      <li>3.5 Vector fields and the tangent bundle</li>
+                      <li>3.6 Moving on a manifold: retractions</li>
+                      <li>3.7 Riemannian manifolds and submanifolds</li>
+                      <li>3.8 Riemannian gradients</li>
+                      <li>3.9 Local frames*</li>
+                      <li>3.10 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>4. First-order optimization algorithms
+                    <ul>
+                      <li>4.1 A first-order Taylor expansion on curves</li>
+                      <li>4.2 First-order optimality conditions</li>
+                      <li>4.3 Riemannian gradient descent</li>
+                      <li>4.4 Regularity conditions and iteration complexity</li>
+                      <li>4.5 Backtracking line-search</li>
+                      <li>4.6 Local convergence*</li>
+                      <li>4.7 Computing gradients*</li>
+                      <li>4.8 Numerically checking a gradient*</li>
+                      <li>4.9 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>5. Embedded geometry: second order
+                    <ul>
+                      <li>5.1 The case for another derivative of vector fields</li>
+                      <li>5.2 Another look at differentials of vector fields in linear spaces</li>
+                      <li>5.3 Differentiating vector fields on manifolds: connections</li>
+                      <li>5.4 Riemannian connections</li>
+                      <li>5.5 Riemannian Hessians</li>
+                      <li>5.6 Connections as pointwise derivatives*</li>
+                      <li>5.7 Differentiating vector fields on curves</li>
+                      <li>5.8 Acceleration and geodesics</li>
+                      <li>5.9 A second-order Taylor expansion on curves</li>
+                      <li>5.10 Second-order retractions</li>
+                      <li>5.11 Special case: Riemannian submanifolds*</li>
+                      <li>5.12 Special case: metric projection retractions*</li>
+                      <li>5.13 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>6. Second-order optimization algorithms
+                    <ul>
+                      <li>6.1 Second-order optimality conditions</li>
+                      <li>6.2 Riemannian Newton's method</li>
+                      <li>6.3 Computing Newton steps: conjugate gradients</li>
+                      <li>6.4 Riemannian trust regions</li>
+                      <li>6.5 The trust-region subproblem: truncated CG</li>
+                      <li>6.6 Local convergence of RTR with tCG*</li>
+                      <li>6.7 Simplified assumptions for RTR with tCG*</li>
+                      <li>6.8 Numerically checking a Hessian*</li>
+                      <li>6.9 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>7. Embedded submanifolds: examples
+                    <ul>
+                      <li>7.1 Euclidean spaces as manifolds</li>
+                      <li>7.2 The unit sphere in a Euclidean space</li>
+                      <li>7.3 The Stiefel manifold: orthonormal matrices</li>
+                      <li>7.4 The orthogonal group and rotation matrices</li>
+                      <li>7.5 Fixed-rank matrices</li>
+                      <li>7.6 The hyperboloid model</li>
+                      <li>7.7 Manifolds defined by $h(x) = 0$</li>
+                      <li>7.8 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>8. General manifolds
+                    <ul>
+                      <li>8.1 A permissive definition</li>
+                      <li>8.2 The atlas topology, and a final definition</li>
+                      <li>8.3 Embedded submanifolds are manifolds</li>
+                      <li>8.4 Tangent vectors and tangent spaces</li>
+                      <li>8.5 Differentials of smooth maps</li>
+                      <li>8.6 Tangent bundles and vector fields</li>
+                      <li>8.7 Retractions and velocity of a curve</li>
+                      <li>8.8 Coordinate vector fields as local frames</li>
+                      <li>8.9 Riemannian metrics and gradients</li>
+                      <li>8.10 Lie brackets as vector fields</li>
+                      <li>8.11 Riemannian connections and Hessians</li>
+                      <li>8.12 Covariant derivatives and geodesics</li>
+                      <li>8.13 Taylor expansions and second-order retractions</li>
+                      <li>8.14 Submanifolds embedded in manifolds</li>
+                      <li>8.15 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>9. Quotient manifolds
+                    <ul>
+                      <li>9.1 A definition and a few facts</li>
+                      <li>9.2 Quotient manifolds through group actions</li>
+                      <li>9.3 Smooth maps to and from quotient manifolds</li>
+                      <li>9.4 Tangent, vertical and horizontal spaces</li>
+                      <li>9.5 Vector fields</li>
+                      <li>9.6 Retractions</li>
+                      <li>9.7 Riemannian quotient manifolds</li>
+                      <li>9.8 Gradients</li>
+                      <li>9.9 A word about Riemannian gradient descent</li>
+                      <li>9.10 Connections</li>
+                      <li>9.11 Hessians</li>
+                      <li>9.12 A word about Riemannian Newton's method</li>
+                      <li>9.13 Total space embedded in a linear space</li>
+                      <li>9.14 Horizontal curves and covariant derivatives</li>
+                      <li>9.15 Acceleration, geodesics and second-order retractions</li>
+                      <li>9.16 Grassmann manifold: summary*</li>
+                      <li>9.17 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>10. Additional tools
+                    <ul>
+                      <li>10.1 Distance, geodesics and completeness</li>
+                      <li>10.2 Exponential and logarithmic maps</li>
+                      <li>10.3 Parallel transport</li>
+                      <li>10.4 Lipschitz conditions and Taylor expansions</li>
+                      <li>10.5 Transporters</li>
+                      <li>10.6 Finite difference approximation of the Hessian</li>
+                      <li>10.7 Tensor fields and their covariant differentiation</li>
+                      <li>10.8 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>11. Geodesic convexity
+                    <ul>
+                      <li>11.1 Convex sets and functions in linear spaces</li>
+                      <li>11.2 Geodesically convex sets and functions</li>
+                      <li>11.3 Alternative definitions of geodesically convex sets*</li>
+                      <li>11.4 Differentiable geodesically convex functions</li>
+                      <li>11.5 Geodesic strong convexity and Lipschitz continuous gradients</li>
+                      <li>11.6 Example: positive reals and geometric programming</li>
+                      <li>11.7 Example: positive definite matrices</li>
+                      <li>11.8 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>Bibliography</li>
+                </ul>
+              </div>
+              <br>
+              <br>
+            </div>
+            <div class="page-footer"><small class="pull-right">Last update: June 24, 2022.</small></div>
           </div>
         </div>
-        <!-- This bit needed to make hyphenate and mathjax play along nicely -->
-        <!-- https://github.com/mathjax/MathJax/issues/341 -->
-        <script type="text/x-mathjax-config">
-  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
-      data.math = data.math.replace(/\u00AD/g,"");
-    });
-  });
-  </script>
-        <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-  });
-  </script>
-        <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <!-- //doesn't work for google forms
+      </div>
+      <!-- This bit needed to make hyphenate and mathjax play along nicely -->
+      <!-- https://github.com/mathjax/MathJax/issues/341 -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+          MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
+            data.math = data.math.replace(/\u00AD/g,"");
+          });
+        });
+      </script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+      </script>
+      <script type="text/javascript" async=""
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <!-- //doesn't work for google forms
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>			-->
-        <script type="text/javascript" src="../js/hyphenate.js"></script> </div>
-      <!--
-    <script>      iFrameResize({ log: true }, '#myIframe');    </script>		--> </div>
-  </body>
+      <script type="text/javascript" src="../js/hyphenate.js"></script>
+    </div>
+    <!--
+    <script>      iFrameResize({ log: true }, '#myIframe');    </script>		-->
+  </div>
+</body>
+
 </html>

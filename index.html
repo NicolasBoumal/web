@@ -1,772 +1,781 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html dir="ltr" lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-	<!-- Analytics (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3XP9VMHJ3"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-Z3XP9VMHJ3');
-	</script>
-	<!-- Meta -->
-    <title>Nicolas Boumal, applied mathematics</title>
-    <meta name="description" content="Research homepage of Nicolas Boumal">
-    <meta name="author" content="Nicolas Boumal">
-    <meta name="keywords" content="Optimization on manifolds,Riemannian optimization,Manopt,low-rank,curve fitting,rotations">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
-    <style type="text/css">
-      body {
-              padding-top: 10px;
-              padding-bottom: 20px;
-      }
-      div .section {
-              display: auto;
-      }
-      ul {
-          list-style: disc;
-      }
-    </style>
-    <style>
-      ul.toc.collapsed {
-        list-style-type: none;
-        font-weight: normal;
-      }
-      ul.toc.collapsed li ul {
-        display: none;
-      }
-      ul.toc {
-        list-style-type: none;
-        font-weight: bold;
-      }
-      ul.toc li ul {
-        list-style-type: none;
-        font-weight: normal;
-      }
-    </style>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <!-- not sure the javascript below gets anything done at all, since the html is not loaded yet... try it. -->
-    <script type="text/javascript">$( ".section" ).hide();</script>
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <!-- Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3XP9VMHJ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Z3XP9VMHJ3');
+  </script>
+  <!-- Meta -->
+  <title>Nicolas Boumal, applied mathematics</title>
+  <meta name="description" content="Research homepage of Nicolas Boumal">
+  <meta name="author" content="Nicolas Boumal">
+  <meta name="keywords"
+    content="Optimization on manifolds,Riemannian optimization,Manopt,low-rank,curve fitting,rotations">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+  <style type="text/css">
+    body {
+      padding-top: 10px;
+      padding-bottom: 20px;
+    }
+
+    div .section {
+      display: auto;
+    }
+
+    ul {
+      list-style: disc;
+    }
+  </style>
+  <style>
+    ul.toc.collapsed {
+      list-style-type: none;
+      font-weight: normal;
+    }
+
+    ul.toc.collapsed li ul {
+      display: none;
+    }
+
+    ul.toc {
+      list-style-type: none;
+      font-weight: bold;
+    }
+
+    ul.toc li ul {
+      list-style-type: none;
+      font-weight: normal;
+    }
+  </style>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <!-- not sure the javascript below gets anything done at all, since the html is not loaded yet... try it. -->
+  <script type="text/javascript">$(".section").hide();</script>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
       <script type="text/javascript" src="js/html5shiv.js"></script>      <script type="text/javascript" src="js/respond.min.js"></script>    <![endif]-->
-    <!-- Google Analytics -->
-    <script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-19509417-1']);
-	_gaq.push(['_trackPageview']);
-	(function() {
-	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-	</script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-lg-9">
-          <div class="page-header" style="display: block">
-            <h1 style="display: block">Nicolas Boumal<br>
-              <small style="display: block">Assistant professor in mathematics
-                at EPFL</small> </h1>
-          </div>
-          <ul class="nav nav-tabs nav-justified" role="navigation">
-            <li id="li-about"><a href="#about" onclick="_gaq.push(['_trackEvent', 'navigation', 'about']);"
-                class="menu" id="tab-about">About</a></li>
-            <!--
-            <li id="li-projects"><a href="#projects" onclick="_gaq.push(['_trackEvent', 'navigation', 'projects']);" class="menu" id="tab-projects">Projects</a></li>						-->
-            <li id="li-publications"><a href="#publications" onclick="_gaq.push(['_trackEvent', 'navigation', 'publications']);"
-                class="menu" id="tab-publications">Publications</a></li>
-            <li id="li-book"><a href="#book" onclick="_gaq.push(['_trackEvent', 'navigation', 'book']);"
-                class="menu" id="tab-book">Book</a></li>
-            <li id="li-teaching"><a href="#teaching" onclick="_gaq.push(['_trackEvent', 'navigation', 'teaching']);"
-                class="menu" id="tab-teaching">Teaching</a></li>
-            <li id="li-contact"><a href="#contact" onclick="_gaq.push(['_trackEvent', 'navigation', 'contact']);"
-                class="menu" id="tab-contact">Contact</a></li>
-          </ul>
-          <p><br>
-          </p>
-          <div class="section" id="section-about">
-            <div class="media row">
-              <div class="col-lg-3 col-md-3 col-sm-12" align="left"> <img alt="picture"
-                  title="Nicolas Boumal" class="media-object img-rounded" src="images/nicolasboumal_princeton_math_2016.jpg"
-                  style="width: 100%; max-width: 215px; margin: 8px 5px;">
-                <!--width: 215px; height: 236px--> </div>
-              <div class="hyphenate col-lg-9 col-md-9 col-sm-12" align="justify">
-                <p>I joined the Institute of Mathematics at EPFL on July 1st,
-                  2020, where I run the chair of continuous optimization <a href="https://www.epfl.ch/labs/optim/"
-                    target="_blank">OPTIM</a>.</p>
-                <p>My <a href="https://www.epfl.ch/labs/optim/optim-chair-of-continuous-optimization/members/"
-                    target="_blank">group</a> works on <strong>optimization</strong>,
-                  <strong>statistical estimation</strong> and <strong>numerical
-                    analysis</strong>. Much of what we do is related to
-                  nonconvex optimization and optimization on manifolds. For the
-                  latter, we develop <a target="_blank" href="http://www.manopt.org">a
-                    toolbox called Manopt</a> and I wrote a <a href="book/index.html"
-                    target="_blank">book</a>.</p>
-                <p>My 2021 <a href="https://erc.europa.eu/news/erc-2021-starting-grants-results"
-                    target="_blank">ERC Starting Grant</a> project GEOSYM is
-                  scheduled to start in the fall of 2022. Our goal is to harness
-                  geometry, symmetry and statistics in optimization to tackle
-                  nonconvexity. This will be funded by <a href="https://www.sbfi.admin.ch/sbfi/en/home/research-and-innovation/international-cooperation-r-and-i/eu-framework-programmes-for-research/horizon-europe/transitional-measures.html"
-                    target="_blank">SERI</a>.</p>
-                <p>As of Jan. 1st, 2022, I am an <a href="https://www.springer.com/journal/10107/editors"
-                    target="_blank">associate editor</a> for Mathematical
-                  Programming.</p>
-                <p>Research topics:</p>
-                <ul>
-                  <li>Nonconvex optimization (complexity, structure, global
-                    optimality)</li>
-                  <li>Optimization on Riemannian manifolds</li>
-                  <li>Semidefinite programs and relaxations in low-rank form</li>
-                  <li>Low-rank optimization</li>
-                  <li>Statistical estimation, bounds, notably under group
-                    actions</li>
-                  <li>Synchronization (estimation from pairwise information)</li>
-                  <li>Single particle reconstruction in cryo-electron microscopy</li>
-                  <li>curve fitting on manifolds</li>
-                </ul>
-                <p> </p>
-                <p><br>
-                </p>
-                <p>Positions prior to EPFL:</p>
-                <ul>
-                  <li>Instructor then assistant professor in the mathematics
-                    department at Princeton University. There, I also interacted
-                    closely with PACM (the program in applied and computational
-                    mathematics), especially the group of <a href="https://web.math.princeton.edu/%7Eamits/"
-                      target="_blank">Amit Singer</a>. (Feb. 2016&#8211;June
-                    2020);</li>
-                  <li>Postdoc at Inria in Paris, affiliated with the computer
-                    science department of the Ecole Normale Sup&#233;rieure with
-                    <a target="_blank" href="http://www.di.ens.fr/%7Easpremon/">Alexandre
-                      d'Aspremont</a> in the <a target="_blank" href="http://www.di.ens.fr/sierra/">SIERRA</a>
-                    team, working on topics at the intersection of optimization
-                    and statistics. (Oct. 2014&#8211;Jan. 2016);</li>
-                  <li>Ph.D. student working with <a target="_blank" href="http://www.inma.ucl.ac.be/%7Eabsil/">Pierre-Antoine
-                      Absil</a> and <a target="_blank" href="http://www.inma.ucl.ac.be/%7Eblondel/">Vincent
-                      Blondel</a> at UCLouvain, in the department of
-                    mathematical engineering. My dissertation is about <a target="_blank"
-                      href="papers/boumal_optimization_and_estimation_on_manifolds_phd_thesis.htm">optimization
-                      and estimation on manifolds</a>. (Oct. 2010&#8211;Sep.
-                    2014).</li>
-                </ul>
-                <ul>
-                </ul>
-                <br>
-              </div>
-            </div>
-          </div>
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19509417-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-9">
+        <div class="page-header" style="display: block">
+          <h1 style="display: block">Nicolas Boumal<br>
+            <small style="display: block">Assistant professor in mathematics
+              at EPFL</small>
+          </h1>
+        </div>
+        <ul class="nav nav-tabs nav-justified" role="navigation">
+          <li id="li-about"><a href="#about" onclick="_gaq.push(['_trackEvent', 'navigation', 'about']);" class="menu"
+              id="tab-about">About</a></li>
           <!--
+            <li id="li-projects"><a href="#projects" onclick="_gaq.push(['_trackEvent', 'navigation', 'projects']);" class="menu" id="tab-projects">Projects</a></li>						-->
+          <li id="li-publications"><a href="#publications"
+              onclick="_gaq.push(['_trackEvent', 'navigation', 'publications']);" class="menu"
+              id="tab-publications">Publications</a></li>
+          <li id="li-book"><a href="#book" onclick="_gaq.push(['_trackEvent', 'navigation', 'book']);" class="menu"
+              id="tab-book">Book</a></li>
+          <li id="li-teaching"><a href="#teaching" onclick="_gaq.push(['_trackEvent', 'navigation', 'teaching']);"
+              class="menu" id="tab-teaching">Teaching</a></li>
+          <li id="li-contact"><a href="#contact" onclick="_gaq.push(['_trackEvent', 'navigation', 'contact']);"
+              class="menu" id="tab-contact">Contact</a></li>
+        </ul>
+        <p><br>
+        </p>
+        <div class="section" id="section-about">
+          <div class="media row">
+            <div class="col-lg-3 col-md-3 col-sm-12" align="left"> <img alt="picture" title="Nicolas Boumal"
+                class="media-object img-rounded" src="images/nicolasboumal_princeton_math_2016.jpg"
+                style="width: 100%; max-width: 215px; margin: 8px 5px;">
+              <!--width: 215px; height: 236px-->
+            </div>
+            <div class="hyphenate col-lg-9 col-md-9 col-sm-12" align="justify">
+              <p>I joined the Institute of Mathematics at EPFL on July 1st,
+                2020, where I run the chair of continuous optimization <a href="https://www.epfl.ch/labs/optim/"
+                  target="_blank">OPTIM</a>.</p>
+              <p>My <a href="https://www.epfl.ch/labs/optim/optim-chair-of-continuous-optimization/members/"
+                  target="_blank">group</a> works on <strong>optimization</strong>,
+                <strong>statistical estimation</strong> and <strong>numerical
+                  analysis</strong>. Much of what we do is related to
+                nonconvex optimization and optimization on manifolds. For the
+                latter, we develop <a target="_blank" href="http://www.manopt.org">a
+                  toolbox called Manopt</a> and I wrote a <a href="book/index.html" target="_blank">book</a>.
+              </p>
+              <p>My 2021 <a href="https://erc.europa.eu/news/erc-2021-starting-grants-results" target="_blank">ERC
+                  Starting Grant</a> project GEOSYM is
+                scheduled to start in the fall of 2022. Our goal is to harness
+                geometry, symmetry and statistics in optimization to tackle
+                nonconvexity. This will be funded by <a
+                  href="https://www.sbfi.admin.ch/sbfi/en/home/research-and-innovation/international-cooperation-r-and-i/eu-framework-programmes-for-research/horizon-europe/transitional-measures.html"
+                  target="_blank">SERI</a>.</p>
+              <p>As of Jan. 1st, 2022, I am an <a href="https://www.springer.com/journal/10107/editors"
+                  target="_blank">associate editor</a> for Mathematical
+                Programming.</p>
+              <p>Research topics:</p>
+              <ul>
+                <li>Nonconvex optimization (complexity, structure, global
+                  optimality)</li>
+                <li>Optimization on Riemannian manifolds</li>
+                <li>Semidefinite programs and relaxations in low-rank form</li>
+                <li>Low-rank optimization</li>
+                <li>Statistical estimation, bounds, notably under group
+                  actions</li>
+                <li>Synchronization (estimation from pairwise information)</li>
+                <li>Single particle reconstruction in cryo-electron microscopy</li>
+                <li>curve fitting on manifolds</li>
+              </ul>
+              <p> </p>
+              <p><br>
+              </p>
+              <p>Positions prior to EPFL:</p>
+              <ul>
+                <li>Instructor then assistant professor in the mathematics
+                  department at Princeton University. There, I also interacted
+                  closely with PACM (the program in applied and computational
+                  mathematics), especially the group of <a href="https://web.math.princeton.edu/%7Eamits/"
+                    target="_blank">Amit Singer</a>. (Feb. 2016&#8211;June
+                  2020);</li>
+                <li>Postdoc at Inria in Paris, affiliated with the computer
+                  science department of the Ecole Normale Sup&#233;rieure with
+                  <a target="_blank" href="http://www.di.ens.fr/%7Easpremon/">Alexandre
+                    d'Aspremont</a> in the <a target="_blank" href="http://www.di.ens.fr/sierra/">SIERRA</a>
+                  team, working on topics at the intersection of optimization
+                  and statistics. (Oct. 2014&#8211;Jan. 2016);
+                </li>
+                <li>Ph.D. student working with <a target="_blank"
+                    href="http://www.inma.ucl.ac.be/%7Eabsil/">Pierre-Antoine
+                    Absil</a> and <a target="_blank" href="http://www.inma.ucl.ac.be/%7Eblondel/">Vincent
+                    Blondel</a> at UCLouvain, in the department of
+                  mathematical engineering. My dissertation is about <a target="_blank"
+                    href="papers/boumal_optimization_and_estimation_on_manifolds_phd_thesis.htm">optimization
+                    and estimation on manifolds</a>. (Oct. 2010&#8211;Sep.
+                  2014).</li>
+              </ul>
+              <ul>
+              </ul>
+              <br>
+            </div>
+          </div>
+        </div>
+        <!--
           <div class="section" id="section-projects">            <p> (This list is not up to date.) </p>            <div class="media"> <a class="pull-left" href="#"> <img title="Manopt"                  class="media-object hidden-xs" src="images/optimsphere_small.png"                  alt="Manopt" height="179" width="211"> </a>              <div class="media-body hyphenate" align="justify">                <h4 class="media-heading">Manopt: a Matlab toolbox for                  optimization on Manifolds</h4>                <p>Manopt, available at <a href="http://www.manopt.org">manopt.org</a>,                  is a user-friendly, open source and <strong>documented </strong>Matlab                  toolbox which can be used to leverage the power of modern                  Riemannian optimization algorithms with ease. Manopt won the <a                    target="_blank" href="http://www.n-side.com/wolsey-award/winners.html">ORBEL                    Wolsey Award 2014</a> for best open source operational                  research implementation.</p>                <div style="display: none" id="manopt-more">                  <p>Optimization on manifolds, or Riemannian optimization, is a                    fast growing research topic in the field of nonlinear                    optimization. Its purpose is to provide efficient numerical                    algorithms to solve optimization problems of the form</p>                  <p>$$\min_{x\in\mathcal{M}} f(x),$$</p>                  <p>where the search space $\mathcal{M}$ is a smooth space: a                    differentiable manifold which can be endowed with a                    Riemannian structure. Examples of constraints which often                    yield exploitable geometric structure include <strong>rank                      and orthogonality constraints</strong>.</p>                  <p>Problems of this form appear pervasively, notably in                    machine learning applications, including low-rank matrix                    completion, sensor network localization, camera network                    registration, independent component analysis, metric                    learning, dimensionality reduction and so on.</p>                  <p>This is joint work with <a target="_blank" href="http://www.montefiore.ulg.ac.be/%7Emishra/">Bamdev                      Mishra</a>, in the context of the <a target="_blank" href="http://manopt.org/RANSO.html">RANSO</a>                    group.</p>                  <blockquote>                    <div class="publi-1007">&#160;</div>                  </blockquote>                </div>                <p><a onclick="$('#manopt-more').slideToggle(400);">Tell me                    more/less</a> </p>              </div>            </div>            <div class="media"> <a class="pull-left" href="#"> <img title="Smooth semidefinite programs"                  class="media-object hidden-xs" src="images/spectrahedron.png"                  alt="Smooth semidefinite programs" height="229" width="200"> </a>              <div class="media-body hyphenate" align="justify">                <h4 class="media-heading">Smooth semidefinite programs</h4>                <p>Consider a compact semidefinite program (SDP) of the form</p>                <p>$$\min_X \operatorname{Tr}(CX) \textrm{ s.t. } \mathcal{A}(X)                  = b, X \succeq 0,$$</p>                <p>where $X$ is a positive semidefinite matrix of size $n$ and                  $\mathcal{A}$ is a linear operator capturing $m$ equality                  constraints. For example, if the constraints are                  $\mathrm{diag}(X) = \mathbf{1}$ (diagonal entries of $X$ all                  equal 1) and $C$ is the adjacency matrix of a graph, then this                  is the Max-Cut SDP relaxation for that graph. Parameterizing                  $X$ as $X = YY^t$ yields a nonconvex&#160;optimization problem                  in $Y$:</p>                <p>$$\min_{Y \in \mathbb{R}^{n \times p}}                  \operatorname{Tr}(CYY^t) \textrm{ s.t. } \mathcal{A}(YY^t) =                  b.$$</p>                <p><a target="_blank" href="https://afonsobandeira.wordpress.com/">Afonso</a>,                  <a target="_blank" href="https://scholar.google.com/citations?user=P8NRbbYAAAAJ&amp;hl=en">Vlad</a>                  and I showed that if the set of acceptable $Y$'s is a                  manifold, and if $Y$ has sufficiently many columns, then,                  generically in $C$ (the cost matrix), second-order necessary                  optimality conditions for $Y$ are sufficient for global                  optimality. In other words: the nonconvex problem in $Y$ can                  be solved (and solves the SDP).</p>                <blockquote>                  <div class="publi-2010">&#160;</div>                </blockquote>                <div style="display: none" id="smooth-sdp-more">                  <p>Assume the set of $X$'s which satisfy the constraints is                    compact. Then, there exists a globally optimal $X$ whose                    rank $r$ satisfies $\frac{r(r+1)}{2} \leq m$ (this is a                    deterministic fact, analog to linear programs having sparse                    solutions). Thus, to reduce dimension, it is tempting to                    restrict the search space of the SDP to matrices of rank at                    most $p$, where so long as $\frac{p(p+1)}{2} \geq m$, the                    rank-restricted problem would be equivalent to the original                    one. One practical way to restrict the rank is to                    parameterize $X$ as $X = YY^t$, where $Y$ has size $n\times                    p$. This also mechanically ensures $X \succeq 0$ and leads                    to a Burer-Monteiro style formulation of the SDP:</p>                  <p>$$\min_{Y \in \mathbb{R}^{n \times p}}                    \operatorname{Tr}(CYY^t) \textrm{ s.t. } \mathcal{A}(YY^t) =                    b.$$</p>                  <p>This new problem in $Y$ has no conic constraint and is                    potentially much lower dimensional than the SDP.                    Unfortunately, it is no longer convex.</p>                  <p>We (propose to) say that the SDP is smooth if the search                    space in $Y$ is a smooth manifold. In that case, we can use                    algorithms from optimization on manifolds, such as <a target="_blank"                      href="http://www.manopt.org">Manopt</a> to (try to) solve                    the problem in $Y$. Of course, in general, such algorithms                    only converge to points which satisfy necessary optimality                    conditions. For nonconvex problems, these are not                    sufficient, in general.</p>                  <p>Nevertheless, our main theorem states that the nonconvexity                    is benign. Specifically:</p>                  <blockquote>                    <p>If the search space in $X$ is compact and the search                      space in $Y$ is a smooth manifold, and if                      $\frac{p(p+1)}{2} &gt; m$, then, for almost all $C$, any                      $Y$ which satisfies first- and second-order necessary                      optimality conditions is globally optimal, and $X=YY^t$ is                      optimal for the SDP.</p>                  </blockquote>                  <p>The proof is in three steps:</p>                  <ol>                    <li>We exhibit a global optimality dual certificate for $Y$.                      (It exists because even though the problem in $Y$ is                      nonconvex, it is essentially equivalent to an SDP, thus                      the dual certificate of the SDP can be used.)</li>                    <li>Using the certificate, we show that $Y$'s which satisfy                      first- and second-order necessary optimality conditions                      and which are rank deficient are optimal. (Since the main                      difference between the problems in $X$ and $Y$ is the rank                      constraint, it makes sense that a local optimum $Y$ which                      does not hit the rank constraint should map to a local                      optimum $X$, but all of those are globally optimal. The                      more refined statement is obtained by exploiting algebraic                      similarities between the optimality conditions and the                      dual certificate.)</li>                    <li>We show that, for sufficiently large $p$ and for almost                      any cost matrix $C$, it is true that all $Y$ which satisfy                      first-order necessary optimality conditions are rank                      deficient. Hence, generically in $C$, first- and                      second-order necessary optimality conditions are                      sufficient.</li>                  </ol>                  See also this paper with <a target="_blank" href="https://people.maths.ox.ac.uk/cartis/">Cora</a>                  and <a target="_blank" href="https://sites.uclouvain.be/absil/">Pierre-Antoine</a>                  for more about the complexity of computing second-order points                  on manifolds:                  <blockquote>                    <div class="publi-1012">&#160;</div>                  </blockquote>                </div>                <p><a onclick="$('#smooth-sdp-more').slideToggle(400);">Tell me                    more/less</a> </p>              </div>            </div>            <div class="media"> <a class="pull-left" href="#"> <img title="Synchronization network"                  class="media-object hidden-xs" src="images/synchro_network.png"                  alt="Synchronization network" height="213" width="211"> </a>              <div class="media-body hyphenate" align="justify">                <h4 class="media-heading">Synchronization: estimating rotations                  from relative measurements</h4>                <p>Synchronization is the problem of estimating elements $g_1,                  \ldots, g_N$ in a group $G$, given measurements of relative                  quantities: $h_{ij} \approx g_i^{}g_j^{-1}$. These elements                  are best visualized on a graph (undirected), where each                  element $g_i$ is a node and there exists an edge between two                  nodes $g_i$ and $g_j$ if a measurement $h_{ij}$ is available.                  I focus on $G = \mathrm{SO}(n)$, the group of rotations:</p>                <p>$$\mathrm{SO}(n) = \{ R \in \mathbb{R}^{n\times n} \colon                  R^TR = I_n \ \mathrm{ and } \ \operatorname{det}(R) = +1 \}.$$</p>                <p><a href="https://github.com/NicolasBoumal/SynchronizeMLE" onclick="_gaq.push(['_trackEvent', 'download', 'SynchronizeMLE']);"                    title="GitHub: code for synchronization of rotations" target="_blank">SynchronizeMLE</a>                  is the distribution of Matlab codes for this project,                  available under BSD license. It contains code both to perform                  the estimation and to compute Cram&#233;r-Rao bounds.</p>                <div style="display: none" id="synchro-more">                  <p>In particular, for $n = 3$, this corresponds to a situation                    where <em>$N$ physical objects each have a certain                      orientation in space (or attitude) we would like to                      estimate, and the data is a set of measurements of                      relative orientations between some pairs of objects</em>.                    Applications include the registration of a network of                    cameras, formation control for airborne or submarine                    vehicles, and cryo-electron microscopy (cryo-em). In                    cryo-em, $N$ pictures of a molecule are acquired, but the                    orientation $g_i$ of the molecule in each picture is                    unknown. In order to construct a 3D model of the molecule,                    the $g_i$'s need to be estimated. To this end, measurements                    of relative orientations $h_{ij}$ are obtained by comparing                    pairs of images. Unfortunately, these measurements are very                    noisy and thus call for particularly robust synchronization                    algorithms.</p>                  <p>Both the type of noise affecting the measurements and the                    topology of the measurement graph affect the estimation                    quality one can hope for. In a CDC'2013 paper, we propose an                    outlier-aware noise model and a matching algorithm based on                    <strong>maximum-likelihood estimation</strong>:</p>                  <blockquote>                    <div class="publi-2006">&#160;</div>                  </blockquote>                  <p>The algorithm rests upon optimization on manifolds and the                    code uses the <a target="_blank" href="http://www.manopt.org/">Manopt</a>                    toolbox. <strong>We investigate the fundamental bounds on                      the variance of estimators for synchronization</strong> of                    rotations in</p>                  <blockquote>                    <div class="publi-1005">&#160;</div>                  </blockquote>                  <p>The main finding is that <strong>the Cram&#233;r-Rao                      bounds are structured b</strong><strong>y the</strong><strong>                    </strong><strong>pseudoinverse </strong><strong>of the </strong><strong>La</strong><strong>placian                      of the measurement </strong><strong>graph</strong>. This                    makes a lot of sense and leads to informative                    interpretations in terms of random walks on the graph and                    useful visualizations by embedding the graph in a                    low-dimensional space, where distance (the Euclidean commute                    time distance) between nodes correlates with the difficulty                    of estimating/denoising the relative orientation between                    those two nodes.</p>                  <p>These results exploit expressions for intrinsic                    Cram&#233;r-Rao bounds on Riemannian submanifolds and                    Riemannian quotient manifolds, which I develop here, based                    on work by Steven T. Smith (2005):</p>                  <blockquote>                    <div class="publi-1002">&#160;</div>                  </blockquote>                  <p>From this work, it is apparent that                    $\operatorname{trace}(L^+)$, the trace of the pseudoinverse                    of the Laplacian of the measurement graph, plays a major                    role in limiting the accuracy of synchronization estimators,                    and furthermore, that this is true for groups other than                    $\mathrm{SO}(n)$ as well. With Xiuyuan Cheng, we wanted to                    assess what the <strong>average synchronizability of an                      Erd&#246;s-R&#233;nyi random graph</strong> would be. That                    is: given relative measurements between pairs of objects                    uniformly at random, how low would the Cram&#233;r-Rao bound                    be, on average. We answer that question in</p>                  <blockquote>                    <div class="publi-1006">&#160;</div>                  </blockquote>                  <p>Erd&#246;s-R&#233;nyi graphs are very well connected, and                    the answer in a nutshell reads: the lower-bound on the                    variance can be driven to zero (with high probability) as                    the number of nodes $N$ grows to infinity even if the                    probability $p_N$ of observing a pair $h_{ij}$ goes to zero,                    as long as the graph remains sufficiently connected: $p_N                    \gg log^6(N)/N$. </p>                </div>                <p><a onclick="$('#synchro-more').slideToggle(400);">Tell me                    more/less</a> </p>              </div>            </div>            <div class="media"> <a class="pull-left" href="Staircase/staircase_comparison.png">                <img style="width: 211px; height: 94px;" title="Riemannian staircase method"                  class="media-object hidden-xs" src="Staircase/staircase_comparison_alpha.png"                  alt="Riemannian staircase method"> </a>              <div class="media-body hyphenate" align="justify">                <h4 class="media-heading">Riemannian Staircase: semidefinite                  programming with diagonal block constraints</h4>                <p>This is an algorithm to compute KKT points for problems of                  the form $$\min_X f(X)$$ with $X$ a symmetric matrix of size                  $n\times n$ such that $$X\succeq 0 \textrm{ and } X_{ii} = I_d                  \ \forall i,$$ meaning that the $d\times d$ diagonal blocks of                  $X$ are identity matrices. The cost function $f$ must be twice                  continuously differentiable. If $f$ is convex, KKT points are                  global optimizers.</p>                <p>The main idea is to attain a solution by tracking                  intermediate solutions of low rank, increasing the rank as                  needed. This is in contrast with interior point methods, which                  work with full-rank matrices to ultimately converge to (often)                  low-rank solutions.</p>                <p>Here is Matlab code for <a href="Staircase/RiemannianStaircase_v1.2.zip">the                    Riemannian staircase method</a>. It is readily usable to                  solve such problems with $f(X) = \operatorname{Trace}(CX)$ and                  a pseudo-Huber-loss smoothed version of $f(X) = \sum_{(i,j)\in                  E} \|C_{ij}Y_j - Y_i\|_F$ (notice the absence of square).                  These two functions are concave (the linear cost is also                  convex), which promotes solutions at extreme points. The                  latter have low rank. See also my <a href="papers/The_staircase_method.pdf">slides</a>                  and the full paper:</p>                <blockquote>                  <div class="publi-1009">&#160;</div>                </blockquote>                <div style="display: none" id="staircase-more">                  <p>The proposed algorithm is inspired by the paper<a target="_blank"                      href="http://epubs.siam.org/doi/abs/10.1137/080731359"><em>                        Low-Rank Optimization on the Cone of Positive                        Semidefinite Matrices</em></a> by Journ&#233;e et al.,                    who themselves drew upon ideas of Burer and Monteiro and                    their work on <a target="_blank" href="http://link.springer.com/article/10.1007%2Fs10107-002-0352-8">SDPLR</a>.</p>                  <p>Its main use, as we see it, is to solve lifted versions of                    quadratically constrained quadratic programs, such as the <a                      target="_blank" href="http://dl.acm.org/citation.cfm?id=227684">Max-Cut                      SDP</a>, <a target="_blank" href="http://arxiv.org/abs/1206.0102">Phase-Cut</a>,                    <a target="_blank" href="http://arxiv.org/abs/1308.5207">Orthogonal-Cut</a>,                    synchronization of rotations (see my other projects), ...</p>                  <p>The main theoretical contribution of the paper is a                    characterization of when second-order critical points of the                    (smooth) Riemannian problem reveal KKT points of the                    spectrahedral problem.</p>                </div>                <p><a onclick="$('#staircase-more').slideToggle(400);">Tell me                    more/less</a> </p>              </div>            </div>            <div class="media"> <a class="pull-left" href="#"> <img title="Low-rank matrix completion"                  class="media-object hidden-xs" src="images/puzzle_small.png" alt="Low-rank matrix completion"                  height="224" width="211"> </a>              <div class="media-body hyphenate" align="justify">                <h4 class="media-heading">Low-rank matrix completion</h4>                <p>Let $M \in \mathbb{R}^{m\times n}$ be a matrix with low rank                  $r \ll \min(m, n)$. Low-rank matrix completion is the task of                  estimating (or recovering) $M$ from measurements $\hat M_{ij}                  \approx M_{ij}$ of a few entries $(i, j) \in \Omega$.</p>                <p>At NIPS 2011, we proposed <a href="RTRMC/index.html">RTRMC</a>,                  a Riemannian trust-region method for low-rank matrix                  completion:</p>                <blockquote>                  <div class="publi-2003">&#160;</div>                </blockquote>                <div style="display: none" id="lrmc-more">                  <p>This became a hot research topic in the late 2000's when it                    was shown that the low-rank prior works well for <strong>recommender                      systems</strong>, such as the Netflix challenge. There,                    customers are indexed by $i$ and movies are indexed by $j$;                    $M_{ij}$ is the rating user $i$ gives to movie $j$. Only a                    few of these are available. Completing the matrix amounts to                    estimating how much each user would like or dislike each                    movie. Such estimates can in turn be used to make                    personalized suggestions to customers.</p>                  The core idea is that,<strong> if one knows the subspace                    spanned by the columns of $M$, then completing the matrix                    following a least-squares criterion is easy</strong>: it is                  a linear least-squares problem. Hence, we define a cost                  function over the <a target="_blank" href="http://en.wikipedia.org/wiki/Grassmannian">Grassmann                    manifold</a>, that is, over the space of subspaces. This                  cost function $f(\mathcal{U})$ evaluates to the fitting error                  we obtain if we force the column space of $M$ to be                  $\mathcal{U}$, plus a regularization term. The optimization                  over the Grassmann manifold is performed using second-order                  Riemannian trust-regions: a globally convergent algorithm with                  quadratic local convergence rate.                  <p>An extended version of our conference paper is available,                    with detailed mathematical developments and more numerical                    experiments:</p>                  <blockquote>                    <div class="publi-1003">&#160;</div>                  </blockquote>                  <p>In this extension, we further show how to precondition                    Riemannian trust regions as well as Riemannian conjugate                    gradients to speed up the convergence when $M$ is badly                    conditioned.</p>                </div>                <p><a onclick="$('#lrmc-more').slideToggle(400);">Tell me                    more/less</a> </p>              </div>            </div>            <div class="media"> <a class="pull-left" href="#"> <img title="Interpolation of rotations"                  class="media-object hidden-xs" src="images/SO3.png" alt="Interpolation of rotations">              </a>              <div class="media-body hyphenate" align="justify">                <h4 class="media-heading">Curve fitting on manifolds:                  interpolation and regression</h4>                <p>In this project, which was the topic of my <a href="papers/Boumal_Discrete_curve_fitting_on_manifolds_Master_Thesis.htm">master's                    thesis</a>, we are given time-labeled points on a Riemannian                  manifold $\mathcal{M}$ (for example, on a sphere, on the group                  of rotations, on the set of positive-definite matrices, etc.):                  $p_1, \ldots, p_n$, associated to timestamps $t_1 \leq \ldots                  \leq t_n$. The goal is to propose a curve (a model) on the                  manifold, $\gamma \colon [t_1, t_n] \to \mathcal{M}$, <strong>such                    that the curve fits the data</strong> (exactly for                  interpolation, reasonably for regression): $\gamma(t_i)                  \approx p_i$ <strong>and </strong>such that $\gamma$ <strong>is                    smooth</strong> in some suitable sense. Interpolation and                  regression are fundamental operations in signals processing.                  They serve the goals of<strong> denoising and resampling                    acquired data</strong>. These tasks are well understood when                  the data belongs to a Euclidean space such as $\mathbb{R}^n$,                  but much less so <strong>when the data belon</strong><strong>g</strong><strong>s                    to a nonlinear manifold</strong>.</p>                <p>Code is available on <a target="_blank" href="https://github.com/NicolasBoumal/SOn_regression">GitHub                    for regression of rotation matrices</a>.</p>                <div style="display: none" id="fitting-more">                  <p>With my advisor Pierre-Antoine Absil, we explore algorithms                    to build <strong>discrete </strong><strong>"curves"</strong>,                    that is, sequences of points $\gamma = (\gamma_1, \ldots,                    \gamma_N)$, with $N &gt; n$, such that $\gamma$ passes                    close-by the data points and looks smooth. Smoothness of a                    discrete curve on a manifold is defined based on a                    generalization of finite differences on manifolds. Data                    fidelity and first-order and second-order smoothness metrics                    are incorporated in a cost function which is then minimized                    over the space $\mathcal{M}^N$ of discrete sequences on                    $\mathcal{M}$ using Riemannian optimization (see the <a target="_blank"                      href="http://www.manopt.org/">Manopt</a> project).</p>                  <p>The general framework is described in this IFAC 2011 paper,                    with an example on the group of rotations: an object is                    rotated as time elapses, with prescribed orientations $p_i$                    at specified times $t_i$ and the desire for the animation to                    appear smooth:</p>                  <blockquote>                    <div class="publi-2001">&#160;</div>                  </blockquote>                  <p>The same framework is applied to positive-definite matrices                    (tensors) in this ICASSP 2011 paper:</p>                  <blockquote>                    <div class="publi-2002">&#160;</div>                  </blockquote>                  <p>In a GSI 2013 conference paper, we revisit regression of                    rotations to propose a simpler cost function, which yields a                    faster algorithm and the possibility to implement                    second-order Riemannian trust-regions to minimize the cost:</p>                  <blockquote>                    <div class="publi-2004">&#160;</div>                  </blockquote>                </div>                <p><a onclick="$('#fitting-more').slideToggle(400);">Tell me                    more/less</a> </p>              </div>            </div>          </div>          -->
-          <div class="section" id="section-publications">
-            <div class="media">
-              <div class="media-body">
-                <h4 class="media-heading">Theses</h4>
-                <div id="publis-thesis">&#160;</div>
-              </div>
-            </div>
-            <div class="media">
-              <div class="media-body">
-                <h4 class="media-heading">Reports</h4>
-                <div id="publis-preprint">&#160;</div>
-              </div>
-            </div>
-            <div class="media">
-              <div class="media-body">
-                <h4 class="media-heading">Journal papers</h4>
-                <div id="publis-journal">&#160;</div>
-              </div>
-            </div>
-            <div class="media">
-              <div class="media-body">
-                <h4 class="media-heading">Conference papers</h4>
-                <div id="publis-conference">&#160;</div>
-              </div>
-            </div>
-            <div class="media">
-              <div class="media-body">
-                <h4 class="media-heading">Talks</h4>
-                <div id="publis-talk">&#160;</div>
-              </div>
-            </div>
-            <div class="media">
-              <div class="media-body">
-                <h4 class="media-heading">Posters</h4>
-                <div id="publis-poster">&#160;</div>
-              </div>
+        <div class="section" id="section-publications">
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">Theses</h4>
+              <div id="publis-thesis">&#160;</div>
             </div>
           </div>
-          <div class="section" id="section-contact">
-            <div class="row">
-              <div class="col-lg-5 col-sm-12">
-                <address> <strong>Nicolas Boumal</strong><br>
-                  EPFL SB MATH<br>
-                  MA C2 627 (B&#226;timent MA)<br>
-                  Station 8<br>
-                  CH-1015 Lausanne<br>
-                  Switzerland<br>
-                  <br>
-                  <strong> Office:</strong> MA C2 627, 2<sup>nd</sup> floor<br>
-                  If you don't have a badge, use MA building entrance near <a href="https://g.page/BarSatellite?share"
-                    target="_blank">Satellite</a> and walk all the way to the
-                  end of the corridor.<br>
-                  <br>
-                  <strong> E-mail:</strong> <a href="mailto:nicolas.boumal@epfl.ch">nicolas.boumal@epfl.ch</a>
-                </address>
-              </div>
-              <div class="col-lg-7 col-sm-12"> <iframe src="https://www.google.com/maps/embed?pb=%211m18%211m12%211m3%211d686.3585232243877%212d6.567258529197121%213d46.51931129869546%212m3%211f0%212f0%213f0%213m2%211i1024%212i768%214f13.1%213m3%211m2%211s0x0%3A0x0%212zNDbCsDMxJzA5LjUiTiA2wrAzNCcwNC4xIkU%215e0%213m2%211sen%212sch%214v1598025526662%215m2%211sen%212sch"
-                  style="border:0" allowfullscreen="" height="400" frameborder="0"
-                  width="100%">&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;nbsp;</iframe>
-              </div>
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">Reports</h4>
+              <div id="publis-preprint">&#160;</div>
             </div>
-            <div class="media">
-              <div class="media-body">
-                <h4 class="media-heading">Miscellaneous facts</h4>
-                <div id="misc-misc"><br>
-                  My Erd&#246;s number is 3, courtesy of my co-author and PhD
-                  advisor <a target="_blank" href="http://perso.uclouvain.be/vincent.blondel/">
-                    Vincent Blondel</a>.<br>
-                  <br>
-                  <div class="media-body hyphenate" align="justify"> Research
-                    will get you places! It got me in: Palo Alto, Boston,
-                    Princeton, London, Prague, Cannes, Lisbon, Milan, Dagstuhl,
-                    Granada, Sierra Nevada, Valencia, Berlin, Les Houches, Costa
-                    da Caparica, Paris, Florence, San Diego, Bordeaux,
-                    Montr&#233;al, Bonn, Pittsburgh, Oxford, Geneva, New York
-                    City, Barcelona, Vancouver, Ames, Minneapolis, Washington
-                    DC, Stockholm, Lausanne, Oaxaca, Villars-sur-Ollon,
-                    Pasadena, Interlaken, Chexbres... and various places in
-                    Belgium (Louvain-la-Neuve, Leuven, Li&#232;ge, La Roche,
-                    Mons, Knokke, Daverdisse, Spa, Namur, Bruxelles...).<br>
-                  </div>
-                </div>
+          </div>
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">Journal papers</h4>
+              <div id="publis-journal">&#160;</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">Conference papers</h4>
+              <div id="publis-conference">&#160;</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">Talks</h4>
+              <div id="publis-talk">&#160;</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">Posters</h4>
+              <div id="publis-poster">&#160;</div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="section-contact">
+          <div class="row">
+            <div class="col-lg-5 col-sm-12">
+              <address> <strong>Nicolas Boumal</strong><br>
+                EPFL SB MATH<br>
+                MA C2 627 (B&#226;timent MA)<br>
+                Station 8<br>
+                CH-1015 Lausanne<br>
+                Switzerland<br>
                 <br>
-              </div>
-            </div>
-          </div>
-          <div class="section" id="section-teaching">
-            <div class="media">
-              <div class="media-body">
-                <h4 class="media-heading">Teaching at EPFL</h4>
-                <div id="teaching-epfl">
-                  <ul>
-                    <li>Alg&#232;bre lin&#233;aire I (<a href="https://edu.epfl.ch/coursebook/en/linear-algebra-MATH-111-E"
-                        target="_blank">MATH-111(e)</a>), Fall 2021</li>
-                    <li>Continuous optimization (<a href="https://edu.epfl.ch/coursebook/en/nonlinear-optimization-MATH-329"
-                        target="_blank">MATH-329</a>), Spring 2021, 2022, <a href="papers/MATH329-Lecture_notes_Boumal_2022.htm"
-                        target="_blank">lecture notes</a></li>
-                    <li>Optimization on manifolds (<a href="https://edu.epfl.ch/coursebook/fr/optimization-on-manifolds-MATH-512"
-                        target="_blank">MATH-512</a>), Spring 2021, <a href="book/index.html"
-                        target="_blank">book</a></li>
-                    <li>Mathematical foundations of neural networks (graduate
-                      seminar, MATH-631), Fall 2020</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="media">
-              <div class="media-body">
-                <h4 class="media-heading">Teaching at Princeton University</h4>
-                <div id="teaching-princeton">
-                  <ul>
-                    <li>Linear algebra with applications (MAT202), Spring <a href="https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=004150&amp;term=1164"
-                        target="_blank">2016</a>, <a href="https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=004150&amp;term=1174"
-                        target="_blank">2017</a></li>
-                    <li>Numerical methods (MAT321), Fall <a href="https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=009029&amp;term=1172"
-                        target="_blank">2016</a>, <a href="https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=009029&amp;term=1182"
-                        target="_blank">2017</a>, <a href="https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=009029&amp;term=1192"
-                        target="_blank">2018</a>, <a href="https://registrar.princeton.edu/course-offerings/course-details?courseid=009029&amp;term=1202"
-                        target="_blank">2019</a>, <a href="papers/MAT321_Lecture_notes_Boumal_2019.htm"
-                        target="_blank">lecture notes</a></li>
-                    <li>Junior seminar (optimization on manifolds, MAT982),
-                      Spring 2018</li>
-                    <li>Junior seminar (math of data science through
-                      cryo-electron microscopy, MAT982), Fall 2018</li>
-                    <li>Junior seminar (math of data science, MAT982), Fall 2019</li>
-                    <li>Optimization on smooth manifolds (graduate course,
-                      MAT588), Spring <a href="https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=015004&amp;term=1194"
-                        target="_blank">2019</a>, <a href="https://registrar.princeton.edu/course-offerings/course-details?courseid=015004&amp;term=1204"
-                        target="_blank">2020</a>, <a href="book/index.html" target="_blank">book</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="media">
-              <div class="media-body">
-                <h4 class="media-heading">Teaching at UCLouvain</h4>
-                <div id="teaching-uclouvain">
-                  <ul>
-                    <li>Math&#233;matiques 1 (<a target="_blank" href="http://sites.uclouvain.be/etudes/cours/fr/fsab1101.html">FSAB1101</a>),
-                      TA, autumn 2008, autumn 2009</li>
-                    <li>Projet 1 (<a target="_blank" href="http://sites.uclouvain.be/etudes/cours/fr/fsab1501.html">FSAB1501</a>),
-                      TA, autumn 2010</li>
-                    <li>Th&#233;orie des Matrices (<a target="_blank" href="http://sites.uclouvain.be/etudes/cours/fr/inma2380.html">INMA2380</a>),
-                      TA, spring 2011, autumn 2013</li>
-                    <li>Signaux et Syst&#232;mes (<a target="_blank" href="http://www.uclouvain.be/en-cours-2011-lfsab1106.html">LFSAB1106</a>),
-                      TA, autumn 2011</li>
-                    <li>Analyse num&#233;rique : approximation, interpolation,
-                      int&#233;gration&#160;(<a target="_blank" href="http://www.uclouvain.be/cours-2011-linma2171.html">LINMA2171</a>),
-                      TA, autumn 2011 and 2012</li>
-                    <li>Math&#233;matiques 2 (<a target="_blank" href="http://www.uclouvain.be/cours-2011-lfsab1102.html">LFSAB1102</a>),
-                      TA, spring 2012</li>
-                    <li>Mod&#233;lisation et analyse des syst&#232;mes
-                      dynamiques (<a target="_blank" href="http://www.uclouvain.be/cours-2012-linma2370.html">LINMA2370</a>),
-                      TA, autumn 2012</li>
-                    <li>Projet en ing&#233;nierie math&#233;matique&#160;(<a target="_blank"
-                        href="http://www.uclouvain.be/cours-2011-linma2360.html">LINMA2360</a>),
-                      TA, spring 2012 and 2013</li>
-                    <li>Projet en math&#233;matiques appliqu&#233;es&#160;(<a target="_blank"
-                        href="http://www.uclouvain.be/cours-2011-linma1375.html">LINMA1375</a>),
-                      TA, spring&#160;2013</li>
-                    <li>Syst&#232;mes dynamiques non lin&#233;aires&#160;(<a target="_blank"
-                        href="http://www.uclouvain.be/en-cours-2013-LINMA2361.html">LINMA2361</a>),
-                      TA, autumn&#160;2013</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section" id="section-book">
-            <div class="media row">
-              <div class="col-lg-3 col-md-3 col-sm-12">
-                <div class="media-body"> <a href="book/index.html" target="_blank"><img
-                      alt="picture" title="An introduction to optimization on smooth manifolds"
-                      class="media-object img-rounded" src="images/BoumalIntroSmoothManifolds.png"
-                      style="width:100%; max-width:220px; margin:auto; margin-bottom:8mm; display:block;"></a>
-                </div>
-                <!--margin: auto; display:block; is to center the image...-->
-                <!--width: 192px; height: 250px;--> </div>
-              <div class="col-lg-9 col-md-9 col-sm-12">
-                <h4 class="media-heading">An introduction to optimization on
-                  smooth manifolds</h4>
-                <div class="media-body hyphenate" align="justify">This is a book
-                  about optimization on smooth manifolds for readers who are
-                  comfortable with linear algebra and multivariable calculus.
-                  There are no prerequisites in geometry or optimization.
-                  Chapters 3 and 5 can serve as a standalone introduction to
-                  differential and Riemannian geometry, focused on embedded
-                  submanifolds of linear spaces, with full proofs. A
-                  distinguishing feature is that these early chapters highlight
-                  computability and do not involve charts.</div>
-                <div class="media-body hyphenate" align="justify"><br>
-                </div>
-                <div class="media-body hyphenate" align="justify"> <a href="book/index.html"
-                    target="_blank">Click here to go to the book webpage.</a></div>
-                <div class="media-body hyphenate" align="justify"><br>
-                </div>
-                <div class="media-body" align="justify">You may also be
-                  interested in the Manopt toolboxes (<a href="https://www.manopt.org"
-                    target="_blank">Matlab</a>, <a href="https://www.pymanopt.org"
-                    target="_blank">Python</a>, <a href="https://www.manoptjl.org"
-                    target="_blank">Julia</a>), and in the book <a target="_blank"
-                    href="https://press.princeton.edu/absil">Optimization
-                    Algorithms on Matrix Manifolds</a> by Absil, Mahony and
-                  Sepulchre (Princeton University Press, 2008), all freely
-                  available online.</div>
-                <div class="media-body" align="justify"><br>
-                </div>
-                <div class="media-body" align="justify">Here are a <a href="https://www.youtube.com/watch?v=UjaoZE0GBpg&amp;ab_channel=SimonsInstitute"
-                    target="_blank">one-hour video</a> and a <a href="https://www.youtube.com/watch?v=lK62DwSIjXA&amp;t=6s&amp;ab_channel=FMGDataDrivenControlSummerSchool"
-                    target="_blank">two-hour video</a> introducing the basics of
-                  differential geometry and Riemannian geometry for optimization
-                  on smooth manifolds (they have mostly the same contents).</div>
+                <strong> Office:</strong> MA C2 627, 2<sup>nd</sup> floor<br>
+                If you don't have a badge, use MA building entrance near <a href="https://g.page/BarSatellite?share"
+                  target="_blank">Satellite</a> and walk all the way to the
+                end of the corridor.<br>
                 <br>
+                <strong> E-mail:</strong> <a href="mailto:nicolas.boumal@epfl.ch">nicolas.boumal@epfl.ch</a>
+              </address>
+            </div>
+            <div class="col-lg-7 col-sm-12"> <iframe
+                src="https://www.google.com/maps/embed?pb=%211m18%211m12%211m3%211d686.3585232243877%212d6.567258529197121%213d46.51931129869546%212m3%211f0%212f0%213f0%213m2%211i1024%212i768%214f13.1%213m3%211m2%211s0x0%3A0x0%212zNDbCsDMxJzA5LjUiTiA2wrAzNCcwNC4xIkU%215e0%213m2%211sen%212sch%214v1598025526662%215m2%211sen%212sch"
+                style="border:0" allowfullscreen="" height="400" frameborder="0"
+                width="100%">&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;nbsp;</iframe>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">Miscellaneous facts</h4>
+              <div id="misc-misc"><br>
+                My Erd&#246;s number is 3, courtesy of my co-author and PhD
+                advisor <a target="_blank" href="http://perso.uclouvain.be/vincent.blondel/">
+                  Vincent Blondel</a>.<br>
+                <br>
+                <div class="media-body hyphenate" align="justify"> Research
+                  will get you places! It got me in: Palo Alto, Boston,
+                  Princeton, London, Prague, Cannes, Lisbon, Milan, Dagstuhl,
+                  Granada, Sierra Nevada, Valencia, Berlin, Les Houches, Costa
+                  da Caparica, Paris, Florence, San Diego, Bordeaux,
+                  Montr&#233;al, Bonn, Pittsburgh, Oxford, Geneva, New York
+                  City, Barcelona, Vancouver, Ames, Minneapolis, Washington
+                  DC, Stockholm, Lausanne, Oaxaca, Villars-sur-Ollon,
+                  Pasadena, Interlaken, Chexbres... and various places in
+                  Belgium (Louvain-la-Neuve, Leuven, Li&#232;ge, La Roche,
+                  Mons, Knokke, Daverdisse, Spa, Namur, Bruxelles...).<br>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="section-teaching">
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">Teaching at EPFL</h4>
+              <div id="teaching-epfl">
+                <ul>
+                  <li>Alg&#232;bre lin&#233;aire I (<a
+                      href="https://edu.epfl.ch/coursebook/en/linear-algebra-MATH-111-E"
+                      target="_blank">MATH-111(e)</a>), Fall 2021</li>
+                  <li>Continuous optimization (<a
+                      href="https://edu.epfl.ch/coursebook/en/nonlinear-optimization-MATH-329"
+                      target="_blank">MATH-329</a>), Spring 2021, 2022, <a
+                      href="papers/MATH329-Lecture_notes_Boumal_2022.htm" target="_blank">lecture notes</a></li>
+                  <li>Optimization on manifolds (<a
+                      href="https://edu.epfl.ch/coursebook/fr/optimization-on-manifolds-MATH-512"
+                      target="_blank">MATH-512</a>), Spring 2021, <a href="book/index.html" target="_blank">book</a>
+                  </li>
+                  <li>Mathematical foundations of neural networks (graduate
+                    seminar, MATH-631), Fall 2020</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">Teaching at Princeton University</h4>
+              <div id="teaching-princeton">
+                <ul>
+                  <li>Linear algebra with applications (MAT202), Spring <a
+                      href="https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=004150&amp;term=1164"
+                      target="_blank">2016</a>, <a
+                      href="https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=004150&amp;term=1174"
+                      target="_blank">2017</a></li>
+                  <li>Numerical methods (MAT321), Fall <a
+                      href="https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=009029&amp;term=1172"
+                      target="_blank">2016</a>, <a
+                      href="https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=009029&amp;term=1182"
+                      target="_blank">2017</a>, <a
+                      href="https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=009029&amp;term=1192"
+                      target="_blank">2018</a>, <a
+                      href="https://registrar.princeton.edu/course-offerings/course-details?courseid=009029&amp;term=1202"
+                      target="_blank">2019</a>, <a href="papers/MAT321_Lecture_notes_Boumal_2019.htm"
+                      target="_blank">lecture notes</a></li>
+                  <li>Junior seminar (optimization on manifolds, MAT982),
+                    Spring 2018</li>
+                  <li>Junior seminar (math of data science through
+                    cryo-electron microscopy, MAT982), Fall 2018</li>
+                  <li>Junior seminar (math of data science, MAT982), Fall 2019</li>
+                  <li>Optimization on smooth manifolds (graduate course,
+                    MAT588), Spring <a
+                      href="https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=015004&amp;term=1194"
+                      target="_blank">2019</a>, <a
+                      href="https://registrar.princeton.edu/course-offerings/course-details?courseid=015004&amp;term=1204"
+                      target="_blank">2020</a>, <a href="book/index.html" target="_blank">book</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">Teaching at UCLouvain</h4>
+              <div id="teaching-uclouvain">
+                <ul>
+                  <li>Math&#233;matiques 1 (<a target="_blank"
+                      href="http://sites.uclouvain.be/etudes/cours/fr/fsab1101.html">FSAB1101</a>),
+                    TA, autumn 2008, autumn 2009</li>
+                  <li>Projet 1 (<a target="_blank"
+                      href="http://sites.uclouvain.be/etudes/cours/fr/fsab1501.html">FSAB1501</a>),
+                    TA, autumn 2010</li>
+                  <li>Th&#233;orie des Matrices (<a target="_blank"
+                      href="http://sites.uclouvain.be/etudes/cours/fr/inma2380.html">INMA2380</a>),
+                    TA, spring 2011, autumn 2013</li>
+                  <li>Signaux et Syst&#232;mes (<a target="_blank"
+                      href="http://www.uclouvain.be/en-cours-2011-lfsab1106.html">LFSAB1106</a>),
+                    TA, autumn 2011</li>
+                  <li>Analyse num&#233;rique : approximation, interpolation,
+                    int&#233;gration&#160;(<a target="_blank"
+                      href="http://www.uclouvain.be/cours-2011-linma2171.html">LINMA2171</a>),
+                    TA, autumn 2011 and 2012</li>
+                  <li>Math&#233;matiques 2 (<a target="_blank"
+                      href="http://www.uclouvain.be/cours-2011-lfsab1102.html">LFSAB1102</a>),
+                    TA, spring 2012</li>
+                  <li>Mod&#233;lisation et analyse des syst&#232;mes
+                    dynamiques (<a target="_blank"
+                      href="http://www.uclouvain.be/cours-2012-linma2370.html">LINMA2370</a>),
+                    TA, autumn 2012</li>
+                  <li>Projet en ing&#233;nierie math&#233;matique&#160;(<a target="_blank"
+                      href="http://www.uclouvain.be/cours-2011-linma2360.html">LINMA2360</a>),
+                    TA, spring 2012 and 2013</li>
+                  <li>Projet en math&#233;matiques appliqu&#233;es&#160;(<a target="_blank"
+                      href="http://www.uclouvain.be/cours-2011-linma1375.html">LINMA1375</a>),
+                    TA, spring&#160;2013</li>
+                  <li>Syst&#232;mes dynamiques non lin&#233;aires&#160;(<a target="_blank"
+                      href="http://www.uclouvain.be/en-cours-2013-LINMA2361.html">LINMA2361</a>),
+                    TA, autumn&#160;2013</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="section-book">
+          <div class="media row">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+              <div class="media-body"> <a href="book/index.html" target="_blank"><img alt="picture"
+                    title="An introduction to optimization on smooth manifolds" class="media-object img-rounded"
+                    src="images/BoumalIntroSmoothManifolds.png"
+                    style="width:100%; max-width:220px; margin:auto; margin-bottom:8mm; display:block;"></a>
+              </div>
+              <!--margin: auto; display:block; is to center the image...-->
+              <!--width: 192px; height: 250px;-->
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12">
+              <h4 class="media-heading">An introduction to optimization on
+                smooth manifolds</h4>
+              <div class="media-body hyphenate" align="justify">This is a book
+                about optimization on smooth manifolds for readers who are
+                comfortable with linear algebra and multivariable calculus.
+                There are no prerequisites in geometry or optimization.
+                Chapters 3 and 5 can serve as a standalone introduction to
+                differential and Riemannian geometry, focused on embedded
+                submanifolds of linear spaces, with full proofs. A
+                distinguishing feature is that these early chapters highlight
+                computability and do not involve charts.</div>
+              <div class="media-body hyphenate" align="justify"><br>
+              </div>
+              <div class="media-body hyphenate" align="justify"> <a href="book/index.html" target="_blank">Click here to
+                  go to the book webpage.</a></div>
+              <div class="media-body hyphenate" align="justify"><br>
+              </div>
+              <div class="media-body" align="justify">You may also be
+                interested in the Manopt toolboxes (<a href="https://www.manopt.org" target="_blank">Matlab</a>, <a
+                  href="https://www.pymanopt.org" target="_blank">Python</a>, <a href="https://www.manoptjl.org"
+                  target="_blank">Julia</a>), and in the book <a target="_blank"
+                  href="https://press.princeton.edu/absil">Optimization
+                  Algorithms on Matrix Manifolds</a> by Absil, Mahony and
+                Sepulchre (Princeton University Press, 2008), all freely
+                available online.</div>
+              <div class="media-body" align="justify"><br>
+              </div>
+              <div class="media-body" align="justify">Here are a <a
+                  href="https://www.youtube.com/watch?v=UjaoZE0GBpg&amp;ab_channel=SimonsInstitute"
+                  target="_blank">one-hour video</a> and a <a
+                  href="https://www.youtube.com/watch?v=lK62DwSIjXA&amp;t=6s&amp;ab_channel=FMGDataDrivenControlSummerSchool"
+                  target="_blank">two-hour video</a> introducing the basics of
+                differential geometry and Riemannian geometry for optimization
+                on smooth manifolds (they have mostly the same contents).</div>
+              <br>
+            </div>
+            <div class="media-body col-12">
+              <div><b>Table of contents</b> (<a onclick="toctoggle()" id="tocbutton">expand/collapse</a>)
               </div>
               <div class="media-body col-12">
-                <div><b>Table of contents</b> (<a onclick="toctoggle()" id="tocbutton">expand/collapse</a>)
-                </div>
-                <div class="media-body col-12">
-                  <ul class="toc" id="booktoc">
-                    <li>Preface</li>
-                    <li>1. Introduction</li>
-                    <li>2. Simple examples
-                      <ul>
-                        <li>2.1 Sensor network localization from directions: an
-                          affine subspace</li>
-                        <li>2.2 Single extreme eigenvalue or singular value:
-                          spheres</li>
-                        <li>2.3 Dictionary learning: products of spheres</li>
-                        <li>2.4 Principal component analysis: Stiefel and
-                          Grassmann</li>
-                        <li>2.5 Synchronization of rotations: special orthogonal
-                          group</li>
-                        <li>2.6 Low-rank matrix completion: fixed-rank manifold</li>
-                        <li>2.7 Gaussian mixture models: positive definite
-                          matrices</li>
-                        <li>2.8 Smooth semidefinite programs</li>
-                      </ul>
-                    </li>
-                    <li>3. Embedded geometry: first order
-                      <ul>
-                        <li>3.1 Reminders of Euclidean space</li>
-                        <li>3.2 Embedded submanifolds of a linear space</li>
-                        <li>3.3 Smooth maps on embedded submanifolds</li>
-                        <li>3.4 The differential of a smooth map</li>
-                        <li>3.5 Vector fields and the tangent bundle</li>
-                        <li>3.6 Moving on a manifold: retractions</li>
-                        <li>3.7 Riemannian manifolds and submanifolds</li>
-                        <li>3.8 Riemannian gradients</li>
-                        <li>3.9 Local frames*</li>
-                        <li>3.10 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>4. First-order optimization algorithms
-                      <ul>
-                        <li>4.1 A first-order Taylor expansion on curves</li>
-                        <li>4.2 First-order optimality conditions</li>
-                        <li>4.3 Riemannian gradient descent</li>
-                        <li>4.4 Regularity conditions and iteration complexity</li>
-                        <li>4.5 Backtracking line-search</li>
-                        <li>4.6 Local convergence*</li>
-                        <li>4.7 Computing gradients*</li>
-                        <li>4.8 Numerically checking a gradient*</li>
-                        <li>4.9 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>5. Embedded geometry: second order
-                      <ul>
-                        <li>5.1 The case for another derivative of vector fields</li>
-                        <li>5.2 Another look at differentials of vector fields
-                          in linear spaces</li>
-                        <li>5.3 Differentiating vector fields on manifolds:
-                          connections</li>
-                        <li>5.4 Riemannian connections</li>
-                        <li>5.5 Riemannian Hessians</li>
-                        <li>5.6 Connections as pointwise derivatives*</li>
-                        <li>5.7 Differentiating vector fields on curves</li>
-                        <li>5.8 Acceleration and geodesics</li>
-                        <li>5.9 A second-order Taylor expansion on curves</li>
-                        <li>5.10 Second-order retractions</li>
-                        <li>5.11 Special case: Riemannian submanifolds*</li>
-                        <li>5.12 Special case: metric projection retractions*</li>
-                        <li>5.13 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>6. Second-order optimization algorithms
-                      <ul>
-                        <li>6.1 Second-order optimality conditions</li>
-                        <li>6.2 Riemannian Newton's method</li>
-                        <li>6.3 Computing Newton steps: conjugate gradients</li>
-                        <li>6.4 Riemannian trust regions</li>
-                        <li>6.5 The trust-region subproblem: truncated CG</li>
-                        <li>6.6 Local convergence of RTR with tCG*</li>
-                        <li>6.7 Simplified assumptions for RTR with tCG*</li>
-                        <li>6.8 Numerically checking a Hessian*</li>
-                        <li>6.9 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>7. Embedded submanifolds: examples
-                      <ul>
-                        <li>7.1 Euclidean spaces as manifolds</li>
-                        <li>7.2 The unit sphere in a Euclidean space</li>
-                        <li>7.3 The Stiefel manifold: orthonormal matrices</li>
-                        <li>7.4 The orthogonal group and rotation matrices</li>
-                        <li>7.5 Fixed-rank matrices</li>
-                        <li>7.6 The hyperboloid model</li>
-                        <li>7.7 Manifolds defined by $h(x) = 0$</li>
-                        <li>7.8 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>8. General manifolds
-                      <ul>
-                        <li>8.1 A permissive definition</li>
-                        <li>8.2 The atlas topology, and a final definition</li>
-                        <li>8.3 Embedded submanifolds are manifolds</li>
-                        <li>8.4 Tangent vectors and tangent spaces</li>
-                        <li>8.5 Differentials of smooth maps</li>
-                        <li>8.6 Tangent bundles and vector fields</li>
-                        <li>8.7 Retractions and velocity of a curve</li>
-                        <li>8.8 Coordinate vector fields as local frames</li>
-                        <li>8.9 Riemannian metrics and gradients</li>
-                        <li>8.10 Lie brackets as vector fields</li>
-                        <li>8.11 Riemannian connections and Hessians</li>
-                        <li>8.12 Covariant derivatives and geodesics</li>
-                        <li>8.13 Taylor expansions and second-order retractions</li>
-                        <li>8.14 Submanifolds embedded in manifolds</li>
-                        <li>8.15 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>9. Quotient manifolds
-                      <ul>
-                        <li>9.1 A definition and a few facts</li>
-                        <li>9.2 Quotient manifolds through group actions</li>
-                        <li>9.3 Smooth maps to and from quotient manifolds</li>
-                        <li>9.4 Tangent, vertical and horizontal spaces</li>
-                        <li>9.5 Vector fields</li>
-                        <li>9.6 Retractions</li>
-                        <li>9.7 Riemannian quotient manifolds</li>
-                        <li>9.8 Gradients</li>
-                        <li>9.9 A word about Riemannian gradient descent</li>
-                        <li>9.10 Connections</li>
-                        <li>9.11 Hessians</li>
-                        <li>9.12 A word about Riemannian Newton's method</li>
-                        <li>9.13 Total space embedded in a linear space</li>
-                        <li>9.14 Horizontal curves and covariant derivatives</li>
-                        <li>9.15 Acceleration, geodesics and second-order
-                          retractions</li>
-                        <li>9.16 Grassmann manifold: summary*</li>
-                        <li>9.17 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>10. Additional tools
-                      <ul>
-                        <li>10.1 Distance, geodesics and completeness</li>
-                        <li>10.2 Exponential and logarithmic maps</li>
-                        <li>10.3 Parallel transport</li>
-                        <li>10.4 Lipschitz conditions and Taylor expansions</li>
-                        <li>10.5 Transporters</li>
-                        <li>10.6 Finite difference approximation of the Hessian</li>
-                        <li>10.7 Tensor fields and their covariant
-                          differentiation</li>
-                        <li>10.8 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>11. Geodesic convexity
-                      <ul>
-                        <li>11.1 Convex sets and functions in linear spaces</li>
-                        <li>11.2 Geodesically convex sets and functions</li>
-                        <li>11.3 Alternative definitions of geodesically convex
-                          sets*</li>
-                        <li>11.4 Differentiable geodesically convex functions</li>
-                        <li>11.5 Geodesic strong convexity and Lipschitz
-                          continuous gradients</li>
-                        <li>11.6 Example: Positive reals and geometric
-                          programming</li>
-                        <li>11.7 Example: Positive definite matrices</li>
-                        <li>11.8 Notes and references</li>
-                      </ul>
-                    </li>
-                    <li>Bibliography</li>
-                  </ul>
-                  <br>
-                  <br>
-                </div>
+                <ul class="toc" id="booktoc">
+                  <li>Preface</li>
+                  <li>1. Introduction</li>
+                  <li>2. Simple examples
+                    <ul>
+                      <li>2.1 Sensor network localization from directions: an affine subspace</li>
+                      <li>2.2 Single extreme eigenvalue or singular value: spheres</li>
+                      <li>2.3 Dictionary learning: products of spheres</li>
+                      <li>2.4 Principal component analysis: Stiefel and Grassmann</li>
+                      <li>2.5 Synchronization of rotations: special orthogonal group</li>
+                      <li>2.6 Low-rank matrix completion: fixed-rank manifold</li>
+                      <li>2.7 Gaussian mixture models: positive definite matrices</li>
+                      <li>2.8 Smooth semidefinite programs</li>
+                    </ul>
+                  </li>
+                  <li>3. Embedded geometry: first order
+                    <ul>
+                      <li>3.1 Reminders of Euclidean space</li>
+                      <li>3.2 Embedded submanifolds of a linear space</li>
+                      <li>3.3 Smooth maps on embedded submanifolds</li>
+                      <li>3.4 The differential of a smooth map</li>
+                      <li>3.5 Vector fields and the tangent bundle</li>
+                      <li>3.6 Moving on a manifold: retractions</li>
+                      <li>3.7 Riemannian manifolds and submanifolds</li>
+                      <li>3.8 Riemannian gradients</li>
+                      <li>3.9 Local frames*</li>
+                      <li>3.10 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>4. First-order optimization algorithms
+                    <ul>
+                      <li>4.1 A first-order Taylor expansion on curves</li>
+                      <li>4.2 First-order optimality conditions</li>
+                      <li>4.3 Riemannian gradient descent</li>
+                      <li>4.4 Regularity conditions and iteration complexity</li>
+                      <li>4.5 Backtracking line-search</li>
+                      <li>4.6 Local convergence*</li>
+                      <li>4.7 Computing gradients*</li>
+                      <li>4.8 Numerically checking a gradient*</li>
+                      <li>4.9 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>5. Embedded geometry: second order
+                    <ul>
+                      <li>5.1 The case for another derivative of vector fields</li>
+                      <li>5.2 Another look at differentials of vector fields in linear spaces</li>
+                      <li>5.3 Differentiating vector fields on manifolds: connections</li>
+                      <li>5.4 Riemannian connections</li>
+                      <li>5.5 Riemannian Hessians</li>
+                      <li>5.6 Connections as pointwise derivatives*</li>
+                      <li>5.7 Differentiating vector fields on curves</li>
+                      <li>5.8 Acceleration and geodesics</li>
+                      <li>5.9 A second-order Taylor expansion on curves</li>
+                      <li>5.10 Second-order retractions</li>
+                      <li>5.11 Special case: Riemannian submanifolds*</li>
+                      <li>5.12 Special case: metric projection retractions*</li>
+                      <li>5.13 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>6. Second-order optimization algorithms
+                    <ul>
+                      <li>6.1 Second-order optimality conditions</li>
+                      <li>6.2 Riemannian Newton's method</li>
+                      <li>6.3 Computing Newton steps: conjugate gradients</li>
+                      <li>6.4 Riemannian trust regions</li>
+                      <li>6.5 The trust-region subproblem: truncated CG</li>
+                      <li>6.6 Local convergence of RTR with tCG*</li>
+                      <li>6.7 Simplified assumptions for RTR with tCG*</li>
+                      <li>6.8 Numerically checking a Hessian*</li>
+                      <li>6.9 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>7. Embedded submanifolds: examples
+                    <ul>
+                      <li>7.1 Euclidean spaces as manifolds</li>
+                      <li>7.2 The unit sphere in a Euclidean space</li>
+                      <li>7.3 The Stiefel manifold: orthonormal matrices</li>
+                      <li>7.4 The orthogonal group and rotation matrices</li>
+                      <li>7.5 Fixed-rank matrices</li>
+                      <li>7.6 The hyperboloid model</li>
+                      <li>7.7 Manifolds defined by $h(x) = 0$</li>
+                      <li>7.8 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>8. General manifolds
+                    <ul>
+                      <li>8.1 A permissive definition</li>
+                      <li>8.2 The atlas topology, and a final definition</li>
+                      <li>8.3 Embedded submanifolds are manifolds</li>
+                      <li>8.4 Tangent vectors and tangent spaces</li>
+                      <li>8.5 Differentials of smooth maps</li>
+                      <li>8.6 Tangent bundles and vector fields</li>
+                      <li>8.7 Retractions and velocity of a curve</li>
+                      <li>8.8 Coordinate vector fields as local frames</li>
+                      <li>8.9 Riemannian metrics and gradients</li>
+                      <li>8.10 Lie brackets as vector fields</li>
+                      <li>8.11 Riemannian connections and Hessians</li>
+                      <li>8.12 Covariant derivatives and geodesics</li>
+                      <li>8.13 Taylor expansions and second-order retractions</li>
+                      <li>8.14 Submanifolds embedded in manifolds</li>
+                      <li>8.15 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>9. Quotient manifolds
+                    <ul>
+                      <li>9.1 A definition and a few facts</li>
+                      <li>9.2 Quotient manifolds through group actions</li>
+                      <li>9.3 Smooth maps to and from quotient manifolds</li>
+                      <li>9.4 Tangent, vertical and horizontal spaces</li>
+                      <li>9.5 Vector fields</li>
+                      <li>9.6 Retractions</li>
+                      <li>9.7 Riemannian quotient manifolds</li>
+                      <li>9.8 Gradients</li>
+                      <li>9.9 A word about Riemannian gradient descent</li>
+                      <li>9.10 Connections</li>
+                      <li>9.11 Hessians</li>
+                      <li>9.12 A word about Riemannian Newton's method</li>
+                      <li>9.13 Total space embedded in a linear space</li>
+                      <li>9.14 Horizontal curves and covariant derivatives</li>
+                      <li>9.15 Acceleration, geodesics and second-order retractions</li>
+                      <li>9.16 Grassmann manifold: summary*</li>
+                      <li>9.17 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>10. Additional tools
+                    <ul>
+                      <li>10.1 Distance, geodesics and completeness</li>
+                      <li>10.2 Exponential and logarithmic maps</li>
+                      <li>10.3 Parallel transport</li>
+                      <li>10.4 Lipschitz conditions and Taylor expansions</li>
+                      <li>10.5 Transporters</li>
+                      <li>10.6 Finite difference approximation of the Hessian</li>
+                      <li>10.7 Tensor fields and their covariant differentiation</li>
+                      <li>10.8 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>11. Geodesic convexity
+                    <ul>
+                      <li>11.1 Convex sets and functions in linear spaces</li>
+                      <li>11.2 Geodesically convex sets and functions</li>
+                      <li>11.3 Alternative definitions of geodesically convex sets*</li>
+                      <li>11.4 Differentiable geodesically convex functions</li>
+                      <li>11.5 Geodesic strong convexity and Lipschitz continuous gradients</li>
+                      <li>11.6 Example: positive reals and geometric programming</li>
+                      <li>11.7 Example: positive definite matrices</li>
+                      <li>11.8 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>Bibliography</li>
+                </ul>
+                <br>
+                <br>
               </div>
             </div>
           </div>
-          <div class="page-footer"><small class="pull-right">Last update: May
-              3, 2022.</small></div>
         </div>
+        <div class="page-footer"><small class="pull-right">Last update: May
+            3, 2022.</small></div>
       </div>
     </div>
-    <!-- Bootstrap's javascript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- a little bit of scripting for the menu -->
-    <script type="text/javascript">
-    $( "#tab-about" ).click(function() {
-      $( ".section" ).hide();
-      $( "#section-about" ).show();
-      $( "li.active" ).removeClass('active');
-      $( "#li-about" ).addClass('active');
+  </div>
+  <!-- Bootstrap's javascript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- a little bit of scripting for the menu -->
+  <script type="text/javascript">
+    $("#tab-about").click(function () {
+      $(".section").hide();
+      $("#section-about").show();
+      $("li.active").removeClass('active');
+      $("#li-about").addClass('active');
     });
-    $( "#tab-projects" ).click(function() {
-      $( ".section" ).hide();
-      $( "#section-projects" ).show();
-      $( "li.active" ).removeClass('active');
-      $( "#li-projects" ).addClass('active');
+    $("#tab-projects").click(function () {
+      $(".section").hide();
+      $("#section-projects").show();
+      $("li.active").removeClass('active');
+      $("#li-projects").addClass('active');
     });
-    $( "#tab-publications" ).click(function() {
-      $( ".section" ).hide();
-      $( "#section-publications" ).show();
-      $( "li.active" ).removeClass('active');
-      $( "#li-publications" ).addClass('active');
+    $("#tab-publications").click(function () {
+      $(".section").hide();
+      $("#section-publications").show();
+      $("li.active").removeClass('active');
+      $("#li-publications").addClass('active');
     });
-    $( "#tab-book" ).click(function() {
-      $( ".section" ).hide();
-      $( "#section-book" ).show();
-      $( "li.active" ).removeClass('active');
-      $( "#li-book" ).addClass('active');
+    $("#tab-book").click(function () {
+      $(".section").hide();
+      $("#section-book").show();
+      $("li.active").removeClass('active');
+      $("#li-book").addClass('active');
     });
-    $( "#tab-teaching" ).click(function() {
-      $( ".section" ).hide();
-      $( "#section-teaching" ).show();
-      $( "li.active" ).removeClass('active');
-      $( "#li-teaching" ).addClass('active');
+    $("#tab-teaching").click(function () {
+      $(".section").hide();
+      $("#section-teaching").show();
+      $("li.active").removeClass('active');
+      $("#li-teaching").addClass('active');
     });
-    $( "#tab-contact" ).click(function() {
-      $( ".section" ).hide();
-      $( "#section-contact" ).show();
-      $( "li.active" ).removeClass('active');
-      $( "#li-contact" ).addClass('active');
+    $("#tab-contact").click(function () {
+      $(".section").hide();
+      $("#section-contact").show();
+      $("li.active").removeClass('active');
+      $("#li-contact").addClass('active');
       initmap();
     });
       //$("#tab-contact").click();
   </script>
-    <script type="text/javascript">
+  <script type="text/javascript">
     // Merci Matthew!
-    function gotoAnchor()
-    {
-        var hash = window.location.hash;
-        switch(hash)
-        {
-            case "#about" :
-                 $("#tab-about").click();
-                break;
-            case "#projects" :
-                 $("#tab-projects").click();
-                break;
-            case "#publications" :
-                 $("#tab-publications").click();
-                break;
-            case "#publications" :
-                 $("#tab-publications").click();
-                break;
-            case "#contact" :
-                 $("#tab-contact").click();
-                break;
-            case "#book" :
-                 $("#tab-book").click();
-                break;
-            case "#teaching" :
-                 $("#tab-teaching").click();
-                break;
-            default :
-                $("#tab-about").click();
-        }
+    function gotoAnchor() {
+      var hash = window.location.hash;
+      switch (hash) {
+        case "#about":
+          $("#tab-about").click();
+          break;
+        case "#projects":
+          $("#tab-projects").click();
+          break;
+        case "#publications":
+          $("#tab-publications").click();
+          break;
+        case "#publications":
+          $("#tab-publications").click();
+          break;
+        case "#contact":
+          $("#tab-contact").click();
+          break;
+        case "#book":
+          $("#tab-book").click();
+          break;
+        case "#teaching":
+          $("#tab-teaching").click();
+          break;
+        default:
+          $("#tab-about").click();
+      }
     };
     gotoAnchor();
   </script>
-    <!-- Scripting to generate publication list -->
-    <script type="text/javascript">
-  $(document).ready(  
-   function()
-   {
-     $.ajax( {
-        type: "GET",
-        url: "publications.xml",
-        dataType: "xml",
-        success: function(xml) 
-             {
-               $(xml).find('object').each(   
-               function()
-               {
-                 var pubid = $(this).attr('id');
-                 var type = $(this).find('type').text();
-                 var title = $(this).find('title').text();
-                 var authors = $(this).find('authors').text();
-                 var year = $(this).find('year').text();
-                 var status = $(this).find('status').text();
-                 var comment = $(this).find('comment').text();
-                 var link = $(this).find('link').text();
-                 var publink = $(this).find('publisherlink').text();
-                 var bibtex = $.trim($(this).find('bibtex').text());
-                 if(type == "journal" || type == "preprint" || type == "conference" || type == "thesis")
-                 {
-                   var $obj = $('<div class="object"></div>').html( (type != "thesis" ? authors + ',<br>' : '') );
-                   if(link)
-                   {
-                     var $linkobject = $('<em><a href="' + link + '">' + title + '</a>,</em>').click(function(){ _gaq.push(['_trackEvent', 'publication', 'download', pubid + ' * ' + title]); });
-                     $obj.append($linkobject).append('<br>');
-                   }
-                   else
-                   {
-                     $obj.append('<em>' + title + ',</em><br>');
-                   }
-                   $obj.append(status + ', ' + year + '.');
-                   
-                   $('div.publi-'+pubid).append($obj.clone());
-                   
-                   $obj.append('<br>');
-                   
-                   if(comment)
-                   {
-                     $obj.append('<small>' + comment + '</small><br>');
-                   }
-                   if(publink)
-                   {
-                     var $publinkobject = $('<small><a href="' + publink + '">publisher\'s link</a><small>').click(function(){ _gaq.push(['_trackEvent', 'publication', 'download', pubid + ' # ' + title]); });
-                     $obj.append($publinkobject);
-                     if(bibtex)
-                     {
-                       $obj.append(', ');
-                     }
-                   }
-                   if(bibtex)
-                   {
-                     var $bibt = $('<pre style="display: none"><small>' + bibtex + '</small></pre>');
-                     var $biblink = $('<small><a>bibtex</a></small>').click(function(){ $bibt.slideToggle(400); });
-                     $obj.append($biblink).append($bibt);
-                   }
-                   if(bibtex || publink)
-                   {
-                     $obj.append('<br>');
-                   }
-                   $('#publis-'+type).append($obj).append('<br>');
-                 }
-                 else if(type == "talk" || type == "poster")
-                 {
-                   var varwith = $(this).find('with').text();
-                   var withstr = (varwith) ? '<br>(with ' + varwith + ')' : '';
-                   if(link) {
-                     $('#publis-'+type).append('<div class="object"><em><a href="' + link + '">' + title + '</a>' + withstr + ',</em><ul class="eventlist" style="list-style-type: none"></ul></div>');
-                   }
-                   else {
-                     $('#publis-'+type).append('<div class="object"><em>' + title + withstr + ',</em><ul class="eventlist" style="list-style-type: none"></ul></div>');
-                   }
-                   $(this).find('event').each(
-                          function()
-                          {
-                            var months = ['', 'Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
-                            var venue = $(this).find('venue').text();
-                            var city = $(this).find('city').text();
-                            var country = $(this).find('country').text();
-                            var year = $(this).find('year').text();
-                            var month = months[parseInt($(this).find('month').text())];
-                            var day = $(this).find('day').text();
-							var video = $(this).find('video').text();
-							if(video) {
-								video = '<a href="'+video+'">video</a>';
-							}
-                            $('ul.eventlist').filter(":last").append('<li>' + venue + ' in ' + city + ' (' + country + ') on ' + month + ' ' + day + ', ' + year + '. ' + video + '</li>');
-                          });
-                 }
-                 
-                  
-                });
-              }
+  <!-- Scripting to generate publication list -->
+  <script type="text/javascript">
+    $(document).ready(
+      function () {
+        $.ajax({
+          type: "GET",
+          url: "publications.xml",
+          dataType: "xml",
+          success: function (xml) {
+            $(xml).find('object').each(
+              function () {
+                var pubid = $(this).attr('id');
+                var type = $(this).find('type').text();
+                var title = $(this).find('title').text();
+                var authors = $(this).find('authors').text();
+                var year = $(this).find('year').text();
+                var status = $(this).find('status').text();
+                var comment = $(this).find('comment').text();
+                var link = $(this).find('link').text();
+                var publink = $(this).find('publisherlink').text();
+                var bibtex = $.trim($(this).find('bibtex').text());
+                if (type == "journal" || type == "preprint" || type == "conference" || type == "thesis") {
+                  var $obj = $('<div class="object"></div>').html((type != "thesis" ? authors + ',<br>' : ''));
+                  if (link) {
+                    var $linkobject = $('<em><a href="' + link + '">' + title + '</a>,</em>').click(function () { _gaq.push(['_trackEvent', 'publication', 'download', pubid + ' * ' + title]); });
+                    $obj.append($linkobject).append('<br>');
+                  }
+                  else {
+                    $obj.append('<em>' + title + ',</em><br>');
+                  }
+                  $obj.append(status + ', ' + year + '.');
+
+                  $('div.publi-' + pubid).append($obj.clone());
+
+                  $obj.append('<br>');
+
+                  if (comment) {
+                    $obj.append('<small>' + comment + '</small><br>');
+                  }
+                  if (publink) {
+                    var $publinkobject = $('<small><a href="' + publink + '">publisher\'s link</a><small>').click(function () { _gaq.push(['_trackEvent', 'publication', 'download', pubid + ' # ' + title]); });
+                    $obj.append($publinkobject);
+                    if (bibtex) {
+                      $obj.append(', ');
+                    }
+                  }
+                  if (bibtex) {
+                    var $bibt = $('<pre style="display: none"><small>' + bibtex + '</small></pre>');
+                    var $biblink = $('<small><a>bibtex</a></small>').click(function () { $bibt.slideToggle(400); });
+                    $obj.append($biblink).append($bibt);
+                  }
+                  if (bibtex || publink) {
+                    $obj.append('<br>');
+                  }
+                  $('#publis-' + type).append($obj).append('<br>');
+                }
+                else if (type == "talk" || type == "poster") {
+                  var varwith = $(this).find('with').text();
+                  var withstr = (varwith) ? '<br>(with ' + varwith + ')' : '';
+                  if (link) {
+                    $('#publis-' + type).append('<div class="object"><em><a href="' + link + '">' + title + '</a>' + withstr + ',</em><ul class="eventlist" style="list-style-type: none"></ul></div>');
+                  }
+                  else {
+                    $('#publis-' + type).append('<div class="object"><em>' + title + withstr + ',</em><ul class="eventlist" style="list-style-type: none"></ul></div>');
+                  }
+                  $(this).find('event').each(
+                    function () {
+                      var months = ['', 'Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+                      var venue = $(this).find('venue').text();
+                      var city = $(this).find('city').text();
+                      var country = $(this).find('country').text();
+                      var year = $(this).find('year').text();
+                      var month = months[parseInt($(this).find('month').text())];
+                      var day = $(this).find('day').text();
+                      var video = $(this).find('video').text();
+                      if (video) {
+                        video = '<a href="' + video + '">video</a>';
+                      }
+                      $('ul.eventlist').filter(":last").append('<li>' + venue + ' in ' + city + ' (' + country + ') on ' + month + ' ' + day + ', ' + year + '. ' + video + '</li>');
+                    });
+                }
+
+
+              });
+          }
+        });
+      }
+    );
+  </script>
+  <!-- Begin script TOC -->
+  <script type="text/javascript">
+    var toccollapsed = true; // set initial state here
+    var toctoggle = function () {
+      if (toccollapsed) {
+        $("#booktoc").removeClass("collapsed");
+        $("#tocbutton").text("collapse");
+      }
+      else {
+        $("#booktoc").addClass("collapsed");
+        $("#tocbutton").text("expand");
+      }
+      toccollapsed = !toccollapsed;
+    };
+    toccollapsed = !toccollapsed; toctoggle(); // this line sets the TOC in proper beginning state.
+  </script>
+  <!-- End script TOC -->
+  <!-- This bit needed to make hyphenate and mathjax play along nicely -->
+  <!-- https://github.com/mathjax/MathJax/issues/341 -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
+      MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
+        data.math = data.math.replace(/\u00AD/g, "");
       });
-    }
-  );
-  </script>
-    <!-- Begin script TOC -->
-    <script type="text/javascript">
-      var toccollapsed = true; // set initial state here
-      var toctoggle = function(){
-        if(toccollapsed){
-          $("#booktoc").removeClass("collapsed");
-          $("#tocbutton").text("collapse");
-        }
-        else{
-          $("#booktoc").addClass("collapsed");
-          $("#tocbutton").text("expand");
-        }
-        toccollapsed = !toccollapsed;
-      };
-      toccollapsed = !toccollapsed; toctoggle(); // this line sets the TOC in proper beginning state.
-    </script>
-    <!-- End script TOC -->
-    <!-- This bit needed to make hyphenate and mathjax play along nicely -->
-    <!-- https://github.com/mathjax/MathJax/issues/341 -->
-    <script type="text/x-mathjax-config">
-  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
-      data.math = data.math.replace(/\u00AD/g,"");
     });
-  });
   </script>
-    <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-  });
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
   </script>
-    <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="js/hyphenate.js"></script>
-  </body>
+  <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript" src="js/hyphenate.js"></script>
+</body>
+
 </html>
