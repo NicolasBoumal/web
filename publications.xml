@@ -1072,6 +1072,24 @@ year = {2011}
 
 
 
+<object id="3044">
+	<type>talk</type>
+	<title>A bumpy start: why we can't quite accelerate gradient methods on negatively curved spaces</title>
+	<with></with>
+	<event>
+		<venue>ETHZ DACO Seminar</venue>
+		<city>Zurich</city><country>Switzerland</country>
+		<year>2022</year><month>10</month><day>18</day>
+		<video></video>
+	</event>
+	<comment></comment>
+	<abstract>What sets optimization on Euclidean spaces apart from optimization on Riemannian manifolds? Not that much. By and large, classical algorithms for smooth optimization on Euclidean spaces carry over to optimization on Riemannian manifolds, often with essentially the same (adequately rephrased) theoretical guarantees. As a notable exception, it turns out that such is not the case for Nesterov's accelerated gradient descent. Building on several ideas by Hamilton and Moitra (2021), we construct a resisting oracle that shows it is not possible to minimize smooth, strongly geodesically convex functions on Hadamard manifolds at an accelerated rate. I will give some geometric intuition as to why negative curvature makes life harder for optimizers, and why this may not be the end of the story.
+
+This is work with Chris Criscitiello, COLT 2022.
+
+https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?s=hs22</abstract>
+	<link>papers/AccelerationOnManifolds.pdf</link>
+</object>
 <object id="3043">
 	<type>talk</type>
 	<title>An Introduction to Optimization on Smooth Manifolds</title>
