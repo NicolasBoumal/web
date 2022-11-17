@@ -267,7 +267,7 @@
 	
 	<br/>
   
-    <h1>New papers</h1>
+    <h1>New papers (<span x-data="{get count() { return $store.main.articlesNew.length; }}" x-text="count"></span>)</h1>
 	
 	<table class="table table-striped" x-data="">
 		<thead>
@@ -290,7 +290,7 @@
 	
 	<br/>
   
-    <h1>Updated papers</h1>
+    <h1>Updated papers (<span x-data="{get count() { return $store.main.articlesUpdated.length; }}" x-text="count"></span>)</h1>
 	
 	<table class="table table-striped" x-data="">
 		<thead>
