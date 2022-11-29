@@ -1072,6 +1072,31 @@ year = {2011}
 
 
 
+<object id="3045">
+	<type>talk</type>
+	<title>The unreasonable effectiveness of optimization, seen from applied math</title>
+	<with></with>
+	<event>
+		<venue>Workshop to Assess Observed Optimization Efficiency in Multiple Domains of the Sciences (Chemistry Department)</venue>
+		<city>Princeton, NJ</city><country>USA</country>
+		<year>2022</year><month>11</month><day>17</day>
+		<video></video>
+	</event>
+	<comment></comment>
+	<abstract>Not long ago, the golden age of convex† optimization transformed mathematical modeling. Now, it is practitioners who are changing optimization research. As we contemplate the fact that some algorithms do really well on some non-convex problems, my community (a part of applied math) ponders questions such as:
+•	Do the "good" non-convex problems share common structure?
+(Geometry and symmetry come to mind.)
+•	What does it mean for a non-convex problem to be "good" anyway?
+(I'll mention benign landscapes and weaker notions.)
+•	If there are traps (local minima, flat saddle points), how do I navigate those?
+(It seems adding degrees of freedom and some randomness helps.)
+My plan is to discuss these questions with you and to share some leads and answers.
+My hope is that I can learn from you which other questions we should be asking ourselves, which tools you use to think about them, and whether some of what we already understand can be useful to you now.
+
+
+† It is usually easy to spot if an optimization problem is convex (a particular mathematical structure); when it is, we know there are no "traps" in its landscape, and we have great algorithms. Absent convexity, things could be arbitrarily bad... but they need not be.</abstract>
+	<link></link>
+</object>
 <object id="3044">
 	<type>talk</type>
 	<title>A bumpy start: why we can't quite accelerate gradient methods on negatively curved spaces</title>
