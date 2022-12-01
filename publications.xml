@@ -1072,6 +1072,20 @@ year = {2011}
 
 
 
+<object id="3046">
+	<type>talk</type>
+	<title>Optimization when the solution is not unique: A kaleidoscope of favorable conditions</title>
+	<with></with>
+	<event>
+		<venue>Journée SIGMA 2022 (Signal-Image-Géométrie-Modélisation-Approximation) SMAI, LJLL, Sorbonne</venue>
+		<city>Paris</city><country>France</country>
+		<year>2022</year><month>12</month><day>13</day>
+		<video></video>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>http://smai.emath.fr/spip.php?article406</link>
+</object>
 <object id="3045">
 	<type>talk</type>
 	<title>The unreasonable effectiveness of optimization, seen from applied math</title>
