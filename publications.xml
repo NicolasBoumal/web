@@ -1074,7 +1074,7 @@ year = {2011}
 
 <object id="3046">
 	<type>talk</type>
-	<title>Optimization when the solution is not unique: A kaleidoscope of favorable conditions</title>
+	<title>Non-convex optimization when the solution is not unique: A kaleidoscope of favorable conditions</title>
 	<with></with>
 	<event>
 		<venue>Journée SIGMA 2022 (Signal-Image-Géométrie-Modélisation-Approximation) SMAI, LJLL, Sorbonne</venue>
