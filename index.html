@@ -659,7 +659,7 @@
                 if (type == "journal" || type == "preprint" || type == "conference" || type == "thesis") {
                   var $obj = $('<div class="object"></div>').html((type != "thesis" ? authors + ',<br>' : ''));
                   if (link) {
-                    var $linkobject = $('<em><a href="' + link + '">' + title + '</a>,</em>').click(function () { _gaq.push(['_trackEvent', 'publication', 'download', pubid + ' * ' + title]); });
+                    var $linkobject = $('<em><a href="' + link + '" target="_blank">' + title + '</a>,</em>').click(function () { _gaq.push(['_trackEvent', 'publication', 'download', pubid + ' * ' + title]); });
                     $obj.append($linkobject).append('<br>');
                   }
                   else {
@@ -675,7 +675,7 @@
                     $obj.append('<small>' + comment + '</small><br>');
                   }
                   if (publink) {
-                    var $publinkobject = $('<small><a href="' + publink + '">publisher\'s link</a><small>').click(function () { _gaq.push(['_trackEvent', 'publication', 'download', pubid + ' # ' + title]); });
+                    var $publinkobject = $('<small><a href="' + publink + '" target="_blank">publisher\'s link</a><small>').click(function () { _gaq.push(['_trackEvent', 'publication', 'download', pubid + ' # ' + title]); });
                     $obj.append($publinkobject);
                     if (bibtex) {
                       $obj.append(', ');
@@ -695,7 +695,7 @@
                   var varwith = $(this).find('with').text();
                   var withstr = (varwith) ? '<br>(with ' + varwith + ')' : '';
                   if (link) {
-                    $('#publis-' + type).append('<div class="object"><em><a href="' + link + '">' + title + '</a>' + withstr + ',</em><ul class="eventlist" style="list-style-type: none"></ul></div>');
+                    $('#publis-' + type).append('<div class="object"><em><a href="' + link + '" target="_blank">' + title + '</a>' + withstr + ',</em><ul class="eventlist" style="list-style-type: none"></ul></div>');
                   }
                   else {
                     $('#publis-' + type).append('<div class="object"><em>' + title + withstr + ',</em><ul class="eventlist" style="list-style-type: none"></ul></div>');
@@ -711,7 +711,7 @@
                       var day = $(this).find('day').text();
                       var video = $(this).find('video').text();
                       if (video) {
-                        video = '<a href="' + video + '">video</a>';
+                        video = '<a href="' + video + '" target="_blank">video</a>';
                       }
                       $('ul.eventlist').filter(":last").append('<li>' + venue + ' in ' + city + ' (' + country + ') on ' + month + ' ' + day + ', ' + year + '. ' + video + '</li>');
                     });
