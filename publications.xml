@@ -1082,9 +1082,15 @@ year = {2011}
 		<year>2022</year><month>12</month><day>13</day>
 		<video></video>
 	</event>
-	<comment></comment>
+	<event>
+		<venue>EPFL-CIS and RIKEN-AIP Joint Workshop on Machine Learning and Artificial Intelligence</venue>
+		<city>Lausanne</city><country>Switzerland</country>
+		<year>2023</year><month>3</month><day>10</day>
+		<video></video>
+	</event>
+	<comment>http://smai.emath.fr/spip.php?article406, https://www.epfl.ch/research/domains/cis/epfl-cis-riken-aip-joint-workshop-2023/</comment>
 	<abstract></abstract>
-	<link>http://smai.emath.fr/spip.php?article406</link>
+	<link>papers/NonisolatedLocalMinima_Feb2023.htm</link>
 </object>
 <object id="3045">
 	<type>talk</type>
@@ -1127,7 +1133,7 @@ My hope is that I can learn from you which other questions we should be asking o
 This is work with Chris Criscitiello, COLT 2022.
 
 https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?s=hs22</abstract>
-	<link>papers/AccelerationOnManifolds.pdf</link>
+	<link>papers/AccelerationOnManifolds.htm</link>
 </object>
 <object id="3043">
 	<type>talk</type>
