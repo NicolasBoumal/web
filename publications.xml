@@ -1,6 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
+<object id="1030">
+	<type>preprint</type>
+	<title>Fast convergence to non-isolated minima: four equivalent conditions for $C^2$ functions</title>
+	<authors>Q. Rebjock and N. Boumal</authors>
+	<year>2023</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{rebjock2023nonisolated,
+  author  = {Rebjock, Q. and Boumal, N.},
+  journal = {arXiv 2303.00096},
+  title   = {Fast convergence to non-isolated minima: four equivalent conditions for $C^2$ functions},
+  year    = {2023}
+}
+	</bibtex>
+	<comment></comment>
+	<link>http://arxiv.org/abs/2303.00096</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="1029">
 	<type>preprint</type>
 	<title>The effect of smooth parametrizations on nonconvex optimization landscapes</title>
