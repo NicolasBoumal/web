@@ -490,6 +490,10 @@
 
 				}); // end for each item in xml
 
+				// Get the list of papers already selected, as stored on DB, and update Alpine list.
+				// TODO: This should use the date here..
+				Alpine.store('main').getSelectedArticlesOfTheDay();
+
 				MathJax.typeset(); // This likely executes too early, but "await Alpine.$nextTick();" doesn't work
 
 			}); // end get url
@@ -524,6 +528,7 @@
 					var index = this.digest.findIndex(article => article.id === id);
 					this.digest[index].selected = !this.digest[index].selected;
 					Alpine.nextTick( () => { MathJax.typeset(); });
+					this.articleSelectionChange(id);
 				}
         	});
 
@@ -608,15 +613,6 @@
 						}
                     }
                 });
-				const date = new Date();
-				const dateid = date.toISOString().split('T')[0];  // E.g.: '2023-12-31' ; TODO: should reflect the date of the digest; careful with weekends!
-				const todayuserdoc = doc(db, "days/" + dateid + "/users/" + uid);
-                getDoc(todayuserdoc).then((obj) => {
-					const data = obj.data();
-					console.log('Here it is:');
-					console.log(data);
-					console.log('Over.');
-				});
             }
             else {
 				// Don't force empty categories if not signed in.
@@ -713,13 +709,48 @@
                 // TODO: add .then and .catch handlers.
             }
 		};
-        
+		const articleSelectionChange = (id) => {
+            if(userIsSignedIn()) {
+				const uid = auth.currentUser.uid;
+				const date = new Date();
+				const dateid = date.toISOString().split('T')[0];  // E.g.: '2023-12-31' ; TODO: should reflect the date of the digest; careful with weekends!
+				const todayuserdoc = doc(db, "days/" + dateid + "/users/" + uid);
+				const listofselectedarticles = Alpine.store('main').digest.filter(article => article.selected).map(article => article.id); // array of selected article IDs
+				const data = { selected: listofselectedarticles };
+				setDoc(todayuserdoc, data, { merge: true }); // create the doc if inexistent; update it if existent. TODO: add .then and .catch handlers.
+            }
+		};
+		const getSelectedArticlesOfTheDay = () => {
+            if(userIsSignedIn()) {
+				const uid = auth.currentUser.uid;
+				const date = new Date();
+				const dateid = date.toISOString().split('T')[0];  // E.g.: '2023-12-31' ; TODO: should reflect the date of the digest; careful with weekends!
+				const todayuserdoc = doc(db, "days/" + dateid + "/users/" + uid);
+                getDoc(todayuserdoc).then((obj) => {
+                    if(obj.exists()) {   
+                        const data = obj.data();
+                        if("selected" in data) {
+							const listofselectedarticles = data.selected;
+							listofselectedarticles.forEach((id) => {
+								const index = Alpine.store('main').digest.findIndex(article => article.id === id);
+								Alpine.store('main').digest[index].selected = true;
+							});
+						}
+					}
+				});
+            }
+		};
+		Alpine.store('main').articleSelectionChange = articleSelectionChange;
+		Alpine.store('main').getSelectedArticlesOfTheDay = getSelectedArticlesOfTheDay;
 
 		/*
         Alpine.store('main').categories.forEach(cat => {
             document.getElementById(cat).onclick = () => { categoryCheckboxClick(cat) };
         });
 		*/
+		// TODO: maybe instead of binding these manually to "onChange" events,
+		// I should add these functions to Alpine.store('main'), so they'd be
+		// available to Alpine functions to call themselves.
         document.getElementById("slackurl").onchange = slackurlChange;
         document.getElementById("exclusion-textarea").onchange = exclusionChange;
         document.getElementById("selectcategories").onchange = selectedCategoriesUpdated;
