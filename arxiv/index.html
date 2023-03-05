@@ -470,7 +470,8 @@
 						link: $this.find("link").text(),
 						summary: $this.find("description").text().replaceAll("\n", " "),
 						hide: false,
-						selected: false
+						selected: false,
+						date: date  // redundant, but it's convenient to have it here for syncing with db
 					};
 					
 					// Try to find this article in the list we have already built so far.
@@ -492,7 +493,7 @@
 
 				// Get the list of papers already selected, as stored on DB, and update Alpine list.
 				// TODO: This should use the date here..
-				Alpine.store('main').getSelectedArticlesOfTheDay();
+				Alpine.store('main').getSelectedArticlesOfTheDay(date);
 
 				MathJax.typeset(); // This likely executes too early, but "await Alpine.$nextTick();" doesn't work
 
@@ -527,8 +528,8 @@
 				toggleSelection(id) {
 					var index = this.digest.findIndex(article => article.id === id);
 					this.digest[index].selected = !this.digest[index].selected;
-					Alpine.nextTick( () => { MathJax.typeset(); });
 					this.articleSelectionChange(id);
+					Alpine.nextTick( () => { MathJax.typeset(); });
 				}
         	});
 
@@ -712,19 +713,18 @@
 		const articleSelectionChange = (id) => {
             if(userIsSignedIn()) {
 				const uid = auth.currentUser.uid;
-				const date = new Date();
-				const dateid = date.toISOString().split('T')[0];  // E.g.: '2023-12-31' ; TODO: should reflect the date of the digest; careful with weekends!
+				const date = getArticle(id).date;
+				const dateid = date.toISOString().split('T')[0];  // E.g.: '2023-12-31'
 				const todayuserdoc = doc(db, "days/" + dateid + "/users/" + uid);
 				const listofselectedarticles = Alpine.store('main').digest.filter(article => article.selected).map(article => article.id); // array of selected article IDs
 				const data = { selected: listofselectedarticles };
 				setDoc(todayuserdoc, data, { merge: true }); // create the doc if inexistent; update it if existent. TODO: add .then and .catch handlers.
             }
 		};
-		const getSelectedArticlesOfTheDay = () => {
+		const getSelectedArticlesOfTheDay = (date) => {
             if(userIsSignedIn()) {
 				const uid = auth.currentUser.uid;
-				const date = new Date();
-				const dateid = date.toISOString().split('T')[0];  // E.g.: '2023-12-31' ; TODO: should reflect the date of the digest; careful with weekends!
+				const dateid = date.toISOString().split('T')[0];  // E.g.: '2023-12-31'
 				const todayuserdoc = doc(db, "days/" + dateid + "/users/" + uid);
                 getDoc(todayuserdoc).then((obj) => {
                     if(obj.exists()) {   
