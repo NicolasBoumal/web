@@ -611,7 +611,7 @@
 				const date = new Date();
 				const dateid = date.toISOString().split('T')[0];  // E.g.: '2023-12-31' ; TODO: should reflect the date of the digest; careful with weekends!
 				const todayuserdoc = doc(db, "days/" + dateid + "/users/" + uid);
-                getDoc(userdoc).then((obj) => {
+                getDoc(todayuserdoc).then((obj) => {
 					const data = obj.data();
 					console.log('Here it is:');
 					console.log(data);
