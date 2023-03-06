@@ -355,11 +355,6 @@
 	<br/>
 	
 	<script>
-	
-		// This table is meant to contain the full list of papers in today's arXiv digest, for the selected categories.
-		// Each element is a {} with fields:
-		//  id, version, title, authors, category, updated, crosslisted, link, summary, hide, selected
-		//		var digest = [];
 		
 		const escapeHtml = (unsafe) => {
 			return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;')
@@ -369,7 +364,7 @@
 		}
 
 		// arXiv digest surrounds each author name with an <a> tag we don't need.
-		// Likewise, abstrats have html, e.g., <p> tags.
+		// Likewise, abstracts have html, e.g., <p> tags.
 		// This bit of code removes the html parts.
 		const extractTextFromHtml = (text) => {
 			return $("<div>").html(text).text().trim();
@@ -418,7 +413,7 @@
 					.done(() => {
 						var oldtext = $button.innerHTML;
 						$button.innerHTML = "&#x2713;";
-						setTimeout(() => {$button.innerHTML = oldtext;}, 1000);
+						setTimeout(() => {$button.innerHTML = oldtext;}, 10000);
 					})
 					.fail(function(jqxhr, settings, ex) {
 						var oldtext = $button.innerHTML;
