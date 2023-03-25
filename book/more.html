@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <!-- Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3XP9VMHJ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Z3XP9VMHJ3');
+  </script>
+  <!-- Meta -->
+  <title>Companion material for An introduction to optimization on smooth manifolds</title>
+  <meta name="description" content="Additional material for book by Nicolas Boumal">
+  <meta name="author" content="Nicolas Boumal">
+  <meta name="keywords" content="Optimization on manifolds,Riemannian optimization,Manopt">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+  <style type="text/css">
+    body {
+      padding-top: 10px;
+      padding-bottom: 20px;
+    }
+
+    div .section {
+      display: auto;
+    }
+
+    ul {
+      list-style: disc;
+    }
+
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+      background-color: blanchedalmond;
+    }
+  </style>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/html5shiv.js"></script>      <script type="text/javascript" src="js/respond.min.js"></script>    <![endif]-->
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19509417-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-9">
+        <div class="page-header" style="display: block">
+          <h1 style="display: block">Optimization on smooth manifolds: companion material<br>
+            <a href="https://www.nicolasboumal.net"><small style="display: block; margin-top:2mm;">Nicolas
+                Boumal</small></a>
+          </h1>
+        </div>
+        <p> </p>
+        <div class="section" id="section-book">
+          <div>
+            <div class="media row">
+              <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="media-body"> <a href="IntroOptimManifolds_Boumal_2023.html" target="_blank"><img
+                      alt="picture" title="Download An introduction to optimization on smooth manifolds"
+                      class="media-object img-rounded" src="../images/BoumalIntroSmoothManifoldsCover.png"
+                      style="width:100%; max-width:220px; margin:auto; margin-bottom:8mm; display:block;"></a>
+                </div>
+                <!--margin: auto; display:block; is to center the image...-->
+                <!--width: 192px; height: 250px;-->
+              </div>
+              <div class="col-lg-9 col-md-9 col-sm-12">
+                <div class="media-body hyphenate" align="justify">
+                  <p>
+                  This book is published by
+                  <a href="https://cambridge.org/9781009166157" target="_blank">Cambridge University Press</a>, 2023.</p>
+                  
+                  <p>
+                  <a href="IntroOptimManifolds_Boumal_2023.html" target="_blank"
+                    title="Download An introduction to optimization on smooth manifolds">Click
+                    here to download the pre-publication PDF</a> (Feb. 11, 2023).</p>
+                  
+                  <p>
+                  The webpage collects material from lectures given at EPFL for the course MATH-512 in spring 2023.
+                  A semester runs for 14 weeks.
+                  Almost every week has a lecture and an exercise session, which each last 90-95 minutes.
+                  The students further learn the material by completing two extensive projects.</p>
+                  
+                  <p>
+                  The material below is split by topic rather than by lecture,
+                  to make it easier to navigate.
+                  For reference, the composition of lectures as taught in 2023 is/will be indicated.</p>
+                </div>
+              </div>
+            </div>
+            <div class="media-body hyphenate" align="justify">
+              <!--<h4>Preliminaries</h4>-->
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Slides</th>
+                    <th scope="col">Videos</th>
+                    <th scope="col">Book refs</th>
+                     <!-- TODO: Add to table? exercises, PPT, "clean" PDF slides, **book section numbers**, video duration, lecture/week number -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="42" style="font-weight: bold;">Preliminaries</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">000</th>
+                    <td>Logistics and prerequisites</td>
+                    <td><a href="slides/000 Logistics and prerequisites.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">001</th>
+                    <td>Context and applications</td>
+                    <td><a href="slides/001 Context and applications.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">002</th>
+                    <td>Bird's-eye view and aims</td>
+                    <td><a href="slides/002 Bird's-eye view and aims.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td colspan="42" style="font-weight: bold;">Geometry of manifolds embedded in linear spaces</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">101</th>
+                    <td>What is a manifold?</td>
+                    <td><a href="slides/101 What is a manifold.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td>&#167;3.2</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">102</th>
+                    <td>Tangent spaces to submanifolds</td>
+                    <td><a href="slides/102 Tangent spaces to submanifolds.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td>&#167;3.2</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">103</th>
+                    <td>Smooth maps and differentials</td>
+                    <td><a href="slides/103 Smooth maps and differentials.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td>&#167;3.3, &#167;3.4</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">104</th>
+                    <td>Retractions, vector fields and tangent bundles</td>
+                    <td><a href="slides/104 Retractions, vector fields and tangent bundles.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td>&#167;3.5, &#167;3.6</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">105</th>
+                    <td>Riemannian metrics and gradients</td>
+                    <td><a href="slides/105 Riemannian metrics and gradients.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td>&#167;3.7, &#167;3.8</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">106</th>
+                    <td>Local frames</td>
+                    <td><a href="slides/106 Local frames.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td>&#167;3.9</td>
+                  </tr>
+                  <tr>
+                    <td colspan="42" style="font-weight: bold;">Algorithms and other useful tools (all manifolds)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">201</th>
+                    <td>Taylor expansions, first order</td>
+                    <td><a href="slides/201 Taylor expansions, first order.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td>&#167;4.1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">202</th>
+                    <td>Optimality conditions, first order</td>
+                    <td><a href="slides/202 Optimality conditions, first order.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td>&#167;4.2</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">203</th>
+                    <td>Gradient descent</td>
+                    <td><a href="slides/203 Gradient descent.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td>&#167;4.3, &#167;4.4</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">204</th>
+                    <td>Choosing a step size</td>
+                    <td><a href="slides/204 Choosing a step size.pdf" target="_blank">pdf</a></td>
+                    <td></td>
+                    <td>&#167;4.5</td>
+                  </tr>
+                  <tr>
+                    <td colspan="42" style="font-weight: bold;">Software</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">499</th>
+                    <td>Hands on with Manopt (from 2021)</td>
+                    <td><a href="slides/499 Hands on with Manopt.pdf" target="_blank">pdf</a></td>
+                    <td>
+                      <a target="_blank" href="https://mediaspace.epfl.ch/media/Manopt+overview%2C+Part+1+2+%28from+2021%29/0_g5gfi47b">40 min (1/2)</a><br>
+                      <a target="_blank" href="https://mediaspace.epfl.ch/media/Manopt+overview%2C+Part+2+2+%28from+2021%29/0_3a1jnw74">52 min (2/2)</a>
+                    </td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="page-footer"><small class="pull-right">Last update: March 25, 2023.</small></div>
+          </div>
+        </div>
+      </div>
+      <!-- This bit needed to make hyphenate and mathjax play along nicely -->
+      <!-- https://github.com/mathjax/MathJax/issues/341 -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+          MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
+            data.math = data.math.replace(/\u00AD/g,"");
+          });
+        });
+      </script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+      </script>
+      <script type="text/javascript" async=""
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../js/hyphenate.js"></script>
+    </div>
+  </div>
+</body>
+
+</html>
