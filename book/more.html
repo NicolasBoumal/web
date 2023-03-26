@@ -58,6 +58,8 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
+
+	<script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
 <body>
@@ -107,7 +109,57 @@
                 </div>
               </div>
             </div>
-            <div class="media-body hyphenate" align="justify">
+            <div class="media-body hyphenate"> <!-- align="justify" -->
+
+              <table class="table table-hover" x-data="">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Week</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Slides</th>
+                    <th scope="col">Videos</th>
+                    <th scope="col">Book &#167;</th>
+                  </tr>
+                </thead>
+                <template x-for="(topics, category) in $store.main.categories">
+                  <tbody>
+                    <tr>
+                      <th scope="rowgroup" colspan="42" x-text="category" style="font-weight: bold;"></th>
+                    </tr>
+                    <template x-for="(topic, number) in topics">
+                      <template x-if="!topic.hide">
+                        <tr>
+                          <th scope="row" x-text="number"></th>
+                          <td x-text="topic.week"></td>
+                          <td x-text="topic.title"></td>
+                          <td><a target="_blank" :href="topic.slides">pdf</a></td>
+                          <td>
+                            <template x-for="vid in topic.videos">
+                              <template x-if="vid.url">
+                                <span>
+                                  <!--<span style="white-space: nowrap; overflow: scroll;"><a target="_blank" :href="vid.url" x-data="{lnk: 'vid ('+vid.duration+' min)'}" x-text="lnk"></a></span><br>-->
+                                  <span style="white-space: nowrap; overflow: scroll;"><a target="_blank" :href="vid.url">vid</a>, <span x-text="vid.duration"></span> min</span><br>
+                                </span>
+                              </template>
+                            </template>
+                          </td>
+                          <td>
+                            <template x-for="vid in topic.videos">
+                              <template x-if="vid.url">
+                                <span>
+                                 <span style="white-space: nowrap; overflow: scroll;" x-data="{sectionstext: vid.booksections.join(', ')}" x-text="sectionstext"></span><br>
+                                </span>
+                              </template>
+                            </template>
+                          </td>
+                        </tr>
+                      </template>
+                    </template>
+                  </tbody>
+                </template>
+              </table>
+
               <!--<h4>Preliminaries</h4>-->
               <table class="table table-hover">
                 <thead>
@@ -241,6 +293,38 @@
           </div>
         </div>
       </div>
+
+      <!-- ALPINE -->
+      <script>
+        document.addEventListener('alpine:init', () => {
+          Alpine.store('main', {
+            categories: {}
+          });
+          // Load the data from a JSON file.
+          $.ajax({
+            url: "topics.json",
+            dataType: "json",
+            success: function (data) {
+              // Go through each category listed in the data.
+              for(var category in data) {
+                // Check how many visible topics are in this category.
+                var ntopics = 0;
+                for(var topic in data[category]) {
+                  var thistopic = data[category][topic];
+                  if(!thistopic.hasOwnProperty('hide') || !thistopic.hide) {
+                    ntopics++;
+                  }
+                }
+                // Collect only those categories which have at least one visible topic.
+                if(ntopics > 0) {  // Object.keys(data[category]).length > 0
+                  Alpine.store('main').categories[category] = data[category];
+                }
+              }
+            }
+          });
+        }); // end Alpine init
+      </script>
+
       <!-- This bit needed to make hyphenate and mathjax play along nicely -->
       <!-- https://github.com/mathjax/MathJax/issues/341 -->
       <script type="text/x-mathjax-config">
