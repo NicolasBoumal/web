@@ -1,18 +1,12 @@
 {
-  "categories": {
-    "0": "Preliminaries",
-    "1": "Geometry of manifolds embedded in linear spaces",
-    "2": "Algorithms and other useful tools (all manifolds)",
-    "3": "Examples of manifolds",
-    "4": "Software"
-  },
 
-  "topics": {
+  "Preliminaries": {
 
     "000": {
       "title":  "Logistics and prerequisites",
       "slides": "slides/000 Logistics and prerequisites.pdf",
-      "videos": []
+      "videos": [],
+      "week": 1
     },
 
     "001": {
@@ -22,7 +16,8 @@
         {"url": "", "duration": 99, "booksections": [], "comments": ""},
         {"url": "", "duration": 99, "booksections": ["2.2", "2.4"], "comments": ""},
         {"url": "", "duration": 99, "booksections": ["2.5", "2.6", "2.7"], "comments": ""}
-      ]
+      ],
+      "week": 1
     },
 
     "002": {
@@ -30,15 +25,21 @@
       "slides": "slides/002 Bird's-eye view and aims.pdf",
       "videos": [
         {"url": "", "duration": 99, "booksections": ["3.0"], "comments": ""}
-      ]
-    },
+      ],
+      "week": 1
+    }
+
+  },
+
+  "Geometry of manifolds embedded in linear spaces": {
 
     "101": {
       "title":  "What is a manifold?",
       "slides": "slides/101 What is a manifold.pdf",
       "videos": [
         {"url": "", "duration": 99, "booksections": ["3.2"], "comments": ""}
-      ]
+      ],
+      "week": 2
     },
 
     "102": {
@@ -46,7 +47,8 @@
       "slides": "slides/102 Tangent spaces to submanifolds.pdf",
       "videos": [
         {"url": "", "duration": 99, "booksections": ["3.2"], "comments": ""}
-      ]
+      ],
+      "week": 2
     },
 
     "103": {
@@ -54,7 +56,8 @@
       "slides": "slides/103 Smooth maps and differentials.pdf",
       "videos": [
         {"url": "", "duration": 99, "booksections": ["3.3", "3.4"], "comments": ""}
-      ]
+      ],
+      "week": 3
     },
 
     "104": {
@@ -62,7 +65,8 @@
       "slides": "slides/104 Retractions, vector fields and tangent bundles.pdf",
       "videos": [
         {"url": "", "duration": 99, "booksections": ["3.5", "3.6"], "comments": ""}
-      ]
+      ],
+      "week": 3
     },
 
     "105": {
@@ -70,7 +74,8 @@
       "slides": "slides/105 Riemannian metrics and gradients.pdf",
       "videos": [
         {"url": "", "duration": 99, "booksections": ["3.7", "3.8"], "comments": ""}
-      ]
+      ],
+      "week": 4
     },
 
     "106": {
@@ -78,15 +83,21 @@
       "slides": "slides/106 Local frames.pdf",
       "videos": [
         {"url": "", "duration": 99, "booksections": ["3.9"], "comments": ""}
-      ]
-    },
+      ],
+      "week": 4
+    }
+
+  },
+
+  "Algorithms and other useful tools (all manifolds)": {
 
     "201": {
       "title":  "Taylor expansions, first order",
       "slides": "slides/201 Taylor expansions, first order.pdf",
       "videos": [
         {"url": "", "duration": 99, "booksections": ["4.1"], "comments": ""}
-      ]
+      ],
+      "week": 5
     },
 
     "202": {
@@ -94,7 +105,8 @@
       "slides": "slides/202 Optimality conditions, first order.pdf",
       "videos": [
         {"url": "", "duration": 99, "booksections": ["4.2"], "comments": ""}
-      ]
+      ],
+      "week": 5
     },
 
     "203": {
@@ -102,7 +114,8 @@
       "slides": "slides/203 Gradient descent.pdf",
       "videos": [
         {"url": "", "duration": 99, "booksections": ["4.3", "4.4"], "comments": ""}
-      ]
+      ],
+      "week": 5
     },
 
     "204": {
@@ -110,8 +123,15 @@
       "slides": "slides/204 Choosing a step size.pdf",
       "videos": [
         {"url": "", "duration": 99, "booksections": ["4.5"], "comments": ""}
-      ]
-    },
+      ],
+      "week": 5
+    }
+
+  },
+
+  "Examples of manifolds": {},
+
+  "Software": {
 
     "499": {
       "title":  "Hands on with Manopt (from 2021)",
@@ -119,16 +139,10 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/Manopt+overview%2C+Part+1+2+%28from+2021%29/0_g5gfi47b", "duration": 40, "booksections": [], "comments": ""},
         {"url": "https://mediaspace.epfl.ch/media/Manopt+overview%2C+Part+2+2+%28from+2021%29/0_3a1jnw74", "duration": 52, "booksections": [], "comments": ""}
-      ]
+      ],
+      "week": 5
     }
 
-  },
-
-  "schedule2023": {
-    "1": ["000", "001", "002"],
-    "2": ["101", "102"],
-    "3": ["103", "104"],
-    "4": ["105", "106"],
-    "5": ["201", "202", "203", "204", "499"]
   }
+  
 }
