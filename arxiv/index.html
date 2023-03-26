@@ -503,7 +503,7 @@
 			// Each element is an article with fields:
 			//  id, version, title, authors, category, updated, crosslisted, link, summary, hide, selected
 
-        	Alpine.store('main', {
+			Alpine.store('main', {
 				digest: [],
 				categories: [],
 				slackurl: '',
@@ -524,11 +524,11 @@
 					var index = this.digest.findIndex(article => article.id === id);
 					this.digest[index].selected = !this.digest[index].selected;
 					this.articleSelectionChange(id);
-					Alpine.nextTick( () => { MathJax.typeset(); });
+					Alpine.nextTick(() => { MathJax.typeset(); });
 				}
-        	});
+			});
 
-    	}); // end Alpine init
+		}); // end Alpine init
 
 	</script>
 
