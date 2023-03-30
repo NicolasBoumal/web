@@ -13,9 +13,9 @@
       "title":  "Context and applications",
       "slides": "slides/001 Context and applications.pdf",
       "videos": [
-        {"url": "", "duration": 99, "booksections": [], "comments": ""},
-        {"url": "", "duration": 99, "booksections": ["2.2", "2.4"], "comments": ""},
-        {"url": "", "duration": 99, "booksections": ["2.5", "2.6", "2.7"], "comments": ""}
+        {"url": "", "duration": 0, "booksections": [], "comments": ""},
+        {"url": "", "duration": 0, "booksections": ["2.2", "2.4"], "comments": ""},
+        {"url": "", "duration": 0, "booksections": ["2.5", "2.6", "2.7"], "comments": ""}
       ],
       "week": 1
     },
@@ -24,7 +24,7 @@
       "title":  "Bird's-eye view and aims",
       "slides": "slides/002 Bird's-eye view and aims.pdf",
       "videos": [
-        {"url": "", "duration": 99, "booksections": ["3.0"], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["3.0"], "comments": ""}
       ],
       "week": 1
     }
@@ -37,7 +37,7 @@
       "title":  "What is a manifold?",
       "slides": "slides/101 What is a manifold.pdf",
       "videos": [
-        {"url": "", "duration": 99, "booksections": ["3.2"], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["3.2"], "comments": ""}
       ],
       "week": 2
     },
@@ -46,7 +46,7 @@
       "title":  "Tangent spaces to submanifolds",
       "slides": "slides/102 Tangent spaces to submanifolds.pdf",
       "videos": [
-        {"url": "", "duration": 99, "booksections": ["3.2"], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["3.2"], "comments": ""}
       ],
       "week": 2
     },
@@ -55,7 +55,7 @@
       "title":  "Smooth maps and differentials",
       "slides": "slides/103 Smooth maps and differentials.pdf",
       "videos": [
-        {"url": "", "duration": 99, "booksections": ["3.3", "3.4"], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["3.3", "3.4"], "comments": ""}
       ],
       "week": 3
     },
@@ -64,7 +64,7 @@
       "title":  "Retractions, vector fields and tangent bundles",
       "slides": "slides/104 Retractions, vector fields and tangent bundles.pdf",
       "videos": [
-        {"url": "", "duration": 99, "booksections": ["3.5", "3.6"], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["3.5", "3.6"], "comments": ""}
       ],
       "week": 3
     },
@@ -73,7 +73,7 @@
       "title":  "Riemannian metrics and gradients",
       "slides": "slides/105 Riemannian metrics and gradients.pdf",
       "videos": [
-        {"url": "", "duration": 99, "booksections": ["3.7", "3.8"], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["3.7", "3.8"], "comments": ""}
       ],
       "week": 4
     },
@@ -82,9 +82,36 @@
       "title":  "Local frames",
       "slides": "slides/106 Local frames.pdf",
       "videos": [
-        {"url": "", "duration": 99, "booksections": ["3.9"], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["3.9"], "comments": ""}
       ],
       "week": 4
+    },
+
+    "107": {
+      "title":  "Differentiating vector fields: why, and how not to",
+      "slides": "slides/107 Differentiating vector fields, why and how not to.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["5.1"], "comments": ""}
+      ],
+      "week": 6
+    },
+
+    "108": {
+      "title":  "Connections",
+      "slides": "slides/108 Connections.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["5.2", "5.3"], "comments": ""}
+      ],
+      "week": 6
+    },
+
+    "109": {
+      "title":  "Riemannian connections",
+      "slides": "slides/109 Riemannian connections.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["5.4", "5.5"], "comments": ""}
+      ],
+      "week": 6
     }
 
   },
@@ -95,7 +122,7 @@
       "title":  "Taylor expansions, first order",
       "slides": "slides/201 Taylor expansions, first order.pdf",
       "videos": [
-        {"url": "", "duration": 99, "booksections": ["4.1"], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["4.1"], "comments": ""}
       ],
       "week": 5
     },
@@ -104,7 +131,7 @@
       "title":  "Optimality conditions, first order",
       "slides": "slides/202 Optimality conditions, first order.pdf",
       "videos": [
-        {"url": "", "duration": 99, "booksections": ["4.2"], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["4.2"], "comments": ""}
       ],
       "week": 5
     },
@@ -113,7 +140,7 @@
       "title":  "Gradient descent",
       "slides": "slides/203 Gradient descent.pdf",
       "videos": [
-        {"url": "", "duration": 99, "booksections": ["4.3", "4.4"], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["4.3", "4.4"], "comments": ""}
       ],
       "week": 5
     },
@@ -122,7 +149,7 @@
       "title":  "Choosing a step size",
       "slides": "slides/204 Choosing a step size.pdf",
       "videos": [
-        {"url": "", "duration": 99, "booksections": ["4.5"], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["4.5"], "comments": ""}
       ],
       "week": 5
     }
