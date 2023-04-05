@@ -164,8 +164,8 @@
       "title":  "Hands on with Manopt (from 2021)",
       "slides": "slides/499 Hands on with Manopt.pdf",
       "videos": [
-        {"url": "https://mediaspace.epfl.ch/media/Manopt+overview%2C+Part+1+2+%28from+2021%29/0_g5gfi47b", "duration": 40, "booksections": [], "comments": ""},
-        {"url": "https://mediaspace.epfl.ch/media/Manopt+overview%2C+Part+2+2+%28from+2021%29/0_3a1jnw74", "duration": 52, "booksections": [], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_g5gfi47b", "duration": 40, "booksections": [], "comments": ""},
+        {"url": "https://mediaspace.epfl.ch/media/0_3a1jnw74", "duration": 52, "booksections": [], "comments": ""}
       ],
       "week": 5
     }
