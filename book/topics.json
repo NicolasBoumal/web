@@ -112,6 +112,24 @@
         {"url": "", "duration": 0, "booksections": ["5.4", "5.5"], "comments": ""}
       ],
       "week": 6
+    },
+
+    "110": {
+      "title":  "Riemannian Hessians",
+      "slides": "slides/110 Riemannian Hessians.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["5.5"], "comments": ""}
+      ],
+      "week": 7
+    },
+
+    "111": {
+      "title":  "Differentiating vector fields along curves",
+      "slides": "slides/111 Differentiating vector fields along curves.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["5.7", "5.8"], "comments": ""}
+      ],
+      "week": 7
     }
 
   },
@@ -152,6 +170,15 @@
         {"url": "", "duration": 0, "booksections": ["4.5"], "comments": ""}
       ],
       "week": 5
+    },
+
+    "205": {
+      "title":  "Taylor expansions and retractions, second order",
+      "slides": "slides/205 Taylor expansions and retractions, second order.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["5.9", "5.10"], "comments": ""}
+      ],
+      "week": 7
     }
 
   },
