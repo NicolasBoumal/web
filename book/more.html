@@ -142,7 +142,7 @@
                               <template x-if="vid.url">
                                 <span>
                                   <!--<span style="white-space: nowrap; overflow: scroll;"><a target="_blank" :href="vid.url" x-data="{lnk: 'vid ('+vid.duration+' min)'}" x-text="lnk"></a></span><br>-->
-                                  <span style="white-space: nowrap; overflow: scroll;"><a target="_blank" :href="vid.url">vid</a>, <span x-text="vid.duration"></span> min</span><br>
+                                  <span style="white-space: nowrap; overflow: scroll;"><a target="_blank" :href="vid.url" :title="vid.comments">vid</a>, <span x-text="vid.duration"></span> min</span><br>
                                 </span>
                               </template>
                             </template>
