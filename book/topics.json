@@ -13,9 +13,9 @@
       "title":  "Context and applications",
       "slides": "slides/001 Context and applications.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": [], "comments": ""},
-        {"url": "", "duration": 0, "booksections": ["2.2", "2.4"], "comments": ""},
-        {"url": "", "duration": 0, "booksections": ["2.5", "2.6", "2.7"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_bsyqzpxr", "duration": 12, "booksections": [], "comments": "Context"},
+        {"url": "https://mediaspace.epfl.ch/media/0_pqwemg6i", "duration": 23, "booksections": ["2.2", "2.4"], "comments": "Simple applications"},
+        {"url": "https://mediaspace.epfl.ch/media/0_xhw2ln03", "duration": 16, "booksections": ["2.5", "2.6", "2.7"], "comments": "More applications"}
       ],
       "week": 1
     },
@@ -24,7 +24,7 @@
       "title":  "Bird's-eye view and aims",
       "slides": "slides/002 Bird's-eye view and aims.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["3.0"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_ioz08grf", "duration": 26, "booksections": ["3.0"], "comments": ""}
       ],
       "week": 1
     }
