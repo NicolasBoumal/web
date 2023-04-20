@@ -179,6 +179,33 @@
         {"url": "", "duration": 0, "booksections": ["5.9", "5.10"], "comments": ""}
       ],
       "week": 7
+    },
+
+    "206": {
+      "title":  "Optimality conditions, second order",
+      "slides": "slides/206 Optimality conditions, second order.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["6.1"], "comments": ""}
+      ],
+      "week": 8
+    },
+
+    "207": {
+      "title":  "Newton's method",
+      "slides": "slides/207 Newton's method.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["6.2"], "comments": ""}
+      ],
+      "week": 8
+    },
+
+    "208": {
+      "title":  "Computing the Newton step",
+      "slides": "slides/208 Computing the Newton step.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["6.2", "6.3"], "comments": ""}
+      ],
+      "week": 8
     }
 
   },
