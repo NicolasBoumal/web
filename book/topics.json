@@ -206,6 +206,24 @@
         {"url": "", "duration": 0, "booksections": ["6.2", "6.3"], "comments": ""}
       ],
       "week": 8
+    },
+
+    "210": {
+      "title":  "Trust-region methods",
+      "slides": "slides/210 Trust-region methods.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["6.4"], "comments": ""}
+      ],
+      "week": 9
+    },
+
+    "211": {
+      "title":  "tCG for the trust-region subproblem",
+      "slides": "slides/211 Truncated CG for the TR subproblem.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["6.5"], "comments": ""}
+      ],
+      "week": 9
     }
 
   },
