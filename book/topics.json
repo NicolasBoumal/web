@@ -208,6 +208,15 @@
       "week": 8
     },
 
+    "209": {
+      "title":  "More about conjugate gradients",
+      "slides": "slides/209 More about conjugate gradients.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["6.3"], "comments": ""}
+      ],
+      "week": ""
+    },
+
     "210": {
       "title":  "Trust-region methods",
       "slides": "slides/210 Trust-region methods.pdf",
