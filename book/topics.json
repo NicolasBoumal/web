@@ -37,7 +37,9 @@
       "title":  "What is a manifold?",
       "slides": "slides/101 What is a manifold.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["3.2"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_fvxtpqcj", "duration":  7, "booksections": ["3.2"], "comments": "Setup"},
+        {"url": "https://mediaspace.epfl.ch/media/0_dtheqz2y", "duration": 24, "booksections": ["3.2"], "comments": "Through defining functions"},
+        {"url": "https://mediaspace.epfl.ch/media/0_db0pw7a5", "duration": 42, "booksections": ["3.2"], "comments": "Through diffeomorphisms"}
       ],
       "week": 2
     },
