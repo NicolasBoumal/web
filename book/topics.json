@@ -131,7 +131,23 @@
       "videos": [
         {"url": "", "duration": 0, "booksections": ["5.7", "5.8"], "comments": ""}
       ],
-      "week": 7
+      "week": 7,
+
+    "112": {
+      "title":  "Parallel transport",
+      "slides": "slides/112 Parallel transport.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["10.3"], "comments": ""}
+      ],
+      "week": 10,
+
+    "113": {
+      "title":  "Transporters",
+      "slides": "slides/113 Transporters.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["10.5", "10.6"], "comments": ""}
+      ],
+      "week": 10
     }
 
   },
@@ -235,6 +251,15 @@
         {"url": "", "duration": 0, "booksections": ["6.5"], "comments": ""}
       ],
       "week": 9
+    },
+
+    "212": {
+      "title":  "Momentum methods and nonlinear CG",
+      "slides": "slides/212 Momentum methods and nonlinear CG.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": [], "comments": ""}
+      ],
+      "week": 10
     }
 
   },
