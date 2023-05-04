@@ -131,7 +131,8 @@
       "videos": [
         {"url": "", "duration": 0, "booksections": ["5.7", "5.8"], "comments": ""}
       ],
-      "week": 7,
+      "week": 7
+    },
 
     "112": {
       "title":  "Parallel transport",
@@ -139,7 +140,8 @@
       "videos": [
         {"url": "", "duration": 0, "booksections": ["10.3"], "comments": ""}
       ],
-      "week": 10,
+      "week": 10
+    },
 
     "113": {
       "title":  "Transporters",
