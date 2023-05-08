@@ -1099,13 +1099,13 @@ year = {2011}
 		<venue>Journée SIGMA 2022 (Signal-Image-Géométrie-Modélisation-Approximation) SMAI, LJLL, Sorbonne</venue>
 		<city>Paris</city><country>France</country>
 		<year>2022</year><month>12</month><day>13</day>
-		<video>https://youtu.be/-VqBzz3Nedc</video>
+		<video></video>
 	</event>
 	<event>
 		<venue>EPFL-CIS and RIKEN-AIP Joint Workshop on Machine Learning and Artificial Intelligence</venue>
 		<city>Lausanne</city><country>Switzerland</country>
 		<year>2023</year><month>3</month><day>10</day>
-		<video></video>
+		<video>https://youtu.be/-VqBzz3Nedc</video>
 	</event>
 	<comment>http://smai.emath.fr/spip.php?article406, https://www.epfl.ch/research/domains/cis/epfl-cis-riken-aip-joint-workshop-2023/</comment>
 	<abstract></abstract>
