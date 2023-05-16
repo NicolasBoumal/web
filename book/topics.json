@@ -150,6 +150,15 @@
         {"url": "", "duration": 0, "booksections": ["10.5", "10.6"], "comments": ""}
       ],
       "week": 10
+    },
+
+    "114": {
+      "title":  "Distance, geodesics and complete manifolds",
+      "slides": "slides/114 Distance, geodesics and complete manifolds.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["10.1"], "comments": ""}
+      ],
+      "week": 11
     }
 
   },
@@ -262,6 +271,15 @@
         {"url": "", "duration": 0, "booksections": [], "comments": ""}
       ],
       "week": 10
+    },
+
+    "213": {
+      "title":  "Linear convergence with Polyak-Łojasiewicz",
+      "slides": "slides/213 Linear convergence with Polyak-Lojasiewicz.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["11.5"], "comments": ""}
+      ],
+      "week": 11
     }
 
   },
@@ -278,6 +296,28 @@
         {"url": "https://mediaspace.epfl.ch/media/0_3a1jnw74", "duration": 52, "booksections": [], "comments": ""}
       ],
       "week": 5
+    }
+
+  },
+
+  "Geodesic convexity": {
+
+    "701": {
+      "title":  "Geodesic convexity: why, and what we need",
+      "slides": "slides/701 Geodesic convexity, why, and what we need.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["11.0", "11.1"], "comments": ""}
+      ],
+      "week": 11
+    },
+
+    "702": {
+      "title":  "Geodesic convexity: the basics",
+      "slides": "slides/702 Geodesic convexity, the basics.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": ["11.2"], "comments": ""}
+      ],
+      "week": 11
     }
 
   }
