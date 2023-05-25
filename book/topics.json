@@ -300,6 +300,37 @@
 
   },
 
+  "General manifolds": {
+
+    "501": {
+      "title":  "From embedded to general manifolds: upgrading our foundations",
+      "slides": "slides/501 From embedded to general manifolds, upgrading our foundations.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": [], "comments": ""}
+      ],
+      "week": 12
+    },
+
+    "502": {
+      "title":  "Smooth sets and functions, now with charts",
+      "slides": "slides/502 Smooth sets and functions, now with charts.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": [], "comments": ""}
+      ],
+      "week": 12
+    },
+
+    "503": {
+      "title":  "Tangent vectors without embedding space",
+      "slides": "slides/503 Tangent vectors without embedding space.pdf",
+      "videos": [
+        {"url": "", "duration": 0, "booksections": [], "comments": ""}
+      ],
+      "week": 12
+    }
+
+  },
+
   "Geodesic convexity": {
 
     "701": {
