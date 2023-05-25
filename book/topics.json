@@ -315,7 +315,7 @@
       "title":  "Smooth sets and functions, now with charts",
       "slides": "slides/502 Smooth sets and functions, now with charts.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": [], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["8.1", "8.2"], "comments": ""}
       ],
       "week": 12
     },
@@ -324,7 +324,7 @@
       "title":  "Tangent vectors without embedding space",
       "slides": "slides/503 Tangent vectors without embedding space.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": [], "comments": ""}
+        {"url": "", "duration": 0, "booksections": ["8.4"], "comments": ""}
       ],
       "week": 12
     }
