@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <!-- Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3XP9VMHJ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Z3XP9VMHJ3');
+  </script>
+  <!-- Meta -->
+  <title>SIAM Conference on Optimization 2023 tutorial</title>
+  <meta name="description" content="SIAM OPT 2023 Tutorial Riemannian Optimization">
+  <meta name="author" content="Nicolas Boumal">
+  <meta name="keywords" content="Optimization on manifolds,Riemannian optimization,Manopt">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+  <style type="text/css">
+    body {
+      padding-top: 10px;
+      padding-bottom: 20px;
+    }
+
+    div .section {
+      display: auto;
+    }
+
+    ul {
+      list-style: disc;
+    }
+  </style>
+  <style>
+    ul.toc {
+      list-style-type: none;
+      font-weight: bold;
+    }
+
+    ul.toc li ul {
+      list-style-type: none;
+      font-weight: normal;
+    }
+  </style>
+  <!-- see https://github.com/davidjbradshaw/iframe-resizer // failed attempt at auto sizing iFrame; issue is: contents are from a different site, and even that github-linked package can't handle google forms.
+    <style>      iframe {        width: 1px;        min-width: 100%;      }    </style>		-->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/html5shiv.js"></script>      <script type="text/javascript" src="js/respond.min.js"></script>    <![endif]-->
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19509417-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-9">
+        <div class="page-header" style="display: block">
+          <h1 style="display: block">2023<br>
+            SIAM Conference on Optimization<br>
+            Tutorial on Riemannian Optimization<br>
+            <a href="https://www.nicolasboumal.net"><small style="display: block; margin-top:2mm;">Nicolas Boumal</small></a>
+          </h1>
+        </div>
+        <p> </p>
+        <div class="section" id="section-tutorial">
+          <div>
+            <div class="media row">
+              <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="media-body"> <a href="https://www.nicolasboumal.net/book" target="_blank"><img
+                      alt="picture" title="Go to webpage of book An introduction to optimization on smooth manifolds"
+                      class="media-object img-rounded" src="../images/BoumalIntroSmoothManifoldsCover.png"
+                      style="width:100%; max-width:220px; margin:auto; margin-bottom:8mm; display:block;"></a>
+                </div>
+                <!--margin: auto; display:block; is to center the image...-->
+                <!--width: 192px; height: 250px;-->
+              </div>
+              <div class="col-lg-9 col-md-9 col-sm-12">
+                <div class="media-body hyphenate" align="justify">
+                  <p>
+                    The slides used during the tutorial will become available here.
+                  </p>
+                  <p>
+                    The tutorial builds on my book published by <a href="https://cambridge.org/9781009166157" target="_blank">Cambridge University Press</a>, 2023.
+                  </p>
+                  <p>
+                    Go to the <a href="https://www.nicolasboumal.net/book" target="_blank"
+                    title="Go to webpage of book An introduction to optimization on smooth manifolds">book webpage</a> for more info and the free pre-publication pdf.
+                  </p>
+                  <p>
+                    Go to the <a href="https://www.nicolasboumal.net/book/more.html" target="_blank"
+                    title="Companion material for the book An introduction to optimization on smooth manifolds">companion webpage</a> of the book for lecture material (videos, slides).
+                  </p>
+                  <p>
+                    For software, check out the Manopt toolboxes, in
+                      <a target="_blank" href="https://www.manopt.org">Matlab</a>,
+                      <a target="_blank" href="https://www.pymanopt.org">Python</a> and
+                      <a target="_blank" href="https://www.manoptjl.org">Julia</a>.
+                      You can also find a list of much more Riemannian optimization software <a target="_blank" href="https://www.manopt.org/about.html#related">here</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!--
+            <div class="media-body hyphenate" align="justify">
+              <h4>Additional resources</h4>
+              <p></p>              
+            </div>
+            -->
+            
+            <div class="page-footer"><small class="pull-right">Last update: May 28, 2023.</small></div>
+          </div>
+        </div>
+      </div>
+      <!-- This bit needed to make hyphenate and mathjax play along nicely -->
+      <!-- https://github.com/mathjax/MathJax/issues/341 -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+          MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
+            data.math = data.math.replace(/\u00AD/g,"");
+          });
+        });
+      </script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+      </script>
+      <script type="text/javascript" async=""
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <!-- //doesn't work for google forms
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>			-->
+      <script type="text/javascript" src="../js/hyphenate.js"></script>
+    </div>
+    <!--
+    <script>      iFrameResize({ log: true }, '#myIframe');    </script>		-->
+  </div>
+</body>
+
+</html>
