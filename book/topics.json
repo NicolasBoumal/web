@@ -77,7 +77,6 @@
       "title":  "Riemannian metrics and gradients",
       "slides": "slides/105 Riemannian metrics and gradients.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["3.7", "3.8"], "comments": ""}
         {"url": "https://mediaspace.epfl.ch/media/0_bh1bb0be", "duration": 21, "booksections": ["3.7"], "comments": "Why, and definition of Riemannian manifolds"},
         {"url": "https://mediaspace.epfl.ch/media/0_zekgk9k9", "duration": 22, "booksections": ["3.7"], "comments": "Examples, and Riemannian submanifolds"},
         {"url": "https://mediaspace.epfl.ch/media/0_1ubm6naw", "duration": 19, "booksections": ["3.8"], "comments": "Riemannian gradients"},
