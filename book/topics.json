@@ -57,7 +57,8 @@
       "title":  "Smooth maps and differentials",
       "slides": "slides/103 Smooth maps and differentials.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["3.3", "3.4"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_4q9sf46k", "duration": 15, "booksections": ["3.3"], "comments": "Smooth maps"},
+        {"url": "https://mediaspace.epfl.ch/media/0_q6jfhydb", "duration": 28, "booksections": ["3.4"], "comments": "Differentials"}
       ],
       "week": 3
     },
@@ -66,7 +67,8 @@
       "title":  "Retractions, vector fields and tangent bundles",
       "slides": "slides/104 Retractions, vector fields and tangent bundles.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["3.5", "3.6"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_tn1s36vk", "duration": 39, "booksections": ["3.5"], "comments": "Tangent bundles"},
+        {"url": "https://mediaspace.epfl.ch/media/0_zxm98m2r", "duration": 14, "booksections": ["3.6"], "comments": "Retractions and vector fields"}
       ],
       "week": 3
     },
@@ -76,6 +78,10 @@
       "slides": "slides/105 Riemannian metrics and gradients.pdf",
       "videos": [
         {"url": "", "duration": 0, "booksections": ["3.7", "3.8"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_bh1bb0be", "duration": 21, "booksections": ["3.7"], "comments": "Why, and definition of Riemannian manifolds"},
+        {"url": "https://mediaspace.epfl.ch/media/0_zekgk9k9", "duration": 22, "booksections": ["3.7"], "comments": "Examples, and Riemannian submanifolds"},
+        {"url": "https://mediaspace.epfl.ch/media/0_1ubm6naw", "duration": 19, "booksections": ["3.8"], "comments": "Riemannian gradients"},
+        {"url": "https://mediaspace.epfl.ch/media/0_p7h6ma09", "duration": 20, "booksections": ["3.8"], "comments": "Computing gradients from extensions"}
       ],
       "week": 4
     },
@@ -84,7 +90,7 @@
       "title":  "Local frames",
       "slides": "slides/106 Local frames.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["3.9"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_fyfu2tb1", "duration": 8, "booksections": ["3.9"], "comments": ""}
       ],
       "week": 4
     },
@@ -169,7 +175,7 @@
       "title":  "Taylor expansions, first order",
       "slides": "slides/201 Taylor expansions, first order.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["4.1"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_o9oyjetu", "duration": 11, "booksections": ["4.1"], "comments": ""}
       ],
       "week": 5
     },
@@ -178,7 +184,7 @@
       "title":  "Optimality conditions, first order",
       "slides": "slides/202 Optimality conditions, first order.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["4.2"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_4q9vq0m2", "duration": 12, "booksections": ["4.2"], "comments": ""}
       ],
       "week": 5
     },
@@ -187,7 +193,7 @@
       "title":  "Gradient descent",
       "slides": "slides/203 Gradient descent.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["4.3", "4.4"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_rbhjrh49", "duration": 37, "booksections": ["4.3", "4.4"], "comments": ""}
       ],
       "week": 5
     },
@@ -196,7 +202,7 @@
       "title":  "Choosing a step size",
       "slides": "slides/204 Choosing a step size.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["4.5"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_be5ti6e3", "duration": 25, "booksections": ["4.5"], "comments": ""}
       ],
       "week": 5
     },
