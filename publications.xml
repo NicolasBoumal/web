@@ -682,6 +682,32 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 
 
 
+<object id="2019">
+	<type>conference</type>
+	<title>Curvature and complexity: Better lower bounds for geodesically convex optimization</title>
+	<authors>C. Criscitiello and N. Boumal</authors>
+	<year>2023</year>
+	<status>in the proceedings of COLT</status>
+	<bibtex>
+@InProceedings{criscitiello2023curvaturecomplexity,
+  title =     {Curvature and complexity: Better lower bounds for geodesically convex optimization},
+  author =    {Criscitiello, C. and Boumal, N.},
+  booktitle = {Proceedings of Thirty Sixth Conference on Learning Theory},
+  pages =     {},
+  year =      {2023},
+  editor =    {Neu, G. and Rosasco, L.},
+  volume =    {195},
+  series =    {Proceedings of Machine Learning Research},
+  month =     {},
+  publisher = {PMLR},
+  url =       {}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2306.02959</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="2018">
 	<type>conference</type>
 	<title>Negative curvature obstructs acceleration for geodesically convex optimization, even with exact first-order oracles</title>
@@ -703,8 +729,8 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
   url = 	 {https://proceedings.mlr.press/v178/criscitiello22a.html}
 }
 	</bibtex>
-	<comment>An extended version is available on arXiv. Congratulations to Chris for the &lt;a target="_blank" href="https://iccopt2022.lehigh.edu/competition-and-prizes/paper-prize/"&gt;ICCOPT 2022 Best Paper for Young Researchers Prize&lt;/a&gt;!</comment>
-	<link>http://arxiv.org/abs/2111.13263</link>
+	<comment>An extended version is available on arXiv as v2 (parts were removed in v3, now published in our COLT 2023 paper). Congratulations to Chris for the &lt;a target="_blank" href="https://iccopt2022.lehigh.edu/competition-and-prizes/paper-prize/"&gt;ICCOPT 2022 Best Paper for Young Researchers Prize&lt;/a&gt;!</comment>
+	<link>https://arxiv.org/abs/2111.13263</link>
 	<publisherlink>https://proceedings.mlr.press/v178/criscitiello22a</publisherlink>
 	<tag>optimization</tag>
 </object>
@@ -731,7 +757,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 }
 	</bibtex>
 	<comment></comment>
-	<link>http://arxiv.org/abs/2011.03358</link>
+	<link>https://arxiv.org/abs/2011.03358</link>
 	<publisherlink>http://proceedings.mlr.press/v130/scieur21a.html</publisherlink>
 	<tag>optimization</tag>
 </object>
@@ -750,7 +776,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 }
 	</bibtex>
 	<comment></comment>
-	<link>http://arxiv.org/abs/2011.13395</link>
+	<link>https://arxiv.org/abs/2011.13395</link>
 	<publisherlink></publisherlink>
 	<tag>optimization</tag>
 </object>
@@ -773,7 +799,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 }
 	</bibtex>
 	<comment></comment>
-	<link>http://arxiv.org/abs/1906.04321</link>
+	<link>https://arxiv.org/abs/1906.04321</link>
 	<publisherlink>https://papers.nips.cc/paper/8832-efficiently-escaping-saddle-points-on-manifolds</publisherlink>
 	<tag>optimization</tag>
 </object>
@@ -796,7 +822,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 }
 	</bibtex>
 	<comment></comment>
-	<link>http://arxiv.org/abs/1806.03763</link>
+	<link>https://arxiv.org/abs/1806.03763</link>
 	<publisherlink>http://papers.nips.cc/paper/7496-smoothed-analysis-of-the-low-rank-approach-for-smooth-semidefinite-programs</publisherlink>
 	<tag>optimization</tag>
 	<tag>BM</tag>
