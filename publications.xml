@@ -710,7 +710,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 </object>
 <object id="2018">
 	<type>conference</type>
-	<title>Negative curvature obstructs acceleration for geodesically convex optimization, even with exact first-order oracles</title>
+	<title>Negative curvature obstructs acceleration for strongly geodesically convex optimization, even with exact first-order oracles</title>
 	<authors>C. Criscitiello and N. Boumal</authors>
 	<year>2022</year>
 	<status>in the proceedings of COLT</status>
