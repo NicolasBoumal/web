@@ -2,24 +2,23 @@
 <html dir="ltr" lang="en">
 
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-  <!-- Meta -->
-  <title>Timer</title>
-  <meta name="description" content="Timer">
-  <meta name="author" content="Nicolas Boumal">
-  <meta name="keywords" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Bootstrap -->
-  <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
-  <style type="text/css">
-    body {
-      padding-top: 0px;
-      padding-left: 20px;
-      padding-bottom: 20px;
-    }
-  </style>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <!-- Meta -->
+    <title>Timer</title>
+    <meta name="description" content="Timer">
+    <meta name="author" content="Nicolas Boumal">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+        body {
+            padding-top: 0px;
+            padding-left: 30px;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
 </head>
 
 <body>
@@ -30,21 +29,21 @@
 <script>
     // https://stackoverflow.com/a/57981688/5989015
     class Timer {
-        constructor () {
+        constructor() {
             this.isRunning = false;
             this.startTime = 0;
             this.overallTime = 0;
         }
 
-        _getTimeElapsedSinceLastStart () {
+        _getTimeElapsedSinceLastStart() {
             if (!this.startTime) {
                 return 0;
             }
-        
+
             return Date.now() - this.startTime;
         }
 
-        start () {
+        start() {
             if (this.isRunning) {
                 return console.error('Timer is already running');
             }
@@ -54,7 +53,7 @@
             this.startTime = Date.now();
         }
 
-        stop () {
+        stop() {
             if (!this.isRunning) {
                 return console.error('Timer is already stopped');
             }
@@ -64,7 +63,7 @@
             this.overallTime = this.overallTime + this._getTimeElapsedSinceLastStart();
         }
 
-        reset () {
+        reset() {
             this.overallTime = 0;
 
             if (this.isRunning) {
@@ -75,7 +74,7 @@
             this.startTime = 0;
         }
 
-        getTime () {
+        getTime() {
             if (!this.startTime) {
                 return 0;
             }
@@ -94,7 +93,7 @@
     var setintervalhandle = null;
 
     $(document).on('click', () => {
-        switch(state){
+        switch (state) {
             case 'zero':
                 $('#timer').html('0:00');
                 timer.reset();
