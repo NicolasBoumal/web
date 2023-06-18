@@ -98,7 +98,8 @@
       "title":  "Differentiating vector fields: why, and how not to",
       "slides": "slides/107 Differentiating vector fields, why and how not to.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["5.1"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_c9beh8cz", "duration": 10, "booksections": ["5.1"], "comments": "Why do it?"},
+        {"url": "https://mediaspace.epfl.ch/media/0_a2qvnmzi", "duration": 19, "booksections": ["5.1"], "comments": "How not to do it"}
       ],
       "week": 6
     },
@@ -107,7 +108,7 @@
       "title":  "Connections",
       "slides": "slides/108 Connections.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["5.2", "5.3"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_3d8ok7db", "duration": 19, "booksections": ["5.2", "5.3"], "comments": ""}
       ],
       "week": 6
     },
@@ -116,7 +117,8 @@
       "title":  "Riemannian connections",
       "slides": "slides/109 Riemannian connections.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["5.4", "5.5"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_jmvpnpqe", "duration": 37, "booksections": ["5.4", "5.5"], "comments": "What they are and why we care"},
+        {"url": "https://mediaspace.epfl.ch/media/0_bszpk88x", "duration": 16, "booksections": ["5.4"], "comments": "Proof sketch"}
       ],
       "week": 6
     },
