@@ -145,7 +145,10 @@
       "title":  "Parallel transport",
       "slides": "slides/112 Parallel transport.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["10.3"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_sb5asi16", "duration": 8, "booksections": ["10.3"], "comments": "Three reasons why"},
+        {"url": "", "duration": 0, "booksections": ["10.3"], "comments": ""},
+        {"url": "https://mediaspace.epfl.ch/media/0_nfy68wem", "duration": 17, "booksections": ["10.3"], "comments": "Definition, existence and uniqueness"},
+        {"url": "https://mediaspace.epfl.ch/media/0_ucgpk4ou", "duration": 20, "booksections": ["10.3"], "comments": "Curve dependence and D/dt"}
       ],
       "week": 10
     },
@@ -154,7 +157,7 @@
       "title":  "Transporters",
       "slides": "slides/113 Transporters.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["10.5", "10.6"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_tupdhora", "duration": 17, "booksections": ["10.5", "10.6"], "comments": ""}
       ],
       "week": 10
     },
@@ -221,7 +224,7 @@
       "title":  "Optimality conditions, second order",
       "slides": "slides/206 Optimality conditions, second order.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["6.1"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_4ty6qqsw", "duration": 10, "booksections": ["6.1"], "comments": ""}
       ],
       "week": 8
     },
@@ -230,7 +233,7 @@
       "title":  "Newton's method",
       "slides": "slides/207 Newton's method.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["6.2"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_dw78e4il", "duration": 25, "booksections": ["6.2"], "comments": ""}
       ],
       "week": 8
     },
@@ -239,7 +242,9 @@
       "title":  "Computing the Newton step",
       "slides": "slides/208 Computing the Newton step.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["6.2", "6.3"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/0_f0pk1ryp", "duration": 38, "booksections": ["6.2", "6.3"], "comments": "The matrix way is a bad way"},
+        {"url": "https://mediaspace.epfl.ch/0_0kfrf9im", "duration": 17, "booksections": ["6.3"], "comments": "GD as a matrix-free way"},
+        {"url": "https://mediaspace.epfl.ch/0_23c8zfkj", "duration": 27, "booksections": ["6.3"], "comments": "From GD to CG"}
       ],
       "week": 8
     },
@@ -257,7 +262,9 @@
       "title":  "Trust-region methods",
       "slides": "slides/210 Trust-region methods.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["6.4"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/0_zxc4hymz", "duration": 9, "booksections": ["6.4"], "comments": "Why, with an example"},
+        {"url": "https://mediaspace.epfl.ch/0_lvrxgyhb", "duration": 22, "booksections": ["6.4"], "comments": "Coming up with the algorithm"},
+        {"url": "https://mediaspace.epfl.ch/0_hgm0u3ye", "duration": 21, "booksections": ["6.4"], "comments": "Global convergence with minimal effort"}
       ],
       "week": 9
     },
@@ -266,7 +273,7 @@
       "title":  "tCG for the trust-region subproblem",
       "slides": "slides/211 Truncated CG for the TR subproblem.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["6.5"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/0_1r10qle1", "duration": 28, "booksections": ["6.5"], "comments": ""}
       ],
       "week": 9
     },
@@ -275,7 +282,7 @@
       "title":  "Momentum methods and nonlinear CG",
       "slides": "slides/212 Momentum methods and nonlinear CG.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": [], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/0_00yw74ep", "duration": 18, "booksections": [], "comments": ""}
       ],
       "week": 10
     },
