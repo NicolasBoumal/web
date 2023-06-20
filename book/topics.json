@@ -127,7 +127,8 @@
       "title":  "Riemannian Hessians",
       "slides": "slides/110 Riemannian Hessians.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["5.5"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_1qw5c21z", "duration": 6, "booksections": ["5.5"], "comments": "Context and reminders"},
+        {"url": "https://mediaspace.epfl.ch/media/0_sxypn8ut", "duration": 15, "booksections": ["5.5"], "comments": "Definition and example"}
       ],
       "week": 7
     },
@@ -136,7 +137,9 @@
       "title":  "Differentiating vector fields along curves",
       "slides": "slides/111 Differentiating vector fields along curves.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["5.7", "5.8"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_suabzxpi", "duration": 26, "booksections": ["5.7"], "comments": "Definition"},
+        {"url": "https://mediaspace.epfl.ch/media/0_jm1t19ax", "duration": 15, "booksections": ["5.7"], "comments": "Examples and finite differences"},
+        {"url": "https://mediaspace.epfl.ch/media/0_jm1t19ax", "duration": 2, "booksections": ["5.8"], "comments": "Acceleration and geodesics"}
       ],
       "week": 7
     },
@@ -215,7 +218,9 @@
       "title":  "Taylor expansions and retractions, second order",
       "slides": "slides/205 Taylor expansions and retractions, second order.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["5.9", "5.10"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_4qx4r5gr", "duration": 10, "booksections": ["5.9"], "comments": "Taylor expansions"},
+        {"url": "https://mediaspace.epfl.ch/media/0_zjv3cxbm", "duration": 13, "booksections": ["5.10"], "comments": "Retractions"},
+        {"url": "https://mediaspace.epfl.ch/media/0_ykyzlf7k", "duration": 3, "booksections": ["5.10"], "comments": "Gradient and Hessian of pullback"}
       ],
       "week": 7
     },
