@@ -1265,9 +1265,14 @@ the tools we use and some geometry questions that arise</title>
 		<year>2021</year><month>3</month><day>29</day>
 		<video>https://www.youtube.com/watch?v=r-AEOWzCxYs</video>
 	</event>
+	<event>
+		<venue>Swiss OR Days</venue>
+		<city>Lugano</city><country>Switzerland</country>
+		<year>2023</year><month>6</month><day>22</day>
+	</event>
 	<comment></comment>
 	<abstract></abstract>
-	<link>https://www.epfl.ch/research/domains/cis/center-for-intelligent-systems-cis/events/gtkyn/prof-nicolas-boumal/</link>
+	<link>https://ordays2023.idsia.ch/</link>
 </object>
 <object id="3039">
 	<type>talk</type>
