@@ -6,7 +6,7 @@
       "title":  "Logistics and prerequisites",
       "slides": "slides/000 Logistics and prerequisites.pdf",
       "videos": [],
-      "week": 1
+      "week": 1.1
     },
 
     "001": {
@@ -17,7 +17,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_pqwemg6i", "duration": 23, "booksections": ["2.2", "2.4"], "comments": "Simple applications"},
         {"url": "https://mediaspace.epfl.ch/media/0_xhw2ln03", "duration": 16, "booksections": ["2.5", "2.6", "2.7"], "comments": "More applications"}
       ],
-      "week": 1
+      "week": 1.2
     },
 
     "002": {
@@ -26,7 +26,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_ioz08grf", "duration": 26, "booksections": ["3.0"], "comments": ""}
       ],
-      "week": 1
+      "week": 1.3
     }
 
   },
@@ -41,7 +41,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_dtheqz2y", "duration": 24, "booksections": ["3.2"], "comments": "Through defining functions"},
         {"url": "https://mediaspace.epfl.ch/media/0_db0pw7a5", "duration": 42, "booksections": ["3.2"], "comments": "Through diffeomorphisms"}
       ],
-      "week": 2
+      "week": 2.1
     },
 
     "102": {
@@ -50,7 +50,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_rwq2bl20", "duration": 27, "booksections": ["3.2"], "comments": ""}
       ],
-      "week": 2
+      "week": 2.2
     },
 
     "103": {
@@ -60,7 +60,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_4q9sf46k", "duration": 15, "booksections": ["3.3"], "comments": "Smooth maps"},
         {"url": "https://mediaspace.epfl.ch/media/0_q6jfhydb", "duration": 28, "booksections": ["3.4"], "comments": "Differentials"}
       ],
-      "week": 3
+      "week": 3.1
     },
 
     "104": {
@@ -70,7 +70,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_tn1s36vk", "duration": 39, "booksections": ["3.5"], "comments": "Tangent bundles"},
         {"url": "https://mediaspace.epfl.ch/media/0_zxm98m2r", "duration": 14, "booksections": ["3.6"], "comments": "Retractions and vector fields"}
       ],
-      "week": 3
+      "week": 3.2
     },
 
     "105": {
@@ -82,7 +82,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_1ubm6naw", "duration": 19, "booksections": ["3.8"], "comments": "Riemannian gradients"},
         {"url": "https://mediaspace.epfl.ch/media/0_p7h6ma09", "duration": 20, "booksections": ["3.8"], "comments": "Computing gradients from extensions"}
       ],
-      "week": 4
+      "week": 4.1
     },
 
     "106": {
@@ -91,7 +91,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_fyfu2tb1", "duration": 8, "booksections": ["3.9"], "comments": ""}
       ],
-      "week": 4
+      "week": 4.2
     },
 
     "107": {
@@ -101,7 +101,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_c9beh8cz", "duration": 10, "booksections": ["5.1"], "comments": "Why do it?"},
         {"url": "https://mediaspace.epfl.ch/media/0_a2qvnmzi", "duration": 19, "booksections": ["5.1"], "comments": "How not to do it"}
       ],
-      "week": 6
+      "week": 6.1
     },
 
     "108": {
@@ -110,7 +110,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_3d8ok7db", "duration": 19, "booksections": ["5.2", "5.3"], "comments": ""}
       ],
-      "week": 6
+      "week": 6.2
     },
 
     "109": {
@@ -120,7 +120,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_jmvpnpqe", "duration": 37, "booksections": ["5.4", "5.5"], "comments": "What they are and why we care"},
         {"url": "https://mediaspace.epfl.ch/media/0_bszpk88x", "duration": 16, "booksections": ["5.4"], "comments": "Proof sketch"}
       ],
-      "week": 6
+      "week": 6.3
     },
 
     "110": {
@@ -130,7 +130,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_1qw5c21z", "duration": 6, "booksections": ["5.5"], "comments": "Context and reminders"},
         {"url": "https://mediaspace.epfl.ch/media/0_sxypn8ut", "duration": 15, "booksections": ["5.5"], "comments": "Definition and example"}
       ],
-      "week": 7
+      "week": 7.1
     },
 
     "111": {
@@ -141,7 +141,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_jm1t19ax", "duration": 15, "booksections": ["5.7"], "comments": "Examples and finite differences"},
         {"url": "https://mediaspace.epfl.ch/media/0_jm1t19ax", "duration": 2, "booksections": ["5.8"], "comments": "Acceleration and geodesics"}
       ],
-      "week": 7
+      "week": 7.2
     },
 
     "112": {
@@ -149,11 +149,11 @@
       "slides": "slides/112 Parallel transport.pdf",
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_sb5asi16", "duration": 8, "booksections": ["10.3"], "comments": "Three reasons why"},
-        {"url": "", "duration": 0, "booksections": ["10.3"], "comments": ""},
+        {"url": "", "duration": 7, "booksections": ["10.3"], "comments": "Toward a definition"},
         {"url": "https://mediaspace.epfl.ch/media/0_nfy68wem", "duration": 17, "booksections": ["10.3"], "comments": "Definition, existence and uniqueness"},
         {"url": "https://mediaspace.epfl.ch/media/0_ucgpk4ou", "duration": 20, "booksections": ["10.3"], "comments": "Curve dependence and D/dt"}
       ],
-      "week": 10
+      "week": 10.2
     },
 
     "113": {
@@ -162,7 +162,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_tupdhora", "duration": 17, "booksections": ["10.5", "10.6"], "comments": ""}
       ],
-      "week": 10
+      "week": 10.3
     },
 
     "114": {
@@ -172,7 +172,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_qgemdxay", "duration": 19, "booksections": ["10.1"], "comments": "Distance and geodesics"},
         {"url": "https://mediaspace.epfl.ch/media/0_7obzdgve", "duration": 9, "booksections": ["10.1"], "comments": "Complete manifolds"}
       ],
-      "week": 11
+      "week": 11.2
     }
 
   },
@@ -185,7 +185,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_o9oyjetu", "duration": 11, "booksections": ["4.1"], "comments": ""}
       ],
-      "week": 5
+      "week": 5.1
     },
 
     "202": {
@@ -194,7 +194,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_4q9vq0m2", "duration": 12, "booksections": ["4.2"], "comments": ""}
       ],
-      "week": 5
+      "week": 5.2
     },
 
     "203": {
@@ -203,7 +203,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_rbhjrh49", "duration": 37, "booksections": ["4.3", "4.4"], "comments": ""}
       ],
-      "week": 5
+      "week": 5.3
     },
 
     "204": {
@@ -212,7 +212,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_be5ti6e3", "duration": 25, "booksections": ["4.5"], "comments": ""}
       ],
-      "week": 5
+      "week": 5.4
     },
 
     "205": {
@@ -223,7 +223,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_zjv3cxbm", "duration": 13, "booksections": ["5.10"], "comments": "Retractions"},
         {"url": "https://mediaspace.epfl.ch/media/0_ykyzlf7k", "duration": 3, "booksections": ["5.10"], "comments": "Gradient and Hessian of pullback"}
       ],
-      "week": 7
+      "week": 7.3
     },
 
     "206": {
@@ -232,7 +232,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_4ty6qqsw", "duration": 10, "booksections": ["6.1"], "comments": ""}
       ],
-      "week": 8
+      "week": 8.1
     },
 
     "207": {
@@ -241,7 +241,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_dw78e4il", "duration": 25, "booksections": ["6.2"], "comments": ""}
       ],
-      "week": 8
+      "week": 8.2
     },
 
     "208": {
@@ -252,7 +252,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_0kfrf9im", "duration": 17, "booksections": ["6.3"], "comments": "GD as a matrix-free way"},
         {"url": "https://mediaspace.epfl.ch/media/0_23c8zfkj", "duration": 27, "booksections": ["6.3"], "comments": "From GD to CG"}
       ],
-      "week": 8
+      "week": 8.3
     },
 
     "209": {
@@ -261,7 +261,7 @@
       "videos": [
         {"url": "", "duration": 0, "booksections": ["6.3"], "comments": ""}
       ],
-      "week": ""
+      "week": 8.9
     },
 
     "210": {
@@ -272,7 +272,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_lvrxgyhb", "duration": 22, "booksections": ["6.4"], "comments": "Coming up with the algorithm"},
         {"url": "https://mediaspace.epfl.ch/media/0_hgm0u3ye", "duration": 21, "booksections": ["6.4"], "comments": "Global convergence with minimal effort"}
       ],
-      "week": 9
+      "week": 9.1
     },
 
     "211": {
@@ -281,7 +281,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_1r10qle1", "duration": 28, "booksections": ["6.5"], "comments": ""}
       ],
-      "week": 9
+      "week": 9.2
     },
 
     "212": {
@@ -290,7 +290,7 @@
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_00yw74ep", "duration": 18, "booksections": [], "comments": ""}
       ],
-      "week": 10
+      "week": 10.1
     },
 
     "213": {
@@ -300,7 +300,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_7jwq18hx", "duration": 9, "booksections": ["11.5"], "comments": "Mechanical proof"},
         {"url": "https://mediaspace.epfl.ch/media/0_3pun0968", "duration": 20, "booksections": ["11.5"], "comments": "Strong g-convexity implies PŁ"}
       ],
-      "week": 11
+      "week": 11.4
     }
 
   },
@@ -313,10 +313,10 @@
       "title":  "Hands on with Manopt (from 2021)",
       "slides": "slides/499 Hands on with Manopt.pdf",
       "videos": [
-        {"url": "https://mediaspace.epfl.ch/media/0_g5gfi47b", "duration": 40, "booksections": [], "comments": ""},
-        {"url": "https://mediaspace.epfl.ch/media/0_3a1jnw74", "duration": 52, "booksections": [], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_g5gfi47b", "duration": 40, "booksections": [], "comments": "The basics"},
+        {"url": "https://mediaspace.epfl.ch/media/0_3a1jnw74", "duration": 52, "booksections": [], "comments": "And a bit more"}
       ],
-      "week": 5
+      "week": 5.9
     }
 
   },
@@ -330,7 +330,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_4ar7zvqx", "duration": 8, "booksections": [], "comments": "Why?"},
         {"url": "https://mediaspace.epfl.ch/media/0_u6auagre", "duration": 12, "booksections": [], "comments": "How, and why again"}
       ],
-      "week": 12
+      "week": 12.1
     },
 
     "502": {
@@ -341,7 +341,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_bazjnfgi", "duration": 8, "booksections": ["8.1"], "comments": "Example: atlas for a circle"},
         {"url": "https://mediaspace.epfl.ch/media/0_sve41ugc", "duration": 21, "booksections": ["8.1", "8.2"], "comments": "Smooth functions, topology, and manifolds"}
       ],
-      "week": 12
+      "week": 12.2
     },
 
     "503": {
@@ -352,7 +352,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_bq1r6v7y", "duration": 13, "booksections": ["8.4"], "comments": "Tangent vectors as equivalence classes"},
         {"url": "https://mediaspace.epfl.ch/media/0_8jzhwu02", "duration": 19, "booksections": ["8.4"], "comments": "Making tangent spaces linear"}
       ],
-      "week": 12
+      "week": 12.3
     }
 
   },
@@ -365,7 +365,7 @@
       "videos": [
         {"url": "", "duration": 0, "booksections": ["11.0", "11.1"], "comments": ""}
       ],
-      "week": 11
+      "week": 11.1
     },
 
     "702": {
@@ -375,7 +375,7 @@
         {"url": "https://mediaspace.epfl.ch/media/0_te0kjp58", "duration": 15, "booksections": ["11.2"], "comments": "Basic definitions"},
         {"url": "https://mediaspace.epfl.ch/media/0_h5mywd1o", "duration": 16, "booksections": ["11.2"], "comments": "Basic facts and more definitions"}
       ],
-      "week": 11
+      "week": 11.3
     }
 
   }
