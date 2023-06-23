@@ -169,7 +169,8 @@
       "title":  "Distance, geodesics and complete manifolds",
       "slides": "slides/114 Distance, geodesics and complete manifolds.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["10.1"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_qgemdxay", "duration": 19, "booksections": ["10.1"], "comments": "Distance and geodesics"},
+        {"url": "https://mediaspace.epfl.ch/media/0_7obzdgve", "duration": 9, "booksections": ["10.1"], "comments": "Complete manifolds"}
       ],
       "week": 11
     }
@@ -247,9 +248,9 @@
       "title":  "Computing the Newton step",
       "slides": "slides/208 Computing the Newton step.pdf",
       "videos": [
-        {"url": "https://mediaspace.epfl.ch/0_f0pk1ryp", "duration": 38, "booksections": ["6.2", "6.3"], "comments": "The matrix way is a bad way"},
-        {"url": "https://mediaspace.epfl.ch/0_0kfrf9im", "duration": 17, "booksections": ["6.3"], "comments": "GD as a matrix-free way"},
-        {"url": "https://mediaspace.epfl.ch/0_23c8zfkj", "duration": 27, "booksections": ["6.3"], "comments": "From GD to CG"}
+        {"url": "https://mediaspace.epfl.ch/media/0_f0pk1ryp", "duration": 11, "booksections": ["6.2", "6.3"], "comments": "The matrix way is a bad way"},
+        {"url": "https://mediaspace.epfl.ch/media/0_0kfrf9im", "duration": 17, "booksections": ["6.3"], "comments": "GD as a matrix-free way"},
+        {"url": "https://mediaspace.epfl.ch/media/0_23c8zfkj", "duration": 27, "booksections": ["6.3"], "comments": "From GD to CG"}
       ],
       "week": 8
     },
@@ -267,9 +268,9 @@
       "title":  "Trust-region methods",
       "slides": "slides/210 Trust-region methods.pdf",
       "videos": [
-        {"url": "https://mediaspace.epfl.ch/0_zxc4hymz", "duration": 9, "booksections": ["6.4"], "comments": "Why, with an example"},
-        {"url": "https://mediaspace.epfl.ch/0_lvrxgyhb", "duration": 22, "booksections": ["6.4"], "comments": "Coming up with the algorithm"},
-        {"url": "https://mediaspace.epfl.ch/0_hgm0u3ye", "duration": 21, "booksections": ["6.4"], "comments": "Global convergence with minimal effort"}
+        {"url": "https://mediaspace.epfl.ch/media/0_zxc4hymz", "duration": 9, "booksections": ["6.4"], "comments": "Why, with an example"},
+        {"url": "https://mediaspace.epfl.ch/media/0_lvrxgyhb", "duration": 22, "booksections": ["6.4"], "comments": "Coming up with the algorithm"},
+        {"url": "https://mediaspace.epfl.ch/media/0_hgm0u3ye", "duration": 21, "booksections": ["6.4"], "comments": "Global convergence with minimal effort"}
       ],
       "week": 9
     },
@@ -278,7 +279,7 @@
       "title":  "tCG for the trust-region subproblem",
       "slides": "slides/211 Truncated CG for the TR subproblem.pdf",
       "videos": [
-        {"url": "https://mediaspace.epfl.ch/0_1r10qle1", "duration": 28, "booksections": ["6.5"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_1r10qle1", "duration": 28, "booksections": ["6.5"], "comments": ""}
       ],
       "week": 9
     },
@@ -287,7 +288,7 @@
       "title":  "Momentum methods and nonlinear CG",
       "slides": "slides/212 Momentum methods and nonlinear CG.pdf",
       "videos": [
-        {"url": "https://mediaspace.epfl.ch/0_00yw74ep", "duration": 18, "booksections": [], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_00yw74ep", "duration": 18, "booksections": [], "comments": ""}
       ],
       "week": 10
     },
@@ -296,7 +297,8 @@
       "title":  "Linear convergence with Polyak-Łojasiewicz",
       "slides": "slides/213 Linear convergence with Polyak-Lojasiewicz.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["11.5"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_7jwq18hx", "duration": 9, "booksections": ["11.5"], "comments": "Mechanical proof"},
+        {"url": "https://mediaspace.epfl.ch/media/0_3pun0968", "duration": 20, "booksections": ["11.5"], "comments": "Strong g-convexity implies PŁ"}
       ],
       "week": 11
     }
@@ -325,7 +327,8 @@
       "title":  "From embedded to general manifolds: upgrading our foundations",
       "slides": "slides/501 From embedded to general manifolds, upgrading our foundations.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": [], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_4ar7zvqx", "duration": 8, "booksections": [], "comments": "Why?"},
+        {"url": "https://mediaspace.epfl.ch/media/0_u6auagre", "duration": 12, "booksections": [], "comments": "How, and why again"}
       ],
       "week": 12
     },
@@ -334,7 +337,9 @@
       "title":  "Smooth sets and functions, now with charts",
       "slides": "slides/502 Smooth sets and functions, now with charts.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["8.1", "8.2"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_ovw5x2lu", "duration": 22, "booksections": ["8.1"], "comments": "Charts and atlases"},
+        {"url": "https://mediaspace.epfl.ch/media/0_bazjnfgi", "duration": 8, "booksections": ["8.1"], "comments": "Example: atlas for a circle"},
+        {"url": "https://mediaspace.epfl.ch/media/0_sve41ugc", "duration": 21, "booksections": ["8.1", "8.2"], "comments": "Smooth functions, topology, and manifolds"}
       ],
       "week": 12
     },
@@ -343,7 +348,9 @@
       "title":  "Tangent vectors without embedding space",
       "slides": "slides/503 Tangent vectors without embedding space.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["8.4"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_6iu5dvxj", "duration": 10, "booksections": ["8.4"], "comments": "Revisiting the embedded case"},
+        {"url": "https://mediaspace.epfl.ch/media/0_bq1r6v7y", "duration": 13, "booksections": ["8.4"], "comments": "Tangent vectors as equivalence classes"},
+        {"url": "https://mediaspace.epfl.ch/media/0_8jzhwu02", "duration": 19, "booksections": ["8.4"], "comments": "Making tangent spaces linear"}
       ],
       "week": 12
     }
@@ -365,7 +372,8 @@
       "title":  "Geodesic convexity: the basics",
       "slides": "slides/702 Geodesic convexity, the basics.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["11.2"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_te0kjp58", "duration": 15, "booksections": ["11.2"], "comments": "Basic definitions"},
+        {"url": "https://mediaspace.epfl.ch/media/0_h5mywd1o", "duration": 16, "booksections": ["11.2"], "comments": "Basic facts and more definitions"}
       ],
       "week": 11
     }
