@@ -41,6 +41,9 @@
     tbody tr th {
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Font for IDs (000, 001, 101, ...) */
     }
+    .number {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Font for IDs (000, 001, 101, ...) */
+    }
   </style>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -73,7 +76,7 @@
           </h1>
         </div>
         <p> </p>
-        <div class="section" id="section-book">
+        <div>
           <div>
             <div class="media row">
               <div class="col-lg-3 col-md-3 col-sm-12">
@@ -103,10 +106,12 @@
                   The students further learn the material by completing two extensive projects.</p>
                   
                   <p>
-                  The material below is split by topic rather than by lecture.
-                  For reference, the ordering of topics as taught in 2023 is indicated in the second column (week number).
-                  E.g., 4.2 is the second topic discussed in week 4.
-                  (5.9 is the manopt tutorial, assigned for viewing after Lecture 5; 8.9 was skipped (no video).)</p>
+                  You can choose to order the material by category (topic) or by week (lecture).
+                  <!--
+                    For reference, the ordering of topics as taught in 2023 is indicated in the second column (week number).
+                    E.g., 4.2 is the second topic discussed in week 4.
+                    (5.9 is the manopt tutorial, assigned for viewing after Lecture 5; 8.9 was skipped (no video).)-->
+                  </p>
                   
                   <p>
                   You can change the playback speed of videos (play faster, slower): see controls at the bottom-right of the video panel.</p>
@@ -118,58 +123,144 @@
             </div>
             <div class="media-body hyphenate"> <!-- align="justify" -->
 
-              <!-- TODO: Add to table? exercises, PPT, "clean" PDF slides, **book section numbers**, video duration, lecture/week number -->
-              <table class="table table-hover" x-data="">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Week</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Slides</th>
-                    <th scope="col">Videos</th>
-                    <th scope="col">Book &#167;</th>
-                  </tr>
-                </thead>
-                <template x-for="(topics, category) in $store.main.categories">
-                  <tbody>
+              <p><br></p>
+
+              <ul class="nav nav-tabs nav-justified" role="navigation">
+                <li id="li-bycategory"><a href="#bycategory" class="menu" id="tab-bycategory" style="font-weight: bold;">By category</a></li>
+                <li id="li-byweek"><a href="#byweek" class="menu" id="tab-byweek" style="font-weight: bold;">By week</a></li>
+              </ul>
+
+
+              <div class="section" id="section-bycategory">
+                <br>
+                <table class="table table-hover" x-data="">
+                  <thead>
                     <tr>
-                      <th scope="rowgroup" colspan="42" x-text="category" style="font-weight: bold;"></th>
+                      <th scope="col">#</th>
+                      <th scope="col">Week</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Slides</th>
+                      <th scope="col">Videos</th>
+                      <th scope="col">Book &#167;</th>
                     </tr>
-                    <template x-for="(topic, number) in topics">
-                      <template x-if="!topic.hide">
-                        <tr>
-                          <th scope="row" x-text="number"></th>
-                          <td x-text="topic.week"></td>
-                          <td x-text="topic.title"></td>
-                          <td><a target="_blank" :href="topic.slides">pdf</a></td>
-                          <td>
-                            <template x-for="vid in topic.videos">
-                              <template x-if="vid.url">
-                                <span>
-                                  <!--<span style="white-space: nowrap; overflow: scroll;"><a target="_blank" :href="vid.url" x-data="{lnk: 'vid ('+vid.duration+' min)'}" x-text="lnk"></a></span><br>-->
-                                  <span style="white-space: nowrap; overflow: scroll;"><a target="_blank" :href="vid.url" :title="vid.comments">vid</a>, <span x-text="vid.duration"></span> min</span><br>
-                                </span>
+                  </thead>
+                  <template x-for="(topics, category) in $store.main.categories">
+                    <tbody>
+                      <tr>
+                        <th scope="rowgroup" colspan="42" x-text="category" style="font-weight: bold;"></th>
+                      </tr>
+                      <template x-for="(topic, number) in topics">
+                        <template x-if="!topic.hide">
+                          <tr>
+                            <th scope="row" x-text="number"></th>
+                            <td x-text="topic.week"></td>
+                            <td x-text="topic.title"></td>
+                            <td><a target="_blank" :href="topic.slides">pdf</a></td>
+                            <td>
+                              <template x-for="vid in topic.videos">
+                                <template x-if="vid.url">
+                                  <span>
+                                    <!--<span style="white-space: nowrap; overflow: scroll;"><a target="_blank" :href="vid.url" x-data="{lnk: 'vid ('+vid.duration+' min)'}" x-text="lnk"></a></span><br>-->
+                                    <span style="white-space: nowrap; overflow: scroll;"><a target="_blank" :href="vid.url" :title="vid.comments">vid</a>, <span x-text="vid.duration"></span> min</span><br>
+                                  </span>
+                                </template>
                               </template>
-                            </template>
-                          </td>
-                          <td>
-                            <template x-for="vid in topic.videos">
-                              <template x-if="vid.url">
-                                <span>
-                                 <span style="white-space: nowrap; overflow: scroll;" x-data="{sectionstext: vid.booksections.join(', ')}" x-text="sectionstext"></span><br>
-                                </span>
+                            </td>
+                            <td>
+                              <template x-for="vid in topic.videos">
+                                <template x-if="vid.url">
+                                  <span>
+                                    <span style="white-space: nowrap; overflow: scroll;" x-data="{sectionstext: vid.booksections.join(', ')}" x-text="sectionstext"></span><br>
+                                  </span>
+                                </template>
                               </template>
-                            </template>
-                          </td>
-                        </tr>
+                            </td>
+                          </tr>
+                        </template>
                       </template>
+                    </tbody>
+                  </template>
+                </table>
+              </div>
+
+              
+              <!-- ATTEMPT AT A TABLE ORDERED BY WEEK -->
+
+              <div class="section" id="section-byweek">
+                <br>
+                <table class="table table-hover" x-data="">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Slides</th>
+                      <th scope="col">Title + videos</th>
+                    </tr>
+                  </thead>
+                  <template x-for="(topics, week) in $store.main.weeks">
+                    <template x-if="week > 0">
+                      <tbody>
+                        <tr>
+                          <th scope="rowgroup" colspan="42" x-data="{weekdisp: 'Week ' + week}" x-text="weekdisp" style="font-weight: bold;"></th>
+                        </tr>
+                        <template x-for="(topic, order) in topics">
+                          <template x-if="topic">
+                            <tr>
+                              <th scope="row" x-text="topic.id"></th>
+                              <td><a target="_blank" title="slides" :href="topic.slides">pdf</a></td>
+                              <td>
+                                <span x-text="topic.title"></span><br>
+                                  <template x-for="vid in topic.videos">
+                                    <template x-if="vid.url">
+                                      <li>
+                                        <a target="_blank" :href="vid.url" x-data="{vidlink: vid.comments ? vid.comments : 'Video'}" x-text="vidlink"></a>,
+                                        <span x-data="{vidtime: vid.duration + ' min'}" x-text="vidtime"></span>
+                                        <template x-if="vid.booksections != ''">
+                                          <span style="white-space: nowrap; overflow: scroll;" x-data="{sectionstext: '(book &#167;' + vid.booksections.join(', &#167;') + ')'}" x-text="sectionstext"></span>
+                                        </template>
+                                      </li>
+                                    </template>
+                                  </template>
+                              </td>
+                            </tr>
+                          </template>
+                        </template>
+                      </tbody>
                     </template>
-                  </tbody>
+                  </template>
+                </table>
+              </div>
+
+
+              <!-- ATTEMPT BY WEEK, END -->
+
+
+              <!-- ATTEMPT AT A LIST ORDERED BY WEEK -->
+              <!--
+              <ul x-data="">
+                <template x-for="week in $store.main.sortedweeks">
+                  <template x-data="{topic: $store.main.topics[week]}" x-if="!topic.hide">
+                    <li>
+                      <span class="number" x-text="week"></span> - <span x-text="topic.title"></span>
+                      (<a target="_blank" :href="topic.slides" x-data="{slidelnk: 'slides ' + topic.id}" x-text="slidelnk"></a>)
+                      <ol>
+                        <template x-for="vid in topic.videos">
+                          <template x-if="vid.url">
+                            <li>
+                              <a target="_blank" :href="vid.url" x-data="{vidlink: vid.comments ? vid.comments : 'Video'}" x-text="vidlink"></a>,
+                              <span x-text="vid.duration"></span> min
+                            </li>
+                          </template>
+                        </template>
+                      </ol>
+                    </li>
+                  </template>
                 </template>
-              </table>
+              </ul>
+              -->
+              <!-- ATTEMPT BY WEEK, END -->
 
             </div>
-            <div class="page-footer"><small class="pull-right">Last update: June 23, 2023.</small></div>
+            <div class="page-footer"><small class="pull-right">Last update: June 24, 2023.</small></div>
           </div>
         </div>
       </div>
@@ -178,7 +269,10 @@
       <script>
         document.addEventListener('alpine:init', () => {
           Alpine.store('main', {
-            categories: {}
+            categories: {},  // categories and topics within
+            topics: {},  // all topics brought to a top level, indexed by week
+            sortedweeks: [],  // indices for topics, sorted
+            weeks: []  // each week has a number (1..12) and weeks[i] contains an array of topics treated that week, in order
           });
           // Load the data from a JSON file.
           $.ajax({
@@ -191,8 +285,16 @@
                 var ntopics = 0;
                 for(var topic in data[category]) {
                   var thistopic = data[category][topic];
+                  thistopic.id = topic;
                   if(!thistopic.hasOwnProperty('hide') || !thistopic.hide) {
+                    Alpine.store('main').topics[thistopic.week] = thistopic;
                     ntopics++;
+                    var weeknumber = Number(Math.floor(thistopic.week));
+                    var weeksubnumber = Number(Math.round((thistopic.week - weeknumber) * 10));
+                    if(Alpine.store('main').weeks[weeknumber] === undefined) {
+                      Alpine.store('main').weeks[weeknumber] = [];
+                    }
+                    Alpine.store('main').weeks[weeknumber][weeksubnumber] = thistopic;
                   }
                 }
                 // Collect only those categories which have at least one visible topic.
@@ -200,10 +302,49 @@
                   Alpine.store('main').categories[category] = data[category];
                 }
               }
+              Alpine.store('main').sortedweeks = Object.keys(Alpine.store('main').topics).sort((a, b) => {return Number(a) - Number(b);});
             }
           });
         }); // end Alpine init
       </script>
+
+
+
+      <!-- Tabbed menu scripts -->
+      <script type="text/javascript">
+        $("#tab-bycategory").click(function () {
+          $(".section").hide();
+          $("#section-bycategory").show();
+          $("li.active").removeClass('active');
+          $("#li-bycategory").addClass('active');
+        });
+        $("#tab-byweek").click(function () {
+          $(".section").hide();
+          $("#section-byweek").show();
+          $("li.active").removeClass('active');
+          $("#li-byweek").addClass('active');
+        });
+      </script>
+      <script type="text/javascript">
+        // Merci Matthew!
+        function gotoAnchor() {
+          var hash = window.location.hash;
+          switch (hash) {
+            case "#bycategory":
+              $("#tab-bycategory").click();
+              break;
+            case "#byweek":
+              $("#tab-byweek").click();
+              break;
+            default:
+              $("#tab-bycategory").click();
+          }
+        };
+        gotoAnchor();
+      </script>
+      <!-- End tabbed menu scripts -->
+
+
 
       <!-- This bit needed to make hyphenate and mathjax play along nicely -->
       <!-- https://github.com/mathjax/MathJax/issues/341 -->
