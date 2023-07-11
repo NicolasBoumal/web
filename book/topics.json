@@ -149,7 +149,7 @@
       "slides": "slides/112 Parallel transport.pdf",
       "videos": [
         {"url": "https://mediaspace.epfl.ch/media/0_sb5asi16", "duration": 8, "booksections": ["10.3"], "comments": "Three reasons why"},
-        {"url": "", "duration": 7, "booksections": ["10.3"], "comments": "Toward a definition"},
+        {"url": "https://mediaspace.epfl.ch/media/0_wrvp2pjq", "duration": 7, "booksections": ["10.3"], "comments": "Toward a definition"},
         {"url": "https://mediaspace.epfl.ch/media/0_nfy68wem", "duration": 17, "booksections": ["10.3"], "comments": "Definition, existence and uniqueness"},
         {"url": "https://mediaspace.epfl.ch/media/0_ucgpk4ou", "duration": 20, "booksections": ["10.3"], "comments": "Curve dependence and D/dt"}
       ],
@@ -363,7 +363,7 @@
       "title":  "Geodesic convexity: why, and what we need",
       "slides": "slides/701 Geodesic convexity, why, and what we need.pdf",
       "videos": [
-        {"url": "", "duration": 0, "booksections": ["11.0", "11.1"], "comments": ""}
+        {"url": "https://mediaspace.epfl.ch/media/0_cotsfcx2", "duration": 10, "booksections": ["11.0", "11.1"], "comments": ""}
       ],
       "week": 11.1
     },
