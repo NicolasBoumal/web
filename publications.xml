@@ -1,6 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
+<object id="1031">
+	<type>preprint</type>
+	<title>Benign landscapes of low-dimensional relaxations for orthogonal synchronization on general graphs</title>
+	<authors>Andrew D. McRae and N. Boumal</authors>
+	<year>2023</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{mcrae2023benignlowdim,
+  author  = {McRae, A.D. and Boumal, N.},
+  journal = {arXiv 2307.02941},
+  title   = {Benign landscapes of low-dimensional relaxations for orthogonal synchronization on general graphs},
+  year    = {2023}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2307.02941</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="1030">
 	<type>preprint</type>
 	<title>Fast convergence to non-isolated minima: four equivalent conditions for $C^2$ functions</title>
@@ -16,7 +35,7 @@
 }
 	</bibtex>
 	<comment>See also a &lt;a href="https://youtu.be/-VqBzz3Nedc" target="_blank"&gt;video of a talk&lt;/a&gt;.</comment>
-	<link>http://arxiv.org/abs/2303.00096</link>
+	<link>https://arxiv.org/abs/2303.00096</link>
 	<publisherlink></publisherlink>
 	<tag>optimization</tag>
 </object>
@@ -35,7 +54,7 @@
 }
 	</bibtex>
 	<comment></comment>
-	<link>http://arxiv.org/abs/2207.03512</link>
+	<link>https://arxiv.org/abs/2207.03512</link>
 	<publisherlink></publisherlink>
 	<tag>optimization</tag>
 </object>
@@ -54,7 +73,7 @@
 }
 	</bibtex>
 	<comment></comment>
-	<link>http://arxiv.org/abs/2204.01448</link>
+	<link>https://arxiv.org/abs/2204.01448</link>
 	<publisherlink></publisherlink>
 	<tag>optimization</tag>
 </object>
@@ -73,7 +92,7 @@
 }
 	</bibtex>
 	<comment>This is a technical report. The core theoretical results appear (generalized) in &lt;i&gt;Deterministic guarantees for Burer-Monteiro factorizations of smooth semidefinite programs&lt;/i&gt;.</comment>
-	<link>http://arxiv.org/abs/1506.00575</link>
+	<link>https://arxiv.org/abs/1506.00575</link>
 	<publisherlink></publisherlink>
 	<tag>synchro</tag>
 </object>
