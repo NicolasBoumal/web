@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <!-- Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3XP9VMHJ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Z3XP9VMHJ3');
+  </script>
+  <!-- Meta -->
+  <title>Exercises for optimization on smooth manifolds</title>
+  <meta name="description" content="Exercises from the additional material for book by Nicolas Boumal">
+  <meta name="author" content="Nicolas Boumal">
+  <meta name="keywords" content="Optimization on manifolds,Riemannian optimization,Manopt">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+  <style type="text/css">
+    body {
+      padding-top: 10px;
+      padding-bottom: 20px;
+    }
+
+    ul {
+      list-style: disc;
+    }
+
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+      background-color: blanchedalmond;
+    }
+    
+    .number {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Font for IDs (000, 001, 101, ...) */
+    }
+
+    answer {
+        display: block;
+        visibility: hidden;
+        margin: 10px;
+        padding: 10px;
+        background-color: lightsteelblue;
+    }
+
+    question {
+        display: list-item;
+        list-style-position: inside;
+        margin: 10px;
+        padding: 10px;
+        background-color: antiquewhite;
+    }
+
+  </style>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-9">
+        <div class="page-header" style="display: block">
+          <h1 style="display: block">Optimization on smooth manifolds: exercises<br>
+            <a href="https://www.nicolasboumal.net"><small style="margin-top:2mm;">Nicolas Boumal</small></a> <small style="margin-top:2mm;">and Christopher Criscitiello</small>
+          </h1>
+        </div>
+        <div>
+          <div>
+            <div class="media-body">
+
+
+              <div>
+
+                <p>
+                    <a onclick="$('answer').slideToggle(400);">Toggle all answers</a> <!-- this should hide/show all rather than toggle all -->
+                </p>
+
+                <p>
+                    In this problem, you will implement Newton's method for optimization on the rotation matrices
+                    $$\calM = \SOd = \{Q \in \reals^{d \times d} : Q^\top Q = Q Q^\top = I, \det(Q) = 1\}.$$ 
+                    As usual, we consider $\calM = \SOd$ as a Riemannian submanifold of $\reals^{d \times d}$ (endowed with the usual Frobenius inner product).
+                    Recall that orthogonal projection onto a tangent space of $\SOd$,
+                    $$\T_Q \SOd = \{U \in \reals^{d \times d} : Q^\top U + U^\top Q = 0\} = \{Q \Omega : \Omega \in \reals^{d \times d}, \Omega + \Omega^\top = 0\},$$
+                    is given by $\Proj_Q(U) = Q (Q^\top U - U^\top Q) / 2 = Q \skeww(Q^\top U).$  See Section 7.4 in the course textbook.
+                </p>
+                
+                <p>
+                    You will consider the problem
+                    $$
+                        \min_{Q \in \SOd} f(Q), \quad \quad f \colon \SOd \to \reals, \quad \quad f(Q) = \|A Q - Q B\|^2,
+                    $$
+                    for symmetric matrices $A, B \in \reals^{d \times d}$.  
+                </p>
+
+                <p>
+                    This problem can be motivated as a relaxation of the <a href="https://en.wikipedia.org/wiki/Graph_isomorphism_problem" target="_blank">graph isomorphism problem</a>:
+                    consider $A$ and $B$ as the adjacency matrices of two graphs, and note that the <a href="https://en.wikipedia.org/wiki/Permutation_matrix" target="_blank">permutation matrices</a> form a subgroup of the orthogonal matrices.
+                </p>
+                
+                <question>Compute the Riemannian gradient $\grad f(Q)$.</question>
+                    
+                <question>Compute the Riemannian Hessian $\Hess f(Q)$.</question>
+                <answer>
+                    Consider the following smooth extension of $f$:
+                    $$\bar f(Q) = \|A Q - Q B\|^2 = \|A\|^2 + \|B\|^2 - 2 \langle A Q, Q B \rangle.$$
+                    Then, 
+                    $$\langle \nabla \bar f(Q), Z \rangle = \frac{d}{dt}[-2 \langle A(Q + t Z),(Q + t Z) B \rangle]_{t=0} = -2 (\langle Z, A^\top Q B \rangle + \langle A Q B^\top, Z \rangle),$$
+                    and so
+                    $\nabla \bar f(Q) = -2 A Q B - 2 A Q B = - 4 A Q B.$
+                    Therefore,
+                    $$\grad f(Q) = Q \skeww(Q^\top \nabla \bar f(Q)) = -4 Q \skeww(Q^\top A Q B).$$
+                    
+                    We further have
+                    $\nabla^2 \bar f(Q)[U] = \frac{d}{dt}[\nabla \bar f(Q + t U)]_{t=0} = -4 A U B.$
+                    So with $U = Q \Omega$,
+                    \begin{aligned}
+                        \Hess f(Q)[U]   & = Q \skeww(Q^\top \nabla^2 \bar f(Q)[U] - \Omega \symm(Q^\top \nabla \bar f(Q))) \\
+                                        & = Q \skeww(-4 Q^\top A U B + 4 \Omega \symm(Q^\top A Q B)).
+                    \end{aligned}
+                </answer>
+                    
+                <question>Choose a retraction $\Retr$ on $\SOd$.</question>
+                <answer>
+                    $$\Retr_Q(t Q \Omega) = Q \exp(t \Omega).$$
+                </answer>
+                
+                Recall Newton's method is given by $Q_{k+1} = \Retr_{Q_k}(U_k)$,
+                where the step $U_k \in \T_{Q_k}\calM$ is an (approximate) solution to the <em>Newton system</em>:
+                $$
+                    \Hess f(Q_k)[U_k] = -\grad f(Q_k).
+                $$
+                To solve the Newton system, you may need to write $\Hess f(Q_k)$ and $\grad f(Q_k)$ as a matrix and vector, respectively.  
+                That is, you should choose a <em>basis</em> for $\T_{Q_k} \calM$.
+                There are two ways to do this.
+                <question>Generate a random set of matrices in the embedding space $\reals^{d \times d}$, and then project them onto $\T_{Q} \SOd$.
+                Will this form a linearly independent set of tangent vectors?  How many random matrices do you need to obtain a basis for the tangent space?
+                
+                <br><em>Hint:</em> Once you have a set of linearly independent vectors, you can choose to orthonormalize them using Gram-Schmidt.
+                </question>
+                <answer>
+                Choose $\dim(\SOd) = d(d-1)/2$ random matrices.
+                With probability one, their projections form a basis of the tangent space.
+                </answer>
+                
+                <question>Propose an <em>explicit</em> orthonormal basis for each tangent space $\T_Q \SOd$.</question>
+                <answer>
+                Let $e_i$ denote the $i$-th standard unit vector of $\reals^d$.
+                Note that
+                $$\{(e_i e_j^\top - e_j e_i^\top)/\sqrt{2} : 1 \leq i < j \leq d\}$$
+                forms an orthonormal basis for the skew-symmetric matrices (w.r.t. the Frobenius inner product).
+                Therefore,
+                $$\{Q (e_i e_j^\top - e_j e_i^\top)/\sqrt{2} : 1 \leq i < j \leq d\}$$
+                forms an orthonormal basis for $\T_Q \SOd$.
+                </answer>
+                
+                
+                With a basis for each tangent space in hand, let us solve the Newton system.
+                You will try three different methods.
+                <question>Write $\Hess f(Q_k)$ and $\grad f(Q_k)$ in terms of a basis for $\T_{Q_k} \SOd$.</question>
+                <question>Then, solve the Newton system using the <a href="https://www.mathworks.com/help/matlab/ref/mldivide.html?s_tid=mwa_osa_a" target="_blank">backslash symbol</a> in Matlab.</question>
+                <question>
+                    Solve the Newton system by running gradient descent on the function
+                    $$g \colon \T_{Q_k} \calM \to \reals, \quad \quad g(U) = \frac{1}{2} \inner{U}{H [U]} - \inner{b}{U},$$
+                    where $H = \Hess f(Q_k), b = - \grad f(Q_k)$.
+                    Determine an explicit expression for the optimal step size.
+                    
+                    <br><em>Hint:</em> To implement gradient descent, is it necessary to use a basis for $\T_{Q_k} \SOd$?
+                </question>
+                <answer>
+                    It is not necessary to use a basis.
+                </answer>
+                    
+                <question>Solve the Newton system by running conjugate gradients on the same function $g$ as in the previous question.</question>
+                    
+                <question>Which methods seem most effective at solving the Newton system?</question>
+                    
+                <question>Choose a random initial point on $\SOd$, and run Newton's method with each of the three procedures for solving the Newton system.  Which produces the best performance?  When does Newton's method converge?</question>
+                
+                
+              </div>
+
+
+            </div>
+            
+            <p><br></p>
+            <div class="page-footer"><small class="pull-right">Last update: July 18, 2023.</small></div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Had to force the default display of <answer> tag to "block" to avoid it being "inline",
+        // because slideToggle remembers the previous style and resets it to that.
+        // But don't want the answers to appear initially on the page, so css sets them to be
+        // invisible by default, and the next two lines take care of hiding them but with the proper
+        // memory inside the slideToggle command.
+        $('answer').slideToggle(0);
+        $('answer').css({'visibility': 'visible'});
+        $('question').on('click', function() { $(this).next('answer').slideToggle(400); });
+      </script>
+
+      <!-- ALPINE -->
+      <script>
+        document.addEventListener('alpine:init', () => {
+          Alpine.store('main', {
+            problems: {},
+            weeks: []
+            // sortedweeks: []
+          });
+          // Load the data from a JSON file.
+          $.ajax({
+            url: "exercises.json",
+            dataType: "json",
+            success: function (data) {
+              // Go through each problem listed in the data.
+              for(var problem in data) {
+                var thisproblem = data[problem];
+                thisproblem.id = problem;
+                if(!thisproblem.hasOwnProperty('hide') || !thisproblem.hide) {
+                    Alpine.store('main').problems[problem] = thisproblem;
+                    var weeknumber = Number(Math.floor(thisproblem.week));
+                    var weeksubnumber = Number(Math.round((thisproblem.week - weeknumber) * 10));
+                    if(Alpine.store('main').weeks[weeknumber] === undefined) {
+                        Alpine.store('main').weeks[weeknumber] = [];
+                    }
+                    Alpine.store('main').weeks[weeknumber][weeksubnumber] = thisproblem;
+                }
+              }
+              //Alpine.store('main').sortedweeks = Object.keys(Alpine.store('main').topics).sort((a, b) => {return Number(a) - Number(b);});
+            }
+          });
+        }); // end Alpine init
+      </script>
+
+
+
+      <script src="mathjax-config.js" defer></script>
+      <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+    </div>
+  </div>
+</body>
+
+</html>
