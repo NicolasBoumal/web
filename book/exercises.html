@@ -85,9 +85,19 @@
 
               <div>
 
-                <p>
-                    <a onclick="$('answer').slideToggle(400);">Toggle all answers</a> <!-- this should hide/show all rather than toggle all -->
-                </p>
+                <div style="border: 1px; border-radius: 0px; background-color: white; padding: 10px; padding-bottom: 3px; margin-top: 10px; margin-bottom: 10px;">
+                  <p>
+                    Click a <span style="background-color: antiquewhite;">question</span> to display a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer if available.
+                    Click a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer to display a detailed <span style="background-color: lightsteelblue;">answer</span> if available.
+                    If no sketch is available but a detailed answer is, then clicking the question displays the detailed answer.
+                  </p>
+                  <p>
+                    Sketches of answers: <a onclick="$('sketch').slideUp(400);">hide all</a>, <a onclick="$('sketch').slideDown(400);">show all</a>.
+                    Detailed answers: <a onclick="$('answer').slideUp(400);">hide all</a>, <a onclick="$('answer').slideDown(400);">show all</a>.
+                  </p>
+                </div>
+
+                <h2>The Riemannian Newton method</h2>
 
                 <p>
                     In this problem, you will implement Newton's method for optimization on the rotation matrices
@@ -184,9 +194,9 @@
                     
                     <br><em>Hint:</em> To implement gradient descent, is it necessary to use a basis for $\T_{Q_k} \SOd$?
                 </question>
-                <answer>
+                <sketch>
                     It is not necessary to use a basis.
-                </answer>
+                </sketch>
                     
                 <question>Solve the Newton system by running conjugate gradients on the same function $g$ as in the previous question.</question>
                     
