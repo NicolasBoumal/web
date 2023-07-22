@@ -46,6 +46,14 @@
         background-color: lightsteelblue;
     }
 
+    sketch {
+        display: block;
+        visibility: hidden;
+        margin: 10px;
+        padding: 10px;
+        background-color: lightgoldenrodyellow;
+    }
+
     question {
         display: list-item;
         list-style-position: inside;
@@ -106,6 +114,10 @@
                 <question>Compute the Riemannian gradient $\grad f(Q)$.</question>
                     
                 <question>Compute the Riemannian Hessian $\Hess f(Q)$.</question>
+                <sketch>
+                  Here we would write a "mega hint": essentially the answer, but not fleshed out.
+                  Something a student who is stuck might find helpful to read to then still try to figure things out themselves.
+                </sketch>
                 <answer>
                     Consider the following smooth extension of $f$:
                     $$\bar f(Q) = \|A Q - Q B\|^2 = \|A\|^2 + \|B\|^2 - 2 \langle A Q, Q B \rangle.$$
@@ -202,7 +214,10 @@
         // memory inside the slideToggle command.
         $('answer').slideToggle(0);
         $('answer').css({'visibility': 'visible'});
-        $('question').on('click', function() { $(this).next('answer').slideToggle(400); });
+        $('sketch').slideToggle(0);
+        $('sketch').css({'visibility': 'visible'});
+        $('question').on('click', function() { $(this).next('sketch, answer').slideToggle(400); });
+        $('sketch').on('click', function() { $(this).next('answer').slideToggle(400); });
       </script>
 
       <!-- ALPINE -->
