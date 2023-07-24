@@ -490,7 +490,8 @@
 				// TODO: This should use the date here..
 				Alpine.store('main').getSelectedArticlesOfTheDay(date);
 
-				MathJax.typeset(); // This likely executes too early, but "await Alpine.$nextTick();" doesn't work
+				// MathJax.typeset(); // This likely executes too early, but "await Alpine.$nextTick();" doesn't work
+				Alpine.nextTick(() => { MathJax.typeset(); });
 
 			}); // end get url
 
