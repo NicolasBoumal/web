@@ -13,7 +13,9 @@ window.MathJax = {
         Proj: "\\mathrm{Proj}",
         grad: "\\mathrm{grad}",
         Hess: "\\mathrm{Hess}",
-        Retr: "\\mathrm{R}"
+        Retr: "\\mathrm{R}",
+        D: "\\mathrm{D}",
+        Sd: "\\mathbb{S}^{d-1}"
       }
     },
     svg: {

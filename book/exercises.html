@@ -72,6 +72,10 @@
         background-color: antiquewhite;
     }
 
+    hint {
+        display: block;
+    }
+
   </style>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
@@ -137,6 +141,8 @@
                 success: function (data) {
 
                   $('#' + exo).html(data);
+
+                  $('#' + exo + ' ' + 'hint').prepend("<em>Hint:</em> ");
 
                   // Had to force the default display of <answer> tag to "block" to avoid it being "inline",
                   // because slideToggle remembers the previous style and resets it to that.
