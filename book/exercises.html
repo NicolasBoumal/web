@@ -98,7 +98,7 @@
               <div>
 
                 <!-- General info about how to show / hide answers and their sketches. -->
-                <div style="border: 1px; border-radius: 0px; background-color: white; padding: 10px; padding-bottom: 3px; margin-top: 0px; margin-bottom: 10px;">
+                <div style="border-radius: 0px; background-color: white; padding: 10px; padding-bottom: 3px; margin: 10px; margin-top: 0px;">
                   <p>
                     Click a <span style="background-color: antiquewhite;">question</span> to display a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer if available.
                     Click a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer to display a detailed <span style="background-color: lightsteelblue;">answer</span> if available.
@@ -117,7 +117,7 @@
 
             </div>
             
-            <div class="page-footer"><br><small class="pull-right">Last update: July 23, 2023.</small></div>
+            <div class="page-footer"><br><small class="pull-right">Last update: August 27, 2023.</small></div>
           </div>
         </div>
       </div>
@@ -156,6 +156,7 @@
                   $('#' + exo + ' ' + 'question').on('click', function() { $(this).next('sketch, answer').slideToggle(400); });
                   $('#' + exo + ' ' + 'sketch').on('click', function() { $(this).next('answer').slideToggle(400); });
 
+                  // Format Latex code
                   MathJax.typeset();
                 }
               });
