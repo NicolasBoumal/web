@@ -6,4 +6,32 @@
 <question>Get an expression for the tangent spaces of $\Sd$ by looking at the kernels of the differentials of $h$.</question>
 <answer>
 	Take $h(x) = x^T x-1$ and note $\D h(x)[v] = x^T v$.  We omit the details showing that this is a local defining function.
+	In Matlab, you can project to the tangent space using:
+	<matlab>u = u - (u'*x)*x;</matlab>
 </answer>
+
+<matlab>
+nrepeats = 10000;
+vals = inf(nrepeats, 1);
+for repeat = 1 : nrepeats
+    A = randsym(n);
+    B = randsym(n);
+    
+    problem = struct();
+    problem.M = rotationsfactory(n, 2);
+    problem.cost = @(X) .5*sqfrobnorm(X(:,:,1)*diag(a)*X(:,:,1)' ...
+	                         + X(:,:,2)*diag(b)*X(:,:,2)' + diag(c));
+    problem = manoptAD(problem);
+    opts = struct();
+    opts.verbosity = 0;
+    [X, val] = trustregions(problem, [], opts);
+        
+    vals(repeat) = val;
+
+    clf;
+    histogram(log10(vals));
+    title(sprintf('%d / %d ; max value: %.2e', ...
+          repeat, nrepeats, max(vals(1:repeat))));
+    drawnow;
+end
+</matlab>

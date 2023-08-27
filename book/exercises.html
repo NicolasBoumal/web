@@ -80,6 +80,26 @@
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 
+  <!-- https://highlightjs.org/#usage -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/atom-one-dark.min.css"> <!-- default.min.css -->
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/matlab.min.js"></script>
+  <style type="text/css">
+    .featurelesspre {
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+      border: 0;
+      background: none;
+    }
+    pre code.hljs {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 0;
+      border: 0;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -158,6 +178,22 @@
 
                   // Format Latex code
                   MathJax.typeset();
+
+                  // Format Matlab code
+                  $('#' + exo + ' ' + 'matlab').each((counter, domobject) => {
+
+                    // The code appears as:   <matlab> code here </matlab>
+                    // The actual code inside must be extracted,
+                    // spurious newlines at the beginning and end must be removed,
+                    // and the remaining text must be included in a <pre><code> ... </code><pre> element.
+                    // Then, the <code> element must be passed to HighlightJS (not the pre), with the proper language class.
+                    // The resulting element is then substituted for the original one in the DOM.
+                    $newdomobject = $('<pre class="featurelesspre"><code class="language-matlab">' + $(domobject).text().trim() + '</code></pre>');
+                    hljs.highlightElement($newdomobject.get(0).firstChild);
+                    $(domobject).replaceWith($newdomobject);
+                    
+                  });
+
                 }
               });
             });
