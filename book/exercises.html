@@ -182,15 +182,31 @@
                   // Format Matlab code
                   $('#' + exo + ' ' + 'matlab').each((counter, domobject) => {
 
-                    // The code appears as:   <matlab> code here </matlab>
-                    // The actual code inside must be extracted,
-                    // spurious newlines at the beginning and end must be removed,
-                    // and the remaining text must be included in a <pre><code> ... </code><pre> element.
-                    // Then, the <code> element must be passed to HighlightJS (not the pre), with the proper language class.
-                    // The resulting element is then substituted for the original one in the DOM.
-                    $newdomobject = $('<pre class="featurelesspre"><code class="language-matlab">' + $(domobject).text().trim() + '</code></pre>');
-                    hljs.highlightElement($newdomobject.get(0).firstChild);
-                    $(domobject).replaceWith($newdomobject);
+                    if(!domobject.hasAttribute('href')){  
+                      // The code appears as:   <matlab> code here </matlab>
+                      // The actual code inside must be extracted,
+                      // spurious newlines at the beginning and end must be removed,
+                      // and the remaining text must be included in a <pre><code> ... </code><pre> element.
+                      // Then, the <code> element must be passed to HighlightJS (not the pre), with the proper language class.
+                      // The resulting element is then substituted for the original one in the DOM.
+                      $newdomobject = $('<pre class="featurelesspre"><code class="language-matlab">' + $(domobject).text().trim() + '</code></pre>');
+                      hljs.highlightElement($newdomobject.get(0).firstChild);
+                      $(domobject).replaceWith($newdomobject);
+                    }
+                    else {
+                      // The code appears as:  <matlab href="file.m"> anything here is ignored </matlab>
+                      // We load the contents of the matlab file and show it, with a link.
+                      const matlabfilename = domobject.getAttribute('href');
+                      $.ajax({
+                        url: "exercises/" + matlabfilename,
+                        dataType: "text",
+                        success: function (matlabfilecontents) {
+                          $newdomobject = $('<pre class="featurelesspre"><code class="language-matlab">' + matlabfilecontents + '</code></pre>');
+                          hljs.highlightElement($newdomobject.get(0).firstChild);
+                          $(domobject).replaceWith($newdomobject);
+                        }
+                      });
+                    }
                     
                   });
 
