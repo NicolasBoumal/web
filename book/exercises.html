@@ -197,11 +197,13 @@
                       // The code appears as:  <matlab href="file.m"> anything here is ignored </matlab>
                       // We load the contents of the matlab file and show it, with a link.
                       const matlabfilename = domobject.getAttribute('href');
+                      const matlabfileurl = "exercises/" + matlabfilename;
                       $.ajax({
-                        url: "exercises/" + matlabfilename,
+                        url: matlabfileurl,
                         dataType: "text",
                         success: function (matlabfilecontents) {
-                          $newdomobject = $('<pre class="featurelesspre"><code class="language-matlab">' + matlabfilecontents + '</code></pre>');
+                          // position relative on pre is needed: https://stackoverflow.com/questions/10487292/position-absolute-but-relative-to-parent
+                          $newdomobject = $('<pre style="position: relative;" class="featurelesspre"><code class="language-matlab">' + matlabfilecontents + '</code><small style="position: absolute; top: 0; right: 14px;"><a style="color: white;" href="' + matlabfileurl + '">' + matlabfilename + '</a></small></pre>');
                           hljs.highlightElement($newdomobject.get(0).firstChild);
                           $(domobject).replaceWith($newdomobject);
                         }
