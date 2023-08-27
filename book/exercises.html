@@ -216,6 +216,21 @@
                     
                   });
 
+                  // Format links to exercises, which appear as <a exercise="idoftheexercise">link text</a>.
+                  // If the linked exercise is in the current list, just jump there.
+                  // if it's not, then open a new page with just that exercise.
+                  $('#' + exo + ' ' + 'a[exercise]').each((counter, domobject) => {
+                    const linkedexercise = domobject.getAttribute('exercise');
+                    if(exercises.includes(linkedexercise)) {
+                      domobject.setAttribute('target', '_self');
+                      domobject.setAttribute('href', '#' + linkedexercise);
+                    }
+                    else {
+                      domobject.setAttribute('target', '_blank');
+                      domobject.setAttribute('href', 'exercises.html?list=' + linkedexercise);
+                    }
+                  });
+
                 }
               });
             });
