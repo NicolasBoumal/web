@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <!-- Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3XP9VMHJ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Z3XP9VMHJ3');
+  </script>
+  <!-- Meta -->
+  <title>An introduction to optimization on smooth manifolds</title>
+  <meta name="description" content="Resources for book introduction to optimization on smooth manifolds">
+  <meta name="author" content="Nicolas Boumal">
+  <meta name="keywords"
+    content="Optimization on manifolds,Riemannian optimization,Manopt,pdf,book,lectures,exercises,video">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Bootstrap & CSS-->
+  <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+  <style type="text/css">
+    body {
+      padding-top: 10px;
+      padding-bottom: 20px;
+    }
+    div .section {
+      display: auto;
+    }
+    ul {
+      list-style: disc;
+    }
+  </style>
+  <style>
+    ul.toc.collapsed {
+      list-style-type: none;
+      font-weight: normal;
+    }
+    ul.toc.collapsed li ul {
+      display: none;
+    }
+    ul.toc {
+      list-style-type: none;
+      font-weight: bold;
+    }
+    ul.toc li ul {
+      list-style-type: none;
+      font-weight: normal;
+    }
+  </style>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <!-- not sure the javascript below gets anything done at all, since the html is not loaded yet... try it. -->
+  <script type="text/javascript">$(".section").hide();</script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-9">
+        <div class="page-header" style="display: block">
+          <h1 style="display: block"><small style="font-size: 100%">an introduction to</small><br>Optimization on smooth manifolds</h1>
+        </div>
+        <ul class="nav nav-tabs nav-justified" role="navigation">
+          <li id="li-book"><a href="#book" class="menu" id="tab-book">Book</a></li>
+          <li id="li-lectures"><a href="#lectures" class="menu" id="tab-lectures">Lectures</a></li>
+          <li id="li-exercises"><a href="#exercises" class="menu" id="tab-exercises">Exercises</a></li>
+          <li id="li-software"><a href="#software" class="menu" id="tab-software">Software</a></li>
+          <li id="li-more"><a href="#more" class="menu" id="tab-more">More</a></li>
+        </ul>
+        <br><br>
+
+        <div class="section" id="section-lectures">
+          <div class="media row">
+            Test.
+          </div>
+        </div>
+
+        <div class="section" id="section-book">
+          <div class="media row">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+              <div class="media-body"> <a href="index.html" target="_blank"><img alt="picture"
+                    title="An introduction to optimization on smooth manifolds" class="media-object img-rounded"
+                    src="../images/BoumalIntroSmoothManifoldsCover.png"
+                    style="width:100%; max-width:220px; margin:auto; margin-bottom:8mm; display:block;"></a>
+              </div>
+              <!--margin: auto; display:block; is to center the image...-->
+              <!--width: 192px; height: 250px;-->
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12">
+              <h4 class="media-heading">An introduction to optimization on
+                smooth manifolds</h4>
+              <div class="media-body hyphenate" align="justify">
+                This book about optimization on smooth manifolds has no prerequisites in geometry or optimization.
+                Chapters 3 and 5 can serve as a standalone introduction to
+                differential and Riemannian geometry, focused on embedded
+                submanifolds of linear spaces, with full proofs and an emphasis on computability.
+                It then builds from there to equip the reader to take on modern research challenges.</div>
+              <div class="media-body hyphenate" align="justify"><br>
+              </div>
+              <div class="media-body hyphenate" align="center" style="font-weight: bold"> <a href="index.html"
+                  target="_blank">Click here to
+                  go to the book webpage</a>.</div>
+              <div class="media-body hyphenate" align="justify"><br>
+              </div>
+              <div class="media-body hyphenate" align="justify">Published by <a
+                  href="https://cambridge.org/9781009166157" target="_blank">Cambridge University Press</a>.</div>
+              <div class="media-body hyphenate" align="justify"><br></div>
+              <div class="media-body" align="justify">You may also be
+                interested in the Manopt toolboxes (<a href="https://www.manopt.org" target="_blank">Matlab</a>, <a
+                  href="https://www.pymanopt.org" target="_blank">Python</a>, <a href="https://www.manoptjl.org"
+                  target="_blank">Julia</a>).</div>
+              <div><br></div>
+            </div>
+            <div class="media-body col-12">
+              <div><b>Table of contents</b> (<a onclick="toctoggle()" id="tocbutton">expand/collapse</a>)
+              </div>
+              <div class="media-body col-12">
+                <ul class="toc" id="booktoc">
+                  <li>Preface</li>
+                  <li>1. Introduction</li>
+                  <li>2. Simple examples
+                    <ul>
+                      <li>2.1 Sensor network localization from directions: an affine subspace</li>
+                      <li>2.2 Single extreme eigenvalue or singular value: spheres</li>
+                      <li>2.3 Dictionary learning: products of spheres</li>
+                      <li>2.4 Principal component analysis: Stiefel and Grassmann</li>
+                      <li>2.5 Synchronization of rotations: special orthogonal group</li>
+                      <li>2.6 Low-rank matrix completion: fixed-rank manifold</li>
+                      <li>2.7 Gaussian mixture models: positive definite matrices</li>
+                      <li>2.8 Smooth semidefinite programs</li>
+                    </ul>
+                  </li>
+                  <li>3. Embedded geometry: first order
+                    <ul>
+                      <li>3.1 Reminders of Euclidean space</li>
+                      <li>3.2 Embedded submanifolds of a linear space</li>
+                      <li>3.3 Smooth maps on embedded submanifolds</li>
+                      <li>3.4 The differential of a smooth map</li>
+                      <li>3.5 Vector fields and the tangent bundle</li>
+                      <li>3.6 Moving on a manifold: retractions</li>
+                      <li>3.7 Riemannian manifolds and submanifolds</li>
+                      <li>3.8 Riemannian gradients</li>
+                      <li>3.9 Local frames*</li>
+                      <li>3.10 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>4. First-order optimization algorithms
+                    <ul>
+                      <li>4.1 A first-order Taylor expansion on curves</li>
+                      <li>4.2 First-order optimality conditions</li>
+                      <li>4.3 Riemannian gradient descent</li>
+                      <li>4.4 Regularity conditions and iteration complexity</li>
+                      <li>4.5 Backtracking line-search</li>
+                      <li>4.6 Local convergence*</li>
+                      <li>4.7 Computing gradients*</li>
+                      <li>4.8 Numerically checking a gradient*</li>
+                      <li>4.9 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>5. Embedded geometry: second order
+                    <ul>
+                      <li>5.1 The case for another derivative of vector fields</li>
+                      <li>5.2 Another look at differentials of vector fields in linear spaces</li>
+                      <li>5.3 Differentiating vector fields on manifolds: connections</li>
+                      <li>5.4 Riemannian connections</li>
+                      <li>5.5 Riemannian Hessians</li>
+                      <li>5.6 Connections as pointwise derivatives*</li>
+                      <li>5.7 Differentiating vector fields on curves</li>
+                      <li>5.8 Acceleration and geodesics</li>
+                      <li>5.9 A second-order Taylor expansion on curves</li>
+                      <li>5.10 Second-order retractions</li>
+                      <li>5.11 Special case: Riemannian submanifolds*</li>
+                      <li>5.12 Special case: metric projection retractions*</li>
+                      <li>5.13 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>6. Second-order optimization algorithms
+                    <ul>
+                      <li>6.1 Second-order optimality conditions</li>
+                      <li>6.2 Riemannian Newton's method</li>
+                      <li>6.3 Computing Newton steps: conjugate gradients</li>
+                      <li>6.4 Riemannian trust regions</li>
+                      <li>6.5 The trust-region subproblem: truncated CG</li>
+                      <li>6.6 Local convergence of RTR with tCG*</li>
+                      <li>6.7 Simplified assumptions for RTR with tCG*</li>
+                      <li>6.8 Numerically checking a Hessian*</li>
+                      <li>6.9 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>7. Embedded submanifolds: examples
+                    <ul>
+                      <li>7.1 Euclidean spaces as manifolds</li>
+                      <li>7.2 The unit sphere in a Euclidean space</li>
+                      <li>7.3 The Stiefel manifold: orthonormal matrices</li>
+                      <li>7.4 The orthogonal group and rotation matrices</li>
+                      <li>7.5 Fixed-rank matrices</li>
+                      <li>7.6 The hyperboloid model</li>
+                      <li>7.7 Manifolds defined by $h(x) = 0$</li>
+                      <li>7.8 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>8. General manifolds
+                    <ul>
+                      <li>8.1 A permissive definition</li>
+                      <li>8.2 The atlas topology, and a final definition</li>
+                      <li>8.3 Embedded submanifolds are manifolds</li>
+                      <li>8.4 Tangent vectors and tangent spaces</li>
+                      <li>8.5 Differentials of smooth maps</li>
+                      <li>8.6 Tangent bundles and vector fields</li>
+                      <li>8.7 Retractions and velocity of a curve</li>
+                      <li>8.8 Coordinate vector fields as local frames</li>
+                      <li>8.9 Riemannian metrics and gradients</li>
+                      <li>8.10 Lie brackets as vector fields</li>
+                      <li>8.11 Riemannian connections and Hessians</li>
+                      <li>8.12 Covariant derivatives and geodesics</li>
+                      <li>8.13 Taylor expansions and second-order retractions</li>
+                      <li>8.14 Submanifolds embedded in manifolds</li>
+                      <li>8.15 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>9. Quotient manifolds
+                    <ul>
+                      <li>9.1 A definition and a few facts</li>
+                      <li>9.2 Quotient manifolds through group actions</li>
+                      <li>9.3 Smooth maps to and from quotient manifolds</li>
+                      <li>9.4 Tangent, vertical and horizontal spaces</li>
+                      <li>9.5 Vector fields</li>
+                      <li>9.6 Retractions</li>
+                      <li>9.7 Riemannian quotient manifolds</li>
+                      <li>9.8 Gradients</li>
+                      <li>9.9 A word about Riemannian gradient descent</li>
+                      <li>9.10 Connections</li>
+                      <li>9.11 Hessians</li>
+                      <li>9.12 A word about Riemannian Newton's method</li>
+                      <li>9.13 Total space embedded in a linear space</li>
+                      <li>9.14 Horizontal curves and covariant derivatives</li>
+                      <li>9.15 Acceleration, geodesics and second-order retractions</li>
+                      <li>9.16 Grassmann manifold: summary*</li>
+                      <li>9.17 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>10. Additional tools
+                    <ul>
+                      <li>10.1 Distance, geodesics and completeness</li>
+                      <li>10.2 Exponential and logarithmic maps</li>
+                      <li>10.3 Parallel transport</li>
+                      <li>10.4 Lipschitz conditions and Taylor expansions</li>
+                      <li>10.5 Transporters</li>
+                      <li>10.6 Finite difference approximation of the Hessian</li>
+                      <li>10.7 Tensor fields and their covariant differentiation</li>
+                      <li>10.8 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>11. Geodesic convexity
+                    <ul>
+                      <li>11.1 Convex sets and functions in linear spaces</li>
+                      <li>11.2 Geodesically convex sets and functions</li>
+                      <li>11.3 Alternative definitions of geodesically convex sets*</li>
+                      <li>11.4 Differentiable geodesically convex functions</li>
+                      <li>11.5 Geodesic strong convexity and Lipschitz continuous gradients</li>
+                      <li>11.6 Example: positive reals and geometric programming</li>
+                      <li>11.7 Example: positive definite matrices</li>
+                      <li>11.8 Notes and references</li>
+                    </ul>
+                  </li>
+                  <li>Bibliography</li>
+                </ul>
+                <br>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-footer"><small class="pull-right">Last update: Aug. 29, 2023.</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap's javascript -->
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  
+  <!-- a little bit of scripting for the menu -->
+  <script type="text/javascript">
+    $("#tab-book").click(function () {
+      $(".section").hide();
+      $("#section-book").show();
+      $("li.active").removeClass('active');
+      $("#li-book").addClass('active');
+    });
+    $("#tab-lectures").click(function () {
+      $(".section").hide();
+      $("#section-lectures").show();
+      $("li.active").removeClass('active');
+      $("#li-lectures").addClass('active');
+    });
+    $("#tab-exercises").click(function () {
+      $(".section").hide();
+      $("#section-exercises").show();
+      $("li.active").removeClass('active');
+      $("#li-exercises").addClass('active');
+    });
+    $("#tab-software").click(function () {
+      $(".section").hide();
+      $("#section-software").show();
+      $("li.active").removeClass('active');
+      $("#li-software").addClass('active');
+    });
+    $("#tab-more").click(function () {
+      $(".section").hide();
+      $("#section-more").show();
+      $("li.active").removeClass('active');
+      $("#li-more").addClass('active');
+    });
+  </script>
+  <script type="text/javascript">
+    // Merci Matthew!
+    function gotoAnchor() {
+      var hash = window.location.hash;
+      switch (hash) {
+        case "#book":
+          $("#tab-book").click();
+          break;
+        case "#lectures":
+          $("#tab-lectures").click();
+          break;
+        case "#exercises":
+          $("#tab-exercises").click();
+          break;
+        case "#software":
+          $("#tab-software").click();
+          break;
+        case "#more":
+          $("#tab-more").click();
+          break;
+        default:
+          $("#tab-book").click();
+      }
+    };
+    gotoAnchor();
+  </script>
+
+  <!-- Begin script TOC -->
+  <script type="text/javascript">
+    var toccollapsed = true; // set initial state here
+    var toctoggle = function () {
+      if (toccollapsed) {
+        $("#booktoc").removeClass("collapsed");
+        $("#tocbutton").text("collapse");
+      }
+      else {
+        $("#booktoc").addClass("collapsed");
+        $("#tocbutton").text("expand");
+      }
+      toccollapsed = !toccollapsed;
+    };
+    toccollapsed = !toccollapsed; toctoggle(); // this line sets the TOC in proper beginning state.
+  </script>
+  <!-- End script TOC -->
+  
+  
+  <script src="mathjax-config.js" defer></script>
+  <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+</body>
+
+</html>
