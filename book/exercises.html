@@ -207,7 +207,7 @@
                           $newdomobject = $('<pre style="position: relative;" class="featurelesspre"></pre>')
                                             .append('<code class="language-matlab">' + matlabfilecontents + '</code>')
                                             .append('<small style="position: absolute; top: 0; right: 15px;">' +
-                                                    '<a style="color: white;" target="_blank" href="' + matlabfileurl + '">' + matlabfilename + '</a></small>');
+                                                    '<a style="color: white;" target="_blank" href="' + matlabfileurl + '">' + matlabfilename + ' &#11123;</a></small>');
                           hljs.highlightElement($newdomobject.get(0).firstChild);
                           $(domobject).replaceWith($newdomobject);
                         }
