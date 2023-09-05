@@ -1,4 +1,6 @@
-<title>The Riemannian Newton method</title>
+<title>
+    The Riemannian Newton method
+</title>
 
 <p>
     In this problem, you will implement Newton's method for optimization on the rotation matrices
@@ -26,40 +28,62 @@
     form a subgroup of the orthogonal matrices.
 </p>
 
-<question>Compute the Riemannian gradient $\grad f(Q)$.</question>
-    
-<question>Compute the Riemannian Hessian $\Hess f(Q)$.</question>
+<question>
+    Compute the Riemannian gradient $\grad f(Q)$.
+</question>
 <sketch>
-    Here we would write a "mega hint": essentially the answer, but not fleshed out.
-    Something a student who is stuck might find helpful to read to then still try to figure things out themselves.
+    We are on a Riemannian submanifold.
 </sketch>
 <answer>
-    Consider the following smooth extension of $f$:
-    $$\bar f(Q) = \|A Q - Q B\|^2 = \|A\|^2 + \|B\|^2 - 2 \langle A Q, Q B \rangle.$$
-    Then, 
-    $$\langle \nabla \bar f(Q), Z \rangle = \frac{d}{dt}[-2 \langle A(Q + t Z),(Q + t Z) B \rangle]_{t=0} = -2 (\langle Z, A^\top Q B \rangle + \langle A Q B^\top, Z \rangle),$$
-    and so
-    $\nabla \bar f(Q) = -2 A Q B - 2 A Q B = - 4 A Q B.$
-    Therefore,
-    $$\grad f(Q) = Q \skeww(Q^\top \nabla \bar f(Q)) = -4 Q \skeww(Q^\top A Q B).$$
-    
-    We further have
-    $\nabla^2 \bar f(Q)[U] = \frac{d}{dt}[\nabla \bar f(Q + t U)]_{t=0} = -4 A U B.$
-    So with $U = Q \Omega$,
-    \begin{aligned}
-        \Hess f(Q)[U]   & = Q \skeww(Q^\top \nabla^2 \bar f(Q)[U] - \Omega \symm(Q^\top \nabla \bar f(Q))) \\
-                        & = Q \skeww(-4 Q^\top A U B + 4 \Omega \symm(Q^\top A Q B)).
-    \end{aligned}
+    Observe that
+            \begin{aligned}
+                Q \in \reals^{d \times d} \mapsto \overline f(Q) = \|A Q - Q B\|^2 = \|A\|^2 + \|B\|^2 - 2 \langle A Q, Q B \rangle
+            \end{aligned}
+            is a smooth extension of $f$. Further, from the definition of $\overline f$ it follows straightforward that
+            \begin{aligned}
+                \langle \grad \overline f(Q), Z \rangle = \frac{d}{dt}[-2 \langle A(Q + t Z),(Q + t Z) B \rangle]_{t=0} = -2 \langle Z, A^\top Q B \rangle + \langle A Q B^\top, Z \rangle,
+            \end{aligned}
+            where $Z \in \reals^{d \times d}$. It follows that $\grad \overline f(Q) = -2 A Q B - 2 A Q B = - 4 A Q B.$ Therefore,
+            \begin{aligned}
+                \grad f(Q) = Q \skeww(Q^\top \grad \overline f(Q)) = -2 Q (Q^\top AQB - BQAQ^\top).
+            \end{aligned}
 </answer>
     
-<question>Choose a retraction $\Retr$ on $\SOd$.</question>
+<question>
+    Compute the Riemannian Hessian $\Hess f(Q)$.
+</question>
+<sketch>
+    We are on a Riemannian submanifold.
+</sketch>
 <answer>
-    $$\Retr_Q(t Q \Omega) = Q \exp(t \Omega).$$
+    Observe that
+            \begin{aligned}
+                Q \in \reals^{d \times d} \mapsto \overline G(Q) = -2 Q (Q^\top AQB - BQ^\top AQ) = -2 (AQB - QBQ^\top AQ)
+            \end{aligned}
+            is a smooth extension of $\grad f$. Let $(Q,U) \in \T \calM$. We have that
+            \begin{aligned}
+                \overline G(Q + U) - \overline G(Q) = -2AUB + 2 \left ( (Q+U)B(Q+U)^\top A(Q+U) - QBQ^\top AQ \right ).
+            \end{aligned}
+            From that it follows that
+            \begin{aligned}
+                D \overline G(Q)[U] = 2 \left [ QBQ^\top AU + QBU^\top AQ + UBQ^\top AQ - 2AUB\right ].
+            \end{aligned}
+            Finally, we have that $\Hess f(Q)[U] = 2 \Proj_Q \left [ QBQ^\top AU + QBU^\top AQ + UBQ^\top AQ - 2AUB\right ].$
+</answer>
+    
+<question>
+    Choose a retraction $\Retr$ on $\SOd$.
+</question>
+<answer>
+    There are many different possible choices. One possibility, which was proven to be a retraction in the exercise <a exercise="ExpSOn01">Exponential map on rotations</a> is the following.
+            \begin{aligned}
+                (Q,U) \in \T \calM \mapsto \Retr_Q(U) = Q \exp(Q^\top U).
+            \end{aligned}
 </answer>
 
 <p>
     Recall Newton's method is given by $Q_{k+1} = \Retr_{Q_k}(U_k)$,
-    where the step $U_k \in \T_{Q_k}\calM$ is an (approximate) solution to the <em>Newton system</em>:
+    where the step $U_k \in \T_{Q_k}\calM$ is an (approximate) solution to the "Newton system":
     $$
         \Hess f(Q_k)[U_k] = -\grad f(Q_k).
     $$
@@ -68,25 +92,27 @@
     There are two ways to do this.
 </p>
 
-<question>Generate a random set of matrices in the embedding space $\reals^{d \times d}$, and then project them onto $\T_{Q} \SOd$.
-Will this form a linearly independent set of tangent vectors?  How many random matrices do you need to obtain a basis for the tangent space?
-
-<hint>Once you have a set of linearly independent vectors, you can choose to orthonormalize them using Gram-Schmidt.</hint>
+<question>
+    Generate a random set of matrices in the embedding space $\reals^{d \times d}$, and then project them onto $\T_{Q} \SOd$. Will this form a linearly independent set of tangent vectors ? How many random matrices do you need to obtain a basis for the tangent space ?
+    <hint>
+        It is not necessary to do a rigorous proof. It is enough to give an answer based on numerical observations.
+    </hint>
 </question>
 <answer>
-Choose $\dim(\SOd) = d(d-1)/2$ random matrices.
-With probability one, their projections form a basis of the tangent space.
+    From the exercise <a exercise="ExpSOn01">Exponential map on rotations</a> we now that $\dim(\SOd) = d(d-1)/2$. We have that by choosing $\dim(\SOd) = d(d-1)/2$ random matrices and projecting them onto $\T_{Q} \SOd$ we have with probability one, their projections will form a basis of the tangent space. The Matlab implementation can be downloaded at the bottom of the page.
 </answer>
 
-<question>Propose an <em>explicit</em> orthonormal basis for each tangent space $\T_Q \SOd$.</question>
+<question>
+    Propose an <em>explicit</em> orthonormal basis for each tangent space $\T_Q \SOd$.
+</question>
 <answer>
-  Let $e_i$ denote the $i$-th standard unit vector of $\reals^d$.
-  Note that
-  $$\{(e_i e_j^\top - e_j e_i^\top)/\sqrt{2} : 1 \leq i < j \leq d\}$$
-  forms an orthonormal basis for the skew-symmetric matrices (w.r.t. the Frobenius inner product).
-  Therefore,
-  $$\{Q (e_i e_j^\top - e_j e_i^\top)/\sqrt{2} : 1 \leq i < j \leq d\}$$
-  forms an orthonormal basis for $\T_Q \SOd$.
+    Let $e_i$ denote the $i$-th standard unit vector of $\reals^d$.
+            Note that
+            $$\{(e_i e_j^\top - e_j e_i^\top)/\sqrt{2} : 1 \leq i < j \leq d\}$$
+            forms an orthonormal basis for the skew-symmetric matrices (w.r.t. the Frobenius inner product).
+            Therefore,
+            $$\{Q (e_i e_j^\top - e_j e_i^\top)/\sqrt{2} : 1 \leq i < j \leq d\}$$
+            forms an orthonormal basis for $\T_Q \SOd$.
 </answer>
 
 <p>
@@ -94,25 +120,72 @@ With probability one, their projections form a basis of the tangent space.
   You will try three different methods.
 </p>
 
-<question>Write $\Hess f(Q_k)$ and $\grad f(Q_k)$ in terms of a basis for $\T_{Q_k} \SOd$.</question>
-<question>Then, solve the Newton system using the <a href="https://www.mathworks.com/help/matlab/ref/mldivide.html?s_tid=mwa_osa_a" target="_blank">backslash symbol</a> in Matlab.</question>
+<p>
+Attention, in the following ways to solve the Newton system we suppose that the Riemannian Hessian is positive definite. To be sure that this is the case you should first run Riemannian Gradient Descent to be close to the a minimizer of $f$.
+</p>
+
+<question>
+    Write $\Hess f(Q_k)$ and $\grad f(Q_k)$ in terms of a basis for $\T_{Q_k} \SOd$.
+</question>
+<answer>
+    Let $Q \in \SOd$ and let $\{U_i\}_{i=1,\ldots,n}$ with $n = \dim(\SOd)$ be a basis for $\SOd$. Then the "Newton system"
+            \begin{align*}
+                \Hess f(Q)[U] = - \grad f(Q)
+            \end{align*}
+            can be rewritten as
+            \begin{align*}
+                H \alpha = g,
+            \end{align*}
+            where $H_{ij} = \langle U_i, \Hess f(Q)[U_j]\rangle$ and $g_i = \langle U_i, -\grad f(Q)\rangle$ for $i,j = 1,\ldots,n$. The solution $U \in \T_Q \calM$ is then given by $U = \sum_{i=1}^n \alpha_i U_i$.
+</answer>
+
+<question>Then, solve the Newton system using the <a href="https://www.mathworks.com/help/matlab/ref/mldivide.html?s_tid=mwa_osa_a" target="_blank">backslash symbol</a> in Matlab.
+</question>
+<answer>
+    The Matlab implementation can be downloaded at the bottom of the page.
+</answer>
+
 <question>
     Solve the Newton system by running gradient descent on the function
     $$g \colon \T_{Q_k} \calM \to \reals, \quad \quad g(U) = \frac{1}{2} \inner{U}{H [U]} - \inner{b}{U},$$
     where $H = \Hess f(Q_k), b = - \grad f(Q_k)$.
     Determine an explicit expression for the optimal step size.
-    
-    <hint>To implement gradient descent, is it necessary to use a basis for $\T_{Q_k} \SOd$?</hint>
+    <hint>
+        We suppose that $H$ is positive definite.
+    </hint>
 </question>
-<sketch>
-    It is not necessary to use a basis.
-</sketch>
-    
-<question>Solve the Newton system by running conjugate gradients on the same function $g$ as in the previous question.</question>
-    
-<question>Which methods seem most effective at solving the Newton system?</question>
+<answer>
+    Let $U \in \T_{Q_k} \calM$ be non zero and define $h(t)=g(t \cdot U)$. We have that
+            \begin{aligned}
+                h'(t) = t \langle U, H[U] \rangle - \langle b, U \rangle \quad h''(t) = \langle U, H[U] \rangle > 0.
+            \end{aligned}
+            Thus the optimal step size is
+            \begin{aligned}
+                t_0 = \frac{\langle b, U \rangle}{\langle U, H[U] \rangle}.
+            \end{aligned}
+            The Matlab implementation can be downloaded at the bottom of the page.
+</answer>
     
 <question>
-    Choose a random initial point on $\SOd$, and run Newton's method with each of the three procedures for solving the Newton system.
-    Which produces the best performance?  When does Newton's method converge?
+    Solve the Newton system by running conjugate gradients on the same function $g$ as in the previous question.
 </question>
+<answer>
+    It is algorithm 6.2 in the textbook. The Matlab implementation can be downloaded at the bottom of the page.
+</answer>
+    
+<question>
+    Which methods seem most effective at solving the Newton system ?
+</question>
+<answer>
+    Gradient Descent and Conjugate Gradient have both roughly the same performance. Solving directly the linear system takes much more time than GD and CG.
+</answer>
+    
+<question>
+    Check your results with the solutions.
+</question>
+<answer>
+    The Matlab implementation can be downloaded here.
+    <a target="_blank" href="exercises/MATLABnewton01.zip">Download Matlab implementation</a>
+    The main of the implementation is the following.
+    <matlab href="mainMATLABnewton01.m"> </matlab>
+</answer>

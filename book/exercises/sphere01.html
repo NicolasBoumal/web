@@ -1,41 +1,31 @@
-<title>The sphere is a manifold</title>
+<title>
+    The sphere is a manifold
+</title>
+
 <p>
-	Have a look at the formal definition of embedded submanifolds in the reference book (Chapter 3), then consider the following questions.
-	Let's also try to be able to link to <a exercise="newton01">another exercise, be it in or out of list</a>.
+    Have a look at the formal definition of embedded submanifolds in the reference book (Definition 3.10), then consider the following questions.
 </p>
-<question>Give a (set of?) local defining function(s) $h$ for the sphere $\Sd$. Pay particular attention to checking the rank condition on the differential of $h$.</question>
-<question>Get an expression for the tangent spaces of $\Sd$ by looking at the kernels of the differentials of $h$.</question>
+
+<question>
+    Give a (set of ?) local defining function(s) $h$ for the sphere $\Sd$. Pay particular attention to checking the rank condition on the differential of $h$.
+</question>
+<sketch>
+    How can you algebraically characterise points on the sphere ?
+</sketch>
 <answer>
-	Take $h(x) = x^T x-1$ and note $\D h(x)[v] = x^T v$.  We omit the details showing that this is a local defining function.
-	In Matlab, you can project to the tangent space using:
-	<matlab>u = u - (u'*x)*x;</matlab>
-	<matlab href="sphere.m"></matlab>
+    Take $h(x) = x^Tx-1$ and note $\D h(x)[v] = 2 \cdot x^\top v$. We omit the details showing that this is a local defining function as this is just a simple straightforward verification.
 </answer>
 
-<matlab href="sphere.m"></matlab>
+<question>
+    Get an expression for the tangent spaces of $\Sd$.
+</question>
+<sketch>
+    How did we define tangent spaces ? What characterisation did we show ?
+</sketch>
+<answer>
+    We saw for $x \in \Sd$ the tangent space is given by $\T_x \Sd = \ker (\D h(x))$. Thus we have that
+    \begin{aligned}
+        \T_x \Sd = \text{span}(x)^{\perp} = \{x \in \reals^d \; | \; \langle x,v \rangle = 0\}.
+    \end{aligned}
+</answer>
 
-<matlab>
-nrepeats = 10000;
-vals = inf(nrepeats, 1);
-for repeat = 1 : nrepeats
-    A = randsym(n);
-    B = randsym(n);
-    
-    problem = struct();
-    problem.M = rotationsfactory(n, 2);
-    problem.cost = @(X) .5*sqfrobnorm(X(:,:,1)*diag(a)*X(:,:,1)' ...
-	                         + X(:,:,2)*diag(b)*X(:,:,2)' + diag(c));
-    problem = manoptAD(problem);
-    opts = struct();
-    opts.verbosity = 0;
-    [X, val] = trustregions(problem, [], opts);
-        
-    vals(repeat) = val;
-
-    clf;
-    histogram(log10(vals));
-    title(sprintf('%d / %d ; max value: %.2e', ...
-          repeat, nrepeats, max(vals(1:repeat))));
-    drawnow;
-end
-</matlab>
