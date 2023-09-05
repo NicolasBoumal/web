@@ -1,0 +1,46 @@
+<title>
+    Smooth embedded submanifolds of smooth embedded subamnifolds
+</title>
+
+<question>
+    Let $\calM$ be an embedded submanifold of a linear space $\calE$, and let $\calN$ be a subset of $\calM$ defined by $\calN = g^{-1}(0)$, where $g \colon \calM \rightarrow \reals^\ell$ is smooth and $\rank \D g(x) = \ell \geq 1$ for all $x \in \calN$ (think carefully about "$\rank \D g(x)$" means). Show that $\calN$ is itself an embedded submanifold of $\calE$, of dimension $\dim \calM - \ell$, with tangent spaces $\T_x \calN = \ker \D g(x) \subset \T_x \calM$.  We call $\calN$ an embedded submanifold of $\calM$.
+</question>
+<sketch>
+    For the non trivial case try to build a local defining function around a point $y \in \calN$, using a local defining function around $y \in \calN$ for $\calM$ and an extension of $g$. For the rank property of your local defining function, try to use the Rank Theorem.
+</sketch>
+<answer>
+    <p>
+    The case where $\calM$ is an open subset of $\calE$ is straightforward, so let's just focus on the case where $\calM$ has codimension at least $1$.
+            So suppose $\calM$ has dimension $\dim(\calE) - k$, where $k \geq 1$.
+            Let $y \in \calN$.  We shall build a local defining function $H$ for $\calN$ at $y$.
+            We know that there exists an open neighborhood $U \subset \calE$ of $y$ and a local defining function $h \colon U \to \reals^k$ for $\calM$ at $y$.
+    </p>
+    <p>
+            By Proposition 3.31 of the textbook, we know there exists a neighborhood $V$ of $\calM$ and a smooth extension $\overline g \colon V \to \reals^\ell$ of $g$.
+            Define the function
+            $$H \colon U \cap V \to \reals^{k + \ell}, \quad \quad H(x) = (h(x), \overline g(x)).$$
+            We claim that $H$ is a local defining function for $\calN$ at $y$.  Indeed:
+            Clearly $H$ is smooth on $U\cap V$ as $h$ and $\overline{g}$ are smooth on $U\cap V$.
+            If $x \in U\cap V$ and $H(x) = 0$, then $x \in \calM$ (using that $h$ is a local defining function), and so $0 = \overline g(x) = g(x)$ ($\overline g$ is an extension of $g$).  Hence, $x \in \calN$.
+            Conversely, if $x \in U\cap V$ and $x \in \calN$, then $h(x) = 0$ (since $\calN \subset \calM$), and $0 = g(x) = \overline g(x)$, i.e., $H(x) = 0$.
+    </p>
+    <p>
+            Let us show that $\rank \D H(y) = k + \ell$.
+            We have
+            $$\D H(y) \colon \calE \to \reals^{k + \ell}, \quad \quad \D H(y)[v] = (\D h(y)[v], \D \overline g(y)[v]).$$
+    </p>
+    <p>
+            Observe that
+            \begin{aligned}
+            \ker \D g(y) &= \{v \in \T_y \calM : \D g(y)[v] = 0\} = \{v \in \T_y \calM : \D \overline g(y)[v] = 0\} \\
+            &= \{v \in \calE : \D h(y)[v] = 0, \D \overline g(y)[v] = 0\} = \ker \D H(y).
+            \end{aligned}
+            Since $\rank \D g(y) = \ell$, rank-nullity implies
+            $$\dim(\calM) - \ell = \dim(\ker \D g(y)) = \dim(\ker \D H(y)).$$
+            Hence, rank-nullity again implies
+            $$\rank \D H(y) = \dim(\calE) - (\dim(\calM) - \ell) = \dim(\calE) - (\dim(\calE) - k - \ell) = k + \ell.$$
+            We have shown that $H$ is a local defining function for $\calN$ at $y$, and so $\calN$ is an embedded submanifold of $\calE$ of dimension $\dim(\calE) - k - \ell = \dim(\calM) - \ell$.
+            We also already showed that $\T_y \calN$ equals
+            $\ker \D H(y) = \ker \D g(y)$.
+    </p>
+</answer>

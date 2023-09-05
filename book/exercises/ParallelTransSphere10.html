@@ -1,0 +1,39 @@
+<title>
+    Parallel transport on the sphere
+</title>
+
+<p>
+In the exercise <a exercise="GeodSphere09">Geodesics on the sphere</a> we showed that the map $c : \reals \to \Sd$ given by
+\begin{aligned}
+    t \mapsto \cos(t)x + \sin(t)v
+\end{aligned}
+with $(x,v) \in \T \Sd$ and $||v||=1$ is a geodesic on the sphere, when the sphere is seen as a Riemannian submanifold with the Riemannian connection. The Theorem 4.27 in Lee's book "Introduction to Riemannian manifolds" implies that the above map is the only geodesic on the sphere defined on $\reals$ with $c(0)=x$ and $c'(0)=v$. Further, it implies that all geodesics defined on an open interval with $c(0)=x$ and $c'(0)=v$, where $(x,v) \in \T \Sd$ and $||v||=1$ are of the above form.
+</p>
+
+<question>
+    Let $c$ be the geodesic on the unit sphere $\Sd$ (seen as a Riemannian submanifold with the Riemannian connection) satisfying $c(0) = x, c'(0) = v$ with $(x,v) \in \T \Sd$ and $||v||=1$. Derive an expression for the parallel transport $\mathrm{PT}_{t \leftarrow 0}^c$ of a tangent vector $u \in \T_x \Sd$ along the geodesic $c$.
+</question>
+<sketch>
+    Try to use the results from the last question in the exercise <a exercise="ParalellTrans01">Properties of the parallel transport</a>. For the case $d \geq 3$, think also about how the tangent spaces and a vector $w \in \T_x \Sd$ with $w \perp v$ behave along a geodesic in the case $d=3$. From that you should be able to get the parallel vector field of the vector $w$, when use the linearity of the parallel transport to get an expression for the parallel vector field of a general tangent vector $u \in \T_x \Sd$.
+</sketch>
+<answer>
+    <p>
+    Let $d \geq 3$ and $c$ be the geodesic on the unit sphere $\Sd$ satisfying $c(0) = x, c'(0) = v$ with $(x,v) \in \T \Sd$ and $||v||=1$. We begin by consider $w \in \T_x \Sd$ with $w \perp v$. Let $Z \in \frakX(c)$ be the unique parallel vector field such that $Z(0)=w$. Observe that as $w \in \T_x \Sd$ we have that $w \perp x$ and by hypothesis we also have that $w \perp v$. From that it follows that $w \perp c(t)$ and $w \perp c'(t)$ for all $t \in \reals$. (This can be visualized in three dimensions and is related to the result of the last question in the exercise <a exercise="ParalellTrans01">Properties of the parallel transport</a>.) As $w \perp c(t)$ for all $t \in \reals$, i.e., $w \in \T_{c(t)} \Sd$ for all $t \in \reals$ and $\frac{\D}{dt} w = 0$ we get that $Z(t) = w$, i.e., the parallel transport of $w$ is the constant map $w$.
+    </p>
+    <p>
+        Now, from the last question in the exercise <a exercise="ParalellTrans01">Properties of the parallel transport</a> we also now that $Z(t) = \alpha \cdot c'(t)$ is the unique parallel vector field such that $Z(0) = \alpha c'(0)$.
+    </p>
+    <p>
+        Finally, if we complete $\{v\} \subseteq \T_x \Sd$ to an orthonormal base $\{v\} \cup \{w_i\}_{i=1,\ldots,d-2}$ it follows by the linearity of the parallel transport that
+        \begin{aligned}
+            \mathrm{PT}_{t \leftarrow 0}^c(u) = \langle u,v \rangle c'(t) + \sum_{i=1}^{d-2} \langle u,w_i \rangle w_i
+        \end{aligned}
+        with $u = \langle u,v \rangle v + \sum_{i=1}^{d-2} \langle u,w_i \rangle w_i$ as $\{v\} \cup \{w_i\}_{i=1,\ldots,d-2}$ is an orthonormal base.
+    </p>
+    <p>
+        In the case $d=2$ we have that $\{v\} \subseteq \T_x \Sd$ is already a basis of the tangent space thus
+        \begin{aligned}
+            \mathrm{PT}_{t \leftarrow 0}^c(u) = \langle u,v \rangle c'(t).
+        \end{aligned}
+    </p>
+</answer>

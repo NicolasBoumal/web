@@ -1,0 +1,29 @@
+<title>
+    The Lie bracket is nonzero
+</title>
+
+<p>
+The Lie bracket $[U, V]f = U(V f) - V(U f)$ involves taking two derivatives. In $\reals^d$, we are used to the fact that partial derivatives commute: $\frac{\partial^2 f}{\partial x_1 \partial x_2} = \frac{\partial^2 f}{\partial x_2 \partial x_1}$. So on $\reals^d$ one might expect that the Lie bracket is always zero. Below you show this is not the case, even in Euclidean space.
+</p>
+
+<question>
+    For $\calM = \reals^2$, consider the vector fields $U(x) = (1,0)$, $V(x) = (0, x_1 x_2)$, and the function $f(x) = x_2$. Show that $[U, V] f = f$.
+</question>
+<answer>
+    We have that for $x \in \reals^2$ that
+            \begin{aligned}
+                U f(x) = Df(x)[U(x)] = \langle (0,1), (1,0) \rangle = 0.
+            \end{aligned}
+            Further,
+            \begin{aligned}
+                V f(x) = Df(x)[V(x)] = x_1x_2
+            \end{aligned}
+            and thus
+            \begin{aligned}
+                U (Vf)(x) = D(Vf)(x)[U(x)] = \langle (x_2,x_1), (1,0) \rangle = f(x).
+            \end{aligned}
+            We conclude that
+            \begin{aligned}
+            ~[U,V] f(x) = U(V f)(x) - V(U f)(x) = U (V f)(x) = f(x).
+            \end{aligned}
+</answer>

@@ -1,0 +1,47 @@
+<title>
+    Smooth functions on the sphere
+</title>
+
+<p>
+Let $\mathcal{A}$ be the atlas for $\Sd$ from the exercise <a exercise="SphereSmoothMan12">The sphere is a smooth manifold</a>. The aim of this exercise is to show that smooth functions defined on the smooth manifold $(\Sd, \mathcal{A}^+)$ are exactly the same as smooth functions defined on $\Sd$ when treated as an embedded submanifold of $\reals^d$.
+</p>
+
+<question>
+    Let $f \colon \Sd \to \reals$ be a smooth function as seen through the charts of $\mathcal{A}$.
+        Show that $f$ has a smooth extension $\overline f$ to a neighborhood of $\Sd$.
+</question>
+<sketch>
+    Use the map $r \colon \reals^{d} \setminus\{0\} \to \reals^d, r(x) = \frac{x}{\|x\|}$ to build the smooth extension.
+</sketch>
+<answer>
+    <p>
+    As $f$ is smooth seen through the charts of $\mathcal{A}$, we know that if $(\calU, \phi) \in \mathcal{A}$ is a chart around $x \in \Sd$, then $f \circ \phi^{-1} \colon \phi(\calU) \subseteq \reals^d \to \reals$ is smooth at $\phi(x)$.
+    </p>
+    <p>
+            Define $\overline f = f \circ r \colon \reals^{d} \setminus\{0\} \to \reals$. Let $z \in \reals^d \setminus \{0\}$, and let $x = r(z)$. W.l.o.g. we have that $x \in \calU_+$, giving that $(\calU_+,\phi_+)$ is a chart around $x \in \Sd$. Observe that as $(\calU_+,\phi_+)$ is a chart around every $x \in \calU_+$ we have that $f \circ \phi_+^{-1}$ is smooth on $\phi_+(\calU_+)$.
+            For $z' \in r^{-1}(\calU_+)$ (which one checks is an open subset of $\reals^d \setminus \{0\}$ containing $z$) we have
+            \begin{aligned}
+                \overline f(z') = (f \circ r)(z') =  ((f \circ \phi_+^{-1}) \circ (\phi_+ \circ r))(z').
+            \end{aligned}
+            Clearly, $\phi_+ \circ r \colon r^{-1}(\calU_+) \to \reals^{d-1}$ is smooth (as a map between open subsets of $\reals^d$ and $\reals^{d-1}$) by plugging in the formulae for $\phi = \phi_+$ and $\phi = \phi_-$ and as already argued $f \circ \phi_+^{-1}$ is smooth. Thus $\overline f$ is smooth on $r^{-1}(\calU_+)$.
+            In particular it is smooth around $z$. By arbitrariness of $z \in \reals^d \setminus \{0\}$
+            we get that $\overline{f}$ is smooth
+            on $\reals^d \setminus \{0\}$. Finally, as $r = \text{id}$ on $\Sd$ we have that $\overline f$ is a smooth extension of $f$.
+    </p>
+</answer>
+
+<question>
+    Show that if $f \colon \Sd \to \reals$ has a smooth extension $\overline f$ on a neighborhood of $\Sd$, then $f$ is smooth as seen through the charts of $\mathcal{A}$.
+</question>
+<answer>
+    <p>
+    Inspecting the formula for $\phi_+^{-1}$ given in the first exercise, we see that $\phi_+^{-1}$ is a smooth map between $\reals^{d-1}$ and $\reals^d$.  The same holds for $\phi_-^{-1}$.
+    </p>
+    <p>
+            Let $x \in \Sd$ ans suppose w.l.o.g. that $x \in \calU_+$. Then $(\calU_+, \phi_+) \in \mathcal{A}$ is a chart around $x$. One sees that
+            \begin{aligned}
+                f \circ \phi_+^{-1} = \overline f \circ \phi_+^{-1}
+            \end{aligned}
+            is smooth on $\reals^{d-1}$ since $\overline f$ is smooth on $\reals^d$ and $\phi_+^{-1}$ is smooth as a map between $\reals^{d-1}$ and $\reals^d$. Thus $f$ is smooth around $x$ in the chart sens. As $x \in \Sd$ was arbitrary we get that $f$ is smooth in the chart sens.
+    </p>
+</answer>

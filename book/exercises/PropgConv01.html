@@ -1,0 +1,68 @@
+<title>
+    Some properties of g-convex sets and functions
+</title>
+
+<p>
+Let $(\calM, \langle \cdot, \cdot\rangle)$ be a Riemannian manifold, and consider a geodesically convex (g-convex) subset $S \subseteq \calM$. Let $f, f_1, \ldots, f_n \colon S \to \reals$ be g-convex functions.
+</p>
+
+<question>
+    <em>Sublevel sets of g-convex functions are g-convex sets.</em> Let $s\in \reals$.  Show that the sublevel set
+        $$L_f(s) = \{x \in S : f(x) \leq s\}$$
+        is g-convex. That is, for all $x, y \in L_f(s)$, there exists a geodesic segment  $\gamma \colon [0,1] \to \calM$ with $\gamma(0) = x, \gamma(1) = y$ such that $\gamma(t) \in L_f(s)$ for all $t \in [0,1]$.
+</question>
+<answer>
+    Let $x,y \in L_f(s)$ for some $s \in \reals$ and $f:\calM \to \reals$ g-convex. As $L_f(s) \subseteq S$ there exists $\gamma:[0,1] \to \calM$ a geodesic segment such that $\gamma(0)=x$, $\gamma(1)=y$ and $\gamma(t) \in S$ for all $t \in [0,1]$ by g-convexity of $S$. It remains to show that $\gamma(t) \in L_f(s)$ to conclude that $L_f(s)$ is g-convex. By g-convexity of $f$
+            \begin{aligned}
+                f \circ \gamma (t) \leq t f(x) + (1-t) f(y) \leq ts + (1-t)s = s
+            \end{aligned}
+            for all $t \in [0,1]$, giving the claim.
+</answer>
+
+<question>
+    <em>Intersections of sublevel sets are g-convex sets.</em> Let $s_1, \ldots, s_n \in \reals$. Show that the intersection $\bigcap_{j=1}^n L_{f_j}(s_j)$ is g-convex.
+</question>
+<answer>
+    Let $x, y \in \bigcap_{j=1}^n L_{f_j}(s_j)$, and $\gamma$ a geodesic segment contained in $S$ connecting $x$ and $y$.  We have for $t \in [0,1]$ and $j=1, \ldots, n$ that
+           \begin{align*}
+               f_j \circ \gamma(t) \leq (1-t) f_j(x) + t f_j(y) \leq s_j
+           \end{align*}
+           by g-convexity of $f_j$. Thus $\gamma(t) \in L_{f_j}(s_j)$ for all $j=1, \ldots, n$, giving that $\gamma(t) \in \bigcap_{j=1}^n L_{f_j}(s_j)$. This proves the claim.
+</answer>
+
+<question>
+    <em>Sums of nonnegatively scaled g-convex functions are g-convex.</em> Let $a_1, \ldots, a_n \in \reals_{\geq 0}$ be nonnegative. Show that the function $g(x) = \sum_{j=1}^n a_j f_j(x)$ is g-convex. That is, if $\gamma \colon [0,1] \to \calM$ is a geodesic segment contained in $S$, then
+        \begin{aligned}
+            g(\gamma(t)) \leq (1-t) g(\gamma(0)) + t g(\gamma(1)), \quad \forall t \in [0,1].
+        \end{aligned}
+</question>
+<answer>
+    Let $\gamma \colon [0,1] \to \calM$ is a geodesic segment contained in $S$, then by g-convexity of $f_j$ for $j=1, \ldots, n$ we have
+        \begin{aligned}
+            g(\gamma(t)) &= \sum_j a_j f_j(\gamma(t)) \leq \sum_j a_j [(1-t) f_j(x) + t f_j(y)] \\
+            &= (1-t) \sum_j a_j f_j(x) + t \sum_j a_j f_j(y) = (1-t) g(x) + t g(y).
+        \end{aligned}
+        By arbitrariness of $\gamma$ we conclude.
+</answer>
+
+<question>
+    <em>The pointwise max of g-convex functions is g-convex.</em> Show that the function $h(x) = \max_{j=1, \ldots, n} f_j(x)$
+        is g-convex. Compare this with part 2 above.
+</question>
+<answer>
+    <p>
+    Let $x,y \in S$ and let $\gamma \colon [0,1] \to \calM$ be a geodesic segment contained in $S$ connecting $x$ and $y$, then for all $j=1, \ldots, n$ it holds that
+           \begin{aligned}
+               f_j(\gamma(t)) \leq (1-t) f_j(x) + t f_j(y).
+           \end{aligned}
+           Thus $\max_j f_j(\gamma(t)) \leq \max_j\{(1-t) f_j(x) + t f_j(y)\}\leq (1-t) \max_j f_j(x) + t \max_j f_j(y).$ This shows that $h$ is indeed g-convex.
+    </p>
+    <p>
+           Observe that for $s \in \reals$ we have that
+           \begin{aligned}
+               L_h(s) &= \left \{ x \in S \; \middle | \; h(x) \leq s \right \} = \left \{ x \in S \; \middle | \; f_j(x) \leq s, \; \forall j=1,\ldots,n \right \} \\
+               &= \bigcap_{j=1}^n \left \{ x \in S \; \middle | \; f_j(x) \leq s \right \} = \bigcap_{j=1}^n L_{f_j}(s).
+           \end{aligned}
+           This shows that the sublevel set of the max map corresponds to the intersection of the sublevel sets of each function in the max map.
+    </p>
+</answer>

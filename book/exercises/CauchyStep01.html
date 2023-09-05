@@ -1,0 +1,110 @@
+<title>
+    Performance of the Cauchy step
+</title>
+
+<p>
+In this question, you will analyze the performance of the Cauchy step for solving the trust region subproblem.
+</p>
+
+<p>
+Let $(\calM, \langle \cdot, \cdot \rangle)$ be a Riemannian manifold, and let $x \in \calM$. Consider the quadratic model for the cost function $f \colon \calM \to \reals$ given by
+\begin{aligned}
+  m \colon \T_x \calM \to \reals, \quad \quad m(s) = f(x) + \inner{g}{s} + \frac{1}{2} \inner{s}{H s},
+\end{aligned}
+where $H \colon \T_x \calM \to \T_x \calM$ and $g = \grad f(x) \in \T_x \calM$ and we suppose that $g \neq 0$. For $\Delta > 0$, we seek to solve the trust region subproblem
+$$\min_{s \in \T_x \calM} m(s) \quad  \text{subject to } \|s\| \leq \Delta.$$
+</p>
+
+<question>
+    Recall that the Cauchy step is defined by
+    \begin{aligned}
+                s^C = -t^C \cdot g && \textrm{ with } && t^C \in \text{argmin}_{0 \leq t \leq \frac{\Delta}{\|g\|}} m(-t \cdot g).
+            \end{aligned}
+          Show that the step size is given by
+          \begin{aligned}
+                t^C & = \begin{cases}
+                    \min\!\left( \frac{\|g\|^2}{\inner{g}{Hg}}, \frac{\Delta}{\|g\|} \right) & \textrm{ if } \inner{g}{Hg} > 0,\\
+                    \frac{\Delta}{\|g\|} & \textrm{ otherwise}.
+                \end{cases}
+          \end{aligned}
+</question>
+<answer>
+          Finding the Cauchy point amounts to minimizing the 1-dimensional
+            quadratic function
+            \begin{aligned}
+              r(t) &= m(-t \cdot g)\\
+                   &= f(x) - t\|g\|^2 + \frac{t^2}{2}\inner{g}{Hg}.
+            \end{aligned}
+            on the closed interval $[0,\frac{\Delta}{\|g\|}]$.
+            If $\inner{g}{Hg}\leq 0$, then $r$ is decreasing on $\reals_+$.
+            So the minimum is attained at the upper boundary of the interval, that is,
+            $t = \frac{\Delta}{\|g\|}$.
+            Suppose now that $\inner{g}{Hg}> 0$.
+            Then $r$ is convex and has a unique critical point:
+            \begin{aligned}
+              r'(t^\star) &= 0 \qquad\Leftrightarrow\qquad t^\star = \frac{\|g\|^2}{\inner{g}{Hg}} > 0.
+            \end{aligned}
+            This is the global minimum of $r$.
+            If this critical point is in $[0,\frac{\Delta}{\|g\|}]$ then $t^C
+            = t^\star$.
+            Otherwise $t^\star > \frac{\Delta}{\|g\|}$ and the convexity of $r$ implies
+            that $r$ is decreasing on $[0,\frac{\Delta}{\|g\|}]$.
+            So we deduce that $t^C = \frac{\Delta}{\|g\|}$.
+            We conclude that
+            \begin{aligned}
+              t^C = \min\!\left( \frac{\|g\|^2}{\inner{g}{Hg}}, \frac{\Delta}{\|g\|} \right).
+            \end{aligned}
+</answer>
+
+<question>
+    Show that the Cauchy step leads to the following decrease in model value
+          \begin{align*}
+            m(0) - m(s^C) & \geq \frac{1}{2} \min\!\left( \Delta, \frac{\|g\|}{\|H\|_{op}} \right) \|g\|,
+          \end{align*}
+          where $\|H\|_{op}$ is the operator norm of $H$.
+</question>
+<answer>
+    Assume first that $\inner{g}{H g}\leq 0$.
+            Then we have
+            \begin{aligned}
+              m(s^C) - m(0) &= f(x) -\frac{\Delta}{\|g\|}\|g\|^2+\frac{\Delta^2}{2\|g\|^2}\inner{g}{Hg} - f(x)\\
+                            &= -\Delta \|g\| + \frac{\Delta^2}{2\|g\|^2}\inner{g}{Hg}\\
+                            &\leq -\Delta \|g\|,
+            \end{aligned}
+            where the inequality follows from the assumption $\inner{g}{H g}\leq 0$.
+            Therefore:
+            \begin{aligned}
+              m(0) - m(s^C) \geq \Delta \|g\|  \geq \frac{1}{2}\Delta\|g\| \geq \frac{1}{2} \min\!\left( \Delta, \frac{\|g\|}{\|H\|} \right) \|g\|.
+            \end{aligned}
+        
+            Now assume that $\inner{g}{H g} \geq 0$ and that
+            $\frac{\|g\|^2}{\inner{g}{Hg}} \leq \frac{\Delta}{\|g\|}$, implying that $t^C =
+            \frac{\|g\|^2}{\inner{g}{Hg}}$.
+            Then:
+            \begin{aligned}
+              m(s^C) - m(0) &= -\frac{\|g\|^2}{\inner{g}{Hg}}\|g\|^2 + \frac{1}{2}\frac{\|g\|^4}{\inner{g}{Hg}^2}\inner{g}{Hg}\\
+                            &= -\frac{1}{2}\frac{\|g\|^4}{\inner{g}{Hg}}\\
+                            &\leq -\frac{1}{2}\frac{\|g\|^2}{\|H\|},
+            \end{aligned}
+            where the inequality follows from the fact that
+            $\inner{g}{Hg}\leq\|H\|\|g\|^2$ implying that ${-\frac{1}{\inner{g}{Hg}}\leq
+              -\frac{1}{\|H\|\|g\|^2}}$.
+            Therefore:
+            \begin{aligned}
+              m(0) - m(s^C) \geq\frac{1}{2}\frac{\|g\|^2}{\|H\|}\geq \frac{1}{2} \min\!\left( \Delta, \frac{\|g\|}{\|H\|} \right) \|g\|.
+            \end{aligned}
+        
+            Finally, assume that $\inner{g}{H g} \geq 0$ and
+            $\frac{\|g\|^2}{\inner{g}{Hg}}\geq \frac{\Delta}{\|g\|}$, implying that $t^C
+            = \frac{\Delta}{\|g\|}$ and $\inner{g}{Hg}\leq \frac{\|g\|^3}{\Delta}$.
+            Then:
+            \begin{aligned}
+              m(s^C)-m(0) &= -\Delta \|g\| + \frac{\Delta^2}{2\|g\|^2}\inner{g}{Hg}\\
+                          & \leq -\Delta \|g\| +  \frac{\Delta^2}{2\|g\|^2}\frac{\|g\|^3}{\Delta}\\
+                          &=-\frac{1}{2}\Delta\|g\|.
+            \end{aligned}
+            So finally, as before, we get:
+            \begin{aligned}
+              m(0) - m(s^C) \geq \Delta \|g\|  \geq \frac{1}{2}\Delta\|g\| \geq \frac{1}{2} \min\!\left( \Delta, \frac{\|g\|}{\|H\|} \right) \|g\|.
+            \end{aligned}
+</answer>

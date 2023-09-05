@@ -1,0 +1,65 @@
+<title>
+    The atlas topology is the subspace topology
+</title>
+
+<p>
+Let $\mathcal{A}$ be the atlas for $\Sd$ from the exercise <a exercise="SphereSmoothMan12">The sphere is a smooth manifold</a>.
+</p>
+
+<p>
+In this exercise we show that the atlas topology for $\Sd$ equals the subspace topology of $\Sd$ (treated as a subset of $\reals^d$).
+</p>
+
+<question>
+    Let $\mathcal{U} \subseteq \Sd$ be an open set in the atlas topology (i.e., $\mathcal{U}$ is the union of a collection of chart domains of the maximal atlas $\mathcal{A}^+$).
+        Show that $\mathcal{U}$ is open in the subspace topology (i.e., there exists an open subset $\mathcal{V}$ of $\reals^d$ such that $\mathcal{U} = \Sd \cap \mathcal{V}$).
+</question>
+<sketch>
+ First, observe that w.l.o.g. we only need to show that if $\mathcal{U}$ is a chart domain of the maximal atlas, then $\mathcal{U}$ is open in the subspace topology. Then use the map $r \colon \reals^{d} \setminus\{0\} \to \reals^d, r(z) = \frac{z}{\|z\|}$ to shows that this is the case.
+</sketch>
+<answer>
+    <p>
+    It suffices to show that if $\mathcal{U}$ is a chart domain of the maximal atlas, then $\mathcal{U}$ is open in the subspace topology.  So let us assume $\calU$ is a chart domain.
+            By definition, $\mathcal{U}$ is compatible with $(\calU_+, \phi_+)$ and $(\calU_-, \phi_-)$, which in particular implies that $\phi_+(\mathcal{U} \cap \calU_+)$ and $\phi_-(\mathcal{U} \cap \calU_+)$ are both open in $\reals^{d-1}$.
+            Note that $\mathcal{U} = (\calU \cap \calU_+) \cup (\calU \cap \calU_-)$, so w.l.o.g. it suffices to show that $\calU \cap \calU_+$ is open in the subspace topology.
+    </p>
+    <p>
+            We know that $U := \phi_+(\calU \cap \calU_+)$ is open in $\reals^{d-1}$.
+            By inspecting the formulae for $r, \phi_+, \calU_+$, we see that $r^{-1}(\calU_+)$ is an open subset of $\reals^d$ and
+            $\phi_+ \circ r \colon r^{-1}(\calU_+) \to \reals^{d-1}$ is a continuous function.
+            Hence, $(\phi_+ \circ r)^{-1}(U)$ is an open subset of $\reals^d$.
+            So we are done once we establish that
+            $$\Sd \cap (\phi_+ \circ r)^{-1}(U) = \calU \cap \calU_+.$$
+            One easily checks that this is true, using that $r(z) = z$ if $z \in \Sd$.
+    </p>
+</answer>
+
+<question>
+    Let $\mathcal{U} \subseteq \Sd$ be an open set in the subspace topology.
+        Show that $\mathcal{U}$ is open in the atlas topology.
+</question>
+<sketch>
+ Let $\mathcal{U} \subseteq \Sd$ be an open set in the subspace topology. Observe that w.l.o.g. it suffices to show that $(\calU \cap \calU_+, \phi_+)$ is a chart.
+</sketch>
+<answer>
+    <p>
+    We have $\mathcal{U} = (\calU \cap \calU_+) \cup (\calU \cap \calU_-)$, so w.l.o.g. it suffices to show that $(\calU \cap \calU_+, \phi_+)$ is a chart which is compatible with the charts $(\calU_+, \phi_+)$ and $(\calU_-, \phi_-)$.
+    </p>
+    <p>
+        For this, we need to establish that $\phi_+(\calU \cap \calU_+), \phi_+(\calU \cap \calU_+ \cap \calU_-)$ and $\phi_-(\calU \cap \calU_+ \cap \calU_-)$ are each open subsets of $\reals^{d-1}$.
+    </p>
+    <p>
+        Once we do this, we are done because it is clear that $\phi_+ \circ \phi_+^{-1}$ is a diffeomorphism on $\phi_+(\calU \cap \calU_+)$ (it is the identity map), and that $\phi_- \circ \phi_+^{-1}$ is a diffeomorphism on $\phi_+(\calU \cap \calU_+ \cap \calU_-)$ (it has the explicit formula given in part 2 of the first exercise).
+    </p>
+    <p>
+        Note that $\calU \cap \calU_+, \calU \cap \calU_+ \cap \calU_-$ are open subsets of $\Sd$ in the subspace topology.  So w.l.o.g. it suffices to show that if $\mathcal{W} \subseteq \calU_+$ is an open subset of $\Sd$ in the subspace topology then $\phi_+(\mathcal{W})$ is an open subset of $\reals^{d-1}$. Observe again that $\phi_+^{-1} : \reals^{d-1} \to \reals^d$ is continuous. Therefore the preimage of an open set through $\phi_+^{-1}$ is open. Finally, let $\calV \subseteq \reals^d$ be an open set such that $\calW = \calV \cap \Sd$. Then we have that
+        \begin{aligned}
+            \phi_+(\calW) = (\phi_+^{-1})^{-1}(\calW) = (\phi_+^{-1})^{-1}(\calV \cap \Sd) = (\phi_+^{-1})^{-1}(\calV) \cap (\phi_+^{-1})^{-1}(\Sd).
+        \end{aligned}
+        Finally, as $(\phi_+^{-1})^{-1}(\Sd) = \reals^{d-1}$ we have that
+        \begin{aligned}
+            \phi_+(\calW) = (\phi_+^{-1})^{-1}(\calV),
+        \end{aligned}
+        which is open as $\phi_+^{-1}: \reals^{d-1} \to \reals^d$ is continuous and $\calV \subseteq \reals^d$ is open.
+    </p>
+</answer>

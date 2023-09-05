@@ -1,8 +1,306 @@
 {
+    "sphere01": {
+        "title": "The sphere is a manifold",
+        "week": 1.2,
+        "topics": [101,102],
+        "source": "sphere01.html"
+        },
+    
+    "sphererayleigh02": {
+        "title": "Rayleigh quotient on the sphere",
+        "week": 1.1,
+        "topics": [101,102],
+        "source": "sphererayleigh02.html"
+        },
+    
+    "smallstiefel01": {
+        "title": "Small Stiefel manifold",
+        "week": 2.1,
+        "topics": [101,102],
+        "source": "smallstiefel01.html"
+        
+        },
+
+    "rankrmatrices01": {
+        "title": "Rank-1 matrices as a manifold",
+        "week": 2.2,
+        "topics": [101,102],
+        "source": "rankrmatrices01.html"
+        
+        },
+
+    "productmanifold01": {
+        "title": "Product manifolds",
+        "week": 2.3,
+        "topics": [101,102],
+        "source": "productmanifold01.html"
+        
+        },
+
+    "cross01": {
+        "title": "The cross is not a manifold",
+        "week": 2.4,
+        "topics": [101,102],
+        "source": "cross01.html"
+        
+        },
+    
+    "smoothdiff01": {
+        "title": "Smooth maps and differentials",
+        "week": 3.1,
+        "topics": [102,103],
+        "source": "smoothdiff01.html"
+        
+        },
+    
+    "EmbedManif01": {
+        "title": "Smooth embedded submanifolds of smooth embedded subamnifolds",
+        "week": 3.1,
+        "topics": [102,103],
+        "source": "EmbedManif01.html"
+        
+        },
+    
+    "spherester03": {
+        "title": "Stereographic projection",
+        "week": 3.2,
+        "topics": [101,102],
+        "source": "spherester03.html"
+        
+        },
+    
+    "QRstiefel02": {
+        "title": "QR retraction for small Stiefel",
+        "week": 3.3,
+        "topics": [104],
+        "source": "QRstiefel02.html"
+        
+        },
+    
+    "Polarstiefel03": {
+        "title": "Metric projection retraction for Stiefel",
+        "week": 3.4,
+        "topics": [101,102,104],
+        "source": "Polarstiefel03.html"
+        
+        },
+    
+    "ExpSOn01": {
+        "title": "Exponential map on rotations",
+        "week": 3.5,
+        "topics": [101,102,104],
+        "source": "ExpSOn01.html"
+        
+        },
+    
+    "FrechMeanSphere04": {
+        "title": "Fréchet mean on the hemisphere",
+        "week": 4.1,
+        "topics": [103,105],
+        "source": "FrechMeanSphere04.html"
+        },
+    
+    "ProdSphere05": {
+        "title": "Product of spheres",
+        "week": 4.2,
+        "topics": [102,103,105],
+        "source": "ProdSphere05.html"
+        },
+    
+    "ProdMet01": {
+        "title": "The product metric",
+        "week": 4.3,
+        "topics": [102,103,105],
+        "source": "ProdMet01.html"
+        },
+    
+    "DistotedRd01": {
+        "title": "Distoted $\reals^d$",
+        "week": 4.4,
+        "topics": [104,105,203],
+        "source": "DistotedRd01.html"
+        },
+    
+    "RGDprodsphere06": {
+        "title": "RGD on product of spheres",
+        "week": 5.1,
+        "topics": [104,202,203],
+        "source": "RGDprodsphere06.html"
+        },
+    
+    "RGDstiefel04": {
+        "title": "RGD on Stiefel",
+        "week": 5.2,
+        "topics": [102,105,203,204],
+        "source": "RGDstiefel04.html"
+        },
+    
+    "PLcond01": {
+        "title": "Pl-condition, sufficent decrease and linear convergence",
+        "week": 5.3,
+        "topics": [203,204],
+        "source": "PLcond01.html"
+        },
+    
+    "RiemannConnSphere07": {
+        "title": "Riemannian connection on the sphere",
+        "week": 6.1,
+        "topics": [107,108,109],
+        "source": "RiemannConnSphere07.html"
+        },
+    
+    "Liebrack01": {
+        "title": "The Lie bracket is nonzero",
+        "week": 6.2,
+        "topics": [107,108,109],
+        "source": "Liebrack01.html"
+        },
+    
+    "RiemHessStiefel05": {
+        "title": "Riemannian Hessian on Stiefel",
+        "week": 7.1,
+        "topics": [110],
+        "source": "RiemHessStiefel05.html"
+        },
+    
+    "SecOrdSphere08": {
+        "title": "Second-order critical points for Rayleigh quotient are globall optimal",
+        "week": 7.2,
+        "topics": [110,206],
+        "source": "SecOrdSphere08.html"
+        },
+    
+    "GeodSphere09": {
+        "title": "Geodesics on the sphere",
+        "week": 7.3,
+        "topics": [111],
+        "source": "GeodSphere09.html"
+        },
+    
     "newton01": {
         "title": "Newton's method",
         "week": 8.1,
         "topics": [207],
         "source": "newton01.html"
-    }
+        },
+    
+    "ImplementingRTR01": {
+        "title": "Implementation Riemannian Trust Regions",
+        "week": 9.1,
+        "topics": [210,211],
+        "source": "ImplementingRTR01.html"
+        },
+    
+    "Rank2BMappMC01": {
+        "title": "Rank-2 Burer-Monteiro approach to Max-Cut",
+        "week": 9.2,
+        "topics": [210,211],
+        "source": "Rank2BMappMC01.html"
+        },
+    
+    "CauchyStep01": {
+        "title": "Performence of the Cauchy step",
+        "week": 9.3,
+        "topics": [210,211],
+        "source": "CauchyStep01.html"
+        },
+    
+    "ParalellTrans01": {
+        "title": "Properties of the parallel transport",
+        "week": 10.1,
+        "topics": [112,113],
+        "source": "ParalellTrans01.html"
+        }
+    
+    "ParallelTransSphere10": {
+        "title": "Parallel transport on the sphere",
+        "week": 10.2,
+        "topics": [112,113],
+        "source": "ParallelTransSphere10.html"
+        }
+    
+    "TransSOd02": {
+        "title": "Transporters on the group of rotations",
+        "week": 10.3,
+        "topics": [112,113],
+        "source": "TransSOd02.html"
+        },
+    
+    "PropgConv01": {
+        "title": "Some properties of g-convex sets and functions",
+        "week": 11.1,
+        "topics": [114,701,702],
+        "source": "PropgConv01.html"
+        },
+    
+    "MinGeoNE01": {
+        "title": "Minimum geodesics do not always exist",
+        "week": 11.2,
+        "topics": [114,701,702],
+        "source": "MinGeoNE01.html"
+        },
+    
+    "IntgConv02": {
+        "title": "Intersection of g-convex sets",
+        "week": 11.3,
+        "topics": [114,701,702],
+        "source": "IntgConv02.html"
+        },
+    
+    "FrechMeanSphere11": {
+        "title": "Fréchet mean on hemisphere",
+        "week": 11.4,
+        "topics": [114,701,702],
+        "source": "FrechMeanSphere11.html"
+        },
+    
+    "RobCovEst01": {
+        "title": "Robust covarianz estimation",
+        "week": 11.5,
+        "topics": [114,701,702],
+        "source": "RobCovEst01.html"
+        },
+    
+    "SphereSmoothMan12": {
+        "title": "The sphere is a smooth manifold",
+        "week": 12.1,
+        "topics": [501,502,503],
+        "source": "SphereSmoothMan12.html"
+        },
+    
+    "SmoothFunSphere13": {
+        "title": "Smooth funtions on the sphere",
+        "week": 12.2,
+        "topics": [501,502,503],
+        "source": "SmoothFunSphere13.html"
+        },
+    
+    "TangVectSphere14": {
+        "title": "Tangent vectors on the sphere",
+        "week": 12.3,
+        "topics": [501,502,503],
+        "source": "TangVectSphere14.html"
+        },
+    
+    "TopoSphere15": {
+        "title": "The atlas topology is the subspace topology",
+        "week": 12.4,
+        "topics": [501,502,503],
+        "source": "TopoSphere15.html"
+        },
+    
+    "MaxTraceStiefel06": {
+        "title": "Max-Trace on Stiefel",
+        "week": -,
+        "topics": -,
+        "source": "MaxTraceStiefel06.html"
+        },
+    
+    "DiffMatInv01": {
+        "title": "Differentiating the matrix inversion",
+        "week": -,
+        "topics": -,
+        "source": "DiffMatInv01.html"
+        }
+    
 }

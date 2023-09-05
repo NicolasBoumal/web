@@ -1,0 +1,97 @@
+<title>
+    PL-condition, sufficient decrease and linear convergence
+</title>
+
+<p>
+    Let $\calM$ be a Riemannian manifold, and $f \colon \calM \to \reals$ be a smooth function satisfying the so-called "PL-condition" (short for Polyak-Lojasiewicz):
+    \begin{aligned}
+        \exists \; \mu>0 \text{ such that } \|\grad f(x)\|_{x}^2 \geq 2\mu(f(x) - f^*) \text{ } \forall x\in \calM, \text{ where } f^* = \min_{x \in \calM} f(x).
+    \end{aligned}
+    Consider an iterative algorithm $\mathcal{A}$ with iterates $x_0, x_1, \ldots$ satisfying the "sufficient decrease condition":
+    \begin{aligned}
+        \exists \; c > 0 \text{ such that } f(x_{k+1}) - f(x_k) \leq -c \|\grad f(x_k)\|_{x_k}^2 \quad \quad \forall k=0, 1, \ldots.
+    \end{aligned}
+    Backtracking line-search satisfies sufficient decrease (assuming Lipschitz conditions on $f$). See the textbook chapter 4.5 for more details.
+</p>
+
+<question>
+    Show that algorithm $\mathcal{A}$ converges at a linear rate:
+        \begin{aligned}
+            f(x_{k+1}) - f^* \leq (1 - 2 \mu c) (f(x_k) - f^*) \quad \quad \forall k=0, 1, \ldots.
+        \end{aligned}
+</question>
+<answer>
+    We have that
+            \begin{aligned}
+                2\mu c(f(x_{k}) - f^*) &\leq c \|\grad f(x_k)\|^2 \leq f(x_k) - f(x_{k+1}) \\
+                &= (f(x_k) - f^*) - (f(x_{k+1}) - f^*).
+            \end{aligned}
+            Thus rearranging gives
+            \begin{aligned}
+                f(x_{k+1}) - f^* \leq (1 - 2 \mu c) (f(x_k) - f^*) \quad \quad \forall k=0, 1, \ldots.
+            \end{aligned}
+</answer>
+
+<p>
+    Satisfying the PL-condition on all of $\calM$ is a strong requirement, and many cost functions do not satisfy this, as the next few questions illustrate.
+    However, under mild assumptions, the cost function $f$ will satisfy the PL-condition <em>locally</em> around a minimizer, and so this condition is useful for establishing local linear convergence of algorithms.
+</p>
+
+<question>
+    Show that if $f \colon \calM \to \reals$ satisfies the P\L-condition (on all of $\calM$), then all critical points of $f$ are global minimizers.
+</question>
+<answer>
+    If $x \in \calM$ is critical, then $\grad f(x) = 0$, and so
+            \begin{aligned}
+                0 = \|\grad f(x)\|_{x}^2 \geq 2\mu(f(x) - f^*) \geq 0
+            \end{aligned}
+            giving that, $f(x) = f^*$.
+</answer>
+
+<question>
+    If $\calM$ is a sphere, can a non-constant function $f \colon \calM \to \reals$ satisfy the PL-condition ? What about if $\calM$ is a compact Riemannian manifold ?
+</question>
+<sketch>
+    What can you say about the maximizer of $f$ ?
+</sketch>
+<answer>
+    <p>
+    If $f \colon \calM \to \reals$ is a smooth map on a compact Riemannian manifold $\calM \subseteq \calE$, which satisfies the PL-condition, then $f$ is constant.
+    </p>
+    <p>
+            Suppose $f$ is as in the above claim. Then by part 2 we know that $x \in \calM$ is a critical point if and only if $x \in \calM$ is a global minimizer. Further, as $f$ is a continuous map on a compact set $f$ reaches its maximum. Let $x_{\max} \in \arg\max_{x\in\calM} f(x)$.  Then,
+            \begin{aligned}
+                0 = \|\grad f(x_{\max})\|^2 \geq 2\mu(f(x_{\max}) - f^*) \geq 0.
+            \end{aligned}
+            Therefore, $f(x_{\max}) = f^*$, i.e., $f$ is constant.
+    </p>
+</answer>
+
+<question>
+    Let $\calM = \reals^d$ endowed with the standard inner product ($\calM$ is a Euclidean space). Show that if $f$ is differentiable and $\mu$-strongly convex, i.e.,
+        \begin{aligned}
+            f(y) \geq f(x) + \langle \grad f(x), y - x \rangle + \frac{\mu}{2} \|x-y\|^2 \quad \quad \forall x, y \in \calM = \reals^d,
+        \end{aligned}
+        then $f$ satisfies the PL-condition with constant $\mu$.
+</question>
+<sketch>
+    Fix $x \in \reals^d$ and minimize $g(y) = f(x) + \langle \grad f(x), y - x \rangle + \frac{\mu}{2} \|x-y\|^2$.
+</sketch>
+<answer>
+    Fix $x \in \reals^d$ and define $g(y) = f(x) + \langle \grad f(x), y - x \rangle + \frac{\mu}{2} \|x-y\|^2$. We have that $\D g(y)[v] = \langle \grad f(x) + \mu (y-x), v \rangle$ for $v \in \reals^d$. Thus the only critical point of $g$ is given by $y^* = x - \frac{1}{\mu} \grad f(x)$. As $g$ is a polynomial with dominant coefficient $\mu / 2 > 0$, we have that it reaches a minimum on $\reals^d$ and by the first order optimally condition we infer that $y^* = x - \frac{1}{\mu} \grad f(x)$ is the minimizer of $g$. Thus we have that
+            \begin{aligned}
+                g(y) = f(x) + \langle \grad f(x), y - x \rangle + \frac{\mu}{2} \|x-y\|^2 \geq g(y^*) = f(x) - \frac{1}{2 \mu} ||\grad f(x)||^2.
+            \end{aligned}
+            By arbitrariness of $x \in \reals^d$ we get that
+            \begin{aligned}
+                f(y) \geq f(x) - \frac{1}{2 \mu} ||\grad f(x)||^2 \quad \forall x,y \in \reals^d.
+            \end{aligned}
+            In particular for $f^* = \min_{\reals^d} f$, which exists by compacity and continuity, we get that
+            \begin{aligned}
+                f^* \geq f(x) - \frac{1}{2 \mu} ||\grad f(x)||^2 \quad \forall x \in \reals^d.
+            \end{aligned}
+            From that we get
+            \begin{aligned}
+                2 \mu (f(x) - f^*) \leq ||\grad f(x)||^2 \quad \forall x \in \reals^d.
+            \end{aligned}
+</answer>

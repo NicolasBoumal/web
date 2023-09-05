@@ -1,0 +1,82 @@
+<title>
+    Fréchet mean on hemisphere
+</title>
+
+<p>
+Consider the $(d-1)$-dimensional hemisphere
+$$\calM = \{x = (x^{(1)}, \ldots, x^{(d)}) \in \reals^d : \|x\| = 1, x^{(d)} > 0\},$$
+viewed as a Riemannian submanifold of $\calE = \reals^d$ (with standard Euclidean inner product).
+The Riemannian distance between $x, y \in \calM$ is given by
+$$d \colon \calM \times \calM \to \reals, \quad \quad d(x,y) = \arccos(x^\top y).$$
+Let $x_1, \ldots, x_n \in \calM$, and define
+$$f\colon \calM \to \reals, \quad \quad f(x) = \frac{1}{n} \sum_{i=1}^n \frac{1}{2} d(x, x_i)^2.$$
+A minimizer of $f$ can be interpreted as an intrinsic mean of the points $x_1, \ldots, x_n$.
+</p>
+
+<question>
+    Show that $f \colon \calM \to \reals$ is smooth.
+    <hint>
+        You can use the following fact.  Define the function
+            $$g \colon (-1, 1] \to \reals, \quad \quad g(t) = \frac{1}{2} \arccos(t)^2.$$
+            There is a smooth function $\overline g \colon (-1, 2) \to \reals$ such that $g(t) = \overline g(t)$ for all $t \in (-1, 1]$,
+            and $\overline g'(t) = -\frac{\arccos(t)}{\sqrt{1-t^2}}$ for all $t \in (-1, 1)$ and $\overline g'(1) = -1$.
+            (You could show this using a complex extension of $\arccos$.)
+    </hint>
+</question>
+<sketch>
+    Analyse the scalar product of two elements in $\calM$. What do you observe ? What could be an open, which contains $\calM$ and on which $x \mapsto \overline{g} (x^\top y )$ is well defined for a fixed $y \in \calM$ ?
+</sketch>
+<answer>
+    <p>
+    As the sum of smooth functions is smooth, it is enough to show that if $y \in \calM$, then
+            \begin{aligned}
+                h \colon \calM \to \reals, \quad \quad h(x) = \frac{1}{2} d(x, y)^2 = \frac{1}{2} \arccos(x^\top y)^2 = g(x^\top y)
+            \end{aligned}
+            is smooth.  To do this, we build a smooth extension $\overline h$ of $h$.
+    </p>
+    <p>
+            First, observe that if $x,y \in \calM$, then we have that $\langle x,y \rangle = \langle \widetilde{x},\widetilde{y} \rangle + x^{(d)} \cdot y^{(d)}$, where $\widetilde{x}=(x^{(1)}, \ldots, x^{(d-1)})$ and $\widetilde{y}=(y^{(1)}, \ldots, y^{(d-1)})$. As $x^{(d)} \cdot y^{(d)} > 0$ and $\langle \widetilde{x},\widetilde{y} \rangle \geq -|| \widetilde{x}|| \cdot || \widetilde{y}|| \geq -1$ we have that $\langle x,y \rangle \in (-1,1]$.
+    </p>
+    <p>
+            This shows that $\calM \subseteq (\langle .,y \rangle)^{-1}((-1,1]) \subseteq (\langle .,y \rangle)^{-1}((-1,2))$. Thus by continuity of the scalar product we have that $U:=(\langle .,y \rangle)^{-1}((-1,2))$ is an open set which contains $\calM$. By construction of the set $U$ it is clear that the map $\overline{h}:=\overline{g}(x^\top y)$ for a fixed $y \in \calM$ is well defined and as $\overline{g}=g$ on $(-1,1]$ this map is an extension of $h$. This proves that $h$ and thus $f$ is smooth.
+    </p>
+</answer>
+
+<question>
+    Given $x \in \calM$, give an expression for the Riemannian gradient of $f$ at $x$.
+</question>
+<sketch>
+    Compute the euclidean gradient of the extension and then use that $\calM$ is a Riemannian submanifold.
+</sketch>
+<answer>
+    <p>
+    Let's first give an expression for the Riemannian gradient of
+            \begin{aligned}
+                h \colon \calM \to \reals, \quad \quad h(x) = \frac{1}{2} d(x, y)^2 = \frac{1}{2} \arccos(x^\top y)^2 = g(x^\top y).
+            \end{aligned}
+    </p>
+    <p>
+            By the chain rule and the definition of the euclidean gradient we get that $\grad \overline{h} = \overline g'(x^\top y) y$. As we are on a Riemannian submanifold the Riemannian gradient is the projection on the tangent space of the euclidean gradient. From the exercise <a exercise="sphererayleigh02">Rayleigh quotient on the sphere</a> we know that $\Proj_x(v) = (I-xx^\top)v$. Therefore the Riemannian gradient of $h$ is given by
+            \begin{aligned}
+            \grad h(x) &= \Proj_x(\grad \overline h(x)) = (I - x x^\top) \overline g'(x^\top y) y \\
+            &= - \frac{\arccos(x^\top y)}{\sqrt{1- (x^\top y)^2}} (I - x x^\top) y
+            = \frac{d(x, y)}{\sin(d(x, y))} (x x^\top - I) y \\
+            &= \frac{d(x,y)}{\sin(d(x, y))}(\cos(d(x, y)) x - y).
+            \end{aligned}
+            Observe that the above computation only holds, a priori, for $x \in \calM \setminus \{y\}$. But as $\grad h(y) = 0$ we get that the results hold also for $x=y$.
+    </p>
+    <p>
+            Now, using the linearity of the Riemannian gradient we get that
+            \begin{aligned}
+                \grad f(x) = \frac{1}{n} \sum_{i=1}^n \left ( \frac{d(x,x_i)}{\sin(d(x,x_i))}(\cos(d(x,x_i)) x - x_i) \right ).
+            \end{aligned}
+    </p>
+    <p>
+            An other possibility to write the gradient of $f$ is the following.
+            \begin{aligned}
+                \grad f(z) &= \frac{1}{n} \sum_{i=1}^n \left ( (I - z z^\top) \overline g'(z^\top x_i) x_i \right ) = \frac{1}{n} (I - zz^\top) X \cdot \overline g'(X^\top z) \\
+                &= \frac{1}{n} (X - zz^\top X) \overline g'(X^\top z),
+            \end{aligned}
+            where $ X = \begin{bmatrix} x_1 & \cdots & x_n \end{bmatrix}$ and $\overline g'(X^\top z)$ is taken elementwise.
+    </p>
+</answer>

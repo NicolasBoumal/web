@@ -1,0 +1,140 @@
+<title>
+    Metric projection retraction for Stiefel
+</title>
+
+<p>
+For $p \leq n$, consider the Stiefel manifold
+\begin{aligned}
+    \calM = \Stnp = \{X \in \Rnp \colon X^\top X = I_p\}.
+\end{aligned}
+</p>
+
+<question>
+    Show that $\calM$ is an embedded submanifold of $\calE = \Rnp$.
+        As usual, we endow $\Rnp$ with the inner product $\inner{X}{Y} = \trace(X^\top Y)$.
+        What is the dimension of $\calM$ ?
+        What are the tangent spaces of $\calM$ ?
+</question>
+<sketch>
+    This can be shown similarly to the <a exercise=smallstiefel01>Small Stiefel manifold<a>.
+</sketch>
+<answer>
+    <p>
+    Define the map
+        \begin{aligned}
+            h \colon \reals^{n \times p} \to \symm(p), \quad \quad h(X) = X^\top X - I,
+        \end{aligned}
+        where $\symm(p) := \{U \in \reals^{p \times p} \; | \; U=U^\top\}$.
+    </p>
+    <p>
+        As $h$ is clearly smooth and $\calM:=h^{-1}(\{0\})$ we only need to show that $\D h(X)$ is surjective for all $X \in \calM$. By a straightforward computation we get that $\D h(X)[V] = X^\top V + V^\top X$ for $X \in \calM$ and $V \in \reals^{n \times p}$. Thus for $W \in \symm(p)$ we have that
+        \begin{aligned}
+            \D h(X)\bigg[\frac{1}{2} X W\bigg] = \frac{1}{2} (X^\top X W + W^\top X^\top X) = \frac{1}{2}(W + W^\top) = W,
+        \end{aligned}
+        which shows that $\D h(X)$ is surjective and that $\calM$ is a manifold.
+    </p>
+    <p>
+        By definition we have that the dimension of $\calM$ is given by $\dim(\reals^{n \times p}) - \dim(\symm(p)) = np - p (p+1)/2 = p(n - \frac{p+1}{2})$.
+    </p>
+    <p>
+        Lastly, the tangent space of $X \in \calM$ is given by
+        \begin{aligned}
+            \T_x \calM = \ker \D h(X) = \{V \in \reals^{n \times p} : X^\top V + V^\top X = 0\}.
+        \end{aligned}
+        Also see Section 7.3 of the textbook.
+    </p>
+</answer>
+
+<question>
+    For $(X, V) \in \T \calM$, let $U \Sigma W^\top$ be a thin SVD of $X + V$ (i.e., $U \in \calM, W \in O(p)$ and $\Sigma \in \reals^{p \times p}$ is diagonal with positive entries).
+        Show that $U W^\top$ is the unique metric projection of $X+V$ to $\calM$, i.e., $Y = U W^\top$ is the unique solution of
+        $$\min_{Y \in \calM} \|X+V - Y\|^2.$$
+        For $(X, V) \in \T \calM$, define $\Retr_X(V) = U W^\top$.
+</question>
+<sketch>
+    Use the unitary invariance of the Frobenius norm and that $X+V$ is full rank.
+</sketch>
+<answer>
+    By the unitary invariance of the Frobenius norm and the bijectivity of $Y \mapsto Y W$ on $\Stnp$ we have that
+            \begin{aligned}
+                &\inf_{Y \in \calM} ||X+V-Y||^2 = \inf_{Y \in \calM} ||U\Sigma W^T-Y||^2 = \inf_{Y \in \calM} ||U\Sigma -YW||^2 \\
+                &= \inf_{Z \in \calM} ||U\Sigma -Z||^2 = \inf_{Z \in \calM} \left ( \sum_{i=1}^p ||\sigma_i u_i - z_i||^2 \right ) \\
+                &=\inf_{Z \in \calM} \left ( \sum_{i=1}^p \sigma_i^2 - 2 \sigma_i \langle u_i, x_i \rangle + 1\right ) \geq \sum_{i=1}^p ( \sigma_i^2 - 2 \sigma_i + 1).
+            \end{aligned}
+            The last inequality follows from Cauchy-Schwartz and as $\sigma_i > 0$ for all $i=1,\ldots,p$ we have equality if and only if $u_i = z_i$. This shows that there is a unique minimizer, which is given by $YW = U \iff Y = UW^T$.
+</answer>
+
+<question>
+    The quantity $U W^\top$ can also be computed differently. Indeed, show that
+        \begin{aligned}
+        \Retr_X(V) = (X+V)(I_p + V^\top V)^{-1/2}.
+        \end{aligned}
+</question>
+<sketch>
+    Find a spectral decomposition for $I_p + V^TV$.
+</sketch>
+<answer>
+    Using $X^\top V + V^\top X = 0$ (since $V \in \T_X \calM$), we have
+            \begin{aligned}
+            (I + V^\top V)^{-1/2} &= ((X + V)^\top (X+V))^{-1/2} = (W \Sigma U^\top U \Sigma W^\top)^{-1/2} \\
+            &= (W \Sigma^2 W^\top)^{-1/2} = W \Sigma^{-1} W^\top.
+            \end{aligned}
+            Therefore,
+            $(X + V) (I + V^\top V)^{-1/2} = U \Sigma W^\top W \Sigma^{-1} W^\top = U W^\top.$
+</answer>
+
+<question>
+    For numerical purposes, the best way to compute $\Retr$ is via the thin SVD.  However, for the purpose of analysis, the above formula is useful.
+        Use the above formula to show that $\Retr \colon \T\calM \to \calM$ is a retraction.
+        This retraction is also known as the polar retraction.
+        <hint>
+            You can use without proving it that the following map is smooth
+            \begin{aligned}
+                A \in \mathcal{P}_p \mapsto A^{-\frac{1}{2}} \in \mathcal{P}_p,
+            \end{aligned}
+            where $\mathcal{P}_p := \{A \in \symm(p) : A \succ 0\}$ is the set of all positive definite matrices, which is an open subset of the linear space of symmetric matrices.
+        </hint>
+</question>
+<answer>
+    $\Retr$ is clearly smooth since $(X, V) \mapsto (X+V)(I_p + V^\top V)^{-1/2}$ is smooth on $\Rnp \times \Rnp$ as composition of smooth maps and clearly, $R_X(0)=X$.
+            By the product rule we have that
+            \begin{aligned}
+                \frac{d}{dt}[\Retr_X(t V)]_{t=0} = V +  X \frac{d}{dt}[(I_p + t^2 V^\top V)^{-1/2}]_{t=0}.
+            \end{aligned}
+            Let $h:\mathcal{P}_p \to \mathcal{P}_p$ by given by $A \mapsto A^{-\frac{1}{2}}$ and $\gamma(t) = I_p + t^2V^TV$. Then we have that
+            \begin{aligned}
+                &\frac{d}{dt}[h \circ \gamma(t)]_{t=0} = D h \circ \gamma(t)[1] = Dh(\gamma(t))[D\gamma(t)[1]] = Dh(I_p + t^2V^TV)[\frac{d}{dt}(I_p + t^2 V^\top V)] \\
+                &=(2t)Dh(I_p + t^2V^TV)[V^TV].
+            \end{aligned}
+            Taking the limit for $t \to 0$ and using the continuity of $Dh$ we get that
+            \begin{aligned}
+                \frac{d}{dt}[(I_p + t^2 V^\top V)^{-1/2}]_{t=0} = 0.
+            \end{aligned}
+            This shows that $R$ is a retraction.
+</answer>
+
+<question>
+    (Optional) For $X \in \calM$, is $\Retr_X \colon \T_X\calM \to \calM$ surjective ?
+</question>
+<sketch>
+    Try to do something similar to the optional question in the exercise QR retraction for small Stiefel.
+</sketch>
+<answer>
+    <p>
+    We show that for $n,p \in \mathbb{N}$ with $1 \leq p \leq n$ and $X \in \Stnp$ the map $R_X$ isn't surjective.
+    </p>
+    <p>
+            Fix $X \in \Stnp$ and suppose for contradiction that $R_X$ is surjective. Let $Y = - X \in \Stnp$. Then $X^TY = - I_p = Y^TX$. Let $V \in T_X \calM$ be such that $R_X(V)=Y$ and let $X+V=U\Sigma W^T$ be a thin SVD. We get that $Y=UW^T$, giving that $X+V=YW\Sigma W^T = YA$ with $A=W\Sigma W^T$. Observe that $A$ is s.p.d.. We have that
+            \begin{aligned}
+                &X^TV + V^TX = 0 \iff \\
+                &X^TYA + A^TY^TX = 2 I_p.
+            \end{aligned}
+            But as $X^TY = - I_p = Y^TX$ this simplifies to
+            \begin{aligned}
+                -2A=2I_p \iff A=-I_p,
+            \end{aligned}
+            giving a contradiction as $A$ is s.p.d..
+    </p>
+</answer>
+
+

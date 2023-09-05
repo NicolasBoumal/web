@@ -1,0 +1,70 @@
+<title>
+    Distorted $\reals^d$
+</title>
+
+<p>
+    In the <a exercise="FrechMeanSphere04">Fréchet mean on hemisphere</a> and <a exercise="ProdSphere05">Product of spheres</a> exercises, the Riemannian manifolds we considered are Riemannian submanifolds, meaning the embedded submanifold was endowed with the metric from the ambient space $\calE$.
+        This exercise provides an example of embedded submanifold which is not a Riemannian submanifold.
+</p>
+
+<p>
+    Let $U$ be an open subset of $\calE = \reals^d$, and denote the Euclidean inner product on $\calE$ by $\langle u, v \rangle_\calE = u^\top v$.
+        Let $G \colon U \to \reals^{d \times d}$ be a smooth map such that $G(x)$ is symmetric and positive definite for all $x \in U$.
+        Let $\calM$ be $U$ equipped with the Riemannian metric $\langle u, v \rangle_\calM = u^\top G(x) v$.
+</p>
+
+<question>
+    Verify that $\langle \cdot, \cdot \rangle_{\calM}$ is a Riemannian metric on $U$.
+</question>
+<sketch>
+    This should follow immediately from the definition of Riemannian metric.
+</sketch>
+<answer>
+    Fix $x \in U$. As $U\subseteq \reals^n$ is open we have that $\T_x U = \reals^n$ and as $G(x)$ is s.p.d. it is straightforward to verify that $\langle u, v \rangle_x = u^T G(x) v$ with $u,v \in \reals^n$ defines a inner product on $\reals^n$. Furthermore, if $V_1, V_2 \colon U \to \reals^d$ are smooth vector fields on $U$, then $x \mapsto V_1(x)^\top G(x) V_2(x)$ is a smooth function on $U$ as a product of smooth maps.
+</answer>
+
+<question>
+    Let $f\colon U \to \reals$ be smooth.
+        Derive an expression for the Riemannian gradient of $f$, $\grad_\calM f$, in terms of the Euclidean gradient of $f$, $\grad_\calE f$.
+</question>
+<sketch>
+    This should follow immediately from the definition of Riemannian metric.
+</sketch>
+<answer>
+    Let $v \in \reals^n$. We observe that
+            \begin{aligned}
+                \langle v, G(x) \grad_\calM f(x) \rangle_\calE = v^\top G(x) \grad_\calM f(x) = \langle v, \grad_\calM f(x)\rangle_\calM = \langle v, \grad_\calE f(x)\rangle_\calE.
+            \end{aligned}
+            By unicity we get that $\grad_\calM f(x) = G(x)^{-1} \grad_\calE f(x)$.
+</answer>
+
+<question>
+    If $U = \reals^d$, argue that $\Retr_x(u) = x + u$ is a retraction on $\calM$.
+        Write down Riemannian gradient descent on $\calM$ with retraction $\Retr$.
+        Compare this algorithm to (a) gradient descent on $\calE$ with a preconditioner, and (b) Newton's method on $\calE$.
+</question>
+<answer>
+    We have that $\Retr \colon \T \calM = \reals^d \times \reals^d \to \reals^d$ is smooth, $R_x(0)=x$ and
+            \begin{aligned}
+                \frac{d}{dt}[\Retr_x(tv)]_{t=0} = \frac{d}{dt}[x + t v]_{t=0} = v,
+            \end{aligned}
+            so it is a retraction. RGD is given by
+            \begin{aligned}
+                x_{k+1} = x_k - \eta_k G(x)^{-1} \grad_\calE f(x),
+            \end{aligned}
+            which we can interpret as preconditioned (Euclidean) gradient descent.
+            If we take $G(x) = \Hess f(x)$ and $\eta_k=1$, then RGD becomes Newton's method.
+</answer>
+
+<question>
+    Now let us consider a particular case known as the Poincaré ball model of hyperbolic space.
+        Let $r > 0$, $U = \{x : \|x\|_\calE \leq r\}$, and
+        $$G(x) = \frac{4 r^4}{(r^2 - \|x\|_\calE^2)^2} I, \quad \quad \forall x \in U.$$
+        With $f \colon \calM \to \reals$ smooth, give an expression for the Riemannian gradient of $f$ in terms of the Euclidean gradient of $f$.
+</question>
+<answer>
+    By part 2 we have that
+            \begin{aligned}
+                \grad_\calM f(x) = \frac{(r^2 - \|x\|_\calE^2)^2}{4 r^4} \grad_\calE f(x).
+            \end{aligned}
+</answer>

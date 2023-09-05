@@ -1,0 +1,26 @@
+<title>
+    Intersection of g-convex sets
+</title>
+
+<p>
+The intersection of two convex subsets of a Euclidean space is convex. However, in general, the intersection of two g-convex sets is not g-convex.
+</p>
+
+<question>
+    Give an example of a Riemannian manifold $(\calM, \langle \cdot, \cdot \rangle)$ and two geodesically convex sets $A, B \subseteq \calM$ whose intersection $A \cap B$ is not geodesically convex.
+</question>
+<answer>
+    Consider $\calM = \mathbb{S}^1$, i.e. the circle in $\reals^2$. Then define $A = \mathbb{S}^1 \setminus \{(1,0)\}$ and $B = \mathbb{S}^1 \setminus \{(-1,0)\}$. Both sets are clearly geodesically convex but their intersection isn't connected and thus not geodesically convex.
+</answer>
+
+<p>
+If we make additional assumptions, then the intersection is g-convex. A subset $S$ of a Riemannian manifold $(\calM, \langle \cdot, \cdot \rangle)$ is "geodesically strongly convex" if for all $x, y \in S$, among all geodesic segments $\gamma \colon [0,1] \to \calM$ connecting $\gamma(0) = x$ and $\gamma(1) = y$, exactly one of those segment is minimizing, and moreover this minimizing segment lies entirely in $S$ (i.e., $c(t) \in S$ for all $t \in [0,1]$). (See Section 11.3 of the textbook for further details.)
+</p>
+
+<question>
+    Let $A$ and $B$ be geodesically strongly convex subsets of a Riemannian manifold $(\calM, \langle \cdot, \cdot \rangle)$.
+        Show that the intersection $A \cap B$ is geodesically strongly convex (and so in particular is g-convex).
+</question>
+<answer>
+    Let $x, y \in A \cap B$. As $x,y \in A$ and $A$ is  geodesically strongly convex there exists a unique minimizing geodesic segment $\gamma \colon [0,1] \to \calM$. By geodesic strong convexity of $A$ and $B$ we have that $\gamma(t) \in A$ and $\gamma(t) \in B$ for all $t \in [0,1]$. Thus $\gamma(t) \in A \cap B$ for all $t \in [0,1]$, giving by arbitrariness of $x,y \in A \cap B$ that $A \cap B$ is geodesically strongly convex and so in particular is g-convex.
+</answer>

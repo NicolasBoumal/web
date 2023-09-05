@@ -1,0 +1,89 @@
+<title>
+    QR retraction for small Stiefel
+</title>
+
+<p>
+    In the exercise <a exercise=smallstiefel01>Small Stiefel manifold<a>, we showed that
+    $$\calM = \{X = (x, y) \in \Rd \times \Rd = \reals^{d \times 2} \colon x^{\top} x=1, y^{\top}y=1, x^{\top} y=0\}$$
+    is an embedded submanifold of $\calE = \Rd \times \Rd = \reals^{d \times 2}$.
+    Let us work out a retraction for $\calM$.
+</p>
+
+<question>
+    Show that for all $(X, V) \in \T \calM$, there is a unique way to write $X + V = Q R$ where $Q \in \calM$ and $R$ is upper triangular with positive diagonal entries.
+        Then define $\Retr \colon \T \calM \to \calM$ by $\Retr_X(V) = Q$.
+        <hint>
+            When is the QR decomposition unique for a matrix $A \in \reals^{d \times m}$ (in the sens that there is a unique matrix $Q \in \reals^{d \times m}$ with orthogonal columns and a unique upper triangular matrix $R \in \reals^{m \times m}$  with positive diagonal entries such that $A = QR$) ?
+        </hint>
+</question>
+<sketch>
+    The QR decomposition is unique in the above sens if $A$ has full column rank. Show that this is the case for $A = X + V$ with $(X, V) \in \T \calM$.
+</sketch>
+<answer>
+    <p>
+    Here's a <em>sketch</em> for the uniqueness of the $QR$-decomposition for full column rank matrices.
+    </p>
+    <p>
+            
+            To show that the QR-decomposition is unique in the above sens we can procedure by induction on $1 \leq m \leq d$. The case $m=1$ is trivial and the induction step follows essentially by the observation that if $A = QR$ with $Q \in \reals^{d \times m}$ with orthogonal columns and $R \in \reals^{m \times m}$ an upper triangular matrix with positive diagonal entries, then $Q$ without the last column and $R$ without the last row and last column is the QR-decomposition for $A$ without the last row.
+    </p>
+    <p>
+            Finally, $X + V$ with $(X, V) \in \T \calM$ has full rank as
+            \begin{aligned}
+                (X+V)^\top (X+V) = I + V^\top V \succ 0.
+            \end{aligned}
+    </p>
+</answer>
+
+<question>
+    Derive an explicit formula for $\Retr_X(V)$, and use this to show that $\Retr$ is a retraction for $\calM$.
+</question>
+<sketch>
+    One can use the Gram-Schmidt algorithm to find the $QR$-decomposition.
+</sketch>
+<answer>
+    <p>
+    If $X = (x_1, x_2), V = (v_1, v_2)$ and $Q$ has columns $q_1, q_2$, we get by applying Gram-Schmidt that
+            \begin{aligned}
+                q_1 = \frac{x_1 + v_1}{\|x_1 + v_1\|},\quad q_2' = x_2+v_2 + \langle x_2+v_2, q_1 \rangle q_1, \quad q_2 = \frac{q_2'}{\|q_2'\|}.
+            \end{aligned}
+            Smoothness follows by the observation that $q_1$ and $q_2$ are composition of well-defined smooth maps in $(X,V)$.
+    </p>
+    <p>
+            To show $\frac{d}{dt} [\Retr_X(t V)]_{t=0} = \frac{d}{dt}[(q_1(t), q_2(t))]_{t=0} = V$: The derivative of $q_1(t)$ at $t=0$ is obviously $v_1$ (because it is just metric projection to the sphere).
+            The derivative of $q_2'(t)$ at $t=0$ equals $v_2 + \langle v_2, x_2 \rangle x_2 = v_2$.
+            This shows that $R_X(V)$ is indeed a retraction.
+    </p>
+</answer>
+
+<question>
+    (Optional) For $X \in \calM$, is $\Retr_X \colon \T_X\calM \to \calM$ surjective ?
+</question>
+<sketch>
+    Try to find an equation, which has to be satisfied if the map is surjective and analyse if this equation is always satisfied.
+</sketch>
+<answer>
+    No, it isn't surjective. Let $Y = XP$ with $P = \begin{bmatrix}
+            0 & 1 \\
+            1 & 0
+            \end{bmatrix}$
+            i.e. the permutation matrix, which exchange the first and second column. If we suppose for contradiction that there is $X \in \calM$ such that the above map is surjective, then there exists $V \in T_X \calM$ such that $R_X(V)=Y$. By construction of the QR-retraction this means that there exists $R \in \reals^{2 \times 2}$ upper-triangular with positive entries on the diagonal such that $X+V=YR$. But then $-V = X - YR$ and $X^TV+V^TX=0$, which implies
+            \begin{aligned}
+                &X^T(X-YR) + (X-YR)^TX=0 \iff \\
+                &I_2 - X^TYR + I_2 -R^TY^TX = 0 \iff \\
+                &X^TYR + R^TY^TX = 2 I_2.
+            \end{aligned}
+            As $Y=XP$ we have that $X^TY = P = Y^TX$. Thus
+            \begin{aligned}
+                2 I_2 = R^TP + P^T R = \begin{bmatrix}
+                    0 & r_{11} \\
+                    r_{21} & r_{12}
+                \end{bmatrix}
+                +
+                \begin{bmatrix}
+                    0 & r_{21} \\
+                    r_{11} & r_{12}
+                \end{bmatrix},
+            \end{aligned}
+            which is a contradiction.
+</answer>

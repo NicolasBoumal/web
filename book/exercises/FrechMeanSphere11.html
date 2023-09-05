@@ -1,0 +1,35 @@
+<title>
+    Fréchet mean on hemisphere
+</title>
+
+<p>
+Write some code to generate random points $x_1, \ldots, x_n$ on a hemisphere $\Sd_+ := \{x = (x^{(1)}, \ldots, x^{(d)}) \in \reals^d : \|x\| = 1, x^{(d)} > 0\}$ near the north pole, and implement the cost function for "intrinsic averaging", that is,
+\begin{aligned}
+    f \colon \Sd \to \reals, \quad \quad f(x) = \frac{1}{2n} \sum_{j=1}^n \dist(x, x_j)^2.
+\end{aligned}
+A global minimizer of $f$ can is called a "Fréchet mean" of the points $x_1, \ldots, x_n$.
+
+Recall that from exercise <a exercise="FrechMeanSphere04">Fréchet mean on hemisphere</a> we know that the squared distance between $x, y \in \Sd$ is
+\begin{aligned}
+    \dist(x, y)^2 = \arccos(x^\top y)^2,
+\end{aligned}
+and that the Riemannian gradient of the squared distance function is
+\begin{aligned}
+    \grad \Big(x \mapsto \frac{1}{2} \dist(x, y)^2\Big)(x) = \frac{\dist(x,y)}{\sin(\dist(x, y))}(\cos(\dist(x, y)) x - y).
+\end{aligned}
+</p>
+
+<question>
+    Run a few optimization algorithms to minimize $f$ and observe what happens. How do you initialize ? For a given data set $x_1, \ldots, x_n$, do you get consistent convergence to the same point ? Do you always recover a global minimum ? What is the spectrum of the Hessian at the optimum?  (Use Manopt's "hessianspectrum" tool; for this, there is no need to compute the Hessian by hand.)
+</question>
+<answer>
+    <p>
+    You should observe that all algorithms (we used RGD, RCG and RTR) converge fast to the same point independent of their initialization and that the spectrum of the hessian at the final point is strictly positive. Thus we should be close to a local minimizer $x$. As by compacity of the sphere and continuity of $f$ on the sphere we know that there is a global minimizer, which should be close to the north pole we should even have that $x$ is a global minimizer.
+    </p>
+    <p>
+    The Matlab implementation can be downloaded here.
+    <a target="_blank" href="exercises/MATLABFrechMeanSphere11.zip">Download Matlab implementation</a>
+    The main of the implementation is the following.
+    <matlab href="mainMATLABFrechMeanSphere11.m"> </matlab>
+    </p>
+</answer>

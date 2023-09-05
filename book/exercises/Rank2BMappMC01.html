@@ -1,0 +1,60 @@
+<title>
+    Rank-2 Burer-Monteiro approach to Max-Cut
+</title>
+
+<p>
+Now consider the following semidefinite program which occurs in robust PCA and as a convex relaxation of combinatorial problems such as <a href="https://en.wikipedia.org/wiki/Maximum_cut" target="_blank">Max-Cut</a>:
+\begin{aligned}
+\min_{X \in \Rnn} \Trace(C X) \text{ subject to } \diag(X) = \One, X \succeq 0,
+\end{aligned}
+where $C$ is a symmetric cost matrix depending on the application.  Here, $\diag(X) = \One$ means that all the diagonal entries of $X$ equal one. In Max-Cut, $C$ is a constant times the adjacency matrix of a graph.
+</p>
+
+<p>
+One common approach (proposed by Burer and Monteiro) is to parametrize the search space as $X = Y Y^\top$, where $Y \in \Rnp$ for some well-chosen $p$ usually much less than $n$.  Note that $Y Y^\top \succeq 0$ and that every $X \succeq 0$ of rank at most $p$ can be written in this way. For many applications an optimal solution to the above problem has rank much less than $n$, which justifies this practice.  We will take $p=2$.
+</p>
+
+<p>
+The condition $\diag(Y Y^\top) = \One$ enforces each row of $Y$ to have unit norm.  Therefore, we can rewrite to the above problem as
+\begin{aligned}
+\min_{Y \in \calM} f(Y) = \Trace(C Y Y^\top),
+\end{aligned}
+where $\calM = \{Y \in \Rnp : \text{each row of $Y$ has unit norm}\}$ is simply the product of $n$ circles $\text{S}^{p-1} = \text{S}^1$; this is an example of an <em>oblique manifold</em>.
+</p>
+
+<p>
+Note that while the initial problem is a convex problem, the later is nonconvex.  On the other hand, when $n \gg p$, this nonconvex formulation is favourable because it only requires working with matrices of size $n \times p$, rather than $n \times n$.
+</p>
+
+<question>
+    For $n=10$, generate a random symmetric matrix $C$, and use your RTR method (with Cauchy steps and also with tCG if you have implemented it) to solve the rewritten problem.
+</question>
+<answer>
+    The Matlab implementation can be downloaded here.
+    <a target="_blank" href="exercises/MATLABRank2BMappMC01.zip">Download Matlab implementation</a>
+    The main of the implementation is the following.
+    <matlab href="mainRank2BMappMC01.m"> </matlab>
+</answer>
+
+<p>
+Although $\calM$ is a very simple manifold, the following formulas for retraction, orthogonal projection to tangent space, Riemannian gradient and Hessian will be helpful.  Let $S = C - \diag^*(\diag(C Y Y^\top))$.  $\diag \colon \Rnn \to \Rn$ maps a matrix to the vector of its diagonal entries; it's adjoint $\diag^* \colon \Rn \to \Rnn$ maps a vector to the matrix whose diagonal is that vector and whose entries are all zero elsewhere.
+</p>
+
+<p>
+A possible retraction is given by: $\Retr \colon \T\calM \to \calM$.  For $(Y, V) \in \T\calM \subset \Rnp \times \Rnp$, the $k$-th row of $\Phi(t) = \Retr_Y(t V)$ is
+$$\Phi_k(t) = \cos(t \|v_k\|) y_k + \sin(t \|v_k\|) \frac{v_k}{\|v_k\|}$$
+where $y_k \in \reals^{1\times p}$ is the $k$-th row of $Y$ and $v_k \in \reals^{1\times p}$ is the $k$-th row of $V$.
+</p>
+
+<p>
+The orthogonal projection $\Proj_Y \colon \reals^{n \times p} \to \T_Y \calM$ is given as follows.
+For $(Y, V) \in \T\calM$ and $y_k, v_k$ defined as before, the $k$-th row of $\Proj_Y(V)$ is $v_k (I_p - y_k^\top y_k)$.
+</p>
+
+<p>
+The Riemannian gradient of $f$ is given by: $\grad f(Y) = \Proj_Y(2 C Y) = 2 S Y$.
+</p>
+
+<p>
+The Riemannian Hessian of $f$ is given by: $\Hess f(Y)[V]  = 2 \Proj_Y(S V + (\D S(Y)[V]) Y) = 2 \Proj_Y(S V)$.
+</p>

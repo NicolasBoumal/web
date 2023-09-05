@@ -1,0 +1,162 @@
+<title>
+    Rank-1 matrices as a manifold
+</title>
+
+<p>
+Some embedded submanifolds cannot be defined with a single local defining function. Moreover, sometimes the local defining functions of an embedded submanifold are not obvious. In this exercise, we consider such an example.
+</p>
+
+<p>
+Let $\reals_{r}^{m \times n}$ be the set of real $m \times n$ matrices with rank equal to $r$. In the following exercise we show that in the case $r=1$ we have that $\reals_{r}^{m \times n}$ is an embedded submanifold.
+</p>
+
+<p>
+This exercise can be adapted to the case of general $1 \leq r \leq \min(n,m)$. If you would like to do the general case you can follow the same structure than in the $r=1$ case. However, to compute the differentials of your local defining functions you need to know the differential of the matrix inversion, which we compute in the exercise <a exercise="DiffMatInv01">The differential of the matrix inversion</a>.
+</p>
+
+<question>
+    Show that $\calM = \reals_{1}^{m \times n}$ is an embedded submanifold of $\calE = \reals^{m \times n}$. You need to use several local defining functions.
+    <hint>
+        This question is not the eassiest. If you have difficulties doing it look at the sketch.
+    </hint>
+</question>
+<sketch>
+    If $X$ is in $\calM$ then it has a nonzero entry, say $X_{ij} \neq 0$.
+        For each $i \in [1, m]$ and $j \in [1,n]$, let $U_{ij}$ be the set of all $X$ in $\reals^{m \times n}$ such that $X_{ij} \neq 0$. First, argue that $U_{ij}$ is open and then build a local defining function for $\calM$ defined on $U_{ij}$. For the second part begin by considering $(i,j)=(1,1)$, i.e., try to build a local defining function defined on $U_{11}$, which consists of all $X$ in $\reals^{m \times n}$ whose top left entry $X_{11}$ is nonzero. To build this map partition $X$ into blocks $X_{11}, X_{12}, X_{21}, X_{22}$ which have dimensions $1 \times 1, 1 \times (n-1), (m-1) \times 1, (m-1) \times (n-1)$, respectively. By assuming $X_{11}$ is nonzero, we expressed the fact that $\rank(X) \geq 1$. How can you express the fact that $\rank(X) \leq 1$ ? Try to express $X_{22}$ as a function of the other blocks of $X$. Finally, build a local defining function for $(i,j)$ by using permutation matrices and the local defining function for $U_{11}$.
+</sketch>
+<answer>
+    <p>
+    We consider the set
+            \begin{aligned}
+                \calM = \reals_1^{m \times n} = \{X \in \reals^{m \times n} : \rank(X) = 1\}
+            \end{aligned}
+            We will build $m n$ local defining functions $h_{ij} \colon U_{ij} \to \reals^{(m-1) \times (n-1)}$ defined on the neighborhoods
+            \begin{aligned}
+                U_{ij} = \{X \in \reals^{m \times n} : X_{ij} \neq 0\}, \quad \text{for } (i, j) \in [1, m] \times [1, n].
+            \end{aligned}
+            But first, observe that the sets $U_{ij}$ for $(i, j) \in [1, m] \times [1, n]$ are open as for $X \in U_{ij}$ we have that
+            \begin{aligned}
+                \{H \in \reals^{m \times n} : ||X-H|| \leq |X_{ij}| / 2\} \subseteq U_{ij}.
+            \end{aligned}
+            We begin by building $h_{11}$. Let $X \in U_{11}$, i.e., $X_{11} \neq 0$ and write $X$ in block form:
+            $$X = \begin{pmatrix}
+            X_{11} \in \reals & X_{12} \in \reals^{1 \times (n-1)} \\
+            X_{21} \in \reals^{(m-1) \times 1} & X_{22} \in \reals^{(m-1) \times (n-1)}
+            \end{pmatrix}.$$
+            If $X$ has rank at 1, each column of
+            $$\begin{pmatrix}
+            X_{12} \\
+            X_{22}
+            \end{pmatrix}$$
+            is a multiple of the column
+            $$\begin{pmatrix}
+            X_{11} \\
+            X_{21}
+            \end{pmatrix},$$
+            as $X_{11} \neq 0$. Thus there exists $w \in \reals^{n-1}$ such that
+            $$\begin{pmatrix}
+            X_{12} \\
+            X_{22}
+            \end{pmatrix}
+            =
+            \begin{pmatrix}
+            X_{11} \\
+            X_{21}
+            \end{pmatrix} w^\top
+            =
+            \begin{pmatrix}
+            X_{11} w^\top \\
+            X_{21} w^\top
+            \end{pmatrix}.$$
+            The first equation implies that $w^\top = X_{11}^{-1} X_{12}$, and so $X_{22} = X_{21} w^\top = X_{21} X_{11}^{-1} X_{12}$. This shows that if $X \in \calM \cap U_{11}$, then $X_{22} - X_{21} X_{11}^{-1} X_{12} = 0$. So let us define
+            \begin{aligned}
+                h_{11} \colon U_{11} \to \reals^{(m-1) \times (n-1)}, \quad \quad h(X) = X_{22} - X_{21} X_{11}^{-1} X_{12}.
+            \end{aligned}
+            This map is obviously smooth as componentwise it is a rational function. Further, we have already shown that $\calM \cap U_{11} \subseteq h_{11}^{-1}(\{0\})$ and the reversed inclusion also holds as $h_{11}(X)=0$ implies that
+            $$\begin{pmatrix}
+            X_{12} \\
+            X_{22}
+            \end{pmatrix}
+            =
+            \begin{pmatrix}
+            X_{11} \\
+            X_{21}
+            \end{pmatrix} w^\top
+            =
+            \begin{pmatrix}
+            X_{11} w^\top \\
+            X_{21} w^\top
+            \end{pmatrix}.$$
+            with $w^\top = X_{11}^{-1} X_{12}$, which shows that the rank of $X$ is at most one and as $X \in U_{11}$ implies that $\rank(X) \geq 1$ we get that $X \in \calM \cap U_{11}$ and thus $\calM \cap U_{11} = h_{11}^{-1}(\{0\})$.
+        </p>
+        <p>
+            Next, let us show that if $X \in \calM$ then
+            \begin{aligned}
+                \D h_{11}(X) \colon \reals^{m \times n} \to \reals^{(m-1) \times (n-1)}
+            \end{aligned}
+            has full rank, i.e., is surjective. By the product rule we get that
+            \begin{aligned}
+                \D h_{11}(X)[V] = \frac{d}{dt}[h_{11}(X + t V)]_{t=0} = V_{22} - X_{11}^{-2} V_{11} X_{21} X_{12} + X_{11}^{-1} V_{21} X_{12} + X_{11}^{-1} X_{21} V_{12},
+            \end{aligned}
+            which is clearly surjective (set $V_{11}, V_{12}, V_{21}$ all zero and vary $V_{22}$).
+        </p>
+        <p>
+            This gives us a local defining function for $U_{11}$. For $U_{ij}$ one can argue similarly to the above or observe that if $X \in U_{ij}$, then $P_i X Q_j \in U_{11}$, where $P_i$ is the $m \times m$ permutation matrix which permutes the first and $i$-th row, and let $Q_j$ be the $n \times n$ permutation matrix which permutes the first and $j$-th column. Thus we can define the map $h_{ij}(X) := h_{11}(P_i X Q_j)$ on $U_{ij}$. This map is smooth as a composition of smooth maps ($X \mapsto P_i X Q_j$ is linear and thus smooth), the map $X \mapsto P_i X Q_j$ is clearly objective from $\calM \cap U_{11}$ to $\calM \cap U_{ij}$, giving that $\calM \cap U_{ij} = h_{ij}^{-1}(\{0\})$ and by the chain rule we have that
+            \begin{aligned}
+                \D h_{ij}(X)[V] = \D h_{11}(P_i X Q_j) [P_iVQ_j].
+            \end{aligned}
+            As the map $X \mapsto P_i X Q_j$ is clearly a bijection from $\reals^{m \times n}$ to $\reals^{m \times n}$ and $\D h_{11}(P_i X Q_j)$ is surjective we have that $\D h_{ij}(X)[V]$ is surjective. This shows that $h_{ij}$ is a local defining function.
+        </p>
+        <p>
+            Finally, as $X \in \calM$ implies that there exists $i \in [1, m]$ and $j \in [1,n]$ such that $X \in U_{ij}$ we get that for each element of $\calM$ we have a local defining function and thus $\calM$ is a smooth manifold.
+        </p>
+</answer>
+
+<question>
+    What is the dimension of $\calM = \reals_{1}^{m \times n}$ ?
+</question>
+<answer>
+    By part one we know that the dimension of $\calM$ is given by
+            \begin{aligned}
+                \dim \calM = \dim(\reals^{m \times n}) - \dim(\reals^{(m-1) \times (n-1)}) = m n - (m-1)(n-1) = m + n - 1.
+            \end{aligned}
+</answer>
+
+<question>
+    For $X \in \calM = \reals_{1}^{m \times n}$, write $X = \sigma u v^\top$, where $\sigma > 0$ and $u \in \reals^m, v \in \reals^n$ with $\|u\| = \|v\| = 1$ (why is this possible ?).
+        Show that
+        \begin{aligned}
+            \T_X \calM = \{a u v^\top + w v^\top + u z^\top : a \in \reals, w \in \reals^m, z \in \reals^n, u^\top w = 0, v^\top z = 0\}.
+        \end{aligned}
+    <hint>
+        Recall that tangent spaces can be formulated as the kernel of the differential of a local function, or by considering velocities of curves on the manifold.  In this case, it is more fruitful to consider the curves approach.
+    </hint>
+</question>
+<sketch>
+    Consider the set of all tangent vectors generated by curves $t \mapsto \sigma(t) u(t) v(t)^\top$ where $\sigma(\cdot ), u(\cdot), v(\cdot)$ are smooth curves in $\reals, \mathbb{S}^{m-1}, \mathbb{S}^{n-1}$, respectively. Argue by dimension counting that the set of tangent vectors generated by these curves exhausts the whole tangent space.
+</sketch>
+<answer>
+    Fix $X \in \calM$. As $X$ has rank 1 we can write it as $X = \sigma u v^\top$ with $\|u\| = \|v\| = 1$, using a SVD decomposition of $X$. Now, consider a smooth curves $\reals, \mathbb{S}^{m-1}, \mathbb{S}^{n-1}$, respectively, which satisfy $u(0)=u,v(0)=v$ and $\sigma(0)= \sigma$. Further, define also $\sigma'(0) = a, u'(0) = w / \sigma, v'(0) = z / \sigma.$
+            Then, we have that $c(t):= \sigma(t)u(t)v(t)^\top$ is a smooth curve in $\calM$, which is such that $c(0)=X$. Differentiating $c$ we get that
+            \begin{aligned}
+                c'(t) = \sigma'(t) u(t)v(t) + \sigma(t) \left ( u'(t)v(t)^\top + u(t) v'(t) \right ).
+            \end{aligned}
+            In particular in $t=0$ we have that
+            \begin{aligned}
+                c'(0) = auv^\top + wv^\top + uz^\top.
+            \end{aligned}
+            As $u(t)$ and $v(t)$ are smooth curves on the sphere we have that $w,z$, respectively, are in the tangent spaces of $u,v$, respectively, on the sphere, i.e., $w \in \text{span}(u)^\perp$, $z \in \text{span}(v)^\perp$. Conversely, for every element in $x \in \text{span}(u)^\perp$, $y \in \text{span}(v)^\perp$, respectively, there are smooth curves $x(t),y(t)$, respectively such that $x(0)=u,y(0)=v$ and $x'(0)=x,y'(0)=y$. This shows that
+            \begin{aligned}
+                \{a u v^\top + w v^\top + u z^\top : a \in \reals, w \in \reals^m, z \in \reals^n, u^\top w = 0, v^\top z = 0\} \subseteq \T_x \calM.
+            \end{aligned}
+            On the other hand, observe that
+            \begin{aligned}
+                \{a u v^\top + w v^\top + u z^\top : a \in \reals, w \in \reals^m, z \in \reals^n, u^\top w = 0, v^\top z = 0\}
+            \end{aligned}
+            has dimension $m+n+1 - 2$ (since we are imposing two linear constraints $u^\top w = 0, v^\top z = 0$).
+            Since $\T_x \calM$ has the same dimension $m+n-1$, we conclude
+            \begin{aligned}
+                \T_x \calM = \{a u v^\top + w v^\top + u z^\top : a \in \reals, w \in \reals^m, z \in \reals^n, u^\top w = 0, v^\top z = 0\}.
+            \end{aligned}
+</answer>
+

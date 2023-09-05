@@ -1,0 +1,90 @@
+<title>
+    Tangent vectors on the sphere
+</title>
+
+<p>
+Let $\mathcal{A}$ be the atlas for $\Sd$ from the exercise <a exercise="SphereSmoothMan12">The sphere is a smooth manifold</a>.
+In this exercise we show that the tangent spaces of the smooth manifold $(\Sd, \mathcal{A}^+)$ are equivalent to the tangent spaces of $\Sd$ when treated as an embedded submanifold of $\reals^d$.
+</p>
+
+<p>
+For $x \in \Sd$, let $C_x$ be the set of smooth curves $c \colon \reals \to \Sd$ such that $c(0) = x$.
+For a chart $(\calU, \phi) \in \mathcal{A}$ around $x$, we define the equivalence relation $\sim$ on $C_x$ by
+$$c_1 \sim c_2 \quad \text{if and only if} \quad (\phi \circ c_1)'(0) = (\phi \circ c_2)'(0).$$
+As shown in lecture, the equivalence relation $\sim$ is independent of the choice of chart around $x$.
+The quotient set $C_x / {\sim}$ is the set of equivalence classes $[c] = \{\tilde c \in C_x : \tilde c \sim c\}$.
+The tangent space at $x$ of the smooth manifold $(\Sd, \mathcal{A}^+)$ is $C_x / {\sim}$.
+
+For $x \in \Sd$, let $\T_x \subseteq \reals^d$ be the set of velocities of smooth curves passing through $x$:
+$$\T_x = \{c'(0) : c \in C_x\} \subseteq \reals^d.$$
+The tangent space at $x$ of $\Sd$ when viewed as an embedded submanifold of $\reals^d$ is $\T_x$.
+</p>
+
+<question>
+    Let $c_1, c_2 \in C_x$ satisfy $c_1'(0) = c_2'(0)$.
+        Show that $c_1 \sim c_2$, i.e., $[c_1] = [c_2]$.
+</question>
+<sketch>
+    Try to use the map $r \colon \reals^{d} \setminus\{0\} \to \reals^d, r(z) = \frac{z}{\|z\|}$, which is the identity on the sphere.
+</sketch>
+<answer>
+    <p>
+    Let $r \colon \reals^{d} \setminus\{0\} \to \reals^d, r(z) = \frac{z}{\|z\|}$ and $c_1,c_2 \in C_x$ and let $(\calU,\phi)$ be a chart around $x \in \Sd$. Observe that $\phi \circ c_1 = (\phi \circ r) \circ c_1$, and so
+            $(\phi \circ c_1)'(0) = \D (\phi \circ r)(x)[c_1'(0)],$
+            using that $\phi \circ r$ is a map between an open subset of $\reals^d$ and $\reals^{d-1}$.
+    </p>
+    <p>
+            Hence,
+            \begin{aligned}
+                (\phi \circ c_1)'(0) = \D (\phi \circ r)(x)[c_1'(0)] = \D (\phi \circ r)(x)[c_2'(0)] = (\phi \circ c_2)'(0).
+            \end{aligned}
+            By definition of the equivalence relation we get that $[c_1] = [c_2]$.
+    </p>
+</answer>
+
+<question>
+    Let $c_1, c_2 \in C_x$ satisfy $c_1 \sim c_2$.
+        Show that $c_1'(0) = c_2'(0)$.
+</question>
+<sketch>
+    Try to use again the map $r \colon \reals^{d} \setminus\{0\} \to \reals^d, r(z) = \frac{z}{\|z\|}$.
+</sketch>
+<answer>
+    <p>
+    Let $r \colon \reals^{d} \setminus\{0\} \to \reals^d, r(z) = \frac{z}{\|z\|}$ and $c_1,c_2 \in C_x$ as in the last part. We know, using the last part that
+            \begin{aligned}
+                \D (\phi \circ r)(x)[c_1'(0)] = (\phi \circ r \circ c_1)'(0) = (\phi \circ c_1)'(0) = (\phi \circ c_2)'(0) = \D (\phi \circ r)(x)[c_2'(0)].
+            \end{aligned}
+            So it suffices to show that if $\D (\phi \circ r)(x)[v] = 0$ and $v \in \T_x = \T_x = \{c'(0) : c \in C_x\} = \text{span}(x)^{\perp}$ then $v = 0$.
+            
+            Suppose w.l.o.g. that $x \in \calU_+$ and take the chart $(\calU_+,\phi_+)$, which is a chart around $x \in \Sd$. For $z \in r^{-1}(\calU_+)$, $(\phi_+ \circ r)(z) = (\|z\| - z_d)^{-1} (z_1, \ldots, z_{d-1})$.
+            Therefore, for $x \in \calU_+$ and $v \in \T_x$ we find
+            \begin{aligned}
+            \D (\phi_+ \circ r)(x)[v] &= \frac{d}{dt}[\phi_+ \circ r (x + t v)]_{t = 0} = \frac{1}{1-x_d}(v_1, \ldots, v_{d-1}) + \frac{-x^\top v + v_d}{(1-x_d)^2}(x_1, \ldots, x_{d-1}) \\
+            &= \frac{1}{1-x_d}\bigg(v_1 + \frac{v_d x_1}{1-x_d}, \ldots, v_{d-1} + \frac{v_d x_{d-1}}{1-x_d}\bigg).
+            \end{aligned}
+            So if $\D (\phi_+ \circ r)(x)[v] = 0$, then
+            $v_1 = - \frac{v_d x_1}{1-x_d}, \ldots, v_{d-1} = - \frac{v_d x_{d-1}}{1-x_d}$.
+    </p>
+    <p>
+            Therefore,
+            \begin{aligned}
+            0 &= x^\top v = x_1 v_1 + \ldots + x_{d-1} v_{d-1} + x_d v_d = - x_1 \frac{v_d x_1}{1-x_d} + \ldots - x_{d-1} \frac{v_d x_{d-1}}{1-x_d} + x_d v_d \\
+            &= \frac{1}{1-x_d}(- {x_1^2} + \ldots - {x_{d-1}^2} + x_d (1-x_d)) v_d
+            = -v_d.
+            \end{aligned}
+            So $v_d = 0$, which implies $v_1 = \ldots = v_{d-1} = 0$, i.e., $v=0$.
+    </p>
+</answer>
+
+<p>
+We have shown that $c_1 \sim c_2$ if and only if $c_1'(0) = c_2'(0)$.
+    If we define the equivalence relation $\sim'$ on $C_x$ by
+    $$c_1 \sim' c_2 \quad \text{if and only if} \quad c_1'(0) = c_2'(0)$$
+    then we can identify $\T_x$ with $C_x / {\sim'}$.
+    We have then shown that $C_x / {\sim} = C_x / {\sim'}$.
+</p>
+
+<p>
+    In plain English: the two tangent spaces (one defined in the embedded formalism, the other defined in the atlas formalism) are equivalent, in the sense that they are in bijection, both with a clear interpretation in terms of curves passing through $x$.
+</p>

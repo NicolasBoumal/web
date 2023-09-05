@@ -1,0 +1,49 @@
+<title>
+    Implementation Riemannian Trust Regions
+</title>
+
+<p>
+In this exercise you will implement the Riemannian Trust Regions method (RTR). See section 6.4 "Riemannian Trust Regions" of the lecture notes, especially subsection 6.4.6 "Practical aspects" for suggestions on setting the parameters (initial trust region radius, etc.).
+</p>
+
+<question>
+    Implement the RTR method using the Hessian for $H_k$ in the model $m_k$.
+        <em>Solve each subproblem using a Cauchy step.</em>
+        You can find the formula for the Cauchy step in section 6.4.2 "Requirements on solving the subproblem" of the lecture notes.
+        You should aim to write code that works for a variety of problem instances, i.e., various manifolds and cost functions and for different subproblem solver.
+</question>
+<answer>
+    The full Matlab implementation/solution can be downloaded at the bottom of the page in the solution to the last question. We have the following implementation of Riemannian Trust Regions and the Cauchy step.
+    <matlab href="TrustRegionsImplementingRTR01.m"> </matlab>
+    <matlab href="CauchyStepImplementingRTR01.m"> </matlab>
+</answer>
+
+<p>
+The Cauchy step is not the best way to solve the trust region subproblem. A better way to solve the subproblem is tCG. The following is optional but strongly recommended.
+</p>
+
+<question>
+    (Optional) Implement truncated Conjugate Gradient to solve the subproblem.
+</question>
+<answer>
+    The full Matlab implementation/solution can be downloaded at the bottom of the page in the solution to the last question. We have the following implementation of truncated Conjugat Gradient
+    <matlab href="tCGImplementingRTR01.m"> </matlab>
+</answer>
+
+<question>
+    Test/debug your RTR method by running it on the Rayleigh quotient on the sphere,
+        $$f \colon \Sd \to \reals, \quad \quad f(x) = x^\top A x.$$
+        We suppose that $A \in \reals^{d \times d}$ is symmetric.
+</question>
+<answer>
+    Recall the following formulas, which we showed in the exercise <a exercise="SecOrdSphere08">Second-order critical points for the Rayleigh quotient are globally optimal</a>.
+            Let $x \in \Sd$ and $u \in \T_x \Sd$ we have the following.
+            \begin{aligned}
+                &\grad f(x) = 2 (A - x^\top A x) x \\
+                &\Hess f(x)[u] = 2 \left ( (I_d - xx^\top)A - x^\top A x\right ) u.
+            \end{aligned}
+            The Matlab implementation can be downloaded here.
+            <a target="_blank" href="exercises/MATLABImplementingRTR01.zip">Download Matlab implementation</a>
+            The main of the implementation is the following.
+            <matlab href="mainImplementingRTR01.m"> </matlab>
+</answer>

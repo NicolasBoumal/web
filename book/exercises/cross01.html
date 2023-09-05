@@ -1,0 +1,24 @@
+<title>
+    The cross is not a manifold
+</title>
+
+<question>
+    Show that the cross $\mathcal{X} = \{x \in \reals^2 : x_1^2 = x_2^2\}$ is not an embedded submanifold.
+    <hint>
+        It is not sufficient to show that $x \mapsto x_1^2 - x_2^2$ is not a local defining function at the origin. It is necessary to show that no local definition function exists at that point.
+    </hint>
+</question>
+<sketch>
+    Proceeding by contradiction, assume that $\mathcal{X}$ is a smooth manifold. Analyse the tangent space of the origin.
+</sketch>
+<answer>
+    <p>
+    Clearly the set $\mathcal{X}$ isn't open. Thus if we suppose for contradiction that $\mathcal{X}$ is a manifold we have that $\dim(\mathcal{X}) \in \{0,1\}$.
+    </p>
+    <p>
+        Define $\gamma_1:\reals \to \mathcal{X}$ by $t \mapsto t \cdot v_1$ and $\gamma_2:\reals \to \mathcal{X}$ by $t \mapsto t \cdot v_2$ with $v_1 = (1, 1)$ and $v_2 = (1, -1)$. This curves are clearly well defined and smooth thus by the definition of tangent space we have that $v_i = \gamma_i'(0) \in \T_{(0,0)} \mathcal{X}$.
+    </p>
+    <p>
+        But then we have that $\dim(\T_{(0,0)} \mathcal{X}) = 2$, which is in contradiction with $\dim(\T_{(0,0)} \mathcal{X}) = \dim(\mathcal{X}) \in \{0,1\}$.
+    </p>
+</answer>

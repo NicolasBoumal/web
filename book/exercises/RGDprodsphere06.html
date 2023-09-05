@@ -1,0 +1,123 @@
+<title>
+    RGD on product of spheres
+</title>
+
+<p>
+Let $\calM = \Sm \times \Sn$, which is an embedded submanifold of $\calE = \reals^m \times \reals^n$ with its usual Euclidean structure. We turn $\calM$ into a Riemannian submanifold by using the Euclidean structure of the ambient space $\calE = \reals^m \times \reals^n$. Let $M \in \reals^{m \times n}$ and
+$$f \colon \calM \to \reals, \quad \quad f(x, y) = x^\top M y.$$
+</p>
+
+<p>
+In the exercise <a exercise="ProdSphere05">Product of spheres</a>, you showed that $f \colon \calM \to \reals$ is smooth, and worked out an expression for the Riemannian gradient of $f$.
+Now, we want to solve
+\begin{aligned}
+    \max_{(x, y) \in \calM } f(x, y).
+\end{aligned}
+</p>
+
+<question>
+    Show that the maximum value of $f$ on $\calM$ is the largest singular value of $M$.
+</question>
+<sketch>
+    Use the singular value decomposition or the spectral 2-norm.
+</sketch>
+<answer>
+    For $(x,y) \in \calM$ we have that
+            \begin{aligned}
+                x^\top M y \leq |x^\top M y| = \|x^\top M y\|_2 \leq \|x\|_2 \cdot \sigma_{\max}(M) \cdot \|y\|_2 = \sigma_{\max}(M),
+            \end{aligned}
+            where we used that $||M||_2 = \sigma_{\max}(M)$ and that the spectral 2-norm is submultiplicative. To see that we have equality observe that if $x$ and $y$ are left/right singular vectors of a given SVD decomposition of $M$, then
+            \begin{aligned}
+                x^\top M y = \sigma_{\max}(M).
+            \end{aligned}
+</answer>
+
+<question>
+    How can you characterise the critical points of $f$ ? How can you relate them to eigenvectors of $M^\top M$ and $M M^\top$.
+</question>
+<sketch>
+    We have already computed the gradient of $f$ in the exercise <a exercise="ProdSphere05">Product of spheres</a>.
+</sketch>
+<answer>
+    <p>
+    From the exercise <a exercise="ProdSphere05">Product of spheres</a> we know that
+            \begin{aligned}
+                \grad f(x, y) = ((I - x x^\top) My, (I - y y^\top) M^\top x).
+            \end{aligned}
+            So if $\grad f(x,y) = 0$, then
+            \begin{aligned}
+                M y = (x^\top My) x, \quad \quad M^\top x = (y^\top M^\top x) y = (x^\top M y) y.
+            \end{aligned}
+    </p>
+    <p>
+            Hence,
+            \begin{aligned}
+                M^\top M y = (x^\top My) M^\top x = (x^\top My)^2 y, \quad \quad M M^\top x = (x^\top M y) M y = (x^\top My)^2 x.
+            \end{aligned}
+            That is, $y$ is an eigenvector of $M^\top M$, and $x$ is an eigenvector of $M M^\top$, and they both have the same eigenvalue $(x^\top My)^2$.
+    </p>
+    <p>
+            This shows that the critical points are given by the set
+            \begin{aligned}
+                \{(x,y) \in \Sm \times \Sn \; | \; My = f(x,y)x \text{ and } M^\top x = f(x,y) y\}
+            \end{aligned}
+            and if $(x,y) \in \calM$ is critical, then in particular $y$ is an eigenvector of $M^\top M$, and $x$ is an eigenvector of $M M^\top$.
+    </p>
+</answer>
+
+<question>
+    Propose a retraction for $\calM$ (there are many possible choices).
+</question>
+<sketch>
+    Try to adapt a well known retraction for the sphere.
+</sketch>
+<answer>
+    Define the map
+            \begin{aligned}
+                R:T \calM \to \calM \quad \quad ((x,y),(u,v)) \mapsto \bigg(\frac{x + u}{\|x+u\|}, \frac{y+v}{\|y+v\|}\bigg).
+            \end{aligned}
+            A straightforward verification shows that this is indeed a retraction for $\calM$.
+</answer>
+
+<question>
+    Write down the RGD iteration for $-f$ on $\calM$ with constant step size using your retraction. Note: we formulate all our algorithms for minimization problems; in order to maximize $f$, we can equivalently minimize $-f$.
+</question>
+<answer>
+    <p>
+    Riemannian Gradient Descent is given by :
+    </p>
+    <p>
+            INPUT: $(x_0,y_0) \in \calM$, $\epsilon > 0$, step size $\alpha > 0$.
+    </p>
+    <p>
+            OUTPUT: Final position $(x,y) \in \calM$.
+    </p>
+    <p>
+            \begin{aligned}
+            &\text{(1) Let }(x,y) = (x_0,y_0) \text{ and compute }\grad (-f(x,y)), \\
+            &\text{(2) While } ||\grad (-f(x,y))|| > \epsilon, \\
+            &\text{(3) Let } (x,y) = R_{(x,y)}(-\alpha \grad (-f(x,y))), \\
+            &\text{(4) Compute }\grad (-f(x,y)), \\
+            &\text{(5) End while}.
+            \end{aligned}
+    </p>
+</answer>
+
+<question>
+    Write code to try out your algorithm.
+</question>
+<answer>
+    We have the following code.
+    <matlab href="RGDRGDprodsphere06.m"> </matlab>
+</answer>
+
+<question>
+    Let $m=n=2$, and let $M$ be a matrix of your choosing. Can you visualize $f$ on $\calM$ ? Use the plot to identify local minima/maxima and saddle points of $f$. How does the plot change as you vary $M$ ?
+    <hint>
+        For $m=n=2$, $\calM$ is a $2$-torus and so can be represented by the square $[0, 2\pi] \times [0,2\pi]$.
+    </hint>
+</question>
+<answer>
+    We have the following code.
+    <matlab href="mainRGDprodsphere06.m"> </matlab>
+</answer>

@@ -1,0 +1,48 @@
+<title>
+    Smooth maps and differentials
+</title>
+
+<question>
+    Let $\calM, \calM', \calM''$ be embedded submanifolds of the linear spaces $\calE, \calE', \calE''$, respectively.  For smooth maps $F \colon \calM \rightarrow \calM'$ and $G \colon \calM' \rightarrow \calM''$, show that $G\circ F$ is smooth, and the chain rule is satisfied:
+        \begin{aligned}
+            \D (G\circ F)(x) = \D G(F(x)) \circ \D F(x).
+        \end{aligned}
+</question>
+<sketch>
+    Recall the definition of differential (Definition 3.34 in the textbook).
+</sketch>
+<answer>
+    <p>
+    First, let us show smoothness; we use the characterization of smoothness given by Proposition 3.31 in the textbook.  As $F$ and $G$ are smooth, they have smooth extensions
+            $\overline F \colon U \to \calE'$ and $\overline G \colon U' \to \calE''$, where
+            $U \subset \calE$ and $U' \subset \calE'$ are open sets containing $\calM$ and $\calM'$, respectively.
+    </p>
+    <p>
+            Note: $\overline G \circ \overline F$ is <em>not</em> a priori a valid extension of $G \circ F$, as $\overline G \circ \overline F$ may not be well-defined (there may exist $x \in U$ so that $\overline F(x) \not \in U'$).
+    </p>
+    <p>
+            Let $\widetilde F \colon U \cap \overline F^{-1}(U') \to U'$ be the restriction of $\overline F$.
+            Note that $U \cap \overline F^{-1}(U')$ is open (as $\overline F$ is continuous), and contains $\calM$ (since if $x \in \calM$ then $\overline F(x) = F(x) \in \calM' \subset U'$, i.e., $x \in \overline F^{-1}(U')$).
+            Then
+            $\overline G \circ \widetilde F \colon U \cap \overline F^{-1}(U') \to \calE''$
+            is a smooth extension of $G \circ F$, and so $G \circ F$ is indeed smooth.
+    </p>
+    <p>
+            For the chain rule: Let $(x, v) \in \T \calM$, and $c \colon \reals \to \calM$ be a smooth curve with $c(0) = x, c'(0) = v$.  Then, $F \circ c \colon \reals \to \calM'$ is a smooth curve with $(F \circ c)(0) = F(x)$ and by definition of the differential $(F \circ c)'(0) = \D F(x)[v]$, and so
+            \begin{aligned}
+            \D(G \circ F)(x)[v] &= \D(G \circ F)(c(0))[c'(0)] = \frac{d}{dt}[G(F(c(t)))]_{t=0} = \frac{d}{dt}[G((F \circ c)(t))]_{t=0} \\
+            &= \D G((F \circ c)(0))[(F \circ c)'(0)] = \D G(F(x))[\D F(x)[v]] \\
+            &= \D G (F(x)) \circ \D F(x) [v].
+            \end{aligned}
+    </p>
+</answer>
+
+<question>
+    Give an example of an embedded submanifold $\calM$ in a linear space $\calE$ and a smooth function $f \colon \calM \rightarrow \reals$ for which there does not exist a smooth extension $\overline{f} \colon \calE \rightarrow \reals$ smooth on all of $\calE$. Aim for an example where $f$ is bounded on $\calM$.
+</question>
+<sketch>
+    Try to find something with $\calE = \reals$ and  $\calM$ a open subset of $\reals$.
+</sketch>
+<answer>
+    We can take $\calE = \reals$, $\calM = \reals \setminus \{0\}$ and $f = \text{sign}$. This map is smooth on $\calM$ but obviously can not be extended to $\reals$.
+</answer>

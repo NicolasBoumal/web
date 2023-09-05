@@ -1,0 +1,47 @@
+<title>
+    Product manifolds
+</title>
+
+<question>
+    Show that a product of embedded submanifolds is an embedded submanifold. How are the tangent spaces of the product manifold related to the tangent spaces of the base manifolds?
+</question>
+<sketch>
+    Recall the definition of embedded submanifold and different make distinctions of all three possible cases.
+</sketch>
+<answer>
+    <p>
+    Let the embedded submanifolds be $\calM \subset \calE$ and $\calM' \subset \calE'$.
+        Observe that the case $\calM$ and $\calM'$ are both open subsets is trivial as $\calM \times \calM'$ is again an open set. Further, the case that one of them is open and the other one isn't is also straightforward by considering
+        \begin{aligned}
+            H \colon U \times \calM' \to \reals^{k}, \quad H(x, x') = h(x),
+        \end{aligned}
+        where $h:U \to \reals^{k}$ is the local defining function for $x \in \calM$.
+    </p>
+    <p>
+        Let us consider the case where neither $\calM$ nor $\calM'$ is an open embedded submanifold. So both $\calM$ and $\calM'$ strictly lower dimensional manifolds.
+        Take $x\in \calM, x' \in \calM'$ with corresponding local defining functions
+        \begin{aligned}
+            h \colon U \to \reals^k, \quad h' \colon U' \to \reals^{k'}.
+        \end{aligned}
+        Define
+        \begin{aligned}
+            H \colon U \times U' \to \reals^{k + k'}, \quad H(x, x') = (h(x), h'(x')).
+        \end{aligned}
+        We claim $H$ is a local defining function for $\calM \times \calM'$.  Indeed, $U \times U' \cap \calM \times \calM' = (U \cap \calM) \times (U' \cap \calM') = h^{-1}(\{0\}) \times (h')^{-1}(\{0\}) = H^{-1}(\{0\})$.
+    </p>
+    <p>
+        Moreover, for $(x, x') \in \calM \times \calM'$ we know
+        \begin{aligned}
+            &\D H(x, x') \colon \calE \times \calE' \to \reals^{k + k'}, \\
+            &\D H(x, x')[(v, v')] = (\D h(x)[v], \D h'(x')[v']) = \D h(x)[v] \times \D h'(x')[v'] \in \reals^k \times \reals^{k'},
+        \end{aligned}
+        which is clearly surjective and thus of full rank as $\D h(x)$ and $\D h'(x')$ are surjective.
+    </p>
+    <p>
+        Finally, we have that
+        \begin{aligned}
+            \T_{(x, x')} \calM \times \calM' = \ker \D H(x, x') = \ker \D h(x) \times \ker \D h'(x') = \T_x \calM \times \T_{x'} \calM'.
+        \end{aligned}
+        Observe that also in the case that one of the manifolds is a open set we have that $\T_{(x, x')} \calM \times \calM' = \T_x \calM \times \T_{x'} \calM'$, giving that this characterisation always holds.
+    </p>
+</answer>

@@ -1,0 +1,94 @@
+<title>
+    Properties of the parallel transport
+</title>
+
+<p>
+Let $\calM$ be a smooth manifold. Let $\mathrm{PT}$ denote parallel transport with respect to a connection $\nabla$. Let $c \colon I \to \calM$ be a smooth curve, and $t_0, t_1 \in I$ with $I \subseteq \reals$ an open interval.
+</p>
+
+<p>
+The linear map $\mathrm{PT}_{t_1 \leftarrow t_0}^c \colon \T_{c(t_0)} \calM \to \T_{c(t_1)} \calM$ is always invertible.
+Intuitively the reason for that is that it should be possible to follow the curve in opposite direction. If $Z$ is the unique parallel vector field with $Z(t_0)=u$ for some tangent vector $u \in \T_{c(t_0)} \calM$, then taking $t \mapsto \widetilde{Z}(t)=Z(t_1+t_0 - t)$ should follow the curve in opposite direction. This observation can be made rigorous by arguing by the unicity of the linear ODE, which characterise the parallel vector field. In the case of Riemannian manifolds the things are even better.
+</p>
+
+<p>
+In the following we endow $\calM$ with a Riemannian metric $\langle \cdot, \cdot \rangle$, and let $\mathrm{PT}$ denote parallel transport "with respect to the Riemannian connection" $\nabla$.
+</p>
+
+<question>
+    Show that the linear map $\mathrm{PT}_{t_1 \leftarrow t_0}^c \colon \T_{c(t_0)} \calM \to \T_{c(t_1)} \calM$
+        is an isometry, that is,
+        $$\langle u, v \rangle_{c(t_0)} = \langle \mathrm{PT}_{t_1 \leftarrow t_0}^c (u), \mathrm{PT}_{t_1 \leftarrow t_0}^c (v) \rangle_{c(t_1)} \quad \forall u, v \in \T_{c(t_0)} \calM.$$
+</question>
+<sketch>
+    Try to use the product rule of the covariant derivative.
+</sketch>
+<answer>
+    <p>
+    Let $I \subseteq \reals$ be an open interval, $c:I \to \calM$ be smooth, $t_0,t_1 \in I$ and $u,v \in \T_{c(t_0)}$. Consider, $Z_1,Z_2 \in \frakX(c)$ be the unique parallel vector fields along $c$ such that $Z_1(t_0)=u,Z_2(t_0)=v$. We claim that
+            \begin{aligned}
+                t \in I \subseteq \reals \mapsto \langle Z_1(t), Z_2(t) \rangle_{c(t)}
+            \end{aligned}
+            is constant.
+    </p>
+    <p>
+            Indeed, as $\nabla$ is the Riemannian connection we have that
+            \begin{aligned}
+                \frac{d}{dt} \langle Z_1(t),Z_2(t) \rangle_{c(t)} = \langle \frac{\D}{dt} Z_1(t),Z_2(t) \rangle_{c(t)} + \langle Z_1(t), \frac{\D}{dt} Z_2(t) \rangle_{c(t)} = 0
+            \end{aligned}
+            as $\frac{\D}{dt} Z_1(t) = \frac{\D}{dt} Z_2(t) = 0$ as $Z_1$ and $Z_2$ are parallel along $c$. Thus $t \in I \mapsto \langle Z_1(t), Z_2(t) \rangle_{c(t)}$ is a smooth map on $I \subseteq \reals$ with zero derivative. Thus it is constant. in particular
+            \begin{aligned}
+                \langle u, v \rangle_{c(t_0)} = \langle Z_1(t_0), Z_2(t_0) \rangle_{c(t_0)} = \langle Z_1(t_1), Z_2(t_1) \rangle_{c(t_1)} = \langle \mathrm{PT}_{t_1 \leftarrow t_0}^c (u), \mathrm{PT}_{t_1 \leftarrow t_0}^c (v) \rangle_{c(t_1)}
+            \end{aligned}
+            by definition of the parallel transport.
+    </p>
+    <p>
+            See Proposition 10.36 in the textbook.
+    </p>
+</answer>
+
+<p>
+The above result implies that in the case of a Riemannian manifold with Riemannian connection we can characterize the inverse of the parallel transport by its adjoint.
+</p>
+
+<p>
+Indeed, if $(X,\langle .,. \rangle_X)$ and $(Y,\langle .,. \rangle_Y)$ are two euclidean spaces of same dimension and $F:X \to Y$ is an isometry, then it holds that $F^* = F^{-1}$.
+</p>
+
+<p>
+This general result together with the above implies that $(\mathrm{PT}_{t_1 \leftarrow t_0}^c)^* = (\mathrm{PT}_{t_1 \leftarrow t_0}^c)^{-1}$.
+</p>
+
+<p>
+In the following we will see some special cases, in which we can easily characterise the parallel transport.
+</p>
+
+<question>
+    Now let $c \colon I \to \calM$ be a geodesic of $\calM$.  Show that the velocity $c'(t)$, for $t \in I$, defines a <em>parallel</em> vector field along $c$.
+</question>
+<sketch>
+    What is the definition of a geodesic ?
+</sketch>
+<answer>
+    As $c : I \subseteq \reals \to \calM$ is a geodesic we have that $c'(t)$ is a smooth vector field along $c$ and $c''(t) = \frac{\D}{dt} c'(t) = 0$. Thus $c'$ is a parallel vector field for $c$.
+</answer>
+
+<question>
+    What can be said about $\mathrm{PT}_{t \leftarrow 0}^c (v)$ when: (a) $v = \alpha c'(0)$ for some $\alpha \in \reals$, and (b) $v$ is orthogonal to $c'(0)$.
+</question>
+<sketch>
+    For (a) try to use the result from the last question. For (b) try to use the result from the first question.
+</sketch>
+<answer>
+    Let $v := c'(0)$. In the last question we saw that $c'$ is a parallel vector field along $c$. Thus it is the unique parallel vector, $c'(0)=v$. By linearity of the parallel we that
+            \begin{aligned}
+                \mathrm{PT}_{t \leftarrow 0}^c (\alpha v) = \alpha \mathrm{PT}_{t \leftarrow 0}^c (v) = \alpha \cdot c'(t).
+            \end{aligned}
+            It follows that $Z(t) = \alpha \cdot c'(t)$ is the unique parallel vector filed along $c$ such that $Z(0)=\alpha c'(0)$.
+            
+            Now let's come to (b). Let $Z \in \frakX(c)$ be the unique parallel vector filed, which is such that $Z(0) = v \perp c'(0)$. By the proof of the first question we know that
+            \begin{aligned}
+                t \in I \subseteq \reals \mapsto \langle Z(t), c'(t) \rangle_{c(t)}
+            \end{aligned}
+            is constant and as $\langle Z(0), c'(0) \rangle_{c(0)} = 0$ it follows that $Z(t) \perp c'(t)$ for all $t \in I$.
+</answer>

@@ -1,0 +1,152 @@
+<title>
+    Rayleigh quotient on the sphere
+</title>
+
+<p>
+    <p>
+    We let $\Rd$ be endowed with its usual Euclidean structure: $\inner{u}{v} = u^\top v$ and $\|u\| = \sqrt{\inner{u}{u}}$.
+    Let
+    \begin{aligned}
+        \Sd = \{ x \in \Rd : \|x\| = 1 \}
+    \end{aligned}
+    be the unit sphere in $\reals^d$.
+    We showed in the exercise <a exercise="sphere01">The sphere is a manifold</a> that the sphere is an embedded submanifold of $\Rd$. Later in the theory we will see, that we can turn it into a Riemannian manifold by using the Euclidean structure of $\Rd$; and that in turn this provides us with a notion of gradient for functions on $\Sd$.
+    These are all concepts we will define properly and study in depth in the upcoming theory.
+    But to get a first impression, let us just jump right in and see what happens in practice. Our first aim is to work our way up to a first bit of code to address the following problem.
+    </p>
+    <p>
+    Let $A \in \reals^{d \times d}$ be a symmetric matrix.
+    We want to solve
+    \begin{aligned}
+        \min_{x \in \Sd} f(x), && \textrm{ with} && f(x) = \inner{x}{Ax}.
+    \end{aligned}
+    Notice that $f$ coincides with the Rayleigh quotient $\frac{\inner{x}{A x}}{\inner{x}{x}}$ when restricted to the sphere.
+    </p>
+</p>
+
+<question>
+    Show that the minimal value of $f$ on $\Sd$ is the smallest eigenvalue of $A$.
+</question>
+<sketch>
+    As $A$ is symmetric it admits an orthonormal eigenbasis.
+</sketch>
+<answer>
+    Let $\{u_1,\ldots,u_d\}$ be an orthonormal eigenbasis of $A$. Then writting $x = \sum_{i=1}^d \mu_i u_i$ it holds that
+    \begin{aligned}
+        f(x) = \left ( \sum_{i=1}^d \mu_i u_i^\top \right ) \left ( \sum_{i=1}^d \mu_i A u_i \right ) = \sum_{i=1}^d \lambda_i \mu_i^2 \geq \lambda_{\min} \sum_{i=1}^d \mu_i^2 = \lambda_{\min}
+    \end{aligned}
+    as $\sum_{i=1}^d \mu_i^2 = ||x||_2^2 = 1$ and where  $\lambda_{\min} = \min_{i=1,\ldots, d} \lambda_i$.
+</answer>
+
+<question>
+    What is the tangent space $\T_x \Sd$ at $x \in \mathbb{S}^{d-1}$ ?
+</question>
+<sketch>
+    How did we define tangent spaces ? What characterisation did we show ?
+</sketch>
+<answer>
+    We saw that for $x \in \Sd$ the tangent space is given by $\T_x \Sd = \ker (\D h(x))$ with $h$ a local defining function. Take $h(x)=x^\top x-1$. Then we have that $\D h(x)[v] = 2 x^\top v$ and thus
+    \begin{aligned}
+        \T_x \Sd = \text{span}(x)^{\perp} = \{x \in \reals^d \; | \; \langle x,v \rangle = 0\}.
+    \end{aligned}
+</answer>
+
+<p>
+Let $\calM$ be an embedded submanifold of $\Rd$ with its Euclidean inner product $\inner{\cdot}{\cdot}$ (in our case $\calM = \Sd$).
+The inner product $\inner{\cdot}{\cdot}$ is defined for all of $\Rd$.
+Since $\T_x \calM$ is a subspace of $\Rd$, we can restrict $\inner{\cdot}{\cdot}$ to $\T_x \calM$ to get an inner product on $\T_x \calM$.
+Doing so, we endow all tangent spaces of $\calM$ with an inner product, in such a way that inner products at nearby points are similar: that is what we call a Riemannian metric on $\calM$, turning it into a Riemannian manifold.
+From there, we will define the Riemannian gradient of $f$ (denoted by $\grad f$), and we will prove the following: if $\bar f \colon \Rd \to \reals$ is a smooth function such that $\bar f|_{\calM} = f$, then $\grad f(x)$ is the orthogonal projection of $\grad \bar f(x)$ to $\T_x \calM$.
+This is useful, because $\bar f$ is just a function in a Euclidean space: we already know how to compute gradients for that kind of function.
+</p>
+
+<question>
+    Give a formula for orthogonal projection from $\Rd$ onto $\T_x \mathbb{S}^{d-1}$, denoted $\Proj_x$.
+</question>
+<sketch>
+    Recall the definition of an orthogonal projector and how to get the orthogonal projector for a linear space $E^\perp \subseteq \reals^d$ knowing the orthogonal projector for $E\subseteq \reals^d$.
+</sketch>
+<answer>
+    Following the hint and using that for $x \in \Sd$ the tangent space is given by $\T_x \mathbb{S}^{d-1} = \text{span}(x)^\perp$ we get that the orthogonal projector is given by
+    \begin{aligned}
+        \Proj_x(v) = v - x (x^\top v) = (I - x x^\top) v.
+    \end{aligned}
+</answer>
+
+<question>
+    Give a formula for $\grad f(x)$.
+</question>
+<sketch>
+    Determine the euclidean gradient of an extension of $f$ and then use that the Riemannian gradient is the projection of the euclidean gradient of the extension onto the tangent space in the case of a Riemannian submanifold.
+</sketch>
+<answer>
+    Observe that $f$ can be extended by itself on $\reals^d$. The euclidean gradient of this extension is $\grad \overline{f} = 2 Ax$. Thus the Riemannian gradient is
+    \begin{aligned}
+        \grad f(x) = (I - x x^\top) \grad \overline{f}(x) = (I - x x^\top) 2 A x.
+    \end{aligned}
+</answer>
+
+<question>
+    Can you relate the critical points of $f$ to eigenvectors of $A$ ?
+</question>
+<sketch>
+    What is the $\ker$ of a projector ?
+</sketch>
+<answer>
+    Let $x \in \mathbb{S}^{d-1}$ be a critical point. Then
+    \begin{aligned}
+        0 = \grad f(x) = (I - x x^\top) 2 A x.
+    \end{aligned}
+    Thus $Ax \in \text{span}(x)$, i.e., there exists $\lambda \in \reals$ such that $Ax = \lambda x$.
+    From that is follows that the critical points of $f$ are the unitary eigenvectors of $A$.
+</answer>
+
+<p>
+A retraction on a manifold $\calM$ (in our case the sphere $\calM = \Sd$) is a smooth map $\Retr$ which takes as input a point $x \in \calM$ and a tangent vector $v \in \T_x\calM$ and outputs a point $\Retr_x(v) \in \calM$. We will see later how to define smoothness for such a map. It should have the property that $c(t) = \Retr_x(tv)$ satisfies $c(0) = x$ and $c'(0) = v$.
+</p>
+
+<question>
+    Choose a retraction for the sphere (there are many possible choices).
+</question>
+<sketch>
+    Think of the closest point on the sphere to $x+v$.
+</sketch>
+<answer>
+    The metric projection, which is defined as the solution to $\min_{y \in \mathbb{S}^{d-1}} ||x-y||$ for $x \in \reals^d \setminus \{0\}$ is given by
+    \begin{aligned}
+        \Retr_x(t v) = (x + t v) / \|x + t v\|.
+    \end{aligned}
+    Using that $x \perp v$ it is not difficult to verify that the metric retraction is indeed a retraction.
+</answer>
+
+<question>
+    Write down the Riemannian gradient descent (RGD) iteration for $f$ on $\mathbb{S}^{d-1}$ using your retraction.    Think about how you might choose step sizes for RGD: keep it simple for now, we're just getting started.
+</question>
+<sketch>
+    Think about the optimal step for GD.
+</sketch>
+<answer>
+    Riemannian gradient descent is given by
+    \begin{aligned}
+        x_{k+1} = \Retr_{x_k}(-\eta \grad f(x_k))
+    \end{aligned}
+    One might set $\eta = 1 / 2 \|A\|_2$.
+</answer>
+
+<question>
+Write code to try out your algorithm.
+</question>
+
+<answer>
+    We have the following code.
+    <matlab href="RGDsphere02.m"> </matlab>
+</answer>
+
+<question>
+    As a nice touch, you can visualize the problem and what your algorithm is doing in small dimensions. Let $d=3$, and let $A$ be a symmetric matrix of your choosing. Visualize $f$ on the sphere as a colormap. Use this plot to identify local minima/maxima and saddle points of $f$. Can you visualize the iterates of your algorithm on that sphere ? How does the plot change as you vary $A$ (think about special cases when $A$ has eigenvalues with geometric multiplicities larger than one) ?
+</question>
+
+<answer>
+    We have the following code.
+    <matlab href="mainsphere02.m"> </matlab>
+</answer>

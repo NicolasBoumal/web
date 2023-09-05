@@ -1,0 +1,154 @@
+<title>
+    Robust covariance estimation
+</title>
+
+<p>
+Consider $n$ points $x_1, \ldots, x_n \in \reals^d$ sampled i.i.d. from a distribution $P$ with zero mean. We want to estimate the covariance matrix of the distribution $P$. If $P$ is a zero-mean normal distribution with some covariance $\Sigma_{\text{true}} \in \reals^{d \times d}$, then maximum likelihood estimation amounts to minimizing the negative log-likelihood
+\begin{aligned}
+    \Sigma \mapsto \log(\det(\Sigma)) + \frac{1}{n} \sum_{j=1}^n x_j^\top \Sigma^{-1} x_j
+\end{aligned}
+over the $d \times d$ positive definite matrices
+\begin{aligned}
+    \mathcal{P}_d = \{\Sigma \in \reals^{d \times d} : \Sigma = \Sigma^\top, \Sigma \succ 0\}.
+\end{aligned}
+The sample covariance $\Sigma^* = \frac{1}{n} \sum_{j=1}^n x_j x_j^\top$ is a minimizer of this negative log-likelihood.
+</p>
+
+<p>
+The sample covariance is not robust to outliers. So if $P$ is not normal but some heavy-tailed distribution, then the sample covariance is not suitable.
+We can obtain a <em>robust estimation of the covariance</em> by minimizing the function
+\begin{aligned}
+    f \colon \mathcal{P}_d \to \reals, \quad \quad f(\Sigma) = \log(\det(\Sigma)) + \frac{1}{n} \sum_{j=1}^n d \log(x_j^\top \Sigma^{-1} x_j),
+\end{aligned}
+which places less emphasis on outliers (points far away from the mean).
+A minimizer of this function is called "Tyler's M-estimator of scatter".
+It does not have a closed form solution, and the cost function $f$ is non-convex in the Euclidean sense. In the following, you show that $f$ is geodesically convex in an appropriate metric, and so a minimizer can still be found efficiently (e.g., with RGD).
+</p>
+
+<p>
+We consider $\calM = \calP_d$ as an open subset of the symmetric $d \times d$ matrices, and endow it with the Fisher-Rao metric
+\begin{aligned}
+    \langle \dot \Sigma_1, \dot\Sigma_2 \rangle_\Sigma = \trace(\Sigma^{-1} \dot \Sigma_1 \Sigma^{-1} \dot \Sigma_2), \quad \text{ for } \quad \dot \Sigma_1, \dot \Sigma_2 \in \T_\Sigma \calP_d.
+\end{aligned}
+In this Riemannian metric, $\calP_d$ is complete and geodesically strongly convex. For every $\Sigma_0, \Sigma_1 \in \calP_d$ there is a unique geodesic segment between $\Sigma_0$ and $\Sigma_1$ given by
+\begin{aligned}
+    \gamma(t) = \Sigma_0^{1/2} (\Sigma_0^{-1/2} \Sigma_1 \Sigma_0^{-1/2})^t \Sigma_0^{1/2}, \quad \text{for} \quad t \in [0,1].
+\end{aligned}
+This geodesic segment is minimizing. Alternatively, for every $\Sigma_0, \Sigma_1 \in \calP_d$, there exists an invertible $V \in \reals^{d \times d}$ and a diagonal $D \in \calP_d$ such that $\Sigma_0 = V V^\top, \Sigma_1 = V D V^\top$.  In this case,
+\begin{aligned}
+    \gamma(t) = V D^t V^\top, \quad \text{for} \quad t \in [0,1].
+\end{aligned}
+</p>
+
+<question>
+    Show that the function $\Sigma \mapsto \log(\det(\Sigma))$ is geodesically convex.
+</question>
+<sketch>
+    You can either do this by plugging in the formula for geodesic segments, or showing the Riemannian Hessian is positive semidefinite.  For the latter approach, you may find formula (11.40) in Section 11.7 of the textbook helpful.
+</sketch>
+<answer>
+    Let $\Sigma_0,\Sigma_1 \in \calP_d$ and $\gamma : [0,1] \to \calM$ be a geodesic segment connecting $\Sigma_0$ and $\Sigma_1$. By unicity we know that $\gamma(t) = \Sigma_0^{1/2}(\Sigma_0^{-1/2} \Sigma_1 \Sigma_0^{-1/2})^t \Sigma_0^{1/2}$. We get for $t \in [0,1]$ that
+            \begin{aligned}
+                \det \left ( \Sigma_0^{1/2}(\Sigma_0^{-1/2} \Sigma_1 \Sigma_0^{-1/2})^t \Sigma_0^{1/2} \right ) &= \det(\Sigma_0) \cdot \det((\Sigma_0^{-1/2} \Sigma_1 \Sigma_0^{-1/2})^t) \\
+                &= \det(\Sigma_0) \cdot (\det(\Sigma_0^{-1/2} \Sigma_1 \Sigma_0^{-1/2}))^t \\
+                &= \det(\Sigma_0) \cdot (\det(\Sigma_0)^{-1} \det(\Sigma_1))^t \\
+                &= \det(\Sigma_0)^{(1-t)} \cdot \det(\Sigma_1))^t,
+            \end{aligned}
+            using that $\det(A^t)=\det(A)^t$ for all $t \in \reals$ and $A \in \calP_d$. Thus
+            \begin{aligned}
+                \log(\det(\gamma(t))) &= \log(\det(\det(\Sigma_0)^{(1-t)} \cdot \det(\Sigma_1))^t)) \\
+                &= (1-t) \log(\det(\Sigma_0)) + t \log(\det(\Sigma_1)).
+            \end{aligned}
+            Alternatively, one finds that the Riemannian Hessian equals zero (see Example 11.34 in the textbook).
+</answer>
+
+<question>
+    Show that if $g \colon \calP_d \to \reals$ is g-convex, then $h(\Sigma) = g(\Sigma^{-1})$ is g-convex.
+</question>
+<answer>
+    <p>
+    Let $\Sigma_0,\Sigma_1 \in \calP_d$ and $\gamma : [0,1] \to \calM$ be a geodesic segment connecting $\Sigma_0$ and $\Sigma_1$. We have that
+            \begin{aligned}
+                h \circ \gamma(t) = g (\gamma(t)^{-1}).
+            \end{aligned}
+            As $\gamma(t)^{-1} = \Sigma_0^{-1/2}(\Sigma_0^{1/2} \Sigma_1^{-1} \Sigma_0^{1/2})^t \Sigma_0^{-1/2}$, which is the geodesic segment connecting $\Sigma_0^{-1}, \Sigma_1^{-1} \in \calP_d$. Thus by g-convexity of $g$ we get that
+            \begin{aligned}
+                g (\gamma(t)^{-1}) \leq t g(\Sigma_0^{-1}) + (1-t) g(\Sigma_1^{-1}) = t h(\Sigma_0) + (1-t) h(\Sigma_1)
+            \end{aligned}
+            for all $t \in [0,1]$, giving the claim.
+    </p>
+    <p>
+            Alternatively, we know $\Sigma \mapsto \Sigma^{-1}$ is an isometry, which gives the result.
+    </p>
+</answer>
+
+<question>
+    Show that if $x \in \reals^d$ then the function $\Sigma \mapsto \log(x^\top \Sigma x)$ is g-convex.
+</question>
+<sketch>
+    Show that the Hessian is semi-positive definite and use Theorem 11.23 from the textbook. To compute the Hessian use formula 11.40 in Section 11.7 from the textbook
+</sketch>
+<answer>
+    <p>
+    Fix $x \in \Rd \setminus \{0\}$ and let $F: \calP_d \to \reals$ be given by $\Sigma \mapsto \log(x^\top \Sigma x)$. Let $\Sigma \in \calP_d$ and $\dot \Sigma \in \text{Sym}_d := \{A \in \Rdd \; | \; A = A^\top\}$. The differential of $F$ in $\Sigma$ evaluated in $\dot \Sigma$ is given by
+            \begin{aligned}
+                DF(\Sigma)[\dot \Sigma] &= \frac{d}{dt}[\log(x^\top (\Sigma + t \dot \Sigma) x)]_{t=0} = (x^\top \Sigma x)^{-1} x^\top \dot \Sigma x \\
+                &= (x^\top \Sigma x)^{-1} \trace(\dot \Sigma x x^\top).
+            \end{aligned}
+            Thus the euclidean gradient of $F$ is given by
+            \begin{aligned}
+                \grad_{\calE} F(\Sigma) = \frac{xx^\top}{x^\top \Sigma x}.
+            \end{aligned}
+            The euclidean Hessian of $F$ is then given by
+            \begin{aligned}
+                \Hess_{\calE} F(\Sigma)[\dot \Sigma] &= D \grad_E F(\Sigma)[\dot \Sigma] = xx^\top D(\Sigma \mapsto (x^\top \Sigma x)^{-1})(\Sigma)[\dot \Sigma] \\
+                &= - xx^\top (x^\top \Sigma x)^{-2} x^\top \dot \Sigma x,
+            \end{aligned}
+            where we used in the chain rule in the last equality.
+    </p>
+    <p>
+            By formula 11.40 we have that the Riemannian Hessian is given by
+            \begin{aligned}
+                \Hess_{\calM} F(\Sigma)[\dot \Sigma] = - \frac{x^\top \dot \Sigma x}{(x^\top \Sigma x)^2} \Sigma xx^\top \Sigma + \frac{1}{2 (x^\top \Sigma x} (\dot \Sigma xx^\top \Sigma + \Sigma xx^\top \dot \Sigma).
+            \end{aligned}
+    </p>
+    <p>
+            Now, let us show that $\Hess_{\calM} F(\Sigma)$ is semi-positive definite.
+            \begin{aligned}
+                \langle \Hess_{\calM} F(\Sigma)[\dot \Sigma], \dot \Sigma \rangle
+                &= \frac{1}{x^\top \Sigma x} \left [ - \frac{x^\top \dot \Sigma x}{x^\top \Sigma x} \trace(xx^\top \dot \Sigma) + \frac{1}{2} \trace (\Sigma^{-1} \dot \Sigma xx^\top \dot \Sigma + xx^\top \dot \Sigma \Sigma^{-1} \dot \Sigma)\right ] \\
+                &= \frac{1}{x^\top \Sigma x} \left [  - \frac{(x^\top \dot \Sigma x)^2}{x^\top \Sigma x} + x^\top \dot \Sigma \Sigma^{-1} \dot \Sigma x \right ].
+            \end{aligned}
+            We get that
+            \begin{aligned}
+                \langle \Hess_{\calM} F(\Sigma)[\dot \Sigma], \dot \Sigma \rangle \geq 0 \iff (x^\top \dot \Sigma \Sigma^{-1} \dot \Sigma x) \cdot (x^\top \Sigma x) \geq (x^\top \dot \Sigma x)^2.
+            \end{aligned}
+            Let $x = \Sigma^{-1/2}z$. Then we can rewrite the last equation as
+            \begin{aligned}
+                (z^\top A^2 z) \cdot (z^\top z) \geq (z^\top A z)^2,
+            \end{aligned}
+            where $A = \Sigma^{-1/2} \dot \Sigma \Sigma^{-1/2} \in \text{Sym}_d$. Dividing the last equation by $||z||^4$ we see that the equation holds if
+            \begin{aligned}
+                y^\top A^2 y \geq (y^\top A y)^2 \; \forall y \in \Sd.
+            \end{aligned}
+            But this is clearly the case as for $y \in \Sd$ we have
+            \begin{aligned}
+                (y^\top A y)^2 \leq ||y||^2 ||Ay||^2 = ||Ay||^2 = y^\top A^2 y
+            \end{aligned}
+            as $A$ is symmetric. By arbitrariness of $\dot \Sigma \in \text{Sym}_d$ this implies that $\Hess_{\calM} F(\Sigma)$ is semi-positive definite and by arbitrariness of $\Sigma \in \calP_d$ we get that $\Hess_{\calM} F(\Sigma)$ is semi-positive definite for all $\Sigma \in \calP_d$. By Theorem 11.23 in the textbook we conclude that $F$ is g-convex.
+    </p>
+</answer>
+
+<question>
+    Conclude that $f \colon \calP_d \to \reals$ is g-convex, and so in particular all critical points of $f$ are global minima.
+</question>
+<sketch>
+    For the second part see Corollary 11.22 in the textbook.
+</sketch>
+<answer>
+    Recall that
+            \begin{aligned}
+                f(\Sigma) = \log(\det(\Sigma)) + \frac{1}{n} \sum_{j=1}^n d \log(x_j^\top \Sigma^{-1} x_j).
+            \end{aligned}
+            Putting the above results together we get that $f$ is a non-negative combination of $g$-convex functions. Thus by the exercise <a exercise="PropgConv01">Some properties of g-convex sets and functions</a> we get that $f$ is g-convex. Finally, by Corollary 11.22 in the textbook it follows that all critical points of $f$ are global minima.
+</answer>

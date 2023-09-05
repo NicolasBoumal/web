@@ -1,0 +1,53 @@
+<title>
+    Product of spheres
+</title>
+
+<p>
+    Let $\calM = \Sm \times \Sn$, which is an embedded submanifold of $\calE = \reals^m \times \reals^n$.
+    Endow $\reals^m \times \reals^n \cong \reals^{m+n}$ with its usual Euclidean structure:
+    $$\inner{(u, v)}{(u,v)}
+    = \begin{pmatrix} u^\top & v^\top \end{pmatrix} \begin{pmatrix} u\\ v \end{pmatrix}
+     = u^{\top} u + v^{\top} v$$
+    for $(u, v) \in \reals^m \times \reals^n$.
+    We can turn $\calM$ into a Riemannian submanifold by using the Euclidean structure of the ambient space $\calE = \reals^m \times \reals^n$.
+
+    Let $M \in \reals^{m \times n}$.  Maximizers of the following function are closely related to the singular value decomposition:
+    $$f \colon \calM \to \reals, \quad \quad f(x, y) = x^\top M y.$$
+</p>
+
+<question>
+    Show that $f \colon \calM \to \reals$ is smooth.
+</question>
+<answer>
+    Clearly $(x,y) \mapsto x^\top My$ is well defined on $\reals^m \times \reals^n$, smooth and extends $f$. Thus $f$ is smooth.
+</answer>
+
+<question>
+    Give a formula for orthogonal projection from $\calE$ onto $\T_{(x, y)} \calM$.
+</question>
+<answer>
+    From the exercise <a exercise="productmanifold01">Product manifolds</a> we know that $\T_{(x,y)} \calM = \T_x \Sm \times \T_y \Sn$. Further, we also know that $v \mapsto (I_xx^\top)v$ is the orthogonal projection into $\T_x \Sm$. Thus it make sens to define $\Proj_{(x,y)}((u, v)) = ((I - x x^\top)u, (I - y y^\top)v)$. By a straightforward verification one can verify the this is indeed the orthogonal projection into $\T_{(x,y)} \calM$.
+</answer>
+
+<question>
+    Given $(x, y) \in \calM$, give an expression for the Riemannian gradient of $f$ at $(x, y)$.
+</question>
+<sketch>
+    What is a function $\overline f \colon \reals^{m} \times \Rn \rightarrow \reals$ whose restriction to $\Sm \times \Sn$ equals $f$ ?  How does $\grad \overline f$ relate to $\grad f$ ?
+</sketch>
+<answer>
+    <p>
+    Using the extension form part 1 we have that
+                \begin{aligned}
+                \langle \grad \overline f(x, y), (u, v)\rangle &= \frac{d}{dt}[(x + t u)^\top M (y + t v)]_{t=0} = x^\top M v + u^\top M y \\
+                &= \langle M^\top x, v\rangle + \langle M y, u\rangle = \langle (My, M^\top x), (u, v)\rangle,
+                \end{aligned}
+                and so $\grad \overline f(x, y) = (My, M^\top x)$.
+    </p>
+    <p>
+                Hence, as we are on a Riemannian submanifold we get
+                \begin{aligned}
+                    \grad f(x, y) = \Proj_{(x,y)}(\grad \overline f(x,y)) = ((I - x x^\top) My, (I - y y^\top) M^\top x).
+                \end{aligned}
+    </p>
+</answer>

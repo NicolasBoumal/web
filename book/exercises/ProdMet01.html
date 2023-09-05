@@ -1,0 +1,64 @@
+<title>
+    The product metric
+</title>
+
+<p>
+    Let $\calM,\calM'$ be embedded submanifolds of Euclidean spaces $\calE, \calE'$, respectively.
+</p>
+
+<question>
+    What are the tangent spaces of $\calM \times \calM'$ ?  How do they relate to $\T_x \calM \times \T_{y} \calM'$ for $x \in \calM, y \in \calM'$ ?
+</question>
+<answer>
+    <p>
+    In the case that the codimension of $\calM$ and $\calM'$ isn't zero and $(x,y) \in \calM \times \calM'$. We have for local defining functions $h$ and $h'$ of $\calM$ and $\calM'$, respectively, that $H(x, y) = (h(x), h'(y))$ is a local defining function for $\calM \times \calM'$.
+    </p>
+    <p>
+        Hence,
+        \begin{align*}
+        \T_{(x,y)} \calM \times \calM' &= \ker \D H(x, y) = \{(u,v) \in \calE \times \calE' : \D h(x) = 0, \D h'(y) = 0\} \\
+        &= \ker \D h(x) \times \ker \D h'(y) = \T_x \calM \times \T_y \calM'.
+        \end{align*}
+        In the case that the codimension of either $\calM$ or $\calM'$ is zero the above formula still holds. For a rigorous proof see the exercise <a exercise="productmanifold01">Product manifolds</a>.
+    </p>
+</answer>
+
+<p>
+    Turn $\calM$ and $\calM'$ into Riemannian manifolds by giving them the Riemannian metrics $\inner{\cdot}{\cdot}^a$ and $\inner{\cdot}{\cdot}^b$, respectively.
+    We can turn $\calM \times \calM'$ into a Riemannian manifold by giving it the Riemannian product metric:
+    for all $(u, u'), (v, v')$ in the tangent space $\T_{(x, x')} (\calM \times \calM')$,
+    $$\inner{(u,u')}{(v,v')}_{(x, x')} := \inner{u}{v}_x^a + \inner{u'}{v'}_{x'}^b.$$
+    One can verify that the product metric defined above is indeed a Riemannian metric.
+</p>
+
+<question>
+    For a smooth function $f \colon \calM \times \calM' \to \reals$ show that
+        \begin{aligned}
+            \grad f(x, y) = \Big( \grad\big(x \mapsto f(x, y)\big)(x), \grad\big(y \mapsto f(x, y)\big)(y) \Big),
+        \end{aligned}
+        where $x \mapsto f(x, y)$ is the function from $\calM$ to $\reals$ obtained from $f$ by fixing the second input to $y$, and similarly for $y \mapsto f(x, y)$.
+</question>
+<sketch>
+    Use linearity to argue that $\D f(x, y)[(u, v)] = \D f(x, y)[(u, 0)] + \D f(x, y)[(0, v)]$. Then think of curves on $\calM \times \calM'$ that realize the tangent vectors $(u, 0)$ and $(0,v)$.
+</sketch>
+<answer>
+    <p>
+    Let us first make a preliminary observation.
+        Let $(x,u) \in \T \calM, (y, v) \in \T \calM'$, and let $c \colon \reals \to \calM$ be a curve with $c(0) = x, c'(0) = u$.
+    </p>
+    <p>
+        Define the curve $C \colon \reals \to \calM \times \calM'$ by $C(t) = (c(t), y)$.
+        Then,
+        $$\D f(x, y)[(u, 0)] = \frac{d}{dt}[f(C(t))]_{t=0} = \frac{d}{dt}[f(c(t), y)]_{t=0} = \D\big( x \mapsto f(x, y) \big)(x)[u].$$
+        Using this observation, notice that
+        \begin{aligned}
+            & \inner{(u, v)}{\grad f(x, y)}_{(x, y)} \\
+                & = \D f(x, y)[(u, v)] = \D f(x, y)[(u, 0)] + \D f(x, y)[(0, v)] \\
+                & = \D\big( x \mapsto f(x, y) \big)(x)[u] + \D\big( y \mapsto f(x, y) \big)(y)[v] \\
+                & = \inner{u}{\grad(x \mapsto f(x, y))(x)}_x^\calM + \inner{v}{\grad(y \mapsto f(x, y))(y)}_y^{\calM'} \\
+                & = \inner{(u, v)}{\Big( \grad\big(x \mapsto f(x, y)\big)(x), \grad\big(y \mapsto f(x, y)\big)(y) \Big)}_{(x, y)}.
+        \end{aligned}
+        The claim follows by identification since the gradient vector field is uniquely defined.
+    </p>
+</answer>
+

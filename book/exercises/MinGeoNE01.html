@@ -1,0 +1,13 @@
+<title>
+    Minimizing geodesics do not always exist
+</title>
+
+<question>
+    Give an example of a Riemannian manifold $(\calM, \langle \cdot, \cdot \rangle)$ and two points $x, y \in \calM$ such that there does exist a geodesic connecting $x$ and $y$, but there does not exist a minimizing geodesic connecting $x$ and $y$.  By "minimizing geodesic", we mean a geodesic which has minimal length among all curves connecting $x$ and $y$ on $\calM$.
+</question>
+<sketch>
+    It is not necessary to make a rigorous proof. It is enough to give a convincing explanation.
+</sketch>
+<answer>
+    Let $\calM = \mathbb{S}^2$ be the sphere in $\reals^3$ seen as a Riemannian submanifold. We know from the exercise <a exercise="ParallelTransSphere10">Parallel transport on the sphere</a>. That the geodesics of $\mathbb{S}^2$ are geometrically the great circle. Now let  $x$ be a point close to the north pole.  Let $C$ be the great circle passing through $x$ and the north pole. Further, take $y$ to be a point on $C$ which is also sufficiently close to the north pole. Then if we consider $\mathbb{S}^2$ without the north pole this is still a smooth manifold as it is a open subset of $\mathbb{S}^2$. The distance between $x$ and $y$ is still the same but as we removed the north pole there isn't a minimizing geodesic segment. Nevertheless, the two points $x$ and $y$ are still connected by a geodesic as we can go through the south pole.
+</answer>

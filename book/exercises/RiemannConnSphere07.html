@@ -1,0 +1,375 @@
+<title>
+    Riemannian connection on the sphere
+</title>
+
+<p>
+For optimization, differentiation of vector fields is crucial because it allows us to define the Hessian of a function. In order to differentiate vector fields on a manifold $\calM$, we need a new tool. This tool is called a connection. Every smooth manifold has many different connections. On a Riemannian manifold there is a unique special connection called the Riemannian connection. In this precept, you will work out the Riemannian connection for the sphere.
+</p>
+
+<p>
+Let $\calM$ be a smooth manifold.  Let $\frakF(\calM)$ denote the vector space of smooth real-valued functions $f \colon \calM \rightarrow \reals$.  Let $\frakX(\calM)$ denote the vector space of smooth vector fields on $\calM$. Recall that a <em>connection</em> on a manifold $\calM$ is an operator
+\begin{aligned}
+    \nabla \colon \T \calM \times \frakX(\calM) \rightarrow \T\calM \colon (u, V) \mapsto \nabla_u V
+\end{aligned}
+such that $\nabla_u V \in \T_x \calM$ whenever $u \in \T_x \calM$, and which satisfies the following properties for arbitrary $U, V, W \in \frakX(\calM), f \in \frakF(\calM), (x, u), (x, w) \in \T \calM$ and $a, b\in \reals$:
+\begin{aligned}
+    &- \text{ Smoothness:} (\nabla_U V)(x) \triangleq \nabla_{U(x)} V \text{defines a smooth vector field } \nabla_U V; \\
+    &- \text{ Linearity in $u:$ } \nabla_{a u + b w} V = a \nabla_u V + b \nabla_w V; \\
+    &- \text{ Linearity in $V$: } \nabla_u(a V + b W) = a \nabla_u V + b \nabla_u W; \text{ and }\\
+    &- \text{ Leibniz rule: } \nabla_u(f V) = \D f(x)[u] \cdot V(x) + f(x) \nabla_u V.
+\end{aligned}
+The vector field $\nabla_U V$ is called the <em>covariant derivative</em> of $V$ along $U$ with respect to $\nabla$.
+The concept of a connection is independent of a Riemannian metric on $\calM$.
+</p>
+
+<p>
+Give $\calM$ a Riemannian metric $\inner{\cdot}{\cdot}$. To isolate a single connection we will further require that the connection interacts nicely with the Riemannian metric. A <em>Riemannian connection</em> on $\calM$ is a connection $\nabla$ which satisfies the following properties for all $U, V, W \in \frakX(\calM)$ and $f \in \frakF(\calM)$:
+\begin{aligned}
+    &- \text{ Compatibility with the metric: } U \inner{V}{W} = \inner{\nabla_U V}{W} + \inner{V}{\nabla_U W}; \text{ and} \\
+    &- \text{ Symmetry: } [U, V] f = (\nabla_U V - \nabla_V U) f.
+\end{aligned}
+</p>
+
+<p>
+Recall that the <em>Lie bracket</em> $[U, V]$ is defined by $[U, V]f = U(V f) - V(U f)$ for all $f \in \frakF(\calM)$, where $U f$ is a real-valued function on $\calM$ defined by $(U f)(x) = \D f(x)[U(x)]$.
+</p>
+
+<p>
+The fundamental theorem of Riemannian geometry states that there is a <em>unique</em> Riemannian connection on every Riemannian manifold (see Theorem 5.6 of the course textbook). Therefore, to verify that a connection is the Riemannian connection, you just need to show it satisfies the Symmetry and Compatibility properties.
+</p>
+
+<p>
+The following exercise can be done with some more effort in the context of general embedded Riemannian submanifolds. For whose how want to do it in the general setting there is a hint on how to do it in the sketch section of each question.
+</p>
+
+<p>
+Let $\calM = \Sd$ be embedded in $\calE =\Rd$. Let $\Proj_x$ denote the orthogonal projector from $\calE$ to $\T_x \calM$. Define a map $\nabla$ as follows: for all $(x, u) \in \T \calM$ and $V \in \frakX(\calM)$,
+\begin{aligned}
+    \nabla_u V = \Proj_x(\D \overline{V}(x)[u]),
+\end{aligned}
+where $\overline{V}$ is any smooth extension of $V$. Let's first show that $\nabla$ is a connection on $\calM$.
+</p>
+
+<question>
+    Show $\nabla$ satisfies the Smoothness property of connections.
+    <hint>
+        You can use without proof that if $U,V \in \frakF(\calM)$ with smooth extension $\overline{U},\overline{V}$ defined on some open set $\calM \subseteq W \subseteq \calE$, then $D \overline{V}(x) [\overline{U}(x)]$ is smooth.
+    </hint>
+</question>
+<sketch>
+    We know from previous exercises an explicit formula for the projection on tangent spaces. For general Riemannian submanifolds use an orthogonal local frames to show that around each point there is a smooth extension.
+</sketch>
+<answer>
+    <p>
+    As $\calM = \Sd$ we have that $\Proj_x(u) = (I_d-xx^\top)u$, where $x \in \Sd$ and $u \in \Rd$. Thus for $x \in \Sd$ and $U,V \in \frakX(\calM)$ with smooth extension $\overline{U},\overline{V}$ on an open set $\calM \subseteq W \subseteq \calE$ we have that
+            \begin{aligned}
+                (\nabla_U V)(x) = \Proj_x (\D \overline{V}(x)[U(x)]) = \Proj_x (\D \overline{V}(x)[\overline{U}(x)]) = (I_d - xx^\top) \D \overline{V}(x)[\overline{U}(x)].
+            \end{aligned}
+            As $x \mapsto (I_d - xx^\top)$ is well defined and smooth on whole $\Rd$ and by the hint $\D \overline{V}(x) [\overline{U}(x)]$ is well defined and smooth on $W$ we have that
+            \begin{aligned}
+                x \in W \mapsto (I_d - xx^\top) \D \overline{V}(x)[\overline{U}(x)]
+            \end{aligned}
+            is a smooth extension of $\nabla_U V$. This proves the smoothness property.
+    </p>
+    <p>
+        See also Theorem 5.2 in the textbook.
+    </p>
+</answer>
+
+<question>
+    Show $\nabla$ satisfies the "Linearity in $u$" property of connections.
+</question>
+<sketch>
+    Should be straightforward for the case of the sphere and the case of a general Riemannian submanifolds.
+</sketch>
+<answer>
+    <p>
+    Let $a,b \in \reals, \; u,w \in \T_x \calM$ for some $x \in \calM$ and $V \in \frakX(\calM)$. Then
+            \begin{aligned}
+                \nabla_{au + bw} V (x) &= \Proj_x (\D \overline{V}(x)[au + bw]) = \Proj_x (a \D \overline{V}(x)[u] + b \D \overline{V}(x)[w]) \\
+                &= a \nabla_u V(x) + b \nabla_w V(x)
+            \end{aligned}
+            by the linearity of the differential and the projection.
+    </p>
+    <p>
+        See also Theorem 5.2 in the textbook.
+    </p>
+</answer>
+
+<question>
+    Show $\nabla$ satisfies the "Linearity in $V$" property of connections.
+</question>
+<sketch>
+    Should be straightforward for the case of the sphere and the case of a general Riemannian submanifolds.
+</sketch>
+<answer>
+    <p>
+    Let $a,b \in \reals, \; (x,u) \in T \calM$ and $V,W \in \frakX(\calM)$. Then
+            \begin{aligned}
+                \nabla_u (aV + bW)(x) &= \Proj_x (\D (a\overline{V} + b \overline{W})[u]) = \Proj_x(a \D (\overline{V})[u] + b \D (\overline{W})[u]) \\
+                &= a \nabla_u V(x) + b \nabla_u W(x)
+            \end{aligned}
+            by the linearity of the differential and the projection.
+    </p>
+    <p>
+        See also Theorem 5.2 in the textbook.
+    </p>
+</answer>
+
+<question>
+    Show $\nabla$ satisfies the Leibniz rule property of connections.
+</question>
+<sketch>
+    Should be straightforward for the case of the sphere and the case of a general Riemannian submanifolds.
+</sketch>
+<answer>
+    <p>
+    Let $(x,u) \in T \calM$, $f \in \frakF(\calM)$ and $V \in \frakX(\calM)$. Then
+            \begin{aligned}
+                \nabla_u (fV)(x) &= \Proj_x (\D (\overline{f}\overline{V})(x)[u]) = \Proj_x(\overline{f}(x) \D(\overline{V})(x)[u] + \overline{V}(x) \D (\overline{f})(x)[u]) \\
+                &= f(x) \Proj_x(\D (\overline{V})(x)[u]) + \D (\overline{f})(x)[u] \Proj_x(V(x)) \\
+                &= f(x) \nabla_u V(x) + \D f(x)[u] V(x)
+            \end{aligned}
+            by the linearity of the projection and the Leibniz/Product rule of the differential.
+    </p>
+    <p>
+        See also Theorem 5.2 in the textbook.
+    </p>
+</answer>
+
+<question>
+    Conclude that $\nabla$ is a connection on $\calM$.
+</question>
+<sketch>
+    Should be straightforward for the case of the sphere and the case of a general Riemannian submanifolds.
+</sketch>
+<answer>
+    <p>
+    We have that $\nabla : T \calM \times \frakX{\calM} \to T \calM$, given by
+            \begin{aligned}
+                (u,V) \mapsto \nabla_u(V) = \Proj_x(\D \overline{V}(x)[u])
+            \end{aligned}
+            is a connection as it satisfies all 4. conditions of a connection.
+    </p>
+    <p>
+        See also Theorem 5.2 in the textbook.
+    </p>
+</answer>
+
+<p>
+Let's now show that $\nabla$ is the Riemannian connection on $\calM$.
+</p>
+
+<question>
+    Show $\nabla$ satisfies the "Compatibility with the metric" property of Riemannian connections.
+</question>
+<sketch>
+    Use the chain rule. The exercise should be the same for the sphere and general Riemannian submanifolds.
+</sketch>
+<answer>
+    <p>
+    Let $U,V,W \in \frakX(\calM)$ and $x \in \calM$. We have that
+            \begin{aligned}
+                \langle \nabla_U V, W \rangle (x) = \langle \nabla_U(x) V, W(x) \rangle
+                = \langle \Proj_x(\D \overline{V}(x)[U(x)],W(x)) \rangle = \langle \Proj_x(\D \overline{V}(x)[\overline{U}(x)],\overline{W}(x)) \rangle
+            \end{aligned}
+            as $\overline{W}(x) \in \T_x \calM$. Similarly we get
+            \begin{aligned}
+                \langle V, \nabla_U W \rangle (x) = \langle \overline{V}(x), \Proj_x(\D \overline{W}(x)[\overline{U}(x)]) \rangle.
+            \end{aligned}
+            Further, $U \langle V, W \rangle (x) = \D(\langle U, W \rangle)(x)[U(x)] = \D(\langle \overline{U}, \overline{W} \rangle)(x)[\overline{U}(x)]$. By the chain rule we get that
+            \begin{aligned}
+                \D(\langle \overline{U}, \overline{W} \rangle)(x)[\overline{U}(x)] = \langle \D \overline{W}(x)[\overline{U}(x)], \overline{V}(x) \rangle + \langle \overline{W}(x),  D \overline{V}(x)[\overline{U}(x)] \rangle.
+            \end{aligned}
+            We conclude that
+            \begin{aligned}
+                U \langle V, W \rangle (x) = \langle \nabla_U V, W \rangle (x) + \langle V, \nabla_U W \rangle (x),
+            \end{aligned}
+            giving the claim.
+    </p>
+    <p>
+        See also Theorem 5.9 in the textbook.
+    </p>
+</answer>
+
+<p>
+Lastly, you will show the Symmetry property of the connection:
+
+\begin{aligned}
+[U, V] f = (\nabla_U V - \nabla_V U) f.
+\end{aligned}
+
+We do this in a number of steps.  However, first already notice that: The left hand side of the above equation involves second order derivatives of $f$, but the right hand side only has first order derivatives so somehow second order terms must vanish. To make those second order derivatives appear you will use that the Euclidean Hessian is symmetric; to some extent this is why this property is called symmetry.
+</p>
+
+<question>
+    Show that if $\overline U$ and $\overline f$ are smooth extensions of $U, f$, respectively, then $\overline U \; \overline f$ is a smooth extension of $U f$. Conclude that
+        \begin{aligned}
+            \overline{[U, V] f} := \overline U (\overline V \; \overline f) - \overline V (\overline U \; \overline f)
+        \end{aligned}
+        is a smooth extension of $[U, V] f$.
+</question>
+<sketch>
+    You can use that if $\overline{f}$ is a smooth extension of $f$ and $\overline{U}$ respectively $\overline{V}$ are smooth extension of $U$ and $V$, then $\D \overline{f}(x)[\overline{U}(x)]$ is smooth. The exercise should be the same for the sphere and general Riemannian submanifolds.
+</sketch>
+<answer>
+    <p>
+    Let $\overline{f}$ and $\overline{U}$ be smooth extension of $f$ and $U$ defined on some open set $\calM \subseteq W \subseteq \calE$. We have for $x \in \calM$ that
+            \begin{aligned}
+                (Uf)(x) = \D f(x)[U(x)] = \D \overline{f}(x)[U(x)] = \D \overline{f}(x)[\overline{U}(x)] =: (\overline{U} \overline{f})(x).
+            \end{aligned}
+            as $\overline{U}$ extends $U$ and $U(x) \in \T_x \calM$. Thus $\overline{U} \; \overline{f}$ extends $Uf$. Therefore for $\overline{V}$ a smooth extension of $V \in \frakX(\calM)$ we get or $x \in \calM$ that
+            \begin{aligned}
+                [U,V]f(x) &= U(Vf)(x) - V(Uf)(x) = \overline{U}(\overline{Vf})(x) - \overline{V}(\overline{Uf})(x) \\
+                &= \overline{U}(\overline{V} \; \overline{f})(x) - \overline{V}(\overline{U} \; \overline{f})(x) =: \overline{[U,V]f}(x),
+            \end{aligned}
+            giving the claim.
+        </p>
+        <p>
+            See also Theorem 5.8 in the textbook.
+        </p>
+</answer>
+
+<question>
+    Using symmetry of the "Euclidean" Hessian, show that
+        \begin{aligned}
+        (\overline{[U, V] f})(x) = \D \overline f(x)\Big[\D \overline V(x)[\overline U(x)] - \D \overline U(x)[\overline V(x)]\Big].
+        \end{aligned}
+</question>
+<sketch>
+    Recall that the Euclidean Hessian of $\overline f$ is defined by $\Hess \overline f(x)[u] = \D (\grad \overline f)(x)[u]$. Moreover, $\Hess \overline f$ is symmetric means: $v^\top \Hess \overline f(x) [u] = u^\top \Hess \overline f(x) [v]$ for all $u, v$.
+</sketch>
+<answer>
+    <p>
+    Let $U,V \in \frakX(\calM)$ and $f \in \frakF(\calM)$. Further, let $O \subseteq \calE$ be an open set containing $\calM$, i.e., $\calM \subseteq O$ , which is such that $U,V \in \frakX(\calM)$ and $f \in \frakF(\calM)$ can be smoothly extended to $\overline{U},\overline{V},\overline{f}$ on $O \subseteq \calE$. Fix $x \in O$. We have that
+            \begin{aligned}
+                \overline{[U,V]f}(x) = \overline{U}(\overline{V} \; \overline{f})(x) - \overline{V}(\overline{U} \; \overline{f})(x).
+            \end{aligned}
+            As
+            \begin{aligned}
+                \overline{V} \; \overline{f}(x) = \D \overline{f}(x)[\overline{V}(x)] = \langle \grad \overline{f}(x), \overline{V}(x) \rangle
+            \end{aligned}
+            we have that
+            \begin{aligned}
+                \overline{U}(\overline{V} \; \overline{f})(x) = \D (\langle \grad \overline{f}, \overline{V} \rangle)(x)[\overline{U}(x)].
+            \end{aligned}
+            By the chain rule we get that
+            \begin{aligned}
+                \D (\langle \grad \overline{f}, \overline{V} \rangle)(x)[\overline{U}(x)] &= \langle \D ( \grad \overline{f})(x)[\overline{U}(x)], \overline{V}(x) \rangle + \langle \grad \overline{f}(x), \D \overline{V}(x)[\overline{U}(x)] \rangle \\
+                &= \langle \Hess \overline{f}(x)[\overline{U}(x)], \overline{V}(x) \rangle + \D \overline{f}(x)[\D \overline{V}(x)[\overline{U}(x)]].
+            \end{aligned}
+            Similarly we get that
+            \begin{aligned}
+                \overline{V}(\overline{U} \overline{f})(x) = \langle \Hess \overline{f}(x)[\overline{V}(x)], \overline{U}(x) \rangle + \D \overline{f}(x)[\D \overline{U}(x)[\overline{V}(x)]].
+            \end{aligned}
+            Thus we get that
+            \begin{aligned}
+                \overline{[U,V]f}(x) &= \langle \Hess \overline{f}(x)[\overline{U}(x)], \overline{V}(x) \rangle + \D \overline{f}(x)[\D \overline{V}(x)[\overline{U}(x)]] \\
+                &- \left ( \langle \Hess \overline{f}(x)[\overline{V}(x)], \overline{U}(x) \rangle + \D \overline{f}(x)[\D \overline{U}(x)[\overline{V}(x)]] \right) \\
+                &= \D \overline{f}(x)[\D \overline{V}(x)[\overline{U}(x)] - \D \overline{U}(x)[\overline{V}(x)]]
+            \end{aligned}
+            by using the symmetry of the Hessian.
+        </p>
+        <p>
+            See also Theorem 5.8 in the textbook.
+        </p>
+</answer>
+
+<p>
+It looks like we are almost there, but right now it is not yet clear that the vectors that appear in that expression are tangent to $\calM$.
+</p>
+
+<question>
+    Show that $\D \overline V(x)[\overline U(x)] - \D \overline U(x)[\overline V(x)]$ is indeed tangent to $\calM$ at $x$.
+</question>
+<sketch>
+    The formula from the last part works for all smooth functions. Consider $\overline f(x) = x^\top x - 1$ a local defining function for the sphere. In this case, what is $f$ ? What do you learn from using this $\overline f$ in the equation from the last part ? For the case of general embedded Riemannian submanifolds it is possible to generalize the proof for the case of the sphere by considering a general local defining function.
+</sketch>
+<answer>
+    <p>
+    Let $x \in \calM$ and $V,W \in \frakX(\calM)$. Further, let $O \subseteq \calE$ be an open set containing $\calM$, which is such that $V,W$ admit the smooth extension $\overline{V},\overline{W}$ on it. Also let $\overline f(x) = x^\top x - 1$. Then if $\overline{[U, V] f})(x)=0$ we get that $\D \overline V(x)[\overline U(x)] - \D \overline U(x)[\overline V(x)] \in \ker(D \overline{f}(x))$ and as $\overline{f}$ is a local defining function this shows that $\D \overline V(x)[\overline U(x)] - \D \overline U(x)[\overline V(x)] \in \T_x \calM$.
+    </p>
+    <p>
+            Observe that for $y \in \calM$ we have
+            \begin{aligned}
+                \overline{V} \; \overline{f}(y) = \D \overline{f}(y) [\overline{V}(y)] = D \overline{f}(y) [V(y)] = D f (y) [V(y)]
+            \end{aligned}
+            and as $f = 0$ on $\calM$ we have that $ D f (y) [V(y)]=0$. This shows that $\overline{V} \; \overline{f} = 0$ on $\calM$, i.e., $Vf=0$ and thus that
+            \begin{aligned}
+                \overline{U}(\overline{V} \; \overline{f})(x) = \D (Vf)(x)[U(x)] = 0.
+            \end{aligned}
+            Similarly we get that $\overline{V}(\overline{U} \; \overline{f})(x) = 0$, giving that $\overline{[U, V] f})(x)=0$.
+    </p>
+    <p>
+        See also Theorem 5.9 in the textbook.
+    </p>
+</answer>
+
+<question>
+    Show that $\nabla$ satisfies the Symmetry property.
+</question>
+<sketch>
+    This is the same for the sphere and the general Riemannian submanifold case.
+</sketch>
+<answer>
+    <p>
+    Let $x\in\calM$ and $U,V\in\frakX(\calM)$, $x\in\calM\subseteq O\subseteq\calE$ an open set and $f\in\frakF(\calM)$. Further, let $\overline{U},\overline{V},\overline{f}$ extensions on the open subset $O$. Observe that
+            \begin{aligned}
+                \nabla_{U(x)}V - \nabla_{V(x)}U &= \Proj_x(\D \overline{V}(x)[U(x)]) - \Proj_x(\D \overline{U}(x)[V(x)])\\
+                &= \Proj_x(\D \overline{V}(x)[\overline{U}(x)]-\D \overline{U}(x)[\overline{V}(x)]) = \D \overline{V}(x)[\overline{U}(x)]-\D \overline{U}(x)[\overline{V}(x)] \in \T_x \calM
+            \end{aligned}
+            by the previous part. Thus we get
+            \begin{aligned}
+            ~[U,V]f(x) &=(\overline{[U,V]f})(x) = \D \overline{f}(x)[\D \overline{V}(x)[\overline{U}(x)]-\D \overline{U}(x)[\overline{V}(x)]]\\
+                &= \D f(x)[\D \overline{V}(x)[\overline{U}(x)] - \D \overline{U}(x)[\overline{V}(x)]] = \D f(x)[\nabla_{U(x)} V - \nabla_{V(x)} U] \\
+                &= (\nabla_U V-\nabla_V U)f(x),
+            \end{aligned}
+            giving that $[U,V]f=(\nabla_U V - \nabla_V U)f$.
+    </p>
+    <p>
+        See also Theorem 5.9 in the textbook.
+    </p>
+</answer>
+
+<question>
+    Conclude that $\nabla$ is the Riemannian connection on $\calM$.
+</question>
+<sketch>
+    This is the same for the sphere and the general Riemannian submanifold case.
+</sketch>
+<answer>
+    As we already showed that $\nabla$ is a connection and by previous parts it satisfies compatibility and symmetry we get that $\nabla$ is a Riemannian connection. By the fundamental theorem of Riemannian geometry, it is the unique Riemannian connection of the sphere.
+</answer>
+
+<p>
+The Riemannian Hessian is defined as the connection of the Riemannian gradient:
+\begin{aligned}
+    \Hess f(x)[u] = (\nabla_u \grad f)(x), \quad \quad \forall (x,u) \in \T \calM.
+\end{aligned}
+Hessians will be covered in detail in lecture next week.
+However, with the previous exercise in hand, you are already ready to give a formula for the Riemannian Hessian on the sphere.
+</p>
+
+<question>
+    Give an expression for the Riemannian Hessian of $f \colon \Sd \to \reals$ in terms of the Euclidean gradient and Hessian of a smooth extension $\overline f$ of $f$.
+</question>
+<sketch>
+    For the case of the sphere you can give an explicit formula and for the general Riemannian submanifold case you can give a formula relating the hessian and the euclidean gradient.
+</sketch>
+<answer>
+    <p>
+    This part is done on a general Riemannian submanifold $\calM$ of some Euclidean space $\calE$. Let $f\colon \calM \to \reals$ be smooth and let $\overline{f}\colon U \to \reals$ be a smooth extension of $f$ on some open set $\calM \subseteq U \subseteq \calE$.
+
+            Let $(x,u) \in \T\calM$ then
+            \begin{aligned}
+                \Hess f(x)[U] = (\nabla_U \grad f)(x) = \Proj_x(D(\overline{\grad f})(x)[u]) = \Proj_x(D(\overline{\Proj_x}(\grad \overline{f}))(x)[u]),
+            \end{aligned}
+            giving a general formula for the Hessian. In the case of the sphere $\overline{\Proj_x} = I-xx^\top$. Thus
+            \begin{aligned}
+                \Hess f(x)[u] = \Proj_x(\Hess {\overline{f}}(x)[u])-x^\top\grad\overline{f}(x)\cdot u.
+            \end{aligned}
+    </p>
+    <p>
+            See also Section 7.2 of the textbook.
+    </p>
+</answer>

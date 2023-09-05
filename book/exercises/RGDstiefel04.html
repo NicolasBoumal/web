@@ -1,0 +1,76 @@
+<title>
+    RGD on Stiefel
+</title>
+
+<p>
+    For $p \leq n$, consider the Stiefel manifold
+    \begin{aligned}
+        \calM = \Stnp = \{X \in \Rnp \colon X^\top X = I_p\}.
+    \end{aligned}
+    In the exercise <a exercise="Polarstiefel03">Metric projection retraction for Stiefel</a>, you showed that $\calM$ is an embedded submanifold of $\calE = \Rnp$, and worked out an expression for its tangent spaces. We consider $\calM$ as a Riemannian submanifold of $\Rnp$, endowed with usual the inner product $\inner{X}{Y} = \trace(X^\top Y)$. Let
+    \begin{aligned}
+        f \colon \calM \rightarrow \reals, \quad f(X) = \trace(X^\top A X),
+    \end{aligned}
+    where $A$ is a real symmetric $n \times n$ matrix.
+</p>
+
+<question>
+    How do you compute the orthogonal projector $\Proj_{X} \colon \calE \to \T_X\calM$ ?
+    <hint>
+        Use that $\Proj_{X}(U) \in T_X \calM$ and $U - \Proj_{X}(U) \in (T_X \calM)^{\perp}$.
+    </hint>
+</question>
+<answer>
+    The orthogonal projector is given by
+            \begin{aligned}
+                \Proj_X(U) = U - X(X^\top U + U^\top X)/2.
+            \end{aligned}
+            The derivation of the orthogonal projector can be found in Chapter 7.3 of the textbook.
+</answer>
+
+<question>
+    Given $X \in \calM$ and $U \in \calE$, how many arithmetic operations does it take to compute $\Proj_{X}(U)$ ? Try to get as few operations as possible.  (You can use big-O notation.)
+</question>
+<answer>
+    The complexity of the formula of the orthogonal projection is given by the complexity of the matrix-matrix products, which is requires $O(np^2)$ arithmetic operations to compute.
+</answer>
+
+<question>
+    Give an expression for the Riemannian gradient $\grad f(X)$.
+</question>
+<sketch>
+    We are on a Riemannian submanifold.
+</sketch>
+<answer>
+    The map $f$ can be smoothly extended by $\overline{f}:X \in \reals^{n \times p} \mapsto \trace(X^\top A X)$. By a straightforward computation we get that $\grad \overline{f} (X) = 2AX$. As we are one a Riemannian submanifold we get that
+            \begin{aligned}
+                \grad f(X) = \Proj_X(\grad \overline{f} (X)) = 2 A X - 2 X(X^\top A X).
+            \end{aligned}
+</answer>
+
+<p>
+    We want to solve
+    \begin{aligned}
+    \min_{X \in \calM} f(X),
+    \end{aligned}
+    which amounts to identifying a left-most invariant subspace of $A$ (encoded in the columns of $X$, which form a basis for it).
+</p>
+
+<question>
+    Write code to implement Riemannian gradient descent with constant step size for the above problem. Use trial and error to determine a good step size.
+</question>
+<sketch>
+    Recall that in the exercise <a exercise="Polarstiefel03">Metric projection retraction for Stiefel</a> you worked out an expression for metric projection to the Stiefel manifold, and showed it was a retraction.
+</sketch>
+<answer>
+    We have the following code.
+    <matlab href="RGDLSRGDstiefel04.m"> </matlab>
+</answer>
+
+<question>
+    Implement a backtracking line-search method, as explained in Chapter 4 of the textbook, to determine a good step size for RGD automatically.
+</question>
+<answer>
+    We have the following code.
+    <matlab href="mainRGDstiefel04.m"> </matlab>
+</answer>

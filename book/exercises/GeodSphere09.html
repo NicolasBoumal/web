@@ -1,0 +1,32 @@
+<title>
+    Geodesics on the sphere
+</title>
+
+<p>
+Let $\calM$ be a Riemannian manifold and $c \colon \reals \to \calM$ be a curve. Recall that $c$ is a <em>geodesic</em> if its (intrinsic) acceleration is zero: $c''(t) = 0$ for all $t \in \reals$.
+
+Let $\calM = \Sd$ be the $(d-1)$-dimensional sphere embedded in $\reals^d$ with the usual Riemannian metric. For $(x, v) \in \T \calM$ with $||v||=1$ consider
+\begin{aligned}
+c(t) = \cos(t) x + \sin(t) \frac{v}{\|v\|}.
+\end{aligned}
+</p>
+
+<question>
+    Show that the curve $c$ given by in the above equation is a geodesic of the sphere.
+</question>
+<answer>
+    Fix $(x,u) \in \T \calM$ with $||v||=1$ and let $c$ be given by the above equation. Clearly, $c(t) \in \Sd$ for all $t \in \reals$ as for $t \in \reals$
+            \begin{aligned}
+                ||c(t)||^2 = \cos^2(t)||x||^2 + \sin^2(t)||v||^2 = \cos^2(t)+ \sin^2(t) = 1,
+            \end{aligned}
+            using that $u \in \text{span}(x)^{\perp}$. Further, $c$ is also clearly smooth as $\cos$ and $\sin$ are smooth. Finally, for $t \in \reals$ observe that
+            \begin{aligned}
+                c'(t) &= - \sin(t)x + \cos(t)v \text{ and thus } \\
+                \frac{d}{dt} c'(t) &= - \cos(t)x - \sin(t)v =  - c(t).
+            \end{aligned}
+            As $\T_{c(t)} \calM = \text{span}(c(t))^{\perp}$ we get that
+            \begin{aligned}
+                c''(t) = \Proj_{c(t)} (\frac{d}{dt} c'(t)) = - \Proj_{c(t)} (c(t)) = 0,
+            \end{aligned}
+            where we used that as $\Sd$ is seen as a Riemannian submanifold, we have that $\frac{\D}{dt} c'(t) = \Proj_{c(t)} (\frac{d}{dt} c'(t))$.
+</answer>

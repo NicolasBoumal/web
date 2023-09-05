@@ -1,0 +1,69 @@
+<title>
+    Differentiating the matrix inversion
+</title>
+
+<p>
+In this exercise we will compute the differential of the matrix inversion. Knowing the differential of the matrix inversion is sometimes useful in optimization on manifolds, because it comes up naturally in different applications. For example when showing that the set of rank $r$-matrices is a manifold or if need to work with the maximum likelihood function of a Gaussians. Let use make some observations.
+</p>
+
+<p>
+We define $U \subseteq \reals^{n \times n}$ by $U:= \det^{-1}(\reals \setminus \{0\})$, i.e., $U$ is the set of invertible matrices. As $\det : \reals^{n \times n} \to \reals$ is continuous (this can be seen by the Leibniz formula) we have that $U$ is open.
+</p>
+
+<p>
+Let $F: U \to U$ be given by $A \mapsto A^{-1}$, i.e., $F$ is the matrix inversion. The map $F$ is smooth, this can be seen by the cofactor formula, which shows that every entry of $F(A)$ is a rational function.
+</p>
+
+<question>
+    Compute the differential of $F$.
+</question>
+<sketch>
+    There are many different ways to do that. Two possibilities are through the von Neumann series and through smooth curves. For the first approach show that you can reduce to the case of computing the differential at the identity. Then use the von Neumann series to compute the differential at the identity. For the second one consider the smooth curve $A(t)=A+tH$ for $A \in U$ and $H \in \reals^{n \times n}$ and observe that
+    \begin{aligned}
+        F \circ A(t) \cdot A(t) = I_n
+    \end{aligned}
+    for $t$ close enough to $0$.
+</sketch>
+<answer>
+    <p>
+    First approach. Let $A \in U, H \in \reals^{n \times n}$. We have that
+        \begin{aligned}
+            DF(A)[H] = \lim_{t \to 0} \frac{(A + tH)^{-1} - A^{-1}}{t}.
+        \end{aligned}
+        Let $t \in \reals$ be smooth enough such that $(A + tH) \in U$. Then
+        \begin{aligned}
+            (A + tH)^{-1} = (I_n + tA^{-1}V)^{-1} \Sigma^{-1}.
+        \end{aligned}
+        This shows that
+        \begin{aligned}
+            DF(A)[H] = \left [ \lim_{t \to 0} \frac{((I + tA^{-1}V)^{-1} - I_n}{t} \right ] A^{-1} = DF(I_n)[A^{-1}H]A^{-1}.
+        \end{aligned}
+        Thus we only need the differential in $I_n$. Let $V \in \reals^{d \times d} \setminus \{0\}$. Then for $0 \bigger |t| \bigger \frac{1}{||V||}$ it holds that $(I_n + tV)^{-1} = (I_n - (-tV))^{-1} = \sum_{n=0}^\infty (-tV)^n$. We get that
+        \begin{aligned}
+            \left \| \frac{(I_n + tV)^{-1} - I_n}{t} - (-V) \right \| = \left \| \sum_{n=2}^\infty t^{n-1} (-V)^{n} \right \| \leq \sum_{n=2}^\infty |t^{n-1}| \|(-V)^{n}\| \leq \frac{|t| \| V\|^2}{1 - |t| \| V\|}.
+        \end{aligned}
+        As the last term clearly goes to zero we get that
+        \begin{aligned}
+            DF(I_n)[V]A^{-1} = \lim_{t \to 0} \frac{(I+tV)^{-1} - I_n}{t} = -V.
+        \end{aligned}
+        We get that
+        \begin{aligned}
+            DF(A)[H] = -A^{-1}HA^{-1}.
+        \end{aligned}
+        </p>
+        <p>
+        Second approach. Let $A \in U, H \in \reals^{n \times n}$ and define $A(t):=A + tH$. Clearly $A(t)$ is a smooth curve and for $t$ small enough we have that $A(t) \in U$. Let $I \subseteq \reals$ be an open interval around zero such that $\forall t \in I$ it holds that $A(t) \in U$. Then we have that
+        \begin{aligned}
+            F \circ A(t) \cdot A(t) = A(t)^{-1} \cdot A(t) = I_n.
+        \end{aligned}
+        Differentiating on both sides and using the product and chain rule we get that
+        \begin{aligned}
+            0 &= \frac{d}{dt} \left ( F \circ A(t) \cdot A(t) \right ) = \frac{d}{dt} \left ( F \circ A(t) \right ) \cdot A(t)  + F \circ A(t) \frac{d}{dt} \left ( A(t) \right ) \\
+            &= DF(A(t))[A'(t)] A(t) + F \circ A(t) \cdot H
+        \end{aligned}
+        on $I$. In particular in $t=0$ we have
+        \begin{aligned}
+            0 = A^{-1} \cdot H + DF(A)[H]A \iff DF(A)[H] = - A^{-1}HA^{-1}.
+        \end{aligned}
+        </p>
+</answer>

@@ -1,0 +1,148 @@
+<title>
+    Exponential map on rotations
+</title>
+
+<p>
+Consider the rotation group
+\begin{aligned}
+    \calM = \SOn = \{X \in \Rnn \colon X^\top X = I_n, \det(X) = 1\}
+\end{aligned}
+</p>
+
+<question>
+    Show that $\calM$ is an embedded submanifold of $\calE = \Rnn$.
+        What is the dimension of $\calM$ ?
+        What are the tangent spaces of $\calM$ ?
+</question>
+<sketch>
+    What is the relationship between $\Stnp$ and $\SOn$ ?
+</sketch>
+<answer>
+    <p>
+    Observe that $\SOn = \text{St}(n,n) \cap (\det^{-1}(\{-1\}))^c$. As $(\det^{-1}(\{-1\}))^c$ is open we have that $\SOn$ is a open subset of $\text{St}(n,n)$. Thus by the exercise <a exercise="EmbedManif01">Smooth embedded submanifolds of smooth embedded subamnifolds</a> we have that $\SOn$ is an embedded submanifold with the same dimension than $\text{St}(n,n)$, i.e., $n(n-\frac{n+1}{2})=n(n-1)/2$ and the same tangent spaces, i.e., for all $X \in \SOn$ we have that $\T_X \SOn = \{V \in \reals^{n \times n} \; | \; X^\top V = -V^\top X\}$.
+    </p>
+    <p>
+        See also Section 7.3 of the textbook.
+    </p>
+</answer>
+
+<p>
+The matrix exponential $\exp \colon \reals^{n \times n} \to \reals^{n \times n}$ is the smooth function defined by
+$$\exp(A) = \sum_{k=0}^\infty \frac{1}{k!} A^k, \quad \quad \text{where $A^0 = I$}.$$
+Convergence of the infinite sum can be made rigorous, but we do not concern ourselves with that here.
+</p>
+
+
+<question>
+    Let $\Omega \in \reals^{n \times n}$ be skew-symmetric, $\Omega = -\Omega^\top$.
+        Show that $\exp(\Omega) \in \calM$, where $\exp$ denotes the matrix exponential.
+        <hint>
+            Use the following two properties of the matrix exponential: (a) $\exp(A)^\top = \exp(A^\top)$ for all $A \in \reals^{n \times n}$; (b) $\exp(A) \exp(B) = \exp(A + B)$ if $A, B$ commute.
+        </hint>
+</question>
+<sketch>
+    To show that determinant is positive use an argument about connectedness.
+</sketch>
+<answer>
+    <p>
+    Using the two properties from the hint,
+            \begin{aligned}
+                \exp(\Omega)^\top \exp(\Omega) = \exp(-\Omega) \exp(\Omega) = I_n.
+            \end{aligned}
+            This proves already that $\exp(\Omega) \in \SOn$. As the determinant of $\exp(\Omega)$ is either $-1$ or $1$, we only need to show that the determinant is positive.
+    </p>
+    <p>
+            Clearly the map $A \in \reals^{n \times n} \mapsto \det(\exp(A))$ is continuous and the set $\text{Skew}(n) := \{\Omega \in \reals^{n \times n} \; | \; \Omega = - \Omega^\top\}$ is star shaped as for $\Omega \in \text{Skew}(n)$ we have that $t \cdot \Omega \in \text{Skew}(n)$ for all $t \in [0,1]$. As a star shaped map is in particular connected we get that $\det(\exp(\text{Skew}(n))) \subseteq \{-1,1\}$ is connected. Thus $\det(\exp(.))$ has to be constant on $\text{Skew}(n)$. Finally, as $\det(\exp(0))=1$ we get that $\det(\exp(\Omega))=1$ for all $\Omega \in \text{Skew}(n)$.
+    </p>
+</answer>
+
+<question>
+    Let $\Omega \in \reals^{n \times n}$ be skew-symmetric.
+       Show that $\frac{d}{d t}[\exp(t \Omega)]_{t = 0} = \Omega$.
+       <hint>
+           When taking the derivative of the exponential map, feel free to manipulate the infinite sum without worrying about convergence (this can be made rigorous).
+        </hint>
+</question>
+<answer>
+    <p>
+    We have that $\exp(t\Omega) - I_n = \sum_{k=1}^\infty \frac{1}{k!} (t \Omega)^k = t \sum_{k=1}^\infty \frac{t^{k-1}}{k!} \Omega^k$.
+    </p>
+    <p>
+            Thus we have that
+            \begin{aligned}
+                &\left \| \frac{\exp(t \Omega) - \exp(0)}{t} - \Omega \right \| = \left \| \sum_{k=1}^\infty \frac{t^{k-1}}{k!} \Omega^k - \Omega \right \|
+                = \left \| \sum_{k=2}^\infty \frac{t^{k-1}}{k!} \Omega^k \right \| = |t| \left \| \sum_{k=2}^\infty \frac{t^{k-2}}{k!} \Omega^k \right \| \\
+                &\leq |t| \sum_{k=2}^\infty \frac{|t|^{k-2}}{k!} ||\Omega||^k = |t| ||\Omega||^2 \sum_{k=2}^\infty \frac{|t|^{k-2}}{k!} ||\Omega||^{k-2} \leq |t| ||\Omega||^2 \exp(|t| ||\Omega||) \xrightarrow[]{t \to 0} 0.
+            \end{aligned}
+    </p>
+</answer>
+
+<question>
+    Define $\Retr_X(V) = X \exp(X^\top V)$.
+       Show that $\Retr_X(V) \in \calM$ for all $(X, V) \in \T\calM$.
+</question>
+<answer>
+    We know that $X^\top V$ is skew-symmetric, so $\exp(X^\top V) \in \calM$ by part 2.  Hence, $X \exp(X^\top V) \in \calM$.
+</answer>
+
+<question>
+    Show that $\Retr \colon \T\calM \to \calM$ is a retraction.
+    <hint>
+        Use without proof that the $\exp$ map is smooth on $\reals^{n \times n}$.
+    </hint>
+</question>
+<answer>
+    <p>
+    The map $(X,V) \in \reals^{n \times n} \times \reals^{n \times n} \mapsto X \exp(X^\top V) \in \reals^{n \times n}$ is smooth as a composition of smooth maps. Thus $R: T \calM \to \calM$ is indeed well defined by part 4 and smooth.
+    </p>
+    <p>
+            Further, $R_X(0)=X$ and using part 3, we have
+            $$\frac{d}{dt}[\Retr_X(t V)]_{t= 0} = X \frac{d}{dt}[\exp(t X^\top V)]_{t=0} = X X^\top V = V.$$
+    </p>
+</answer>
+
+<question>
+    (Optional) For $X \in \calM$, is $\Retr_X \colon \T_X\calM \to \calM$ injective ?
+</question>
+<sketch>
+    Try to construct a nonzero $2 \times 2$ skew-symmetric matrix whose exponential is identity.
+</sketch>
+<answer>
+    <p>
+    Observe that $\Omega \in \text{Skew}(2)$ is equivalent to $\Omega = \begin{bmatrix}
+                0 & x \\
+                -x & 0
+            \end{bmatrix}
+            = x \cdot N$ with $N = \begin{bmatrix}
+                0 & 1 \\
+                -1 & 0
+            \end{bmatrix}$ for some $x \in \reals$.
+            Further, observe that $N^2 = - I_2$, $N^3 = - N$ and $N^4 = I_2$. Thus we have that
+            \begin{aligned}
+                \sum_{k=0}^{2n} \frac{\Omega^k}{k!} =  \begin{bmatrix}
+                \sum_{k=0}^{n} \frac{(-1)^k x^{2k}}{(2k)!} & \sum_{k=0}^{n-1} \frac{(-1)^k x^{2k+1}}{(2k+1)!} \\
+                -\sum_{k=0}^{n-1} \frac{(-1)^k x^{2k+1}}{(2k+1)!} & \sum_{k=0}^{n} \frac{(-1)^k x^{2k}}{(2k)!}
+            \end{bmatrix},
+            \end{aligned}
+            showing that $\exp(\Omega) = \begin{bmatrix}
+                \cos(x) & \sin(x) \\
+                -\sin(x) & \cos(x)
+            \end{bmatrix}$.
+    </p>
+    <p>
+            Thus taking $\Omega = 2 \pi \cdot N$ we get that $\exp(\Omega) = I_2$. Now, let $n \in \mathbb{N}$ with $n \geq 2$ and define the matrix $\Omega = \begin{bmatrix}
+                2 \pi \cdot N & 0 \\
+                0 & 0
+            \end{bmatrix}.$ Then clearly $\Omega \in \text{Skew}(n)$ and $\exp(\Omega)=I_n$.
+    </p>
+    <p>
+            Let $X \in \SOn$ and take $V = X \Omega$ with $\Omega$ as above. Then $V \in T_X \SOn$ and
+            \begin{aligned}
+                R_X(V) = X \exp(X^\top V) = X \exp(\Omega) = X,
+            \end{aligned}
+            giving that $R_X$ isn't injective.
+    </p>
+    <p>
+            This shows that $\forall X \in \SOn$ we have that $R_X$ isn't injective.
+    </p>
+</answer>

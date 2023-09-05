@@ -1,0 +1,75 @@
+<title>
+    The sphere is a smooth manifold
+</title>
+
+<p>
+Let us turn $\calM = \Sd$ into a smooth manifold.
+Let $p = (0, \ldots, 0, 1) \in \reals^d$, and define
+$$\calU_+ = \Sd \setminus \{p\}, \quad \quad \calU_- = \Sd \setminus \{-p\},$$
+$$\phi_+ \colon \calU_+ \to \reals^{d-1}, \quad \quad \phi_+(x) = \Big(\frac{x_1}{1 - x_{d}}, \ldots, \frac{x_{d-1}}{1 - x_{d}}\Big)$$
+$$\phi_- \colon \calU_- \to \reals^{d-1}, \quad \quad \phi_-(x) = \Big(\frac{x_1}{1 + x_{d}}, \ldots, \frac{x_{d-1}}{1 + x_{d}}\Big).$$
+</p>
+
+<question>
+    Show that $(\calU_+, \phi_+), (\calU_-, \phi_-)$ are each $d-1$-dimensional charts for $\Sd$.
+</question>
+<sketch>
+    Observe that w.l.o.g. you only need to show that $(\calU_+, \phi_+)$ is a manifold. To shows that $(\calU_+, \phi_+)$ is a injective take the squared norm of $\phi_+(x)$ for $x \in \Sd$.
+</sketch>
+<answer>
+    <p>
+    Note that $\phi_- = \phi_+ \circ \rho$, where $\rho \colon \reals^d \to \reals^d$ is the reflection defined by
+            \begin{aligned}
+                \rho(x_1, \ldots, x_{d-1}, x_d) = (x_1, \ldots, x_{d-1}, -x_d).
+            \end{aligned}
+            As $\rho$ is a bijection from $\calU_-$ to $\calU_+$ and $\reals^{d-1}$ is an open set we only need to show $\phi_+$ is a bijection.
+            Let $x,z \in \calU_+$ be such that $\phi_+(x)= \phi_+(z)$. Taking the norm squared we get that
+            \begin{aligned}
+                ||\phi_+(x)||^2 = \sum_{j=1}^{d-1} \left( \frac{x_j}{1-x_d} \right )^2 = (1-x_d)^{-2}(||x||^2-x_d^2) = (1-x_d)^{-2}(1-x_d^2).
+            \end{aligned}
+            Similarly, we get that $||\phi_+(z)||^2 = (1-z_d)^{-2}(1-z_d^2).$ Defining $m:=||\phi_+(x)||^2=||\phi_+(z)||^2$ we get that
+            \begin{aligned}
+                m = \frac{1 + x_d}{1 - x_d} = \frac{1 + z_d}{1 - z_d} \iff x_d = \frac{m - 1}{m + 1} = z_d.
+            \end{aligned}
+            From that it follows immediately that $x=z$. This shows that $\phi_+$ is injective.
+    </p>
+    <p>
+            Now, let $y \in \reals^{d-1}$ and define $x_d := \frac{||y||^2 - 1}{||y||^2 + 1}$ and $(x_1, \ldots, x_{d-1}):= (1-x_d)y$. We have that $x_d \neq 1$ and
+            \begin{aligned}
+                ||x||^2 = ||(1-x_d)y||^2 + x_d^2 = (||y||^2 + 1)^{-2} (4 ||y||^2 + (||y||^2 - 1)^2) = 1.
+            \end{aligned}
+            This shows that $x \in \calU_+$ and by construction $\phi_+(x)=y$. This shows that $\phi_+$ is surjective and thus that $(\calU_+, \phi_+), (\calU_-, \phi_-)$ are each $d-1$-dimensional charts for $\Sd$.
+    </p>
+</answer>
+
+<question>
+    Show that the charts $(\calU_+, \phi_+), (\calU_-, \phi_-)$ are compatible.
+</question>
+<sketch>
+    Derive an explicit formula for the transition map, i.e., the composition of $\phi_-$ and $\phi_+^{-1}$.
+</sketch>
+<answer>
+    We need to check that $\phi_+(\calU_+ \cap \calU_-)$ and $\phi_-(\calU_+ \cap \calU_-)$ are both open, and $\phi_- \circ \phi_+^{-1}$ is a diffeomorphism.
+            Note that $\phi_+(\calU_+ \cap \calU_-) = \phi_-(\calU_+ \cap \calU_-) = \reals^{d-1} \setminus \{0\}$ which is open.
+            Observe that
+            $$(\phi_- \circ \phi_+^{-1})(y) = \frac{y}{\|y\|^2},$$
+            which is clearly a diffeomorphism of $\reals^{d-1} \setminus \{0\}$ (it is smooth and its own inverse).
+</answer>
+
+<question>
+    Deduce that $\mathcal{A} = \{(\calU_+, \phi_+), (\calU_-, \phi_-)\}$ is an atlas for $\Sd$.
+</question>
+<answer>
+    As $\calU_+ \cup \calU_- = \Sd$ and $(\calU_+, \phi_+), (\calU_-, \phi_-)$ are compatible charts we have that $\mathcal{A}$ is an atlas. This turns $\Sd$ into a manifold.
+</answer>
+
+<question>
+    Let $\mathcal{A}^+$ be the maximal atlas obtained from $\mathcal{A}$.
+        Show that the atlas topology associated to $\mathcal{A}^+$ is Hausdorff and second-countable. Conclude that $(\Sd, \mathcal{A}^+)$ is a smooth manifold.
+        <hint>
+            See Proposition 8.22 in the textbook.
+        </hint>
+</question>
+<answer>
+    For atlas $\mathcal{A}$, distinct points in $\Sd$ either belong to the same chart domain or to two disjoint chart domains. Also countably many chart domains (two) cover $\Sd$. Thus by Proposition 8.22 in the textbook $\Sd$ is a manifold.
+</answer>

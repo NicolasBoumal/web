@@ -1,0 +1,81 @@
+<title>
+    Riemannian Hessian on Stiefel
+</title>
+    
+<p>
+For $p \leq n$, consider the Stiefel manifold
+\begin{aligned}
+    \calM = \Stnp = \{X \in \Rnp \colon X^\top X = I_p\}.
+\end{aligned}
+as an embedded submanifold of $\calE = \Rnp$. We consider $\calM$ as a Riemannian submanifold of $\Rnp$, endowed with usual the inner product $\inner{X}{Y} = \trace(X^\top Y)$. In the exercise <a exercise="RGDStiefel04">RGD on Stiefel</a>, you showed orthogonal projection to $\T_X\calM$ is given by
+\begin{aligned}
+    \Proj_{X} \colon \calE \to \T_X\calM, \quad \quad \Proj_X(U) = U - \frac{1}{2}X (X^\top U + U^\top X) = U - X \symm(X^\top U).
+\end{aligned}
+Let $f \colon \calM \to \reals$ be smooth, and let $\overline f$ be a smooth extension of $f$.
+</p>
+
+<question>
+    ("ehess2rhess" function) Give a formula for the Riemannian Hessian $\Hess f$ of $f$ in terms of the Euclidean gradient and Hessian of $\overline f$.
+</question>
+<sketch>
+    As we are on a Riemannian submanifold there is an explicit formula relating the Riemannian gradient and the Riemannian Hessian.
+</sketch>
+<answer>
+    Define the map $\overline G$ by
+            \begin{aligned}
+                X \in \Stnp \mapsto \grad \overline f(X) - X \symm(X^\top \grad \overline f(X)).
+            \end{aligned}
+            Then, as for $X \in \Stnp$ we have
+            \begin{aligned}
+                \Proj_X(\nabla \overline f(X)) = \grad \overline f(X) - X \symm(X^\top \grad \overline f(X)),
+            \end{aligned}
+            $\overline G$ is a smooth extension of $\grad f$. Therefore, $\Hess f(X)[U] = \Proj_X(\D \overline G(X)[U])$ for $(X,U) \in \T \calM$. Differentiating, we get by the product rule
+            \begin{aligned}
+            \D \overline G(X)[U] &= \Hess \overline{f}(X)[U] - \frac{1}{2} U \symm(X^\top \nabla \overline f(X)) - X \symm(U^\top \grad \overline{f}(X) + X^\top \Hess \overline{f}(X)[U])
+            \end{aligned}
+            for $(X,U) \in \T \calM$. Therefore, we get the "ehess2rhess" formula
+            \begin{aligned}
+                \Hess f(X)[U] &= \Proj_X(\D \overline G(X)[U]) \\
+                &= \Proj_X(\Hess \overline f(X)[U]) - \Proj_X (U \symm(X^\top \grad \overline f(X)))
+            \end{aligned}
+            for $(X,U) \in \T \calM$. In the above we used that for $S \in \reals^{p \times p}$ symmetric it holds that
+            \begin{aligned}
+                \Proj_X(X S) = X S - X \symm(X^\top X S) = X (S - \symm(S)) = 0.
+            \end{aligned}
+</answer>
+
+<p>
+Let $\Retr$ be a retraction on Stiefel (e.g., QR or polar retraction).
+Let $(X, U) \in \T \calM$. Example 5.32 of the course textbook shows that the Hessian $\Hess f(X)[U]$ in direction $U$ can be approximated as
+\begin{aligned}
+\Hess f(X)[U] \approx \frac{1}{\overline t}(\Proj_X(\grad f(\Retr_X(\overline t U))) - \grad f(X)),
+\end{aligned}
+where the approximation becomes better as $\overline t > 0$ approaches zero. This is a finite difference approximation of the Riemannian Hessian (when $\calM$ is a Riemannian submanifold).
+</p>
+
+<question>
+    For the particular cost function
+        \begin{aligned}
+            f(X) = \trace(X^\top A X), \quad \quad A \in \Rnn \text{ with } A^\top = A,
+        \end{aligned}
+        write down a formula for the Riemannian Hessian of $f$, and a formula for the its finite difference approximation. Implement both formulae, and compare them for different values of $\overline t$ (e.g., try $\overline t = 10^{-1}, 10^{-2}, 10^{-4},10^{-8}$).
+</question>
+<answer>
+    <p>
+    Define $\overline{f}(X) = \trace(X^\top A X)$ for all $X \in \reals^{n \times p}$. This map is obviously a smooth extension of $f$. Now, for $(X,U) \in \T \calM$ we have that
+        \begin{aligned}
+            \grad \overline f(X) = 2 A X, \quad\quad \Hess \overline f(X)[U] = 2 A U.
+        \end{aligned}
+        Therefore, $\Hess f(X)[U] = 2 \Proj_X(A U) - \Proj_X(U X^\top A X).$
+        For the finite different approximation we just need the Riemannian gradient of $f$, which we already computed for the exercise <a exercise="RGDStiefel04">RGD on Stiefel</a>. The Riemannian gradient of $f$ is given by
+        \begin{aligned}
+            \grad f(X) = 2 (I_n - XX^\top)AX.
+        \end{aligned}
+    </p>
+    <p>
+        The Matlab implementation can be downloaded here.
+        <a target="_blank" href="exercises/MATLABRiemHessStiefel05.zip">Download Matlab implementation</a>
+        The main of the implementation is the following.
+        <matlab href="mainMATLABRiemHessStiefel05.m"> </matlab>
+    </p>
+</answer>

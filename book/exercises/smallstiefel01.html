@@ -1,0 +1,38 @@
+<title>
+    Small Stiefel manifold
+</title>
+
+<question>
+    Show that the set $$\calM = \{(x, y) \in \Rd \times \Rd \colon x^{\top} x=1, y^{\top}y=1, x^{\top} y=0\}$$ is an embedded submanifold of $\calE = \Rd \times \Rd$. What is the dimension of $\calM$ ? What are the tangent spaces of $\calM$ ?
+</question>
+<sketch>
+    Reformulate the set $\calM$ as a matrix equation.
+</sketch>
+<answer>
+    <p>
+    Letting the columns of $X \in \reals^{d \times 2}$ be $x$ and $y$ we can reformulate $\calM$ as,
+    \begin{aligned}
+        \calM = \{X \in \reals^{d \times 2} : X^\top X = I\}.
+    \end{aligned}
+    Let
+    \begin{aligned}
+        h \colon \reals^{d \times 2} \to \symm(2), \quad \quad h(X) = X^\top X - I,
+    \end{aligned}
+    where $\symm(2) := \{U \in \reals^{2 \times 2} \; | \; U=U^\top\}$.
+    As $h$ is clearly smooth and $\calM:=h^{-1}(\{0\})$ we only need to show that $\rank \; \D h(X) = \dim(\symm(2)) = 3$ for all $X \in \calM$. This is equivalent to show that $\D h(X)$ is surjective for all $X \in \calM$. By a straightforward computation we get that $\D h(X)[V] = X^\top V + V^\top X$ for $X \in \calM$ and $V \in \reals^{d \times 2}$. Thus for $W \in \symm(2)$ we have that
+    \begin{aligned}
+        \D h(X)\bigg[\frac{1}{2} X W\bigg] = \frac{1}{2} (X^\top X W + W^\top X^\top X) = \frac{1}{2}(W + W^\top) = W,
+    \end{aligned}
+    which shows that $\D h(X)$ is surjective and that $\calM$ is a manifold.
+    </p>
+    <p>
+    By definition we have that the dimension of $\calM$ is given by $\dim(\reals^{d \times 2}) - \dim(\symm(2)) = 2d-3$.
+    </p>
+    <p>
+    Lastly, the tangent space of $X \in \calM$ is given by
+    \begin{aligned}
+        \T_x \calM = \ker \D h(X) = \{V \in \reals^{d \times 2} : X^\top V + V^\top X = 0\}.
+    \end{aligned}
+    </p>
+</answer>
+

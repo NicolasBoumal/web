@@ -1,0 +1,140 @@
+<title>
+    Transporters on the group of rotations
+</title>
+
+<p>
+Consider the rotation group
+\begin{aligned}
+    \calM = \SOd = \{X \in \reals^{d \times d} \colon X^\top X = I_n, \det(X) = 1\}
+\end{aligned}
+We showed in the exercise <a exercise="ExpSOn01">Exponential map on rotations</a> that $\calM = \SOd$ is a manifold. In the following we consider $\SOd$ as a Riemannian submanifold of the Euclidean space $\calE = \reals^{d \times d}$. Recall that
+\begin{aligned}
+    \T_X \calM = \{X \Omega : \Omega \in \reals^{d \times d}, \Omega + \Omega^\top = 0\}.
+\end{aligned}
+Hence, we can consider the transporter $T$ defined by
+\begin{aligned}
+    T_{Y \leftarrow X}(X \Omega) = Y \Omega, \quad \quad \text{for $X, Y \in \calM$ and $\Omega + \Omega^\top = 0$.}
+\end{aligned}
+Note that if we store tangent vectors of $\calM$ by their skew-symmetric part, then this transporter requires no computation.
+</p>
+
+<question>
+    Show that $T_{Y \leftarrow X}(U)=YX^\top U$ for $(X,U) \in \T \calM$ and $Y \in \calM$ and conclude that $T$ is indeed a transporter.
+</question>
+<answer>
+    Let $X,Y \in \calM$ and $U \in \T_X \calM$. By the characterization of the tangent spaces of $\calM$, we know that there exists $\Omega \in \reals^{d \times d}$ skew-symmetric such that $U = X \Omega \iff X^\top U = \Omega$. Thus by the definition of the transport we have that
+            \begin{aligned}
+                T_{Y \leftarrow X}(U) = T_{Y \leftarrow X}(X \Omega) = Y \Omega = Y X^\top U.
+            \end{aligned}
+            From the above formula it follows that $T_{Y \leftarrow X}$ is linear and thus that $T$ is indeed a transporter.
+</answer>
+
+<question>
+    Show that $T_{Y \leftarrow X}$ is an isometry from $\T_X \calM$ to $\T_Y\calM$.
+</question>
+<answer>
+    Let $U_i = X \Omega_i \in \T_X \SOd$ for $i=1,2$. We have
+            \begin{aligned}
+                \langle T_{Y \leftarrow X} U_1, T_{Y \leftarrow X} U_2 \rangle &= \langle T_{Y \leftarrow X} X \Omega_1, T_{Y \leftarrow X} X \Omega_2 \rangle = \langle Y \Omega_1, Y \Omega_2 \rangle \\
+                &= \trace(\Omega_1^\top Y^\top Y \Omega_2) = \trace(\Omega_1^\top \Omega_2) = \trace(\Omega_1^\top X^\top X \Omega_2) = \langle U_1, U_2 \rangle,
+            \end{aligned}
+            which shows that $ T_{Y \leftarrow X}$ is an isometry.
+</answer>
+
+<p>
+In the exercise <a exercise="ParalellTrans01">Properties of the parallel transport</a> we saw that the parallel transport is an isometry. As by the above the transport $T_{Y \leftarrow X}$ is also an isometry it is natural to ask about their relation. But first we need a convenient expression for the geodesics of $\SOd$
+</p>
+
+<question>
+    Show that
+        \begin{aligned}
+            c: \reals \to \SOd, \quad \quad t \mapsto X \exp(t \Omega)
+        \end{aligned}
+        is a geodesic on $\SOd$, which is such that $c(0)=X,c'(0)=V:=X \Omega$.
+        <hint>
+            From the exercise <a exercise="ExpSOn01">Exponential map on rotations</a> we already now that $c$ is a smooth curve on $\SOd$ and that $c(0)=X,c'(0)=V$.
+        </hint>
+</question>
+<sketch>
+    As we consider $\SOd$ as a Riemannian submanifold the intrinsic derivative along $c$ is given by $\frac{\D}{dt} = \Proj_{c(t)} (\frac{d}{dt})$.
+</sketch>
+<answer>
+    Let $(X,V) \in \T \calM$ and $c$ be defined as above with $V = X \Omega$. By the exercise <a exercise="ExpSOn01">Exponential map on rotations</a> we already now that $c$ is a smooth curve on $\SOd$ and that $c(0)=X,c'(0)=V$. Thus we only need to show that $c''=0$. We have
+            \begin{aligned}
+                \frac{\D}{dt} (c'(t)) &= \Proj_{c(t)} (\frac{d}{dt} c'(t)) = \Proj_{c(t)} (c(t) \Omega^2) \\
+                &= \frac{c(t)}{2} \left (c(t)^\top (c(t)\Omega^2) - (c(t)\Omega^2)^\top c(t)\right ) = \frac{c(t)}{2} (\Omega^2 - \Omega^2) = 0,
+            \end{aligned}
+            where we used that $c'(t)=X \exp(t \Omega) \Omega = c(t) \Omega$ and that $\Proj_Z(U)=\frac{1}{2}Z(Z^\top U - U^\top Z)$ for $(Z,U) \in \T \calM$. Thus $c$ is a geodesic.
+</answer>
+
+<p>
+As in the case of the sphere, Theorem 4.27 in Lee's book "Introduction to Riemannian manifolds" implies that the above map is the only geodesic on the $\SOd$ defined on $\reals$ with $c(0)=X$ and $c'(0)=V$. Further, it implies that all geodesics are of the above form.
+</p>
+
+<question>
+    Let $c : \reals \to \SOd$ be a geodesic and $X = c(t_0), Y = c(t_1)$ for $t_1 \geq t_0 \geq 0$. Is $T_{Y \leftarrow X}$ equal to parallel transport along $c$ from $t_0$ to $t_1$ ?
+</question>
+<sketch>
+    Argue that the transporter is equal to the parallel transport if and only if $\frac{\D}{dt} T_{c(t) \leftarrow X}(U) = 0$ for all $U \in \T_X \calM$.
+</sketch>
+<answer>
+    <p>
+    Fix $U \in T_X \calM$. By the expression of the transporter from question 1 it follows that $t \mapsto \frac{\D}{dt} T_{c(t) \leftarrow X}(U)$ is a smooth map. As $T_{c(0) \leftarrow X}(U) = U$ we have by definition of the parallel transport that $T_{c(t_1) \leftarrow X}(U) = \mathrm{PT}_{t_1 \leftarrow t_0}^c(U)$ if and only if $\frac{\D}{dt} T_{c(t) \leftarrow X}(U) = 0$. We have
+            \begin{aligned}
+                \frac{\D}{dt} T_{c(t) \leftarrow X}(U) &= \Proj_{c(t)} \left (\frac{d}{dt} (c(t)X^\top U) \right ) = \Proj_{c(t)} \left (c'(t)X^\top U \right ) \\
+                &=  \frac{c(t)}{2} \left (c(t)^\top (c'(t) X^\top U) - (c'(t)X^\top U)^\top c(t) \right ) = \frac{c(t)}{2} \left (\Omega X^\top U - U^\top X \Omega^\top \right ) \\
+                &= \frac{c(t)}{2} \left (\Omega \widetilde{\Omega} - \widetilde{\Omega}^\top \Omega^\top \right ),
+            \end{aligned}
+            where $c(t)=X \exp(t \Omega)$ and $U = X \widetilde{\Omega}$.
+            Thus $\frac{\D}{dt} T_{c(t) \leftarrow X}(U) = 0$ if and only if
+            \begin{aligned}
+                \Omega \widetilde{\Omega} = \widetilde{\Omega} \Omega \iff (\widetilde{\Omega}\Omega)^\top = \widetilde{\Omega}\Omega.
+            \end{aligned}
+    </p>
+    <p>
+            In general the above equation doesn't hold, i.e., in general the product of two skew-symmetric matrices isn't symmetric as the following example shows
+            \begin{aligned}
+                \begin{pmatrix}
+                    0 & 1 & 0 \\
+                    -1 & 0 & 1 \\
+                    0 & -1 & 0
+                \end{pmatrix} \cdot \begin{pmatrix}
+                    0 & 0 & 1 \\
+                    0 & 0 & 0 \\
+                    -1 & 0 & 0
+                \end{pmatrix} = \begin{pmatrix}
+                    0 & 0 & 0 \\
+                    -1 & 0 & -1 \\
+                    0 & 0 & 0
+                \end{pmatrix}.
+            \end{aligned}
+            But in the case $d=2$ this equation does hold for all skew-symmetric matrices.
+    </p>
+    <p>
+            Thus in the trivial dimension $d=1$ and in the dimension $d=2$ the transporter equals the parallel transport and in dimension $d \geq 3$ this isn't the case in general.
+    </p>
+</answer>
+
+<question>
+    Let $\Proj_y \colon \calE \to \T_y \calM$ denote orthogonal projection onto $\T_y \calM$, and consider the transporter
+            \begin{aligned}
+                T_{Y \leftarrow X}'(U) = \Proj_Y(U)
+            \end{aligned}
+        for $(X,U) \in \T \calM$ and $Y \in \calM$.
+        In general, is $T_{Y \leftarrow X}'$ invertible ?
+</question>
+<sketch>
+    In general this transporter is not invertible. The intuitive reason is that $\Proj_Y$ shrinks the length of tangent vectors. To show that the transporter is not invertible fix $d=2$, $X = I$ and try to find $Y \in \calM$ and $U \in \T_X \calM$ such that $T_{Y \leftarrow X}'(U)=0$.
+</sketch>
+<answer>
+    Take $d=2$, $X = I$, and
+        $$Y = U = \begin{pmatrix}
+        0 & 1 \\
+        -1 & 0
+        \end{pmatrix}.$$
+        Then
+        \begin{align*}
+            \Proj_Y(U) = \frac{1}{2}Y(Y^\top U - U^\top Y) = \frac{1}{2}Y(U^\top U - U^\top U) = 0.
+        \end{align*}
+        As $\dim (\ker(T_{Y \leftarrow X}')) \neq 0$ the map isn't injective and thus not invertible.
+</answer>
