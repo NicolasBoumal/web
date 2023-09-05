@@ -90,7 +90,7 @@ B = randn(d,d);
 B = B' + B;
 
 % Verification
-problem.M = rotationsfactory(d, 1);
+problem.M = rotationsfactory(d, 1); 
 problem.cost = @(Q) frob(A*Q-Q*B,A*Q-Q*B);
 problem.grad = @(Q) Q' * (- 2*Q*(Q'*A*Q*B-B*Q'*A*Q)); 
 problem.hess = @(Q,U) Q' * Proj(Q,2*(Q*B*Q'*A*Q*U+Q*B*(Q*U)'*A*Q+Q*U*B*Q'*A*Q - A*Q*U*B));
