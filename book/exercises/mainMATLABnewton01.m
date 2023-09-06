@@ -21,6 +21,10 @@ question6 = false;
 question7 = false;
 question8 = false;
 
+% Frob functions
+frob = @(U,V) U(:)'*V(:);
+frobsq = @(U) U(:)'*U(:);
+
 %% Question 4 generation of an basis by projection
 % In order to analyse if we get a basis we comput two tensors T containing
 % the random created matrices and PT containing the projected onto the 
@@ -91,7 +95,7 @@ B = B' + B;
 
 % Verification
 problem.M = rotationsfactory(d, 1);
-problem.cost = @(Q) frob(A*Q-Q*B,A*Q-Q*B);
+problem.cost = @(Q) frobsq(A*Q-Q*B);
 problem.grad = @(Q) Q' * (- 2*Q*(Q'*A*Q*B-B*Q'*A*Q)); 
 problem.hess = @(Q,U) Q' * Proj(Q,2*(Q*B*Q'*A*Q*U+Q*B*(Q*U)'*A*Q+Q*U*B*Q'*A*Q - A*Q*U*B));
 
@@ -127,7 +131,7 @@ B = randn(d,d);
 B = B' + B;
 
 problem.M = rotationsfactory(d, 1);
-problem.cost = @(Q) frob(A*Q-Q*B,A*Q-Q*B);
+problem.cost = @(Q) frobsq(A*Q-Q*B);
 problem.grad = @(Q) Q' * (- 2*Q*(Q'*A*Q*B-B*Q'*A*Q)); 
 problem.hess = @(Q,U) Q' * Proj(Q,2*(Q*B*Q'*A*Q*U+Q*B*(Q*U)'*A*Q+Q*U*B*Q'*A*Q - A*Q*U*B));
 Q = trustregions(problem);
@@ -196,7 +200,7 @@ G = Grad(A,B,Q);
 H = Hess(A,B,Q,X);
 fprintf('Difference between Hess(Q)[X]+Grad(Q)\n')
 fprintf('Should be close to zero\n')
-sqrt(frob(H+G,H+G))
+sqrt(frobsq(H+G))
 
 % Computation time
 fprintf('Computation time\n')
@@ -228,7 +232,7 @@ tol = 10^(-4);
 iter = 1000;
 
 problem.M = rotationsfactory(d, 1);
-problem.cost = @(Q) frob(A*Q-Q*B,A*Q-Q*B);
+problem.cost = @(Q) frobsq(A*Q-Q*B);
 problem.grad = @(Q) Q' * (- 2*Q*(Q'*A*Q*B-B*Q'*A*Q)); 
 problem.hess = @(Q,U) Q' * Proj(Q,2*(Q*B*Q'*A*Q*U+Q*B*(Q*U)'*A*Q+Q*U*B*Q'*A*Q - A*Q*U*B));
 Q = trustregions(problem);
@@ -249,7 +253,7 @@ G = Grad(A,B,Q);
 H = Hess(A,B,Q,X);
 fprintf('Difference between Hess(Q)[X]+Grad(Q)\n')
 fprintf('Should be close to zero\n')
-sqrt(frob(H+G,H+G))
+sqrt(frobsq(H+G))
 
 % Computation time
 fprintf('Computation time\n')
@@ -281,7 +285,7 @@ tol = 10^(-4);
 iter = 1000;
 
 problem.M = rotationsfactory(d, 1);
-problem.cost = @(Q) frob(A*Q-Q*B,A*Q-Q*B);
+problem.cost = @(Q) frobsq(A*Q-Q*B);
 problem.grad = @(Q) Q' * (- 2*Q*(Q'*A*Q*B-B*Q'*A*Q)); 
 problem.hess = @(Q,U) Q' * Proj(Q,2*(Q*B*Q'*A*Q*U+Q*B*(Q*U)'*A*Q+Q*U*B*Q'*A*Q - A*Q*U*B));
 Q = trustregions(problem);
@@ -302,7 +306,7 @@ G = Grad(A,B,Q);
 H = Hess(A,B,Q,X);
 fprintf('Difference between Hess(Q)[X]+Grad(Q)\n')
 fprintf('Should be close to zero\n')
-sqrt(frob(H+G,H+G))
+sqrt(frobsq(H+G))
 
 % Computation time
 fprintf('Computation time\n')
