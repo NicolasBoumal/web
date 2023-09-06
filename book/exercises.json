@@ -1,15 +1,15 @@
 {
-    "sphere01": {
-        "title": "The sphere is a manifold",
-        "week": 1.2,
-        "topics": [101, 102],
-        "source": "sphere01.html"
-    },
     "sphererayleigh02": {
-        "title": "Rayleigh quotient on the sphere",
+        "title": "Rayleigh quotient on the sphere: a quick look",
         "week": 1.1,
         "topics": [101, 102],
         "source": "sphererayleigh02.html"
+    },
+    "MaxTraceStiefel06": {
+        "title": "Max-Trace on Stiefel",
+        "week": 1.2,
+        "topics": [],
+        "source": "MaxTraceStiefel06.html"
     },
     "smallstiefel01": {
         "title": "Small Stiefel manifold",
@@ -43,31 +43,31 @@
     },
     "EmbedManif01": {
         "title": "Smooth embedded submanifolds of smooth embedded subamnifolds",
-        "week": 3.1,
+        "week": 3.2,
         "topics": [102, 103],
         "source": "EmbedManif01.html"
     },
     "spherester03": {
         "title": "Stereographic projection",
-        "week": 3.2,
+        "week": 3.3,
         "topics": [101, 102],
         "source": "spherester03.html"
     },
     "QRstiefel02": {
         "title": "QR retraction for small Stiefel",
-        "week": 3.3,
+        "week": 3.4,
         "topics": [104],
         "source": "QRstiefel02.html"
     },
     "Polarstiefel03": {
         "title": "Metric projection retraction for Stiefel",
-        "week": 3.4,
+        "week": 3.5,
         "topics": [101, 102, 104],
         "source": "Polarstiefel03.html"
     },
     "ExpSOn01": {
         "title": "Exponential map on rotations",
-        "week": 3.5,
+        "week": 3.6,
         "topics": [101, 102, 104],
         "source": "ExpSOn01.html"
     },
@@ -238,12 +238,6 @@
         "week": 12.4,
         "topics": [501, 502, 503],
         "source": "TopoSphere15.html"
-    },
-    "MaxTraceStiefel06": {
-        "title": "Max-Trace on Stiefel",
-        "week": 0,
-        "topics": [],
-        "source": "MaxTraceStiefel06.html"
     },
     "DiffMatInv01": {
         "title": "Differentiating the matrix inversion",
