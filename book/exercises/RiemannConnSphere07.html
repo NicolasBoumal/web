@@ -62,14 +62,14 @@ where $\overline{V}$ is any smooth extension of $V$. Let's first show that $\nab
 <answer>
     <p>
     As $\calM = \Sd$ we have that $\Proj_x(u) = (I_d-xx^\top)u$, where $x \in \Sd$ and $u \in \Rd$. Thus for $x \in \Sd$ and $U,V \in \frakX(\calM)$ with smooth extension $\overline{U},\overline{V}$ on an open set $\calM \subseteq W \subseteq \calE$ we have that
-            \begin{aligned}
-                (\nabla_U V)(x) = \Proj_x (\D \overline{V}(x)[U(x)]) = \Proj_x (\D \overline{V}(x)[\overline{U}(x)]) = (I_d - xx^\top) \D \overline{V}(x)[\overline{U}(x)].
-            \end{aligned}
-            As $x \mapsto (I_d - xx^\top)$ is well defined and smooth on whole $\Rd$ and by the hint $\D \overline{V}(x) [\overline{U}(x)]$ is well defined and smooth on $W$ we have that
-            \begin{aligned}
-                x \in W \mapsto (I_d - xx^\top) \D \overline{V}(x)[\overline{U}(x)]
-            \end{aligned}
-            is a smooth extension of $\nabla_U V$. This proves the smoothness property.
+	\begin{aligned}
+		(\nabla_U V)(x) = \Proj_x (\D \overline{V}(x)[U(x)]) = \Proj_x (\D \overline{V}(x)[\overline{U}(x)]) = (I_d - xx^\top) \D \overline{V}(x)[\overline{U}(x)].
+	\end{aligned}
+	As $x \mapsto (I_d - xx^\top)$ is well defined and smooth on whole $\Rd$ and by the hint $\D \overline{V}(x) [\overline{U}(x)]$ is well defined and smooth on $W$ we have that
+	\begin{aligned}
+		x \in W \mapsto (I_d - xx^\top) \D \overline{V}(x)[\overline{U}(x)]
+	\end{aligned}
+	is a smooth extension of $\nabla_U V$. This proves the smoothness property.
     </p>
     <p>
         See also Theorem 5.2 in the textbook.
@@ -85,11 +85,11 @@ where $\overline{V}$ is any smooth extension of $V$. Let's first show that $\nab
 <answer>
     <p>
     Let $a,b \in \reals, \; u,w \in \T_x \calM$ for some $x \in \calM$ and $V \in \frakX(\calM)$. Then
-            \begin{aligned}
-                \nabla_{au + bw} V (x) &= \Proj_x (\D \overline{V}(x)[au + bw]) = \Proj_x (a \D \overline{V}(x)[u] + b \D \overline{V}(x)[w]) \\
-                &= a \nabla_u V(x) + b \nabla_w V(x)
-            \end{aligned}
-            by the linearity of the differential and the projection.
+	\begin{aligned}
+		\nabla_{au + bw} V (x) &= \Proj_x (\D \overline{V}(x)[au + bw]) = \Proj_x (a \D \overline{V}(x)[u] + b \D \overline{V}(x)[w]) \\
+		&= a \nabla_u V(x) + b \nabla_w V(x)
+	\end{aligned}
+	by the linearity of the differential and the projection.
     </p>
     <p>
         See also Theorem 5.2 in the textbook.
@@ -105,11 +105,11 @@ where $\overline{V}$ is any smooth extension of $V$. Let's first show that $\nab
 <answer>
     <p>
     Let $a,b \in \reals, \; (x,u) \in T \calM$ and $V,W \in \frakX(\calM)$. Then
-            \begin{aligned}
-                \nabla_u (aV + bW)(x) &= \Proj_x (\D (a\overline{V} + b \overline{W})[u]) = \Proj_x(a \D (\overline{V})[u] + b \D (\overline{W})[u]) \\
-                &= a \nabla_u V(x) + b \nabla_u W(x)
-            \end{aligned}
-            by the linearity of the differential and the projection.
+	\begin{aligned}
+		\nabla_u (aV + bW)(x) &= \Proj_x (\D (a\overline{V} + b \overline{W})[u]) = \Proj_x(a \D (\overline{V})[u] + b \D (\overline{W})[u]) \\
+		&= a \nabla_u V(x) + b \nabla_u W(x)
+	\end{aligned}
+	by the linearity of the differential and the projection.
     </p>
     <p>
         See also Theorem 5.2 in the textbook.
@@ -125,12 +125,12 @@ where $\overline{V}$ is any smooth extension of $V$. Let's first show that $\nab
 <answer>
     <p>
     Let $(x,u) \in T \calM$, $f \in \frakF(\calM)$ and $V \in \frakX(\calM)$. Then
-            \begin{aligned}
-                \nabla_u (fV)(x) &= \Proj_x (\D (\overline{f}\overline{V})(x)[u]) = \Proj_x(\overline{f}(x) \D(\overline{V})(x)[u] + \overline{V}(x) \D (\overline{f})(x)[u]) \\
-                &= f(x) \Proj_x(\D (\overline{V})(x)[u]) + \D (\overline{f})(x)[u] \Proj_x(V(x)) \\
-                &= f(x) \nabla_u V(x) + \D f(x)[u] V(x)
-            \end{aligned}
-            by the linearity of the projection and the Leibniz/Product rule of the differential.
+	\begin{aligned}
+		\nabla_u (fV)(x) &= \Proj_x (\D (\overline{f}\overline{V})(x)[u]) = \Proj_x(\overline{f}(x) \D(\overline{V})(x)[u] + \overline{V}(x) \D (\overline{f})(x)[u]) \\
+		&= f(x) \Proj_x(\D (\overline{V})(x)[u]) + \D (\overline{f})(x)[u] \Proj_x(V(x)) \\
+		&= f(x) \nabla_u V(x) + \D f(x)[u] V(x)
+	\end{aligned}
+	by the linearity of the projection and the Leibniz/Product rule of the differential.
     </p>
     <p>
         See also Theorem 5.2 in the textbook.
@@ -169,23 +169,23 @@ Let's now show that $\nabla$ is the Riemannian connection on $\calM$.
 <answer>
     <p>
     Let $U,V,W \in \frakX(\calM)$ and $x \in \calM$. We have that
-            \begin{aligned}
-                \langle \nabla_U V, W \rangle (x) = \langle \nabla_U(x) V, W(x) \rangle
-                = \langle \Proj_x(\D \overline{V}(x)[U(x)],W(x)) \rangle = \langle \Proj_x(\D \overline{V}(x)[\overline{U}(x)],\overline{W}(x)) \rangle
-            \end{aligned}
-            as $\overline{W}(x) \in \T_x \calM$. Similarly we get
-            \begin{aligned}
-                \langle V, \nabla_U W \rangle (x) = \langle \overline{V}(x), \Proj_x(\D \overline{W}(x)[\overline{U}(x)]) \rangle.
-            \end{aligned}
-            Further, $U \langle V, W \rangle (x) = \D(\langle U, W \rangle)(x)[U(x)] = \D(\langle \overline{U}, \overline{W} \rangle)(x)[\overline{U}(x)]$. By the chain rule we get that
-            \begin{aligned}
-                \D(\langle \overline{U}, \overline{W} \rangle)(x)[\overline{U}(x)] = \langle \D \overline{W}(x)[\overline{U}(x)], \overline{V}(x) \rangle + \langle \overline{W}(x),  D \overline{V}(x)[\overline{U}(x)] \rangle.
-            \end{aligned}
-            We conclude that
-            \begin{aligned}
-                U \langle V, W \rangle (x) = \langle \nabla_U V, W \rangle (x) + \langle V, \nabla_U W \rangle (x),
-            \end{aligned}
-            giving the claim.
+	\begin{aligned}
+		\langle \nabla_U V, W \rangle (x) = \langle \nabla_U(x) V, W(x) \rangle
+		= \langle \Proj_x(\D \overline{V}(x)[U(x)],W(x)) \rangle = \langle \Proj_x(\D \overline{V}(x)[\overline{U}(x)],\overline{W}(x)) \rangle
+	\end{aligned}
+	as $\overline{W}(x) \in \T_x \calM$. Similarly we get
+	\begin{aligned}
+		\langle V, \nabla_U W \rangle (x) = \langle \overline{V}(x), \Proj_x(\D \overline{W}(x)[\overline{U}(x)]) \rangle.
+	\end{aligned}
+	Further, $U \langle V, W \rangle (x) = \D(\langle U, W \rangle)(x)[U(x)] = \D(\langle \overline{U}, \overline{W} \rangle)(x)[\overline{U}(x)]$. By the chain rule we get that
+	\begin{aligned}
+		\D(\langle \overline{U}, \overline{W} \rangle)(x)[\overline{U}(x)] = \langle \D \overline{W}(x)[\overline{U}(x)], \overline{V}(x) \rangle + \langle \overline{W}(x),  D \overline{V}(x)[\overline{U}(x)] \rangle.
+	\end{aligned}
+	We conclude that
+	\begin{aligned}
+		U \langle V, W \rangle (x) = \langle \nabla_U V, W \rangle (x) + \langle V, \nabla_U W \rangle (x),
+	\end{aligned}
+	giving the claim.
     </p>
     <p>
         See also Theorem 5.9 in the textbook.
@@ -204,10 +204,10 @@ We do this in a number of steps.  However, first already notice that: The left h
 
 <question>
     Show that if $\overline U$ and $\overline f$ are smooth extensions of $U, f$, respectively, then $\overline U \; \overline f$ is a smooth extension of $U f$. Conclude that
-        \begin{aligned}
-            \overline{[U, V] f} := \overline U (\overline V \; \overline f) - \overline V (\overline U \; \overline f)
-        \end{aligned}
-        is a smooth extension of $[U, V] f$.
+	\begin{aligned}
+		\overline{[U, V] f} := \overline U (\overline V \; \overline f) - \overline V (\overline U \; \overline f)
+	\end{aligned}
+	is a smooth extension of $[U, V] f$.
 </question>
 <sketch>
     You can use that if $\overline{f}$ is a smooth extension of $f$ and $\overline{U}$ respectively $\overline{V}$ are smooth extension of $U$ and $V$, then $\D \overline{f}(x)[\overline{U}(x)]$ is smooth. The exercise should be the same for the sphere and general Riemannian submanifolds.
@@ -215,19 +215,19 @@ We do this in a number of steps.  However, first already notice that: The left h
 <answer>
     <p>
     Let $\overline{f}$ and $\overline{U}$ be smooth extension of $f$ and $U$ defined on some open set $\calM \subseteq W \subseteq \calE$. We have for $x \in \calM$ that
-            \begin{aligned}
-                (Uf)(x) = \D f(x)[U(x)] = \D \overline{f}(x)[U(x)] = \D \overline{f}(x)[\overline{U}(x)] =: (\overline{U} \overline{f})(x).
-            \end{aligned}
-            as $\overline{U}$ extends $U$ and $U(x) \in \T_x \calM$. Thus $\overline{U} \; \overline{f}$ extends $Uf$. Therefore for $\overline{V}$ a smooth extension of $V \in \frakX(\calM)$ we get or $x \in \calM$ that
-            \begin{aligned}
-                [U,V]f(x) &= U(Vf)(x) - V(Uf)(x) = \overline{U}(\overline{Vf})(x) - \overline{V}(\overline{Uf})(x) \\
-                &= \overline{U}(\overline{V} \; \overline{f})(x) - \overline{V}(\overline{U} \; \overline{f})(x) =: \overline{[U,V]f}(x),
-            \end{aligned}
-            giving the claim.
-        </p>
-        <p>
-            See also Theorem 5.8 in the textbook.
-        </p>
+	\begin{aligned}
+		(Uf)(x) = \D f(x)[U(x)] = \D \overline{f}(x)[U(x)] = \D \overline{f}(x)[\overline{U}(x)] =: (\overline{U} \overline{f})(x).
+	\end{aligned}
+	as $\overline{U}$ extends $U$ and $U(x) \in \T_x \calM$. Thus $\overline{U} \; \overline{f}$ extends $Uf$. Therefore for $\overline{V}$ a smooth extension of $V \in \frakX(\calM)$ we get or $x \in \calM$ that
+	\begin{aligned}
+		[U,V]f(x) &= U(Vf)(x) - V(Uf)(x) = \overline{U}(\overline{Vf})(x) - \overline{V}(\overline{Uf})(x) \\
+		&= \overline{U}(\overline{V} \; \overline{f})(x) - \overline{V}(\overline{U} \; \overline{f})(x) =: \overline{[U,V]f}(x),
+	\end{aligned}
+	giving the claim.
+</p>
+<p>
+	See also Theorem 5.8 in the textbook.
+</p>
 </answer>
 
 <question>
@@ -242,37 +242,37 @@ We do this in a number of steps.  However, first already notice that: The left h
 <answer>
     <p>
     Let $U,V \in \frakX(\calM)$ and $f \in \frakF(\calM)$. Further, let $O \subseteq \calE$ be an open set containing $\calM$, i.e., $\calM \subseteq O$ , which is such that $U,V \in \frakX(\calM)$ and $f \in \frakF(\calM)$ can be smoothly extended to $\overline{U},\overline{V},\overline{f}$ on $O \subseteq \calE$. Fix $x \in O$. We have that
-            \begin{aligned}
-                \overline{[U,V]f}(x) = \overline{U}(\overline{V} \; \overline{f})(x) - \overline{V}(\overline{U} \; \overline{f})(x).
-            \end{aligned}
-            As
-            \begin{aligned}
-                \overline{V} \; \overline{f}(x) = \D \overline{f}(x)[\overline{V}(x)] = \langle \grad \overline{f}(x), \overline{V}(x) \rangle
-            \end{aligned}
-            we have that
-            \begin{aligned}
-                \overline{U}(\overline{V} \; \overline{f})(x) = \D (\langle \grad \overline{f}, \overline{V} \rangle)(x)[\overline{U}(x)].
-            \end{aligned}
-            By the chain rule we get that
-            \begin{aligned}
-                \D (\langle \grad \overline{f}, \overline{V} \rangle)(x)[\overline{U}(x)] &= \langle \D ( \grad \overline{f})(x)[\overline{U}(x)], \overline{V}(x) \rangle + \langle \grad \overline{f}(x), \D \overline{V}(x)[\overline{U}(x)] \rangle \\
-                &= \langle \Hess \overline{f}(x)[\overline{U}(x)], \overline{V}(x) \rangle + \D \overline{f}(x)[\D \overline{V}(x)[\overline{U}(x)]].
-            \end{aligned}
-            Similarly we get that
-            \begin{aligned}
-                \overline{V}(\overline{U} \overline{f})(x) = \langle \Hess \overline{f}(x)[\overline{V}(x)], \overline{U}(x) \rangle + \D \overline{f}(x)[\D \overline{U}(x)[\overline{V}(x)]].
-            \end{aligned}
-            Thus we get that
-            \begin{aligned}
-                \overline{[U,V]f}(x) &= \langle \Hess \overline{f}(x)[\overline{U}(x)], \overline{V}(x) \rangle + \D \overline{f}(x)[\D \overline{V}(x)[\overline{U}(x)]] \\
-                &- \left ( \langle \Hess \overline{f}(x)[\overline{V}(x)], \overline{U}(x) \rangle + \D \overline{f}(x)[\D \overline{U}(x)[\overline{V}(x)]] \right) \\
-                &= \D \overline{f}(x)[\D \overline{V}(x)[\overline{U}(x)] - \D \overline{U}(x)[\overline{V}(x)]]
-            \end{aligned}
-            by using the symmetry of the Hessian.
-        </p>
-        <p>
-            See also Theorem 5.8 in the textbook.
-        </p>
+		\begin{aligned}
+			\overline{[U,V]f}(x) = \overline{U}(\overline{V} \; \overline{f})(x) - \overline{V}(\overline{U} \; \overline{f})(x).
+		\end{aligned}
+		As
+		\begin{aligned}
+			\overline{V} \; \overline{f}(x) = \D \overline{f}(x)[\overline{V}(x)] = \langle \grad \overline{f}(x), \overline{V}(x) \rangle
+		\end{aligned}
+		we have that
+		\begin{aligned}
+			\overline{U}(\overline{V} \; \overline{f})(x) = \D (\langle \grad \overline{f}, \overline{V} \rangle)(x)[\overline{U}(x)].
+		\end{aligned}
+		By the chain rule we get that
+		\begin{aligned}
+			\D (\langle \grad \overline{f}, \overline{V} \rangle)(x)[\overline{U}(x)] &= \langle \D ( \grad \overline{f})(x)[\overline{U}(x)], \overline{V}(x) \rangle + \langle \grad \overline{f}(x), \D \overline{V}(x)[\overline{U}(x)] \rangle \\
+			&= \langle \Hess \overline{f}(x)[\overline{U}(x)], \overline{V}(x) \rangle + \D \overline{f}(x)[\D \overline{V}(x)[\overline{U}(x)]].
+		\end{aligned}
+		Similarly we get that
+		\begin{aligned}
+			\overline{V}(\overline{U} \overline{f})(x) = \langle \Hess \overline{f}(x)[\overline{V}(x)], \overline{U}(x) \rangle + \D \overline{f}(x)[\D \overline{U}(x)[\overline{V}(x)]].
+		\end{aligned}
+		Thus we get that
+		\begin{aligned}
+			\overline{[U,V]f}(x) &= \langle \Hess \overline{f}(x)[\overline{U}(x)], \overline{V}(x) \rangle + \D \overline{f}(x)[\D \overline{V}(x)[\overline{U}(x)]] \\
+			&- \left ( \langle \Hess \overline{f}(x)[\overline{V}(x)], \overline{U}(x) \rangle + \D \overline{f}(x)[\D \overline{U}(x)[\overline{V}(x)]] \right) \\
+			&= \D \overline{f}(x)[\D \overline{V}(x)[\overline{U}(x)] - \D \overline{U}(x)[\overline{V}(x)]]
+		\end{aligned}
+		by using the symmetry of the Hessian.
+	</p>
+	<p>
+		See also Theorem 5.8 in the textbook.
+	</p>
 </answer>
 
 <p>
@@ -354,7 +354,7 @@ However, with the previous exercise in hand, you are already ready to give a for
     Give an expression for the Riemannian Hessian of $f \colon \Sd \to \reals$ in terms of the Euclidean gradient and Hessian of a smooth extension $\overline f$ of $f$.
 </question>
 <sketch>
-    For the case of the sphere you can give an explicit formula and for the general Riemannian submanifold case you can give a formula relating the hessian and the euclidean gradient.
+    Write down an expression for $\grad f(x)$ in terms of $\grad \overline{f}(x)$, and consider what it means to differentiate that, first using $\D$ then using $\nabla$ (which you just worked out). Think about how that provides the Riemannian Hessian.
 </sketch>
 <answer>
     <p>
@@ -362,7 +362,7 @@ However, with the previous exercise in hand, you are already ready to give a for
 
             Let $(x,u) \in \T\calM$ then
             \begin{aligned}
-                \Hess f(x)[U] = (\nabla_U \grad f)(x) = \Proj_x(D(\overline{\grad f})(x)[u]) = \Proj_x(D(\overline{\Proj_x}(\grad \overline{f}))(x)[u]),
+                \Hess f(x)[U] = (\nabla_U \grad f)(x) = \Proj_x(\D(\overline{\grad f})(x)[u]) = \Proj_x(\D(\overline{\Proj_x}(\grad \overline{f}))(x)[u]),
             \end{aligned}
             giving a general formula for the Hessian. In the case of the sphere $\overline{\Proj_x} = I-xx^\top$. Thus
             \begin{aligned}
