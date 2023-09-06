@@ -22,19 +22,19 @@ For $p \leq n$, consider the Stiefel manifold
     <p>
     Define the map
         \begin{aligned}
-            h \colon \reals^{n \times p} \to \symm(p), \quad \quad h(X) = X^\top X - I,
+            h \colon \reals^{n \times p} \to \Sym(p), \quad \quad h(X) = X^\top X - I,
         \end{aligned}
-        where $\symm(p) := \{U \in \reals^{p \times p} \; | \; U=U^\top\}$.
+        where $\Sym(p) := \{U \in \reals^{p \times p} \; | \; U=U^\top\}$.
     </p>
     <p>
-        As $h$ is clearly smooth and $\calM:=h^{-1}(\{0\})$ we only need to show that $\D h(X)$ is surjective for all $X \in \calM$. By a straightforward computation we get that $\D h(X)[V] = X^\top V + V^\top X$ for $X \in \calM$ and $V \in \reals^{n \times p}$. Thus for $W \in \symm(p)$ we have that
+        As $h$ is clearly smooth and $\calM:=h^{-1}(\{0\})$ we only need to show that $\D h(X)$ is surjective for all $X \in \calM$. By a straightforward computation we get that $\D h(X)[V] = X^\top V + V^\top X$ for $X \in \calM$ and $V \in \reals^{n \times p}$. Thus for $W \in \Sym(p)$ we have that
         \begin{aligned}
             \D h(X)\bigg[\frac{1}{2} X W\bigg] = \frac{1}{2} (X^\top X W + W^\top X^\top X) = \frac{1}{2}(W + W^\top) = W,
         \end{aligned}
         which shows that $\D h(X)$ is surjective and that $\calM$ is a manifold.
     </p>
     <p>
-        By definition we have that the dimension of $\calM$ is given by $\dim(\reals^{n \times p}) - \dim(\symm(p)) = np - p (p+1)/2 = p(n - \frac{p+1}{2})$.
+        By definition we have that the dimension of $\calM$ is given by $\dim(\reals^{n \times p}) - \dim(\Sym(p)) = np - p (p+1)/2 = p(n - \frac{p+1}{2})$.
     </p>
     <p>
         Lastly, the tangent space of $X \in \calM$ is given by
@@ -92,7 +92,7 @@ For $p \leq n$, consider the Stiefel manifold
             \begin{aligned}
                 A \in \mathcal{P}_p \mapsto A^{-\frac{1}{2}} \in \mathcal{P}_p,
             \end{aligned}
-            where $\mathcal{P}_p := \{A \in \symm(p) : A \succ 0\}$ is the set of all positive definite matrices, which is an open subset of the linear space of symmetric matrices.
+            where $\mathcal{P}_p := \{A \in \Sym(p) : A \succ 0\}$ is the set of all positive definite matrices, which is an open subset of the linear space of symmetric matrices.
         </hint>
 </question>
 <answer>
