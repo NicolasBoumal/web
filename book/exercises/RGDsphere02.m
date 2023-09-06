@@ -10,13 +10,13 @@
 % The algorithm stops if difference between x'Ax and \lambda_min(A) is less
 % than \epsilon = 10^(-6).
  
-function [x, iterates,conv] = RGD(A, x0, alpha, maxiter)
+function [x, iterates,conv] = RGDsphere02(A, x0, alpha, maxiter)
 
 % Initalization
 conv = false;
 x = x0;
 iterates = zeros(length(x), maxiter);
-epsilon = 10^(-6);
+epsilon = 1e-6;
 mineigA = min(eig(A));
 iterates(:, 1) = x;
 
