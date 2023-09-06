@@ -12,22 +12,22 @@ Let $\calM$ be a smooth manifold.  Let $\frakF(\calM)$ denote the vector space o
     \nabla \colon \T \calM \times \frakX(\calM) \rightarrow \T\calM \colon (u, V) \mapsto \nabla_u V
 \end{aligned}
 such that $\nabla_u V \in \T_x \calM$ whenever $u \in \T_x \calM$, and which satisfies the following properties for arbitrary $U, V, W \in \frakX(\calM), f \in \frakF(\calM), (x, u), (x, w) \in \T \calM$ and $a, b\in \reals$:
-<ul>
+<ol start="0">
     <li> Smoothness: $(\nabla_U V)(x) \triangleq \nabla_{U(x)} V \text{defines a smooth vector field } \nabla_U V$,</li>
     <li> Linearity in $u$: $\nabla_{a u + b w} V = a \nabla_u V + b \nabla_w V$,</li>
     <li> Linearity in $V$: $\nabla_u(a V + b W) = a \nabla_u V + b \nabla_u W$, and</li>
-    <li> Leibniz rule: $\nabla_u(f V) = \D f(x)[u] \cdot V(x) + f(x) \nabla_u V$.</li>
-</ul>
+    <li> Leibniz' rule: $\nabla_u(f V) = \D f(x)[u] \cdot V(x) + f(x) \nabla_u V$.</li>
+</ol>
 The vector field $\nabla_U V$ is called the <em>covariant derivative</em> of $V$ along $U$ with respect to $\nabla$.
 The concept of a connection is independent of a Riemannian metric on $\calM$.
 </p>
 
 <p>
 Give $\calM$ a Riemannian metric $\inner{\cdot}{\cdot}$. To isolate a single connection we will further require that the connection interacts nicely with the Riemannian metric. A <em>Riemannian connection</em> on $\calM$ is a connection $\nabla$ which satisfies the following properties for all $U, V, W \in \frakX(\calM)$ and $f \in \frakF(\calM)$:
-<ul>
-    <li> Compatibility with the metric: $U \inner{V}{W} = \inner{\nabla_U V}{W} + \inner{V}{\nabla_U W}$, and
-    <li> Symmetry: $[U, V] f = (\nabla_U V - \nabla_V U) f$.
-</ul>
+<ol start="4">
+    <li> Symmetry: $[U, V] f = (\nabla_U V - \nabla_V U) f$, and
+    <li> Compatibility with the metric: $U \inner{V}{W} = \inner{\nabla_U V}{W} + \inner{V}{\nabla_U W}$.
+</ol>
 </p>
 
 <p>
