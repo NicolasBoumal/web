@@ -136,7 +136,7 @@
         },
     
     "PLcond01": {
-        "title": "Pl-condition, sufficent decrease and linear convergence",
+        "title": "PL-condition, sufficent decrease and linear convergence",
         "week": 5.3,
         "topics": [203,204],
         "source": "PLcond01.html"
@@ -291,15 +291,15 @@
     
     "MaxTraceStiefel06": {
         "title": "Max-Trace on Stiefel",
-        "week": -,
-        "topics": -,
+        "week": 0,
+        "topics": [],
         "source": "MaxTraceStiefel06.html"
         },
     
     "DiffMatInv01": {
         "title": "Differentiating the matrix inversion",
-        "week": -,
-        "topics": -,
+        "week": 0,
+        "topics": [],
         "source": "DiffMatInv01.html"
         }
     
