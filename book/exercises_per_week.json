@@ -10,5 +10,5 @@
     "9": ["ImplementingRTR01", "Rank2BMappMC01", "CauchyStep01"],
     "10": ["ParalellTrans01", "ParallelTransSphere10", "TransSOd02"],
     "11": ["PropgConv01", "MinGeoNE01", "IntgConv02", "FrechMeanSphere11", "RobCovEst01"],
-    "12": ["SphereSmoothMan12", "SmoothFunSphere13", "TangVectSphere14", "TopoSphere15"],
+    "12": ["SphereSmoothMan12", "SmoothFunSphere13", "TangVectSphere14", "TopoSphere15"]
 }
