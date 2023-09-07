@@ -201,7 +201,10 @@
                     <template x-if="week > 0">
                       <tbody>
                         <tr>
-                          <th scope="rowgroup" colspan="42" x-data="{weekdisp: 'Week ' + week}" x-text="weekdisp" style="font-weight: bold;"></th>
+                          <th scope="rowgroup" colspan="42">
+                            <span x-data="{weekdisp: 'Week ' + week}" x-text="weekdisp"></span>
+                            <span style="font-weight: normal; float: right"><a :href="$store.main.exercises_per_week[week]" target="_blank">exercises</a></span>
+                          </th>
                         </tr>
                         <template x-for="(topic, order) in topics">
                           <template x-if="topic">
@@ -273,7 +276,8 @@
             categories: {},  // categories and topics within
             topics: {},  // all topics brought to a top level, indexed by week
             sortedweeks: [],  // indices for topics, sorted
-            weeks: []  // each week has a number (1..12) and weeks[i] contains an array of topics treated that week, in order
+            weeks: [],  // each week has a number (1..12) and weeks[i] contains an array of topics treated that week, in order
+            exercises_per_week: {}
           });
           // Load the data from a JSON file.
           $.ajax({
@@ -304,6 +308,15 @@
                 }
               }
               Alpine.store('main').sortedweeks = Object.keys(Alpine.store('main').topics).sort((a, b) => {return Number(a) - Number(b);});
+            }
+          });
+          $.ajax({
+            url: "exercises_per_week.json",
+            dataType: "json",
+            success: function (data) {
+              for(var week in data) {
+                Alpine.store('main').exercises_per_week[week] = 'exercises.html?list=' + data[week].join(',');
+              }
             }
           });
         }); // end Alpine init
