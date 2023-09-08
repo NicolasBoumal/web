@@ -1,0 +1,8 @@
+Found a way (not great, but better). Writing a coarse summary here for my own reference:
+
+Download wktohtml: https://wkhtmltopdf.org/downloads.html
+Save the webpage you want to convert to a file (so that all the javascripts have been executed etc.)
+Run wktohtml on that webpage, through a local web server (so it can access css/javascript on CDNs):
+wkhtmltopdf http://localhost:8000/book/exercises/convert2pdf/savedpage.html --no-stop-slow-scripts output.pdf
+
+It sort of works, but the math comes out too small (attached example). Also, would need some tweaks to make solutions appear.
