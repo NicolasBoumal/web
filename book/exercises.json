@@ -35,6 +35,12 @@
         "topics": [101, 102],
         "source": "cross01.html"
     },
+    "DiffMatInv01": {
+        "title": "Differentiating the matrix inversion",
+        "week": 2.5,
+        "topics": [],
+        "source": "DiffMatInv01.html"
+    },
     "smoothdiff01": {
         "title": "Smooth maps and differentials",
         "week": 3.1,
@@ -238,11 +244,5 @@
         "week": 12.4,
         "topics": [501, 502, 503],
         "source": "TopoSphere15.html"
-    },
-    "DiffMatInv01": {
-        "title": "Differentiating the matrix inversion",
-        "week": 0,
-        "topics": [],
-        "source": "DiffMatInv01.html"
     }
 }

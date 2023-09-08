@@ -1,6 +1,6 @@
 {
     "1": ["sphererayleigh02", "MaxTraceStiefel06"],
-    "2": ["smallstiefel01", "rankrmatrices01", "productmanifold01", "cross01"],
+    "2": ["smallstiefel01", "rankrmatrices01", "productmanifold01", "cross01", "DiffMatInv01"],
     "3": ["smoothdiff01", "EmbedManif01", "spherester03", "QRstiefel02", "Polarstiefel03", "ExpSOn01"],
     "4": ["FrechMeanSphere04", "ProdSphere05", "ProdMet01", "DistotedRd01"],
     "5": ["RGDprodsphere06", "RGDstiefel04", "PLcond01"],

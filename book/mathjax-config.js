@@ -19,6 +19,7 @@ window.MathJax = {
         D: "\\mathrm{D}",
         Sd: "\\mathbb{S}^{d-1}",
         Rd: "\\mathbb{R}^{d}",
+        Rk: "\\mathbb{R}^{k}",
         calE: "\\mathcal{E}",
         Stnp: "\\mathrm{St}(n,p)",
         Rnp: "\\mathbb{R}^{n \\times p}",
