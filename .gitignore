@@ -4,3 +4,13 @@ arxiv/index2.html.bak
 publications.xml.bak
 *.bak
 book/exercises/convert2pdf/html2pdf.bat
+book/exercises/convert2pdf/output.pdf
+book/exercises/convert2pdf/savedpage.html
+book/exercises/convert2pdf/savedpage_files/atom-one-dark.min.css
+book/exercises/convert2pdf/savedpage_files/bootstrap.css
+book/exercises/convert2pdf/savedpage_files/highlight.min.js.download
+book/exercises/convert2pdf/savedpage_files/jquery-3.7.0.js.download
+book/exercises/convert2pdf/savedpage_files/js
+book/exercises/convert2pdf/savedpage_files/mathjax-config.js.download
+book/exercises/convert2pdf/savedpage_files/matlab.min.js.download
+book/exercises/convert2pdf/savedpage_files/tex-svg.js.download
