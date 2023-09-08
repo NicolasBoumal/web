@@ -30,26 +30,31 @@ If you try to do so, you may find it useful to compute the differential of the i
 </question>
 <sketch>
     <p>
-    We cannot use $h(X) = \rank(X) - 1$ as a defining function, because $\rank$ is not a smooth function (it is not even continuous).
+    We cannot use $h(X) = \rank(X) - 1$ as a defining function (why not?).
     Thus, we need to come up with another function $h$.
     One of the keys to this exercise is to recognize that we should use more than one local defining function.
     If $h \colon U \to \Rk$ is one such function (defined on some open set $U$ in $\Rmn$),
     it should have the property that $h(X) = 0$ if and only if $X \in U$ has rank 1.
     Do this in two phases: first, express the fact that $\rank(X) \geq 1$.
     Then, express the fact that $\rank(X) \leq 1$.
+    Moreover, for every $X$ of rank 1, we should have such a defining function with $$ such that $X$ is in $U$.
     </p>
     <p>
-    If $X$ is in $\calM$ then it has a nonzero entry, say $X_{ij} \neq 0$.
-    For each $i \in [1, m]$ and $j \in [1,n]$, let $U_{ij}$ be the set of all $X$ in $\reals^{m \times n}$ such that $X_{ij} \neq 0$.
+    If $X$ is in $\calM$ then it has a nonzero entry (why?).
+    Say $X_{ij} \neq 0$.
+    Let $U_{ij}$ be the set of all $X$ in $\reals^{m \times n}$ such that $X_{ij} \neq 0$.
     First, argue that $U_{ij}$ is open.
-    Then build a local defining function for $\calM$ defined on $U_{ij}$.
+    Second, find a function $h$ on $U_{ij}$ such that $h(X) = 0$ exactly if $X \in U_{ij}$ has rank 1.
     </p>
     <p>
-    For the second part begin by considering $(i,j)=(1,1)$, i.e., try to build a local defining function defined on $U_{11}$, which consists of all $X$ in $\reals^{m \times n}$ whose top left entry $X_{11}$ is nonzero.
+    For that second part, begin by considering $(i,j)=(1,1)$, i.e., try to build a local defining function defined on $U_{11}$, which consists of all $X$ in $\reals^{m \times n}$ whose top left entry $X_{11}$ is nonzero.
     To build this map partition $X$ into blocks $X_{11}, X_{12}, X_{21}, X_{22}$ which have dimensions $1 \times 1, 1 \times (n-1), (m-1) \times 1, (m-1) \times (n-1)$, respectively.
     By assuming $X_{11}$ is nonzero, we expressed the fact that $\rank(X) \geq 1$.
     How can you express the fact that $\rank(X) \leq 1$?
-    Try to express $X_{22}$ as a function of the other blocks of $X$. Finally, build a local defining function for $(i,j)$ by using permutation matrices and the local defining function for $U_{11}$.
+    Try to express $X_{22}$ as a function of the other blocks of $X$.
+    </p>
+    <p>
+    Now finish up with an argument to show that your work for $(1, 1)$ extends to all $(i, j)$, and explain why that's enough to answer the original question.
     </p>
 </sketch>
 <answer>
