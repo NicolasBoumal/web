@@ -24,6 +24,7 @@ window.MathJax = {
         Stnp: "\\mathrm{St}(n,p)",
         Rnp: "\\mathbb{R}^{n \\times p}",
         Rnn: "\\mathbb{R}^{n \\times n}",
+        Rmn: "\\mathbb{R}^{m \\times n}",
         Rn: "\\mathbb{R}^{n}",
         Sn: "\\mathbb{S}^{n}",
         Sm: "\\mathbb{S}^{m}",

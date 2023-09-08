@@ -3,26 +3,54 @@
 </title>
 
 <p>
-Some embedded submanifolds cannot be defined with a single local defining function. Moreover, sometimes the local defining functions of an embedded submanifold are not obvious. In this exercise, we consider such an example.
+    The set of matrices of a fixed size and fixed rank forms a manifold.
+    In this introductory exercise, we suggest that you work out that fact for the particular case of matrices of rank 1.
+    Details for the general case appear in the textbook, Section 7.5.
 </p>
 
 <p>
-Let $\reals_{r}^{m \times n}$ be the set of real $m \times n$ matrices with rank equal to $r$. In the following exercise we show that in the case $r=1$ we have that $\reals_{r}^{m \times n}$ is an embedded submanifold.
+    Some embedded submanifolds cannot be defined with a single local defining function.
+    Moreover, sometimes it is not obvious what the local defining function(s) should be.
+    This exercise illustrates both of those facts.
 </p>
 
 <p>
-This exercise can be adapted to the case of general $1 \leq r \leq \min(n,m)$. If you would like to do the general case you can follow the same structure than in the $r=1$ case. However, to compute the differentials of your local defining functions you need to know the differential of the matrix inversion, which we compute in the exercise <a exercise="DiffMatInv01">The differential of the matrix inversion</a>.
+Let $\reals_{r}^{m \times n}$ be the set of real $m \times n$ matrices with rank equal to $r$.
+You will show that this set is an embedded submanifold of $\Rmn$ when $r = 1$.
+To generalize to all $1 \leq r \leq \min(n,m)$, you can follow the same proof structure.
+If you try to do so, you may find it useful to compute the differential of the inverse of a matrix, as worked out in <a exercise="DiffMatInv01">this exercise</a>.
 </p>
 
 <question>
     Show that $\calM = \reals_{1}^{m \times n}$ is an embedded submanifold of $\calE = \reals^{m \times n}$. You need to use several local defining functions.
     <hint>
-        This question is not the eassiest. If you have difficulties doing it look at the sketch.
+        If you have never seen this before, this is not so easy.
+        If you are stuck, you may want to look at the sketch for a big hint that still leaves plenty for you to work out.
     </hint>
 </question>
 <sketch>
+    <p>
+    We cannot use $h(X) = \rank(X) - 1$ as a defining function, because $\rank$ is not a smooth function (it is not even continuous).
+    Thus, we need to come up with another function $h$.
+    One of the keys to this exercise is to recognize that we should use more than one local defining function.
+    If $h \colon U \to \Rk$ is one such function (defined on some open set $U$ in $\Rmn$),
+    it should have the property that $h(X) = 0$ if and only if $X \in U$ has rank 1.
+    Do this in two phases: first, express the fact that $\rank(X) \geq 1$.
+    Then, express the fact that $\rank(X) \leq 1$.
+    </p>
+    <p>
     If $X$ is in $\calM$ then it has a nonzero entry, say $X_{ij} \neq 0$.
-        For each $i \in [1, m]$ and $j \in [1,n]$, let $U_{ij}$ be the set of all $X$ in $\reals^{m \times n}$ such that $X_{ij} \neq 0$. First, argue that $U_{ij}$ is open and then build a local defining function for $\calM$ defined on $U_{ij}$. For the second part begin by considering $(i,j)=(1,1)$, i.e., try to build a local defining function defined on $U_{11}$, which consists of all $X$ in $\reals^{m \times n}$ whose top left entry $X_{11}$ is nonzero. To build this map partition $X$ into blocks $X_{11}, X_{12}, X_{21}, X_{22}$ which have dimensions $1 \times 1, 1 \times (n-1), (m-1) \times 1, (m-1) \times (n-1)$, respectively. By assuming $X_{11}$ is nonzero, we expressed the fact that $\rank(X) \geq 1$. How can you express the fact that $\rank(X) \leq 1$ ? Try to express $X_{22}$ as a function of the other blocks of $X$. Finally, build a local defining function for $(i,j)$ by using permutation matrices and the local defining function for $U_{11}$.
+    For each $i \in [1, m]$ and $j \in [1,n]$, let $U_{ij}$ be the set of all $X$ in $\reals^{m \times n}$ such that $X_{ij} \neq 0$.
+    First, argue that $U_{ij}$ is open.
+    Then build a local defining function for $\calM$ defined on $U_{ij}$.
+    </p>
+    <p>
+    For the second part begin by considering $(i,j)=(1,1)$, i.e., try to build a local defining function defined on $U_{11}$, which consists of all $X$ in $\reals^{m \times n}$ whose top left entry $X_{11}$ is nonzero.
+    To build this map partition $X$ into blocks $X_{11}, X_{12}, X_{21}, X_{22}$ which have dimensions $1 \times 1, 1 \times (n-1), (m-1) \times 1, (m-1) \times (n-1)$, respectively.
+    By assuming $X_{11}$ is nonzero, we expressed the fact that $\rank(X) \geq 1$.
+    How can you express the fact that $\rank(X) \leq 1$?
+    Try to express $X_{22}$ as a function of the other blocks of $X$. Finally, build a local defining function for $(i,j)$ by using permutation matrices and the local defining function for $U_{11}$.
+    </p>
 </sketch>
 <answer>
     <p>
@@ -115,8 +143,11 @@ This exercise can be adapted to the case of general $1 \leq r \leq \min(n,m)$. I
 <question>
     What is the dimension of $\calM = \reals_{1}^{m \times n}$ ?
 </question>
+<sketch>
+    Recall that the dimension of a manifold is the dimension of the kernel of something.
+</sketch>
 <answer>
-    By part one we know that the dimension of $\calM$ is given by
+    By the rank-nullity theorem applied to the differential of any local defining function, we have:
             \begin{aligned}
                 \dim \calM = \dim(\reals^{m \times n}) - \dim(\reals^{(m-1) \times (n-1)}) = m n - (m-1)(n-1) = m + n - 1.
             \end{aligned}
