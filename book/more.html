@@ -131,6 +131,7 @@
                 <li id="li-byweek"><a href="#byweek" class="menu" id="tab-byweek" style="font-weight: bold;">By week</a></li>
               </ul>
 
+              <!-- TABLE ORDERED BY CATEGORY -->
 
               <div class="section" id="section-bycategory">
                 <br>
@@ -185,7 +186,7 @@
               </div>
 
               
-              <!-- ATTEMPT AT A TABLE ORDERED BY WEEK -->
+              <!-- TABLE ORDERED BY WEEK -->
 
               <div class="section" id="section-byweek">
                 <br>
@@ -234,37 +235,8 @@
                 </table>
               </div>
 
-
-              <!-- ATTEMPT BY WEEK, END -->
-
-
-              <!-- ATTEMPT AT A LIST ORDERED BY WEEK -->
-              <!--
-              <ul x-data="">
-                <template x-for="week in $store.main.sortedweeks">
-                  <template x-data="{topic: $store.main.topics[week]}" x-if="!topic.hide">
-                    <li>
-                      <span class="number" x-text="week"></span> - <span x-text="topic.title"></span>
-                      (<a target="_blank" :href="topic.slides" x-data="{slidelnk: 'slides ' + topic.id}" x-text="slidelnk"></a>)
-                      <ol>
-                        <template x-for="vid in topic.videos">
-                          <template x-if="vid.url">
-                            <li>
-                              <a target="_blank" :href="vid.url" x-data="{vidlink: vid.comments ? vid.comments : 'Video'}" x-text="vidlink"></a>,
-                              <span x-text="vid.duration"></span> min
-                            </li>
-                          </template>
-                        </template>
-                      </ol>
-                    </li>
-                  </template>
-                </template>
-              </ul>
-              -->
-              <!-- ATTEMPT BY WEEK, END -->
-
             </div>
-            <div class="page-footer"><small class="pull-right">Last update: July 12, 2023.</small></div>
+            <div class="page-footer"><small class="pull-right">Last update: September 9, 2023.</small></div>
           </div>
         </div>
       </div>
