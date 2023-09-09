@@ -2,11 +2,14 @@
     Product manifolds
 </title>
 
+Let $\calM$ be an embedded submanifold of a linear space $\calE$.
+Likewise, let $\calM'$ be an embedded submanifold of a (possibly different) linear space $\calE'$.
+
 <question>
-    Show that a product of embedded submanifolds is an embedded submanifold. How are the tangent spaces of the product manifold related to the tangent spaces of the base manifolds?
+    Show that the product $\calM \times \calM'$ is an embedded submanifold of $\calE \times \calE'$.
 </question>
 <sketch>
-    Recall the definition of embedded submanifold and different make distinctions of all three possible cases.
+    Recall the definition of embedded submanifold. It's useful to distinguish cases depending on whether $\calM$ is or is not open in $\calE$ (and likewise for $\calM'$).
 </sketch>
 <answer>
     <p>
@@ -37,11 +40,26 @@
         \end{aligned}
         which is clearly surjective and thus of full rank as $\D h(x)$ and $\D h'(x')$ are surjective.
     </p>
-    <p>
-        Finally, we have that
-        \begin{aligned}
-            \T_{(x, x')} \calM \times \calM' = \ker \D H(x, x') = \ker \D h(x) \times \ker \D h'(x') = \T_x \calM \times \T_{x'} \calM'.
-        \end{aligned}
-        Observe that also in the case that one of the manifolds is a open set we have that $\T_{(x, x')} \calM \times \calM' = \T_x \calM \times \T_{x'} \calM'$, giving that this characterisation always holds.
-    </p>
 </answer>
+
+<question>
+    How are the tangent spaces of the product manifold related to the tangent spaces of the base manifolds?
+</question>
+<sketch>
+    Once you have a proof for the previous question, this one should follow fairly directly (recall the various characterizations we have for the tangent spaces).
+</sketch>
+<answer>
+    Continue from the previous question for the case where neither $\calM$ nor $\calM'$ are open.
+    We have a local defining function $H$, from which we see
+    \begin{aligned}
+        \T_{(x, x')} (\calM \times \calM') = \ker \D H(x, x') = \ker \D h(x) \times \ker \D h'(x') = \T_x \calM \times \T_{x'} \calM'.
+    \end{aligned}
+    In the case that one of the manifolds is open, we also have that
+    \begin{aligned}
+        \T_{(x, x')} (\calM \times \calM') = \T_x \calM \times \T_{x'} \calM'.
+    \end{aligned}
+    Make sure you see why.
+</answer>
+
+Notice that this exercise immediately implies that a product of any (finite) number of embedded submanifolds is itself an embedded submanifold.
+Likewise, if $\calM$ is an embedded submanifold of $\calE$, then $\calM^n$ (the set of $n$-tuples of elements of $\calM$) is an embedded submanifold of $\calE^n$.
