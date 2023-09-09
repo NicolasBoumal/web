@@ -32,6 +32,15 @@
     ul {
       list-style: disc;
     }
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+      background-color: blanchedalmond;
+    }
+    tbody tr th {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Font for IDs (000, 001, 101, ...) */
+    }
+    .number {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Font for IDs (000, 001, 101, ...) */
+    }
   </style>
   <style>
     ul.toc.collapsed {
@@ -55,6 +64,8 @@
   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
   <!-- not sure the javascript below gets anything done at all, since the html is not loaded yet... try it. -->
   <script type="text/javascript">$(".section").hide();</script>
+
+	<script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
 <body>
@@ -75,7 +86,86 @@
 
         <div class="section" id="section-lectures">
           <div class="media row">
-            Test.
+            <p>
+              The table below collects material from lectures given at EPFL for the course MATH-512 in spring 2023.
+              A semester runs for 14 weeks.
+              Most weeks have a lecture and an exercise session, which each last 90-95 minutes (week 5 has double lectures).
+              The students further learned the material by completing two extensive projects.
+            </p>
+                            
+            <p>
+              Links bring you to a video hosting service.
+              There, you can change the playback speed of videos (play faster, slower): see controls at the bottom-right of the video panel.
+              You can also download the videos.
+            </p>
+
+            <p>
+              I gratefully acknowledge <a target="_blank" href="https://www.epfl.ch/education/educational-initiatives/cede/">EPFL's CEDE</a> for video post-production!
+            </p>
+          </div>
+          <div class="media row">
+            <!-- TABLE ORDERED BY WEEK -->
+            <table class="table table-hover" x-data="">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Slides</th>
+                  <th scope="col">Title + videos</th>
+                </tr>
+              </thead>
+              <template x-for="(topics, week) in $store.main.weeks">
+                <template x-if="week > 0">
+                  <tbody>
+                    <tr>
+                      <th scope="rowgroup" colspan="42">
+                        <span x-data="{weekdisp: 'Week ' + week}" x-text="weekdisp"></span>
+                        <span style="font-weight: normal; float: right"><a :href="$store.main.exercises_per_week[week]" target="_blank">exercises</a></span>
+                      </th>
+                    </tr>
+                    <template x-for="(topic, order) in topics">
+                      <template x-if="topic">
+                        <tr>
+                          <th scope="row" x-text="topic.id"></th>
+                          <td><a target="_blank" title="slides" :href="topic.slides">pdf</a></td>
+                          <td>
+                            <span x-text="topic.title"></span><br>
+                              <template x-for="vid in topic.videos">
+                                <template x-if="vid.url">
+                                  <li>
+                                    <a target="_blank" :href="vid.url" x-data="{vidlink: vid.comments ? vid.comments : 'Video'}" x-text="vidlink"></a>,
+                                    <span x-data="{vidtime: vid.duration + ' min'}" x-text="vidtime"></span>
+                                    <template x-if="vid.booksections != ''">
+                                      <span style="white-space: nowrap; overflow: scroll;" x-data="{sectionstext: '(book &#167;' + vid.booksections.join(', &#167;') + ')'}" x-text="sectionstext"></span>
+                                    </template>
+                                  </li>
+                                </template>
+                              </template>
+                          </td>
+                        </tr>
+                      </template>
+                    </template>
+                  </tbody>
+                </template>
+              </template>
+            </table>
+          </div>
+        </div>
+
+        <div class="section" id="section-exercises">
+          <div class="media row">
+            Exercises.
+          </div>
+        </div>
+
+        <div class="section" id="section-software">
+          <div class="media row">
+            Software.
+          </div>
+        </div>
+
+        <div class="section" id="section-more">
+          <div class="media row">
+            More.
           </div>
         </div>
 
@@ -282,6 +372,61 @@
 
   <!-- Bootstrap's javascript -->
   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+
+  <!-- ALPINE -->
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.store('main', {
+        categories: {},  // categories and topics within
+        topics: {},  // all topics brought to a top level, indexed by week
+        sortedweeks: [],  // indices for topics, sorted
+        weeks: [],  // each week has a number (1..12) and weeks[i] contains an array of topics treated that week, in order
+        exercises_per_week: {}
+      });
+      // Load the data from a JSON file.
+      $.ajax({
+        url: "topics.json",
+        dataType: "json",
+        success: function (data) {
+          // Go through each category listed in the data.
+          for(var category in data) {
+            // Check how many visible topics are in this category.
+            var ntopics = 0;
+            for(var topic in data[category]) {
+              var thistopic = data[category][topic];
+              thistopic.id = topic;
+              if(!thistopic.hasOwnProperty('hide') || !thistopic.hide) {
+                Alpine.store('main').topics[thistopic.week] = thistopic;
+                ntopics++;
+                var weeknumber = Number(Math.floor(thistopic.week));
+                var weeksubnumber = Number(Math.round((thistopic.week - weeknumber) * 10));
+                if(Alpine.store('main').weeks[weeknumber] === undefined) {
+                  Alpine.store('main').weeks[weeknumber] = [];
+                }
+                Alpine.store('main').weeks[weeknumber][weeksubnumber] = thistopic;
+              }
+            }
+            // Collect only those categories which have at least one visible topic.
+            if(ntopics > 0) {  // Object.keys(data[category]).length > 0
+              Alpine.store('main').categories[category] = data[category];
+            }
+          }
+          Alpine.store('main').sortedweeks = Object.keys(Alpine.store('main').topics).sort((a, b) => {return Number(a) - Number(b);});
+        }
+      });
+      $.ajax({
+        url: "exercises_per_week.json",
+        dataType: "json",
+        success: function (data) {
+          for(var week in data) {
+            Alpine.store('main').exercises_per_week[week] = 'exercises.html?list=' + data[week].join(',');
+          }
+        }
+      });
+    }); // end Alpine init
+  </script>
+
   
   <!-- a little bit of scripting for the menu -->
   <script type="text/javascript">
