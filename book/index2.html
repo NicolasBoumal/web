@@ -21,6 +21,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Bootstrap & CSS-->
   <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+  <!-- TODO: consolidate blanchedalmond and antiquewhite ? -->
   <style type="text/css">
     body {
       padding-top: 10px;
@@ -30,16 +31,19 @@
       display: auto;
     }
     ul {
-      list-style: disc;
+      list-style: square;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-inline-start: 20px;
     }
     .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
       background-color: blanchedalmond;
     }
-    tbody tr th {
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Font for IDs (000, 001, 101, ...) */
-    }
     .number {
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Font for IDs (000, 001, 101, ...) */
+    }
+    .page-footer {
+      margin-top: 1cm;
     }
   </style>
   <style>
@@ -64,8 +68,8 @@
     title {
       display: block;
       font-weight: bold;
-      font-size: 30px;
-      margin-top: 24px;
+      font-size: 24px;
+      margin-top: 36px;
       margin-bottom: 12px;
       box-sizing: border-box;
       color: #333333;
@@ -76,7 +80,7 @@
       display: block;
       margin: 10px;
       padding: 10px;
-      background-color: lightsteelblue;
+      background-color: #D9E2EF;
     }
 
     sketch {
@@ -184,21 +188,23 @@
                     <template x-for="(topic, order) in topics">
                       <template x-if="topic">
                         <tr>
-                          <th scope="row" x-text="topic.id"></th>
+                          <th scope="row" class="number" x-text="topic.id"></th>
                           <td><a target="_blank" title="slides" :href="topic.slides">pdf</a></td>
                           <td>
-                            <span x-text="topic.title"></span><br>
-                              <template x-for="vid in topic.videos">
-                                <template x-if="vid.url">
-                                  <li>
-                                    <a target="_blank" :href="vid.url" x-data="{vidlink: vid.comments ? vid.comments : 'Video'}" x-text="vidlink"></a>,
-                                    <span x-data="{vidtime: vid.duration + ' min'}" x-text="vidtime"></span>
-                                    <template x-if="vid.booksections != ''">
-                                      <span style="white-space: nowrap; overflow: scroll;" x-data="{sectionstext: '(book &#167;' + vid.booksections.join(', &#167;') + ')'}" x-text="sectionstext"></span>
-                                    </template>
-                                  </li>
+                            <span x-text="topic.title"></span>
+                              <ul>
+                                <template x-for="vid in topic.videos">
+                                  <template x-if="vid.url">
+                                    <li>
+                                      <a target="_blank" :href="vid.url" x-data="{vidlink: vid.comments ? vid.comments : 'Video'}" x-text="vidlink"></a>,
+                                      <span x-data="{vidtime: vid.duration + ' min'}" x-text="vidtime"></span>
+                                      <template x-if="vid.booksections != ''">
+                                        <span style="white-space: nowrap; overflow: scroll;" x-data="{sectionstext: '(book &#167;' + vid.booksections.join(', &#167;') + ')'}" x-text="sectionstext"></span>
+                                      </template>
+                                    </li>
+                                  </template>
                                 </template>
-                              </template>
+                              </ul>
                           </td>
                         </tr>
                       </template>
@@ -217,7 +223,7 @@
             </p>
             <p>
               Click a <span style="background-color: antiquewhite;">question</span> to display a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer if available.
-              Click a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer to display a detailed <span style="background-color: lightsteelblue;">answer</span> if available.
+              Click a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer to display a detailed <span style="background-color: #D9E2EF;">answer</span> if available.
               If no sketch is available but a detailed answer is, then clicking the question displays the detailed answer.
             </p>
             <!-- General info about how to show / hide answers and their sketches. -->
