@@ -147,129 +147,137 @@
         <br>
 
         <div class="section" id="section-lectures">
-          <div class="media row" align="justify">
-            <p>
-              I taught Riemannian optimization at EPFL in spring 2023 for the course MATH-512.
-              The recorded lectures are available below.
-              A semester runs for 14 weeks.
-              Most weeks have a lecture and an exercise session, which each last 90-95 minutes (week 5 had double lectures).
-              The students further learned the material by completing two extensive projects.
-            </p>
-                            
-            <p>
-              Video links bring you to an external hosting service.
-              There, you can change the playback speed of videos (play faster, slower): see controls at the bottom-right of the video panel.
-              You can also download the videos.
-            </p>
+          <div class="media-body col-12">
+            <div class="media row" align="justify">
+              <p>
+                I taught Riemannian optimization at EPFL in spring 2023 for the course MATH-512.
+                The recorded lectures are available below.
+                A semester runs for 14 weeks.
+                Most weeks have a lecture and an exercise session, which each last 90-95 minutes (week 5 had double lectures).
+                The students further learned the material by completing two extensive projects.
+              </p>
+                              
+              <p>
+                Video links bring you to an external hosting service.
+                There, you can change the playback speed of videos (play faster, slower): see controls at the bottom-right of the video panel.
+                You can also download the videos.
+              </p>
 
-            <p>
-              I gratefully acknowledge <a target="_blank" href="https://www.epfl.ch/education/educational-initiatives/cede/">EPFL's CEDE</a> for video post-production!
-            </p>
-          </div>
-          <div class="media row">
-            <!-- TABLE ORDERED BY WEEK -->
-            <table class="table table-hover" x-data="">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Slides</th>
-                  <th scope="col">Title + videos</th>
-                </tr>
-              </thead>
-              <template x-for="(topics, week) in $store.main.weeks">
-                <template x-if="week > 0">
-                  <tbody>
-                    <tr>
-                      <th scope="rowgroup" colspan="42">
-                        <span x-data="{weekdisp: 'Week ' + week}" x-text="weekdisp"></span>
-                        <span style="font-weight: normal; float: right"><a :href="$store.main.exercises_per_week[week]">exercises</a></span>
-                      </th>
-                    </tr>
-                    <template x-for="(topic, order) in topics">
-                      <template x-if="topic">
-                        <tr>
-                          <th scope="row" class="number" x-text="topic.id"></th>
-                          <td><a target="_blank" title="slides" :href="topic.slides">pdf</a></td>
-                          <td>
-                            <span x-text="topic.title"></span>
-                              <ul>
-                                <template x-for="vid in topic.videos">
-                                  <template x-if="vid.url">
-                                    <li>
-                                      <a target="_blank" :href="vid.url" x-data="{vidlink: vid.comments ? vid.comments : 'Video'}" x-text="vidlink"></a>,
-                                      <span x-data="{vidtime: vid.duration + ' min'}" x-text="vidtime"></span>
-                                      <template x-if="vid.booksections != ''">
-                                        <span style="white-space: nowrap; overflow: scroll;" x-data="{sectionstext: '(book &#167;' + vid.booksections.join(', &#167;') + ')'}" x-text="sectionstext"></span>
-                                      </template>
-                                    </li>
+              <p>
+                I gratefully acknowledge <a target="_blank" href="https://www.epfl.ch/education/educational-initiatives/cede/">EPFL's CEDE</a> for video post-production!
+              </p>
+            </div>
+            <div class="media row">
+              <!-- TABLE ORDERED BY WEEK -->
+              <table class="table table-hover" x-data="">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Slides</th>
+                    <th scope="col">Title + videos</th>
+                  </tr>
+                </thead>
+                <template x-for="(topics, week) in $store.main.weeks">
+                  <template x-if="week > 0">
+                    <tbody>
+                      <tr>
+                        <th scope="rowgroup" colspan="42">
+                          <span x-data="{weekdisp: 'Week ' + week}" x-text="weekdisp"></span>
+                          <span style="font-weight: normal; float: right"><a :href="$store.main.exercises_per_week[week]">exercises</a></span>
+                        </th>
+                      </tr>
+                      <template x-for="(topic, order) in topics">
+                        <template x-if="topic">
+                          <tr>
+                            <th scope="row" class="number" x-text="topic.id"></th>
+                            <td><a target="_blank" title="slides" :href="topic.slides">pdf</a></td>
+                            <td>
+                              <span x-text="topic.title"></span>
+                                <ul>
+                                  <template x-for="vid in topic.videos">
+                                    <template x-if="vid.url">
+                                      <li>
+                                        <a target="_blank" :href="vid.url" x-data="{vidlink: vid.comments ? vid.comments : 'Video'}" x-text="vidlink"></a>,
+                                        <span x-data="{vidtime: vid.duration + ' min'}" x-text="vidtime"></span>
+                                        <template x-if="vid.booksections != ''">
+                                          <span style="white-space: nowrap; overflow: scroll;" x-data="{sectionstext: '(book &#167;' + vid.booksections.join(', &#167;') + ')'}" x-text="sectionstext"></span>
+                                        </template>
+                                      </li>
+                                    </template>
                                   </template>
-                                </template>
-                              </ul>
-                          </td>
-                        </tr>
+                                </ul>
+                            </td>
+                          </tr>
+                        </template>
                       </template>
-                    </template>
-                  </tbody>
+                    </tbody>
+                  </template>
                 </template>
-              </template>
-            </table>
+              </table>
+            </div>
           </div>
         </div>
 
         <div class="section" id="section-exercises">
-          <div class="media row" align="justify">
-            <p>
-              Exercises and solutions were prepared by Nicolas Boumal, Christopher Criscitiello and Timon Miehling in 2023.
-            </p>
-            <p>
-              Click a <span style="background-color: antiquewhite;">question</span> to display a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer if available.
-              Click a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer to display a detailed <span style="background-color: #D9E2EF;">answer</span> if available.
-              If no sketch is available but a detailed answer is, then clicking the question displays the detailed answer.
-            </p>
-            <!-- General info about how to show / hide answers and their sketches. -->
-            <div style="border-radius: 0px; background-color: white; padding: 10px; padding-bottom: 1px; margin: 10px; margin-top: 0px;">
+          <div class="media-body col-12">
+            <div class="media row" align="justify">
               <p>
-                Sketches of answers: <a onclick="$('sketch').slideUp(400);">hide all</a>, <a onclick="$('sketch').slideDown(400);">show all</a>.
-                Detailed answers: <a onclick="$('answer').slideUp(400);">hide all</a>, <a onclick="$('answer').slideDown(400);">show all</a>.
+                Exercises &amp; solutions prepared by Nicolas Boumal, Christopher Criscitiello and Timon Miehling in 2023.
               </p>
+              <p>
+                Click a <span style="background-color: antiquewhite;">question</span> to display a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer if available.
+                Click a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer to display a detailed <span style="background-color: #D9E2EF;">answer</span> if available.
+                If no sketch is available but a detailed answer is, then clicking the question displays the detailed answer.
+              </p>
+              <!-- General info about how to show / hide answers and their sketches. -->
+              <div style="border-radius: 0px; background-color: white; padding: 10px; padding-bottom: 1px; margin: 10px; margin-top: 0px;">
+                <p>
+                  Sketches of answers: <a onclick="$('sketch').slideUp(400);">hide all</a>, <a onclick="$('sketch').slideDown(400);">show all</a>.
+                  Detailed answers: <a onclick="$('answer').slideUp(400);">hide all</a>, <a onclick="$('answer').slideDown(400);">show all</a>.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="media row">
-            <!-- JQuery adds exercises in this div. -->
-            <div id="theexercises"></div>
+            <div class="media row">
+              <!-- JQuery adds exercises in this div. -->
+              <div id="theexercises"></div>
+            </div>
           </div>
         </div>
 
         <div class="section" id="section-software">
-          <div class="media row">
-            See the Manopt toolboxes (<a href="https://www.manopt.org"
-                target="_blank">Matlab</a>, <a href="https://www.pymanopt.org" target="_blank">Python</a>, <a
-                href="https://www.manoptjl.org" target="_blank">Julia</a>).
+          <div class="media-body col-12">
+            <div class="media row">
+              See the Manopt toolboxes (<a href="https://www.manopt.org"
+                  target="_blank">Matlab</a>, <a href="https://www.pymanopt.org" target="_blank">Python</a>, <a
+                  href="https://www.manoptjl.org" target="_blank">Julia</a>).
+            </div>
           </div>
         </div>
 
         <div class="section" id="section-more">
-          <div class="media row">
-            <p>
-              <a href="../papers/IntroOptimManifoldsSlides2020.htm"
-                title="Slides about optimization on manifolds" target="_blank">These
-                slides</a> hold a summary of the basic geometric tools and
-              algorithms from Chapters 3 and 5. Here are a <a
-                href="https://www.youtube.com/watch?v=UjaoZE0GBpg&amp;ab_channel=SimonsInstitute"
-                target="_blank">one-hour video</a> and a <a
-                href="https://www.youtube.com/watch?v=lK62DwSIjXA&amp;t=6s&amp;ab_channel=FMGDataDrivenControlSummerSchool"
-                target="_blank">two-hour video</a> introducing the basics of
-              differential geometry and Riemannian geometry for optimization
-              on smooth manifolds, using <a href="https://simons.berkeley.edu/talks/tbd-337" target="_blank">a variation
-                of the slides linked here</a>.
-              These two videos have mostly the same contents.</p>
-
+          <div class="media-body col-12">
+            <div class="media row">
               <p>
-              You may also be interested in the classic book
-              <a target="_blank" href="https://press.princeton.edu/absil">
-                Optimization Algorithms on Matrix Manifolds</a> by Absil,
-                Mahony and Sepulchre (Princeton University Press, 2008),
-                also freely available online.</p>
+                <a href="../papers/IntroOptimManifoldsSlides2020.htm"
+                  title="Slides about optimization on manifolds" target="_blank">These
+                  slides</a> hold a summary of the basic geometric tools and
+                algorithms from Chapters 3 and 5. Here are a <a
+                  href="https://www.youtube.com/watch?v=UjaoZE0GBpg&amp;ab_channel=SimonsInstitute"
+                  target="_blank">one-hour video</a> and a <a
+                  href="https://www.youtube.com/watch?v=lK62DwSIjXA&amp;t=6s&amp;ab_channel=FMGDataDrivenControlSummerSchool"
+                  target="_blank">two-hour video</a> introducing the basics of
+                differential geometry and Riemannian geometry for optimization
+                on smooth manifolds, using <a href="https://simons.berkeley.edu/talks/tbd-337" target="_blank">a variation
+                  of the slides linked here</a>.
+                These two videos have mostly the same contents.</p>
+
+                <p>
+                You may also be interested in the classic book
+                <a target="_blank" href="https://press.princeton.edu/absil">
+                  Optimization Algorithms on Matrix Manifolds</a> by Absil,
+                  Mahony and Sepulchre (Princeton University Press, 2008),
+                  also freely available online.</p>
+            </div>
           </div>
         </div>
 
@@ -282,7 +290,6 @@
                     style="width:100%; max-width:220px; margin:auto; margin-bottom:8mm; display:block;">
               </div>
               <!--margin: auto; display:block; is to center the image...-->
-              <!--width: 192px; height: 250px;-->
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12">
               <div class="media-body" align="justify">
