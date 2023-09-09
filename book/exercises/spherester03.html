@@ -4,11 +4,11 @@
 
 <question>
     For $(x, v) \in \T\Sd$, let $\Retr_x(v)$ denote the point which lies on $\Sd$ and on the line connecting $(x + v)$ and $-x$, and which is not $-x$.
-        Show that $(x, v) \mapsto \Retr_x(v)$ is well-defined on the whole tangent bundle, and that it is a retraction.
+    Show that $(x, v) \mapsto \Retr_x(v)$ is well defined on the whole tangent bundle, and that it is a retraction.
 </question>
 <answer>
     <p>
-    First, let us derive a formula for this retraction. Observe that the line through $-x$ and $x+v$ with $(x, v) \in \T\Sd$ is well defined as both point are always distinct and given by $t(x+v) + (1-t) (-x)$. As we want to find the intersection of this line with the sphere, which isn't $-x$ we need to solve $1 = \|t(x+v) + (1-t) (-x)\|^2$ for $t \in \reals \setminus \{0\}$.
+        First, let us derive a formula for this retraction. Observe that the line through $-x$ and $x+v$ with $(x, v) \in \T\Sd$ is well defined as both point are always distinct and given by $t(x+v) + (1-t) (-x)$. As we want to find the intersection of this line with the sphere, which isn't $-x$ we need to solve $1 = \|t(x+v) + (1-t) (-x)\|^2$ for $t \in \reals \setminus \{0\}$.
         We get $t^* = \frac{4}{4 + \|v\|^2}$, and so
         $$\Retr_x(v) = t^*(x+v) + (1-t^*)(-x) = \frac{4(2x+v)}{4+\|v\|^2} - x.$$
         It is clear that this map is smooth, and $\Retr_x(0) = 2x - x = x$.
