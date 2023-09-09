@@ -223,7 +223,7 @@
               </p>
               <p>
                 Click a <span style="background-color: antiquewhite;">question</span> to display a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer if available.
-                Click a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer to display a detailed <span style="background-color: #D9E2EF;">answer</span> if available.
+                Click a sketch to display a detailed <span style="background-color: #D9E2EF;">answer</span> if available.
                 If no sketch is available but a detailed answer is, then clicking the question displays the detailed answer.
               </p>
               <!-- General info about how to show / hide answers and their sketches. -->
@@ -243,35 +243,66 @@
         <div class="section" id="section-software">
           <div class="media-body col-12">
             <div class="media row">
-              See the Manopt toolboxes (<a href="https://www.manopt.org"
-                  target="_blank">Matlab</a>, <a href="https://www.pymanopt.org" target="_blank">Python</a>, <a
-                  href="https://www.manoptjl.org" target="_blank">Julia</a>).
+              <p>
+                You may find the Manopt toolboxes helpful to use Riemannian optimization in your projects:
+                <ul>
+                  <li><a target="_blank" href="https://www.manopt.org">Manopt</a> in Matlab,</li>
+                  <li><a target="_blank" href="https://www.pymanopt.org">PyManopt</a> in Python,</li>
+                  <li><a target="_blank" href="https://www.manoptjl.org">Manopt.jl</a> in Julia.</li>
+                </ul>
+              </p>
+              <p>
+                For example, in Matlab, to minimize the function $f(x) = x^\top A x$ on the sphere in $\Rn$, you can write:
+<pre class="featurelesspre">
+<code class="language-matlab" id="softwarematlabexample">problem.M = spherefactory(n);
+problem.cost = @(x) x'*A*x;
+problem.egrad = @(x) 2*A*x;  % or use autodiff: problem = manoptAD(problem);
+x = trustregions(problem);   % call an overly fancy algorithm
+</code>
+</pre>
+              </p>
             </div>
           </div>
         </div>
 
         <div class="section" id="section-more">
           <div class="media-body col-12">
-            <div class="media row">
+            <div class="media row" align="justify">
               <p>
-                <a href="../papers/IntroOptimManifoldsSlides2020.htm"
-                  title="Slides about optimization on manifolds" target="_blank">These
-                  slides</a> hold a summary of the basic geometric tools and
-                algorithms from Chapters 3 and 5. Here are a <a
+                Contact: <a target="_blank" href="mailto:nicolas.boumal@epfl.ch">nicolas.boumal@epfl.ch</a>.
+              </p>
+              <p>
+                For general questions about geometry and optimization,
+                please use the <a target="_blank" href="https://groups.google.com/forum/#%21forum/manopttoolbox%20">Manopt forum</a>,
+                <a target="_blank" href="https://mathoverflow.net/">MathOverflow</a> or
+                <a target="_blank" href="https://math.stackexchange.com/">Math StackExchange</a>.
+              </p>
+              <p>
+                I gave a <a target="_blank" href="https://www.siam.org/conferences/cm/program/minitutorials/op23-minitutorials">minitutorial on Riemannian optimization</a>
+                at SIAM Conference on Optimization 2023.
+                The format was two lectures of 90 minutes each.
+                The <a target="_blank" href="../SIAMOP2023/Tutorial SIAM Optimization 2023.pdf">slides used during the tutorial</a>
+                hold a summary of the basic geometric tools and algorithms useful for optimization.
+                You can also download the <a target="_blank" href="../SIAMOP2023/manopt_maxcut_example.zip">Manopt example codes for Max-Cut</a> in Matlab.
+                When/if videos become available, I will link to them here.
+              </p>
+              <p>
+                Here are an (older) <a
                   href="https://www.youtube.com/watch?v=UjaoZE0GBpg&amp;ab_channel=SimonsInstitute"
                   target="_blank">one-hour video</a> and a <a
                   href="https://www.youtube.com/watch?v=lK62DwSIjXA&amp;t=6s&amp;ab_channel=FMGDataDrivenControlSummerSchool"
-                  target="_blank">two-hour video</a> introducing the basics of
-                differential geometry and Riemannian geometry for optimization
-                on smooth manifolds, using <a href="https://simons.berkeley.edu/talks/tbd-337" target="_blank">a variation
-                  of the slides linked here</a>.
-                These two videos have mostly the same contents.</p>
+                  target="_blank">two-hour video</a>
+                  covering some of those concepts.
+                The former was a <a href="https://simons.berkeley.edu/talks/tbd-337" target="_blank">bootcamp tutorial</a>
+                at the Simons Institute: the slides of that video are available at that link.
+                The two videos have mostly the same contents.
+              </p>
 
                 <p>
-                You may also be interested in the classic book
-                <a target="_blank" href="https://press.princeton.edu/absil">
-                  Optimization Algorithms on Matrix Manifolds</a> by Absil,
-                  Mahony and Sepulchre (Princeton University Press, 2008),
+                  With high probability, you will enjoy the classic book
+                  <a target="_blank" href="https://press.princeton.edu/absil">
+                    Optimization Algorithms on Matrix Manifolds</a>
+                  by Absil, Mahony and Sepulchre (Princeton University Press, 2008),
                   also freely available online.</p>
             </div>
           </div>
@@ -702,6 +733,8 @@
     // This executes once the DOM is ready for JQuery to manipulate it.
     $(function() {
 
+      hljs.highlightElement(document.getElementById('softwarematlabexample'));
+
       // This webpage is meant to be accessed via the URL  www.example.com/thisfile.html?list=exoid1,exoid2,exoid3
       const searchParams = new URLSearchParams(window.location.search);
       if(searchParams.has("list")) {
@@ -784,7 +817,7 @@
                 }
                 else {
                   domobject.setAttribute('target', '_blank');
-                  domobject.setAttribute('href', 'exercises.html?list=' + linkedexercise);  // TODO
+                  domobject.setAttribute('href', '?list=' + linkedexercise + '#exercises');
                 }
               });
 
