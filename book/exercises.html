@@ -117,16 +117,17 @@
               <div>
 
                 <!-- General info about how to show / hide answers and their sketches. -->
-                <div style="border-radius: 0px; background-color: white; padding: 10px; padding-bottom: 3px; margin: 10px; margin-top: 0px;">
+                <div style="border-radius: 0px; background-color: white; padding: 10px; padding-bottom: 1px; margin: 10px; margin-top: 0px;" onclick="$('.optional-instructions').slideToggle(400)">
                   <p>
+                    Click to toggle instructions.
                     These exercises are paired with a <a href="https://www.nicolasboumal.net/book" target="_blank">book and video lectures</a>.
                   </p>
-                  <p>
+                  <p class="optional-instructions">
                     Click a <span style="background-color: antiquewhite;">question</span> to display a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer if available.
                     Click a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer to display a detailed <span style="background-color: lightsteelblue;">answer</span> if available.
                     If no sketch is available but a detailed answer is, then clicking the question displays the detailed answer.
                   </p>
-                  <p>
+                  <p class="optional-instructions">
                     Sketches of answers: <a onclick="$('sketch').slideUp(400);">hide all</a>, <a onclick="$('sketch').slideDown(400);">show all</a>.
                     Detailed answers: <a onclick="$('answer').slideUp(400);">hide all</a>, <a onclick="$('answer').slideDown(400);">show all</a>.
                   </p>
