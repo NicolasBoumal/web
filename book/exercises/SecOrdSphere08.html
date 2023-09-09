@@ -3,9 +3,10 @@
 </title>
 
 <p>
-Let $f\colon \calM \to \reals$ be a smooth function on a smooth Riemannian manifold $\calM$. We call $x \in \calM$ a <em>second-order critical point</em> of $f$. if
+Let $f\colon \calM \to \reals$ be a smooth function on a smooth Riemannian manifold $\calM$.
+We call $x \in \calM$ a <em>second-order critical point</em> of $f$ if
 \begin{aligned}
-\grad f(x) = 0, \quad \text{and} \quad \Hess f(x) \succeq 0.
+    \grad f(x) = 0 \qquad \text{and} \qquad \Hess f(x) \succeq 0.
 \end{aligned}
 </p>
 
@@ -25,41 +26,44 @@ where $A$ is an arbitrary real symmetric $d \times d$ matrix. This cost function
 </sketch>
 <answer>
     Let $(x,u) \in \T \calM$. From the exercise <a exercise="sphererayleigh02">Rayleigh quotient on the sphere</a> we know that the gradient of $f$ is given by
-            \begin{aligned}
-                \grad f(x) = (I - x x^\top) A x.
-            \end{aligned}
-            By the exercise <a exercise="RiemannConnSphere07">Riemannian connection on the sphere</a> we know that the Hessian is given by
-            \begin{aligned}
-                H_f(x)[u] = \Proj_x(H_{\overline{f}}(x)[u])-x^\top\grad\overline{f}(x)\cdot u,
-            \end{aligned}
-            where $\overline{f}$ is an extension of $f$ to an open set $\calM \subseteq U \subseteq \calE$. As $x \in \Rd \mapsto \frac{1}{2} x^\top A x$ is a smooth extension of $f$ we get that
-            \begin{aligned}
-                \Hess f(x)[u] = (I - x x^\top) A u - (x^\top A x) u.
-            \end{aligned}
+    \begin{aligned}
+        \grad f(x) = (I - x x^\top) A x.
+    \end{aligned}
+    By the exercise <a exercise="RiemannConnSphere07">Riemannian connection on the sphere</a> we know that the Hessian is given by
+    \begin{aligned}
+        H_f(x)[u] = \Proj_x(H_{\overline{f}}(x)[u])-x^\top\grad\overline{f}(x)\cdot u,
+    \end{aligned}
+    where $\overline{f}$ is an extension of $f$ to an open set $\calM \subseteq U \subseteq \calE$. As $x \in \Rd \mapsto \frac{1}{2} x^\top A x$ is a smooth extension of $f$ we get that
+    \begin{aligned}
+        \Hess f(x)[u] = (I - x x^\top) A u - (x^\top A x) u.
+    \end{aligned}
 </answer>
 
 <question>
-    Show that all second-order critical points $x$ of $f \colon \Sd \to \reals$ are globally optimal, that is $f(x) = \min_{y \in \Sd}f(y)$.
+    Show that all second-order critical points $x$ of $f \colon \Sd \to \reals$ are globally optimal.
 </question>
 <sketch>
-    What is the global minimum of $f$ ? As $A$ is symmetric we know the global minimum of $f$ from linear algebra.
+    What is the minimal value of $f$? Remembering / figuring this out may guide your intuition.
 </sketch>
 <answer>
     <p>
     Let the eigenvalues of $A$ be $\lambda_1 \leq \ldots \leq \lambda_d$ and let $x \in \Sd$ be a second-order critical point.
-            Then, $\grad f(x) = 0$ implies $x$ is an eigenvector of $A$; say its associated eigenvalue is $\lambda_i$. Let $x_1, \ldots, x_d$ be orthonormal eigenvectors of $A$ associated to $\lambda_1 \leq \ldots \leq \lambda_d$, respectively, such that $x = x_i$.
+    Then, $\grad f(x) = 0$ implies $x$ is an eigenvector of $A$ (we worked this out in <a exercise="sphererayleigh02">another exercise</a>).
+    Say its associated eigenvalue is $\lambda_i$. Let $x_1, \ldots, x_d$ be orthonormal eigenvectors of $A$ associated to $\lambda_1 \leq \ldots \leq \lambda_d$, respectively, such that $x = x_i$.
     </p>
     <p>
-            Furthermore, $\Hess f(x) \succeq 0$ implies for all $u \in \T_x \Sd$,
-            \begin{aligned}
-                0 \leq \langle u, \Hess f(x)[u] \rangle = u^\top A u - u^\top (x^\top A u) x - u^\top (x^\top A x) u = u^\top A u - \lambda_i \|u\|^2 = u^\top A u - \lambda_i.
-            \end{aligned}
-            In particular, taking $u = x_j$ for $j \neq i$, we find that
-            \begin{aligned}
-                \lambda_j = x_j^\top A x_j \geq \lambda_i.
-            \end{aligned}
+    Furthermore, $\Hess f(x) \succeq 0$ implies for all $u \in \T_x \Sd$,
+    \begin{aligned}
+        0 \leq \langle u, \Hess f(x)[u] \rangle = u^\top A u - u^\top (x^\top A u) x - u^\top (x^\top A x) u = u^\top A u - \lambda_i \|u\|^2 = u^\top A u - \lambda_i.
+    \end{aligned}
+    In particular, taking $u = x_j$ for $j \neq i$, we find that
+    \begin{aligned}
+        \lambda_j = x_j^\top A x_j \geq \lambda_i.
+    \end{aligned}
     </p>
     <p>
-            Therefore $\lambda_i = \lambda_1$ is the smallest eigenvalue of $A$ and $x$ is an eigenvector associated to the smallest eigenvalue of $A$. From linear algebra we know that the global minimizer of $2f$ is given by $\lambda_1$, i.e., the smallest eigenvalue of $A$. Thus $x$ is a global minimizer of $f$ on $\Sd$.
+    Therefore $\lambda_i = \lambda_1$ is the smallest eigenvalue of $A$ and $x$ is an eigenvector associated to the smallest eigenvalue of $A$.
+    From linear algebra we know that the global minimizer of $2f$ is given by $\lambda_1$, i.e., the smallest eigenvalue of $A$.
+    Thus $x$ is a global minimizer of $f$ on $\Sd$.
     </p>
 </answer>
