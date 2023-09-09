@@ -42,9 +42,6 @@
     .number {
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Font for IDs (000, 001, 101, ...) */
     }
-    .page-footer {
-      margin-top: 1cm;
-    }
   </style>
   <style>
     ul.toc.collapsed {
@@ -222,7 +219,7 @@
           <div class="media-body col-12">
             <div class="media row" align="justify">
               <p>
-                Exercises &amp; solutions prepared by Nicolas Boumal, Christopher Criscitiello and Timon Miehling in 2023.
+                Exercises and solutions prepared with Christopher Criscitiello and Timon Miehling in 2023.
               </p>
               <p>
                 Click a <span style="background-color: antiquewhite;">question</span> to display a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer if available.
@@ -230,14 +227,13 @@
                 If no sketch is available but a detailed answer is, then clicking the question displays the detailed answer.
               </p>
               <!-- General info about how to show / hide answers and their sketches. -->
-              <div style="border-radius: 0px; background-color: white; padding: 10px; padding-bottom: 1px; margin: 10px; margin-top: 0px;">
-                <p>
-                  Sketches of answers: <a onclick="$('sketch').slideUp(400);">hide all</a>, <a onclick="$('sketch').slideDown(400);">show all</a>.
-                  Detailed answers: <a onclick="$('answer').slideUp(400);">hide all</a>, <a onclick="$('answer').slideDown(400);">show all</a>.
-                </p>
+              <div style="border-radius: 0px; background-color: white; padding: 10px; margin: 10px; margin-top: 0px;">
+                Sketches of answers: <a onclick="$('sketch').slideUp(400);">hide all</a>, <a onclick="$('sketch').slideDown(400);">show all</a>.
+                Detailed answers: <a onclick="$('answer').slideUp(400);">hide all</a>, <a onclick="$('answer').slideDown(400);">show all</a>.
               </div>
-            </div>
-            <div class="media row">
+              <p>
+                To load exercises below, go to the Lectures tab, and click "Exercises" next to a week's header.
+              </p>
               <!-- JQuery adds exercises in this div. -->
               <div id="theexercises"></div>
             </div>
@@ -557,13 +553,11 @@
                   </li>
                   <li>Bibliography</li>
                 </ul>
-                <br>
-                <br>
               </div>
             </div>
           </div>
         </div>
-        <div class="page-footer"><small class="pull-right">Last update: September 9, 2023.</small></div>
+        <div><small style="padding-top: 1cm; float: right;">Last update: September 9, 2023.</small></div>
       </div>
     </div>
   </div>
