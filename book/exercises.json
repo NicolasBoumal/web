@@ -48,7 +48,7 @@
         "source": "smoothdiff01.html"
     },
     "EmbedManif01": {
-        "title": "Smooth embedded submanifolds of smooth embedded subamnifolds",
+        "title": "Submanifolds of submanifolds",
         "week": 3.2,
         "topics": [102, 103],
         "source": "EmbedManif01.html"
