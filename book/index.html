@@ -261,16 +261,12 @@ A = randsym(n);
 problem.M = spherefactory(n);
 problem.cost = @(x) x'*A*x;
 problem.egrad = @(x) 2*A*x;  % or use autodiff: problem = manoptAD(problem);
-x = trustregions(problem);   % call an overly fancy algorithm
-</code>
-</pre>
+x = trustregions(problem);   % call an overly fancy algorithm</code></pre>
               </p>
               <p>
                 In Python, you could use JAX (among other backends) and write:
 <pre class="featurelesspre">
-<code class="language-python" id="softwarepythonexample">(example will be filled in soon)
-</code>
-</pre>           
+<code class="language-python" id="softwarepythonexample">(example will be filled in soon)</code></pre>           
               </p>
               <p>
                 In Julia, you might write:
@@ -281,9 +277,7 @@ A = Symmetric(rand(n,n))
 M = Sphere(n-1)
 f(E, x) = x'*A*x
 ∇f(E, x) = 2*A*x  # define the Euclidean gradient
-x = trust_regions(M, f, ∇f; objective_type=:Euclidean)
-</code>
-</pre>
+x = trust_regions(M, f, ∇f; objective_type=:Euclidean)</code></pre>
               </p>
             </div>
           </div>
