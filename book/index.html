@@ -271,9 +271,9 @@ x = trustregions(problem);   % call an overly fancy algorithm</code></pre>
               <p>
                 In Julia, you might write:
 <pre class="featurelesspre">
-<code class="language-julia" id="softwarejuliaexample">using Manopt, Manifolds, Random, LinearAlgebra
+<code class="language-julia" id="softwarejuliaexample">using Manopt, Manifolds, LinearAlgebra
 n = 42
-A = Symmetric(rand(n,n))
+A = Symmetric(randn(n, n))
 M = Sphere(n-1)
 f(E, x) = x'*A*x
 ∇f(E, x) = 2*A*x  # define the Euclidean gradient
