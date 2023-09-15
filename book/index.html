@@ -108,6 +108,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/atom-one-dark.min.css"> <!-- default.min.css -->
   <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/matlab.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/julia.min.js"></script>
   <style type="text/css">
     .featurelesspre {
       margin: 0;
@@ -254,10 +256,32 @@
               <p>
                 For example, in Matlab, to minimize the function $f(x) = x^\top A x$ on the sphere in $\Rn$, you can write:
 <pre class="featurelesspre">
-<code class="language-matlab" id="softwarematlabexample">problem.M = spherefactory(n);
+<code class="language-matlab" id="softwarematlabexample">n = 42;
+A = randsym(n);
+problem.M = spherefactory(n);
 problem.cost = @(x) x'*A*x;
 problem.egrad = @(x) 2*A*x;  % or use autodiff: problem = manoptAD(problem);
 x = trustregions(problem);   % call an overly fancy algorithm
+</code>
+</pre>
+              </p>
+              <p>
+                In Python, you could use JAX (among others) and write:
+<pre class="featurelesspre">
+<code class="language-python" id="softwarepythonexample">(example will be filled in soon)
+</code>
+</pre>           
+              </p>
+              <p>
+                In Julia, you might write:
+<pre class="featurelesspre">
+<code class="language-julia" id="softwarejuliaexample">using Manopt, Manifolds, Random, LinearAlgebra
+n = 42
+A = Symmetric(rand(n,n))
+M = Sphere(n-1)
+f(E, x) = x'*A*x
+∇f(E, x) = 2*A*x  # define the Euclidean gradient
+x = trust_regions(M, f, ∇f; objective_type=:Euclidean)
 </code>
 </pre>
               </p>
@@ -734,6 +758,8 @@ x = trustregions(problem);   % call an overly fancy algorithm
     $(function() {
 
       hljs.highlightElement(document.getElementById('softwarematlabexample'));
+      hljs.highlightElement(document.getElementById('softwarepythonexample'));
+      hljs.highlightElement(document.getElementById('softwarejuliaexample'));
 
       // This webpage is meant to be accessed via the URL  www.example.com/thisfile.html?list=exoid1,exoid2,exoid3
       const searchParams = new URLSearchParams(window.location.search);
