@@ -1,0 +1,9 @@
+p187, Section 8.3, last paragraph:
+
+OLD:
+
+Additionally, the constructed atlas yields the unique smooth structure on $\calM$ for which the atlas topology coincides with the subspace topology---see Section 8.14.
+
+NEW:
+
+Additionally, the constructed atlas yields the unique smooth structure on $\calM$ for which (a) the atlas topology coincides with the subspace topology and (b) the notion of smooth functions on $\calM$ is the same as judged through charts or as judged by the existence of smooth extensions---see Section 8.14.
