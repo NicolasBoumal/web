@@ -96,10 +96,10 @@
         "source": "ProdMet01.html"
     },
     "DistotedRd01": {
-        "title": "Distoted $\reals^d$",
+        "title": "Distorted $\reals^d$",
         "week": 4.4,
         "topics": [104, 105, 203],
-        "source": "DistotedRd01.html"
+        "source": "DistortedRd01.html"
     },
     "RGDprodsphere06": {
         "title": "RGD on product of spheres",
