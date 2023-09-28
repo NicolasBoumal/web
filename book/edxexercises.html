@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <!-- Meta -->
+  <title>Exercises for edX course optimization on smooth manifolds</title>
+  <meta name="description" content="Exercises from the additional material for book by Nicolas Boumal">
+  <meta name="author" content="Nicolas Boumal, Christopher Criscitiello, Timon Miehling">
+  <meta name="keywords" content="Optimization on manifolds,Riemannian optimization,Exercises,Manopt">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Bootstrap & CSS -->
+  <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+  <style type="text/css">
+    body {
+      padding-top: 0px;
+      padding-bottom: 20px;
+    }
+
+    ul {
+      list-style: disc;
+    }
+
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+      background-color: blanchedalmond;
+    }
+    
+    .number {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Font for IDs (000, 001, 101, ...) */
+    }
+
+    title {
+      display: block;
+      font-weight: bold;
+      font-size: 24px;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+      color: #333333;
+    }
+
+    answer {
+      visibility: hidden;
+      display: block;
+      margin: 10px;
+      padding: 10px;
+      background-color: #D9E2EF;
+    }
+
+    sketch {
+      visibility: hidden;
+      display: block;
+      margin: 10px;
+      padding: 10px;
+      background-color: lightgoldenrodyellow;
+    }
+
+    question {
+      display: block;
+      margin: 10px;
+      padding: 10px;
+      background-color: antiquewhite;
+    }
+
+    hint {
+      display: block;
+    }
+  </style>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+  <!-- https://highlightjs.org/#usage -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/atom-one-dark.min.css"> <!-- default.min.css -->
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/matlab.min.js"></script>
+  <style type="text/css">
+    .featurelesspre {
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+      border: 0;
+      background: none;
+    }
+    pre code.hljs {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 0;
+      border: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-9">
+        <!--
+        <div class="page-header" style="display: block">
+          <h1 style="display: block">Optimization on smooth manifolds: exercises<br>
+            <small style="font-size: 50%">Nicolas Boumal, Christopher Criscitiello and Timon Miehling</small>
+          </h1>
+        </div>
+        -->
+        <div>
+          <div>
+            <div class="media-body">
+
+              <div>
+
+                <!-- General info about how to show / hide answers and their sketches. -->
+                <div style="border-radius: 0px; background-color: white; padding: 10px; padding-bottom: 1px; margin: 10px; margin-top: 0px;"> <!-- onclick="$('.optional-instructions').slideToggle(400)" ; removed until can stop propagation of click event on "toggle" links-->
+                  <p class="optional-instructions">
+                    Click a <span style="background-color: antiquewhite;">question</span> to display a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer if available.
+                    Click a <span style="background-color: lightgoldenrodyellow;">sketch</span> of the answer to display a detailed <span style="background-color: lightsteelblue;">answer</span> if available.
+                    If no sketch is available but a detailed answer is, then clicking the question displays the detailed answer.
+                  </p>
+                  <p class="optional-instructions">
+                    Sketches of answers: <a onclick="$('sketch').slideUp(400);">hide all</a>, <a onclick="$('sketch').slideDown(400);">show all</a>.
+                    Detailed answers: <a onclick="$('answer').slideUp(400);">hide all</a>, <a onclick="$('answer').slideDown(400);">show all</a>.
+                  </p>
+                </div>
+
+                <!-- JQuery adds exercises in this div. -->
+                <div id="exercises"></div>
+
+              </div>
+
+            </div>
+            
+            <div class="page-footer"><br><small class="pull-right">More on <a href="https://www.nicolasboumal.net/book" target="_blank">the book webpage</a>.</small></div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // This executes once the DOM is ready for JQuery to manipulate it.
+        $(function() {
+
+          // This webpage is meant to be accessed via the URL  www.example.com/thisfile.html?list=exoid1,exoid2,exoid3
+          const searchParams = new URLSearchParams(window.location.search);
+          if(searchParams.has("list")) {
+
+            const exercises = searchParams.get("list").split(",");
+
+            exercises.forEach(exo => {
+              var exodiv = $('<div id="' + exo + '"></div>');
+              $("#exercises").append(exodiv);
+              $.ajax({
+                url: "exercises/" + exo + ".html",
+                dataType: "html",
+                success: function (data) {
+
+                  $('#' + exo).html(data);
+
+                  $('#' + exo + ' ' + 'hint').prepend("<em>Hint:</em> ");
+
+                  // Had to force the default display of <answer> tag to "block" to avoid it being "inline",
+                  // because slideToggle remembers the previous style and resets it to that.
+                  // But don't want the answers to appear initially on the page, so css sets them to be
+                  // invisible by default, and the next two lines take care of hiding them but with the proper
+                  // memory inside the slideToggle command.
+                  $('#' + exo + ' ' + 'answer').slideToggle(0);
+                  $('#' + exo + ' ' + 'answer').css({'visibility': 'visible'});
+                  $('#' + exo + ' ' + 'sketch').slideToggle(0);
+                  $('#' + exo + ' ' + 'sketch').css({'visibility': 'visible'});
+                  $('#' + exo + ' ' + 'question').on('click', function() { $(this).next('sketch, answer').slideToggle(400); });
+                  $('#' + exo + ' ' + 'sketch').on('click', function() { $(this).next('answer').slideToggle(400); });
+
+                  // Format Latex code
+                  MathJax.typeset();
+
+                  // Format Matlab code
+                  $('#' + exo + ' ' + 'matlab').each((counter, domobject) => {
+
+                    if(!domobject.hasAttribute('href')){  
+                      // The code appears as:   <matlab> code here </matlab>
+                      // The actual code inside must be extracted,
+                      // spurious newlines at the beginning and end must be removed,
+                      // and the remaining text must be included in a <pre><code> ... </code><pre> element.
+                      // Then, the <code> element must be passed to HighlightJS (not the pre), with the proper language class.
+                      // The resulting element is then substituted for the original one in the DOM.
+                      $newdomobject = $('<pre class="featurelesspre"></pre>')
+                                            .append('<code class="language-matlab">' + $(domobject).text().trim() + '</code>');
+                      hljs.highlightElement($newdomobject.get(0).firstChild);
+                      $(domobject).replaceWith($newdomobject);
+                    }
+                    else {
+                      // The code appears as:  <matlab href="file.m"> anything here is ignored </matlab>
+                      // We load the contents of the matlab file and show it, with a link.
+                      const matlabfilename = domobject.getAttribute('href');
+                      const matlabfileurl = "exercises/" + matlabfilename;
+                      $.ajax({
+                        url: matlabfileurl,
+                        dataType: "text",
+                        beforeSend: function() { $(domobject).html('Loading file <a target="_blank" href="' + matlabfileurl + '">' + matlabfilename + '</a>...'); },
+                        success: function (matlabfilecontents) {
+                          // position relative on pre is needed: https://stackoverflow.com/questions/10487292/position-absolute-but-relative-to-parent
+                          $newdomobject = $('<pre style="position: relative;" class="featurelesspre"></pre>')
+                                            .append('<code class="language-matlab">' + matlabfilecontents + '</code>')
+                                            .append('<small style="position: absolute; top: 0; right: 15px;">' +
+                                                    '<a style="color: white;" target="_blank" href="' + matlabfileurl + '">' + matlabfilename + ' &#11123;</a></small>');
+                          hljs.highlightElement($newdomobject.get(0).firstChild);
+                          $(domobject).replaceWith($newdomobject);
+                        }
+                      });
+                    }
+                    
+                  });
+
+                  // Format links to exercises, which appear as <a exercise="idoftheexercise">link text</a>.
+                  // If the linked exercise is in the current list, just jump there.
+                  // if it's not, then open a new page with just that exercise.
+                  $('#' + exo + ' ' + 'a[exercise]').each((counter, domobject) => {
+                    const linkedexercise = domobject.getAttribute('exercise');
+                    if(exercises.includes(linkedexercise)) {
+                      domobject.setAttribute('target', '_self');
+                      domobject.setAttribute('href', '#' + linkedexercise);
+                    }
+                    else {
+                      domobject.setAttribute('target', '_blank');
+                      domobject.setAttribute('href', 'exercises.html?list=' + linkedexercise);
+                    }
+                  });
+
+                }
+              });
+            });
+          }
+        });
+      </script>
+
+      <script src="mathjax-config.js" defer></script>
+      <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+    </div>
+  </div>
+</body>
+
+</html>
