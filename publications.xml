@@ -103,14 +103,14 @@
 	<type>journal</type>
 	<title>The effect of smooth parametrizations on nonconvex optimization landscapes</title>
 	<authors>E. Levin, J. Kileel and N. Boumal</authors>
-	<year>2022</year>
+	<year>2024</year>
 	<status>accepted for publication in Mathematical Programming</status>
 	<bibtex>
-@Article{levin2022lifts,
+@Article{levin2024lifts,
   author  = {Levin, E. and Kileel, J. and Boumal, N.},
   journal = {arXiv 2207.03512},
   title   = {The effect of smooth parametrizations on nonconvex optimization landscapes},
-  year    = {2022}
+  year    = {2024}
 }
 	</bibtex>
 	<comment></comment>
@@ -138,7 +138,7 @@
 	</bibtex>
 	<comment>Also on &lt;a href="https://www.biorxiv.org/content/early/2018/10/02/431080"&gt;bioRxiv&lt;/a&gt;.</comment>
 	<link>http://arxiv.org/abs/1810.00226</link>
-	<publisherlink></publisherlink>
+	<publisherlink>https://epubs.siam.org/doi/10.1137/22M1503828</publisherlink>
 	<tag>cryoem</tag>
 	<tag>MRA</tag>
 </object>
@@ -167,7 +167,7 @@
 	<title>Random Conical Tilt Reconstruction without Particle Picking in Cryo-electron Microscopy</title>
 	<authors>T.-Y. Lan, N. Boumal and A. Singer</authors>
 	<year>2022</year>
-	<status>to appear in Acta Crystallographica Section A</status>
+	<status>in Acta Crystallographica Section A</status>
 	<bibtex>
 @Article{lan2022RCT,
   author  = {Lan, T.-Y. and Boumal, N. and Singer, A.},
@@ -183,7 +183,7 @@
 	</bibtex>
 	<comment></comment>
 	<link>https://arxiv.org/abs/2101.03500</link>
-	<publisherlink></publisherlink>
+	<publisherlink>https://scripts.iucr.org/cgi-bin/paper?S2053273322005071</publisherlink>
 	<tag>cryoem</tag>
 </object>
 <object id="1025">
