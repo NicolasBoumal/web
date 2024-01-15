@@ -58,44 +58,6 @@
 	<publisherlink></publisherlink>
 	<tag>optimization</tag>
 </object>
-<object id="1029">
-	<type>preprint</type>
-	<title>The effect of smooth parametrizations on nonconvex optimization landscapes</title>
-	<authors>E. Levin, J. Kileel and N. Boumal</authors>
-	<year>2022</year>
-	<status>available on ArXiv</status>
-	<bibtex>
-@Article{levin2022lifts,
-  author  = {Levin, E. and Kileel, J. and Boumal, N.},
-  journal = {arXiv 2207.03512},
-  title   = {The effect of smooth parametrizations on nonconvex optimization landscapes},
-  year    = {2022}
-}
-	</bibtex>
-	<comment></comment>
-	<link>https://arxiv.org/abs/2207.03512</link>
-	<publisherlink></publisherlink>
-	<tag>optimization</tag>
-</object>
-<object id="1028">
-	<type>preprint</type>
-	<title>Computing second-order points under equality constraints: revisiting Fletcher's augmented Lagrangian</title>
-	<authors>F. Goyens, A. Eftekhari and N. Boumal</authors>
-	<year>2022</year>
-	<status>available on ArXiv</status>
-	<bibtex>
-@Article{goyens2022fletcher,
-  author  = {Goyens, F. and Eftekhari, A. and Boumal, N.},
-  journal = {arXiv 2204.01448},
-  title   = {Computing second-order points under equality constraints: revisiting {F}letcher's augmented {L}agrangian},
-  year    = {2022}
-}
-	</bibtex>
-	<comment></comment>
-	<link>https://arxiv.org/abs/2204.01448</link>
-	<publisherlink></publisherlink>
-	<tag>optimization</tag>
-</object>
 <object id="1009">
 	<type>preprint</type>
 	<title>A Riemannian low-rank method for optimization over semidefinite matrices with block-diagonal constraints</title>
@@ -117,18 +79,62 @@
 </object>
 
 
+
+<object id="1029">
+	<type>journal</type>
+	<title>The effect of smooth parametrizations on nonconvex optimization landscapes</title>
+	<authors>E. Levin, J. Kileel and N. Boumal</authors>
+	<year>2022</year>
+	<status>accepted for publication in Mathematical Programming</status>
+	<bibtex>
+@Article{levin2022lifts,
+  author  = {Levin, E. and Kileel, J. and Boumal, N.},
+  journal = {arXiv 2207.03512},
+  title   = {The effect of smooth parametrizations on nonconvex optimization landscapes},
+  year    = {2022}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2207.03512</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
+
+<object id="1028">
+	<type>journal</type>
+	<title>Computing second-order points under equality constraints: revisiting Fletcher's augmented Lagrangian</title>
+	<authors>F. Goyens, A. Eftekhari and N. Boumal</authors>
+	<year>2022</year>
+	<status>accepted for publication in the Journal of Optimization Theory and Applications</status>
+	<bibtex>
+@Article{goyens2022fletcher,
+  author  = {Goyens, F. and Eftekhari, A. and Boumal, N.},
+  journal = {arXiv 2204.01448},
+  title   = {Computing second-order points under equality constraints: revisiting {F}letcher's augmented {L}agrangian},
+  year    = {2022}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2204.01448</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="1017">
 	<type>journal</type>
 	<title>Toward single particle reconstruction without particle picking: Breaking the detection limit</title>
 	<authors>T. Bendory, N. Boumal, W. Leeb, E. Levin and A. Singer</authors>
-	<year>2022</year>
-	<status>to appear in SIAM Journal on Imaging Sciences</status>
+	<year>2023</year>
+	<status>in SIAM Journal on Imaging Sciences</status>
 	<bibtex>
-@article{bendory2022toward,
-  author  = {Bendory, T. and Boumal, N. and Leeb, W. and Levin, E. and Singer, A.},
-  title   = {Toward single particle reconstruction without particle picking: Breaking the detection limit},
+@article{bendory2023toward,
+  author = {Bendory, T. and Boumal, N. and Leeb, W. and Levin, E. and Singer, A.},
+  title = {Toward Single Particle Reconstruction without Particle Picking: Breaking the Detection Limit},
   journal = {SIAM Journal on Imaging Sciences},
-  year    = {2022}
+  volume = {16},
+  number = {2},
+  pages = {886--910},
+  year = {2023},
+  doi = {10.1137/22M1503828}
 }
 	</bibtex>
 	<comment>Also on &lt;a href="https://www.biorxiv.org/content/early/2018/10/02/431080"&gt;bioRxiv&lt;/a&gt;.</comment>
