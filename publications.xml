@@ -1159,6 +1159,22 @@ year = {2011}
 </object>
 
 
+
+
+<object id="3049">
+	<type>talk</type>
+	<title>Nonconvex just means not convex</title>
+	<with></with>
+	<event>
+		<venue>Journée SIGMA-MODE</venue>
+		<city>Paris</city><country>France</country>
+		<year>2024</year><month>1</month><day>30</day>
+		<video></video>
+	</event>
+	<comment></comment>
+	<abstract>A nonconvex optimization problem is just one that happens not to be convex. Whether that's bad or not depends on your aims and computational budget. Some problems turn out to have a fairly benign nonconvex landscape, or one that can be efficiently navigated by particular algorithms. It is useful to get a better understanding of such problems: What are they? How can we recognize them? Which algorithms are suitable for them? I will touch on aspects of those questions that we research in my group. This talk focuses on lifts for landscape analysis.</abstract>
+	<link>https://angkor.univ-mlv.fr/~vialard/conferences/sigmamode/</link>
+</object>
 <object id="3048">
 	<type>talk</type>
 	<title>Tutorial: optimization on smooth manifolds</title>
@@ -1286,8 +1302,7 @@ https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?
 </object>
 <object id="3041">
 	<type>talk</type>
-	<title>Riemannian geometry for numerical optimization: 
-the tools we use and some geometry questions that arise</title>
+	<title>Riemannian geometry for numerical optimization: the tools we use and some geometry questions that arise</title>
 	<with></with>
 	<event>
 		<venue>Lausanne-Jena seminar in geometry</venue>
