@@ -1172,8 +1172,8 @@ year = {2011}
 		<video></video>
 	</event>
 	<comment></comment>
-	<abstract>A nonconvex optimization problem is just one that happens not to be convex. Whether that's bad or not depends on your aims and computational budget. Some problems turn out to have a fairly benign nonconvex landscape, or one that can be efficiently navigated by particular algorithms. It is useful to get a better understanding of such problems: What are they? How can we recognize them? Which algorithms are suitable for them? I will touch on aspects of those questions that we research in my group. This talk focuses on lifts for landscape analysis.</abstract>
-	<link>https://angkor.univ-mlv.fr/~vialard/conferences/sigmamode/</link>
+	<abstract>A nonconvex optimization problem is just one that happens not to be convex. Whether that's bad or not depends on your aims and computational budget. Some problems turn out to have a fairly benign nonconvex landscape, or one that can be efficiently navigated by particular algorithms. It is useful to get a better understanding of such problems: What are they? How can we recognize them? Which algorithms are suitable for them? I will touch on aspects of those questions that we research in my group. This talk focuses on lifts for landscape analysis.  https://angkor.univ-mlv.fr/~vialard/conferences/sigmamode/</abstract>
+	<link>papers/Boumal_slides_SIGMA_MODE_2024.htm</link>
 </object>
 <object id="3048">
 	<type>talk</type>
