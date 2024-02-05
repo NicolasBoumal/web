@@ -1,0 +1,998 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>math.OC, math.NA updates on arXiv.org</title>
+    <link>https://rss.arxiv.org/rss/</link>
+    <description>math.OC, math.NA updates on the arXiv.org e-print archive.</description>
+    <atom:link href="https://rss.arxiv.org/rss/" rel="self" type="application/rss+xml"/>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Feb 2024 06:46:57 +0000</lastBuildDate>
+    <managingEditor>rss-help@arxiv.org</managingEditor>
+    <pubDate>Mon, 05 Feb 2024 00:00:00 -0500</pubDate>
+    <skipDays>
+      <day>Saturday</day>
+      <day>Sunday</day>
+    </skipDays>
+    <item>
+      <title>High order recovery of geometric interfaces from cell-average data</title>
+      <link>https://rss.arxiv.org/abs/2402.00946</link>
+      <description>We consider the problem of recovering characteristic functions $u:=\chi_\Omega$ from cell-average data on a coarse grid, and where $\Omega$ is a compact set of $\mathbb{R}^d$. This task arises in very different contexts such as image processing, inverse problems, and the accurate treatment of interfaces in finite volume schemes. While linear recovery methods are known to perform poorly, nonlinear strategies based on local reconstructions of the jump interface $\Gamma:=\partial\Omega$ by geometrically simpler interfaces may offer significant improvements. We study two main families of local reconstruction schemes, the first one based on nonlinear least-squares fitting, the second one based on the explicit computation of a polynomial-shaped curve fitting the data, which yields simpler numerical computations and high order geometric fitting. For each of them, we derive a general theoretical framework which allows us to control the recovery error by the error of best approximation up to a fixed multiplicative constant. Numerical tests in 2d illustrate the expected approximation order of these strategies. Several extensions are discussed, in particular the treatment of piecewise smooth interfaces with corners.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.00946v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Albert+Cohen">Albert Cohen</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Olga+Mula">Olga Mula</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Agust%5C%27in+Somacal">Agust\'in Somacal</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Analysis of weak Galerkin mixed FEM based on the velocity--pseudostress formulation for Navier--Stokes equation on polygonal meshes</title>
+      <link>https://rss.arxiv.org/abs/2402.00979</link>
+      <description>The present article introduces, mathematically analyzes, and numerically validates a new weak Galerkin (WG) mixed-FEM based on Banach spaces for the stationary Navier--Stokes equation in pseudostress-velocity formulation. More precisely, a modified pseudostress tensor, called $ \boldsymbol{\sigma} $, depending on the pressure, and the diffusive and convective terms has been introduced in the proposed technique, and a dual-mixed variational formulation has been derived where the aforementioned pseudostress tensor and the velocity, are the main unknowns of the system, whereas the pressure is computed via a post-processing formula. Thus, it is sufficient to provide a WG space for the tensor variable and a space of piecewise polynomial vectors of total degree at most 'k' for the velocity. Moreover, in order to define the weak discrete bilinear form, whose continuous version involves the classical divergence operator, the weak divergence operator as a well-known alternative for the classical divergence operator in a suitable discrete subspace is proposed. The well-posedness of the numerical solution is proven using a fixed-point approach and the discrete versions of the Babu\v{s}ka-Brezzi theory and the Banach-Ne\v{c}as-Babu\v{s}ka theorem. Additionally, an a priori error estimate is derived for the proposed method. Finally, several numerical results illustrating the method's good performance and confirming the theoretical rates of convergence are presented.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.00979v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Zeinab+Gharibi">Zeinab Gharibi</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Mehdi+Dehghan">Mehdi Dehghan</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Freight Traffic Assignment Methodology for Large-Scale Road-Rail Intermodal Networks</title>
+      <link>https://rss.arxiv.org/abs/2402.00983</link>
+      <description>A methodology is proposed for freight traffic assignment in large-scale road-rail intermodal networks. To obtain the user-equilibrium freight flows, a path-based assignment algorithm (gradient projection) was proposed. The developed methodology was tested on the U.S. intermodal network by using the 2007 freight demand for truck, rail, and road-rail intermodal from the Freight Analysis Framework, Version 3 (FAF3). The results indicate that the proposed methodology's projected flow pattern is similar to the FAF3 assignment. The proposed methodology can be used by transportation planners and decision makers to forecast freight flows and to evaluate strategic network expansion options.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.00983v1</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <arxiv:DOI>10.3141/2477-06</arxiv:DOI>
+      <arxiv:journal_reference>Transportation Research Record (2015), 2477(1), 50-57</arxiv:journal_reference>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Majbah+Uddin">Majbah Uddin</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Nathan+Huynh">Nathan Huynh</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Routing Model for Multicommodity Freight in an Intermodal Network under Disruptions</title>
+      <link>https://rss.arxiv.org/abs/2402.00992</link>
+      <description>This paper presents a mathematical model for the routing of multicommodity freight in an intermodal network under disruptions. A stochastic mixed-integer program was formulated to minimize not only operational costs of various modes and transfer costs at terminals but also penalty costs associated with unsatisfied demands. The sample average approximation algorithm was used to solve this challenging problem. The developed model was then applied to two networks-a hypothetical 15-node network and an actual intermodal network in the Gulf Coast, Southeastern, and Mid-Atlantic regions of the United States-to demonstrate its applicability with explicit consideration of disruptions at links, nodes, and terminals. The model results indicated that during disruptions, goods in the study region should be shipped by road-rail intermodal network because of the built-in redundancy of the freight transport network. Additionally, the routes generated by the model were found to be more robust than those typically used by freight carriers.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.00992v1</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <arxiv:DOI>10.3141/2548-09</arxiv:DOI>
+      <arxiv:journal_reference>Transportation Research Record (2016), 2548(1), 71-80</arxiv:journal_reference>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Majbah+Uddin">Majbah Uddin</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Nathan+Huynh">Nathan Huynh</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>An optimal advertising model with carryover effect and mean field terms</title>
+      <link>https://rss.arxiv.org/abs/2402.01015</link>
+      <description>We consider a class of optimal advertising problems under uncertainty for the introduction of a new product into the market, on the line of the seminal papers of Vidale and Wolfe, 1957, and Nerlove and Arrow, 1962. The main features of our model are that, on one side, we assume a carryover effect (i.e. the advertisement spending affects the goodwill with some delay); on the other side we introduce, in the state equation and in the objective, some mean field terms which take into account the presence of other agents. We take the point of view of a planner who optimizes the average profit of all agents, hence we fall into the family of the so-called "Mean Field Control" problems. The simultaneous presence of the carryover effect makes the problem infinite dimensional hence belonging to a family of problems which are very difficult in general and whose study started only very recently, see Cosso et Al, 2023. Here we consider, as a first step, a simple version of the problem providing the solutions in a simple case through a suitable auxiliary problem.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01015v1</guid>
+      <category>math.OC</category>
+      <category>math.PR</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Fausto+Gozzi">Fausto Gozzi</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Federica+Masiero">Federica Masiero</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Mauro+Rosestolato">Mauro Rosestolato</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Weakly Convex Regularisers for Inverse Problems: Convergence of Critical Points and Primal-Dual Optimisation</title>
+      <link>https://rss.arxiv.org/abs/2402.01052</link>
+      <description>Variational regularisation is the primary method for solving inverse problems, and recently there has been considerable work leveraging deeply learned regularisation for enhanced performance. However, few results exist addressing the convergence of such regularisation, particularly within the context of critical points as opposed to global minima. In this paper, we present a generalised formulation of convergent regularisation in terms of critical points, and show that this is achieved by a class of weakly convex regularisers. We prove convergence of the primal-dual hybrid gradient method for the associated variational problem, and, given a Kurdyka-Lojasiewicz condition, an $\mathcal{O}(\log{k}/k)$ ergodic convergence rate. Finally, applying this theory to learned regularisation, we prove universal approximation for input weakly convex neural networks (IWCNN), and show empirically that IWCNNs can lead to improved performance of learned adversarial regularisers for computed tomography (CT) reconstruction.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01052v1</guid>
+      <category>math.OC</category>
+      <category>cs.CV</category>
+      <category>cs.LG</category>
+      <category>stat.ML</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Zakhar+Shumaylov">Zakhar Shumaylov</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Jeremy+Budd">Jeremy Budd</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Subhadip+Mukherjee">Subhadip Mukherjee</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Carola-Bibiane+Sch%5C%22onlieb">Carola-Bibiane Sch\"onlieb</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>On the power of linear programming for K-means clustering</title>
+      <link>https://rss.arxiv.org/abs/2402.01061</link>
+      <description>In [SIAM J. Optim., 2022], the authors introduced a new linear programming (LP) relaxation for K-means clustering. In this paper, we further investigate the theoretical properties of this relaxation. We focus on K-means clustering with two clusters, which is an NP-hard problem. As evident from our numerical experiments with both synthetic and real-world data sets, the proposed LP relaxation is almost always tight; i.e. its optimal solution is feasible for the original nonconvex problem. To better understand this unexpected behaviour, we obtain sufficient conditions under which the LP relaxation is tight. We further analyze the sufficient conditions when the input is generated according to a popular stochastic model and obtain recovery guarantees for the LP relaxation. Finally, we construct a family of inputs for which the LP relaxation is never tight.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01061v1</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Antonio+De+Rosa">Antonio De Rosa</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Aida+Khajavirad">Aida Khajavirad</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>On the Hardness of Short and Sign-Compatible Circuit Walks</title>
+      <link>https://rss.arxiv.org/abs/2402.01066</link>
+      <description>The circuits of a polyhedron are a superset of its edge directions. Circuit walks, a sequence of steps along circuits, generalize edge walks and are "short" if they have few steps or small total length. Both interpretations of short are relevant to the theory and application of linear programming.
+  We study the hardness of several problems relating to the construction of short circuit walks. We establish that for a pair of vertices of a $0/1$-network-flow polytope, it is NP-complete to determine the length of a shortest circuit walk, even if we add the requirement that the walk must be sign-compatible. Our results also imply that determining the minimal number of circuits needed for a sign-compatible decomposition is NP-complete. Further, we show that it is NP-complete to determine the smallest total length (for $p$-norms $\lVert \cdot \rVert_p$, $1 &lt; p \leq \infty$) of a circuit walk between a pair of vertices. One method to construct a short circuit walk is to pick up a correct facet at each step, which generalizes a non-revisiting walk. We prove that it is NP-complete to determine if there is a circuit direction that picks up a correct facet; in contrast, this problem can be solved in polynomial time for TU polyhedra.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01066v1</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Steffen+Borgwardt">Steffen Borgwardt</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Weston+Grewe">Weston Grewe</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Sean+Kafer">Sean Kafer</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Jon+Lee">Jon Lee</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Laura+Sanit%5C%60a">Laura Sanit\`a</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Equilibrium preserving space in discontinuous Galerkin methods for hyperbolic balance laws</title>
+      <link>https://rss.arxiv.org/abs/2402.01131</link>
+      <description>In this paper, we develop a general framework for the design of the arbitrary high-order well-balanced discontinuous Galerkin (DG) method for hyperbolic balance laws, including the compressible Euler equations with gravitation and the shallow water equations with horizontal temperature gradients (referred to as the Ripa model). Not only the hydrostatic equilibrium including the more complicated isobaric steady state in Ripa system, but our scheme is also well-balanced for the exact preservation of the moving equilibrium state. The strategy adopted is to approximate the equilibrium variables in the DG piecewise polynomial space, rather than the conservative variables, which is pivotal in the well-balanced property. Our approach provides flexibility in combination with any consistent numerical flux, and it is free of the reference equilibrium state recovery and the special source term treatment. This approach enables the construction of a well-balanced method for non-hydrostatic equilibria in Euler systems. Extensive numerical examples such as moving or isobaric equilibria validate the high order accuracy and exact equilibrium preservation for various flows given by hyperbolic balance laws. With a relatively coarse mesh, it is also possible to capture small perturbations at or close to steady flow without numerical oscillations.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01131v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Jiahui+Zhang">Jiahui Zhang</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Yinhua+Xia">Yinhua Xia</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Yan+Xu">Yan Xu</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Nonconvex weighted variational metal artifacts removal via convergent primal-dual algorithms</title>
+      <link>https://rss.arxiv.org/abs/2402.01175</link>
+      <description>Direct reconstruction through filtered back projection engenders metal artifacts in polychromatic computed tomography images, attributed to highly attenuating implants, which further poses great challenges for subsequent image analysis. Inpainting the metal trace directly in the Radon domain for the extant variational method leads to strong edge diffusion and potential inherent artifacts. With normalization based on pre-segmentation, the inpainted outcome can be notably ameliorated. However, its reconstructive fidelity is heavily contingent on the precision of the presegmentation, and highly accurate segmentation of images with metal artifacts is non-trivial in actuality. In this paper, we propose a nonconvex weighted variational approach for metal artifact reduction. Specifically, in lieu of employing a binary function with zeros in the metal trace, an adaptive weight function is designed in the Radon domain, with zeros in the overlapping regions of multiple disjoint metals as well as areas of highly attenuated projections, and the inverse square root of the measured projection in other regions. A nonconvex L1-alpha L2 regularization term is incorporated to further enhance edge contrast, alongside a box-constraint in the image domain. Efficient first-order primal-dual algorithms, proven to be globally convergent and of low computational cost owing to the closed-form solution of all subproblems, are devised to resolve such a constrained nonconvex model. Both simulated and real experiments are conducted with comparisons to other variational algorithms, validating the superiority of the presented method. Especially in comparison to Reweighted JSR, our proposed algorithm can curtail the total computational cost to at most one-third, and for the case of inaccurate pre-segmentation, the recovery outcomes by the proposed algorithms are notably enhanced.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01175v1</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Lianfang+Wang">Lianfang Wang</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Zhangling+Chen">Zhangling Chen</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Zhifang+Liu">Zhifang Liu</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Yutong+Li">Yutong Li</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Yunsong+Zhao">Yunsong Zhao</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Hongwei+Li">Hongwei Li</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Huibin+Chang">Huibin Chang</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>MIQCQP reformulation of the ReLU neural networks Lipschitz constant estimation problem</title>
+      <link>https://rss.arxiv.org/abs/2402.01199</link>
+      <description>It is well established that to ensure or certify the robustness of a neural network, its Lipschitz constant plays a prominent role. However, its calculation is NP-hard. In this note, by taking into account activation regions at each layer as new constraints, we propose new quadratically constrained MIP formulations for the neural network Lipschitz estimation problem. The solutions of these problems give lower bounds and upper bounds of the Lipschitz constant and we detail conditions when they coincide with the exact Lipschitz constant.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01199v1</guid>
+      <category>math.OC</category>
+      <category>stat.ML</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Mohammed+SbihiENAC">Mohammed SbihiENAC</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Sophie+JanIMT">Sophie JanIMT</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Nicolas+CouellanIMT%2C+ENAC">Nicolas CouellanIMT, ENAC</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Solution of the Probabilistic Lambert's Problem: Optimal Transport Approach</title>
+      <link>https://rss.arxiv.org/abs/2402.01209</link>
+      <description>The deterministic variant of the Lambert's problem was posed by Lambert in the 18th century and its solution for conic trajectory has been derived by many, including Euler, Lambert, Lagrange, Laplace, Gauss and Legendre. The solution amounts to designing velocity control for steering a spacecraft from a given initial to a given terminal position subject to gravitational potential and flight time constraints. In recent years, a probabilistic variant of the Lambert's problem has received attention in the aerospace community where the endpoint position constraints are softened to endpoint joint probability distributions over the respective positions. Such probabilistic specifications account for the estimation errors, modeling uncertainties, etc. Building on a deterministic optimal control reformulation via analytical mechanics, we show that the probabilistic Lambert's problem is a generalized dynamic optimal mass transport problem where the gravitational potential plays the role of an additive state cost. This allows us to rigorously prove the existence-uniqueness of the solution for the probabilistic Lambert problem both with and without process noise. In the latter case, the problem and its solution correspond to a generalized Schr\"odinger bridge, much like how classical Schrodinger bridge can be seen as stochastic regularization of the optimal mass transport. We deduce the large deviation principle enjoyed by the Lambertian Schr\"odinger bridge. Leveraging these newfound connections, we design a computational algorithm to illustrate the nonparametric numerical solution of the probabilistic Lambert's problem.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01209v1</guid>
+      <category>math.OC</category>
+      <category>cs.SY</category>
+      <category>eess.SY</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Alexis+M.+H.+Teter">Alexis M. H. Teter</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Iman+Nodozi">Iman Nodozi</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Abhishek+Halder">Abhishek Halder</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Scattering-Passive Structure-Preserving Finite Element Method for the Boundary Controlled Transport Equation with a Moving Mesh</title>
+      <link>https://rss.arxiv.org/abs/2402.01232</link>
+      <description>A structure-preserving Finite Element Method (FEM) for the transport equation in one- and two-dimensional domains is presented. This Distributed Parameter System (DPS) has non-collocated boundary control and observation, and reveals a scattering-energy preserving structure. We show that the discretized model preserves the aforementioned structure from the original infinite-dimensional system. Moreover, we analyse the case of moving meshes for the one-dimensional case. The moving mesh requires less states than the fixed one to produce solutions with a comparable accuracy, and it can also reduce the overshoot and oscillations of Gibbs phenomenon produced when using the FEM. Numerical simulations are provided for the case of a one-dimensional transport equation with fixed and moving meshes.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01232v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <category>cs.SY</category>
+      <category>eess.SY</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/publicdomain/zero/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Jesus-Pablo+Toledo-Zucco">Jesus-Pablo Toledo-Zucco</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Denis+Matignon">Denis Matignon</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Charles+Poussot-Vassal">Charles Poussot-Vassal</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Deviated Fixed-route Microtransit: Design and Operations</title>
+      <link>https://rss.arxiv.org/abs/2402.01265</link>
+      <description>Microtransit offers opportunities to enhance urban mobility by combining the reliability of public transit and the flexibility of ride-sharing. This paper optimizes the design and operations of a deviated fixed-route microtransit system that relies on reference lines but is allowed to deviate in response to passenger demand. We formulate a Microtransit Network Design (MiND) model via two-stage stochastic optimization. The model features a tight second-stage formulation thanks to a subpath-based representation of microtransit operations in a load-expanded network, which optimizes on-demand deviations between checkpoint stops. We develop a double-decomposition algorithm combining Benders decomposition and subpath-based column generation armed with a tailored label-setting algorithm. Using real-world data from Manhattan, results suggest that our method scales to large practical instances, with up to 10-100 candidate lines and hundreds of stations. Comparisons with transit and ride-sharing benchmarks suggest that microtransit can provide win-win outcomes toward efficient mobility (high demand coverage, low operating costs, high level of service), equitable mobility (broad geographic reach) and sustainable mobility (limited environmental footprint). We provide an open-source implementation in an online repository to enable replication.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01265v1</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Kayla+Cummings">Kayla Cummings</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Alexandre+Jacquillat">Alexandre Jacquillat</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Bernardo+Martin-Iradi">Bernardo Martin-Iradi</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>A divergence-based condition to ensure quantile improvement in black-box global optimization</title>
+      <link>https://rss.arxiv.org/abs/2402.01277</link>
+      <description>Black-box global optimization aims at seeking for the minimizers of an objective function whose analytical form is not known. To do so, many state-of-the-art methods rely on sampling-based strategies, where sampling distributions are built in an iterative fashion, so that their mass concentrate where the objective function is low. Despite empirical success, the convergence of these methods remains difficult to show theoretically. In this work, we introduce a new framework, based on divergence-decrease conditions, to study and design black-box global optimization algorithms. We show that the information-geometric optimization approach fits within our framework, which yields a new proof for its convergence analysis. We also establish a quantile improvement result for two novel algorithms, one related with the cross-entropy approach with mixture models, and another using heavy-tailed sampling distributions.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01277v1</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-sa/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Thomas+Guilmeau">Thomas Guilmeau</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Emilie+Chouzenoux">Emilie Chouzenoux</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=V%5C%27ictor+Elvira">V\'ictor Elvira</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Induced Norm Analysis of Linear Systems for Nonnegative Input Signals</title>
+      <link>https://rss.arxiv.org/abs/2402.01288</link>
+      <description>This paper is concerned with the analysis of the $L_p\ (p\in[1,\infty), p=\infty)$ induced norms of continuous-time linear systems where input signals are restricted to be nonnegative. This norm is referred to as the $L_{p+}$ induced norm in this paper. It has been shown recently that the $L_{2+}$ induced norm is effective for the stability analysis of nonlinear feedback systems where the nonlinearity returns only nonnegative signals. However, the exact computation of the $L_{2+}$ induced norm is essentially difficult. To get around this difficulty, in the first part of this paper, we provide a copositive-programming-based method for the upper bound computation by capturing the nonnegativity of the input signals by copositive multipliers. Then, in the second part of the paper, we derive uniform lower bounds of the $L_{p+}\ (p\in[1,\infty), p=\infty)$ induced norms with respect to the standard $L_{p}$ induced norms that are valid for all linear systems including infinite-dimensional ones. For each linear system, we finally derive a computation method of the lower bounds of the $L_{2+}$ induced norm that are larger than (or equal to) the uniform one. The effectiveness of the upper/lower bound computation methods are fully illustrated by numerical examples.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01288v1</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Yoshio+Ebihara">Yoshio Ebihara</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Noboru+Sebe">Noboru Sebe</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Hayato+Waki">Hayato Waki</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Dimitri+Peaucelle">Dimitri Peaucelle</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Sophie+Tarbouriech">Sophie Tarbouriech</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Victor+Magron">Victor Magron</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Tomomichi+Hagiwara">Tomomichi Hagiwara</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Bi-Objective Optimization over the Efficient Set of Multi-Objective Integer Quadratic Problem</title>
+      <link>https://rss.arxiv.org/abs/2402.01310</link>
+      <description>In this paper, we present an exact algorithm for optimizing two linear fractional over the efficient set of a multi-objective integer quadratic problem. This type of problems arises when two decision-makers, such as firms, each have a preference function to optimize over the efficient set of a multi-objective problem. The algorithm employs a branch-and-cut approach, which involves: (1) exploring the solution space using a branch-and-bound strategy in the decision space, and (2) eliminating inefficient solutions using a cutting plane technique with efficient cuts constructed from the non-increasing directions of objective functions. Additionally, integral tests are incorporated to further ensure the efficiency of the obtained solutions.We present a comprehensive example, accompanied by a step-by-step resolution, to demonstrate the functioning of the algorithm.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01310v1</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ali+Bencheikh">Ali Bencheikh</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Mustapha+Moulai">Mustapha Moulai</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ilies+Badaoui">Ilies Badaoui</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>On the mean-field limit for Stein variational gradient descent: stability and multilevel approximation</title>
+      <link>https://rss.arxiv.org/abs/2402.01320</link>
+      <description>In this paper we propose and analyze a novel multilevel version of Stein variational gradient descent (SVGD). SVGD is a recent particle based variational inference method. For Bayesian inverse problems with computationally expensive likelihood evaluations, the method can become prohibitive as it requires to evolve a discrete dynamical system over many time steps, each of which requires likelihood evaluations at all particle locations. To address this, we introduce a multilevel variant that involves running several interacting particle dynamics in parallel corresponding to different approximation levels of the likelihood. By carefully tuning the number of particles at each level, we prove that a significant reduction in computational complexity can be achieved. As an application we provide a numerical experiment for a PDE driven inverse problem, which confirms the speed up suggested by our theoretical results.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01320v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <category>stat.ME</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Simon+Weissmann">Simon Weissmann</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Jakob+Zech">Jakob Zech</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>A note on some bounds between cubic spline interpolants depending on the boundary conditions: Application to a monotonicity property</title>
+      <link>https://rss.arxiv.org/abs/2402.01324</link>
+      <description>In the context of cubic splines, the authors have contributed to a recent paper dealing with the computation of nonlinear derivatives at the interior nodes so that monotonicity is enforced while keeping the order of approximation of the spline as high as possible. During the review process of that paper, one of the reviewers raised the question of whether a cubic spline interpolating monotone data could be forced to preserve monotonicity by imposing suitable values of the first derivative at the endpoints. Albeit a negative answer appears to be intuitive, we have found no results regarding this fact. In this short work we prove that the answer to that question is actually negative.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01324v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <arxiv:DOI>10.1016/j.apnum.2022.06.012</arxiv:DOI>
+      <arxiv:journal_reference>Applied Numerical Mathematics 181 (2022) 320-325</arxiv:journal_reference>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Antonio+Baeza">Antonio Baeza</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Dionisio+F.+Y%5C%27a%5C~nez">Dionisio F. Y\'a\~nez</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>A comparison study of supervised learning techniques for the approximation of high dimensional functions and feedback control</title>
+      <link>https://rss.arxiv.org/abs/2402.01402</link>
+      <description>Approximation of high dimensional functions is in the focus of machine learning and data-based scientific computing. In many applications, empirical risk minimisation techniques over nonlinear model classes are employed. Neural networks, kernel methods and tensor decomposition techniques are among the most popular model classes. We provide a numerical study comparing the performance of these methods on various high-dimensional functions with focus on optimal control problems, where the collection of the dataset is based on the application of the State-Dependent Riccati Equation.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01402v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Mathias+Oster">Mathias Oster</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Luca+Saluzzi">Luca Saluzzi</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Tizian+Wenzel">Tizian Wenzel</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Generalized framework for admissibility preserving Lax-Wendroff Flux Reconstruction for hyperbolic conservation laws with source terms</title>
+      <link>https://rss.arxiv.org/abs/2402.01442</link>
+      <description>Lax-Wendroff Flux Reconstruction (LWFR) is a single-stage, high order, quadrature free method for solving hyperbolic conservation laws. We perform a cell average decomposition of the LWFR scheme that is similar to the one used in the admissibility preserving framework of Zhang and Shu (2010). By performing a flux limiting of the time averaged numerical flux, the decomposition is used to obtain an admissibility preserving LWFR scheme. The admissibility preservation framework is further extended to a newly proposed extension of LWFR scheme for conservation laws with source terms. This is the first extension of the high order LW scheme that can handle source terms. The admissibility and accuracy are verified by numerical experiments on the Ten Moment equations of Livermore et al.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01442v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Arpit+Babbar">Arpit Babbar</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Praveen+Chandrashekar">Praveen Chandrashekar</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Divergence conforming finite element methods for flow-transport coupling with osmotic effects</title>
+      <link>https://rss.arxiv.org/abs/2402.01451</link>
+      <description>We propose a model for the coupling of flow and transport equations with porous membrane-type conditions on part of the boundary. The governing equations consist of the incompressible Navier--Stokes equations coupled with an advection-diffusion equation, and we employ a Lagrange multiplier to enforce the coupling between penetration velocity and transport on the membrane, while mixed boundary conditions are considered in the remainder of the boundary. We show existence and uniqueness of the continuous problem using a fixed-point argument. Next, an H(div)-conforming finite element formulation is proposed, and we address its a priori error analysis. The method uses an upwind approach that provides stability in the convection-dominated regime. We showcase a set of numerical examples validating the theory and illustrating the use of the new methods in the simulation of reverse osmosis processes.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01451v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Arbaz+Khan">Arbaz Khan</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=David+Mora">David Mora</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ricardo+Ru%5C%27iz-Baier">Ricardo Ru\'iz-Baier</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Jesus+Vellojin">Jesus Vellojin</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>On approximate implicit Taylor methods for ordinary differential equations</title>
+      <link>https://rss.arxiv.org/abs/2402.01473</link>
+      <description>An efficient approximate version of implicit Taylor methods for initial-value problems of systems of ordinary differential equations (ODEs) is introduced. The approach, based on an approximate formulation of Taylor methods, produces a method that requires less evaluations of the function that defines the ODE and its derivatives than the usual version. On the other hand, an efficient numerical solution of the equation that arises from the discretization by means of Newton's method is introduced for an implicit scheme of any order. Numerical experiments illustrate that the resulting algorithm is simpler to implement and has better performance than its exact counterpart.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01473v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <arxiv:DOI>10.1007/s40314-020-01356-8</arxiv:DOI>
+      <arxiv:journal_reference>Comput. Appl. Math. 39 (2020), no. 4, Paper No. 304, 21 pp</arxiv:journal_reference>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Antonio+Baeza">Antonio Baeza</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Raimund+B%5C%22urger">Raimund B\"urger</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Mar%5C%27ia+del+Carmen+Mart%5C%27i">Mar\'ia del Carmen Mart\'i</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Pep+Mulet">Pep Mulet</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=David+Zor%5C%27io">David Zor\'io</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Binomial-tree approximation for time-inconsistent stopping</title>
+      <link>https://rss.arxiv.org/abs/2402.01482</link>
+      <description>For time-inconsistent stopping in a one-dimensional diffusion setup, we investigate how to use discrete-time models to approximate the original problem. In particular, we consider the value function $V(\cdot)$ induced by all mild equilibria in the continuous-time problem, as well as the value $V^h(\cdot)$ associated with the equilibria in a binomial-tree setting with time step size $h$. We show that $\lim_{h\rightarrow 0+} V^h \leq V$. We provide an example showing that the exact convergence may fail. Then we relax the set of equilibria and consider the value $V^h_{\varepsilon}(\cdot)$ induced by $\varepsilon$-equilibria in the binomial-tree model. We prove that $\lim_{\varepsilon \rightarrow 0+}\lim_{h \rightarrow 0+}V^h_{\varepsilon} = V$.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01482v1</guid>
+      <category>math.OC</category>
+      <category>math.PR</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Erhan+Bayraktar">Erhan Bayraktar</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Zhenhua+Wang">Zhenhua Wang</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Zhou+Zhou">Zhou Zhou</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Conformal Inverse Optimization</title>
+      <link>https://rss.arxiv.org/abs/2402.01489</link>
+      <description>Inverse optimization has been increasingly used to estimate unknown parameters in an optimization model based on decision data. We show that such a point estimation is insufficient in a prescriptive setting where the estimated parameters are used to prescribe new decisions. The prescribed decisions may be low-quality and misaligned with human intuition and thus are unlikely to be adopted. To tackle this challenge, we propose conformal inverse optimization, which seeks to learn an uncertainty set for the unknown parameters and then solve a robust optimization model to prescribe new decisions. Under mild assumptions, we show that the suggested decisions can achieve bounded out-of-sample optimality gaps, as evaluated using both the ground-truth parameters and the decision maker's perception of the unknown parameters. Our method demonstrates strong empirical performance compared to classic inverse optimization.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01489v1</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Bo+Lin">Bo Lin</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Erick+Delage">Erick Delage</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Timothy+C.+Y.+Chan">Timothy C. Y. Chan</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Central WENO schemes through a global average weight</title>
+      <link>https://rss.arxiv.org/abs/2402.01526</link>
+      <description>A novel central weighted essentially non-oscillatory (central WENO; CWENO)-type scheme for the construction of high-resolution approximations to discontinuous solutions to hyperbolic systems of conservation laws is presented. This procedure is based on the construction of a global average weight using the whole set of Jiang-Shu smoothness indicators associated to every candidate stencil. By this device one does not to have to rely on ideal weights, which, under certain stencil arrangements and interpolating point locations, do not define a convex combination of the lower-degree interpolating polynomials of the corresponding sub-stencils. Moreover, this procedure also prevents some cases of accuracy loss near smooth extrema that are experienced by classical WENO and CWENO schemes. These properties result in a more flexible scheme that overcomes these issues, at the cost of only a few additional computations with respect to classical WENO schemes and with a smaller cost than classical CWENO schemes. Numerical examples illustrate that the proposed CWENO schemes outperform both the traditional WENO and the original CWENO schemes.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01526v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <arxiv:DOI>10.1007/s10915-018-0773-z</arxiv:DOI>
+      <arxiv:journal_reference>J Sci Comput 78, 499-530 (2019)</arxiv:journal_reference>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Antonio+Baeza">Antonio Baeza</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Raimund+B%5C%22urger">Raimund B\"urger</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Pep+Mulet">Pep Mulet</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=David+Zor%5C%27io">David Zor\'io</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>On the efficient computation of smoothness indicators for a class of WENO reconstructions</title>
+      <link>https://rss.arxiv.org/abs/2402.01583</link>
+      <description>Common smoothness indicators used in Weighted Essentially Non\--Os\-cil\-la\-to\-ry (WENO) reconstructions [Jiang, G.S., Shu, C.W.: Efficient implementation of {Weighted} {ENO} schemes, J.\ Comput.\ Phys. \textbf{126}, 202--228 (1996)] have quadratic cost with respect to the order. A set of novel smoothness indicators with linear cost of computation with respect to the order is presented. These smoothness indicators can be used in the context of schemes of the type introduced by Yamaleev and Carpenter [Yamaleev, N.K., Carpenter, M.H.: A systematic methodology to for constructing high-order energy stable WENO schemes. J. Comput. Phys. \textbf{228}(11), 4248-4272 (2009)]. The accuracy properties of the resulting non-linear weights are the same as those arising from using the traditional Jiang-Shu smoothness indicators in Yamaleev-Carpenter-type reconstructions. The increase of the efficiency and ease of implementation are shown.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01583v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <arxiv:DOI>10.1007/s10915-019-00974-7</arxiv:DOI>
+      <arxiv:journal_reference>J Sci Comput 80, 1240-1263 (2019)</arxiv:journal_reference>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Antonio+Baeza">Antonio Baeza</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Raimund+B%5C%22urger">Raimund B\"urger</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Pep+Mulet">Pep Mulet</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=David+Zor%5C%27io">David Zor\'io</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Market proliferation and the impact of locational complexity on network restructuring</title>
+      <link>https://rss.arxiv.org/abs/2402.01585</link>
+      <description>This manuscript investigates the problem of locational complexity, a type of complexity that emanates from a companys territorial strategy. Using an entropy-based measure for supply chain structural complexity ( pars-complexity), we develop a theoretical framework for analysing the effects of locational complexity on the profitability of service/manufacturing networks. The proposed model is used to shed light on the reasons why network restructuring strategies may result ineffective at reducing complexity-related costs. Our contribution is three-fold. First, we develop a novel mathematical formulation of a facility location problem that integrates the pars-complexity measure in the decision process. Second, using this model, we propose a decomposition of the penalties imposed by locational complexity into (a) an intrinsic cost of structural complexity; and (b) an avoidable cost of ignoring such complexity in the decision process. Such a decomposition is a valuable tool for identifying more effective measures for tackling locational complexity, moreover, it has allowed us to provide an explanation to the so-called addiction to growth within the locational context. Finally, we propose three alternative strategies that attempt to mimic different approaches used in practice by companies that have engaged in network restructuring processes. The impact of those approaches is evaluated through extensive numerical experiments. Our experimental results suggest that network restructuring efforts that are not accompanied by a substantial reduction on the target market of the company, fail at reducing complexity-related costs and, therefore, have a limited impact on the companys profitability.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01585v1</guid>
+      <category>math.OC</category>
+      <category>cs.DM</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <arxiv:DOI>10.1016/j.apm.2021.11.031</arxiv:DOI>
+      <arxiv:journal_reference>Applied Mathematical modelling 104 (2022)</arxiv:journal_reference>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=J.+M.+Pinar-P%5C%27erez">J. M. Pinar-P\'erez</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=D.+Ruiz-Hern%5C%27andez">D. Ruiz-Hern\'andez</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=M.+B.+C.+Menezes">M. B. C. Menezes</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Statistical Accuracy of Approximate Filtering Methods</title>
+      <link>https://rss.arxiv.org/abs/2402.01593</link>
+      <description>Estimating the statistics of the state of a dynamical system, from partial and noisy observations, is both mathematically challenging and finds wide application. Furthermore, the applications are of great societal importance, including problems such as probabilistic weather forecasting and prediction of epidemics. Particle filters provide a well-founded approach to the problem, leading to provably accurate approximations of the statistics. However these methods perform poorly in high dimensions. In 1994 the idea of ensemble Kalman filtering was introduced by Evensen, leading to a methodology that has been widely adopted in the geophysical sciences and also finds application to quite general inverse problems. However, ensemble Kalman filters have defied rigorous analysis of their statistical accuracy, except in the linear Gaussian setting. In this article we describe recent work which takes first steps to analyze the statistical accuracy of ensemble Kalman filters beyond the linear Gaussian setting. The subject is inherently technical, as it involves the evolution of probability measures according to a nonlinear and nonautonomous dynamical system; and the approximation of this evolution. It can nonetheless be presented in a fairly accessible fashion, understandable with basic knowledge of dynamical systems, numerical analysis and probability.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01593v1</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <category>math.DS</category>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-sa/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=J.+A.+Carrillo">J. A. Carrillo</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=F.+Hoffmann">F. Hoffmann</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=A.+M.+Stuart">A. M. Stuart</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=U.+Vaes">U. Vaes</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Hyperparameter tuning via trajectory predictions: Stochastic prox-linear methods in matrix sensing</title>
+      <link>https://rss.arxiv.org/abs/2402.01599</link>
+      <description>Motivated by the desire to understand stochastic algorithms for nonconvex optimization that are robust to their hyperparameter choices, we analyze a mini-batched prox-linear iterative algorithm for the problem of recovering an unknown rank-1 matrix from rank-1 Gaussian measurements corrupted by noise. We derive a deterministic recursion that predicts the error of this method and show, using a non-asymptotic framework, that this prediction is accurate for any batch-size and a large range of step-sizes. In particular, our analysis reveals that this method, though stochastic, converges linearly from a local initialization with a fixed step-size to a statistical error floor. Our analysis also exposes how the batch-size, step-size, and noise level affect the (linear) convergence rate and the eventual statistical estimation error, and we demonstrate how to use our deterministic predictions to perform hyperparameter tuning (e.g. step-size and batch-size selection) without ever running the method. On a technical level, our analysis is enabled in part by showing that the fluctuations of the empirical iterates around our deterministic predictions scale with the error of the previous iterate.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01599v1</guid>
+      <category>math.OC</category>
+      <category>math.ST</category>
+      <category>stat.ML</category>
+      <category>stat.TH</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Mengqi+Lou">Mengqi Lou</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Kabir+Aladin+Verchand">Kabir Aladin Verchand</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ashwin+Pananjady">Ashwin Pananjady</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>A Control Theoretical Approach to Mean Field Games and Associated Master Equations</title>
+      <link>https://rss.arxiv.org/abs/2402.01639</link>
+      <description>We prove the global-in-time well-posedness for a broad class of mean field game problems, which is beyond the special linear-quadratic setting, as long as the mean field sensitivity is not too large. Through the stochastic maximum principle, we adopt the FBSDE approach to investigate the unique existence of the corresponding equilibrium strategies. The corresponding FBSDEs are first solved locally in time, then by controlling the sensitivity of the backward solutions with respect to the initial condition via some suitable apriori estimates for the corresponding Jacobian flows, the global-in-time solution is warranted. Further analysis on these Jacobian flows will be discussed to establish the regularities, such as linear functional differentiability, of the respective value functions that leads to the ultimate classical well-posedness of the master equation on $\mathbb{R}^d$. To the best of our knowledge, it is the first article to deal with the mean field game problem, as well as its associated master equation, with general cost functionals having quadratic growth under the small mean field effect. In this current approach, we directly impose the structural conditions on the cost functionals, rather than conditions on the Hamiltonian. The advantages of this are threefold: (i) compared with imposing conditions on Hamiltonian, the structural conditions imposed in this work are easily verified, and less demanding on the regularity requirements of the cost functionals while solving the master equation; (ii) the displacement monotonicity is basically just a direct consequence of small mean field effect in the structural conditions; and (iii) when the mean field effect is not that small, we can still provide an accurate lifespan for the local existence. The method in this work can be readily extended to the case with nonlinear drift and non-separable cost functionals.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01639v1</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Alain+Bensoussan">Alain Bensoussan</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ho+Man+Tai">Ho Man Tai</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Tak+Kwong+Wong">Tak Kwong Wong</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Sheung+Chi+Phillip+Yam">Sheung Chi Phillip Yam</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Towards an Algebraic Framework For Approximating Functions Using Neural Network Polynomials</title>
+      <link>https://rss.arxiv.org/abs/2402.01058</link>
+      <description>We make the case for neural network objects and extend an already existing neural network calculus explained in detail in Chapter 2 on \cite{bigbook}. Our aim will be to show that, yes, indeed, it makes sense to talk about neural network polynomials, neural network exponentials, sine, and cosines in the sense that they do indeed approximate their real number counterparts subject to limitations on certain of their parameters, $q$, and $\varepsilon$. While doing this, we show that the parameter and depth growth are only polynomial on their desired accuracy (defined as a 1-norm difference over $\mathbb{R}$), thereby showing that this approach to approximating, where a neural network in some sense has the structural properties of the function it is approximating is not entire intractable.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01058v1</guid>
+      <category>cs.LG</category>
+      <category>cs.NA</category>
+      <category>cs.NE</category>
+      <category>math.CO</category>
+      <category>math.NA</category>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Shakil+Rafi">Shakil Rafi</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Joshua+Lee+Padgett">Joshua Lee Padgett</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ukash+Nakarmi">Ukash Nakarmi</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Long-time dynamics of stochastic wave equation with dissipative damping and its full discretization: exponential ergodicity and strong law of large numbers</title>
+      <link>https://rss.arxiv.org/abs/2402.01137</link>
+      <description>For stochastic wave equation, when the dissipative damping is a non-globally Lipschitz function of the velocity, there are few results on the long-time dynamics, in particular, the exponential ergodicity and strong law of large numbers, for the equation and its numerical discretization to our knowledge. Focus on this issue, the main contributions of this paper are as follows. First, based on constructing novel Lyapunov functionals, we show the unique invariant measure and exponential ergodicity of the underlying equation and its full discretization. Second, the error estimates of invariant measures both in Wasserstein distance and in the weak sense are obtained. Third, the strong laws of large numbers of the equation and the full discretization are obtained, which states that the time averages of the exact and numerical solutions are shown to converge to the ergodic limit almost surely.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01137v1</guid>
+      <category>math.PR</category>
+      <category>cs.NA</category>
+      <category>math.NA</category>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Meng+Cai">Meng Cai</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Chuchu+Chen">Chuchu Chen</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Jialin+Hong">Jialin Hong</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Tau+Zhou">Tau Zhou</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Feedback stabilization and observer design for sterile insect technique model</title>
+      <link>https://rss.arxiv.org/abs/2402.01221</link>
+      <description>This paper focuses on the feedback global stabilization and observer construction for a sterile insect technique model. The Sterile Insect Technique (SIT) is one of the most ecological methods for controlling insect pests responsible for worldwide crop destruction and disease transmission. In this work, we construct a feedback law that globally asymptotically stabilizes a SIT model at extinction equilibrium. Since the application of this type of control requires the measurement of different states of the target insect population, and in practice, some states are more difficult and very expensive to measure than others, it is important to know how to construct a state estimator which from a few measured states, estimates the other ones as the one we build in the second part of our work. In the last part of our work, we show that we can apply the feedback control with estimated states to stabilize the full system.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01221v1</guid>
+      <category>math.DS</category>
+      <category>math.OC</category>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Kala+Agbo+BidiLJLL">Kala Agbo BidiLJLL</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Convergence rates for Backward SDEs driven by L\'evy processes</title>
+      <link>https://rss.arxiv.org/abs/2402.01337</link>
+      <description>We consider L\'evy processes that are approximated by compound Poisson processes and, correspondingly, BSDEs driven by L\'evy processes that are approximated by BSDEs driven by their compound Poisson approximations. We are interested in the rate of convergence of the approximate BSDEs to the ones driven by the L\'evy processes. The rate of convergence of the L\'evy processes depends on the Blumenthal--Getoor index of the process. We derive the rate of convergence for the BSDEs in the $\mathbb L^2$-norm and in the Wasserstein distance, and show that, in both cases, this equals the rate of convergence of the corresponding L\'evy process, and thus is optimal.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01337v1</guid>
+      <category>math.PR</category>
+      <category>math.OC</category>
+      <category>q-fin.MF</category>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Chenguang+Liu">Chenguang Liu</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Antonis+Papapantoleon">Antonis Papapantoleon</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Alexandros+Saplaouras">Alexandros Saplaouras</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>SMLP: Symbolic Machine Learning Prover</title>
+      <link>https://rss.arxiv.org/abs/2402.01415</link>
+      <description>Symbolic Machine Learning Prover (SMLP) is a tool and a library for system exploration based on data samples obtained by simulating or executing the system on a number of input vectors. SMLP aims at exploring the system based on this data by taking a grey-box approach: SMLP combines statistical methods of data exploration with building and exploring machine learning models in close feedback loop with the system's response, and exploring these models by combining probabilistic and formal methods. SMLP has been applied in industrial setting at Intel for analyzing and optimizing hardware designs at the analog level. SMLP is a general purpose tool and can be applied to systems that can be sampled and modeled by machine learning models.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01415v1</guid>
+      <category>cs.LG</category>
+      <category>cs.AI</category>
+      <category>cs.LO</category>
+      <category>cs.SC</category>
+      <category>math.OC</category>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Franz+Brau%7B%5Css%7De">Franz Brau{\ss}e</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Zurab+Khasidashvili">Zurab Khasidashvili</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Konstantin+Korovin">Konstantin Korovin</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Enhancing Stochastic Gradient Descent: A Unified Framework and Novel Acceleration Methods for Faster Convergence</title>
+      <link>https://rss.arxiv.org/abs/2402.01515</link>
+      <description>Based on SGD, previous works have proposed many algorithms that have improved convergence speed and generalization in stochastic optimization, such as SGDm, AdaGrad, Adam, etc. However, their convergence analysis under non-convex conditions is challenging. In this work, we propose a unified framework to address this issue. For any first-order methods, we interpret the updated direction $g_t$ as the sum of the stochastic subgradient $\nabla f_t(x_t)$ and an additional acceleration term $\frac{2|\langle v_t, \nabla f_t(x_t) \rangle|}{\|v_t\|_2^2} v_t$, thus we can discuss the convergence by analyzing $\langle v_t, \nabla f_t(x_t) \rangle$. Through our framework, we have discovered two plug-and-play acceleration methods: \textbf{Reject Accelerating} and \textbf{Random Vector Accelerating}, we theoretically demonstrate that these two methods can directly lead to an improvement in convergence rate.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01515v1</guid>
+      <category>cs.LG</category>
+      <category>cs.AI</category>
+      <category>math.OC</category>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Yichuan+Deng">Yichuan Deng</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Zhao+Song">Zhao Song</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Chiwun+Yang">Chiwun Yang</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Understanding Adam Optimizer via Online Learning of Updates: Adam is FTRL in Disguise</title>
+      <link>https://rss.arxiv.org/abs/2402.01567</link>
+      <description>Despite the success of the Adam optimizer in practice, the theoretical understanding of its algorithmic components still remains limited. In particular, most existing analyses of Adam show the convergence rate that can be simply achieved by non-adative algorithms like SGD. In this work, we provide a different perspective based on online learning that underscores the importance of Adam's algorithmic components. Inspired by Cutkosky et al. (2023), we consider the framework called online learning of updates, where we choose the updates of an optimizer based on an online learner. With this framework, the design of a good optimizer is reduced to the design of a good online learner. Our main observation is that Adam corresponds to a principled online learning framework called Follow-the-Regularized-Leader (FTRL). Building on this observation, we study the benefits of its algorithmic components from the online learning perspective.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2402.01567v1</guid>
+      <category>cs.LG</category>
+      <category>math.OC</category>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Kwangjun+Ahn">Kwangjun Ahn</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Zhiyu+Zhang">Zhiyu Zhang</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Yunbum+Kook">Yunbum Kook</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Yan+Dai">Yan Dai</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>The ratio-cut polytope and K-means clustering</title>
+      <link>https://rss.arxiv.org/abs/2006.15225</link>
+      <description>We introduce the ratio-cut polytope defined as the convex hull of ratio-cut vectors corresponding to all partitions of $n$ points in $\mathbb R^m$ into at most $K$ clusters. This polytope is closely related to the convex hull of the feasible region of a number of clustering problems such as K-means clustering and spectral clustering. We study the facial structure of the ratio-cut polytope and derive several types of facet-defining inequalities. We then consider the problem of K-means clustering and introduce a novel linear programming (LP) relaxation for it. Subsequently, we focus on the case of two clusters and derive sufficient conditions under which the proposed LP relaxation recovers the underlying clusters exactly. Namely, we consider the stochastic ball model, a popular generative model for K-means clustering, and we show that if the separation distance between cluster centers satisfies $\Delta &gt; 1+\sqrt 3$, then the LP relaxation recovers the planted clusters with high probability. This is a major improvement over the only existing recovery guarantee for an LP relaxation of K-means clustering stating that recovery is possible with high probability if and only if $\Delta &gt; 4$. Our numerical experiments indicate that the proposed LP relaxation significantly outperforms a popular semidefinite programming relaxation in recovering the planted clusters.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2006.15225v3</guid>
+      <category>math.OC</category>
+      <category>math.AP</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <arxiv:journal_reference>SIAM Journal on Optimization. Volume 32, Issue 1, Pages 173-203, 2022</arxiv:journal_reference>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Antonio+De+Rosa">Antonio De Rosa</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Aida+Khajavirad">Aida Khajavirad</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Wavenumber-explicit stability and convergence analysis of hp finite element discretizations of Helmholtz problems in piecewise smooth media</title>
+      <link>https://rss.arxiv.org/abs/2209.03601</link>
+      <description>We present a wavenumber-explicit convergence analysis of the hp finite element method applied to a class of heterogeneous Helmholtz problems with piecewise analytic coefficients at large wavenumber $k$. Our analysis covers the heterogeneous Helmholtz equation with Robin, exact Dirichlet-to-Neumann, and second order absorbing boundary conditions, as well as perfectly matched layers.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2209.03601v2</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <category>math.AP</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=M.+Bernkopf">M. Bernkopf</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=T.+Chaumont-Frelet">T. Chaumont-Frelet</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=J.+M.+Melenk">J. M. Melenk</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Approximation of Algebraic Riccati Equations with Generators of Noncompact Semigroups</title>
+      <link>https://rss.arxiv.org/abs/2209.04769</link>
+      <description>In this work, we demonstrate that the Bochner integral representation of the Algebraic Riccati Equations (ARE) are well-posed without any compactness assumptions on the coefficient and semigroup operators. From this result, we then are able to determine that, under some assumptions, the solution to the Galerkin approximations to these equations are convergent to the infinite dimensional solution. Going further, we apply this general result to demonstrate that the finite element approximation to the ARE are optimal for weakly damped wave semigroup processes in the $H^1(\Omega) \times L^2(\Omega)$ norm. Optimal convergence rates of the functional gain for a weakly damped wave optimal control system in both the $H^1(\Omega) \times L^2(\Omega)$ and $L^2(\Omega)\times L^2(\Omega)$ norms are demonstrated in the numerical examples.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2209.04769v5</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <category>math.OC</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=James+Cheung">James Cheung</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>A sparse spectral method for fractional differential equations in one-spatial dimension</title>
+      <link>https://rss.arxiv.org/abs/2210.08247</link>
+      <description>We develop a sparse spectral method for a class of fractional differential equations, posed on $\mathbb{R}$, in one dimension. These equations can include sqrt-Laplacian, Hilbert, derivative and identity terms. The numerical method utilizes a basis consisting of weighted Chebyshev polynomials of the second kind in conjunction with their Hilbert transforms. The former functions are supported on $[-1,1]$ whereas the latter have global support. The global approximation space can contain different affine transformations of the basis, mapping $[-1,1]$ to other intervals. Remarkably, not only are the induced linear systems sparse, but the operator decouples across the different affine transformations. Hence, the solve reduces to solving $K$ independent sparse linear systems of size $\mathcal{O}(n)\times \mathcal{O}(n)$, with $\mathcal{O}(n)$ nonzero entries, where $K$ is the number of different intervals and $n$ is the highest polynomial degree contained in the sum space. This results in an $\mathcal{O}(n)$ complexity solve. Applications to fractional heat and wave equations are considered.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2210.08247v2</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ioannis+P.+A.+Papadopoulos">Ioannis P. A. Papadopoulos</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Sheehan+Olver">Sheehan Olver</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Semi-Lagrangian Finite-Element Exterior Calculus for Incompressible Flows</title>
+      <link>https://rss.arxiv.org/abs/2301.04923</link>
+      <description>We develop a mesh-based semi-Lagrangian discretization of the time-dependent incompressible Navier-Stokes equations with free boundary conditions recast as a non-linear transport problem for a momentum 1-form. A linearly implicit fully discrete version of the scheme enjoys excellent stability properties in the vanishing viscosity limit and is applicable to inviscid incompressible Euler flows. Conservation of energy and helicity are enforced separately.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2301.04923v2</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-sa/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Wouter+Tonnon">Wouter Tonnon</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ralf+Hiptmair">Ralf Hiptmair</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Finite element approximation for uniformly elliptic linear PDE of second order in nondivergence form</title>
+      <link>https://rss.arxiv.org/abs/2302.04202</link>
+      <description>This paper proposes a novel technique for the approximation of strong solutions $u \in C(\overline{\Omega}) \cap W^{2,n}_\mathrm{loc}(\Omega)$ to uniformly elliptic linear PDE of second order in nondivergence form with continuous leading coefficient in nonsmooth domains by finite element methods. These solutions satisfy the Alexandrov-Bakelman-Pucci (ABP) maximum principle, which provides an a~posteriori error control for $C^1$ conforming approximations. By minimizing this residual, we obtain an approximation to the solution $u$ in the $L^\infty$ norm. Although discontinuous functions do not satisfy the ABP maximum principle, this approach extends to nonconforming FEM as well thanks to well-established enrichment operators. Convergence of the proposed FEM is established for uniform mesh-refinements. The built-in a~posteriori error control (even for inexact solve) can be utilized in adaptive computations for the approximation of singular solutions, which performs superiorly in the numerical benchmarks in comparison to the uniform mesh-refining algorithm.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2302.04202v2</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-sa/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ngoc+Tien+Tran">Ngoc Tien Tran</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Peak Value-at-Risk Estimation of Stochastic Processes using Occupation Measures</title>
+      <link>https://rss.arxiv.org/abs/2303.16064</link>
+      <description>This paper formulates algorithms to upper-bound the maximum Value-at-Risk (VaR) of a state function along trajectories of stochastic processes. The VaR is upper bounded by two methods: minimax tail-bounds (Cantelli/Vysochanskij-Petunin) and Expected Shortfall/Conditional Value-at-Risk (ES). Tail-bounds lead to a infinite-dimensional Second Order Cone Program (SOCP) in occupation measures, while the ES approach creates a Linear Program (LP) in occupation measures. Under compactness and regularity conditions, there is no relaxation gap between the infinite-dimensional convex programs and their nonconvex optimal-stopping stochastic problems. Upper-bounds on the SOCP and LP are obtained by a sequence of semidefinite programs through the moment-Sum-of-Squares hierarchy. The VaR-upper-bounds are demonstrated on example continuous-time and discrete-time polynomial stochastic processes.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2303.16064v4</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Jared+Miller">Jared Miller</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Matteo+Tacchi">Matteo Tacchi</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Mario+Sznaier">Mario Sznaier</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ashkan+Jasour">Ashkan Jasour</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>An efficient solver for large-scale onshore wind farm siting including cable routing</title>
+      <link>https://rss.arxiv.org/abs/2304.09658</link>
+      <description>Existing planning approaches for onshore wind farm siting and network integration often do not meet minimum cost solutions or social and environmental considerations. In this paper, we develop an approach for the integrated layout and cable routing problem of onshore wind farm planning using the Quota Steiner tree problem. Applying a novel transformation on a known directed cut formulation, reduction techniques, and heuristics, we design an exact solver that makes large problem instances solvable and outperforms generic MIP solvers. Although our case studies in selected regions of Germany show large trade-offs between the objective criteria of cost and landscape impact, small burdens on one criterion can significantly improve the other criteria. In addition, we demonstrate that contrary to many approaches for exclusive turbine siting, grid integration must be simultaneously optimized in order to avoid excessive costs or landscape impacts in the course of a wind farm project. Our novel problem formulation and the developed solver can assist planners in decision making and help optimize wind farms in large regions in the future.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2304.09658v2</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Jaap+Pedersen">Jaap Pedersen</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Jann+Michael+Weinand">Jann Michael Weinand</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Chloi+Syranidou">Chloi Syranidou</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Daniel+Rehfeldt">Daniel Rehfeldt</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>An Accelerated Proximal Alternating Direction Method of Multipliers for Optimal Decentralized Control of Uncertain Systems</title>
+      <link>https://rss.arxiv.org/abs/2304.11037</link>
+      <description>To ensure the system stability of the $\bf{\mathcal{H}_{2}}$-guaranteed cost optimal decentralized control problem (ODC), an approximate semidefinite programming (SDP) problem is formulated based on the sparsity of the gain matrix of the decentralized controller. To reduce data storage and improve computational efficiency, the SDP problem is vectorized into a conic programming (CP) problem using the Kronecker product. Then, a proximal alternating direction method of multipliers (PADMM) is proposed to solve the dual of the resulted CP. By linking the (generalized) PADMM with the (relaxed) proximal point algorithm, we are able to accelerate the proposed PADMM via the Halpern fixed-point iterative scheme. This results in a fast convergence rate for the Karush-Kuhn-Tucker (KKT) residual along the sequence generated by the accelerated algorithm. Numerical experiments further demonstrate that the accelerated PADMM outperforms both the well-known CVXOPT and SCS algorithms for solving the large-scale CP problems arising from $\bf{\mathcal{H}_{2}}$-guaranteed cost ODC problems.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2304.11037v2</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Bo+Yang">Bo Yang</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Xinyuan+Zhao">Xinyuan Zhao</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Xudong+Li">Xudong Li</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Defeng+Sun">Defeng Sun</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>On the Identification and Optimization of Nonsmooth Superposition Operators in Semilinear Elliptic PDEs</title>
+      <link>https://rss.arxiv.org/abs/2306.05185</link>
+      <description>We study an infinite-dimensional optimization problem that aims to identify the Nemytskii operator in the nonlinear part of a prototypical semilinear elliptic partial differential equation (PDE) which minimizes the distance between the PDE-solution and a given desired state. In contrast to previous works, we consider this identification problem in a low-regularity regime in which the function inducing the Nemytskii operator is a-priori only known to be an element of $H^1_{loc}(\mathbb{R})$. This makes the studied problem class a suitable point of departure for the rigorous analysis of training problems for learning-informed PDEs in which an unknown superposition operator is approximated by means of a neural network with nonsmooth activation functions (ReLU, leaky-ReLU, etc.). We establish that, despite the low regularity of the controls, it is possible to derive a classical stationarity system for local minimizers and to solve the considered problem by means of a gradient projection method. The convergence of the resulting algorithm is proven in the function space setting. It is also shown that the established first-order necessary optimality conditions imply that locally optimal superposition operators share various characteristic properties with commonly used activation functions: They are always sigmoidal, continuously differentiable away from the origin, and typically possess a distinct kink at zero. The paper concludes with numerical experiments which confirm the theoretical findings.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2306.05185v2</guid>
+      <category>math.OC</category>
+      <category>cs.LG</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Constantin+Christof">Constantin Christof</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Julia+Kowalczyk">Julia Kowalczyk</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Euler-Maruyama approximations of the stochastic heat equation on the sphere</title>
+      <link>https://rss.arxiv.org/abs/2307.07564</link>
+      <description>The stochastic heat equation on the sphere driven by additive isotropic Wiener noise is approximated by a spectral method in space and forward and backward Euler-Maruyama schemes in time. The spectral approximation is based on a truncation of the series expansion with respect to the spherical harmonic functions. Optimal strong convergence rates for a given regularity of the initial condition and driving noise are derived for the Euler-Maruyama methods. Besides strong convergence, convergence of the expectation and second moment is shown, where the approximation of the second moment converges with twice the strong rate. Numerical simulations confirm the theoretical results.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2307.07564v3</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <category>math.PR</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <arxiv:DOI>10.3934/jcd.2023012</arxiv:DOI>
+      <arxiv:journal_reference>Journal of Computational Dynamics, 2024, 11(1): 23-42</arxiv:journal_reference>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Annika+Lang">Annika Lang</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ioanna+Motschan-Armen">Ioanna Motschan-Armen</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Feedback and Open-Loop Nash Equilibria for LQ Infinite-Horizon Discrete-Time Dynamic Games</title>
+      <link>https://rss.arxiv.org/abs/2307.14898</link>
+      <description>We consider dynamic games defined over an infinite horizon, characterized by linear, discrete-time dynamics and quadratic cost functionals. Considering such linear-quadratic (LQ) dynamic games, we focus on their solutions in terms Nash equilibrium strategies. Both Feedback (F-NE) and Open-Loop (OL-NE) Nash equilibrium solutions are considered. The contributions of the paper are threefold. First, our detailed study reveals some interesting structural insights in relation to F-NE solutions. Second, as a stepping stone towards our consideration of OL-NE strategies, we consider a specific infinite-horizon discrete-time (single-player) optimal control problem, wherein the dynamics are influenced by a known exogenous input and draw connections between its solution obtained via Dynamic Programming and Pontryagin's Minimum Principle. Finally, we exploit the latter result to provide a characterization of OL-NE strategies of the class of infinite-horizon dynamic games. The results and key observations made throughout the paper are illustrated via a numerical example.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2307.14898v2</guid>
+      <category>math.OC</category>
+      <category>cs.SY</category>
+      <category>eess.SY</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=A.+Monti">A. Monti</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=B.+Nortmann">B. Nortmann</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=T.+Mylvaganam">T. Mylvaganam</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=M.+Sassano">M. Sassano</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>On the Approximation of Operator-Valued Riccati Equations in Hilbert Spaces</title>
+      <link>https://rss.arxiv.org/abs/2308.10130</link>
+      <description>In this work, we present an abstract theory for the approximation of operator-valued Riccati equations posed on Hilbert spaces. It is demonstrated here, under the assumption of compactness in the coefficient operators, that the error of the approximate solution to the operator-valued Riccati equation is bounded above by the approximation error of the governing semigroup. One significant outcome of this result is the correct prediction of optimal convergence for finite element approximations of the operator-valued Riccati equations for when the governing semigroup involves parabolic, as well as hyperbolic processes. We derive the abstract theory for the time-dependent and time-independent operator-valued Riccati equations in the first part of this work. In the second part, we prove optimal convergence rates for the finite element approximation of the functional gain associated with model one-dimensional weakly damped wave and thermal LQR control systems. These theoretical claims are then corroborated with computational evidence.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2308.10130v4</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <category>math.OC</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=James+Cheung">James Cheung</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Randomized Forward Mode of Automatic Differentiation For Optimization Algorithms</title>
+      <link>https://rss.arxiv.org/abs/2310.14168</link>
+      <description>We present a randomized forward mode gradient (RFG) as an alternative to backpropagation. RFG is a random estimator for the gradient that is constructed based on the directional derivative along a random vector. The forward mode automatic differentiation (AD) provides an efficient computation of RFG. The probability distribution of the random vector determines the statistical properties of RFG. Through the second moment analysis, we found that the distribution with the smallest kurtosis yields the smallest expected relative squared error. By replacing gradient with RFG, a class of RFG-based optimization algorithms is obtained. By focusing on gradient descent (GD) and Polyak's heavy ball (PHB) methods, we present a convergence analysis of RFG-based optimization algorithms for quadratic functions. Computational experiments are presented to demonstrate the performance of the proposed algorithms and verify the theoretical findings.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2310.14168v3</guid>
+      <category>math.OC</category>
+      <category>cs.AI</category>
+      <category>cs.LG</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Khemraj+Shukla">Khemraj Shukla</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Yeonjong+Shin">Yeonjong Shin</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>High-dimensional mixed-categorical Gaussian processes with application to multidisciplinary design optimization for a green aircraft</title>
+      <link>https://rss.arxiv.org/abs/2311.06130</link>
+      <description>Recently, there has been a growing interest in mixed-categorical metamodels based on Gaussian Process (GP) for Bayesian optimization. In this context, different approaches can be used to build the mixed-categorical GP. Many of these approaches involve a high number of hyperparameters; in fact, the more general and precise the strategy used to build the GP, the greater the number of hyperparameters to estimate. This paper introduces an innovative dimension reduction algorithm that relies on partial least squares regression to reduce the number of hyperparameters used to build a mixed-variable GP. Our goal is to generalize classical dimension reduction techniques commonly used within GP (for continuous inputs) to handle mixed-categorical inputs. The good potential of the proposed method is demonstrated in both structural and multidisciplinary application contexts. The targeted applications include the analysis of a cantilever beam as well as the optimization of a green aircraft, resulting in a significant 439-kilogram reduction in fuel consumption during a single mission.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2311.06130v2</guid>
+      <category>math.OC</category>
+      <category>cs.AI</category>
+      <category>stat.ML</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Paul+Saves">Paul Saves</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Youssef+Diouane">Youssef Diouane</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Nathalie+Bartoli">Nathalie Bartoli</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Thierry+Lefebvre">Thierry Lefebvre</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Joseph+Morlier">Joseph Morlier</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Robust virtual element methods for coupled stress-assisted diffusion problems</title>
+      <link>https://rss.arxiv.org/abs/2401.09714</link>
+      <description>This paper aims first to perform robust continuous analysis of a mixed nonlinear formulation for stress-assisted diffusion of a solute that interacts with an elastic material, and second to propose and analyse a virtual element formulation of the model problem. The two-way coupling mechanisms between the Herrmann formulation for linear elasticity and the reaction-diffusion equation (written in mixed form) consist of diffusion-induced active stress and stress-dependent diffusion. The two sub-problems are analysed using the extended Babu\v{s}ka--Brezzi--Braess theory for perturbed saddle-point problems. The well-posedness of the nonlinearly coupled system is established using a Banach fixed-point strategy under the smallness assumption on data. The virtual element formulations for the uncoupled sub-problems are proven uniquely solvable by a fixed-point argument in conjunction with appropriate projection operators. We derive the a priori error estimates, and test the accuracy and performance of the proposed method through computational simulations.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2401.09714v2</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <arxiv:DOI>10.13140/RG.2.2.21464.67844</arxiv:DOI>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Rekha+Khot">Rekha Khot</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Andres+E.+Rubiano">Andres E. Rubiano</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ricardo+Ruiz-Baier">Ricardo Ruiz-Baier</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Second-order maximum principle controlled weakly singular Volterra integral equations</title>
+      <link>https://rss.arxiv.org/abs/2401.15740</link>
+      <description>This work studies a class of singular Volterra integral equations that are (controlled) and can be applied to memory-related problems.For optimum controls, we prove a second-order Pontryagin type maximal principle.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2401.15740v2</guid>
+      <category>math.OC</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Jasarat+J.+Gasimov">Jasarat J. Gasimov</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Nazim+I.+Mahmudov">Nazim I. Mahmudov</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Inf-Sup neural networks for high-dimensional elliptic PDE problems</title>
+      <link>https://rss.arxiv.org/abs/2401.17233</link>
+      <description>Solving high dimensional partial differential equations (PDEs) has historically posed a considerable challenge when utilizing conventional numerical methods, such as those involving domain meshes. Recent advancements in the field have seen the emergence of neural PDE solvers, leveraging deep networks to effectively tackle high dimensional PDE problems. This study introduces Inf-SupNet, a model-based unsupervised learning approach designed to acquire solutions for a specific category of elliptic PDEs. The fundamental concept behind Inf-SupNet involves incorporating the inf-sup formulation of the underlying PDE into the loss function. The analysis reveals that the global solution error can be bounded by the sum of three distinct errors: the numerical integration error, the duality gap of the loss function (training error), and the neural network approximation error for functions within Sobolev spaces. To validate the efficacy of the proposed method, numerical experiments conducted in high dimensions demonstrate its stability and accuracy across various boundary conditions, as well as for both semi-linear and nonlinear PDEs.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2401.17233v2</guid>
+      <category>math.NA</category>
+      <category>cs.NA</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Xiaokai+Huo">Xiaokai Huo</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Hailiang+Liu">Hailiang Liu</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Branch and Price for the Length-Constrained Cycle Partition Problem</title>
+      <link>https://rss.arxiv.org/abs/2401.17937</link>
+      <description>The length-constrained cycle partition problem (LCCP) is a graph optimization problem in which a set of nodes must be partitioned into a minimum number of cycles. Every node is associated with a critical time and the length of every cycle must not exceed the critical time of any node in the cycle. We formulate LCCP as a set partitioning model and solve it using an exact branch-and-price approach. We use a dynamic programming-based pricing algorithm to generate improving cycles, exploiting the particular structure of the pricing problem for efficient bidirectional search and symmetry breaking. Computational results show that the LP relaxation of the set partitioning model produces strong dual bounds and our branch-and-price method improves significantly over the state of the art. It is able to solve closed instances in a fraction of the previously needed time and closes 13 previously unsolved instances, one of which has 76 nodes, a notable improvement over the previous limit of 52 nodes.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2401.17937v2</guid>
+      <category>math.OC</category>
+      <category>cs.DM</category>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Mohammed+Ghannam">Mohammed Ghannam</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Gioni+Mexi">Gioni Mexi</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Edward+Lam">Edward Lam</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ambros+Gleixner">Ambros Gleixner</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Wasserstein Conditional Independence Testing</title>
+      <link>https://rss.arxiv.org/abs/2107.14184</link>
+      <description>We introduce a test for the conditional independence of random variables $X$ and $Y$ given a random variable $Z$, specifically by sampling from the joint distribution $(X,Y,Z)$, binning the support of the distribution of $Z$, and conducting multiple $p$-Wasserstein two-sample tests. Under a $p$-Wasserstein Lipschitz assumption on the conditional distributions $\mathcal{L}_{X|Z}$, $\mathcal{L}_{Y|Z}$, and $\mathcal{L}_{(X,Y)|Z}$, we show that it is possible to control the Type I and Type II error of this test, and give examples of explicit finite-sample error bounds in the case where the distribution of $Z$ has compact support.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2107.14184v2</guid>
+      <category>math.ST</category>
+      <category>math.OC</category>
+      <category>stat.TH</category>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Andrew+Warren">Andrew Warren</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Generative Adversarial Learning of Sinkhorn Algorithm Initializations</title>
+      <link>https://rss.arxiv.org/abs/2212.00133</link>
+      <description>The Sinkhorn algorithm is the state-of-the-art to approximate solutions of entropic optimal transport (OT) distances between discrete probability distributions. We show that meticulously training a neural network to learn initializations to the algorithm via the entropic OT dual problem can significantly speed up convergence, while maintaining desirable properties of the Sinkhorn algorithm, such as differentiability and parallelizability. We train our predictive network in an adversarial fashion using a second, generating network and a self-supervised bootstrapping loss. The predictive network is universal in the sense that it is able to generalize to any pair of distributions of fixed dimension and cost at inference, and we prove that we can make the generating network universal in the sense that it is capable of producing any pair of distributions during training. Furthermore, we show that our network can even be used as a standalone OT solver to approximate regularized transport distances to a few percent error, which makes it the first meta neural OT solver.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2212.00133v4</guid>
+      <category>cs.LG</category>
+      <category>math.OC</category>
+      <category>stat.ML</category>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Jonathan+Geuter">Jonathan Geuter</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Vaios+Laschos">Vaios Laschos</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>How to escape sharp minima with random perturbations</title>
+      <link>https://rss.arxiv.org/abs/2305.15659</link>
+      <description>Modern machine learning applications have witnessed the remarkable success of optimization algorithms that are designed to find flat minima. Motivated by this design choice, we undertake a formal study that (i) formulates the notion of flat minima, and (ii) studies the complexity of finding them. Specifically, we adopt the trace of the Hessian of the cost function as a measure of flatness, and use it to formally define the notion of approximate flat minima. Under this notion, we then analyze algorithms that find approximate flat minima efficiently. For general cost functions, we discuss a gradient-based algorithm that finds an approximate flat local minimum efficiently. The main component of the algorithm is to use gradients computed from randomly perturbed iterates to estimate a direction that leads to flatter minima. For the setting where the cost function is an empirical risk over training data, we present a faster algorithm that is inspired by a recently proposed practical algorithm called sharpness-aware minimization, supporting its success in practice.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2305.15659v2</guid>
+      <category>cs.LG</category>
+      <category>cs.AI</category>
+      <category>math.OC</category>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Kwangjun+Ahn">Kwangjun Ahn</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Ali+Jadbabaie">Ali Jadbabaie</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Suvrit+Sra">Suvrit Sra</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>RACH-Space: Reconstructing Adaptive Convex Hull Space with Applications in Weak Supervision</title>
+      <link>https://rss.arxiv.org/abs/2307.04870</link>
+      <description>We introduce RACH-Space, an algorithm for labelling unlabelled data in weakly supervised learning, given incomplete, noisy information about the labels. RACH-Space offers simplicity in implementation without requiring hard assumptions on data or the sources of weak supervision, and is well suited for practical applications where fully labelled data is not available. Our method is built upon a geometrical interpretation of the space spanned by the set of weak signals. We also analyze the theoretical properties underlying the relationship between the convex hulls in this space and the accuracy of our output labels, bridging geometry with machine learning. Empirical results demonstrate that RACH-Space works well in practice and compares favorably to the best existing label models for weakly supervised learning.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2307.04870v5</guid>
+      <category>cs.LG</category>
+      <category>math.OC</category>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Woojoo+Na">Woojoo Na</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Abiy+Tasissa">Abiy Tasissa</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>You Shall Pass: Dealing with the Zero-Gradient Problem in Predict and Optimize for Convex Optimization</title>
+      <link>https://rss.arxiv.org/abs/2307.16304</link>
+      <description>Predict and optimize is an increasingly popular decision-making paradigm that employs machine learning to predict unknown parameters of optimization problems. Instead of minimizing the prediction error of the parameters, it trains predictive models using task performance as a loss function. The key challenge to train such models is the computation of the Jacobian of the solution of the optimization problem with respect to its parameters. For linear problems, this Jacobian is known to be zero or undefined; hence, approximations are usually employed. For non-linear convex problems, however, it is common to use the exact Jacobian. This paper demonstrates that the zero-gradient problem appears in the non-linear case as well -- the Jacobian can have a sizeable null space, thereby causing the training process to get stuck in suboptimal points. Through formal proofs, this paper shows that smoothing the feasible set resolves this problem. Combining this insight with known techniques from the literature, such as quadratic programming approximation and projection distance regularization, a novel method to approximate the Jacobian is derived. In simulation experiments, the proposed method increases the performance in the non-linear case and at least matches the existing state-of-the-art methods for linear problems.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2307.16304v2</guid>
+      <category>cs.LG</category>
+      <category>math.OC</category>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Grigorii+Veviurko">Grigorii Veviurko</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Wendelin+B%5C%22ohmer">Wendelin B\"ohmer</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Mathijs+de+Weerdt">Mathijs de Weerdt</a>
+      </dc:creator>
+    </item>
+    <item>
+      <title>Nonlinear Filtering with Brenier Optimal Transport Maps</title>
+      <link>https://rss.arxiv.org/abs/2310.13886</link>
+      <description>This paper is concerned with the problem of nonlinear filtering, i.e., computing the conditional distribution of the state of a stochastic dynamical system given a history of noisy partial observations. Conventional sequential importance resampling (SIR) particle filters suffer from fundamental limitations, in scenarios involving degenerate likelihoods or high-dimensional states, due to the weight degeneracy issue. In this paper, we explore an alternative method, which is based on estimating the Brenier optimal transport (OT) map from the current prior distribution of the state to the posterior distribution at the next time step. Unlike SIR particle filters, the OT formulation does not require the analytical form of the likelihood. Moreover, it allows us to harness the approximation power of neural networks to model complex and multi-modal distributions and employ stochastic optimization algorithms to enhance scalability. Extensive numerical experiments are presented that compare the OT method to the SIR particle filter and the ensemble Kalman filter, evaluating the performance in terms of sample efficiency, high-dimensional scalability, and the ability to capture complex and multi-modal distributions.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2310.13886v2</guid>
+      <category>cs.LG</category>
+      <category>math.OC</category>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Mohammad+Al-Jarrah">Mohammad Al-Jarrah</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Niyizhen+Jin">Niyizhen Jin</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Bamdad+Hosseini">Bamdad Hosseini</a>
+        <a href="https://rss.arxiv.org/search?searchtype=author&amp;query=Amirhossein+Taghvaei">Amirhossein Taghvaei</a>
+      </dc:creator>
+    </item>
+  </channel>
+</rss>
