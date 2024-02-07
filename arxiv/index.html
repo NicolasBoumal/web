@@ -437,11 +437,12 @@
 			// https://developers.cloudflare.com/workers/examples/cors-header-proxy/
 			// https://css-tricks.com/proxying-third-party-javascript-as-first-party-javascript-and-the-potential-effect-on-analytics/
 			var rssbaseurl = "https://arxiv-digest-fetcher.nicolasboumal.workers.dev/?category=";
+			// var rssbaseurl = "https://rss.arxiv.org/rss/";
 
 			$.get(rssbaseurl + category, function(data) {
 
 				var $xml = $(data);
-				var catlongname = $xml.find("channel").find("title").text();
+				var catlongname = $xml.find("channel").find("title")[0].text();
 				var date = new Date($xml.find("channel").find("pubDate").text());
 				$("#listdigests").append('<li><a target="_blank" href="https://arxiv.org/list/' + category + '/recent">' + catlongname + '</a>, ' + date.toDateString() + '</li>');
 
