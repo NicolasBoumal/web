@@ -442,11 +442,11 @@
 			$.get(rssbaseurl + category, function(data) {
 
 				var $xml = $(data);
+				console.log($xml);
 				var catlongname = $xml.find("channel").find("title")[0].text();
 				var date = new Date($xml.find("channel").find("pubDate").text());
 				$("#listdigests").append('<li><a target="_blank" href="https://arxiv.org/list/' + category + '/recent">' + catlongname + '</a>, ' + date.toDateString() + '</li>');
 
-				console.log($xml);
 
 				$xml.find("channel").find("item").each(function() {
 
