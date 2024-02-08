@@ -455,7 +455,7 @@
 						id: $this.find("link").text().split('/').slice(-1)[0],
 						version: Number($this.find("guid").text().split('v').slice(-1)[0]),
 						title: $this.find("title").text(),
-						authors: extractTextFromHtml($this.find("dc\\:creator").text()),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
+						authors: extractTextFromHtml($this.find("dc\\:creator").text().replaceAll("\n", " ")),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
 						maincategory: $this.find("category")[0].getInnerHTML(), // this is the official primary category of the article
 						incategories: [category], // keep track of all loaded categories where this article came up -- does this still work?
 						updated: ($this.find("arxiv\\:announce_type").text() === 'replace'),
