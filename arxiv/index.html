@@ -458,8 +458,8 @@
 						authors: extractTextFromHtml($this.find("dc\\:creator").text().split("\n").map(s => s.trim()).filter(s => s !== '').join(', ')),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
 						maincategory: $this.find("category")[0].getInnerHTML(), // this is the official primary category of the article
 						incategories: [category], // keep track of all loaded categories where this article came up -- does this still work?
-						updated: ($this.find("arxiv\\:announce_type").text() === 'replace'),
-						crosslisted: ($this.find("arxiv\\:announce_type").text() === 'cross'), // not sure what happens if both UPDATED & CROSS-LISTED...
+						updated: ($this.find("arxiv\\:announce_type").text().includes('replace')),
+						crosslisted: ($this.find("arxiv\\:announce_type").text().includes('cross')),
 						link: $this.find("link").text(),
 						summary: $this.find("description").text().replaceAll("\n", " "),
 						hide: false,
