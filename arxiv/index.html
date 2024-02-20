@@ -359,8 +359,12 @@
 		const escapeHtml = (unsafe) => {
 			return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;')
 			             .replaceAll('>', '&gt;').replaceAll('"', '&quot;')
-						 .replaceAll("'", '&#039;').replaceAll("/", '&#x2F;')
-						 .replaceAll("`", '&#x60;').replaceAll("=", '&#x3D;');
+			             .replaceAll("'", '&#039;').replaceAll("/", '&#x2F;')
+			             .replaceAll("`", '&#x60;').replaceAll("=", '&#x3D;');
+		}
+		
+		const latexAccentsToHtml = (latexstring) => {
+			return latexstring.replaceAll('\\\'e', 'é');  // Start with this as a test
 		}
 
 		// arXiv digest surrounds each author name with an <a> tag we don't need.
@@ -455,7 +459,7 @@
 						id: $this.find("link").text().split('/').slice(-1)[0],
 						version: Number($this.find("guid").text().split('v').slice(-1)[0]),
 						title: $this.find("title").text(),
-						authors: extractTextFromHtml($this.find("dc\\:creator").text().split("\n").map(s => s.trim()).filter(s => s !== '').join(', ')),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
+						authors: latexAccentsToHtml(extractTextFromHtml($this.find("dc\\:creator").text().split("\n").map(s => s.trim()).filter(s => s !== '').join(', '))),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
 						maincategory: $this.find("category")[0].getInnerHTML(), // this is the official primary category of the article
 						incategories: [category], // keep track of all loaded categories where this article came up -- does this still work?
 						updated: ($this.find("arxiv\\:announce_type").text().includes('replace')),
