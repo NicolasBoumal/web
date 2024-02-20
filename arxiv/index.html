@@ -363,8 +363,13 @@
 			             .replaceAll("`", '&#x60;').replaceAll("=", '&#x3D;');
 		}
 		
-		const latexAccentsToHtml = (latexstring) => {
-			return latexstring.replaceAll('\\\'e', 'é');  // Start with this as a test
+		const latexAccentsToHtml = (latexstring) => { // Todo: replace with HTMl codes and complete the list
+			return latexstring.replaceAll('\\\'e', 'é').replaceAll('\\`e', 'è')
+			                  .replaceAll('\\c{c}', 'ç').replaceAll('\\"O', 'Ö')
+												.replaceAll('\\\'i', 'í').replaceAll('\\\'I', 'Í')
+												.replaceAll('\\^o', 'ô').replaceAll('\\^O', 'Ô')
+												.replaceAll('\\"u', 'ü').replaceAll('\\"U', 'Ü');
+			// \v{s} \'c ...
 		}
 
 		// arXiv digest surrounds each author name with an <a> tag we don't need.
@@ -465,7 +470,7 @@
 						updated: ($this.find("arxiv\\:announce_type").text().includes('replace')),
 						crosslisted: ($this.find("arxiv\\:announce_type").text().includes('cross')),
 						link: $this.find("link").text(),
-						summary: $this.find("description").text().replaceAll("\n", " "),
+						summary: $this.find("description").text().replaceAll("\n", " ").split("Abstract: ").slice(-1)[0],
 						hide: false,
 						selected: false,
 						date: date  // redundant, but it's convenient to have it here for syncing with db
