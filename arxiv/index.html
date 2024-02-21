@@ -365,8 +365,12 @@
 		
 		const latexAccentsToHtml = (latexstring) => { // Todo: replace with HTMl codes and complete the list
 			return latexstring.replaceAll('\\\'e', 'é').replaceAll('\\`e', 'è')
-			                  .replaceAll('\\c{c}', 'ç').replaceAll('\\"O', 'Ö')
+			                  .replaceAll('\\\'a', 'á').replaceAll('\\`a', 'à')
+			                  .replaceAll('\\\'o', 'ó').replaceAll('\\`O', 'Ò')
+			                  .replaceAll('\\c{c}', 'ç')
+							  .replaceAll('\\"o', 'ö').replaceAll('\\"O', 'Ö')
 			                  .replaceAll('\\\'i', 'í').replaceAll('\\\'I', 'Í')
+			                  .replaceAll('\\^i', 'î').replaceAll('\\^I', 'Î')
 			                  .replaceAll('\\^o', 'ô').replaceAll('\\^O', 'Ô')
 			                  .replaceAll('\\^a', 'â').replaceAll('\\^A', 'Â')
 			                  .replaceAll('\\"u', 'ü').replaceAll('\\"U', 'Ü');
