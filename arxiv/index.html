@@ -484,6 +484,9 @@
 						selected: false,
 						date: date  // redundant, but it's convenient to have it here for syncing with db
 					};
+
+					console.log($this);
+					console.log(article);
 					
 					// Try to find this article in the list we have already built so far.
 					var index = Alpine.store('main').digest.findIndex(existing_article => existing_article.id === article.id);
