@@ -463,7 +463,8 @@
 				console.log($xml);
 				var catlongname = $xml.find("channel").find("title")[0].getInnerHTML();
 				var date = new Date($xml.find("channel").find("pubDate").text());
-				$("#listdigests").append('<li><a target="_blank" href="https://arxiv.org/list/' + category + '/recent">' + catlongname + '</a>, ' + date.toDateString() + '</li>');
+				//$("#listdigests").append('<li><a target="_blank" href="https://arxiv.org/list/' + category + '/recent">' + catlongname + '</a>, ' + date.toDateString() + '</li>');
+				$("#listdigests").append('<li><a target="_blank" href="' + rssbaseurl + category + '">' + catlongname + '</a>, ' + date.toDateString() + '</li>');
 
 
 				$xml.find("channel").find("item").each(function() {
