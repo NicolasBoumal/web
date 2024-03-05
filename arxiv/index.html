@@ -461,7 +461,7 @@
 
 				var $xml = $(data);
 				console.log($xml);
-				var catlongname = $xml.find("channel").find("title")[0].getInnerHTML();
+				var catlongname = $xml.find("channel").find("title")[0].innerHTML;
 				var date = new Date($xml.find("channel").find("pubDate").text());
 				//$("#listdigests").append('<li><a target="_blank" href="https://arxiv.org/list/' + category + '/recent">' + catlongname + '</a>, ' + date.toDateString() + '</li>');
 				$("#listdigests").append('<li><a target="_blank" href="' + rssbaseurl + category + '">' + catlongname + '</a>, ' + date.toDateString() + '</li>');
@@ -475,7 +475,7 @@
 						version: Number($this.find("guid").text().split('v').slice(-1)[0]),
 						title: $this.find("title").text(),
 						authors: latexAccentsToHtml(extractTextFromHtml($this.find("dc\\:creator").text().split("\n").map(s => s.trim()).filter(s => s !== '').join(', '))),   // "[nodeName=dc:creator]", https://stackoverflow.com/questions/853740/how-to-use-jquery-for-xml-parsing-with-namespaces
-						maincategory: $this.find("category")[0].getInnerHTML(), // this is the official primary category of the article
+						maincategory: $this.find("category")[0].innerHTML, // this is the official primary category of the article
 						incategories: [category], // keep track of all loaded categories where this article came up -- does this still work?
 						updated: ($this.find("arxiv\\:announce_type").text().includes('replace')),
 						crosslisted: ($this.find("arxiv\\:announce_type").text().includes('cross')),
