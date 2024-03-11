@@ -58,25 +58,6 @@
 	<publisherlink></publisherlink>
 	<tag>optimization</tag>
 </object>
-<object id="1028">
-	<type>preprint</type>
-	<title>Computing second-order points under equality constraints: revisiting Fletcher's augmented Lagrangian</title>
-	<authors>F. Goyens, A. Eftekhari and N. Boumal</authors>
-	<year>2022</year>
-	<status>available on ArXiv</status>
-	<bibtex>
-@Article{goyens2022fletcher,
-  author  = {Goyens, F. and Eftekhari, A. and Boumal, N.},
-  journal = {arXiv 2204.01448},
-  title   = {Computing second-order points under equality constraints: revisiting {F}letcher's augmented {L}agrangian},
-  year    = {2022}
-}
-	</bibtex>
-	<comment></comment>
-	<link>https://arxiv.org/abs/2204.01448</link>
-	<publisherlink></publisherlink>
-	<tag>optimization</tag>
-</object>
 <object id="1009">
 	<type>preprint</type>
 	<title>A Riemannian low-rank method for optimization over semidefinite matrices with block-diagonal constraints</title>
@@ -118,6 +99,25 @@
 	<comment></comment>
 	<link>https://arxiv.org/abs/2207.03512</link>
 	<publisherlink>https://link.springer.com/article/10.1007/s10107-024-02058-3</publisherlink>
+	<tag>optimization</tag>
+</object>
+<object id="1028">
+	<type>journal</type>
+	<title>Computing second-order points under equality constraints: revisiting Fletcher's augmented Lagrangian</title>
+	<authors>F. Goyens, A. Eftekhari and N. Boumal</authors>
+	<year>2024</year>
+	<status>to appear in Journal of Optimization Theory and Applications</status>
+	<bibtex>
+@Article{goyens2024fletcher,
+  author  = {Goyens, F. and Eftekhari, A. and Boumal, N.},
+  journal = {Journal of Optimization Theory and Applications},
+  title   = {Computing second-order points under equality constraints: revisiting {F}letcher's augmented {L}agrangian},
+  year    = {2024}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2204.01448</link>
+	<publisherlink></publisherlink>
 	<tag>optimization</tag>
 </object>
 <object id="1017">
