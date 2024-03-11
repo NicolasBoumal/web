@@ -465,7 +465,7 @@
 			$.get(rssbaseurl + category, function(data) {
 
 				var $xml = $(data);
-				console.log($xml);
+				// console.log($xml);
 				var catlongname = $xml.find("channel").find("title")[0].innerHTML;
 				var date = new Date($xml.find("channel").find("pubDate").text());
 				//$("#listdigests").append('<li><a target="_blank" href="https://arxiv.org/list/' + category + '/recent">' + catlongname + '</a>, ' + date.toDateString() + '</li>');
@@ -491,8 +491,8 @@
 						date: date  // redundant, but it's convenient to have it here for syncing with db
 					};
 
-					console.log($this);
-					console.log(article);
+					// console.log($this);
+					// console.log(article);
 					
 					// Try to find this article in the list we have already built so far.
 					var index = Alpine.store('main').digest.findIndex(existing_article => existing_article.id === article.id);
