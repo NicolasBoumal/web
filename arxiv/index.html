@@ -398,12 +398,14 @@
             };
             return accents[p1] || match;
         })
-        .replaceAll(/\\~([anAN])/g, (match, p1) => {
+        .replaceAll(/\\~([anoANO])/g, (match, p1) => {
             const accents = {
                 'a': 'ã',
                 'n': 'ñ',
+                'o': 'õ',
                 'A': 'Ã',
-                'N': 'Ñ'
+                'N': 'Ñ',
+                'O': 'Õ'
             };
             return accents[p1] || match;
         })
