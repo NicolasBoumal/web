@@ -364,79 +364,100 @@
 		}
 		
 
-		// ChatGPT proposed this after some interaction, to replace the commented code below:
+		// ChatGPT proposed this after some interaction, to replace the commented code below.
+		// Had to fix it manually, but not bad.
 		const latexAccentsToHtml = (latexstring) => {
-			return latexstring
-					.replaceAll(/\\'([aeiouAEIOU])/g, (match, p1) => {
-							const accents = {
-									'a': 'á',
-									'e': 'é',
-									'i': 'í',
-									'o': 'ó',
-									'u': 'ú',
-									'A': 'Á',
-									'E': 'É',
-									'I': 'Í',
-									'O': 'Ó',
-									'U': 'Ú'
-							};
-							return accents[p1] || match;
-					})
-					.replaceAll(/\\`([aeiouAEIOU])/g, (match, p1) => {
-							const accents = {
-									'a': 'à',
-									'e': 'è',
-									'i': 'ì',
-									'o': 'ò',
-									'u': 'ù',
-									'A': 'À',
-									'E': 'È',
-									'I': 'Ì',
-									'O': 'Ò',
-									'U': 'Ù'
-							};
-							return accents[p1] || match;
-					})
-					.replaceAll(/\\~([nN])/g, (match, p1) => {
-							return p1 === 'n' ? 'ñ' : 'Ñ';
-					})
-					.replaceAll(/\\c{([sS])}/g, (match, p1) => {
-							return p1 === 's' ? 'ş' : 'Ş';
-					})
-					.replaceAll(/\{\\ss\}/g, 'ß')
-					.replaceAll(/\\"([aeiouyAEIOUY])/g, (match, p1) => {
-							const accents = {
-									'a': 'ä',
-									'e': 'ë',
-									'i': 'ï',
-									'o': 'ö',
-									'u': 'ü',
-									'y': 'ÿ',
-									'A': 'Ä',
-									'E': 'Ë',
-									'I': 'Ï',
-									'O': 'Ö',
-									'U': 'Ü',
-									'Y': 'Ÿ'
-							};
-							return accents[p1] || match;
-					})
-					.replaceAll(/\\^([aeioAEIO])/g, (match, p1) => {
-							const accents = {
-									'a': 'â',
-									'e': 'ê',
-									'i': 'î',
-									'o': 'ô',
-									'A': 'Â',
-									'E': 'Ê',
-									'I': 'Î',
-									'O': 'Ô'
-							};
-							return accents[p1] || match;
-					})
-					.replaceAll(/\\v{[sS]}/g, (match) => {
-							return match === '\\v{s}' ? 'š' : 'Š';
-					});
+    return latexstring
+        .replaceAll(/\\'([aeiouAEIOU])/g, (match, p1) => {
+            const accents = {
+                'a': 'á',
+                'e': 'é',
+                'i': 'í',
+                'o': 'ó',
+                'u': 'ú',
+                'A': 'Á',
+                'E': 'É',
+                'I': 'Í',
+                'O': 'Ó',
+                'U': 'Ú'
+            };
+            return accents[p1] || match;
+        })
+        .replaceAll(/\\`([aeiouAEIOU])/g, (match, p1) => {
+            const accents = {
+                'a': 'à',
+                'e': 'è',
+                'i': 'ì',
+                'o': 'ò',
+                'u': 'ù',
+                'A': 'À',
+                'E': 'È',
+                'I': 'Ì',
+                'O': 'Ò',
+                'U': 'Ù'
+            };
+            return accents[p1] || match;
+        })
+        .replaceAll(/\\~([anAN])/g, (match, p1) => {
+            const accents = {
+                'a': 'ã',
+                'n': 'ñ',
+                'A': 'Ã',
+                'N': 'Ñ'
+            };
+            return accents[p1] || match;
+        })
+        .replaceAll(/\\c{([csCS])}/g, (match, p1) => {
+            const accents = {
+                'c': 'ç',
+                's': 'ş',
+                'C': 'Ç',
+                'S': 'Ş'
+            };
+            return accents[p1] || match;
+        })
+        .replaceAll(/\{\\ss\}/g, 'ß')
+        .replaceAll(/\\"([aeiouyAEIOUY])/g, (match, p1) => {
+            const accents = {
+                'a': 'ä',
+                'e': 'ë',
+                'i': 'ï',
+                'o': 'ö',
+                'u': 'ü',
+                'y': 'ÿ',
+                'A': 'Ä',
+                'E': 'Ë',
+                'I': 'Ï',
+                'O': 'Ö',
+                'U': 'Ü',
+                'Y': 'Ÿ'
+            };
+            return accents[p1] || match;
+        })
+        .replaceAll(/\\^([aeioAEIO])/g, (match, p1) => {
+            const accents = {
+                'a': 'â',
+                'e': 'ê',
+                'i': 'î',
+                'o': 'ô',
+                'A': 'Â',
+                'E': 'Ê',
+                'I': 'Î',
+                'O': 'Ô'
+            };
+            return accents[p1] || match;
+        })
+        .replaceAll(/\\v{[cszCSZ]}/g, (match) => {
+            const accents = {
+                'c': 'č',
+                's': 'š',
+                'z': 'ž',
+                'C': 'Č',
+                'S': 'Š',
+                'Z': 'Ž'
+            };
+            return accents[p1] || match;
+        });
 		};
 
 		// const latexAccentsToHtml = (latexstring) => { // Todo: replace with HTMl codes and complete the list
