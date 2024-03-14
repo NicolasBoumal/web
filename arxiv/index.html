@@ -449,7 +449,7 @@
             };
             return accents[p1] || match;
         })
-        .replaceAll(/\\v{[cszCSZ]}/g, (match, p1) => {
+        .replaceAll(/\\v{([cszCSZ])}/g, (match, p1) => {
             const accents = {
                 'c': 'č',
                 's': 'š',
