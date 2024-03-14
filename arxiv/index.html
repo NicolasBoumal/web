@@ -363,28 +363,104 @@
 			             .replaceAll("`", '&#x60;').replaceAll("=", '&#x3D;');
 		}
 		
-		const latexAccentsToHtml = (latexstring) => { // Todo: replace with HTMl codes and complete the list
-			return latexstring.replaceAll('\\\'e', 'é').replaceAll('\\`e', 'è')
-			                  .replaceAll('\\\'E', 'É').replaceAll('\\`E', 'È')
-			                  .replaceAll('\\\'a', 'á').replaceAll('\\`a', 'à')
-			                  .replaceAll('\\\'A', 'Á').replaceAll('\\`A', 'À')
-			                  .replaceAll('\\\'o', 'ó').replaceAll('\\`o', 'ò')
-			                  .replaceAll('\\\'O', 'Ó').replaceAll('\\`O', 'Ò')
-			                  .replaceAll('\\\'u', 'ú').replaceAll('\\`u', 'ù')
-			                  .replaceAll('\\\'U', 'Ú').replaceAll('\\`U', 'Ù')
-			                  .replaceAll('\\\'i', 'í').replaceAll('\\`i', 'ì')
-			                  .replaceAll('\\\'I', 'Í').replaceAll('\\`I', 'Ì')
-			                  .replaceAll('\\c{c}', 'ç').replaceAll('\\\'c', 'ć')
-			                  .replaceAll('{\\ss}', 'ß')
-			                  .replaceAll('\\"e', 'ë').replaceAll('\\"E', 'Ë')
-			                  .replaceAll('\\"o', 'ö').replaceAll('\\"O', 'Ö')
-			                  .replaceAll('\\^i', 'î').replaceAll('\\^I', 'Î')
-			                  .replaceAll('\\^o', 'ô').replaceAll('\\^O', 'Ô')
-			                  .replaceAll('\\^a', 'â').replaceAll('\\^A', 'Â')
-			                  .replaceAll('\\"u', 'ü').replaceAll('\\"U', 'Ü')
-			                  .replaceAll('\\~n', 'ñ').replaceAll('\\~N', 'Ñ')
-			                  .replaceAll('\\v{s}', 'š').replaceAll('\\v{S}', 'Š');
-		}
+
+		// ChatGPT proposed this after some interaction, to replace the commented code below:
+		const latexAccentsToHtml = (latexstring) => {
+			return latexstring
+					.replaceAll(/\\'([aeiouAEIOU])/g, (match, p1) => {
+							const accents = {
+									'a': 'á',
+									'e': 'é',
+									'i': 'í',
+									'o': 'ó',
+									'u': 'ú',
+									'A': 'Á',
+									'E': 'É',
+									'I': 'Í',
+									'O': 'Ó',
+									'U': 'Ú'
+							};
+							return accents[p1] || match;
+					})
+					.replaceAll(/\\`([aeiouAEIOU])/g, (match, p1) => {
+							const accents = {
+									'a': 'à',
+									'e': 'è',
+									'i': 'ì',
+									'o': 'ò',
+									'u': 'ù',
+									'A': 'À',
+									'E': 'È',
+									'I': 'Ì',
+									'O': 'Ò',
+									'U': 'Ù'
+							};
+							return accents[p1] || match;
+					})
+					.replaceAll(/\\~([nN])/g, (match, p1) => {
+							return p1 === 'n' ? 'ñ' : 'Ñ';
+					})
+					.replaceAll(/\\c{([sS])}/g, (match, p1) => {
+							return p1 === 's' ? 'ş' : 'Ş';
+					})
+					.replaceAll(/\{\\ss\}/g, 'ß')
+					.replaceAll(/\\"([aeiouyAEIOUY])/g, (match, p1) => {
+							const accents = {
+									'a': 'ä',
+									'e': 'ë',
+									'i': 'ï',
+									'o': 'ö',
+									'u': 'ü',
+									'y': 'ÿ',
+									'A': 'Ä',
+									'E': 'Ë',
+									'I': 'Ï',
+									'O': 'Ö',
+									'U': 'Ü',
+									'Y': 'Ÿ'
+							};
+							return accents[p1] || match;
+					})
+					.replaceAll(/\\^([aeioAEIO])/g, (match, p1) => {
+							const accents = {
+									'a': 'â',
+									'e': 'ê',
+									'i': 'î',
+									'o': 'ô',
+									'A': 'Â',
+									'E': 'Ê',
+									'I': 'Î',
+									'O': 'Ô'
+							};
+							return accents[p1] || match;
+					})
+					.replaceAll(/\\v{[sS]}/g, (match) => {
+							return match === '\\v{s}' ? 'š' : 'Š';
+					});
+		};
+
+		// const latexAccentsToHtml = (latexstring) => { // Todo: replace with HTMl codes and complete the list
+		// 	return latexstring.replaceAll('\\\'e', 'é').replaceAll('\\`e', 'è')
+		// 	                  .replaceAll('\\\'E', 'É').replaceAll('\\`E', 'È')
+		// 	                  .replaceAll('\\\'a', 'á').replaceAll('\\`a', 'à')
+		// 	                  .replaceAll('\\\'A', 'Á').replaceAll('\\`A', 'À')
+		// 	                  .replaceAll('\\\'o', 'ó').replaceAll('\\`o', 'ò')
+		// 	                  .replaceAll('\\\'O', 'Ó').replaceAll('\\`O', 'Ò')
+		// 	                  .replaceAll('\\\'u', 'ú').replaceAll('\\`u', 'ù')
+		// 	                  .replaceAll('\\\'U', 'Ú').replaceAll('\\`U', 'Ù')
+		// 	                  .replaceAll('\\\'i', 'í').replaceAll('\\`i', 'ì')
+		// 	                  .replaceAll('\\\'I', 'Í').replaceAll('\\`I', 'Ì')
+		// 	                  .replaceAll('\\c{c}', 'ç').replaceAll('\\\'c', 'ć')
+		// 	                  .replaceAll('{\\ss}', 'ß')
+		// 	                  .replaceAll('\\"e', 'ë').replaceAll('\\"E', 'Ë')
+		// 	                  .replaceAll('\\"o', 'ö').replaceAll('\\"O', 'Ö')
+		// 	                  .replaceAll('\\^i', 'î').replaceAll('\\^I', 'Î')
+		// 	                  .replaceAll('\\^o', 'ô').replaceAll('\\^O', 'Ô')
+		// 	                  .replaceAll('\\^a', 'â').replaceAll('\\^A', 'Â')
+		// 	                  .replaceAll('\\"u', 'ü').replaceAll('\\"U', 'Ü')
+		// 	                  .replaceAll('\\~n', 'ñ').replaceAll('\\~N', 'Ñ')
+		// 	                  .replaceAll('\\v{s}', 'š').replaceAll('\\v{S}', 'Š');
+		// }
 
 		// arXiv digest surrounds each author name with an <a> tag we don't need.
 		// Likewise, abstracts have html, e.g., <p> tags.
