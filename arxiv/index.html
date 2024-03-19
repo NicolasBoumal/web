@@ -621,7 +621,8 @@
 				Alpine.store('main').getSelectedArticlesOfTheDay(date);
 
 				// MathJax.typeset(); // This likely executes too early, but "await Alpine.$nextTick();" doesn't work
-				Alpine.nextTick(() => { MathJax.typeset(); });
+				// Added a timeout to execute it somewhat later... let's see.
+				Alpine.nextTick(() => { setTimeout(() => MathJax.typeset(), 1000); });
 
 			}); // end get url
 
