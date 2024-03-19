@@ -28,7 +28,7 @@
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 	<style>
-		li {
+		.spacedlist li {
 			margin-bottom: 10px;  /* Space elements out in the list at the bottom */
 		}
 	</style>
@@ -336,7 +336,7 @@
     <h1>Selected papers</h1>
 
 	<!-- https://stackoverflow.com/questions/2409836/how-to-set-cursor-style-to-pointer-for-links-without-hrefs -->
-	<ul x-data="">
+	<ul class="spacedlist" x-data="">
 		<template x-for="article in $store.main.articlesSelected" :key="article.id">
 			<li>
 				<a target="_blank" :href="article.link"
