@@ -27,6 +27,12 @@
 	<script> MathJax = { tex: {	inlineMath: [['$', '$'], ['\\(', '\\)']] } }; </script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
+	<style>
+		.spacedlist li {
+			margin-bottom: 10px;  /* Space elements out in the list at the bottom */
+		}
+	</style>
+
   </head>
   <body>
     <div class="container">
@@ -330,7 +336,7 @@
     <h1>Selected papers</h1>
 
 	<!-- https://stackoverflow.com/questions/2409836/how-to-set-cursor-style-to-pointer-for-links-without-hrefs -->
-	<ul x-data="">
+	<ul class="spacedlist" x-data="">
 		<template x-for="article in $store.main.articlesSelected" :key="article.id">
 			<li>
 				<a target="_blank" :href="article.link"
@@ -615,7 +621,8 @@
 				Alpine.store('main').getSelectedArticlesOfTheDay(date);
 
 				// MathJax.typeset(); // This likely executes too early, but "await Alpine.$nextTick();" doesn't work
-				Alpine.nextTick(() => { MathJax.typeset(); });
+				// Added a timeout to execute it somewhat later... let's see.
+				Alpine.nextTick(() => { setTimeout(() => MathJax.typeset(), 1000); });
 
 			}); // end get url
 
