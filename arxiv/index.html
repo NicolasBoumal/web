@@ -442,7 +442,7 @@
             };
             return accents[p1] || match;
         })
-        .replaceAll(/\\^([aeioAEIO])/g, (match, p1) => {
+        .replaceAll(/\\\^([aeioAEIO])/g, (match, p1) => {
             const accents = {
                 'a': 'â',
                 'e': 'ê',
