@@ -465,7 +465,9 @@
                 'Z': 'Ž'
             };
             return accents[p1] || match;
-        });
+        })
+      	.replaceAll(/\\r{u}/g, 'ů')
+      	.replaceAll(/\\r{U}/g, 'Ů');
 		};
 
 		// const latexAccentsToHtml = (latexstring) => { // Todo: replace with HTMl codes and complete the list
