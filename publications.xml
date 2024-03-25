@@ -963,7 +963,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
   publisher = {Curran Associates, Inc.}
 }
 	</bibtex>
-	<comment>An extension of this paper appears in &lt;i&gt;Deterministic guarantees for Burer-Monteiro factorizations of smooth semidefinite programs&lt;/i&gt;. &lt;a href="https://github.com/NicolasBoumal/maxcut/tree/main"&gt;GitHub code&lt;/a&gt;.</comment>
+	<comment>An extension of this paper appears in &lt;i&gt;Deterministic guarantees for Burer-Monteiro factorizations of smooth semidefinite programs&lt;/i&gt;. &lt;a href="https://github.com/NicolasBoumal/maxcut/tree/main"&gt;GitHub Code&lt;/a&gt;.</comment>
 	<link>https://arxiv.org/abs/1606.04970</link>
 	<publisherlink>https://papers.nips.cc/paper/6517-the-non-convex-burer-monteiro-approach-works-on-smooth-semidefinite-programs</publisherlink>
 	<tag>optim</tag>
