@@ -37,7 +37,7 @@ If you try to do so, you may find it useful to compute the differential of the i
     it should have the property that $h(X) = 0$ if and only if $X \in U$ has rank 1.
     Do this in two phases: first, express the fact that $\rank(X) \geq 1$.
     Then, express the fact that $\rank(X) \leq 1$.
-    Moreover, for every $X$ of rank 1, we should have such a defining function with $$ such that $X$ is in $U$.
+    Moreover, for every $X$ of rank 1, we should have such a defining function with domain $U$ such that $X$ is in $U$.
     </p>
     <p>
     If $X$ is in $\calM$ then it has a nonzero entry (why?).
@@ -103,7 +103,7 @@ If you try to do so, you may find it useful to compute the differential of the i
             \end{pmatrix}.$$
             The first equation implies that $w^\top = X_{11}^{-1} X_{12}$, and so $X_{22} = X_{21} w^\top = X_{21} X_{11}^{-1} X_{12}$. This shows that if $X \in \calM \cap U_{11}$, then $X_{22} - X_{21} X_{11}^{-1} X_{12} = 0$. So let us define
             \begin{aligned}
-                h_{11} \colon U_{11} \to \reals^{(m-1) \times (n-1)}, \quad \quad h(X) = X_{22} - X_{21} X_{11}^{-1} X_{12}.
+                h_{11} \colon U_{11} \to \reals^{(m-1) \times (n-1)}, \quad \quad h_{11}(X) = X_{22} - X_{21} X_{11}^{-1} X_{12}.
             \end{aligned}
             This map is obviously smooth as componentwise it is a rational function. Further, we have already shown that $\calM \cap U_{11} \subseteq h_{11}^{-1}(\{0\})$ and the reversed inclusion also holds as $h_{11}(X)=0$ implies that
             $$\begin{pmatrix}
@@ -129,7 +129,7 @@ If you try to do so, you may find it useful to compute the differential of the i
             \end{aligned}
             has full rank, i.e., is surjective. By the product rule we get that
             \begin{aligned}
-                \D h_{11}(X)[V] = \frac{d}{dt}[h_{11}(X + t V)]_{t=0} = V_{22} - X_{11}^{-2} V_{11} X_{21} X_{12} + X_{11}^{-1} V_{21} X_{12} + X_{11}^{-1} X_{21} V_{12},
+                \D h_{11}(X)[V] = \frac{d}{dt}[h_{11}(X + t V)]_{t=0} = V_{22} + X_{11}^{-2} V_{11} X_{21} X_{12} - X_{11}^{-1} V_{21} X_{12} - X_{11}^{-1} X_{21} V_{12},
             \end{aligned}
             which is clearly surjective (set $V_{11}, V_{12}, V_{21}$ all zero and vary $V_{22}$).
         </p>
