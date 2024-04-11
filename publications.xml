@@ -20,25 +20,6 @@
 	<publisherlink></publisherlink>
 	<tag>optimization</tag>
 </object>
-<object id="1031">
-	<type>preprint</type>
-	<title>Benign landscapes of low-dimensional relaxations for orthogonal synchronization on general graphs</title>
-	<authors>Andrew D. McRae and N. Boumal</authors>
-	<year>2023</year>
-	<status>available on ArXiv</status>
-	<bibtex>
-@Article{mcrae2023benignlowdim,
-  author  = {McRae, A.D. and Boumal, N.},
-  journal = {arXiv 2307.02941},
-  title   = {Benign landscapes of low-dimensional relaxations for orthogonal synchronization on general graphs},
-  year    = {2023}
-}
-	</bibtex>
-	<comment></comment>
-	<link>https://arxiv.org/abs/2307.02941</link>
-	<publisherlink></publisherlink>
-	<tag>optimization</tag>
-</object>
 <object id="1030">
 	<type>preprint</type>
 	<title>Fast convergence to non-isolated minima: four equivalent conditions for $C^2$ functions</title>
@@ -80,6 +61,29 @@
 
 
 
+<object id="1031">
+	<type>journal</type>
+	<title>Benign landscapes of low-dimensional relaxations for orthogonal synchronization on general graphs</title>
+	<authors>Andrew D. McRae and N. Boumal</authors>
+	<year>2024</year>
+	<status>in SIAM Journal on Optimization</status>
+	<bibtex>
+@Article{mcrae2024benignlowdim,
+  author  = {McRae, A.D. and Boumal, N.},
+  journal = {SIAM Journal on Optimization},
+  title   = {Benign landscapes of low-dimensional relaxations for orthogonal synchronization on general graphs},
+  year     = {2024},
+  number   = {2},
+  pages    = {1427--1454},
+  volume   = {34},
+  doi      = {10.1137/23M1584642}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2307.02941</link>
+	<publisherlink>https://epubs.siam.org/doi/abs/10.1137/23M1584642</publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="1029">
 	<type>journal</type>
 	<title>The effect of smooth parametrizations on nonconvex optimization landscapes</title>
