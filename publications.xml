@@ -110,18 +110,20 @@
 	<title>Computing second-order points under equality constraints: revisiting Fletcher's augmented Lagrangian</title>
 	<authors>F. Goyens, A. Eftekhari and N. Boumal</authors>
 	<year>2024</year>
-	<status>to appear in Journal of Optimization Theory and Applications</status>
+	<status>in Journal of Optimization Theory and Applications</status>
 	<bibtex>
 @Article{goyens2024fletcher,
-  author  = {Goyens, F. and Eftekhari, A. and Boumal, N.},
-  journal = {Journal of Optimization Theory and Applications},
-  title   = {Computing second-order points under equality constraints: revisiting {F}letcher's augmented {L}agrangian},
-  year    = {2024}
+  author    = {Goyens, F. and Eftekhari, A. and Boumal, N.},
+  title     = {Computing second-order points under equality constraints: revisiting {F}letcher's augmented {L}agrangian},
+  journal   = {Journal of Optimization Theory and Applications},
+  publisher = {Springer Science and Business Media LLC},
+  doi       = {10.1007/s10957-024-02421-6},
+  year      = {2024}
 }
 	</bibtex>
 	<comment></comment>
 	<link>https://arxiv.org/abs/2204.01448</link>
-	<publisherlink></publisherlink>
+	<publisherlink>https://link.springer.com/article/10.1007/s10957-024-02421-6</publisherlink>
 	<tag>optimization</tag>
 </object>
 <object id="1017">
