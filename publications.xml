@@ -1169,6 +1169,20 @@ year = {2011}
 
 
 
+<object id="3050">
+	<type>talk</type>
+	<title>Riemannian optimization: software and applications</title>
+	<with></with>
+	<event>
+		<venue>TMS Workshop on Foundations of Numerical Differential Geometry</venue>
+		<city>Trondheim</city><country>Norway</country>
+		<year>2024</year><month>5</month><day>7</day>
+		<video></video>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>https://www.ntnu.edu/imf/fndg24</link>
+</object>
 <object id="3049">
 	<type>talk</type>
 	<title>Nonconvex just means not convex</title>
