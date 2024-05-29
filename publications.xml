@@ -1,6 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
+<object id="2020">
+	<type>preprint</type>
+	<title>Synchronization on circles and spheres with nonlinear interactions</title>
+	<authors>C. Criscitiello, Q. Rebjock, A.D. McRae and N. Boumal</authors>
+	<year>2024</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@article{criscitiello2024synchcircles,
+    title = {Synchronization on circles and spheres with nonlinear interactions},
+    author = {Criscitiello, C. and Rebjock, Q. and McRae, A.D. and Boumal, N.},
+    journal = {arXiv preprint arXiv:2405.18273},
+    year = {2024},
+    url = {https://arxiv.org/abs/2405.18273}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2405.18273</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+    <tag>synchro</tag>
+</object>
 <object id="1032">
 	<type>preprint</type>
 	<title>Fast convergence of trust-regions for non-isolated minima via analysis of CG on indefinite matrices</title>
@@ -812,7 +833,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 	<publisherlink>http://proceedings.mlr.press/v130/scieur21a.html</publisherlink>
 	<tag>optimization</tag>
 </object>
-<object id="2018">
+<object id="2014">
 	<type>conference</type>
 	<title>Second-order optimization for tensors with fixed tensor-train rank</title>
 	<authors>M. Psenka and N. Boumal</authors>
