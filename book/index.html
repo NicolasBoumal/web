@@ -267,7 +267,21 @@ x = trustregions(problem);   % call an overly fancy algorithm</code></pre>
               <p>
                 In Python, you could use JAX (among other backends) and write:
 <pre class="featurelesspre">
-<code class="language-python" id="softwarepythonexample">(example will be filled in soon)</code></pre>           
+<code class="language-python" id="softwarepythonexample">import pymanopt as pymanopt
+import jax as jax
+    
+n = 42
+key = jax.random.key(0)
+A = jax.random.normal(key, [n, n])
+A = A+A.T
+manifold = pymanopt.manifolds.Sphere(n)
+@pymanopt.function.jax(manifold)
+def cost(x):
+    return x.T @ A @ x
+problem = pymanopt.Problem(manifold, cost)
+optimizer = pymanopt.optimizers.TrustRegions()
+result = optimizer.run(problem)
+</code></pre>           
               </p>
               <p>
                 In Julia, you might write:
