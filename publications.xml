@@ -224,15 +224,18 @@
 	<type>journal</type>
 	<title>An accelerated first-order method for non-convex optimization on manifolds</title>
 	<authors>C. Criscitiello and N. Boumal</authors>
-	<year>2022</year>
+	<year>2023</year>
 	<status>in the Journal of Foundations of Computational Mathematics</status>
 	<bibtex>
-@Article{criscitiello2022accelerated,
+@Article{criscitiello2023accelerated,
   author  = {Criscitiello, C. and Boumal, N.},
   journal = {Journal of Foundations of Computational Mathematics},
   title   = {An accelerated first-order method for non-convex optimization on manifolds},
   doi     = {10.1007/s10208-022-09573-9},
-  year    = {2022}
+  publisher = {Springer Science and Business Media {LLC}},
+  year    = {2023},
+  volume  = {23},
+  pages   = {1433--1509}
 }
 	</bibtex>
 	<comment></comment>
