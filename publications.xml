@@ -175,15 +175,20 @@
 	<type>journal</type>
 	<title>Finding stationary points on bounded-rank matrices: A geometric hurdle and a smooth remedy</title>
 	<authors>E. Levin, J. Kileel and N. Boumal</authors>
-	<year>2022</year>
+	<year>2023</year>
 	<status>in Mathematical Programming</status>
 	<bibtex>
-@Article{levin2022stationaryrank,
-  author  = {Levin, E. and Kileel, J. and Boumal, N.},
-  journal = {Mathematical Programming},
-  title   = {Finding stationary points on bounded-rank matrices: A geometric hurdle and a smooth remedy},
-  year    = {2022},
-  doi     = {10.1007/s10107-022-01851-2}
+@Article{levin2023stationaryrank,
+    title = {Finding stationary points on bounded-rank matrices: a geometric hurdle and a smooth remedy},
+    volume = {199},
+    DOI = {10.1007/s10107-022-01851-2},
+    number = {1--2},
+    journal = {Mathematical Programming},
+    publisher = {Springer Science and Business Media {LLC}},
+    author = {Levin, E. and Kileel, J. and Boumal, N.},
+    year = {2023},
+    month = jun,
+    pages = {831--864}
 }
 	</bibtex>
 	<comment>The arXiv version contains a few details omitted in the published version.</comment>
