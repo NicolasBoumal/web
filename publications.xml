@@ -395,15 +395,15 @@
 	<status>in Communications on Pure and Applied Mathematics</status>
 	<bibtex>
 @article{boumal2019deterministicbm,
-	author = {Boumal, N. and Voroninski, V. and Bandeira, A.S.},
-	title = {Deterministic Guarantees for {B}urer-{M}onteiro Factorizations of Smooth Semidefinite Programs},
-	journal = {Communications on Pure and Applied Mathematics},
-	volume = {73},
-	number = {3},
-	pages = {581--608},
-	year = {2019},
+    author = {Boumal, N. and Voroninski, V. and Bandeira, A.S.},
+    title = {Deterministic Guarantees for {B}urer-{M}onteiro Factorizations of Smooth Semidefinite Programs},
+    journal = {Communications on Pure and Applied Mathematics},
+    volume = {73},
+    number = {3},
+    pages = {581--608},
+    year = {2019},
     publisher = {Wiley},
-	doi = {10.1002/cpa.21830}
+    doi = {10.1002/cpa.21830}
 }
 	</bibtex>
 	<comment></comment>
@@ -417,15 +417,19 @@
 	<type>journal</type>
 	<title>Computational Complexity versus Statistical Performance on Sparse Recovery Problems</title>
 	<authors>V. Roulet, N. Boumal and A. d'Aspremont</authors>
-	<year>2019</year>
+	<year>2020</year>
 	<status>in Information and Inference, a journal of the IMA</status>
 	<bibtex>
-@article{roulet2019renegar,
-  author  = {Roulet, V. and Boumal, N. and d'Aspremont, A.},
-  title   = {Computational Complexity versus Statistical Performance on Sparse Recovery Problems},
-  journal = {Information and Inference: A Journal of the IMA},
-  year = {2019},
-  doi = {10.1093/imaiai/iay020}
+@article{roulet2020renegar,
+    author  = {Roulet, V. and Boumal, N. and d'Aspremont, A.},
+    title   = {Computational Complexity versus Statistical Performance on Sparse Recovery Problems},
+    journal = {Information and {I}nference: A Journal of the {IMA}},
+    year    = {2020},
+    doi     = {10.1093/imaiai/iay020},
+    pages   = {1--32},
+    volume  = {9},
+    number  = {1},
+    publisher = {Oxford University Press ({OUP})}
 }
 	</bibtex>
 	<comment>Extended from a shorter preprint titled "Renegar's Condition Number and Compressed Sensing Performance".</comment>
