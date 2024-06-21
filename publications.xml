@@ -1,6 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
+<object id="1033">
+	<type>preprint</type>
+	<title>Optimization over bounded-rank matrices through a desingularization enables joint global and local guarantees</title>
+	<authors>Q. Rebjock and N. Boumal</authors>
+	<year>2024</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{rebjock2024desingularization,
+  author  = {Rebjock, Q. and Boumal, N.},
+  journal = {arXiv 2406.14211},
+  title   = {Optimization over bounded-rank matrices through a desingularization enables joint global and local guarantees},
+  year    = {2024}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2406.14211</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="2020">
 	<type>preprint</type>
 	<title>Synchronization on circles and spheres with nonlinear interactions</title>
