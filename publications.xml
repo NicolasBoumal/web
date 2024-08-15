@@ -1225,6 +1225,20 @@ year = {2011}
 
 
 
+<object id="3051">
+	<type>talk</type>
+	<title>Synchronization on circles and spheres with nonlinear interactions</title>
+	<with></with>
+	<event>
+		<venue>ISMP 2024</venue>
+		<city>Montréal</city><country>Canada</country>
+		<year>2024</year><month>25</month><day>7</day>
+		<video></video>
+	</event>
+	<comment></comment>
+	<abstract>Motivated by questions in control, Kuramoto networks and (highly simplified) transformers, we consider the dynamics of n points on a sphere in R^d which attract each other according to a nonlinear function of the distances between them. On spheres of dimension two or more, the points synchronize (that is, converge to the same position) quite generally. In contrast, on a circle, topological difficulties come up: we formalize those difficulties, and overcome them partly.</abstract>
+	<link>https://ismp2024.gerad.ca/schedule/ThB/93</link>
+</object>
 <object id="3050">
 	<type>talk</type>
 	<title>Riemannian optimization: software and applications</title>
