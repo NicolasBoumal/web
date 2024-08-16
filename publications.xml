@@ -1356,6 +1356,12 @@ My hope is that I can learn from you which other questions we should be asking o
 		<year>2022</year><month>10</month><day>18</day>
 		<video></video>
 	</event>
+	<event>
+		<venue>ALGOPT2024 workshop on Algorithmic Optimization</venue>
+		<city>Louvain-la-Neuve</city><country>Belgium</country>
+		<year>2024</year><month>8</month><day>27</day>
+		<video></video>
+	</event>
 	<comment></comment>
 	<abstract>What sets optimization on Euclidean spaces apart from optimization on Riemannian manifolds? Not that much. By and large, classical algorithms for smooth optimization on Euclidean spaces carry over to optimization on Riemannian manifolds, often with essentially the same (adequately rephrased) theoretical guarantees. As a notable exception, it turns out that such is not the case for Nesterov's accelerated gradient descent. Building on several ideas by Hamilton and Moitra (2021), we construct a resisting oracle that shows it is not possible to minimize smooth, strongly geodesically convex functions on Hadamard manifolds at an accelerated rate. I will give some geometric intuition as to why negative curvature makes life harder for optimizers, and why this may not be the end of the story.
 
