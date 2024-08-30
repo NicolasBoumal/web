@@ -1,6 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
+<object id="1034">
+	<type>preprint</type>
+	<title>Nonconvex landscapes for $Z_2$ synchronization and graph clustering are benign near exact recovery thresholds</title>
+	<authors>A.D. McRae, P. Abdalla, A.S. Bandeira and N. Boumal</authors>
+	<year>2024</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{mcrae2024benignnearexact,
+  author  = {McRae, A.D. and Abdalla, P. and Bandeira, A.S. and Boumal, N.},
+  journal = {arXiv 2407.13407},
+  title   = {Nonconvex landscapes for $Z_2$ synchronization and graph clustering are benign near exact recovery thresholds},
+  year    = {2024}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2407.13407</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="1033">
 	<type>preprint</type>
 	<title>Optimization over bounded-rank matrices through a desingularization enables joint global and local guarantees</title>
@@ -46,7 +65,7 @@
 	<title>Fast convergence of trust-regions for non-isolated minima via analysis of CG on indefinite matrices</title>
 	<authors>Q. Rebjock and N. Boumal</authors>
 	<year>2023</year>
-	<status>available on ArXiv</status>
+	<status>to appear in Mathematical Programming</status>
 	<bibtex>
 @Article{rebjock2023nonisolatedTRtCG,
   author  = {Rebjock, Q. and Boumal, N.},
@@ -65,7 +84,7 @@
 	<title>Fast convergence to non-isolated minima: four equivalent conditions for $C^2$ functions</title>
 	<authors>Q. Rebjock and N. Boumal</authors>
 	<year>2023</year>
-	<status>available on ArXiv</status>
+	<status>to appear in Mathematical Programming</status>
 	<bibtex>
 @Article{rebjock2023nonisolated,
   author  = {Rebjock, Q. and Boumal, N.},
