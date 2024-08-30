@@ -60,6 +60,27 @@
 	<tag>optimization</tag>
     <tag>synchro</tag>
 </object>
+<object id="1009">
+	<type>preprint</type>
+	<title>A Riemannian low-rank method for optimization over semidefinite matrices with block-diagonal constraints</title>
+	<authors>N. Boumal</authors>
+	<year>2015</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@article{boumal2015staircase,
+  author  = {Boumal, N.},
+  title   = {A {R}iemannian low-rank method for optimization over semidefinite matrices with block-diagonal constraints},
+  journal = {arXiv preprint arXiv:1506.00575},
+  year    = {2015}
+}
+	</bibtex>
+	<comment>This is a technical report. The core theoretical results appear (generalized) in &lt;i&gt;Deterministic guarantees for Burer-Monteiro factorizations of smooth semidefinite programs&lt;/i&gt;.</comment>
+	<link>https://arxiv.org/abs/1506.00575</link>
+	<publisherlink></publisherlink>
+	<tag>synchro</tag>
+</object>
+
+
 <object id="1032">
 	<type>preprint</type>
 	<title>Fast convergence of trust-regions for non-isolated minima via analysis of CG on indefinite matrices</title>
@@ -98,28 +119,6 @@
 	<publisherlink></publisherlink>
 	<tag>optimization</tag>
 </object>
-<object id="1009">
-	<type>preprint</type>
-	<title>A Riemannian low-rank method for optimization over semidefinite matrices with block-diagonal constraints</title>
-	<authors>N. Boumal</authors>
-	<year>2015</year>
-	<status>available on ArXiv</status>
-	<bibtex>
-@article{boumal2015staircase,
-  author  = {Boumal, N.},
-  title   = {A {R}iemannian low-rank method for optimization over semidefinite matrices with block-diagonal constraints},
-  journal = {arXiv preprint arXiv:1506.00575},
-  year    = {2015}
-}
-	</bibtex>
-	<comment>This is a technical report. The core theoretical results appear (generalized) in &lt;i&gt;Deterministic guarantees for Burer-Monteiro factorizations of smooth semidefinite programs&lt;/i&gt;.</comment>
-	<link>https://arxiv.org/abs/1506.00575</link>
-	<publisherlink></publisherlink>
-	<tag>synchro</tag>
-</object>
-
-
-
 <object id="1031">
 	<type>journal</type>
 	<title>Benign landscapes of low-dimensional relaxations for orthogonal synchronization on general graphs</title>
