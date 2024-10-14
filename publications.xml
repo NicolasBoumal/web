@@ -82,7 +82,7 @@
 
 
 <object id="1032">
-	<type>preprint</type>
+	<type>journal</type>
 	<title>Fast convergence of trust-regions for non-isolated minima via analysis of CG on indefinite matrices</title>
 	<authors>Q. Rebjock and N. Boumal</authors>
 	<year>2023</year>
@@ -101,22 +101,24 @@
 	<tag>optimization</tag>
 </object>
 <object id="1030">
-	<type>preprint</type>
+	<type>journal</type>
 	<title>Fast convergence to non-isolated minima: four equivalent conditions for $C^2$ functions</title>
 	<authors>Q. Rebjock and N. Boumal</authors>
 	<year>2023</year>
-	<status>to appear in Mathematical Programming</status>
+	<status>Mathematical Programming</status>
 	<bibtex>
-@Article{rebjock2023nonisolated,
+@Article{rebjock2024nonisolated,
   author  = {Rebjock, Q. and Boumal, N.},
-  journal = {arXiv 2303.00096},
   title   = {Fast convergence to non-isolated minima: four equivalent conditions for {$C^2$} functions},
-  year    = {2023}
+  journal = {Mathematical Programming},
+  publisher = {Springer},
+  doi = {10.1007/s10107-024-02136-6},
+  year    = {2024}
 }
 	</bibtex>
 	<comment>See also a &lt;a href="https://youtu.be/-VqBzz3Nedc" target="_blank"&gt;video of a talk&lt;/a&gt;.</comment>
 	<link>https://arxiv.org/abs/2303.00096</link>
-	<publisherlink></publisherlink>
+	<publisherlink>https://link.springer.com/article/10.1007/s10107-024-02136-6</publisherlink>
 	<tag>optimization</tag>
 </object>
 <object id="1031">
