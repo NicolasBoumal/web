@@ -85,7 +85,7 @@
 	<type>journal</type>
 	<title>Fast convergence of trust-regions for non-isolated minima via analysis of CG on indefinite matrices</title>
 	<authors>Q. Rebjock and N. Boumal</authors>
-	<year>2023</year>
+	<year>2024</year>
 	<status>to appear in Mathematical Programming</status>
 	<bibtex>
 @Article{rebjock2023nonisolatedTRtCG,
@@ -104,7 +104,7 @@
 	<type>journal</type>
 	<title>Fast convergence to non-isolated minima: four equivalent conditions for $C^2$ functions</title>
 	<authors>Q. Rebjock and N. Boumal</authors>
-	<year>2023</year>
+	<year>2024</year>
 	<status>Mathematical Programming</status>
 	<bibtex>
 @Article{rebjock2024nonisolated,
