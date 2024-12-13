@@ -87,10 +87,21 @@
         }
     }
 
-
     const timer = new Timer();
-    var state = 'zero'; // states are: 'zero' and 'running'
-    var setintervalhandle = null;
+    let state = 'zero'; // states are: 'zero' and 'running'
+    let setintervalhandle = null;
+
+    // Sound to play every 10 seconds
+    const beep0 = new Audio('https://www.soundjay.com/buttons/button-45.mp3');
+    const beep1 = new Audio('https://www.soundjay.com/buttons/button-26.mp3');
+    const beep2 = new Audio('https://www.soundjay.com/buttons/beep-24.mp3');
+    const beep3 = beep1;
+    const beep4 = beep2;
+    const beep5 = beep1;
+    const beeps = [
+        beep0, beep1, beep2, beep3, beep4, beep5
+    ];
+    let lastBeepTime = -10000; // Initialize to ensure the first beep plays correctly
 
     $(document).on('click', () => {
         switch (state) {
@@ -99,7 +110,14 @@
                 timer.reset();
                 timer.start();
                 setintervalhandle = setInterval(() => {
-                    $('#timer').text(new Date(timer.getTime()).toISOString().substr(15, 4));
+                    const elapsedTime = timer.getTime();
+                    $('#timer').text(new Date(elapsedTime).toISOString().substr(15, 4));
+
+                    // Play sound every 10 seconds
+                    if (Math.floor(elapsedTime / 1000) % 10 === 0 && elapsedTime - lastBeepTime >= 10000) {
+                        beeps[(Math.floor(elapsedTime / 1000) / 10) % 6].play();
+                        lastBeepTime = elapsedTime; // Update the last beep time
+                    }
                 }, 100);
                 state = 'running';
                 break;
@@ -109,13 +127,15 @@
                 clearInterval(setintervalhandle);
                 timer.stop();
                 state = 'zero';
+                lastBeepTime = -10000;
                 break;
 
             default:
                 console.log('bad state.');
         }
-
     });
 </script>
+
+
 
 </html>
