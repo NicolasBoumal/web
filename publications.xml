@@ -1245,6 +1245,34 @@ year = {2011}
 
 
 
+<object id="3053">
+	<type>talk</type>
+	<title>Optimization beyond convexity, with a bit of geometry</title>
+	<with></with>
+	<event>
+		<venue>Institute of Mathematics, EPFL</venue>
+		<city>Lausanne</city><country>Switzerland</country>
+		<year>2024</year><month>12</month><day>11</day>
+		<video></video>
+	</event>
+	<comment></comment>
+	<abstract>Pretty much any computational task can be framed as an optimization problem. But of course, with great generality comes great complexity. Accordingly, it is fruitful to focus on problem classes which enjoy some structure. A particularly nice structure is convexity: this is well understood by now. Absent convexity, optimization problems can be arbitrarily hard. Yet, as it happens, some non-convex problems can be solved numerically in reasonable time. How do we recognize them? How do we exploit their structure? And if a problem of interest fails to have such good properties, what can we do about it? I will present some results and directions my group and I are exploring.</abstract>
+	<link></link>
+</object>
+<object id="3052">
+	<type>talk</type>
+	<title>The center-stable manifold theorem for saddle avoidance, with all the details</title>
+	<with></with>
+	<event>
+		<venue></venue>
+		<city>Paris</city><country>France</country>
+		<year>2024</year><month>9</month><day>30</day>
+		<video></video>
+	</event>
+	<comment></comment>
+	<abstract>Gradient descent (with random initialization) almost surely avoids convergence to a (strict) saddle point. The now standard proof of that fact relies on the center-stable manifold theorem. That is an old result in dynamical systems. It is powerful, but also rigid; and the proof is rarely spelled out for the most general case. With Andreea Musat, we spent some time reconstructing the proof---this is what I'll show on the blackboard---with the hope to (at some point) extend it to apply to more optimization algorithms. The lecture notes will be posted to our group blog: https://www.racetothebottom.xyz/.</abstract>
+	<link></link>
+</object>
 <object id="3051">
 	<type>talk</type>
 	<title>Synchronization on circles and spheres with nonlinear interactions</title>
