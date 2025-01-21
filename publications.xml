@@ -1247,6 +1247,20 @@ year = {2011}
 
 
 
+<object id="3054">
+	<type>talk</type>
+	<title>Points moving on spheres; and on to non-convex, low-dimensional relaxations</title>
+	<with></with>
+	<event>
+		<venue>Workshop: Physics of AI algorithms (PHAIA25)</venue>
+		<city>Les Houches</city><country>France</country>
+		<year>2025</year><month>1</month><day>13</day>
+		<video></video>
+	</event>
+	<comment></comment>
+	<abstract></abstract>
+	<link>https://www.di.ens.fr/~aspremon/PHAIA25/program.html</link>
+</object>
 <object id="3053">
 	<type>talk</type>
 	<title>Optimization beyond convexity, with a bit of geometry</title>
