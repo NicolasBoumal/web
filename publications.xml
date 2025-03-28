@@ -1247,6 +1247,20 @@ year = {2011}
 
 
 
+<object id="3055">
+	<type>talk</type>
+	<title>Saddle point avoidance in optimization with deterministic algorithms: refined proof techniques</title>
+	<with></with>
+	<event>
+		<venue>Seminar on the interactions between statistics and geometry</venue>
+		<city>Online</city><country>Internet</country>
+		<year>2025</year><month>4</month><day>4</day>
+		<video></video>
+	</event>
+	<comment></comment>
+	<abstract>It is an unfortunate fact that reasonable optimization algorithms may converge to saddle points (for our purpose: critical points which are not even local minimizers). That said, this is exceedingly rare. Typically, if the initialization is generic (e.g., if it is random), then we do not see such bad behavior. This was first formalized for gradient descent with constant step size by Lee et al. (2016). Since then, several extensions were proposed, but all of them are restricted to simple algorithms (essentially iterating a nice map). The proofs (which rely on the Center Stable Manifold Theorem) do not extend to seemingly simple variations such as gradient descent with a line-search method. I will present ongoing work with Andreea Musat where we refine existing proof techniques to extend them to a first line-search method. These results also apply for Riemannian optimization, with some friction.</abstract>
+	<link>https://qparis-math.github.io/seminar/</link>
+</object>
 <object id="3054">
 	<type>talk</type>
 	<title>Points moving on spheres; and on to non-convex, low-dimensional relaxations</title>
