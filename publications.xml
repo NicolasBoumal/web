@@ -1301,7 +1301,7 @@ year = {2011}
 	</event>
 	<comment></comment>
 	<abstract>Gradient descent (with random initialization) almost surely avoids convergence to a (strict) saddle point. The now standard proof of that fact relies on the center-stable manifold theorem. That is an old result in dynamical systems. It is powerful, but also rigid; and the proof is rarely spelled out for the most general case. With Andreea Musat, we spent some time reconstructing the proof---this is what I'll show on the blackboard---with the hope to (at some point) extend it to apply to more optimization algorithms. The lecture notes will be posted to our group blog: https://www.racetothebottom.xyz/.</abstract>
-	<link></link>
+	<link>https://www.racetothebottom.xyz/posts/saddle-avoidance-general/</link>
 </object>
 <object id="3051">
 	<type>talk</type>
