@@ -1,25 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
-<object id="1034">
-	<type>preprint</type>
-	<title>Nonconvex landscapes for $Z_2$ synchronization and graph clustering are benign near exact recovery thresholds</title>
-	<authors>A.D. McRae, P. Abdalla, A.S. Bandeira and N. Boumal</authors>
-	<year>2024</year>
-	<status>available on ArXiv</status>
-	<bibtex>
-@Article{mcrae2024benignnearexact,
-  author  = {McRae, A.D. and Abdalla, P. and Bandeira, A.S. and Boumal, N.},
-  journal = {arXiv 2407.13407},
-  title   = {Nonconvex landscapes for $Z_2$ synchronization and graph clustering are benign near exact recovery thresholds},
-  year    = {2024}
-}
-	</bibtex>
-	<comment></comment>
-	<link>https://arxiv.org/abs/2407.13407</link>
-	<publisherlink></publisherlink>
-	<tag>optimization</tag>
-</object>
 <object id="1033">
 	<type>preprint</type>
 	<title>Optimization over bounded-rank matrices through a desingularization enables joint global and local guarantees</title>
@@ -81,6 +62,29 @@
 </object>
 
 
+<object id="1034">
+	<type>journal</type>
+	<title>Nonconvex landscapes for $Z_2$ synchronization and graph clustering are benign near exact recovery thresholds</title>
+	<authors>A.D. McRae, P. Abdalla, A.S. Bandeira and N. Boumal</authors>
+	<year>2025</year>
+	<status>in Information and Inference, a journal of the IMA</status>
+	<bibtex>
+@Article{mcrae2025benignnearexact,
+  author  = {McRae, A.D. and Abdalla, P. and Bandeira, A.S. and Boumal, N.},
+  title   = {Nonconvex landscapes for $Z_2$ synchronization and graph clustering are benign near exact recovery thresholds},
+  DOI = {10.1093/imaiai/iaaf012},
+  volume = {14},
+  number = {2},
+  journal = {Information and Inference: A Journal of the {IMA}},
+  publisher = {Oxford University Press ({OUP})},
+  year = {2025}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2407.13407</link>
+	<publisherlink>https://doi.org/10.1093/imaiai/iaaf012</publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="1032">
 	<type>journal</type>
 	<title>Fast convergence of trust-regions for non-isolated minima via analysis of CG on indefinite matrices</title>
