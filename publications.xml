@@ -71,7 +71,7 @@
 	<bibtex>
 @Article{mcrae2025benignnearexact,
   author  = {McRae, A.D. and Abdalla, P. and Bandeira, A.S. and Boumal, N.},
-  title   = {Nonconvex landscapes for $Z_2$ synchronization and graph clustering are benign near exact recovery thresholds},
+  title   = {Nonconvex landscapes for ${Z}_2$ synchronization and graph clustering are benign near exact recovery thresholds},
   DOI = {10.1093/imaiai/iaaf012},
   volume = {14},
   number = {2},
