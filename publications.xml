@@ -1,6 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
+<object id="1036">
+	<type>preprint</type>
+	<title>Sensor network localization has a benign landscape after low-dimensional relaxation</title>
+	<authors>C. Criscitiello, A.D. McRae, Q. Rebjock and N. Boumal</authors>
+	<year>2025</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{criscitiello2025snl,
+  author  = {Criscitiello, C. and McRae, A.D. and Rebjock, Q. and Boumal, N.},
+  journal = {arXiv 2507.15662},
+  title   = {Sensor network localization has a benign landscape after low-dimensional relaxation},
+  year    = {2025}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2507.15662</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
+<object id="1035">
+	<type>preprint</type>
+	<title>Gradient descent avoids strict saddles with a simple line-search method too</title>
+	<authors>A. Muşat and N. Boumal</authors>
+	<year>2025</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{musat2025saddlelinesearch,
+  author  = {Mu{\c{s}}at, A. and Boumal, N.},
+  journal = {arXiv 2507.13804},
+  title   = {Gradient descent avoids strict saddles with a simple line-search method too},
+  year    = {2025}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2507.13804</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="1033">
 	<type>preprint</type>
 	<title>Optimization over bounded-rank matrices through a desingularization enables joint global and local guarantees</title>
