@@ -192,16 +192,19 @@
 	<type>journal</type>
 	<title>The effect of smooth parametrizations on nonconvex optimization landscapes</title>
 	<authors>E. Levin, J. Kileel and N. Boumal</authors>
-	<year>2024</year>
+	<year>2025</year>
 	<status>in Mathematical Programming</status>
 	<bibtex>
-@Article{levin2024lifts,
-  author  = {Levin, E. and Kileel, J. and Boumal, N.},
+@Article{levin2025lifts,
+  title = {The effect of smooth parametrizations on nonconvex optimization landscapes},
+  volume = {209},
+  DOI = {10.1007/s10107-024-02058-3},
+  number = {1--2},
   journal = {Mathematical Programming},
-  title   = {The effect of smooth parametrizations on nonconvex optimization landscapes},
-  year    = {2024},
   publisher = {Springer Science and Business Media {LLC}},
-  doi     = {10.1007/s10107-024-02058-3}
+  author = {Levin,  E. and Kileel,  J. and Boumal,  N.},
+  year = {2025},
+  pages = {63--111}
 }
 	</bibtex>
 	<comment>Congratulations to Eitan for his &lt;a href="https://connect.informs.org/optimizationsociety/prizes/students-prize"&gt;INFORMS Optimization Society 2024 Student Paper Prize!&lt;/a&gt;</comment>
