@@ -58,27 +58,6 @@
 	<publisherlink></publisherlink>
 	<tag>optimization</tag>
 </object>
-<object id="2020">
-	<type>preprint</type>
-	<title>Synchronization on circles and spheres with nonlinear interactions</title>
-	<authors>C. Criscitiello, Q. Rebjock, A.D. McRae and N. Boumal</authors>
-	<year>2024</year>
-	<status>available on ArXiv</status>
-	<bibtex>
-@article{criscitiello2024synchcircles,
-    title = {Synchronization on circles and spheres with nonlinear interactions},
-    author = {Criscitiello, C. and Rebjock, Q. and McRae, A.D. and Boumal, N.},
-    journal = {arXiv preprint arXiv:2405.18273},
-    year = {2024},
-    url = {https://arxiv.org/abs/2405.18273}
-}
-	</bibtex>
-	<comment></comment>
-	<link>https://arxiv.org/abs/2405.18273</link>
-	<publisherlink></publisherlink>
-	<tag>optimization</tag>
-    <tag>synchro</tag>
-</object>
 <object id="1009">
 	<type>preprint</type>
 	<title>A Riemannian low-rank method for optimization over semidefinite matrices with block-diagonal constraints</title>
@@ -100,6 +79,27 @@
 </object>
 
 
+<object id="1037">
+	<type>journal</type>
+	<title>Synchronization on circles and spheres with nonlinear interactions</title>
+	<authors>C. Criscitiello, Q. Rebjock, A.D. McRae and N. Boumal</authors>
+	<year>2026</year>
+	<status>to appear in SIAM Journal on Applied Dynamical Systems</status>
+	<bibtex>
+@article{criscitiello2026synchcircles,
+    title = {Synchronization on circles and spheres with nonlinear interactions},
+    author = {Criscitiello, C. and Rebjock, Q. and McRae, A.D. and Boumal, N.},
+    journal = {SIAM Journal on Applied Dynamical Systems},
+    year = {2026},
+    url = {https://arxiv.org/abs/2405.18273}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2405.18273</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+    <tag>synchro</tag>
+</object>
 <object id="1034">
 	<type>journal</type>
 	<title>Nonconvex landscapes for $Z_2$ synchronization and graph clustering are benign near exact recovery thresholds</title>
