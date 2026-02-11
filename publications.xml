@@ -1,6 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
+<object id="2020">
+	<type>preprint</type>
+	<title>Gaussian Match-and-Copy: A Minimalist Benchmark for Studying Transformer Induction</title>
+	<authors>A. Gonon, A. Cordonnier and N. Boumal</authors>
+	<year>2026</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{gonon2026gmc,
+  author  = {Gonon,  A. and Cordonnier,  A. and Boumal,  N.},
+  journal = {arXiv 2602.07562},
+  title   = {Gaussian Match-and-Copy: A Minimalist Benchmark for Studying Transformer Induction},
+  year    = {2026}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2602.07562</link>
+	<publisherlink></publisherlink>
+	<tag>transformers</tag>
+</object>
 <object id="1036">
 	<type>preprint</type>
 	<title>Sensor network localization has a benign landscape after low-dimensional relaxation</title>
