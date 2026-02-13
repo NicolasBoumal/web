@@ -1,6 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
+<object id="2021">
+	<type>preprint</type>
+	<title>Insights on Muon from simple quadratics</title>
+	<authors>A. Gonon, A.-A. Muşat and N. Boumal</authors>
+	<year>2026</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{gonon2026muon,
+  author  = {Gonon, A. and Mu{\c{s}}at, A.-A. and Boumal, N.},
+  journal = {arXiv 2602.11948},
+  title   = {Insights on {Muon} from simple quadratics},
+  year    = {2026}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2602.11948</link>
+	<publisherlink></publisherlink>
+	<tag>muon</tag>
+</object>
 <object id="2020">
 	<type>preprint</type>
 	<title>Gaussian Match-and-Copy: A Minimalist Benchmark for Studying Transformer Induction</title>
@@ -42,12 +61,12 @@
 <object id="1035">
 	<type>preprint</type>
 	<title>Gradient descent avoids strict saddles with a simple line-search method too</title>
-	<authors>A. Muşat and N. Boumal</authors>
+	<authors>A.-A. Muşat and N. Boumal</authors>
 	<year>2025</year>
 	<status>available on ArXiv</status>
 	<bibtex>
 @Article{musat2025saddlelinesearch,
-  author  = {Mu{\c{s}}at, A. and Boumal, N.},
+  author  = {Mu{\c{s}}at, A.-A. and Boumal, N.},
   journal = {arXiv 2507.13804},
   title   = {Gradient descent avoids strict saddles with a simple line-search method too},
   year    = {2025}
