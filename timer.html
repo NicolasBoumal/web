@@ -27,6 +27,25 @@
 
 
 <script>
+
+    function playBeep(frequency = 800, duration = 150) {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        oscillator.type = 'sine';
+        oscillator.frequency.value = frequency;
+
+        oscillator.connect(gain);
+        gain.connect(ctx.destination);
+
+        oscillator.start();
+        gain.gain.setValueAtTime(1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration / 1000);
+
+        oscillator.stop(ctx.currentTime + duration / 1000);
+    }
+
     // https://stackoverflow.com/a/57981688/5989015
     class Timer {
         constructor() {
@@ -91,16 +110,6 @@
     let state = 'zero'; // states are: 'zero' and 'running'
     let setintervalhandle = null;
 
-    // Sound to play every 10 seconds
-    const beep0 = new Audio('https://www.soundjay.com/buttons/button-45.mp3');
-    const beep1 = new Audio('https://www.soundjay.com/buttons/button-26.mp3');
-    const beep2 = new Audio('https://www.soundjay.com/buttons/beep-24.mp3');
-    const beep3 = beep1;
-    const beep4 = beep2;
-    const beep5 = beep1;
-    const beeps = [
-        beep0, beep1, beep2, beep3, beep4, beep5
-    ];
     let lastBeepTime = -10000; // Initialize to ensure the first beep plays correctly
 
     $(document).on('click', () => {
@@ -115,7 +124,10 @@
 
                     // Play sound every 10 seconds
                     if (Math.floor(elapsedTime / 1000) % 10 === 0 && elapsedTime - lastBeepTime >= 10000) {
-                        beeps[(Math.floor(elapsedTime / 1000) / 10) % 6].play();
+                        let index = Math.floor(elapsedTime / 1000) / 10 % 6;
+                        let frequency = (index === 0) ? 880 : 440 + 50 * index; // Higher frequency for the first beep
+                        let duration = (index === 0) ? 200 : 120; // Longer duration for the first beep
+                        playBeep(frequency, duration);
                         lastBeepTime = elapsedTime; // Update the last beep time
                     }
                 }, 100);
