@@ -124,9 +124,9 @@
 
                     // Play sound every 10 seconds
                     if (Math.floor(elapsedTime / 1000) % 10 === 0 && elapsedTime - lastBeepTime >= 10000) {
-                        let index = Math.floor(elapsedTime / 1000) / 10 % 6;
-                        let frequency = (index === 0) ? 880 : 440 + 50 * index; // Higher frequency for the first beep
-                        let duration = (index === 0) ? 200 : 120; // Longer duration for the first beep
+                        let index = Math.floor(elapsedTime / 1000) / 10;
+                        let frequency = 440 + (440/6) * index; // Higher frequency for the first beep
+                        let duration = (index % 6 === 0) ? 750 : 150; // Longer duration for the first beep
                         playBeep(frequency, duration);
                         lastBeepTime = elapsedTime; // Update the last beep time
                     }
