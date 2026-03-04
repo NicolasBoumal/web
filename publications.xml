@@ -1,6 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
+<object id="1038">
+	<type>preprint</type>
+	<title>A non-autonomous center-stable set theorem for saddle avoidance in optimization</title>
+	<authors>A.-A. Muşat and N. Boumal</authors>
+	<year>2026</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{musat2026nonautonomous,
+  author  = {Mu{\c{s}}at, A.-A. and Boumal, N.},
+  journal = {arXiv 2603.02782},
+  title   = {A non-autonomous center-stable set theorem for saddle avoidance in optimization},
+  year    = {2026}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2603.02782</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="2021">
 	<type>preprint</type>
 	<title>Insights on Muon from simple quadratics</title>
