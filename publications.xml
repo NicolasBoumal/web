@@ -1,6 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
+<object id="1039">
+	<type>preprint</type>
+	<title>A practical randomized trust-region method to escape saddle points in high dimension</title>
+	<authors>R.-A. Dragomir, X. Jiang, B. Sun, N. Boumal</authors>
+	<year>2026</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{dragomir2026randomizedtr,
+  author  = {Dragomir, R.-A. and Jiang, X. and Sun, B. and Boumal, N.},
+  journal = {arXiv 2603.15494},
+  title   = {A practical randomized trust-region method to escape saddle points in high dimension},
+  year    = {2026}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2603.15494</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="1038">
 	<type>preprint</type>
 	<title>A non-autonomous center-stable set theorem for saddle avoidance in optimization</title>
