@@ -1368,6 +1368,22 @@ year = {2011}
 
 
 
+<object id="3056">
+	<type>talk</type>
+	<title>Smooth, globally Polyak-Łojasiewicz functions are nonlinear least-squares</title>
+	<with></with>
+	<event>
+		<venue>Statlearn</venue>
+		<city>Grenoble</city><country>France</country>
+		<year>2026</year><month>4</month><day>2</day>
+		<video></video>
+	</event>
+	<comment></comment>
+	<abstract>Polyak-Łojasiewicz (PŁ) functions abound in the literature, especially in nonconvex optimization. When they are also smooth, they become surprisingly simple---with an exotic twist. The plan is for us to discover the structure of those functions and of their sets of minimizers via gradient flow and fiber bundles.
+
+Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
+	<link>https://statlearn.sciencesconf.org/resource/page/id/11</link>
+</object>
 <object id="3055">
 	<type>talk</type>
 	<title>Saddle point avoidance in optimization with deterministic algorithms: refined proof techniques</title>
