@@ -1,6 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <publications>
 
+
+<object id="1040">
+	<type>preprint</type>
+	<title>Smooth, globally Polyak-Łojasiewicz functions are nonlinear least-squares</title>
+	<authors>N. Boumal, C. Criscitiello and Q. Rebjock</authors>
+	<year>2026</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{boumal2026globalpl,
+  author  = {Boumal, N. and Rebjock, Q. and Criscitiello, C.},
+  journal = {arXiv 2604.07972},
+  title   = {Smooth, globally {Polyak-{\L}ojasiewicz} functions are nonlinear least-squares},
+  year    = {2026}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2604.07972</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="1039">
 	<type>preprint</type>
 	<title>A practical randomized trust-region method to escape saddle points in high dimension</title>
