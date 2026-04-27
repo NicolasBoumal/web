@@ -1398,6 +1398,12 @@ year = {2011}
 		<year>2026</year><month>4</month><day>2</day>
 		<video></video>
 	</event>
+	<event>
+		<venue>Machine Learning and Data Science Seminar</venue>
+		<city>Oxford</city><country>UK</country>
+		<year>2026</year><month>5</month><day>11</day>
+		<video></video>
+	</event>
 	<comment></comment>
 	<abstract>Polyak-Łojasiewicz (PŁ) functions abound in the literature, especially in nonconvex optimization. When they are also smooth, they become surprisingly simple---with an exotic twist. The plan is for us to discover the structure of those functions and of their sets of minimizers via gradient flow and fiber bundles.
 
