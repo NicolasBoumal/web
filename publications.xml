@@ -180,19 +180,22 @@
 	<title>Synchronization on circles and spheres with nonlinear interactions</title>
 	<authors>C. Criscitiello, Q. Rebjock, A.D. McRae and N. Boumal</authors>
 	<year>2026</year>
-	<status>to appear in SIAM Journal on Applied Dynamical Systems</status>
+	<status>in SIAM Journal on Applied Dynamical Systems</status>
 	<bibtex>
 @article{criscitiello2026synchcircles,
     title = {Synchronization on circles and spheres with nonlinear interactions},
     author = {Criscitiello, C. and Rebjock, Q. and McRae, A.D. and Boumal, N.},
     journal = {SIAM Journal on Applied Dynamical Systems},
     year = {2026},
-    url = {https://arxiv.org/abs/2405.18273}
+    doi = {10.1137/24M1699759},
+		volume = {25},
+		number = {2},
+		pages = {1207--1237}
 }
 	</bibtex>
 	<comment></comment>
 	<link>https://arxiv.org/abs/2405.18273</link>
-	<publisherlink></publisherlink>
+	<publisherlink>https://epubs.siam.org/eprint/Y5QCJKC2HPW6VBJMYQRZ/full</publisherlink>
 	<tag>optimization</tag>
     <tag>synchro</tag>
 </object>
