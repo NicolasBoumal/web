@@ -1391,6 +1391,21 @@ year = {2011}
 
 
 
+<object id="3057">
+	<type>talk</type>
+	<title>Escaping saddles in high dimensions</title>
+	<with></with>
+	<event>
+		<venue>Randomized Numerical Linear Algebra, Bernoulli Center workshop</venue>
+		<city>Lausanne</city><country>Switzerland</country>
+		<year>2026</year><month>6</month><day>18</day>
+		<video></video>
+		<url>https://sites.google.com/view/randnlaworkshop/home</url>
+	</event>
+	<comment></comment>
+	<abstract>Consider minimizing a nonconvex function $f \colon \reals^d \to \reals$. To escape its saddle points, a deterministic algorithm needs at least Omega(d) "pieces of information" about f (think: gradients or Hessian-vector products). In stark contrast, randomized algorithms can bring this complexity down to poly-log(d). On the flip side, those randomized algorithms "bob around": they do not converge. We propose an algorithm which is (aptly) able to amplify the randomization when we are near a saddle, but which is also able to "absorb" the randomization when we are near a minimizer (in order to converge there). The method is based on conjugate gradients and trust regions: https://arxiv.org/abs/2603.15494.</abstract>
+	<link>https://optim-epfl.gitlab.io/talks/randomizedTR/randomizedTR.html#/</link>
+</object>
 <object id="3056">
 	<type>talk</type>
 	<title>Smooth, globally Polyak-Łojasiewicz functions are nonlinear least-squares</title>
