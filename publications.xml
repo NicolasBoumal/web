@@ -142,18 +142,20 @@
 	<title>Sensor network localization has a benign landscape after low-dimensional relaxation</title>
 	<authors>C. Criscitiello, A.D. McRae, Q. Rebjock and N. Boumal</authors>
 	<year>2026</year>
-	<status>to appear in Mathematical Programming</status>
+	<status>in Mathematical Programming</status>
 	<bibtex>
-@Article{criscitiello2025snl,
-  author  = {Criscitiello, C. and McRae, A.D. and Rebjock, Q. and Boumal, N.},
-  journal = {arXiv 2507.15662},
-  title   = {Sensor network localization has a benign landscape after low-dimensional relaxation},
-  year    = {2025}
+@Article{criscitiello2026snl,
+  title = {Sensor network localization has a benign landscape after low-dimensional relaxation},
+  DOI = {10.1007/s10107-026-02380-y},
+  journal = {Mathematical Programming},
+  publisher = {Springer Science and Business Media LLC},
+  author = {Criscitiello,  C. and McRae,  A.D. and Rebjock,  Q. and Boumal,  N.},
+  year = {2026}
 }
 	</bibtex>
 	<comment></comment>
 	<link>https://arxiv.org/abs/2507.15662</link>
-	<publisherlink></publisherlink>
+	<publisherlink>https://rdcu.be/fpK6i</publisherlink>
 	<tag>optimization</tag>
 </object>
 <object id="1033">
