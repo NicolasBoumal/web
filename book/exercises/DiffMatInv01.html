@@ -3,7 +3,7 @@
 </title>
 
 <p>
-In this exercise we will compute the differential of the matrix inversion. Knowing the differential of the matrix inversion is sometimes useful in optimization on manifolds, because it comes up naturally in different applications. For example when showing that the set of rank $r$-matrices is a manifold or if need to work with the maximum likelihood function of a Gaussians. Let use make some observations.
+In this exercise we will compute the differential of the matrix inversion. Knowing the differential of the matrix inversion is sometimes useful in optimization on manifolds, because it comes up naturally in different applications. For example when showing that the set of rank-$r$ matrices is a manifold or if we need to work with the maximum likelihood function of a Gaussian. Let us make some observations.
 </p>
 
 <p>
@@ -20,35 +20,39 @@ Let $F: U \to U$ be given by $A \mapsto A^{-1}$, i.e., $F$ is the matrix inversi
 <sketch>
     There are many different ways to do that. Two possibilities are through the Neumann series and through smooth curves. For the first approach show that you can reduce to the case of computing the differential at the identity. Then use the Neumann series to compute the differential at the identity. For the second one consider the smooth curve $A(t)=A+tH$ for $A \in U$ and $H \in \reals^{n \times n}$ and observe that
     \begin{aligned}
-        F \circ A(t) \cdot A(t) = I_n
+        F(A(t)) \cdot A(t) = I_n
     \end{aligned}
     for $t$ close enough to $0$.
 </sketch>
 <answer>
     <p>
-    First approach. Let $A \in U, H \in \reals^{n \times n}$. We have that
+    First approach.
+    Let $A \in U$ and $H \in \reals^{n \times n}$.
+    We have that
         \begin{aligned}
-            DF(A)[H] = \lim_{t \to 0} \frac{(A + tH)^{-1} - A^{-1}}{t}.
+            \D F(A)[H] = \lim_{t \to 0} \frac{(A + tH)^{-1} - A^{-1}}{t}.
         \end{aligned}
-        Let $t \in \reals$ be smooth enough such that $(A + tH) \in U$. Then
+        Let $t \in \reals$ be small enough such that $(A + tH) \in U$. Then
         \begin{aligned}
-            (A + tH)^{-1} = (I_n + tA^{-1}V)^{-1} \Sigma^{-1}.
+            (A + tH)^{-1} = (I_n + tA^{-1}H)^{-1} A^{-1}.
         \end{aligned}
         This shows that
         \begin{aligned}
-            DF(A)[H] = \left [ \lim_{t \to 0} \frac{((I + tA^{-1}V)^{-1} - I_n}{t} \right ] A^{-1} = DF(I_n)[A^{-1}H]A^{-1}.
+            \D F(A)[H] = \left [ \lim_{t \to 0} \frac{(I + tA^{-1}H)^{-1} - I_n}{t} \right ] A^{-1} = \D F(I_n)[A^{-1}H]A^{-1}.
         \end{aligned}
-        Thus we only need the differential in $I_n$. Let $V \in \reals^{d \times d} \setminus \{0\}$. Then for $0 \bigger |t| \bigger \frac{1}{||V||}$ it holds that $(I_n + tV)^{-1} = (I_n - (-tV))^{-1} = \sum_{n=0}^\infty (-tV)^n$. We get that
+        Thus we only need the differential in $I_n$.
+        Let $V \in \reals^{d \times d} \setminus \{0\}$.
+        Then for $0 \bigger |t| \bigger \frac{1}{||V||}$ it holds that $(I_n + tV)^{-1} = (I_n - (-tV))^{-1} = \sum_{n=0}^\infty (-tV)^n$. We get that
         \begin{aligned}
             \left \| \frac{(I_n + tV)^{-1} - I_n}{t} - (-V) \right \| = \left \| \sum_{n=2}^\infty t^{n-1} (-V)^{n} \right \| \leq \sum_{n=2}^\infty |t^{n-1}| \|(-V)^{n}\| \leq \frac{|t| \| V\|^2}{1 - |t| \| V\|}.
         \end{aligned}
         As the last term clearly goes to zero we get that
         \begin{aligned}
-            DF(I_n)[V]A^{-1} = \lim_{t \to 0} \frac{(I+tV)^{-1} - I_n}{t} = -V.
+            \D F(I_n)[V]A^{-1} = \lim_{t \to 0} \frac{(I+tV)^{-1} - I_n}{t} = -V.
         \end{aligned}
         We get that
         \begin{aligned}
-            DF(A)[H] = -A^{-1}HA^{-1}.
+            \D F(A)[H] = -A^{-1}HA^{-1}.
         \end{aligned}
         </p>
         <p>
@@ -59,11 +63,11 @@ Let $F: U \to U$ be given by $A \mapsto A^{-1}$, i.e., $F$ is the matrix inversi
         Differentiating on both sides and using the product and chain rule we get that
         \begin{aligned}
             0 &= \frac{d}{dt} \left ( F \circ A(t) \cdot A(t) \right ) = \frac{d}{dt} \left ( F \circ A(t) \right ) \cdot A(t)  + F \circ A(t) \frac{d}{dt} \left ( A(t) \right ) \\
-            &= DF(A(t))[A'(t)] A(t) + F \circ A(t) \cdot H
+            &= \D F(A(t))[A'(t)] A(t) + F \circ A(t) \cdot H
         \end{aligned}
         on $I$. In particular in $t=0$ we have
         \begin{aligned}
-            0 = A^{-1} \cdot H + DF(A)[H]A \iff DF(A)[H] = - A^{-1}HA^{-1}.
+            0 = A^{-1} \cdot H + \D F(A)[H]A \iff \D F(A)[H] = - A^{-1}HA^{-1}.
         \end{aligned}
         </p>
 </answer>
