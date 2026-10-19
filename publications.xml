@@ -97,25 +97,6 @@
 	<publisherlink></publisherlink>
 	<tag>transformers</tag>
 </object>
-<object id="1035">
-	<type>preprint</type>
-	<title>Gradient descent avoids strict saddles with a simple line-search method too</title>
-	<authors>A.-A. Muşat and N. Boumal</authors>
-	<year>2025</year>
-	<status>available on ArXiv</status>
-	<bibtex>
-@Article{musat2025saddlelinesearch,
-  author  = {Mu{\c{s}}at, A.-A. and Boumal, N.},
-  journal = {arXiv 2507.13804},
-  title   = {Gradient descent avoids strict saddles with a simple line-search method too},
-  year    = {2025}
-}
-	</bibtex>
-	<comment></comment>
-	<link>https://arxiv.org/abs/2507.13804</link>
-	<publisherlink></publisherlink>
-	<tag>optimization</tag>
-</object>
 <object id="1009">
 	<type>preprint</type>
 	<title>A Riemannian low-rank method for optimization over semidefinite matrices with block-diagonal constraints</title>
@@ -137,6 +118,28 @@
 </object>
 
 
+
+<object id="1035">
+	<type>preprint</type>
+	<title>Gradient descent avoids strict saddles with a simple line-search method too</title>
+	<authors>A.-A. Muşat and N. Boumal</authors>
+	<year>2026</year>
+	<status>in Mathematics of Operations Research</status>
+	<bibtex>
+@Article{musat2026saddlelinesearch,
+  title = {Gradient Descent Avoids Strict Saddles with a Simple Line-Search Method Too},
+  DOI = {10.1287/moor.2025.1350},
+  journal = {Mathematics of Operations Research},
+  publisher = {Institute for Operations Research and the Management Sciences ({INFORMS})},
+  author = {Musat,  Andreea-Alexandra and Boumal,  Nicolas},
+  year = {2026}.
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2507.13804</link>
+	<publisherlink>https://pubsonline.informs.org/doi/10.1287/moor.2025.1350</publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="1036">
 	<type>journal</type>
 	<title>Sensor network localization has a benign landscape after low-dimensional relaxation</title>
