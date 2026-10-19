@@ -1396,7 +1396,7 @@ year = {2011}
 
 
 
-<object id="3057">
+<object id="3058">
 	<type>talk</type>
 	<title>Escaping saddles in high dimensions</title>
 	<with></with>
@@ -1411,7 +1411,7 @@ year = {2011}
 	<abstract>Consider minimizing a nonconvex function $f \colon \reals^d \to \reals$. To escape its saddle points, a deterministic algorithm needs at least Omega(d) "pieces of information" about f (think: gradients or Hessian-vector products). In stark contrast, randomized algorithms can bring this complexity down to poly-log(d). On the flip side, those randomized algorithms "bob around": they do not converge. We propose an algorithm which is (aptly) able to amplify the randomization when we are near a saddle, but which is also able to "absorb" the randomization when we are near a minimizer (in order to converge there). The method is based on conjugate gradients and trust regions: https://arxiv.org/abs/2603.15494.</abstract>
 	<link>https://optim-epfl.gitlab.io/talks/randomizedTR/randomizedTR.html#/</link>
 </object>
-<object id="3056">
+<object id="3057">
 	<type>talk</type>
 	<title>Smooth, globally Polyak-Łojasiewicz functions are nonlinear least-squares</title>
 	<with></with>
@@ -1433,7 +1433,7 @@ year = {2011}
 Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	<link>https://optim-epfl.gitlab.io/talks/globalPL/globalPL.html</link>
 </object>
-<object id="3055">
+<object id="3056">
 	<type>talk</type>
 	<title>Saddle point avoidance in optimization with deterministic algorithms: refined proof techniques</title>
 	<with></with>
@@ -1447,7 +1447,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	<abstract>It is an unfortunate fact that reasonable optimization algorithms may converge to saddle points (for our purpose: critical points which are not even local minimizers). That said, this is exceedingly rare. Typically, if the initialization is generic (e.g., if it is random), then we do not see such bad behavior. This was first formalized for gradient descent with constant step size by Lee et al. (2016). Since then, several extensions were proposed, but all of them are restricted to simple algorithms (essentially iterating a nice map). The proofs (which rely on the Center Stable Manifold Theorem) do not extend to seemingly simple variations such as gradient descent with a line-search method. I will present ongoing work with Andreea Musat where we refine existing proof techniques to extend them to a first line-search method. These results also apply for Riemannian optimization, with some friction.</abstract>
 	<link>https://qparis-math.github.io/seminar/</link>
 </object>
-<object id="3054">
+<object id="3055">
 	<type>talk</type>
 	<title>Points moving on spheres; and on to non-convex, low-dimensional relaxations</title>
 	<with></with>
@@ -1461,7 +1461,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	<abstract></abstract>
 	<link>https://www.di.ens.fr/~aspremon/PHAIA25/program.html</link>
 </object>
-<object id="3053">
+<object id="3054">
 	<type>talk</type>
 	<title>Optimization beyond convexity, with a bit of geometry</title>
 	<with></with>
@@ -1475,7 +1475,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	<abstract>Pretty much any computational task can be framed as an optimization problem. But of course, with great generality comes great complexity. Accordingly, it is fruitful to focus on problem classes which enjoy some structure. A particularly nice structure is convexity: this is well understood by now. Absent convexity, optimization problems can be arbitrarily hard. Yet, as it happens, some non-convex problems can be solved numerically in reasonable time. How do we recognize them? How do we exploit their structure? And if a problem of interest fails to have such good properties, what can we do about it? I will present some results and directions my group and I are exploring.</abstract>
 	<link></link>
 </object>
-<object id="3052">
+<object id="3053">
 	<type>talk</type>
 	<title>The center-stable manifold theorem for saddle avoidance, with all the details</title>
 	<with></with>
@@ -1489,7 +1489,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	<abstract>Gradient descent (with random initialization) almost surely avoids convergence to a (strict) saddle point. The now standard proof of that fact relies on the center-stable manifold theorem. That is an old result in dynamical systems. It is powerful, but also rigid; and the proof is rarely spelled out for the most general case. With Andreea Musat, we spent some time reconstructing the proof---this is what I'll show on the blackboard---with the hope to (at some point) extend it to apply to more optimization algorithms. The lecture notes will be posted to our group blog: https://www.racetothebottom.xyz/.</abstract>
 	<link>https://www.racetothebottom.xyz/posts/saddle-avoidance-general/</link>
 </object>
-<object id="3051">
+<object id="3052">
 	<type>talk</type>
 	<title>Synchronization on circles and spheres with nonlinear interactions</title>
 	<with></with>
@@ -1503,7 +1503,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	<abstract>Motivated by questions in control, Kuramoto networks and (highly simplified) transformers, we consider the dynamics of n points on a sphere in R^d which attract each other according to a nonlinear function of the distances between them. On spheres of dimension two or more, the points synchronize (that is, converge to the same position) quite generally. In contrast, on a circle, topological difficulties come up: we formalize those difficulties, and overcome them partly.</abstract>
 	<link>https://ismp2024.gerad.ca/schedule/ThB/93</link>
 </object>
-<object id="3050">
+<object id="3051">
 	<type>talk</type>
 	<title>Riemannian optimization: software and applications</title>
 	<with></with>
@@ -1517,7 +1517,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	<abstract></abstract>
 	<link>https://www.ntnu.edu/imf/fndg24</link>
 </object>
-<object id="3049">
+<object id="3050">
 	<type>talk</type>
 	<title>Nonconvex just means not convex</title>
 	<with></with>
@@ -1531,7 +1531,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	<abstract>A nonconvex optimization problem is just one that happens not to be convex. Whether that's bad or not depends on your aims and computational budget. Some problems turn out to have a fairly benign nonconvex landscape, or one that can be efficiently navigated by particular algorithms. It is useful to get a better understanding of such problems: What are they? How can we recognize them? Which algorithms are suitable for them? I will touch on aspects of those questions that we research in my group. This talk focuses on lifts for landscape analysis.  https://angkor.univ-mlv.fr/~vialard/conferences/sigmamode/</abstract>
 	<link>papers/Boumal_slides_SIGMA_MODE_2024.htm</link>
 </object>
-<object id="3048">
+<object id="3049">
 	<type>talk</type>
 	<title>Tutorial: optimization on smooth manifolds</title>
 	<with></with>
@@ -1545,7 +1545,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	<abstract></abstract>
 	<link>https://www.nicolasboumal.net/SIAMOP2023/</link>
 </object>
-<object id="3047">
+<object id="3048">
 	<type>talk</type>
 	<title>Lifts. Lifts everywhere. The effect of parametrization on nonconvex landscapes.</title>
 	<with></with>
@@ -1559,7 +1559,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	<abstract></abstract>
 	<link></link>
 </object>
-<object id="3046">
+<object id="3047">
 	<type>talk</type>
 	<title>Non-convex optimization when the solution is not unique: A kaleidoscope of favorable conditions</title>
 	<with></with>
@@ -1585,7 +1585,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	<abstract></abstract>
 	<link>papers/NonisolatedLocalMinima_Feb2023.htm</link>
 </object>
-<object id="3045">
+<object id="3046">
 	<type>talk</type>
 	<title>The unreasonable effectiveness of optimization, seen from applied math</title>
 	<with></with>
@@ -1610,7 +1610,7 @@ My hope is that I can learn from you which other questions we should be asking o
 † It is usually easy to spot if an optimization problem is convex (a particular mathematical structure); when it is, we know there are no "traps" in its landscape, and we have great algorithms. Absent convexity, things could be arbitrarily bad... but they need not be.</abstract>
 	<link></link>
 </object>
-<object id="3044">
+<object id="3045">
 	<type>talk</type>
 	<title>A bumpy start: why we can't quite accelerate gradient methods on negatively curved spaces</title>
 	<with></with>
@@ -1634,7 +1634,7 @@ This is work with Chris Criscitiello, COLT 2022.
 https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?s=hs22</abstract>
 	<link>papers/AccelerationOnManifolds.htm</link>
 </object>
-<object id="3043">
+<object id="3044">
 	<type>talk</type>
 	<title>An Introduction to Optimization on Smooth Manifolds</title>
 	<with></with>
@@ -1648,7 +1648,7 @@ https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?
 	<abstract></abstract>
 	<link>https://simons.berkeley.edu/talks/tbd-337</link>
 </object>
-<object id="3042">
+<object id="3043">
 	<type>talk</type>
 	<title>An Introduction to Optimization on Smooth Manifolds</title>
 	<with></with>
@@ -1662,7 +1662,7 @@ https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?
 	<abstract>https://sites.google.com/view/fmg-data-driven-control/schedule?authuser=0</abstract>
 	<link>https://www.youtube.com/watch?v=lK62DwSIjXA&#38;t=0</link>
 </object>
-<object id="3041">
+<object id="3042">
 	<type>talk</type>
 	<title>Riemannian geometry for numerical optimization: the tools we use and some geometry questions that arise</title>
 	<with></with>
@@ -1675,7 +1675,7 @@ https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?
 	<abstract></abstract>
 	<link></link>
 </object>
-<object id="3040">
+<object id="3041">
 	<type>talk</type>
 	<title>Geometry and symmetry in non-convex optimization</title>
 	<with></with>
@@ -1694,7 +1694,7 @@ https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?
 	<abstract></abstract>
 	<link>https://ordays2023.idsia.ch/</link>
 </object>
-<object id="3039">
+<object id="3040">
 	<type>talk</type>
 	<title>Optimizating till stationarity on the bounded-rank variety</title>
 	<with></with>
@@ -1732,7 +1732,7 @@ https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?
 	<abstract></abstract>
 	<link>papers/StationaryBoundedRank.pdf</link>
 </object>
-<object id="3038">
+<object id="3039">
 	<type>talk</type>
 	<title>Apocalypse on singular sets: optimization with bounded rank</title>
 	<with></with>
