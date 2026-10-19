@@ -1,0 +1,144 @@
+:::: {.row}
+::: {.col-lg-3 .col-sm-12}
+
+[![](assets/images/BoumalIntroSmoothManifoldsCover.png "An introduction to optimization on smooth manifolds"){.book-cover fig-alt="Book cover"}](https://www.nicolasboumal.net/book/index.html){target="_blank" rel="noopener"}
+
+:::
+::: {.col-lg-9 .col-sm-12 .prose}
+#### An introduction to optimization on smooth manifolds
+
+This book about optimization on smooth manifolds has no prerequisites in geometry or optimization. Chapters 3 and 5 can serve as a standalone introduction to differential and Riemannian geometry, focused on embedded submanifolds of linear spaces, with full proofs and an emphasis on computability. It then builds from there to equip the reader to take on modern research challenges.
+
+::: {.book-link}
+[Click here to go to the book webpage](https://www.nicolasboumal.net/book/index.html){target="_blank" rel="noopener"}.
+:::
+
+Published by [Cambridge University Press](https://cambridge.org/9781009166157){target="_blank" rel="noopener"}.
+
+You may also be interested in the Manopt toolboxes ([Matlab](https://www.manopt.org){target="_blank" rel="noopener"}, [Python](https://www.pymanopt.org){target="_blank" rel="noopener"}, [Julia](https://www.manoptjl.org){target="_blank" rel="noopener"}).
+
+:::
+::::
+
+**Table of contents** (<button type="button" class="text-button" id="toc-toggle" aria-expanded="false" aria-controls="book-toc">expand</button>)
+
+::: {#book-toc .book-toc .collapsed}
+- Preface
+- 1\. Introduction
+- 2\. Simple examples
+  - 2.1 Sensor network localization from directions: an affine subspace
+  - 2.2 Single extreme eigenvalue or singular value: spheres
+  - 2.3 Dictionary learning: products of spheres
+  - 2.4 Principal component analysis: Stiefel and Grassmann
+  - 2.5 Synchronization of rotations: special orthogonal group
+  - 2.6 Low-rank matrix completion: fixed-rank manifold
+  - 2.7 Gaussian mixture models: positive definite matrices
+  - 2.8 Smooth semidefinite programs
+- 3\. Embedded geometry: first order
+  - 3.1 Reminders of Euclidean space
+  - 3.2 Embedded submanifolds of a linear space
+  - 3.3 Smooth maps on embedded submanifolds
+  - 3.4 The differential of a smooth map
+  - 3.5 Vector fields and the tangent bundle
+  - 3.6 Moving on a manifold: retractions
+  - 3.7 Riemannian manifolds and submanifolds
+  - 3.8 Riemannian gradients
+  - 3.9 Local frames\*
+  - 3.10 Notes and references
+- 4\. First-order optimization algorithms
+  - 4.1 A first-order Taylor expansion on curves
+  - 4.2 First-order optimality conditions
+  - 4.3 Riemannian gradient descent
+  - 4.4 Regularity conditions and iteration complexity
+  - 4.5 Backtracking line-search
+  - 4.6 Local convergence\*
+  - 4.7 Computing gradients\*
+  - 4.8 Numerically checking a gradient\*
+  - 4.9 Notes and references
+- 5\. Embedded geometry: second order
+  - 5.1 The case for another derivative of vector fields
+  - 5.2 Another look at differentials of vector fields in linear spaces
+  - 5.3 Differentiating vector fields on manifolds: connections
+  - 5.4 Riemannian connections
+  - 5.5 Riemannian Hessians
+  - 5.6 Connections as pointwise derivatives\*
+  - 5.7 Differentiating vector fields on curves
+  - 5.8 Acceleration and geodesics
+  - 5.9 A second-order Taylor expansion on curves
+  - 5.10 Second-order retractions
+  - 5.11 Special case: Riemannian submanifolds\*
+  - 5.12 Special case: metric projection retractions\*
+  - 5.13 Notes and references
+- 6\. Second-order optimization algorithms
+  - 6.1 Second-order optimality conditions
+  - 6.2 Riemannian Newton\'s method
+  - 6.3 Computing Newton steps: conjugate gradients
+  - 6.4 Riemannian trust regions
+  - 6.5 The trust-region subproblem: truncated CG
+  - 6.6 Local convergence of RTR with tCG\*
+  - 6.7 Simplified assumptions for RTR with tCG\*
+  - 6.8 Numerically checking a Hessian\*
+  - 6.9 Notes and references
+- 7\. Embedded submanifolds: examples
+  - 7.1 Euclidean spaces as manifolds
+  - 7.2 The unit sphere in a Euclidean space
+  - 7.3 The Stiefel manifold: orthonormal matrices
+  - 7.4 The orthogonal group and rotation matrices
+  - 7.5 Fixed-rank matrices
+  - 7.6 The hyperboloid model
+  - 7.7 Manifolds defined by \$h(x) = 0\$
+  - 7.8 Notes and references
+- 8\. General manifolds
+  - 8.1 A permissive definition
+  - 8.2 The atlas topology, and a final definition
+  - 8.3 Embedded submanifolds are manifolds
+  - 8.4 Tangent vectors and tangent spaces
+  - 8.5 Differentials of smooth maps
+  - 8.6 Tangent bundles and vector fields
+  - 8.7 Retractions and velocity of a curve
+  - 8.8 Coordinate vector fields as local frames
+  - 8.9 Riemannian metrics and gradients
+  - 8.10 Lie brackets as vector fields
+  - 8.11 Riemannian connections and Hessians
+  - 8.12 Covariant derivatives and geodesics
+  - 8.13 Taylor expansions and second-order retractions
+  - 8.14 Submanifolds embedded in manifolds
+  - 8.15 Notes and references
+- 9\. Quotient manifolds
+  - 9.1 A definition and a few facts
+  - 9.2 Quotient manifolds through group actions
+  - 9.3 Smooth maps to and from quotient manifolds
+  - 9.4 Tangent, vertical and horizontal spaces
+  - 9.5 Vector fields
+  - 9.6 Retractions
+  - 9.7 Riemannian quotient manifolds
+  - 9.8 Gradients
+  - 9.9 A word about Riemannian gradient descent
+  - 9.10 Connections
+  - 9.11 Hessians
+  - 9.12 A word about Riemannian Newton\'s method
+  - 9.13 Total space embedded in a linear space
+  - 9.14 Horizontal curves and covariant derivatives
+  - 9.15 Acceleration, geodesics and second-order retractions
+  - 9.16 Grassmann manifold: summary\*
+  - 9.17 Notes and references
+- 10\. Additional tools
+  - 10.1 Distance, geodesics and completeness
+  - 10.2 Exponential and logarithmic maps
+  - 10.3 Parallel transport
+  - 10.4 Lipschitz conditions and Taylor expansions
+  - 10.5 Transporters
+  - 10.6 Finite difference approximation of the Hessian
+  - 10.7 Tensor fields and their covariant differentiation
+  - 10.8 Notes and references
+- 11\. Geodesic convexity
+  - 11.1 Convex sets and functions in linear spaces
+  - 11.2 Geodesically convex sets and functions
+  - 11.3 Alternative definitions of geodesically convex sets\*
+  - 11.4 Differentiable geodesically convex functions
+  - 11.5 Geodesic strong convexity and Lipschitz continuous gradients
+  - 11.6 Example: positive reals and geometric programming
+  - 11.7 Example: positive definite matrices
+  - 11.8 Notes and references
+- Bibliography
+:::

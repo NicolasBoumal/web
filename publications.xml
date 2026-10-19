@@ -111,7 +111,7 @@
   year    = {2015}
 }
 	</bibtex>
-	<comment>This is a technical report. The core theoretical results appear (generalized) in &lt;i&gt;Deterministic guarantees for Burer-Monteiro factorizations of smooth semidefinite programs&lt;/i&gt;.</comment>
+	<comment>This is a technical report. The core theoretical results appear (generalized) in &lt;i&gt;Deterministic guarantees for Burer-Monteiro factorizations of smooth semidefinite programs&lt;/i&gt;. &lt;a href="downloads/RiemannianStaircase_v1.2.zip"&gt;Code&lt;/a&gt;</comment>
 	<link>https://arxiv.org/abs/1506.00575</link>
 	<publisherlink></publisherlink>
 	<tag>synchro</tag>
@@ -929,7 +929,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 }
 	</bibtex>
 	<comment></comment>
-	<link>papers/Boumal_On_intrinsic_Cramer_Rao_bounds_for_Riemannian_submanifolds_and_quotient_manifolds.htm</link>
+	<link>downloads/Boumal_On_intrinsic_Cramer_Rao_bounds_for_Riemannian_submanifolds_and_quotient_manifolds.pdf</link>
 	<publisherlink>http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6418045</publisherlink>
 	<tag>synchro</tag>
 </object>
@@ -953,7 +953,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 }
 	</bibtex>
 	<comment></comment>
-	<link>papers/Boumal_On_intrinsic_Cramer_Rao_bounds_for_Riemannian_submanifolds_and_quotient_manifolds.htm</link>
+	<link>downloads/Boumal_On_intrinsic_Cramer_Rao_bounds_for_Riemannian_submanifolds_and_quotient_manifolds.pdf</link>
 	<publisherlink>http://www.sciencedirect.com/science/article/pii/S1063520311000479</publisherlink>
 </object>
 
@@ -1248,7 +1248,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 }
 	</bibtex>
 	<comment>&lt;a href="https://www.youtube.com/watch?v=eTnrGDmdvAM"&gt;Video of the talk&lt;/a&gt; (20')</comment>
-	<link>papers/Boumal_Riemannian_trust_regions_with_finite_difference_Hessian_approximations_are_globally_convergent_2015.pdf</link>
+	<link>downloads/Boumal_Riemannian_trust_regions_with_finite_difference_Hessian_approximations_are_globally_convergent_2015.pdf</link>
 	<publisherlink>http://link.springer.com/chapter/10.1007/978-3-319-25040-3_50#</publisherlink>
 	<tag>manopt</tag>
 </object>
@@ -1271,7 +1271,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 }
 	</bibtex>
 	<comment>Typo: the upperbound on the MSE (as given just before section IV.B) is $2\pi^2/3 + 4$, not $2\pi^2/4 + 3$ as stated in the published version.</comment>
-	<link>papers/Boumal_Singer_Absil_Robust_estimation_of_rotations_from_relative_measurements_by_maximum_likelihood_2013.htm</link>
+	<link>downloads/Boumal_Singer_Absil_Robust_estimation_of_rotations_from_relative_measurements_by_maximum_likelihood_2013.pdf</link>
 	<publisherlink>http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6760038</publisherlink>
 	<tag>synchro</tag>
 </object>
@@ -1324,7 +1324,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 }
 	</bibtex>
 	<comment>&lt;a href="https://github.com/NicolasBoumal/SOn_regression"&gt;GitHub Code&lt;/a&gt;</comment>
-	<link>papers/Boumal_Interpolation_and_regression_of_rotation_matrices_2013.htm</link>
+	<link>downloads/Boumal_Interpolation_and_regression_of_rotation_matrices_2013.pdf</link>
 	<publisherlink>http://link.springer.com/chapter/10.1007%2F978-3-642-40020-9_37</publisherlink>
 	<tag>curvefitting</tag>
 </object>
@@ -1344,8 +1344,8 @@ pages={406--414},
 year = {2011}
 }
 	</bibtex>
-	<comment>An extended version is available: see full papers.&lt;br&gt;This work was presented as a &lt;a href="papers/nips2011poster.htm"&gt;poster&lt;/a&gt;. &lt;a href="RTRMC/index.html"&gt;Code&lt;/a&gt;.</comment>
-	<link>papers/boumal_absil_RTRMC_a_Riemannian_trust_region_method_for_low_rank_matrix_completion.htm</link>
+	<comment>An extended version is available: see full papers.&lt;br&gt;This work was presented as a &lt;a href="downloads/nips2011poster.pdf"&gt;poster&lt;/a&gt;. &lt;a href="RTRMC/index.html"&gt;Code&lt;/a&gt;.</comment>
+	<link>downloads/boumal_absil_RTRMC_a_Riemannian_trust_region_method_for_low_rank_matrix_completion.pdf</link>
 	<publisherlink>https://papers.nips.cc/paper/4402-rtrmc-a-riemannian-trust-region-method-for-low-rank-matrix-completion</publisherlink>
 	<tag>lowrank</tag>
 </object>
@@ -1365,8 +1365,8 @@ year={2011},
 organization={IEEE}
 }
 	</bibtex>
-	<comment>This work was presented as a &lt;a href="papers/icassp2011poster.htm"&gt;poster&lt;/a&gt;.</comment>
-	<link>papers/Boumal_Absil_Discrete_regression_methods_on_the_cone_of_positive_definite_matrices.htm</link>
+	<comment>This work was presented as a &lt;a href="downloads/icassp2011poster.pdf"&gt;poster&lt;/a&gt;.</comment>
+	<link>downloads/Boumal_Absil_Discrete_regression_methods_on_the_cone_of_positive_definite_matrices.pdf</link>
 	<publisherlink>https://ieeexplore.ieee.org/document/5947287/</publisherlink>
 	<tag>curvefitting</tag>
 </object>
@@ -1388,7 +1388,7 @@ year = {2011}
 }
 	</bibtex>
 	<comment></comment>
-	<link>papers/Boumal_Absil_A_discrete_regression_method_on_manifolds_and_its_application_to_data_on_SOn.htm</link>
+	<link>downloads/Boumal_Absil_A_discrete_regression_method_on_manifolds_and_its_application_to_data_on_SOn.pdf</link>
 	<publisherlink>https://www.sciencedirect.com/science/article/pii/S1474667016439534</publisherlink>
 	<tag>curvefitting</tag>
 </object>
@@ -1529,7 +1529,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	</event>
 	<comment></comment>
 	<abstract>A nonconvex optimization problem is just one that happens not to be convex. Whether that's bad or not depends on your aims and computational budget. Some problems turn out to have a fairly benign nonconvex landscape, or one that can be efficiently navigated by particular algorithms. It is useful to get a better understanding of such problems: What are they? How can we recognize them? Which algorithms are suitable for them? I will touch on aspects of those questions that we research in my group. This talk focuses on lifts for landscape analysis.  https://angkor.univ-mlv.fr/~vialard/conferences/sigmamode/</abstract>
-	<link>papers/Boumal_slides_SIGMA_MODE_2024.htm</link>
+	<link>downloads/Boumal_slides_SIGMA_MODE_2024.pdf</link>
 </object>
 <object id="3049">
 	<type>talk</type>
@@ -1543,7 +1543,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	</event>
 	<comment></comment>
 	<abstract></abstract>
-	<link>https://www.nicolasboumal.net/SIAMOP2023/</link>
+	<link>SIAMOP2023/</link>
 </object>
 <object id="3048">
 	<type>talk</type>
@@ -1583,7 +1583,7 @@ Joint work with Christopher Criscitiello and Quentin Rebjock.</abstract>
 	</event>
 	<comment>http://smai.emath.fr/spip.php?article406, https://www.epfl.ch/research/domains/cis/epfl-cis-riken-aip-joint-workshop-2023/, https://focm2023.org/workshops/workshop-2/item/123-workshop-2-2</comment>
 	<abstract></abstract>
-	<link>papers/NonisolatedLocalMinima_Feb2023.htm</link>
+	<link>downloads/NonisolatedLocalMinima_Feb2023.pdf</link>
 </object>
 <object id="3046">
 	<type>talk</type>
@@ -1632,7 +1632,7 @@ My hope is that I can learn from you which other questions we should be asking o
 This is work with Chris Criscitiello, COLT 2022.
 
 https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?s=hs22</abstract>
-	<link>papers/AccelerationOnManifolds.htm</link>
+	<link>downloads/AccelerationOnManifolds.pdf</link>
 </object>
 <object id="3044">
 	<type>talk</type>
@@ -1730,7 +1730,7 @@ https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?
 	</event>
 	<comment></comment>
 	<abstract></abstract>
-	<link>papers/StationaryBoundedRank.pdf</link>
+	<link>downloads/StationaryBoundedRank.pdf</link>
 </object>
 <object id="3039">
 	<type>talk</type>
@@ -1743,7 +1743,7 @@ https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?
 	</event>
 	<comment></comment>
 	<abstract>https://sites.google.com/view/manlearn2020/program</abstract>
-	<link>papers/Apocalypses.pdf</link>
+	<link>downloads/Apocalypses.pdf</link>
 </object>
 <object id="3038">
 	<type>talk</type>
@@ -1774,7 +1774,7 @@ https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?
 	</event>
 	<comment></comment>
 	<abstract></abstract>
-	<link>papers/IntroOptimManifoldsSlides2020.htm</link>
+	<link>downloads/IntroOptimManifoldsSlides2020.pdf</link>
 </object>
 <object id="3036">
 	<type>talk</type>
@@ -1794,7 +1794,7 @@ https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?
 	</event>
 	<comment></comment>
 	<abstract></abstract>
-	<link>papers/CalTech_2020_curvature_optimization.pdf</link>
+	<link>downloads/CalTech_2020_curvature_optimization.pdf</link>
 </object>
 <object id="3035">
 	<type>talk</type>
@@ -1807,7 +1807,7 @@ https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?
 	</event>
 	<comment></comment>
 	<abstract></abstract>
-	<link>papers/ICCOPT_2019_Worst_case_convergence_on_manifolds.pdf</link>
+	<link>downloads/ICCOPT_2019_Worst_case_convergence_on_manifolds.pdf</link>
 </object>
 <object id="3034">
 	<type>talk</type>
@@ -1884,7 +1884,7 @@ Under the regularity condition, we get an optimization problem in Y on a smooth 
 
 
 The main parts are joint work with Afonso Bandeira and Vlad Voroninski.</abstract>
-	<link>papers/PACM_Colloquium_2018.pdf</link>
+	<link>downloads/PACM_Colloquium_2018.pdf</link>
 </object>
 <object id="3030">
 	<type>talk</type>
@@ -1897,7 +1897,7 @@ The main parts are joint work with Afonso Bandeira and Vlad Voroninski.</abstrac
 	</event>
 	<comment></comment>
 	<abstract>I will present some recent bounds on the number of iterations one might need to compute approximate stationary points (both first and second order) for optimization problems on smooth manifolds. In particular, I will present reasonable assumptions one can make about a problem so that the classical proofs from unconstrained optimization carry over painlessly. The talk will focus on gradient descent and trust-region methods on manifolds. Such bounds are relevant to understand the worst-case computational cost of learning algorithms when the sought parameters live on a smooth, known manifold.</abstract>
-	<link>papers/ISMP%202018%20Worst%20case%20convergence%20on%20manifolds.pdf</link>
+	<link>downloads/ISMP%202018%20Worst%20case%20convergence%20on%20manifolds.pdf</link>
 </object>
 <object id="3029">
 	<type>talk</type>
@@ -1932,7 +1932,7 @@ The main parts are joint work with Afonso Bandeira and Vlad Voroninski.</abstrac
 In this talk, I will present proof techniques that allow to explain this observation. This is based on the generalized power method, replicas to reduce statistical dependence, and dual certificates.
 
 Joint work with Yiqiao Zhong, Afonso Bandeira and Amit Singer.</abstract>
-	<link>papers/Phase_Synchronization_ATI.pdf</link>
+	<link>downloads/Phase_Synchronization_ATI.pdf</link>
 </object>
 <object id="3027">
 	<type>talk</type>
@@ -2023,7 +2023,7 @@ Select parts are joint work with P.-A. Absil, A. Bandeira, C. Cartis and V. Voro
 	</event>
 	<comment></comment>
 	<abstract></abstract>
-	<link>papers/COLT_2016.pdf</link>
+	<link>downloads/COLT_2016.pdf</link>
 </object>
 <object id="3023">
 	<type>talk</type>
@@ -2055,7 +2055,7 @@ Select parts are joint work with P.-A. Absil, A. Bandeira, C. Cartis and V. Voro
 This is nonconvex optimization; there are no global optimality guarantees in general. Nevertheless, I will discuss a class of problems related to semidefinite relaxations for Max-Cut and community detection in the stochastic block model for which standard optimization algorithms on manifolds converge to global optimizers. This is part of a growing set of applications on manifolds with stronger theoretical backup.
 
 Experiments with Manopt: our Matlab toolbox for optimization on manifolds available at www.manopt.org.</abstract>
-	<link>papers/ICML_Gimli_2016.pdf</link>
+	<link>downloads/ICML_Gimli_2016.pdf</link>
 </object>
 <object id="3021">
 	<type>talk</type>
@@ -2095,7 +2095,7 @@ Experiments with Manopt: our Matlab toolbox for optimization on manifolds availa
 	</event>
 	<comment>Our paper was awarded &lt;a href="http://people.maths.ox.ac.uk/tanner/i_and_i_paper_prize.shtml"&gt;second prize&lt;/a&gt;. Congratulations to Michael McCoy for a well-deserved first place!</comment>
 	<abstract></abstract>
-	<link>papers/Oxford_CRB_Talk_2015.pdf</link>
+	<link>downloads/Oxford_CRB_Talk_2015.pdf</link>
 </object>
 <object id="3018">
 	<type>talk</type>
@@ -2193,7 +2193,7 @@ minimize f(X) such that X is positive semidefinite and the diagonal blocks of X 
 
 Such programs notably come about as relaxations of certain quadratically constrained quadratic programs. When f(X) is linear, this is a semidefinite program (SDP), and it can thus be solved in polynomial time with interior point methods (IPM's). Nevertheless, IPM's are still rather slow. The main reason for this is that IPM's deal internally with full-rank matrices X of large size. This is a waste, considering that (in the targeted applications) we expect low-rank solutions to exist. One way to address this is to factor X = YY^T with Y, a tall and skinny matrix. Then, attempt to solve the new problem in Y. As long as Y is not square, this is still hard to solve globally. But fortunately, one can show that as soon as we find a merely local optimizer of the problem in Y that is also rank-deficient, then, the associated X = YY^T is a global optimizer of the convex program. The strategy is thus to start with skinny Y's, find a local optimizer and check its rank. Do over with a fatter Y until rank deficiency is detected. This idea is already exploited in the solver SDPLR. We further leverage the fact that for the program under consideration, the factors Y live on a Riemannian manifold. Using Riemannian optimization algorithms, we can then solve the intermediate problems orders of magnitude faster than the competition. We show numerical results on the generalized Procrustes problem using Manopt, our Riemannian optimization toolbox.
 </abstract>
-	<link>papers/The_staircase_method.pdf</link>
+	<link>downloads/The_staircase_method.pdf</link>
 </object>
 <object id="3013">
 	<type>talk</type>
@@ -2264,8 +2264,8 @@ Such programs notably come about as relaxations of certain quadratically constra
 		<year>2014</year><month>11</month><day>21</day>
 	</event>
 	<comment>This is a presentation about &lt;a href="http://www.manopt.org"&gt;www.manopt.org&lt;/a&gt;.</comment>
-	<abstract>&lt;a href="papers/manopt_bnlx2013.htm"&gt;abstract&lt;/a&gt;</abstract>
-	<link>papers/manopt_slides.htm</link>
+	<abstract>&lt;a href="downloads/manopt_bnlx2013.pdf"&gt;abstract&lt;/a&gt;</abstract>
+	<link>downloads/manopt_slides.pdf</link>
 </object>
 <object id="3009">
 	<type>talk</type>
@@ -2354,7 +2354,7 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 	</event>
 	<comment></comment>
 	<abstract></abstract>
-	<link>papers/Boumal_Optimization2011LisbonSeminar250711.htm</link>
+	<link>downloads/Boumal_Optimization2011LisbonSeminar250711.pdf</link>
 </object>
 <object id="3003">
 	<type>talk</type>
@@ -2376,7 +2376,7 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 		<year>2011</year><month>3</month><day>25</day>
 	</event>
 	<comment></comment>
-	<abstract>/papers/Boumal_ImperialSeminar_14062011.htm</abstract>
+	<abstract>downloads/Boumal_ImperialSeminar_14062011.pdf</abstract>
 	<link></link>
 </object>
 <object id="3002">
@@ -2405,7 +2405,7 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 	</event>
 	<comment></comment>
 	<abstract></abstract>
-	<link>papers/Boumal_graphseminar_03112010.htm</link>
+	<link>downloads/Boumal_graphseminar_03112010.pdf</link>
 </object>
 <object id="3001">
 	<type>talk</type>
@@ -2434,7 +2434,7 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 		<city>Vancouver</city><country>Canada</country>
 		<year>2019</year><month>12</month><day>x</day>
 	</event>
-	<link>papers/NeurIPS2019_PRGD_poster.pdf</link>
+	<link>downloads/NeurIPS2019_PRGD_poster.pdf</link>
 	<tag>manopt</tag>
 	<tag>optim</tag>
 </object>
@@ -2448,7 +2448,7 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 		<city>Les Houches</city><country>France</country>
 		<year>2019</year><month>3</month><day>27</day>
 	</event>
-	<link>papers/Iteration_complexity_of_optimization_on_smooth_manifolds.pdf</link>
+	<link>downloads/Iteration_complexity_of_optimization_on_smooth_manifolds.pdf</link>
 	<tag>manopt</tag>
 	<tag>optim</tag>
 	<tag>complexity</tag>
@@ -2463,7 +2463,7 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 		<city>Montréal</city><country>Canada</country>
 		<year>2018</year><month>12</month><day>6</day>
 	</event>
-	<link>papers/NeurIPS2018sdp.pdf</link>
+	<link>downloads/NeurIPS2018sdp.pdf</link>
 	<tag>manopt</tag>
 	<tag>optim</tag>
 </object>
@@ -2477,7 +2477,6 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 		<city>Barcelona</city><country>Spain</country>
 		<year>2016</year><month>12</month><day>5</day>
 	</event>
-	<link>papers/BM_poster.pdf</link>
 	<tag>manopt</tag>
 	<tag>optim</tag>
 	<tag>sdplr</tag>
@@ -2492,7 +2491,7 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 		<city>Lisbon</city><country>Portugal</country>
 		<year>2013</year><month>7</month><day>29</day>
 	</event>
-	<link>papers/manopt_poster.pdf</link>
+	<link>downloads/manopt_poster.pdf</link>
 	<tag>manopt</tag>
 </object>
 
@@ -2505,7 +2504,7 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 		<city>Granada</city><country>Spain</country>
 		<year>2011</year><month>12</month><day>14</day>
 	</event>
-	<link>papers/nips2011poster.htm</link>
+	<link>downloads/nips2011poster.pdf</link>
 	<tag>lowrank</tag>
 </object>
 
@@ -2518,7 +2517,7 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 		<city>Prague</city><country>Czech Republic</country>
 		<year>2011</year><month>5</month><day>26</day>
 	</event>
-	<link>papers/icassp2011poster.htm</link>
+	<link>downloads/icassp2011poster.pdf</link>
 	<tag>curvefitting</tag>
 </object>
 
@@ -2541,7 +2540,7 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 }
 	</bibtex>
 	<comment></comment>
-	<link>papers/boumal_optimization_and_estimation_on_manifolds_phd_thesis.htm</link>
+	<link>downloads/boumal_optimization_and_estimation_on_manifolds_phd_thesis.pdf</link>
 	<publisherlink></publisherlink>
 	<tag></tag>
 </object>
@@ -2562,7 +2561,7 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 }
 	</bibtex>
 	<comment></comment>
-	<link>papers/Boumal_Discrete_curve_fitting_on_manifolds_Master_Thesis.htm</link>
+	<link>downloads/Boumal_Discrete_curve_fitting_on_manifolds_Master_Thesis.pdf</link>
 	<publisherlink></publisherlink>
 	<tag>curvefitting</tag>
 </object>

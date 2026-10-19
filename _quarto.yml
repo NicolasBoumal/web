@@ -1,0 +1,60 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - SIAMOP2023/index.qmd
+  pre-render:
+    - quarto run scripts/publications.lua
+  resources:
+    - assets/**
+    - favicon.svg
+    - RTRMC/index.html
+    - downloads/**
+    - SIAMOP2023/*.pdf
+    - SIAMOP2023/*.zip
+    - book/**
+    - images/**
+    - timer.html
+    - CNAME
+    - "!.tools/**"
+    - "!screenshots/**"
+
+website:
+  title: Nicolas Boumal
+  favicon: favicon.svg
+  site-url: https://www.nicolasboumal.net
+  navbar: false
+  search: false
+  page-footer:
+    center: ""
+  # Optional: uncomment both blocks below to restore Analytics and consent.
+  # google-analytics:
+  #   tracking-id: G-Z3XP9VMHJ3
+  #   version: 4
+  #   anonymize-ip: true
+  # cookie-consent:
+  #   type: express
+  #   style: simple
+  #   palette: light
+  #   language: en
+
+lang: en
+author-meta: Nicolas Boumal
+filters:
+  - scripts/include-publications.lua
+format:
+  html:
+    minimal: true
+    theme: none
+    css:
+      - assets/bootstrap.css
+      - assets/site.css
+    toc: false
+    section-divs: false
+    anchor-sections: false
+    title-block-style: none
+    html-math-method:
+      method: mathjax
+      url: https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js
+    highlight-style: none

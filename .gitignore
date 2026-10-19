@@ -14,3 +14,9 @@ book/exercises/convert2pdf/savedpage_files/js
 book/exercises/convert2pdf/savedpage_files/mathjax-config.js.download
 book/exercises/convert2pdf/savedpage_files/matlab.min.js.download
 book/exercises/convert2pdf/savedpage_files/tex-svg.js.download
+/.quarto/
+/_site/
+/sections/_publications-generated.qmd
+/.tools/
+/screenshots/
+**/*.quarto_ipynb

@@ -1,0 +1,7 @@
+/* Shared layout for the homepage and standalone pages. */
+body { padding-top: 10px; padding-bottom: 20px; }
+body > main { margin: 0; padding: 0; max-width: none; }
+ul { list-style: disc; }
+.prose { text-align: justify; hyphens: auto; }
+.book-cover { width: 100%; max-width: 220px; display: block; margin: auto auto 8mm; border-radius: 6px; }
+.page-footer { text-align: right; font-size: 85%; margin-top: 30px; }

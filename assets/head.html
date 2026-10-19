@@ -1,0 +1,18 @@
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    }
+  };
+</script>
+<script>
+  // Enable the single-panel view before painting. Without JavaScript all
+  // sections remain readable, including the complete publication list.
+  document.documentElement.classList.add('has-tabs');
+  const homepageSections = ['about', 'publications', 'book', 'teaching', 'contact'];
+  const initialSection = location.hash.slice(1);
+  document.documentElement.dataset.section = homepageSections.includes(initialSection)
+    ? initialSection : 'about';
+</script>

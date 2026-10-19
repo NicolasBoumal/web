@@ -1,0 +1,28 @@
+:::: {.row}
+::: {.col-lg-5}
+
+**Nicolas Boumal**\
+EPFL SB MATH\
+MA C2 627 (Bâtiment MA)\
+Station 8\
+CH-1015 Lausanne\
+Switzerland\
+**Office:** MA C2 627, 2^nd^ floor\
+If you don\'t have a badge, use MA building entrance near [Satellite](https://g.page/BarSatellite?share){target="_blank" rel="noopener"} (two levels above ground floor) and walk all the way to the end of the corridor.\
+**E-mail:** <nicolas.boumal@epfl.ch>
+
+:::
+::: {.col-lg-7}
+
+```{=html}
+<iframe class="contact-map" title="Map of the EPFL office" src="https://www.google.com/maps/embed?pb=%211m18%211m12%211m3%211d686.3585232243877%212d6.567258529197121%213d46.51931129869546%212m3%211f0%212f0%213f0%213m2%211i1024%212i768%214f13.1%213m3%211m2%211s0x0%3A0x0%212zNDbCsDMxJzA5LjUiTiA2wrAzNCcwNC4xIkU%215e0%213m2%211sen%212sch%214v1598025526662%215m2%211sen%212sch" loading="lazy" allowfullscreen></iframe>
+```
+
+:::
+::::
+
+## Miscellaneous facts
+
+My Erdös number is 3, courtesy of two co-authors (Vincent Blondel and Afonso Bandeira).\
+
+Research will get you places! It got me in: Palo Alto, Boston, Princeton, London, Prague, Cannes, Lisbon, Milan, Dagstuhl, Granada, Sierra Nevada, Valencia, Berlin, Les Houches, Costa da Caparica, Paris, Florence, San Diego, Bordeaux, Montréal, Bonn, Pittsburgh, Oxford, Geneva, New York City, Barcelona, Chicago, Vancouver, Ames, Minneapolis, Washington DC, Stockholm, Lausanne, Oaxaca, Villars-sur-Ollon, Pasadena, Interlaken, Chexbres, Zurich, Seattle, Lugano, Biel, Lyon, Grenoble, Edinburgh, Saint Malo, Leysin, Vienna... and various places in Belgium (Louvain-la-Neuve, Leuven, Liège, La Roche, Mons, Knokke, Daverdisse, Spa, Namur, Bruxelles...).

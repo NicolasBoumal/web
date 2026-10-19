@@ -1,0 +1,59 @@
+---
+pagetitle: Nicolas Boumal, continuous optimization
+description: Research homepage of Nicolas Boumal
+format:
+  html:
+    css: assets/homepage.css
+    include-in-header: assets/head.html
+    include-after-body: assets/scripts.html
+---
+
+::: {.container}
+::: {.row}
+::: {.col-sm-12 .col-lg-9}
+
+::: {.page-header}
+# Nicolas Boumal
+
+Associate professor in mathematics at EPFL
+:::
+
+```{=html}
+<nav aria-label="Main navigation">
+  <ul class="nav nav-tabs nav-justified" id="homepage-tabs" role="tablist">
+    <li role="presentation"><a href="#about" id="tab-about" role="tab" aria-controls="about">About</a></li>
+    <li role="presentation"><a href="#publications" id="tab-publications" role="tab" aria-controls="publications">Publications</a></li>
+    <li role="presentation"><a href="#book" id="tab-book" role="tab" aria-controls="book">Book</a></li>
+    <li role="presentation"><a href="#teaching" id="tab-teaching" role="tab" aria-controls="teaching">Teaching</a></li>
+    <li role="presentation"><a href="#contact" id="tab-contact" role="tab" aria-controls="contact">Contact</a></li>
+  </ul>
+</nav>
+```
+
+::: {#about .homepage-section role="tabpanel" aria-labelledby="tab-about" tabindex="0"}
+{{< include sections/_about.qmd >}}
+:::
+
+::: {#publications .homepage-section role="tabpanel" aria-labelledby="tab-publications" tabindex="0"}
+{{< include sections/_publications.qmd >}}
+:::
+
+::: {#book .homepage-section role="tabpanel" aria-labelledby="tab-book" tabindex="0"}
+{{< include sections/_book.qmd >}}
+:::
+
+::: {#teaching .homepage-section role="tabpanel" aria-labelledby="tab-teaching" tabindex="0"}
+{{< include sections/_teaching.qmd >}}
+:::
+
+::: {#contact .homepage-section role="tabpanel" aria-labelledby="tab-contact" tabindex="0"}
+{{< include sections/_contact.qmd >}}
+:::
+
+::: {.page-footer}
+Last update: October 1, 2025.
+:::
+
+:::
+:::
+:::
