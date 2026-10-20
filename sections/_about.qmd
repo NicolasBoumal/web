@@ -19,11 +19,10 @@ The **blog** of my group is [Race to the bottom](https://www.racetothebottom.xyz
 Research topics:
 :::
 
-- Nonconvex optimization (complexity, structure, global optimality, dynamics)
-- Optimization on manifolds
+- Nonconvex optimization (complexity, structure, dynamics, algorithms)
 - Convex and nonconvex relaxations
-- Statistical estimation and bounds, notably under group actions
-- Synchronization (estimation from pairwise information)
+- Optimization on manifolds
+- Statistical estimation
 
 ::: {.section-label}
 Group members, past and present:
