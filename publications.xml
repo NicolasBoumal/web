@@ -2,6 +2,25 @@
 <publications>
 
 
+<object id="1041">
+	<type>preprint</type>
+	<title>Gradient descent reaches arbitrary accuracy in a fixed number of large steps on multiclass logistic regression</title>
+	<authors>A.-A. Musat and N. Boumal</authors>
+	<year>2026</year>
+	<status>available on ArXiv</status>
+	<bibtex>
+@Article{musat2026largesteps,
+  author  = {Musat, A.-A. and Boumal, N.},
+  journal = {arXiv 2610.26748},
+  title   = {Gradient descent reaches arbitrary accuracy in a fixed number of large steps on multiclass logistic regression},
+  year    = {2026}
+}
+	</bibtex>
+	<comment></comment>
+	<link>https://arxiv.org/abs/2610.26748</link>
+	<publisherlink></publisherlink>
+	<tag>optimization</tag>
+</object>
 <object id="1040">
 	<type>preprint</type>
 	<title>Smooth, globally Polyak-Łojasiewicz functions are nonlinear least-squares</title>
