@@ -5,11 +5,16 @@
 
 :::
 ::: {.col-lg-9 .col-sm-12 .prose}
-I joined the Institute of Mathematics at EPFL on July 1st, 2020, where I run the chair of continuous optimization [OPTIM](https://www.epfl.ch/labs/optim/){target="_blank" rel="noopener"}.
+I run the chair of continuous optimization [OPTIM](https://www.epfl.ch/labs/optim/){target="_blank" rel="noopener"} at EPFL since July 2020.
 
-My [group](https://www.epfl.ch/labs/optim/optim-chair-of-continuous-optimization/members/){target="_blank" rel="noopener"} works on **optimization**, **statistical estimation** and **numerical analysis**. Much of what we do is related to nonconvex optimization and optimization on manifolds. For the latter, we develop [a toolbox called Manopt](http://www.manopt.org){target="_blank" rel="noopener"} and I wrote a [book](https://www.nicolasboumal.net/book/index.html){target="_blank" rel="noopener"}.
+My [group](https://www.epfl.ch/labs/optim/optim-chair-of-continuous-optimization/members/){target="_blank" rel="noopener"} works on **optimization**, **statistical estimation** and **numerical analysis**.
+Much of what we do is related to nonconvex optimization.
 
-My 2021 [ERC Starting Grant](https://erc.europa.eu/news/erc-2021-starting-grants-results){target="_blank" rel="noopener"} project GEOSYM runs from fall 2022 to 2027. Our goal is to harness geometry, symmetry and statistics in optimization to tackle nonconvexity. This is funded by [SERI](https://www.sbfi.admin.ch/sbfi/en/home/research-and-innovation/international-cooperation-r-and-i/eu-framework-programmes-for-research/horizon-europe/transitional-measures.html){target="_blank" rel="noopener"}.
+For Riemannian optimization in particular, we develop [a toolbox called Manopt](http://www.manopt.org){target="_blank" rel="noopener"} and I wrote a [book](https://www.nicolasboumal.net/book/index.html){target="_blank" rel="noopener"}.
+
+My 2021 [ERC Starting Grant](https://erc.europa.eu/news/erc-2021-starting-grants-results){target="_blank" rel="noopener"} project GEOSYM runs from fall 2022 to 2027.
+Our goal is to harness geometry, symmetry and statistics in optimization to tackle nonconvexity.
+This is funded by [SERI](https://www.sbfi.admin.ch/sbfi/en/home/research-and-innovation/international-cooperation-r-and-i/eu-framework-programmes-for-research/horizon-europe/transitional-measures.html){target="_blank" rel="noopener"}.
 
 As of Jan. 1st, 2022, I am an [associate editor](https://www.springer.com/journal/10107/editors){target="_blank" rel="noopener"} for Mathematical Programming.
 
