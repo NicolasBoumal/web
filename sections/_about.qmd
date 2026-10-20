@@ -45,15 +45,21 @@ Group members, past and present:
 Positions prior to EPFL:
 :::
 
-- Instructor then assistant professor in the mathematics department at Princeton University. There, I also interacted closely with PACM (the program in applied and computational mathematics), especially the group of [Amit Singer](https://web.math.princeton.edu/%7Eamits/){target="_blank" rel="noopener"}. (Feb. 2016--June 2020);
+- Instructor then assistant professor in the mathematics department at Princeton University.
+  There, I also interacted closely with PACM (the program in applied and computational mathematics), especially the group of [Amit Singer](https://web.math.princeton.edu/%7Eamits/){target="_blank" rel="noopener"}. (Feb. 2016--June 2020);
 - Postdoc at Inria in Paris, affiliated with the computer science department of the Ecole Normale Supérieure with [Alexandre d'Aspremont](http://www.di.ens.fr/%7Easpremon/){target="_blank" rel="noopener"} in the [SIERRA](http://www.di.ens.fr/sierra/){target="_blank" rel="noopener"} team, working on topics at the intersection of optimization and statistics. (Oct. 2014--Jan. 2016);
-- Ph.D. student working with [Pierre-Antoine Absil](http://www.inma.ucl.ac.be/%7Eabsil/){target="_blank" rel="noopener"} and [Vincent Blondel](http://www.inma.ucl.ac.be/%7Eblondel/){target="_blank" rel="noopener"} at UCLouvain, in the department of mathematical engineering. My dissertation is about [optimization and estimation on manifolds](downloads/boumal_optimization_and_estimation_on_manifolds_phd_thesis.pdf){target="_blank" rel="noopener"}. (Oct. 2010--Sep. 2014).
+- Ph.D. student working with [Pierre-Antoine Absil](http://www.inma.ucl.ac.be/%7Eabsil/){target="_blank" rel="noopener"} and [Vincent Blondel](http://www.inma.ucl.ac.be/%7Eblondel/){target="_blank" rel="noopener"} at UCLouvain, in the department of mathematical engineering.
+  My dissertation is about [optimization and estimation on manifolds](downloads/boumal_optimization_and_estimation_on_manifolds_phd_thesis.pdf){target="_blank" rel="noopener"}. (Oct. 2010--Sep. 2014).
 
 ::: {.section-label}
 Bio sketch:
 :::
 
-Nicolas Boumal studies continuous optimization, with a focus on nonconvexity and geometric structure. Much of his work is on the theory of algorithms and applications. On the software side, he develops the [Manopt toolbox](https://www.manopt.org){target="_blank" rel="noopener"} for optimization on manifolds. He blogs about optimization at [RaceToTheBottom.xyz](https://www.racetothebottom.xyz/){target="_blank" rel="noopener"}. He is an associate professor at EPFL and an associate editor for Mathematical Programming.
+Nicolas Boumal studies continuous optimization, with a focus on nonconvexity and geometric structure.
+Much of his work is on the theory of algorithms and applications.
+On the software side, he develops the [Manopt toolbox](https://www.manopt.org){target="_blank" rel="noopener"} for optimization on manifolds.
+He blogs about optimization at [RaceToTheBottom.xyz](https://www.racetothebottom.xyz/){target="_blank" rel="noopener"}.
+He is an associate professor at EPFL and an associate editor for Mathematical Programming.
 
 
 ![](assets/images/group_picture_2025.jpg){.group-picture fig-alt="Group picture of OPTIM chair at EPFL in April 2025"}
