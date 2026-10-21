@@ -1,8 +1,8 @@
 ## Teaching at EPFL
 
-- Analyse avancée I ([MATH-100(a)](https://edu.epfl.ch/coursebook/en/advanced-analysis-i-real-analysis-MATH-100-A){target="_blank" rel="noopener"}), Fall 2026
+- Analyse avancée I ([MATH-100(a)](https://edu.epfl.ch/coursebook/en/advanced-analysis-i-real-analysis-MATH-100-A){target="_blank" rel="noopener"}), Fall 2026, [web](https://nicolasboumal.gitlab.io/math100/)
 - Algèbre linéaire I ([MATH-111(e)](https://edu.epfl.ch/coursebook/en/linear-algebra-MATH-111-E){target="_blank" rel="noopener"}), Fall 2021, 2022, 2023, 2025
-- Continuous optimization ([MATH-329](https://edu.epfl.ch/coursebook/en/nonlinear-optimization-MATH-329){target="_blank" rel="noopener"}), Spring 2021, 2022, Fall 2022--2026, [lecture notes](downloads/MATH329-Lecture_notes_Boumal_2025.pdf){target="_blank" rel="noopener"}
+- Continuous optimization ([MATH-329](https://edu.epfl.ch/coursebook/en/nonlinear-optimization-MATH-329){target="_blank" rel="noopener"}), Spring 2021, 2022, Fall 2022--2026, [lecture notes](downloads/MATH329-Lecture_notes_Boumal_2026.pdf){target="_blank" rel="noopener"}, [web](https://nicolasboumal.gitlab.io/math329/)
 - Optimization on manifolds ([MATH-512](https://edu.epfl.ch/coursebook/fr/optimization-on-manifolds-MATH-512){target="_blank" rel="noopener"}), Spring 2021, 2023, 2025, [book + videos](https://www.nicolasboumal.net/book/index.html){target="_blank" rel="noopener"}
 - Mathematical foundations of neural networks (graduate seminar, MATH-631), Fall 2020
 
