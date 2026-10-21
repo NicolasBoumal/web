@@ -98,9 +98,11 @@ Every entry needs either `publication` with its year and venue, or an arXiv ID;
 a title-link override alone is not sufficient to supply the year.
 
 Theses use `publication.year` and a descriptive `publication.venue`, such as
-`Ph.D. thesis` or `Master thesis`. Workshop papers can retain `type: conference`
-without a publication mapping; workshop information can be placed in `comment`.
-Such a workshop entry still requires `arxiv` to supply its year.
+`Ph.D. thesis` or `Master thesis`. Workshop papers use `type: conference`
+and can have a `publication` mapping even when there are no formal proceedings.
+Use the workshop name as `publication.venue` and its year as `publication.year`;
+no publisher link is required. This displays the workshop information instead
+of labeling the paper a preprint.
 
 `publication.comment` annotates the venue parenthetically. The top-level
 `comment` is a separate block below the publication information; use it for
