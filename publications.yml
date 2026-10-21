@@ -1474,18 +1474,18 @@
     year: 2011
     venue: Proceedings of the Neural Information Processing Systems conference (NIPS)
     link: https://papers.nips.cc/paper/4402-rtrmc-a-riemannian-trust-region-method-for-low-rank-matrix-completion
-  code: RTRMC/index.html
+  code: https://github.com/NicolasBoumal/RTRMC
   comment: |
     An extended version is available: see full papers.
     This work was presented as a [poster](downloads/nips2011poster.pdf).
   bibtex: |
     @incollection{boumal2011rtrmc,
-    title={{RTRMC}: A {R}iemannian trust-region method for low-rank matrix completion},
-    author={Boumal, N. and Absil, P.-A.},
-    booktitle={Advances in Neural Information Processing Systems 24 ({NIPS})},
-    editor={J. Shawe-Taylor and R.S. Zemel and P. Bartlett and F.C.N. Pereira and K.Q. Weinberger},
-    pages={406--414},
-    year = {2011}
+      title={{RTRMC}: A {R}iemannian trust-region method for low-rank matrix completion},
+      author={Boumal, N. and Absil, P.-A.},
+      booktitle={Advances in Neural Information Processing Systems 24 ({NIPS})},
+      editor={J. Shawe-Taylor and R.S. Zemel and P. Bartlett and F.C.N. Pereira and K.Q. Weinberger},
+      pages={406--414},
+      year = {2011}
     }
   tags: [lowrank]
 
