@@ -311,7 +311,7 @@
     venue: Mathematical Programming
     link: https://link.springer.com/article/10.1007/s10107-024-02058-3
   comment: |
-    Congratulations to Eitan for his [INFORMS Optimization Society 2024 Student Paper Prize!](https://connect.informs.org/optimizationsociety/prizes/students-prize)
+    Congratulations to Eitan for his [INFORMS Optimization Society 2024 Student Paper Prize](https://connect.informs.org/optimizationsociety/prizes/students-prize)!
   bibtex: |
     @Article{levin2025lifts,
       title = {The effect of smooth parametrizations on nonconvex optimization landscapes},
@@ -739,7 +739,7 @@
     venue: SIAM Journal on Optimization
     link: https://epubs.siam.org/doi/abs/10.1137/17M1122025
   comment: |
-    Congratulations to Yiqiao (Joe) for his [SIAM best student paper prize!](https://www.siam.org/conferences/CM/P/SE/an18-special-events)
+    Congratulations to Yiqiao (Joe) for his [SIAM best student paper prize](https://www.siam.org/conferences/CM/P/SE/an18-special-events)!
   bibtex: |
     @article{zhong2018nearoptimal,
       author  = {Zhong, Y. and Boumal, N.},
@@ -1476,7 +1476,6 @@
   code: RTRMC/index.html
   comment: |
     An extended version is available: see full papers.
-    
     This work was presented as a [poster](downloads/nips2011poster.pdf).
   bibtex: |
     @incollection{boumal2011rtrmc,
