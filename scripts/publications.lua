@@ -44,27 +44,27 @@ local icons = {
 
 local function paper(record)
   local parts = {}
+  local publication = record.publication
+  local year = publication and publication.year or (2000 + tonumber(record.arxiv:sub(1, 2)))
   if record.type ~= 'thesis' then
     local authors = {}
     for i, author in ipairs(record.authors) do authors[i] = escape(author) end
     local text = table.concat(authors, ', ', 1, math.max(1, #authors - 1))
     if #authors > 1 then text = text .. ' and ' .. authors[#authors] end
-    table.insert(parts, text .. ',<br>')
+    table.insert(parts, text .. (record.type == 'note' and (', ' .. year .. '.') or ',') .. '<br>')
   end
-  local publication = record.publication
   local href = record.link
     or (record.arxiv and ('https://arxiv.org/abs/' .. record.arxiv))
     or (publication and publication.link)
   local heading = rich(record.title)
   if href then heading = link(href, heading) end
-  table.insert(parts, '<h3>' .. heading .. ',</h3><br>')
+  table.insert(parts, '<h3>' .. heading .. (record.type == 'note' and '.' or ',') .. '</h3><br>')
   if publication then
     local venue = rich(publication.venue)
     if publication.comment then venue = venue .. ' (' .. rich(publication.comment) .. ')' end
-    table.insert(parts, venue .. ', ' .. publication.year .. '.')
-  else
-    local year = 2000 + tonumber(record.arxiv:sub(1, 2))
-    table.insert(parts, (record.type == 'note' and 'Notes' or 'Preprint') .. ', ' .. year .. '.')
+    table.insert(parts, venue .. (record.type == 'note' and '' or (', ' .. year)) .. '.')
+  elseif record.type ~= 'note' then
+    table.insert(parts, 'Preprint, ' .. year .. '.')
   end
   if record.comment then
     local html = pandoc.write(pandoc.read(record.comment, 'markdown'), 'html',

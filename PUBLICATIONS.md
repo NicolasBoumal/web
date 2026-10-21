@@ -88,9 +88,11 @@ an introductory “in”; for conference papers, use names such as
 Omit the whole `publication` mapping when there is no publication metadata,
 as for most reports and notes. Without this mapping, the year is calculated
 as 2000 plus the first two digits of `arxiv`: `'1506.00575'` gives 2015.
-The information line reads `Notes, 2015.` for `type: note`, and
-`Preprint, 2015.` for every other type without publication metadata, including
-conference workshop papers. The category still follows `type`.
+For `type: note`, the year follows the author list, for example
+`N. Boumal, 2015.` There is no separate “Notes” information line. For every
+other type without publication metadata, the information line reads
+`Preprint, 2015.`, including conference workshop papers. The category still
+follows `type`.
 
 With `publication` present, its year is used instead, even if the paper was
 posted to arXiv in a different year. There is no top-level `year` field.
@@ -147,7 +149,9 @@ the renderer adds them. Video comments support inline Markdown and math.
 ## Display order
 
 Each entry displays authors, title, publication information, the top-level
-comment, and finally the resource controls. Available controls appear in this
+comment, and finally the resource controls. Notes put the year after the
+authors instead of on a separate line; if publication metadata is provided,
+its venue and comment are shown without repeating the year. Available controls appear in this
 exact order, with lowercase labels:
 
 > publisher's link, code, video, bibtex
