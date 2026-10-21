@@ -1,0 +1,796 @@
+# Talks and posters, grouped by presentation. See PRESENTATIONS.md.
+# Migration choices requiring review are listed at the end of that document.
+
+- id: '3058'
+  title: Escaping saddles in high dimensions
+  slides: https://optim-epfl.gitlab.io/talks/randomizedTR/randomizedTR.html#/
+  abstract: |
+    Consider minimizing a nonconvex function $f \colon \reals^d \to \reals$. To escape its saddle points, a deterministic algorithm needs at least Omega(d) "pieces of information" about f (think: gradients or Hessian-vector products). In stark contrast, randomized algorithms can bring this complexity down to poly-log(d). On the flip side, those randomized algorithms "bob around": they do not converge. We propose an algorithm which is (aptly) able to amplify the randomization when we are near a saddle, but which is also able to "absorb" the randomization when we are near a minimizer (in order to converge there). The method is based on conjugate gradients and trust regions: https://arxiv.org/abs/2603.15494.
+  events:
+    - date: '2026-06-18'
+      venue: Randomized Numerical Linear Algebra, Bernoulli Center workshop
+      location: Lausanne, Switzerland
+      link: https://sites.google.com/view/randnlaworkshop/home
+
+- id: '3057'
+  title: Smooth, globally Polyak-Łojasiewicz functions are nonlinear least-squares
+  slides: https://optim-epfl.gitlab.io/talks/globalPL/globalPL.html
+  abstract: |
+    Polyak-Łojasiewicz (PŁ) functions abound in the literature, especially in nonconvex optimization. When they are also smooth, they become surprisingly simple---with an exotic twist. The plan is for us to discover the structure of those functions and of their sets of minimizers via gradient flow and fiber bundles.
+
+    Joint work with Christopher Criscitiello and Quentin Rebjock.
+  events:
+    - date: '2026-05-11'
+      venue: Machine Learning and Data Science Seminar
+      location: Oxford, UK
+    - date: '2026-04-02'
+      venue: Statlearn
+      location: Grenoble, France
+
+- id: '3056'
+  title: 'Saddle point avoidance in optimization with deterministic algorithms: refined proof techniques'
+  abstract: |
+    It is an unfortunate fact that reasonable optimization algorithms may converge to saddle points (for our purpose: critical points which are not even local minimizers). That said, this is exceedingly rare. Typically, if the initialization is generic (e.g., if it is random), then we do not see such bad behavior. This was first formalized for gradient descent with constant step size by Lee et al. (2016). Since then, several extensions were proposed, but all of them are restricted to simple algorithms (essentially iterating a nice map). The proofs (which rely on the Center Stable Manifold Theorem) do not extend to seemingly simple variations such as gradient descent with a line-search method. I will present ongoing work with Andreea Musat where we refine existing proof techniques to extend them to a first line-search method. These results also apply for Riemannian optimization, with some friction.
+  events:
+    - date: '2025-04-04'
+      venue: Seminar on the interactions between statistics and geometry
+      online: true
+      link: https://qparis-math.github.io/seminar/
+
+- id: '3055'
+  title: Points moving on spheres; and on to non-convex, low-dimensional relaxations
+  events:
+    - date: '2025-01-13'
+      venue: 'Workshop: Physics of AI algorithms (PHAIA25)'
+      location: Les Houches, France
+      link: https://www.di.ens.fr/~aspremon/PHAIA25/program.html
+
+- id: '3054'
+  title: Optimization beyond convexity, with a bit of geometry
+  abstract: |
+    Pretty much any computational task can be framed as an optimization problem. But of course, with great generality comes great complexity. Accordingly, it is fruitful to focus on problem classes which enjoy some structure. A particularly nice structure is convexity: this is well understood by now. Absent convexity, optimization problems can be arbitrarily hard. Yet, as it happens, some non-convex problems can be solved numerically in reasonable time. How do we recognize them? How do we exploit their structure? And if a problem of interest fails to have such good properties, what can we do about it? I will present some results and directions my group and I are exploring.
+  events:
+    - date: '2024-12-11'
+      venue: Institute of Mathematics, EPFL
+      location: Lausanne, Switzerland
+
+- id: '3053'
+  title: The center-stable manifold theorem for saddle avoidance, with all the details
+  notes: https://www.racetothebottom.xyz/posts/saddle-avoidance-general/
+  abstract: |
+    Gradient descent (with random initialization) almost surely avoids convergence to a (strict) saddle point. The now standard proof of that fact relies on the center-stable manifold theorem. That is an old result in dynamical systems. It is powerful, but also rigid; and the proof is rarely spelled out for the most general case. With Andreea Musat, we spent some time reconstructing the proof---this is what I'll show on the blackboard---with the hope to (at some point) extend it to apply to more optimization algorithms. The lecture notes will be posted to our group blog: https://www.racetothebottom.xyz/.
+  events:
+    - date: '2024-09-30'
+      venue: GT "Analyse, Algorithmique, Apprentissage", LJLL, Sorbonne Université
+      location: Paris, France
+      link: https://www.ljll.fr/en/event/gt-analyse-algorithmique-apprentissage/
+
+- id: '3045'
+  title: 'A bumpy start: why we can''t quite accelerate gradient methods on negatively curved spaces'
+  slides: downloads/AccelerationOnManifolds.pdf
+  abstract: |
+    What sets optimization on Euclidean spaces apart from optimization on Riemannian manifolds? Not that much. By and large, classical algorithms for smooth optimization on Euclidean spaces carry over to optimization on Riemannian manifolds, often with essentially the same (adequately rephrased) theoretical guarantees. As a notable exception, it turns out that such is not the case for Nesterov's accelerated gradient descent. Building on several ideas by Hamilton and Moitra (2021), we construct a resisting oracle that shows it is not possible to minimize smooth, strongly geodesically convex functions on Hadamard manifolds at an accelerated rate. I will give some geometric intuition as to why negative curvature makes life harder for optimizers, and why this may not be the end of the story.
+
+    This is work with Chris Criscitiello, COLT 2022.
+  events:
+    - date: '2024-08-27'
+      venue: ALGOPT2024 workshop on Algorithmic Optimization
+      location: Louvain-la-Neuve, Belgium
+    - date: '2022-10-18'
+      venue: ETHZ DACO Seminar
+      location: Zurich, Switzerland
+      link: https://math.ethz.ch/news-and-events/events/research-seminars/daco-seminar.html?s=hs22
+
+- id: '3052'
+  title: Synchronization on circles and spheres with nonlinear interactions
+  abstract: |
+    Motivated by questions in control, Kuramoto networks and (highly simplified) transformers, we consider the dynamics of n points on a sphere in R^d which attract each other according to a nonlinear function of the distances between them. On spheres of dimension two or more, the points synchronize (that is, converge to the same position) quite generally. In contrast, on a circle, topological difficulties come up: we formalize those difficulties, and overcome them partly.
+  events:
+    - date: '2024-07-25'
+      venue: ISMP 2024
+      location: Montréal, Canada
+      link: https://ismp2024.gerad.ca/schedule/ThB/93
+
+- id: '3051'
+  title: 'Riemannian optimization: software and applications'
+  events:
+    - date: '2024-05-07'
+      venue: TMS Workshop on Foundations of Numerical Differential Geometry
+      location: Trondheim, Norway
+      link: https://www.ntnu.edu/imf/fndg24
+
+- id: '3050'
+  title: Nonconvex just means not convex
+  slides: downloads/Boumal_slides_SIGMA_MODE_2024.pdf
+  abstract: |
+    A nonconvex optimization problem is just one that happens not to be convex. Whether that's bad or not depends on your aims and computational budget. Some problems turn out to have a fairly benign nonconvex landscape, or one that can be efficiently navigated by particular algorithms. It is useful to get a better understanding of such problems: What are they? How can we recognize them? Which algorithms are suitable for them? I will touch on aspects of those questions that we research in my group. This talk focuses on lifts for landscape analysis.
+  events:
+    - date: '2024-01-30'
+      venue: Journée SIGMA-MODE
+      location: Paris, France
+      link: https://angkor.univ-mlv.fr/~vialard/conferences/sigmamode/
+
+- id: '3041'
+  title: Geometry and symmetry in non-convex optimization
+  events:
+    - date: '2023-06-22'
+      venue: Swiss OR Days
+      location: Lugano, Switzerland
+      link: https://ordays2023.idsia.ch/
+    - date: '2021-03-29'
+      venue: CIS Get To Know Your Neighbors seminar at EPFL
+      online: true
+      location: Switzerland
+      video: https://www.youtube.com/watch?v=r-AEOWzCxYs
+
+- id: '3047'
+  title: 'Non-convex optimization when the solution is not unique: A kaleidoscope of favorable conditions'
+  slides: downloads/NonisolatedLocalMinima_Feb2023.pdf
+  events:
+    - date: '2023-06-16'
+      venue: Conference FoCM
+      location: Paris, France
+      link: https://focm2023.org/workshops/workshop-2/item/123-workshop-2-2
+    - date: '2023-03-10'
+      venue: EPFL-CIS and RIKEN-AIP Joint Workshop on Machine Learning and Artificial Intelligence
+      location: Lausanne, Switzerland
+      video: https://youtu.be/-VqBzz3Nedc
+      link: https://www.epfl.ch/research/domains/cis/epfl-cis-riken-aip-joint-workshop-2023/
+    - date: '2022-12-13'
+      venue: Journée SIGMA 2022 (Signal-Image-Géométrie-Modélisation-Approximation) SMAI, LJLL, Sorbonne
+      location: Paris, France
+      link: http://smai.emath.fr/spip.php?article406
+
+- id: '3049'
+  title: 'Tutorial: optimization on smooth manifolds'
+  webpage: SIAMOP2023/
+  events:
+    - date: '2023-06-03'
+      venue: SIAM Conference on Optimization
+      location: Seattle, WA, USA
+
+- id: '3048'
+  title: Lifts. Lifts everywhere. The effect of parametrization on nonconvex landscapes.
+  events:
+    - date: '2023-05-30'
+      venue: Optimization workshop at University of Washington
+      location: Seattle, WA, USA
+
+- id: '3046'
+  title: The unreasonable effectiveness of optimization, seen from applied math
+  abstract: |
+    Not long ago, the golden age of convex† optimization transformed mathematical modeling. Now, it is practitioners who are changing optimization research. As we contemplate the fact that some algorithms do really well on some non-convex problems, my community (a part of applied math) ponders questions such as:
+    •  Do the "good" non-convex problems share common structure?
+    (Geometry and symmetry come to mind.)
+    •  What does it mean for a non-convex problem to be "good" anyway?
+    (I'll mention benign landscapes and weaker notions.)
+    •  If there are traps (local minima, flat saddle points), how do I navigate those?
+    (It seems adding degrees of freedom and some randomness helps.)
+    My plan is to discuss these questions with you and to share some leads and answers.
+    My hope is that I can learn from you which other questions we should be asking ourselves, which tools you use to think about them, and whether some of what we already understand can be useful to you now.
+
+
+    † It is usually easy to spot if an optimization problem is convex (a particular mathematical structure); when it is, we know there are no "traps" in its landscape, and we have great algorithms. Absent convexity, things could be arbitrarily bad... but they need not be.
+  events:
+    - date: '2022-11-17'
+      venue: Workshop to Assess Observed Optimization Efficiency in Multiple Domains of the Sciences (Chemistry Department)
+      location: Princeton, NJ, USA
+
+- id: '3044'
+  title: An Introduction to Optimization on Smooth Manifolds
+  events:
+    - date: '2021-08-30'
+      venue: Simons Institute Geometric Methods in Optimization and Sampling Boot Camp
+      location: Berkeley, USA
+      online: true
+      video: https://www.youtube.com/watch?v=UjaoZE0GBpg
+      link: https://simons.berkeley.edu/talks/tbd-337
+
+- id: '3040'
+  title: Optimizing till stationarity on the bounded-rank variety
+  slides: downloads/StationaryBoundedRank.pdf
+  events:
+    - date: '2021-08-17'
+      venue: SIAM Conference on Applied Algebraic Geometry
+      location: USA
+      online: true
+    - date: '2021-07-22'
+      venue: SIAM Conference on Optimization
+      location: USA
+      online: true
+    - date: '2021-06-02'
+      venue: Inria seminar, MokaPlan
+      location: France
+      online: true
+    - date: '2021-05-20'
+      venue: SIAM Conference on Applied Linear Algebra
+      location: USA
+      online: true
+    - date: '2021-05-05'
+      venue: Cambridge University Seminar
+      location: UK
+      online: true
+    - date: '2021-02-09'
+      venue: UCLouvain Applied Mathematics Seminar
+      location: Belgium
+      online: true
+
+- id: '3043'
+  title: An Introduction to Optimization on Smooth Manifolds
+  events:
+    - date: '2021-06-15'
+      venue: EPFL/ETHZ Summer school on mathematical guarantees for data-driven control
+      location: Switzerland
+      online: true
+      video: https://www.youtube.com/watch?v=lK62DwSIjXA
+      link: https://sites.google.com/view/fmg-data-driven-control/schedule?authuser=0
+
+- id: '3042'
+  title: 'Riemannian geometry for numerical optimization: the tools we use and some geometry questions that arise'
+  events:
+    - date: '2021-05-12'
+      venue: Lausanne-Jena seminar in geometry
+      location: Switzerland/Germany
+      online: true
+
+- id: '3039'
+  title: 'Apocalypse on singular sets: optimization with bounded rank'
+  slides: downloads/Apocalypses.pdf
+  events:
+    - date: '2021-01-11'
+      venue: ManifLearn workshop at ICPR 2020
+      location: Italy
+      online: true
+      link: https://sites.google.com/view/manlearn2020/program
+
+- id: '3038'
+  title: 'Optimization on nonsmooth sets: what''s the worst that could happen?'
+  events:
+    - date: '2020-11-17'
+      venue: Oberwolfach workshop
+      location: Germany
+      online: true
+
+- id: '3037'
+  title: An introduction to optimization on smooth manifolds
+  slides: downloads/IntroOptimManifoldsSlides2020.pdf
+  events:
+    - date: '2020-07-10'
+      venue: GdR Géométrie différentielle et estimation sur variétés
+      location: France
+      online: true
+    - date: '2020-01-16'
+      venue: Low Rank 2020 Winter School (EPFL/UGeneva)
+      location: Villars-sur-Ollon, Switzerland
+
+- id: '3036'
+  title: What is the role of curvature in complexity of nonconvex optimization on manifolds?
+  events:
+    - date: '2020-02-21'
+      venue: Caltech EE Systems Seminar
+      location: Pasadena, CA, USA
+      slides: downloads/CalTech_2020_curvature_optimization.pdf
+    - date: '2019-10-31'
+      venue: CMO-BIRS Workshop on Computational Harmonic Analysis and Data Science
+      location: Oaxaca, Mexico
+      video: http://www.birs.ca/events/2019/5-day-workshops/19w5061/videos/watch/201910311103-Boumal.html
+
+- id: '4007'
+  title: Escaping Saddle Points on Manifolds
+  coauthors:
+    - C. Criscitiello
+  events:
+    - date: 2019-12
+      venue: Annual Conference on Neural Information Processing Systems (NeurIPS)
+      location: Vancouver, Canada
+      poster: downloads/NeurIPS2019_PRGD_poster.pdf
+  tags:
+    - manopt
+    - optim
+
+- id: '3035'
+  title: What is the role of curvature in complexity of nonconvex optimization on manifolds?
+  slides: downloads/ICCOPT_2019_Worst_case_convergence_on_manifolds.pdf
+  events:
+    - date: '2019-08-07'
+      venue: ICCOPT 2019
+      location: Berlin, Germany
+
+- id: '3034'
+  title: Geometry for reliable and efficient non-convex optimization
+  abstract: |
+    Non-convexity is both a challenge and an opportunity for continuous optimization, with notable applications in statistical estimation, machine learning, and inverse problems. I will illustrate how Riemannian geometry has a role to play both for analysis of non-convexity, and as a foundation for practical algorithms. As a salient example, we will see how to use Riemannian optimization to solve certain large-scale convex problems (semidefinite programs that arise as relaxations of non-convex problems) through non-convex, low-rank factorizations, with formal guarantees. This approach requires a fraction of the memory and computation time to produce a fully accurate solution.
+  events:
+    - date: '2019-05-20'
+      venue: Operations research seminar at EPFL
+      location: Lausanne, Switzerland
+
+- id: '3033'
+  title: A bit of smooth geometry and a bit of smoothed analysis for semidefinite programs in low-rank form
+  abstract: |
+    Semidefinite programs are optimization problems of the form: minimize a linear function of X, where X is a positive semidefinite matrix subject to linear constraints. Enforcing positive semidefiniteness can be computationally challenging. A popular heuristic is to factor X as YY*, where Y is a tall and narrow matrix. This ensures semidefiniteness for free, but breaks convexity. I will describe why, if the search space in Y is a smooth manifold, then the non-convexity is almost never an issue. Then, I will argue through smoothed analysis that the zero-measure set of bad problems is not a serious threat even for algorithms which have to terminate in finite time. As these concepts involve optimization on smooth manifolds, I will touch upon recent complexity bounds in this domain.
+  events:
+    - date: '2019-04-04'
+      venue: Optimization seminar at ORFE
+      location: Princeton, NJ, USA
+    - date: '2019-03-22'
+      venue: Séminaire d'analyse numérique à l'université de Genève
+      location: Geneva, Switzerland
+
+- id: '4006'
+  title: Iteration complexity of optimization on smooth manifolds
+  events:
+    - date: '2019-03-27'
+      venue: Optimization and Statistical Learning 2019
+      location: Les Houches, France
+      poster: downloads/Iteration_complexity_of_optimization_on_smooth_manifolds.pdf
+  tags:
+    - manopt
+    - optim
+    - complexity
+
+- id: '4005'
+  title: Smoothed analysis of the low-rank approach for smooth semidefinite programs
+  coauthors:
+    - T. Pumir
+    - S. Jelassi
+  events:
+    - date: '2018-12-06'
+      venue: Annual Conference on Neural Information Processing Systems (NeurIPS)
+      location: Montréal, Canada
+      poster: downloads/NeurIPS2018sdp.pdf
+  tags:
+    - manopt
+    - optim
+
+- id: '3032'
+  title: 'Estimating a cloud of points under rotations and huge noise: variations on Procrustes'
+  abstract: |
+    We want to estimate a cloud of k points in R^d, that is, a matrix X of size
+    d by k. What we get to see is randomly rotated versions of that cloud,
+    corrupted by Gaussian noise. We see many independent such realizations.
+    Surely, if the noise level isn't too bad, then we can estimate the
+    rotations, undo them, and average the aligned clouds. That will reduce the
+    noise level. But what if the noise level is so high that it is
+    fundamentally impossible to estimate the rotations? Can we still estimate
+    the cloud is such conditions? The answer is yes: I will show a practical
+    algorithm to do it. The algorithm is based on elementary notions of
+    invariant theory and linear algebra. Then, I will argue that no algorithm
+    can do significantly better. This is joint work with Thomas Pumir, who is a
+    graduate student in ORFE.
+  events:
+    - date: '2018-11-30'
+      venue: What's happening in Fine Hall? (Math department lunch talk)
+      location: Princeton, NJ, USA
+
+- id: '3031'
+  title: Handling non-convexity in low-rank approaches for semidefinite programming
+  slides: downloads/PACM_Colloquium_2018.pdf
+  abstract: |
+    A semidefinite program (SDP) is an optimization problem where one seeks to minimize a linear function of a positive semidefinite matrix X under linear constraints. SDPs have generated sustained interest since the nineties owing to their powerful expressiveness. Standard algorithms solve SDPs in polynomial time, but they fail in practice for large problems.
+
+    To address scaling issues, in the early 2000s, Burer and Monteiro proposed the following heuristic: factorize X as YY*, where Y is a 'tall and narrow' matrix of size n x p. Not only is positive semidefiniteness now mechanically enforced at no cost, but also one gets better control over the dimensionality of the problem through p. However, the optimization problem in Y is non-convex: it is a priori unclear how to solve it.
+
+    In this talk, I will show that the Burer-Monteiro heuristic is sound, under certain geometric conditions. Specifically, my collaborators and I proved that if the constraints on Y regularly define a smooth manifold, then, for almost any linear cost function, standard necessary optimality conditions turn out to be sufficient as well: non-convexity is benign. We established this result with optimally small p. I will further mention extensions of such results based on smoothed analysis.
+
+    Under the regularity condition, we get an optimization problem in Y on a smooth manifold: I will also mention recent results regarding the complexity of practical algorithms for such problems.
+
+
+    The main parts are joint work with Afonso Bandeira and Vlad Voroninski.
+  events:
+    - date: '2018-10-08'
+      venue: Colloquium Series for the Program in Applied and Computational Mathematics
+      location: Princeton, NJ, USA
+
+- id: '3030'
+  title: Worst-case complexity bounds for optimization on manifolds
+  slides: downloads/ISMP%202018%20Worst%20case%20convergence%20on%20manifolds.pdf
+  abstract: |
+    I will present some recent bounds on the number of iterations one might need to compute approximate stationary points (both first and second order) for optimization problems on smooth manifolds. In particular, I will present reasonable assumptions one can make about a problem so that the classical proofs from unconstrained optimization carry over painlessly. The talk will focus on gradient descent and trust-region methods on manifolds. Such bounds are relevant to understand the worst-case computational cost of learning algorithms when the sought parameters live on a smooth, known manifold.
+  events:
+    - date: '2018-07-02'
+      venue: International Symposium on Mathematical Programming (ISMP)
+      location: Bordeaux, France
+
+- id: '3029'
+  title: A quick analysis of Riemannian gradient descent
+  events:
+    - date: '2018-03-22'
+      venue: 52nd annual Conference on Information Sciences and Systems (CISS)
+      location: Princeton, NJ, USA
+
+- id: '3028'
+  title: Near optimal bounds for phase synchronization
+  slides: downloads/Phase_Synchronization_ATI.pdf
+  comment: |
+    These were whiteboard talks.
+  abstract: |
+    Phase synchronization consists in estimating n phases (unit-modulus complex numbers) given measurements of all relative phases. We assume the measurements are corrupted by i.i.d. Gaussian noise. The maximum likelihood estimator is the solution to a non-convex optimization problem, NP-hard in general. Yet, it has been observed some years ago that the maximum likelihood estimator can be computed in polynomial time through semidefinite relaxation, even in the face of tremendous amounts of noise.
+
+    In this talk, I will present proof techniques that allow to explain this observation. This is based on the generalized power method, replicas to reduce statistical dependence, and dual certificates.
+
+    Joint work with Yiqiao Zhong, Afonso Bandeira and Amit Singer.
+  events:
+    - date: '2018-01-18'
+      venue: Machine Learning Seminar series at MIT
+      location: Cambridge, Massachusetts, USA
+    - date: '2017-12-20'
+      venue: Alan Turing Institute Theory and Algorithms in Data Science Seminar
+      location: London, UK
+
+- id: '3027'
+  title: 'Multireference alignment: invariant features and heterogeneity'
+  abstract: |
+    Consider the problem of estimating a signal x in R^n from numerous noisy observations of it, where each observation has been cyclically shifted in an unknown way. In the absence of shifts, one could simply average the observations. Thus, one natural approach is to try first to align (undo the shifts), then average. Unfortunately, beyond a certain noise level, aligning is impossible.
+
+    I will show how the signal x can be estimated from the observations directly, without alignment. The technique relies on so-called invariant features: moments of the data that are invariant under cyclic shifts. Recovering the signal from these moments is a non-convex problem and I'll discuss some ideas that allow to solve it in practice.
+
+    Going a few steps further, we will get into a heterogeneous variant of this problem and a 2D version of it. At that point, I will show the connections with cryo electron microscopy---the motivating application for this work.
+  events:
+    - date: '2017-11-10'
+      venue: Simons Algorithms and Geometry meeting on multi-reference alignment
+      location: New York City, NY, USA
+    - date: '2017-10-31'
+      venue: IMA Data Science Lab Seminar
+      location: Minneapolis, Minnesota, USA
+      video: https://www.ima.umn.edu/2017-2018/DSS9.5.17-5.29.18/26405
+
+- id: '3025'
+  title: 'Semidefinite programs with a dash of smoothness: why the low-rank approach works'
+  abstract: |
+    Semidefinite programs (SDPs) can be solved in polynomial time by interior point methods, but scalability can be an issue. To address this shortcoming, over a decade ago, Burer and Monteiro proposed to solve SDPs with few equality constraints via low-rank, non-convex surrogates. Remarkably, for some applications, local optimization methods seem to converge to global optima of these non-convex surrogates reliably.
+
+    In this presentation, we show that the Burer-Monteiro formulation of SDPs in a certain class almost never has any spurious local optima, that is: the non-convexity of the low-rank formulation is benign (even saddles are strict). This class of SDPs covers applications such as max-cut, community detection in the stochastic block model, robust PCA, phase retrieval and synchronization of rotations.
+
+    The crucial assumption we make is that the low-rank problem lives on a manifold. Then, theory and algorithms from optimization on manifolds can be used.
+
+    Optimization on manifolds is about minimizing a cost function over a smooth manifold, such as spheres, low-rank matrices, orthonormal frames, rotations, etc. We will present the basic framework as well as parts of the more general convergence theory, including recent complexity results. (Toolbox: http://www.manopt.org)
+
+    Select parts are joint work with P.-A. Absil, A. Bandeira, C. Cartis and V. Voroninski.
+  events:
+    - date: '2017-07-27'
+      venue: Meeting of the International Linear Algebra Society (ILAS 2017)
+      location: Ames, Iowa, USA
+    - date: '2017-07-17'
+      venue: Foundations of Computational Mathematics
+      location: Barcelona, Spain
+    - date: '2017-05-25'
+      venue: SIAM Conference on Optimization
+      location: Vancouver, Canada
+    - date: '2016-12-10'
+      venue: NIPS Workshop OptML (Optimization in Machine Learning)
+      location: Barcelona, Spain
+    - date: '2016-03-02'
+      venue: IDeAS seminar, Program in Applied and Computational Mathematics at Princeton University
+      location: Princeton, NJ, USA
+
+- id: '3026'
+  title: 'Multireference alignment: an invariant features approach'
+  events:
+    - date: '2017-04-10'
+      venue: Optimization and Statistical Learning (OSL 2017)
+      location: Les Houches, France
+      link: http://ljk.imag.fr/membres/Jerome.Malick/osl2017/program.html
+
+- id: '4004'
+  title: The non-convex Burer-Monteiro approach works on smooth semidefinite programs
+  coauthors:
+    - V. Voroninski
+    - A. Bandeira
+  events:
+    - date: '2016-12-05'
+      venue: Annual Conference on Neural Information Processing Systems (NIPS)
+      location: Barcelona, Spain
+      poster: true
+  tags:
+    - manopt
+    - optim
+    - sdplr
+
+- id: '3023'
+  title: Optimization on manifolds and semidefinite relaxations
+  slides: downloads/ICML_Gimli_2016.pdf
+  abstract: |
+    Optimization on manifolds is about minimizing a cost function over a smooth manifold, such as spheres, low-rank matrices, orthonormal frames, rotations, etc. I will present the basic framework as well as some of the more general convergence results, including recent complexity results.
+
+    This is nonconvex optimization; there are no global optimality guarantees in general. Nevertheless, I will discuss a class of problems related to semidefinite relaxations for Max-Cut and community detection in the stochastic block model for which standard optimization algorithms on manifolds converge to global optimizers. This is part of a growing set of applications on manifolds with stronger theoretical backup.
+
+    Experiments with Manopt: our Matlab toolbox for optimization on manifolds available at www.manopt.org.
+  events:
+    - date: '2016-10-28'
+      venue: Applied Math Seminar at Courant Institute of Mathematical Sciences
+      location: New York City, NY, USA
+    - date: '2016-06-23'
+      venue: ICML Workshop 'Geometry in Machine Learning (Gimli)'
+      location: New York City, NY, USA
+      link: https://sites.google.com/site/gimliworkshop/
+      comment: invited speaker
+    - date: '2016-05-06'
+      venue: CEPSR seminar at Columbia University
+      location: New York City, NY, USA
+    - date: '2016-04-19'
+      venue: Machine Learning reading group at Princeton University
+      location: Princeton, NJ, USA
+
+- id: '3024'
+  title: A non-convex approach to synchronization and community detection
+  slides: downloads/COLT_2016.pdf
+  events:
+    - date: '2016-06-23'
+      venue: Conference on Learning Theory (COLT) 2016
+      location: New York City, NY, USA
+      video: https://www.youtube.com/watch?v=N_bR03acjqc
+
+- id: '3018'
+  title: Tight relaxations for phase synchronization
+  abstract: |
+    We consider the problem of estimating phases (points on a circle) from noisy, pairwise, relative phase measurements. Assuming Gaussian noise, the maximum likelihood estimator (MLE) is the solution of a hard, nonconvex quadratically constrained quadratic program. The latter can be relaxed into a semidefinite program (SDP) by lifting (dropping a rank 1 constraint). Remarkably, this SDP turns out to be tight (i.e., it reveals the true MLE in polynomial time) with high probability, even in the face of large noise. We provide a proof of this statement in a preprint: http://arxiv.org/abs/1411.3272. Come see the talk for a quick tour and intuition!
+  events:
+    - date: '2015-12-15'
+      venue: Séminaire d'analyse numérique à l'Université de Genève
+      location: Geneva, Switzerland
+    - date: '2015-07-17'
+      venue: International Symposium on Mathematical Programming (ISMP)
+      location: Pittsburgh, PA, USA
+
+- id: '3021'
+  title: Ditch the Hessian Hassle with Riemannian Trust Regions
+  events:
+    - date: '2015-10-30'
+      venue: Geometric Science of Information (GSI)
+      location: Paris, France
+      video: https://www.youtube.com/watch?v=eTnrGDmdvAM
+      link: https://www.see.asso.fr/node/14349
+
+- id: '3020'
+  title: 'Phase synchronization: an example of global optimality on manifolds'
+  events:
+    - date: '2015-09-25'
+      venue: One-day workshop on Riemannian and nonsmooth optimization (RANSO 2015)
+      location: Louvain-la-Neuve, Belgium
+      link: https://sites.uclouvain.be/absil/RANSO-2015-09-25/agenda.html
+
+- id: '3019'
+  title: Cramér-Rao bounds for synchronisation of rotations
+  slides: downloads/Oxford_CRB_Talk_2015.pdf
+  comment: |
+    Our paper was awarded [second prize](http://people.maths.ox.ac.uk/tanner/i_and_i_paper_prize.shtml). Congratulations to Michael McCoy for a well-deserved first place!
+  events:
+    - date: '2015-08-24'
+      venue: Information and Inference Best Paper Prize
+      location: Oxford, UK
+
+- id: '3017'
+  title: A tale of convex and Riemannian geometry for low-rank optimization
+  abstract: |
+    Motivated by applications involving orthogonal matrices, I will discuss optimization over the set of positive semidefinite matrices whose diagonal blocks are small identity matrices. This is a convex set. Interestingly, the subsets of feasible matrices of bounded rank admit a nice Riemannian geometry, making it relatively simple to optimize over them directly. This is especially interesting given that the optimizers of the full problem often have low-rank (a phenomenon we will study). I will show how, combining insights from both convex and Riemannian geometry, we can attain a better understanding of this class of problems (chiefly relating critical points of the rank-restricted problem to KKT points of the full problem) and develop better algorithms.
+  events:
+    - date: '2015-06-11'
+      venue: 'HCM Workshop: Low-rank Optimization and Applications'
+      location: Bonn, Germany
+      link: http://www.hcm.uni-bonn.de/events/eventpages/2015/workshop-low-rank-optimization-and-applications/
+
+- id: '3016'
+  title: Optimization on manifolds <3 convex optimization
+  abstract: |
+    Hello! I'm Nicolas. I just joined SIERRA @ INRIA to work with Alexandre d'Aspremont as a postdoc. I will talk about optimization on manifolds, its ties with convex optimization, and semidefinite relaxations.
+
+    Optimization on manifolds is about solving problems of the form "minimize f(x), where x belongs to a nice, known manifold". This comes up in applications all the time (think: orthogonality or low-rank constraints). We develop a Matlab toolbox to tackle such problems: http://www.manopt.org (it is documented).
+
+    The boundary of convex sets sometimes has a nice differentiable geometry. For example, the boundary of a ball is a sphere; the boundary of the semidefinite cone is a union of fixed-rank matrices. Since solutions often lie on the boundary of the search space, this leads to interesting cross-fertilizations between convex optimization and optimization on manifolds.
+
+    As an example, we will estimate a collection of rotations based on noisy measurements of pairwise relative rotations (think: cameras). The group of rotations is a smooth manifold, hence the corresponding maximum likelihood estimation problem lives on a manifold too. Additionally, it admits a beautiful semidefinite relaxation (via lifting). I will show how optimization on manifolds can help both solve this relaxation fast, and refine its output. Then, I will show evidence that this relaxation is tight incredibly often, and I will outline elements of a proof for this phenomenon.
+
+    Core parts of this talk are joint work with P.-A. Absil and V. Blondel (UCLouvain), B. Mishra (Univ. de Liège), R. Sepulchre (Univ. of Cambridge), and A. Singer and A. Bandeira (Princeton U.).
+  events:
+    - date: '2015-03-02'
+      venue: Séminaire "Statistique et imagerie" à Paris-Dauphine
+      location: Paris, France
+    - date: '2014-10-22'
+      venue: SIERRA Seminar at INRIA
+      location: Paris, France
+
+- id: '3010'
+  title: 'Manopt: a toolbox for optimization on manifolds'
+  slides: downloads/manopt_slides.pdf
+  comment: |
+    This is a presentation about [www.manopt.org](http://www.manopt.org).
+  events:
+    - date: '2014-11-21'
+      venue: 'Journée conjointe des GDR MIA et ISIS: Optimisation Géométrique sur les Variétés'
+      location: Paris, France
+    - date: '2014-09-11'
+      venue: 'TCMM 2014 (Software Demonstration) : International Workshop on Technical Computing for Machine Learning and Mathematical Engineering'
+      location: Leuven, Belgium
+    - date: '2014-08-28'
+      venue: 'iTwist again: international traveling workshop on interactions between sparse models and technology'
+      location: Namur, Belgium
+    - date: '2014-01-31'
+      venue: ORBEL 28, national conference on operational research
+      location: Mons, Belgium
+    - date: '2013-03-26'
+      venue: 32nd Benelux Meeting on Systems and Control
+      location: Houffalize, Belgium
+      abstract_link: downloads/manopt_bnlx2013.pdf
+
+- id: '3015'
+  title: Preconditioning for low-rank matrix completion via trust-regions over one Grassmannian
+  events:
+    - date: '2014-06-12'
+      venue: Householder Symposium XIX
+      location: Spa, Belgium
+
+- id: '3014'
+  title: 'Lift me up but not too high: fast algorithms to solve semidefinite programs with block-diagonal constraints'
+  slides: downloads/The_staircase_method.pdf
+  abstract: |
+    We consider optimization problems of the following form (sometimes called Orthogonal-Cut):
+
+    minimize f(X) such that X is positive semidefinite and the diagonal blocks of X are identity matrices.
+
+    Such programs notably come about as relaxations of certain quadratically constrained quadratic programs. When f(X) is linear, this is a semidefinite program (SDP), and it can thus be solved in polynomial time with interior point methods (IPM's). Nevertheless, IPM's are still rather slow. The main reason for this is that IPM's deal internally with full-rank matrices X of large size. This is a waste, considering that (in the targeted applications) we expect low-rank solutions to exist. One way to address this is to factor X = YY^T with Y, a tall and skinny matrix. Then, attempt to solve the new problem in Y. As long as Y is not square, this is still hard to solve globally. But fortunately, one can show that as soon as we find a merely local optimizer of the problem in Y that is also rank-deficient, then, the associated X = YY^T is a global optimizer of the convex program. The strategy is thus to start with skinny Y's, find a local optimizer and check its rank. Do over with a fatter Y until rank deficiency is detected. This idea is already exploited in the solver SDPLR. We further leverage the fact that for the program under consideration, the factors Y live on a Riemannian manifold. Using Riemannian optimization algorithms, we can then solve the intermediate problems orders of magnitude faster than the competition. We show numerical results on the generalized Procrustes problem using Manopt, our Riemannian optimization toolbox.
+  events:
+    - date: '2014-05-26'
+      venue: UCL Large Graphs and Networks Research Retreat
+      location: Daverdisse, Belgium
+    - date: '2014-05-19'
+      venue: SIAM Conference on Optimization
+      location: San Diego, CA, USA
+    - date: '2014-05-13'
+      venue: IDeAS seminar, Program in Applied and Computational Mathematics at Princeton University
+      location: Princeton, NJ, USA
+
+- id: '3013'
+  title: Robust estimation of rotations from relative measurements
+  events:
+    - date: '2013-12-10'
+      venue: 52nd Conference on Decision and Control (CDC)
+      location: Florence, Italy
+
+- id: '3002'
+  title: Discrete curve fitting on manifolds
+  slides: downloads/Boumal_graphseminar_03112010.pdf
+  events:
+    - date: '2013-08-29'
+      venue: Geometric Science of Information (GSI)
+      location: Paris, France
+    - date: '2011-08-29'
+      venue: 18th IFAC World Congress
+      location: Milan, Italy
+    - date: '2011-03-16'
+      venue: 30th Benelux Meeting on Systems and Control
+      location: Lommel, Belgium
+    - date: '2010-11-03'
+      venue: UCL-INMA Large Graphs and Networks seminar
+      location: Louvain-la-Neuve, Belgium
+
+- id: '4003'
+  title: The Manopt toolbox, optimization on manifolds in 3 minutes
+  coauthors:
+    - B. Mishra
+    - P.-A. Absil
+    - Y. Nesterov
+    - R. Sepulchre
+  events:
+    - date: '2013-07-29'
+      venue: International conference on continuous optimization (ICCOPT)
+      location: Lisbon, Portugal
+      poster: downloads/manopt_poster.pdf
+  tags:
+    - manopt
+
+- id: '3012'
+  title: 'Relax, project and refine: accurate and robust estimation of rotations from relative measurements'
+  events:
+    - date: '2013-04-30'
+      venue: Imaging and Computing Seminar, Mathematics department at MIT
+      location: Cambridge, MA, USA
+
+- id: '3011'
+  title: Relaxation is not the end of the story
+  events:
+    - date: '2013-04-18'
+      venue: IDeAS seminar, Program in Applied and Computational Mathematics at Princeton University
+      location: Princeton, NJ, USA
+
+- id: '3009'
+  title: Cramér-Rao bounds for synchronization of rotations (are structured by the pseudoinverse of the Laplacian)
+  events:
+    - date: '2012-10-03'
+      venue: IDeAS seminar, Program in Applied and Computational Mathematics at Princeton University
+      location: Princeton, NJ, USA
+
+- id: '3008'
+  title: Riemannian algorithms and estimation bounds for synchronization of rotations
+  events:
+    - date: '2012-08-20'
+      venue: International Symposium on Mathematical Programming (ISMP)
+      location: Berlin, Germany
+
+- id: '3007'
+  title: Synchronization of rotations via Riemannian trust-regions
+  events:
+    - date: '2012-06-19'
+      venue: SIAM Conference on Applied Linear Algebra (SIAM/LA)
+      location: Valencia, Spain
+
+- id: '3006'
+  title: Synchronization of rotations for Cryo-EM imaging
+  events:
+    - date: '2012-05-22'
+      venue: UCL Large Graphs and Networks Research Retreat
+      location: Knokke, Belgium
+
+- id: '4002'
+  title: 'RTRMC: low-rank matrix completion via trust-regions on the Grassmannian'
+  coauthors:
+    - P.-A. Absil
+  events:
+    - date: '2011-12-14'
+      venue: Twenty-Fifth Annual Conference on Neural Information Processing Systems (NIPS)
+      location: Granada, Spain
+      poster: downloads/nips2011poster.pdf
+  tags:
+    - lowrank
+
+- id: '3005'
+  title: Synchronization of rotations on a graph
+  abstract: |
+    Dagstuhl Seminar 11451 on Data mining, networks and dynamics
+    Dagstuhl, Germany, November 6-11, 2011
+
+    Title: Synchronization of rotations on a graph
+    Speaker: Nicolas Boumal
+    Time: November 9, 2011 @ 11:15 am
+
+    I will start by informally describing two application problems. These will motivate the study of an estimation problem in which the quantities to estimate are N rotations and the measurements to help us do so are noisy observations of relative rotations. The measurements induce a graph which consists of N nodes (each associated to one of the unknown rotations) and such that each edge corresponds to a noisy measurement of the relative rotation between the two incident nodes. I will then state a few results we have obtained on the theoretical and algorithmic aspects of this problem, and try to gradually transform the presentation into a group discussion.
+
+    The material I will talk about is joint work with Amit Singer (Princeton University) and Pierre-Antoine Absil (UCLouvain).
+  events:
+    - date: '2011-11-09'
+      venue: Dagstuhl seminar 11451 on data mining, networks and dynamics
+      location: Dagstuhl, Germany
+      link: http://www.dagstuhl.de/11451
+
+- id: '3004'
+  title: 'Low-rank matrix completion: optimization on manifolds at work'
+  slides: downloads/Boumal_Optimization2011LisbonSeminar250711.pdf
+  events:
+    - date: '2011-07-25'
+      venue: Optimization 2011
+      location: Lisbon, Portugal
+
+- id: '3003'
+  title: A Riemannian trust-region method for low-rank matrix completion
+  events:
+    - date: '2011-06-14'
+      venue: CSP group seminar of the EEE department at Imperial College London
+      location: London, UK
+      abstract_link: downloads/Boumal_ImperialSeminar_14062011.pdf
+    - date: '2011-04-12'
+      venue: IDeAS seminar, Program in Applied and Computational Mathematics at Princeton University
+      location: Princeton, NJ, USA
+    - date: '2011-03-25'
+      venue: UCL-INGI Machine Learning Group seminar
+      location: Louvain-la-Neuve, Belgium
+
+- id: '4001'
+  title: Regression methods on the cone of positive-definite matrices
+  coauthors:
+    - P.-A. Absil
+  events:
+    - date: '2011-05-26'
+      venue: 36th International Conference on Acoustics, Speech and Signal Processing (ICASSP)
+      location: Prague, Czech Republic
+      poster: downloads/icassp2011poster.pdf
+  tags:
+    - curvefitting
+
+- id: '3001'
+  title: Inversion of the wave equation Hessian via discrete symbol calculus
+  coauthors:
+    - L. Demanet
+  events:
+    - date: '2009-10-16'
+      venue: Total SA Mathias conference
+      location: Cannes, France

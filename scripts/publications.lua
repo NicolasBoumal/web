@@ -1,9 +1,8 @@
 -- Run by Quarto before rendering, or manually with:
 --   quarto run scripts/publications.lua
 -- No Python, R, browser-side XML request, or separately installed Lua needed.
-local xml = dofile('scripts/vendor/slaxml.lua')
 local yaml = dofile('scripts/vendor/tinyyaml.lua')
-local input = 'publications.xml' -- Talks and posters only.
+local presentations_input = 'presentations.yml'
 local publications_input = 'publications.yml'
 local output = 'sections/_publications-generated.qmd'
 
@@ -29,59 +28,13 @@ local function link(href, label)
     .. label .. '</a>'
 end
 
--- A small DOM over SLAXML's SAX callbacks. Validate nesting here so malformed
--- XML fails the build instead of silently publishing an incomplete list.
-local function parse(source)
-  local root = { name = '#document', children = {}, text = '' }
-  local stack = { root }
-  xml:parser({
-    startElement = function(name)
-      local parent = stack[#stack]
-      local node = { name = name, attributes = {}, children = {}, text = '' }
-      table.insert(parent.children, node)
-      table.insert(stack, node)
-    end,
-    attribute = function(name, value)
-      stack[#stack].attributes[name] = value
-    end,
-    text = function(text)
-      local node = stack[#stack]
-      node.text = node.text .. text
-    end,
-    closeElement = function(name)
-      assert(#stack > 1 and stack[#stack].name == name,
-        'Mismatched closing XML element: ' .. name)
-      table.remove(stack)
-    end,
-  }):parse(source)
-  assert(#stack == 1, 'Unclosed XML element in ' .. input)
-  assert(#root.children == 1 and root.children[1].name == 'publications',
-    'Expected one <publications> root in ' .. input)
-  return root.children[1].children
-end
-
-local function field(node, name)
-  for _, child in ipairs(node.children) do
-    if child.name == name then return trim(child.text) end
-  end
-  return ''
-end
-
--- Comments and venues in the existing XML intentionally contain escaped HTML.
--- Pandoc also handles their occasional Markdown/math before writing HTML.
+-- Render inline Markdown/math in YAML text fields.
 local function rich(text)
   if text == '' then return '' end
   local html = pandoc.write(pandoc.read(text, 'markdown'), 'html',
     { html_math_method = 'mathjax', wrap_text = 'none' })
   html = trim(html)
   return (html:gsub('^<p>', ''):gsub('</p>$', ''))
-end
-
-local function title(node)
-  local text = escape(field(node, 'title'))
-  local href = field(node, 'link')
-  if href ~= '' then text = link(href, text) end
-  return '<h3>' .. text .. ',</h3>'
 end
 
 local icons = {
@@ -141,39 +94,13 @@ local function paper(record)
   return table.concat(parts, '\n')
 end
 
-local months = { 'Jan.', 'Feb.', 'March', 'April', 'May', 'June',
-  'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.' }
-
-local function presentation(node)
-  local parts = { title(node) }
-  local coauthors = field(node, 'with')
-  if coauthors ~= '' then
-    table.insert(parts, '<br><em>(with ' .. escape(coauthors) .. ')</em>')
-  end
-  table.insert(parts, '<ul class="eventlist">')
-  for _, event in ipairs(node.children) do
-    if event.name == 'event' then
-      local month = tonumber(field(event, 'month'))
-      assert(month and months[month], 'Invalid event month in publication ' .. node.attributes.id)
-      local day = field(event, 'day')
-      local date = months[month] .. (day ~= '' and ' ' .. escape(day) or '')
-        .. ', ' .. escape(field(event, 'year'))
-      local text = rich(field(event, 'venue')) .. ' in ' .. escape(field(event, 'city'))
-        .. ' (' .. escape(field(event, 'country')) .. ') on ' .. date .. '.'
-      local video = field(event, 'video')
-      if video ~= '' then text = text .. ' ' .. link(video, 'video') end
-      table.insert(parts, '<li>' .. text .. '</li>')
-    end
-  end
-  table.insert(parts, '</ul>')
-  return table.concat(parts, '\n')
-end
+local presentation = dofile('scripts/presentations.lua')({ rich = rich, link = link, escape = escape })
 
 local groups = {
   { 'preprint', 'Reports' },
   { 'journal', 'Journal papers' }, { 'conference', 'Conference papers' },
   { 'note', 'Notes' }, { 'thesis', 'Theses' },
-  { 'talk', 'Talks' }, { 'poster', 'Posters' },
+  { 'presentation', 'Presentations' },
 }
 local by_type, seen = {}, {}
 for _, group in ipairs(groups) do by_type[group[1]] = {} end
@@ -198,7 +125,7 @@ local records = yaml.parse(read(publications_input))
 assert(type(records) == 'table' and #records > 0, 'Expected a list in ' .. publications_input)
 for _, record in ipairs(records) do
   local id = tostring(record.id)
-  assert(record.type ~= 'talk' and record.type ~= 'poster', 'Presentations must remain in ' .. input)
+  assert(record.type ~= 'presentation', 'Use ' .. presentations_input .. ' for presentations')
   assert(type(record.authors) == 'table' and #record.authors > 0, 'Missing authors for ' .. id)
   for _, author in ipairs(record.authors) do
     assert(type(author) == 'string' and trim(author) ~= '', 'Invalid author for ' .. id)
@@ -227,20 +154,20 @@ for _, record in ipairs(records) do
   register(record.id, record.type, record.title, record)
 end
 
-local presentations = parse(read(input))
-for _, object in ipairs(presentations) do
-  assert(object.name == 'object', 'Expected <object>, got <' .. object.name .. '>')
-  local id, kind = object.attributes.id, field(object, 'type')
-  assert(kind == 'talk' or kind == 'poster', 'Papers and theses must be maintained in ' .. publications_input)
-  register(id, kind, field(object, 'title'), object)
+local presentations = yaml.parse(read(presentations_input))
+assert(type(presentations) == 'table' and #presentations > 0, 'Expected a list in ' .. presentations_input)
+for _, record in ipairs(presentations) do
+  presentation.validate(record)
+  register(record.id, 'presentation', record.title, record)
 end
+presentation.sort(by_type.presentation)
 
-local result = { '<!-- Generated from publications.yml and publications.xml by scripts/publications.lua. Do not edit. -->\n' }
+local result = { '<!-- Generated from publications.yml and presentations.yml by scripts/publications.lua. Do not edit. -->\n' }
 for _, group in ipairs(groups) do
   local kind, heading = group[1], group[2]
   table.insert(result, '## ' .. heading .. ' {#publis-' .. kind .. '}\n')
   for _, object in ipairs(by_type[kind]) do
-    local body = (kind == 'talk' or kind == 'poster') and presentation(object) or paper(object)
+    local body = kind == 'presentation' and presentation.render(object) or paper(object)
     table.insert(result, '```{=html}\n<article class="publication" id="publication-'
       .. object.html_id .. '" data-type="' .. kind .. '">\n' .. body .. '\n</article>\n```\n')
   end
@@ -255,4 +182,4 @@ if previous ~= content then
   file:write(content)
   file:close()
 end
-print(string.format('Publications: %d YAML entries and %d XML presentations -> %s', #records, #presentations, output))
+print(string.format('Publications: %d papers/theses and %d presentation groups -> %s', #records, #presentations, output))

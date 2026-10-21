@@ -1,7 +1,8 @@
 # Publication data format
 
-Edit `publications.yml` for papers and theses. Talks and posters remain in
-`publications.xml`. The Lua script `scripts/publications.lua` reads both files
+Edit `publications.yml` for papers and theses. Talks and posters are maintained in
+`presentations.yml`, documented in [PRESENTATIONS.md](PRESENTATIONS.md).
+The Lua script `scripts/publications.lua` reads both YAML files
 at build time and generates `sections/_publications-generated.qmd`; do not edit
 that generated file.
 
@@ -23,7 +24,7 @@ empty.
 | `note` | Notes |
 | `thesis` | Theses |
 
-Categories appear in this order, followed by Talks and Posters from the XML.
+Categories appear in this order, followed by the integrated Presentations list.
 Within a category, entries retain their order in the YAML file; they are not
 automatically sorted by year or ID.
 
@@ -31,7 +32,7 @@ automatically sorted by year or ID.
 
 | Field | Value and interpretation |
 | --- | --- |
-| `id` | Unique quoted string, such as `'1041'`. Use letters, digits, underscores, or hyphens. IDs must be unique across YAML and XML. Keep existing IDs stable: they identify anchors such as `#publication-1041`. |
+| `id` | Unique quoted string, such as `'1041'`. Use letters, digits, underscores, or hyphens. IDs must be unique across both YAML files. Keep existing IDs stable: they identify anchors such as `#publication-1041`. |
 | `type` | One of the five types above. |
 | `title` | Paper title, supporting inline Markdown and `$math$`. Displayed in italics. |
 | `authors` | Nonempty list of display names in author order. Names are plain text. The renderer supplies commas and the final “and”. Authors are retained in thesis data but omitted from the displayed thesis entry. |
@@ -119,7 +120,7 @@ are omitted. BibTeX expands and collapses below its control without a triangle.
 
 Awards, interviews, additional versions, corrections, and poster PDF links can
 remain Markdown links in the top-level `comment`. A poster link in a paper's
-comment does not require migrating its separate XML poster record.
+comment is independent of its presentation record in `presentations.yml`.
 
 ## Editing conventions
 
