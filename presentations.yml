@@ -611,7 +611,6 @@
     - date: '2013-03-26'
       venue: 32nd Benelux Meeting on Systems and Control
       location: Houffalize, Belgium
-      abstract_link: downloads/manopt_bnlx2013.pdf
 
 - id: '3015'
   title: Preconditioning for low-rank matrix completion via trust-regions over one Grassmannian
