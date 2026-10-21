@@ -61,7 +61,7 @@
     Gradient descent (with random initialization) almost surely avoids convergence to a (strict) saddle point. The now standard proof of that fact relies on the center-stable manifold theorem. That is an old result in dynamical systems. It is powerful, but also rigid; and the proof is rarely spelled out for the most general case. With Andreea Musat, we spent some time reconstructing the proof---this is what I'll show on the blackboard---with the hope to (at some point) extend it to apply to more optimization algorithms. The lecture notes will be posted to our group blog: https://www.racetothebottom.xyz/.
   events:
     - date: '2024-09-30'
-      venue: GT "Analyse, Algorithmique, Apprentissage", LJLL, Sorbonne Université
+      venue: GT Analyse, Algorithmique, Apprentissage, LJLL, Sorbonne Université
       location: Paris, France
       link: https://www.ljll.fr/en/event/gt-analyse-algorithmique-apprentissage/
 
@@ -266,11 +266,11 @@
 
 - id: '3036'
   title: What is the role of curvature in complexity of nonconvex optimization on manifolds?
+  slides: downloads/CalTech_2020_curvature_optimization.pdf
   events:
     - date: '2020-02-21'
       venue: Caltech EE Systems Seminar
       location: Pasadena, CA, USA
-      slides: downloads/CalTech_2020_curvature_optimization.pdf
     - date: '2019-10-31'
       venue: CMO-BIRS Workshop on Computational Harmonic Analysis and Data Science
       location: Oaxaca, Mexico
