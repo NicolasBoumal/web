@@ -56,6 +56,7 @@
 - id: '3053'
   title: The center-stable manifold theorem for saddle avoidance, with all the details
   notes: https://www.racetothebottom.xyz/posts/saddle-avoidance-general/
+  comment: This was a blackboard talk.
   abstract: |
     Gradient descent (with random initialization) almost surely avoids convergence to a (strict) saddle point. The now standard proof of that fact relies on the center-stable manifold theorem. That is an old result in dynamical systems. It is powerful, but also rigid; and the proof is rarely spelled out for the most general case. With Andreea Musat, we spent some time reconstructing the proof---this is what I'll show on the blackboard---with the hope to (at some point) extend it to apply to more optimization algorithms. The lecture notes will be posted to our group blog: https://www.racetothebottom.xyz/.
   events:
@@ -540,7 +541,7 @@
       venue: Geometric Science of Information (GSI)
       location: Paris, France
       video: https://www.youtube.com/watch?v=eTnrGDmdvAM
-      link: https://www.see.asso.fr/node/14349
+      link: https://franknielsen.github.io/GSI/#GSI15
 
 - id: '3020'
   title: 'Phase synchronization: an example of global optimality on manifolds'
@@ -553,8 +554,6 @@
 - id: '3019'
   title: Cramér-Rao bounds for synchronisation of rotations
   slides: downloads/Oxford_CRB_Talk_2015.pdf
-  comment: |
-    Our paper was awarded [second prize](http://people.maths.ox.ac.uk/tanner/i_and_i_paper_prize.shtml). Congratulations to Michael McCoy for a well-deserved first place!
   events:
     - date: '2015-08-24'
       venue: Information and Inference Best Paper Prize
