@@ -1,4 +1,4 @@
-# Papers and theses. Talks and posters remain in publications.xml.
+# Papers and theses. Talks and posters are maintained in presentations.yml.
 # Title link: link -> arxiv -> publication.link -> unlinked title.
 # Without publication metadata, the year is inferred from arxiv.
 # publication.comment and video.comment are optional parenthetical text.
