@@ -191,7 +191,7 @@ resources when different versions are needed.
 
 For 3036, the Caltech slides belong only to the Caltech event. For 3003,
 the Imperial PDF is slides, not an abstract. Presentation 3049 uses its
-local tutorial page as the event's `link`; 3053 uses `notes` for lecture notes.
+local tutorial page as a top-level `notes` link; 3053 also uses `notes` for lecture notes.
 
 The date of 4007 was verified from the
 [official NeurIPS schedule](https://neurips.cc/Conferences/2019/Schedule?showEvent=13718).

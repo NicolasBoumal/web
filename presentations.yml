@@ -142,11 +142,11 @@
 
 - id: '3049'
   title: 'Tutorial: optimization on smooth manifolds'
+  notes: SIAMOP2023/
   events:
     - date: '2023-06-03'
       venue: SIAM Conference on Optimization
       location: Seattle, WA, USA
-      link: SIAMOP2023/
 
 - id: '3048'
   title: Lifts. Lifts everywhere. The effect of parametrization on nonconvex landscapes.
