@@ -7,7 +7,7 @@
   // Restore the section named by the URL, rather than an old scroll position.
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
-  function selectFromLocation() {
+  function selectFromLocation(scrollBehavior = 'auto') {
     const hash = location.hash.slice(1);
     // Links to a publication or a heading also reveal its containing panel.
     const target = document.getElementById(hash);
@@ -21,7 +21,7 @@
       panels[index].hidden = !active;
     });
     if (target === panel) window.scrollTo(0, 0);
-    else if (target) target.scrollIntoView({ block: 'start' });
+    else if (target) target.scrollIntoView({ block: 'start', behavior: scrollBehavior });
   }
 
   tablist.addEventListener('click', event => {
@@ -30,6 +30,15 @@
     event.preventDefault();
     if (location.hash !== tab.hash) history.pushState(null, '', tab.hash);
     selectFromLocation();
+  });
+
+  document.querySelector('.publication-sections')?.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#pubs-"]');
+    if (!link || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    selectFromLocation(reducedMotion ? 'auto' : 'smooth');
   });
 
   tablist.addEventListener('keydown', event => {
@@ -46,12 +55,12 @@
     tabs[next].click();
   });
 
-  window.addEventListener('hashchange', selectFromLocation);
-  window.addEventListener('popstate', selectFromLocation);
+  window.addEventListener('hashchange', () => selectFromLocation());
+  window.addEventListener('popstate', () => selectFromLocation());
   selectFromLocation();
   // Reapply after the browser's initial fragment scroll. Main tab URLs retain
   // the page header; category and individual-entry URLs scroll to their target.
-  window.addEventListener('load', selectFromLocation);
+  window.addEventListener('load', () => selectFromLocation());
 
   const tocToggle = document.getElementById('toc-toggle');
   const toc = document.getElementById('book-toc');
