@@ -177,13 +177,14 @@
 
 - id: '3044'
   title: An Introduction to Optimization on Smooth Manifolds
+  slides: https://simons.berkeley.edu/sites/default/files/docs/17892/gmos21-bcnicolasboumalslides.pdf
   events:
     - date: '2021-08-30'
       venue: Simons Institute Geometric Methods in Optimization and Sampling Boot Camp
       location: Berkeley, USA
       online: true
       video: https://www.youtube.com/watch?v=UjaoZE0GBpg
-      link: https://simons.berkeley.edu/talks/tbd-337
+      link: https://simons.berkeley.edu/talks/optimization-manifolds
 
 - id: '3040'
   title: Optimizing till stationarity on the bounded-rank variety
