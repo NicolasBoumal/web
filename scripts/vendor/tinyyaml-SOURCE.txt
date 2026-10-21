@@ -1,0 +1,4 @@
+lua-tinyyaml (MIT)
+https://github.com/zepinglee/lua-tinyyaml
+Commit: 04eac7a8eaec437bf3e670fd374ad7108674d68f
+tinyyaml.lua is copied unchanged. See tinyyaml-LICENSE.txt.
