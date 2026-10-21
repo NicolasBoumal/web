@@ -29,7 +29,7 @@
 	<status>available on ArXiv</status>
 	<bibtex>
 @Article{boumal2026globalpl,
-  author  = {Boumal, N. and Rebjock, Q. and Criscitiello, C.},
+  author  = {Boumal, N. and Criscitiello, C. and Rebjock, Q.},
   journal = {arXiv 2604.07972},
   title   = {Smooth, globally {Polyak-{\L}ojasiewicz} functions are nonlinear least-squares},
   year    = {2026}
@@ -151,7 +151,7 @@
   journal = {Mathematics of Operations Research},
   publisher = {Institute for Operations Research and the Management Sciences ({INFORMS})},
   author = {Musat,  Andreea-Alexandra and Boumal,  Nicolas},
-  year = {2026}.
+  year = {2026}
 }
 	</bibtex>
 	<comment></comment>
@@ -672,7 +672,6 @@
 	<comment>&lt;a href="https://github.com/TamirBendory/STFT-phase-retrieval"&gt;GitHub Code&lt;/a&gt;</comment>
 	<link>https://arxiv.org/abs/1607.08218</link>
 	<publisherlink>http://ieeexplore.ieee.org/document/8017440/</publisherlink>
-	<tag></tag>
 </object>
 <object id="1014">
 	<type>journal</type>
@@ -994,14 +993,14 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
   title =     {Curvature and complexity: Better lower bounds for geodesically convex optimization},
   author =    {Criscitiello, C. and Boumal, N.},
   booktitle = {Proceedings of Thirty Sixth Conference on Learning Theory},
-  pages =     {},
+  pages =     {2969--3013},
   year =      {2023},
   editor =    {Neu, G. and Rosasco, L.},
   volume =    {195},
   series =    {Proceedings of Machine Learning Research},
-  month =     {},
+  month =     {12--15 Jul},
   publisher = {PMLR},
-  url =       {}
+  url =       {https://proceedings.mlr.press/v195/criscitiello23a.html}
 }
 	</bibtex>
 	<comment></comment>
@@ -1238,7 +1237,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
   title     = {On the low-rank approach for semidefinite programs arising in synchronization and community detection},
   booktitle = {Proceedings of The 29th Conference on Learning Theory, {COLT} 2016,
                New York, NY, June 23--26},
-  pages     = {},
+  pages     = {361--382},
   year      = {2016}
 }
 	</bibtex>
@@ -1305,7 +1304,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 	<year>2013</year>
 	<status>in the proceedings of the 16th conference on Medical Image Computing and Computer Assisted Intervention (MICCAI)</status>
 	<bibtex>
-@incollection{taquet2013multifascicle
+@incollection{taquet2013multifascicle,
 	year={2013},
 	isbn={978-3-642-40810-6},
 	booktitle={Medical Image Computing and Computer-Assisted Intervention - MICCAI 2013},
@@ -1332,7 +1331,7 @@ author = "Pierre B. Borckmans and S. Easter Selvan and Nicolas Boumal and P.-A. 
 	<year>2013</year>
 	<status>in the proceedings of Geometric Science of Information (GSI)</status>
 	<bibtex>
-@incollection{boumal2013rotations
+@incollection{boumal2013rotations,
 	author={Boumal, N.},
 	title={Interpolation and Regression of Rotation Matrices},
 	year={2013},
@@ -2565,7 +2564,6 @@ The material I will talk about is joint work with Amit Singer (Princeton Univers
 	<comment></comment>
 	<link>downloads/boumal_optimization_and_estimation_on_manifolds_phd_thesis.pdf</link>
 	<publisherlink></publisherlink>
-	<tag></tag>
 </object>
 
 <object id="5001">
