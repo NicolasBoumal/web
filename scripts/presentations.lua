@@ -1,7 +1,7 @@
 -- Presentation validation and HTML generation; called by publications.lua.
 return function(helpers)
   local rich, link, escape = helpers.rich, helpers.link, helpers.escape
-  local resources = { 'slides', 'poster', 'video', 'notes', 'webpage', 'abstract_link' }
+  local resources = { 'slides', 'poster', 'video', 'notes' }
   local months = { 'Jan.', 'Feb.', 'March', 'April', 'May', 'June',
     'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.' }
   local function text(value)
@@ -31,7 +31,7 @@ return function(helpers)
     end)
   end
   local function validate_fields(object, context)
-    for _, name in ipairs({ 'comment', 'abstract', 'format' }) do
+    for _, name in ipairs({ 'comment', 'abstract', 'meta' }) do
       assert(object[name] == nil or text(object[name]), 'Invalid ' .. context .. '.' .. name)
     end
     for _, name in ipairs(resources) do
@@ -52,7 +52,8 @@ return function(helpers)
     local context = 'presentation ' .. tostring(record.id)
     assert(type(record.events) == 'table' and #record.events > 0, 'Missing events for ' .. context)
     validate_fields(record, context)
-    assert(record.link == nil, 'Use notes/webpage/resources or event.link, not a title link: ' .. context)
+    assert(record.link == nil, 'Use notes/resources or event.link, not a title link: ' .. context)
+    assert(record.webpage == nil, 'Use event.link instead of webpage: ' .. context)
     if record.coauthors then
       assert(type(record.coauthors) == 'table' and #record.coauthors > 0, 'Invalid coauthors for ' .. context)
       for _, author in ipairs(record.coauthors) do assert(text(author), 'Invalid coauthor for ' .. context) end
@@ -60,6 +61,7 @@ return function(helpers)
     for i, event in ipairs(record.events) do
       local where = context .. '.events[' .. i .. ']'
       assert(type(event) == 'table', 'Invalid ' .. where)
+      assert(event.webpage == nil, 'Use event.link instead of webpage: ' .. where)
       assert(date_parts(event.date), 'Invalid date for ' .. where)
       assert(text(event.venue), 'Missing venue for ' .. where)
       for _, name in ipairs({ 'location', 'link' }) do
@@ -75,7 +77,7 @@ return function(helpers)
     for _, name in ipairs(resources) do
       local value = object[name]
       if value then
-        local label = name == 'abstract_link' and 'abstract' or name
+        local label = name
         local rendered
         if name == 'poster' and value == true then rendered = 'poster'
         elseif name == 'video' and type(value) == 'table' then

@@ -1,5 +1,4 @@
 # Talks and posters, grouped by presentation. See PRESENTATIONS.md.
-# Migration choices requiring review are listed at the end of that document.
 
 - id: '3058'
   title: Escaping saddles in high dimensions
@@ -143,11 +142,11 @@
 
 - id: '3049'
   title: 'Tutorial: optimization on smooth manifolds'
-  webpage: SIAMOP2023/
   events:
     - date: '2023-06-03'
       venue: SIAM Conference on Optimization
       location: Seattle, WA, USA
+      link: SIAMOP2023/
 
 - id: '3048'
   title: Lifts. Lifts everywhere. The effect of parametrization on nonconvex landscapes.
@@ -280,9 +279,10 @@
   coauthors:
     - C. Criscitiello
   events:
-    - date: 2019-12
+    - date: '2019-12-10'
       venue: Annual Conference on Neural Information Processing Systems (NeurIPS)
       location: Vancouver, Canada
+      link: https://neurips.cc/Conferences/2019/Schedule?showEvent=13718
       poster: downloads/NeurIPS2019_PRGD_poster.pdf
   tags:
     - manopt
@@ -504,7 +504,6 @@
       venue: ICML Workshop 'Geometry in Machine Learning (Gimli)'
       location: New York City, NY, USA
       link: https://sites.google.com/site/gimliworkshop/
-      comment: invited speaker
     - date: '2016-05-06'
       venue: CEPSR seminar at Columbia University
       location: New York City, NY, USA
@@ -765,7 +764,7 @@
     - date: '2011-06-14'
       venue: CSP group seminar of the EEE department at Imperial College London
       location: London, UK
-      abstract_link: downloads/Boumal_ImperialSeminar_14062011.pdf
+      slides: downloads/Boumal_ImperialSeminar_14062011.pdf
     - date: '2011-04-12'
       venue: IDeAS seminar, Program in Applied and Computational Mathematics at Princeton University
       location: Princeton, NJ, USA

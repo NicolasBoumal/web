@@ -1,13 +1,14 @@
 # Presentation data format
 
-Edit `presentations.yml` for talks and posters. It contains 64 presentation
-groups and 99 appearances migrated from `publications.xml`. The Lua script
+Edit `presentations.yml` for talks and posters, and `publications.yml` for
+papers and theses (see [PUBLICATIONS.md](PUBLICATIONS.md)). The Lua script
 `scripts/publications.lua` reads both YAML files at build time and uses
 `scripts/presentations.lua` to validate and render presentations into
 `sections/_publications-generated.qmd`. Do not edit that generated file.
 
-The XML is retained for comparison during review; it is no longer read by
-the website. No Python or XML parser is required to build the website.
+The old `publications.xml` is a historical reference, not an editing source;
+the website no longer reads it. No Python or XML parser is required to build
+the website.
 
 This is repository documentation. It is absent from the explicit
 `project.render` and `project.resources` lists in `_quarto.yml`, so Quarto
@@ -17,65 +18,75 @@ does not render it or copy it into the website.
 
 The YAML file is a list of presentations. Each record groups related
 appearances under one title, with an `events` list describing the individual
-appearances. Talks and posters will appear together under **Presentations**.
-There is no required `type` or `format` field; a talk is the default.
+appearances. Talks and posters appear together under **Presentations**.
+There is no `type` field; a talk is the default.
 
-Keep existing IDs and groupings. Identical titles alone are not a reason to
-merge records: the content and associated resources may differ.
+For a new presentation, add a record with a new ID. For another appearance
+of an existing presentation, add an event to that record. Keep existing IDs
+stable. Identical titles alone are not a reason to merge records: the content
+and associated resources may differ.
 
-Order groups by their most recent event, newest first, and events within
-each group newest first. This can move an older presentation upward when
-it is given again. For sorting only, an unknown day is treated as day 1;
+The renderer automatically sorts groups by their most recent event, newest
+first, and events within each group newest first. This can move an older
+presentation upward when it is given again. For sorting only, an unknown day is treated as day 1;
 the displayed date remains month-only. Ties preserve source order.
 
 ## Record fields
 
 | Field | Value and interpretation |
 | --- | --- |
-| `id` | Required unique quoted string, such as `'3036'`. Preserve existing IDs; IDs must remain unique across publications and presentations. |
-| `title` | Required title, supporting inline Markdown and `$math$`. Displayed in italics, without a link. |
-| `coauthors` | Optional list of collaborators, excluding the presenter. Displayed as “with …”; this is not necessarily a paper's complete author list. |
+| `id` | Required unique quoted string, such as `'3036'`. Use letters, digits, underscores, or hyphens. IDs must be unique across both YAML files and identify anchors such as `#publication-3036`. |
+| `title` | Required title, supporting inline Markdown and `$math$`. Displayed in italics. Do not put links in the title; use the event or resource fields. |
+| `coauthors` | Optional nonempty list of plain-text collaborator names, excluding the presenter. Displayed as “with …”; this is not necessarily a paper's complete author list. The renderer supplies commas and the final “and”. |
 | `slides` | Optional shared slides URL or relative path. |
 | `poster` | Optional shared poster URL or relative path, or `true` if the poster file is unavailable. |
 | `video` | Optional shared video URL or mapping, as described below. |
-| `notes` | Optional shared lecture-notes URL. Display label: `notes`. |
-| `webpage` | Optional shared resource-page URL, distinct from an event announcement. Display label: `webpage`. |
-| `abstract_link` | Optional shared URL for an abstract document. Display label: `abstract`. |
+| `notes` | Optional shared lecture-notes URL or relative path. Display label: `notes`. |
 | `abstract` | Optional literal block of Quarto Markdown preserving the abstract. Retained as metadata, not currently displayed. |
 | `comment` | Optional Quarto Markdown, including links, displayed below the title/coauthors and before shared resources and events, in smaller text. |
 | `events` | Required nonempty list of appearances, described below. |
-| `format` | Optional internal metadata, at record or event level. Never affects display, ordering, grouping, or resource labels. Omit obvious values. |
+| `meta` | Optional plain-text internal note, at record or event level. Never displayed. Unlike `comment`, it does not appear on the page. |
 | `tags` | Optional list of strings, listed last. Retained as metadata, not displayed. |
 
 Use absolute URLs or paths relative to the website root, such as
 `downloads/talk.pdf`. HTML slide decks are valid slide resources too.
+Place new downloadable files in `downloads/`; that folder is copied to the
+rendered site. The renderer does not check whether URLs or files exist.
 
 ## Event fields
 
 | Field | Value and interpretation |
 | --- | --- |
 | `date` | Required quoted ISO date: `'2026-10-21'`, or `'2019-12'` when the day is unknown. Do not invent missing days. |
-| `venue` | Required event or seminar name. Displayed as a link when the event has a `link`. |
-| `location` | Optional location text, such as `Lausanne, Switzerland`. |
-| `online` | Optional boolean. Use `true` for a remote appearance rather than encoding “Online” as a city. A hosting location may still be retained. |
-| `link` | Optional event announcement or programme URL. This links the venue name, never the presentation title. |
-| `slides`, `poster`, `video`, `notes`, `webpage`, `abstract_link` | Optional resources specific to this event, taking precedence over the corresponding shared resources. |
+| `venue` | Required event or seminar name, supporting inline Markdown and math. Put the announcement URL in `link` rather than embedding a link in this text. |
+| `location` | Optional plain-text location, such as `Lausanne, Switzerland`. |
+| `online` | Optional boolean. `true` appends `(online)` after the venue/location; omit it for an in-person event. A hosting location may still be retained. |
+| `link` | Optional event announcement, programme, or tutorial-page URL or relative path. This links the venue name, never the presentation title. |
+| `slides`, `poster`, `video`, `notes` | Optional resources specific to this event. See the placement and override rules below. |
 | `comment` | Optional Quarto Markdown displayed below this event's line, in smaller text. |
-| `format` | Optional internal metadata only, as above. |
+| `abstract` | Optional Quarto Markdown retained as metadata, not displayed, as for a record-level abstract. |
+| `meta` | Optional undisplayed internal note, as above. |
 
-Shared resources apply to the group unless an event overrides the same
-resource field. An omitted event field inherits the shared value. Use
-`false` to explicitly suppress a resource for an event. Shared resources
-are displayed once at group level for multi-event groups, so event-level
-exceptions do not remove that shared line. If a resource only applies to
-some appearances, prefer assigning it directly to those events.
+Resource placement depends on the number of events:
+
+- **One event:** each resource uses the event's value if provided, otherwise
+  the record's value. All resources appear on the event line. An event value
+  of `false` hides the corresponding record-level resource.
+- **Multiple events:** record-level resources appear once on a shared line.
+  Event-level resources appear only beside their own events. Omitting an
+  event resource does not repeat the shared link; setting it to `false`
+  does not remove a link from the shared line. An event-specific replacement
+  is shown alongside that event, while the shared line remains visible.
+
+If a resource applies to only some appearances, put it on those events
+instead of at record level. Omit unused record-level resource fields.
 
 ### Posters and videos
 
 A poster URL produces a lowercase `poster` link. When the file is lost, use
 `poster: true`: this produces the plain, unlinked word `poster` in precisely
-the position where the link would have appeared. No `format: poster` is
-needed to obtain that label. Likewise, `format: talk` is normally unnecessary.
+the position where the link would have appeared. The `poster` resource itself
+identifies a poster presentation; no separate classification field is needed.
 
 Video information follows the publication format. Use a URL alone when no
 annotation is needed, or a mapping for an optional parenthetical comment:
@@ -99,7 +110,7 @@ every event. For a single-event group, put all its resources on the event
 line, regardless of whether they are stored at record or event level.
 
 Resource labels are lowercase and ordered
-`slides, poster, video, notes, webpage, abstract`. Missing
+`slides, poster, video, notes`. Missing
 resources and their separators are omitted. The plain `poster` label for
 a lost file participates in the same ordering.
 
@@ -109,12 +120,17 @@ the resource links. Within the resource list, use commas:
 
 > 2026, Oct. 21 · Seminar name, Lausanne, Switzerland · slides, video
 
-The venue name links to the event announcement. The words `slides`, `poster`,
-and `video` link to their respective resources. Titles never inherit a link
-from any of these fields. Online appearances should be identified without
-repeating legacy “Online” and “(remote)” text in the venue and location.
+The venue name is linked only when `event.link` is present. The words
+`slides`, `poster`, `video`, and `notes` link to their respective resources,
+except for the plain `poster` label when its file is lost. Resource and
+venue links open in a new tab. Online appearances show `(online)` once;
+do not repeat “Online” or “(remote)” in the venue or location. Any retained
+online location describes the host, not necessarily the presenter's location.
 
 ## Examples
+
+These examples are existing records. Assign a new ID when using one as a
+template for a new presentation.
 
 Different resources for different appearances of the same presentation:
 
@@ -150,56 +166,34 @@ A poster whose file is unavailable:
 
 ## Editing
 
-Quote IDs and dates. Quote titles containing a colon followed by a space.
+Quote IDs and dates. Quote any text containing a colon followed by a space,
+not just titles. Keep booleans (`true`, `false`) unquoted.
 Use literal blocks (`abstract: |`, `comment: |`) for multiline Markdown;
 backslashes are preserved. Use spaces for indentation and omit unused fields.
-For compatibility with the bundled Lua YAML parser, avoid anchors, aliases,
-and custom YAML tags.
+Keep lists indented under their field names, as in the examples. Keep `tags`
+last; other field order does not affect display. For compatibility with the
+bundled Lua YAML parser, avoid anchors, aliases, and custom YAML tags.
+
+Use `comment` for visible contextual text, `meta` for undisplayed internal
+notes, and `abstract` for undisplayed abstract prose. These are text fields;
+only `video` accepts a mapping with its own `link` and `comment`. Do not use
+the paper-specific fields from `publications.yml` in presentation records.
 
 Run `quarto run scripts/publications.lua` to regenerate the partial, or
 `quarto render` to build the website. Presentation titles do not have a
 top-level `link` field; the validator rejects it to avoid ambiguous links.
 
-## Migration review
+## Notes on existing records
 
-The following are choices made during migration, rather than newly verified
-historical facts. They do not prevent rendering, but deserve review.
+Some migrated presentations use one slide deck for several appearances.
+The shared assignments for 3047, 3023, and 3002 have been confirmed; other
+shared assignments were retained from the XML. When adding or revising an
+appearance, check whether the shared deck is appropriate, and use event-level
+resources when different versions are needed.
 
-- **Shared slide versions:** XML group-level slide links remain shared for
-  3057, 3047, 3045, 3040, 3037, 3028, 3023, 3014, 3010, and 3002.
-  In particular, 3047's February 2023 deck is also associated with a December
-  2022 appearance; 3023's Gimli deck covers four appearances, including two
-  before Gimli; 3002's November 2010 deck covers appearances through 2013.
-  Confirm whether these should remain shared or be assigned to specific events.
-  3036's Caltech-only assignment was already confirmed and is preserved.
-- **Abstract PDF assignments:** 3003's Imperial PDF is assigned only to the
-  Imperial event on 2011-06-14; 3010's Benelux abstract PDF only to the
-  Benelux event on 2013-03-26. These assignments follow filenames and event
-  names, rather than applying the documents to every appearance.
-- **3028's whiteboard comment:** kept at group level, applying to both
-  London and MIT. It may belong to only one event.
-- **Resource fields and placement:** adopted `notes` for 3053, `webpage` for
-  3049, and `abstract_link` for the two PDF abstracts. They follow video in
-  the resource order above. Decide whether these labels/order are satisfactory.
-- **Abstracts and comments:** prose abstracts are preserved but not shown,
-  as before. Comments are now visible, including 3019's prize information
-  and 3010's Manopt link. Decide whether abstracts should become accessible
-  on the page, and whether this comment placement works well.
-- **Event URLs:** former title links to announcements were assigned to the
-  corresponding event. This includes 3041's Swiss OR Days link (only its
-  2023 appearance), and links extracted from abstracts for 3043 and 3039.
-  Trailing announcement URLs in 3045 and 3050's prose abstracts were moved
-  to the ETHZ and SIGMA-MODE events respectively. 3047's three comment URLs
-  retain the assignments already made in the draft. 3023's embedded Gimli
-  link now links its venue; “invited speaker” is an event comment.
-- **3043's duplicate video:** retained the event URL and dropped the otherwise
-  identical title-link URL ending in `&t=0`.
-- **Online appearances:** retain hosting cities/countries where available,
-  remove literal “Online” cities and “(remote)” venue suffixes, and display
-  `(online)` once. `Internet` is not retained as a country. These locations
-  describe the host, not necessarily the presenter's physical location.
-- **Incomplete dates:** 4007 retains December 2019 without a day. No date
-  was invented; month-only sorting uses day 1 as described above.
-- **Grouping:** all original IDs/groupings are preserved, even for identical
-  titles. Posters are interleaved chronologically with talks. Records with
-  recent repeat appearances, such as 3045, move upward accordingly.
+For 3036, the Caltech slides belong only to the Caltech event. For 3003,
+the Imperial PDF is slides, not an abstract. Presentation 3049 uses its
+local tutorial page as the event's `link`; 3053 uses `notes` for lecture notes.
+
+The date of 4007 was verified from the
+[official NeurIPS schedule](https://neurips.cc/Conferences/2019/Schedule?showEvent=13718).
