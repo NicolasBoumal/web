@@ -72,7 +72,7 @@ return function(helpers)
     end
     newest_first(record.events, function(event) return event.date end)
   end
-  local function actions(object)
+  local function actions(object, separator)
     local parts = {}
     for _, name in ipairs(resources) do
       local value = object[name]
@@ -87,7 +87,7 @@ return function(helpers)
         table.insert(parts, rendered)
       end
     end
-    return table.concat(parts, ', ')
+    return table.concat(parts, separator or ', ')
   end
   local function comment(value)
     return '<div class="publication-comment">' .. pandoc.write(pandoc.read(value, 'markdown'), 'html',
@@ -95,6 +95,10 @@ return function(helpers)
   end
   local function render(record)
     local parts = { '<h3>' .. rich(record.title) .. '</h3>' }
+    local shared = actions(record, ' · ')
+    if shared ~= '' then
+      parts[1] = parts[1] .. ' · <span class="presentation-resources">' .. shared .. '</span>'
+    end
     if record.coauthors then
       local names = {}
       for _, author in ipairs(record.coauthors) do table.insert(names, escape(author)) end
@@ -103,10 +107,6 @@ return function(helpers)
       table.insert(parts, '<br><em>(with ' .. authors .. ')</em>')
     end
     if record.comment then table.insert(parts, comment(record.comment)) end
-    if #record.events > 1 then
-      local shared = actions(record)
-      if shared ~= '' then table.insert(parts, '<div class="presentation-resources">' .. shared .. '</div>') end
-    end
     table.insert(parts, '<ul class="eventlist">')
     for _, event in ipairs(record.events) do
       local year, month, day = date_parts(event.date)
@@ -116,12 +116,7 @@ return function(helpers)
       if event.location then venue = venue .. ', ' .. escape(event.location) end
       if event.online then venue = venue .. ' (online)' end
       local text = date .. ' · ' .. venue
-      local resolved = {}
-      for _, name in ipairs(resources) do
-        if event[name] ~= nil then resolved[name] = event[name]
-        elseif #record.events == 1 then resolved[name] = record[name] end
-      end
-      local links = actions(resolved)
+      local links = actions(event)
       if links ~= '' then text = text .. ' · ' .. links end
       if event.comment then text = text .. comment(event.comment) end
       table.insert(parts, '<li>' .. text .. '</li>')

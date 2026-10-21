@@ -43,7 +43,7 @@ the displayed date remains month-only. Ties preserve source order.
 | `video` | Optional shared video URL or mapping, as described below. |
 | `notes` | Optional shared lecture-notes URL or relative path. Display label: `notes`. |
 | `abstract` | Optional literal block of Quarto Markdown preserving the abstract. Retained as metadata, not currently displayed. |
-| `comment` | Optional Quarto Markdown, including links, displayed below the title/coauthors and before shared resources and events, in smaller text. |
+| `comment` | Optional Quarto Markdown, including links, displayed below the title, its resource links, and any coauthors, before the events, in smaller text. |
 | `events` | Required nonempty list of appearances, described below. |
 | `meta` | Optional plain-text internal note, at record or event level. Never displayed. Unlike `comment`, it does not appear on the page. |
 | `tags` | Optional list of strings, listed last. Retained as metadata, not displayed. |
@@ -62,21 +62,17 @@ rendered site. The renderer does not check whether URLs or files exist.
 | `location` | Optional plain-text location, such as `Lausanne, Switzerland`. |
 | `online` | Optional boolean. `true` appends `(online)` after the venue/location; omit it for an in-person event. A hosting location may still be retained. |
 | `link` | Optional event announcement, programme, or tutorial-page URL or relative path. This links the venue name, never the presentation title. |
-| `slides`, `poster`, `video`, `notes` | Optional resources specific to this event. See the placement and override rules below. |
+| `slides`, `poster`, `video`, `notes` | Optional resources specific to this event, shown at the end of its event line. |
 | `comment` | Optional Quarto Markdown displayed below this event's line, in smaller text. |
 | `abstract` | Optional Quarto Markdown retained as metadata, not displayed, as for a record-level abstract. |
 | `meta` | Optional undisplayed internal note, as above. |
 
-Resource placement depends on the number of events:
-
-- **One event:** each resource uses the event's value if provided, otherwise
-  the record's value. All resources appear on the event line. An event value
-  of `false` hides the corresponding record-level resource.
-- **Multiple events:** record-level resources appear once on a shared line.
-  Event-level resources appear only beside their own events. Omitting an
-  event resource does not repeat the shared link; setting it to `false`
-  does not remove a link from the shared line. An event-specific replacement
-  is shown alongside that event, while the shared line remains visible.
+Record-level resources appear once immediately after the title on the same
+line, before any coauthor line, record comment, or events. Event-level resources appear only beside their
+own events. This rule is the same whether a record has one event or several.
+There is no resource inheritance or replacement between the two levels:
+an event resource does not hide a record-level link. Omit unused fields;
+`false` produces no resource at that level and does not affect the other level.
 
 If a resource applies to only some appearances, put it on those events
 instead of at record level. Omit unused record-level resource fields.
@@ -102,12 +98,14 @@ duration; omit parentheses from the stored text.
 
 ## Display rules
 
-Each group has an unlinked italic title, with collaborators when provided.
-For a group with multiple events, shared resources appear once on a line
-below the title and before the events. Event-specific resources appear at
-the end of the corresponding event line. Do not repeat shared links beside
-every event. For a single-event group, put all its resources on the event
-line, regardless of whether they are stored at record or event level.
+Each group has an unlinked italic title followed by top-level resources,
+separated by middle dots, even for a single-event presentation:
+
+> *My title in italics* · slides · notes
+
+Collaborators, when provided, appear on the next line, followed by any
+record comment and the event list. Event-specific resources appear at the end of
+the corresponding event line. Do not repeat shared links beside every event.
 
 Resource labels are lowercase and ordered
 `slides, poster, video, notes`. Missing
@@ -116,7 +114,7 @@ a lost file participates in the same ordering.
 
 Format dates as `2026, Oct. 21`; a month-only date becomes `2019, Dec.`.
 Use a middle dot (`·`) between the date, venue/location information, and
-the resource links. Within the resource list, use commas:
+the resource links. Within an event's resource list, use commas:
 
 > 2026, Oct. 21 · Seminar name, Lausanne, Switzerland · slides, video
 
