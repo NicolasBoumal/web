@@ -184,19 +184,23 @@
 	<type>journal</type>
 	<title>Optimization over bounded-rank matrices through a desingularization enables joint global and local guarantees</title>
 	<authors>Q. Rebjock and N. Boumal</authors>
-	<year>2024</year>
-	<status>to appear in SIAM Journal on Optimization</status>
+	<year>2026</year>
+	<status>in SIAM Journal on Optimization</status>
 	<bibtex>
-@Article{rebjock2024desingularization,
+@Article{rebjock2026desingularization,
   author  = {Rebjock, Q. and Boumal, N.},
-  journal = {arXiv 2406.14211},
+  journal = {SIAM Journal on Optimization},
   title   = {Optimization over bounded-rank matrices through a desingularization enables joint global and local guarantees},
-  year    = {2024}
+  year    = {2026},
+  volume  = {36},
+  number  = {4},
+  pages   = {2031--2059},
+  doi     = {10.1137/24M1672742}
 }
 	</bibtex>
 	<comment></comment>
 	<link>https://arxiv.org/abs/2406.14211</link>
-	<publisherlink></publisherlink>
+	<publisherlink>https://epubs.siam.org/doi/10.1137/24M1672742</publisherlink>
 	<tag>optimization</tag>
 </object>
 <object id="1037">
