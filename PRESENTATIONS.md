@@ -154,11 +154,11 @@ A poster whose file is unavailable:
   coauthors:
     - V. Voroninski
     - A. Bandeira
+  poster: true
   events:
     - date: '2016-12-05'
       venue: Annual Conference on Neural Information Processing Systems (NIPS)
       location: Barcelona, Spain
-      poster: true
   tags: [manopt, optim, sdplr]
 ```
 

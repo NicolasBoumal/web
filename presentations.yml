@@ -280,12 +280,12 @@
   title: Escaping Saddle Points on Manifolds
   coauthors:
     - C. Criscitiello
+  poster: downloads/NeurIPS2019_PRGD_poster.pdf
   events:
     - date: '2019-12-10'
       venue: Annual Conference on Neural Information Processing Systems (NeurIPS)
       location: Vancouver, Canada
       link: https://neurips.cc/Conferences/2019/Schedule?showEvent=13718
-      poster: downloads/NeurIPS2019_PRGD_poster.pdf
   tags:
     - manopt
     - optim
@@ -321,11 +321,11 @@
 
 - id: '4006'
   title: Iteration complexity of optimization on smooth manifolds
+  poster: downloads/Iteration_complexity_of_optimization_on_smooth_manifolds.pdf
   events:
     - date: '2019-03-27'
       venue: Optimization and Statistical Learning 2019
       location: Les Houches, France
-      poster: downloads/Iteration_complexity_of_optimization_on_smooth_manifolds.pdf
   tags:
     - manopt
     - optim
@@ -336,11 +336,11 @@
   coauthors:
     - T. Pumir
     - S. Jelassi
+  poster: downloads/NeurIPS2018sdp.pdf
   events:
     - date: '2018-12-06'
       venue: Annual Conference on Neural Information Processing Systems (NeurIPS)
       location: Montréal, Canada
-      poster: downloads/NeurIPS2018sdp.pdf
   tags:
     - manopt
     - optim
@@ -479,11 +479,11 @@
   coauthors:
     - V. Voroninski
     - A. Bandeira
+  poster: true
   events:
     - date: '2016-12-05'
       venue: Annual Conference on Neural Information Processing Systems (NIPS)
       location: Barcelona, Spain
-      poster: true
   tags:
     - manopt
     - optim
@@ -593,7 +593,7 @@
   title: 'Manopt: a toolbox for optimization on manifolds'
   slides: downloads/manopt_slides.pdf
   comment: |
-    This is a presentation about [www.manopt.org](http://www.manopt.org).
+    This is an old presentation about [www.manopt.org](http://www.manopt.org).
   events:
     - date: '2014-11-21'
       venue: 'Journée conjointe des GDR MIA et ISIS: Optimisation Géométrique sur les Variétés'
@@ -669,11 +669,11 @@
     - P.-A. Absil
     - Y. Nesterov
     - R. Sepulchre
+  poster: downloads/manopt_poster.pdf
   events:
     - date: '2013-07-29'
       venue: International conference on continuous optimization (ICCOPT)
       location: Lisbon, Portugal
-      poster: downloads/manopt_poster.pdf
   tags:
     - manopt
 
@@ -723,11 +723,11 @@
   title: 'RTRMC: low-rank matrix completion via trust-regions on the Grassmannian'
   coauthors:
     - P.-A. Absil
+  poster: downloads/nips2011poster.pdf
   events:
     - date: '2011-12-14'
       venue: Twenty-Fifth Annual Conference on Neural Information Processing Systems (NIPS)
       location: Granada, Spain
-      poster: downloads/nips2011poster.pdf
   tags:
     - lowrank
 
@@ -760,11 +760,11 @@
 
 - id: '3003'
   title: A Riemannian trust-region method for low-rank matrix completion
+  slides: downloads/Boumal_ImperialSeminar_14062011.pdf
   events:
     - date: '2011-06-14'
       venue: CSP group seminar of the EEE department at Imperial College London
       location: London, UK
-      slides: downloads/Boumal_ImperialSeminar_14062011.pdf
     - date: '2011-04-12'
       venue: IDeAS seminar, Program in Applied and Computational Mathematics at Princeton University
       location: Princeton, NJ, USA
@@ -776,11 +776,11 @@
   title: Regression methods on the cone of positive-definite matrices
   coauthors:
     - P.-A. Absil
+  poster: downloads/icassp2011poster.pdf
   events:
     - date: '2011-05-26'
       venue: 36th International Conference on Acoustics, Speech and Signal Processing (ICASSP)
       location: Prague, Czech Republic
-      poster: downloads/icassp2011poster.pdf
   tags:
     - curvefitting
 
