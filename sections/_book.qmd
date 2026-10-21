@@ -13,9 +13,9 @@ This book about optimization on smooth manifolds has no prerequisites in geometr
 [Click here to go to the book webpage](https://www.nicolasboumal.net/book/index.html){target="_blank" rel="noopener"}.
 :::
 
-Published by [Cambridge University Press](https://cambridge.org/9781009166157){target="_blank" rel="noopener"}.
+Published by [Cambridge University Press](https://cambridge.org/9781009166157).
 
-You may also be interested in the Manopt toolboxes ([Matlab](https://www.manopt.org){target="_blank" rel="noopener"}, [Python](https://www.pymanopt.org){target="_blank" rel="noopener"}, [Julia](https://www.manoptjl.org){target="_blank" rel="noopener"}).
+You may also be interested in the Manopt toolboxes ([Matlab](https://www.manopt.org), [Python](https://www.pymanopt.org), [Julia](https://www.manoptjl.org)).
 
 :::
 ::::

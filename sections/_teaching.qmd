@@ -1,17 +1,17 @@
 ## Teaching at EPFL
 
-- Analyse avancée I ([MATH-100(a)](https://edu.epfl.ch/coursebook/en/advanced-analysis-i-real-analysis-MATH-100-A){target="_blank" rel="noopener"}), Fall 2026, [web](https://nicolasboumal.gitlab.io/math100/){target="_blank" rel="noopener"}
-- Algèbre linéaire I ([MATH-111(e)](https://edu.epfl.ch/coursebook/en/linear-algebra-MATH-111-E){target="_blank" rel="noopener"}), Fall 2021, 2022, 2023, 2025
-- Continuous optimization ([MATH-329](https://edu.epfl.ch/coursebook/en/nonlinear-optimization-MATH-329){target="_blank" rel="noopener"}), Spring 2021, 2022, Fall 2022--2026, [lecture notes](downloads/MATH329-Lecture_notes_Boumal_2026.pdf){target="_blank" rel="noopener"}, [web](https://nicolasboumal.gitlab.io/math329/){target="_blank" rel="noopener"}
-- Optimization on manifolds ([MATH-512](https://edu.epfl.ch/coursebook/fr/optimization-on-manifolds-MATH-512){target="_blank" rel="noopener"}), Spring 2021, 2023, 2025, [book + videos](https://www.nicolasboumal.net/book/index.html){target="_blank" rel="noopener"}
+- Analyse avancée I ([MATH-100(a)](https://edu.epfl.ch/coursebook/en/advanced-analysis-i-real-analysis-MATH-100-A)), Fall 2026, [web](https://nicolasboumal.gitlab.io/math100/)
+- Algèbre linéaire I ([MATH-111(e)](https://edu.epfl.ch/coursebook/en/linear-algebra-MATH-111-E)), Fall 2021, 2022, 2023, 2025
+- Continuous optimization ([MATH-329](https://edu.epfl.ch/coursebook/en/nonlinear-optimization-MATH-329)), Spring 2021, 2022, Fall 2022--2026, [lecture notes](downloads/MATH329-Lecture_notes_Boumal_2026.pdf){target="_blank" rel="noopener"}, [web](https://nicolasboumal.gitlab.io/math329/)
+- Optimization on manifolds ([MATH-512](https://edu.epfl.ch/coursebook/fr/optimization-on-manifolds-MATH-512)), Spring 2021, 2023, 2025, [book + videos](https://www.nicolasboumal.net/book/index.html){target="_blank" rel="noopener"}
 - Mathematical foundations of neural networks (graduate seminar, MATH-631), Fall 2020
 
 ## Teaching at Princeton University
 
-- Linear algebra with applications (MAT202), Spring [2016](https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=004150&term=1164){target="_blank" rel="noopener"}, [2017](https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=004150&term=1174){target="_blank" rel="noopener"}
-- Numerical methods (MAT321), Fall [2016](https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=009029&term=1172){target="_blank" rel="noopener"}, [2017](https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=009029&term=1182){target="_blank" rel="noopener"}, [2018](https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=009029&term=1192){target="_blank" rel="noopener"}, [2019](https://registrar.princeton.edu/course-offerings/course-details?courseid=009029&term=1202){target="_blank" rel="noopener"}, [lecture notes](downloads/MAT321_Lecture_notes_Boumal_2019.pdf){target="_blank" rel="noopener"}
+- Linear algebra with applications (MAT202), Spring [2016](https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=004150&term=1164), [2017](https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=004150&term=1174)
+- Numerical methods (MAT321), Fall [2016](https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=009029&term=1172), [2017](https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=009029&term=1182), [2018](https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=009029&term=1192), [2019](https://registrar.princeton.edu/course-offerings/course-details?courseid=009029&term=1202), [lecture notes](downloads/MAT321_Lecture_notes_Boumal_2019.pdf){target="_blank" rel="noopener"}
 - Junior seminar (optimization on manifolds, MAT982), Spring 2018
 - Junior seminar (math of data science through cryo-electron microscopy, MAT982), Fall 2018
 - Junior seminar (math of data science, MAT982), Fall 2019
-- Optimization on smooth manifolds (graduate course, MAT588), Spring [2019](https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=015004&term=1194){target="_blank" rel="noopener"}, [2020](https://registrar.princeton.edu/course-offerings/course-details?courseid=015004&term=1204){target="_blank" rel="noopener"}, [book + videos](https://www.nicolasboumal.net/book/index.html){target="_blank" rel="noopener"}
+- Optimization on smooth manifolds (graduate course, MAT588), Spring [2019](https://registrar.princeton.edu/course-offerings/course_details.xml?courseid=015004&term=1194), [2020](https://registrar.princeton.edu/course-offerings/course-details?courseid=015004&term=1204), [book + videos](https://www.nicolasboumal.net/book/index.html){target="_blank" rel="noopener"}
 

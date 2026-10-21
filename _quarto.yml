@@ -46,6 +46,7 @@ format:
   html:
     minimal: true
     theme: none
+    link-external-newwindow: true
     css:
       - assets/bootstrap.css
       - assets/site.css

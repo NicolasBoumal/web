@@ -123,8 +123,10 @@ There is no separate arXiv link in the resource row. An explicit top-level
 `link` overrides the arXiv destination even when `arxiv` is present.
 The publisher's link also appears in the resource row whenever
 `publication.link` is provided, even if it is also the title's destination.
-Title and resource links open in a new tab; links written inside Markdown
-comments use normal Markdown link behavior.
+Title and resource links open in a new tab. External links written inside
+Markdown comments also open in a new tab through the project's
+`link-external-newwindow` setting; internal comment links use the current tab
+unless given explicit attributes.
 
 ### Video information
 

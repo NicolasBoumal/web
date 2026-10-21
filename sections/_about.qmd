@@ -5,20 +5,20 @@
 
 :::
 ::: {.col-lg-9 .col-sm-12 .prose}
-I run the chair of continuous optimization [OPTIM](https://www.epfl.ch/labs/optim/){target="_blank" rel="noopener"} at EPFL since July 2020.
+I run the chair of continuous optimization [OPTIM](https://www.epfl.ch/labs/optim/) at EPFL since July 2020.
 
-My [group](https://www.epfl.ch/labs/optim/optim-chair-of-continuous-optimization/members/){target="_blank" rel="noopener"} works on **optimization**, **statistical estimation** and **numerical analysis**.
+My [group](https://www.epfl.ch/labs/optim/optim-chair-of-continuous-optimization/members/) works on **optimization**, **statistical estimation** and **numerical analysis**.
 Much of what we do is related to nonconvex optimization.
 
-For Riemannian optimization in particular, we develop [a toolbox called Manopt](http://www.manopt.org){target="_blank" rel="noopener"} and I wrote a [book](https://www.nicolasboumal.net/book/index.html){target="_blank" rel="noopener"}.
+For Riemannian optimization in particular, we develop [a toolbox called Manopt](http://www.manopt.org) and I wrote a [book](https://www.nicolasboumal.net/book/index.html){target="_blank" rel="noopener"}.
 
-My 2021 [ERC Starting Grant](https://erc.europa.eu/news/erc-2021-starting-grants-results){target="_blank" rel="noopener"} project GEOSYM runs from fall 2022 to 2027.
+My 2021 [ERC Starting Grant](https://erc.europa.eu/news/erc-2021-starting-grants-results) project GEOSYM runs from fall 2022 to 2027.
 Our goal is to harness geometry, symmetry and statistics in optimization to tackle nonconvexity.
-This is funded by [SERI](https://www.sbfi.admin.ch/sbfi/en/home/research-and-innovation/international-cooperation-r-and-i/eu-framework-programmes-for-research/horizon-europe/transitional-measures.html){target="_blank" rel="noopener"}.
+This is funded by [SERI](https://www.sbfi.admin.ch/sbfi/en/home/research-and-innovation/international-cooperation-r-and-i/eu-framework-programmes-for-research/horizon-europe/transitional-measures.html).
 
-As of Jan. 1st, 2022, I am an [associate editor](https://www.springer.com/journal/10107/editors){target="_blank" rel="noopener"} for Mathematical Programming.
+As of Jan. 1st, 2022, I am an [associate editor](https://www.springer.com/journal/10107/editors) for Mathematical Programming.
 
-The **blog** of my group is [Race to the bottom](https://www.racetothebottom.xyz){target="_blank" rel="noopener"}.
+The **blog** of my group is [Race to the bottom](https://www.racetothebottom.xyz).
 
 ::: {.section-label}
 Research topics:
@@ -33,22 +33,22 @@ Research topics:
 Group members, past and present:
 :::
 
-- [Javier Maass Martínez](https://scholar.google.com/citations?user=OABxshIAAAAJ){target="_blank" rel="noopener"}, PhD student, July 2026-...
-- [Antoine Gonon](https://agonon.github.io/){target="_blank" rel="noopener"}, Postdoc, Dec. 2024-Oct. 2026 (then Apple ML Research, Paris)
-- [Andreea Musat](https://github.com/AndreeaMusat){target="_blank" rel="noopener"}, PhD student, Sep. 2022-...
-- [Radu Dragomir](https://radualexandrudragomir.github.io/){target="_blank" rel="noopener"}, Postdoc, Oct. 2022-Nov. 2023 (then at Telecom Paris as Assistant Professor)
-- [Andrew D. McRae](https://admcrae.github.io/){target="_blank" rel="noopener"}, Postdoc, Aug. 2022-Oct. 2025 (then at Ecole des Ponts as Assistant Professor)
-- [Christopher Criscitiello](https://scholar.google.com/citations?user=51Axqz8AAAAJ&hl=en){target="_blank" rel="noopener"}, PhD student, Jan. 2021-Sep. 2025 (then at UPenn for a postdoc)
-- [Quentin Rebjock](https://scholar.google.com/citations?user=t9PEVrkAAAAJ&hl=en){target="_blank" rel="noopener"}, PhD student, Sep. 2020-Sep. 2025 (then industry)
+- [Javier Maass Martínez](https://scholar.google.com/citations?user=OABxshIAAAAJ), PhD student, July 2026-...
+- [Antoine Gonon](https://agonon.github.io/), Postdoc, Dec. 2024-Oct. 2026 (then Apple ML Research, Paris)
+- [Andreea Musat](https://github.com/AndreeaMusat), PhD student, Sep. 2022-...
+- [Radu Dragomir](https://radualexandrudragomir.github.io/), Postdoc, Oct. 2022-Nov. 2023 (then at Telecom Paris as Assistant Professor)
+- [Andrew D. McRae](https://admcrae.github.io/), Postdoc, Aug. 2022-Oct. 2025 (then at Ecole des Ponts as Assistant Professor)
+- [Christopher Criscitiello](https://scholar.google.com/citations?user=51Axqz8AAAAJ&hl=en), PhD student, Jan. 2021-Sep. 2025 (then at UPenn for a postdoc)
+- [Quentin Rebjock](https://scholar.google.com/citations?user=t9PEVrkAAAAJ&hl=en), PhD student, Sep. 2020-Sep. 2025 (then industry)
 
 ::: {.section-label}
 Positions prior to EPFL:
 :::
 
 - Instructor then assistant professor in the mathematics department at Princeton University.
-  There, I also interacted closely with PACM (the program in applied and computational mathematics), especially the group of [Amit Singer](https://web.math.princeton.edu/%7Eamits/){target="_blank" rel="noopener"}. (Feb. 2016--June 2020);
-- Postdoc at Inria in Paris, affiliated with the computer science department of the Ecole Normale Supérieure with [Alexandre d'Aspremont](http://www.di.ens.fr/%7Easpremon/){target="_blank" rel="noopener"} in the [SIERRA](http://www.di.ens.fr/sierra/){target="_blank" rel="noopener"} team, working on topics at the intersection of optimization and statistics. (Oct. 2014--Jan. 2016);
-- Ph.D. student working with [Pierre-Antoine Absil](http://www.inma.ucl.ac.be/%7Eabsil/){target="_blank" rel="noopener"} and [Vincent Blondel](http://www.inma.ucl.ac.be/%7Eblondel/){target="_blank" rel="noopener"} at UCLouvain, in the department of mathematical engineering.
+  There, I also interacted closely with PACM (the program in applied and computational mathematics), especially the group of [Amit Singer](https://web.math.princeton.edu/%7Eamits/). (Feb. 2016--June 2020);
+- Postdoc at Inria in Paris, affiliated with the computer science department of the Ecole Normale Supérieure with [Alexandre d'Aspremont](http://www.di.ens.fr/%7Easpremon/) in the [SIERRA](http://www.di.ens.fr/sierra/) team, working on topics at the intersection of optimization and statistics. (Oct. 2014--Jan. 2016);
+- Ph.D. student working with [Pierre-Antoine Absil](http://www.inma.ucl.ac.be/%7Eabsil/) and [Vincent Blondel](http://www.inma.ucl.ac.be/%7Eblondel/) at UCLouvain, in the department of mathematical engineering.
   My dissertation is about [optimization and estimation on manifolds](downloads/boumal_optimization_and_estimation_on_manifolds_phd_thesis.pdf){target="_blank" rel="noopener"}. (Oct. 2010--Sep. 2014).
 
 ::: {.section-label}
@@ -57,8 +57,8 @@ Bio sketch:
 
 Nicolas Boumal studies continuous optimization, with a focus on nonconvexity and geometric structure.
 Much of his work is on the theory of algorithms and applications.
-On the software side, he develops the [Manopt toolbox](https://www.manopt.org){target="_blank" rel="noopener"} for optimization on manifolds.
-He blogs about optimization at [RaceToTheBottom.xyz](https://www.racetothebottom.xyz/){target="_blank" rel="noopener"}.
+On the software side, he develops the [Manopt toolbox](https://www.manopt.org) for optimization on manifolds.
+He blogs about optimization at [RaceToTheBottom.xyz](https://www.racetothebottom.xyz/).
 He is an associate professor at EPFL and an associate editor for Mathematical Programming.
 
 
