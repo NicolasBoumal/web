@@ -46,6 +46,7 @@
     - B. Sun
     - N. Boumal
   arxiv: '2603.15494'
+  code: https://github.com/NicolasBoumal/randomized-trustregions-code
   bibtex: |
     @Article{dragomir2026randomizedtr,
       author  = {Dragomir, R.-A. and Jiang, X. and Sun, B. and Boumal, N.},
@@ -158,6 +159,7 @@
     - Q. Rebjock
     - N. Boumal
   arxiv: '2406.14211'
+  code: https://github.com/qrebjock/desingularization-experiments
   publication:
     year: 2026
     venue: SIAM Journal on Optimization
@@ -493,6 +495,7 @@
     - B. Bullins
     - C. Cartis
   arxiv: '1806.00065'
+  code: https://github.com/NicolasBoumal/arc
   publication:
     year: 2020
     venue: Mathematical Programming
@@ -1188,7 +1191,7 @@
     year: 2018
     venue: Proceedings of NeurIPS
     link: http://papers.nips.cc/paper/7496-smoothed-analysis-of-the-low-rank-approach-for-smooth-semidefinite-programs
-    comment: oral presentation, one of 30 among 1100 accepted papers
+  comment: Oral presentation, one of 30 among 1100 accepted papers.
   bibtex: |
     @incollection{pumir2018smoothedsmoothsdp,
       author  = {Pumir, T. and Jelassi, S. and Boumal, N.},
@@ -1275,6 +1278,7 @@
     - R. R. Lederman
     - A. Singer
   arxiv: '1710.02590'
+  code: https://github.com/NicolasBoumal/HeterogeneousMRA
   publication:
     year: 2018
     venue: Proceedings of CISS
@@ -1386,6 +1390,7 @@
     - A. Singer
     - P.-A. Absil
   link: downloads/Boumal_Singer_Absil_Robust_estimation_of_rotations_from_relative_measurements_by_maximum_likelihood_2013.pdf
+  code: https://github.com/NicolasBoumal/SynchronizeMLE
   publication:
     year: 2013
     venue: Proceedings of the 52nd Conference on Decision and Control (CDC)
