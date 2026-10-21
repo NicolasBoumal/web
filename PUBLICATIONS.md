@@ -19,17 +19,22 @@ The YAML file is a list of records. Each record requires `id`, `type`, `title`,
 and `authors`. Optional fields should be omitted when unused, rather than left
 empty.
 
-| Type | Displayed category |
-| --- | --- |
-| `preprint` | Reports |
-| `journal` | Journal papers |
-| `conference` | Conference papers |
-| `note` | Notes |
-| `thesis` | Theses |
+| Type | Displayed category | Section URL |
+| --- | --- | --- |
+| `preprint` | Reports | `#pubs-reports` |
+| `journal` | Journal papers | `#pubs-journals` |
+| `conference` | Conference papers | `#pubs-conferences` |
+| `note` | Notes | `#pubs-notes` |
+| `thesis` | Theses | `#pubs-theses` |
 
 Categories appear in this order, followed by the integrated Presentations list.
 Within a category, entries retain their order in the YAML file; they are not
 automatically sorted by year or ID.
+
+The section links at the top of Publications open these category headings;
+Presentations uses `#pubs-talks`. These URLs activate the Publications tab
+before scrolling. `#publications` opens the top of the tab, retaining the
+page header. Individual entries remain addressable as `#publication-ID`.
 
 For a new paper, add a record with a new ID and place it where it should
 appear within its category. When a report is accepted or published, update

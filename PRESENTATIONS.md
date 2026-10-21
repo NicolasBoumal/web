@@ -21,6 +21,10 @@ appearances under one title, with an `events` list describing the individual
 appearances. Talks and posters appear together under **Presentations**.
 There is no `type` field; a talk is the default.
 
+The `#pubs-talks` URL opens the Publications tab and scrolls to Presentations.
+`#publications` opens the top of that tab; individual presentations use
+`#publication-ID`, such as `#publication-3036`.
+
 For a new presentation, add a record with a new ID. For another appearance
 of an existing presentation, add an event to that record. Keep existing IDs
 stable. Identical titles alone are not a reason to merge records: the content

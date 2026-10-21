@@ -97,10 +97,10 @@ end
 local presentation = dofile('scripts/presentations.lua')({ rich = rich, link = link, escape = escape })
 
 local groups = {
-  { 'preprint', 'Reports' },
-  { 'journal', 'Journal papers' }, { 'conference', 'Conference papers' },
-  { 'note', 'Notes' }, { 'thesis', 'Theses' },
-  { 'presentation', 'Presentations' },
+  { 'preprint', 'Reports', 'reports' },
+  { 'journal', 'Journal papers', 'journals' }, { 'conference', 'Conference papers', 'conferences' },
+  { 'note', 'Notes', 'notes' }, { 'thesis', 'Theses', 'theses' },
+  { 'presentation', 'Presentations', 'talks' },
 }
 local by_type, seen = {}, {}
 for _, group in ipairs(groups) do by_type[group[1]] = {} end
@@ -163,9 +163,15 @@ end
 presentation.sort(by_type.presentation)
 
 local result = { '<!-- Generated from publications.yml and presentations.yml by scripts/publications.lua. Do not edit. -->\n' }
+local section_links = {}
+for _, group in ipairs(groups) do
+  table.insert(section_links, '<a href="#pubs-' .. group[3] .. '">' .. escape(group[2]) .. '</a>')
+end
+table.insert(result, '```{=html}\n<nav class="publication-sections" aria-label="Publication sections">'
+  .. table.concat(section_links, ' <span aria-hidden="true">·</span> ') .. '</nav>\n```\n')
 for _, group in ipairs(groups) do
   local kind, heading = group[1], group[2]
-  table.insert(result, '## ' .. heading .. ' {#publis-' .. kind .. '}\n')
+  table.insert(result, '## ' .. heading .. ' {#pubs-' .. group[3] .. '}\n')
   for _, object in ipairs(by_type[kind]) do
     local body = kind == 'presentation' and presentation.render(object) or paper(object)
     table.insert(result, '```{=html}\n<article class="publication" id="publication-'

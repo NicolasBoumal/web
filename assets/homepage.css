@@ -21,6 +21,9 @@
 .text-button { background: none; border: 0; padding: 0; color: #428bca; cursor: pointer; font: inherit; }
 .text-button:hover { color: #00526e; text-decoration: underline; }
 .publication { margin-bottom: 24px; }
+.publication-sections { margin-bottom: 20px; line-height: 1.8; }
+.publication-sections a { display: inline-block; white-space: nowrap; }
+.publication-sections span { margin-inline: 4px; }
 .publication h3 { display: inline; font-size: inherit; line-height: inherit; font-weight: normal; font-style: italic; }
 .publication details { display: inline; font-size: 85%; }
 .publication summary { cursor: pointer; color: #428bca; display: inline; list-style: none; }

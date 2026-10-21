@@ -4,6 +4,8 @@
   if (!tablist) return;
   const tabs = [...tablist.querySelectorAll('[role="tab"]')];
   const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+  // Restore the section named by the URL, rather than an old scroll position.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
   function selectFromLocation() {
     const hash = location.hash.slice(1);
@@ -19,6 +21,7 @@
       panels[index].hidden = !active;
     });
     if (target === panel) window.scrollTo(0, 0);
+    else if (target) target.scrollIntoView({ block: 'start' });
   }
 
   tablist.addEventListener('click', event => {
@@ -46,13 +49,9 @@
   window.addEventListener('hashchange', selectFromLocation);
   window.addEventListener('popstate', selectFromLocation);
   selectFromLocation();
-  // Opening /#publications should retain the page header, just like a tab
-  // click. Let genuine links to an individual publication scroll normally.
-  window.addEventListener('load', () => {
-    if (panels.includes(document.getElementById(location.hash.slice(1)))) {
-      window.scrollTo(0, 0);
-    }
-  });
+  // Reapply after the browser's initial fragment scroll. Main tab URLs retain
+  // the page header; category and individual-entry URLs scroll to their target.
+  window.addEventListener('load', selectFromLocation);
 
   const tocToggle = document.getElementById('toc-toggle');
   const toc = document.getElementById('book-toc');

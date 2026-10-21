@@ -13,6 +13,7 @@
   document.documentElement.classList.add('has-tabs');
   const homepageSections = ['about', 'publications', 'book', 'teaching', 'contact'];
   const initialSection = location.hash.slice(1);
+  const isPublicationLink = initialSection.startsWith('pubs-') || initialSection.startsWith('publication-');
   document.documentElement.dataset.section = homepageSections.includes(initialSection)
-    ? initialSection : 'about';
+    ? initialSection : isPublicationLink ? 'publications' : 'about';
 </script>
