@@ -6,9 +6,7 @@ papers and theses (see [PUBLICATIONS.md](PUBLICATIONS.md)). The Lua script
 `scripts/presentations.lua` to validate and render presentations into
 `sections/_publications-generated.qmd`. Do not edit that generated file.
 
-The old `publications.xml` is a historical reference, not an editing source;
-the website no longer reads it. No Python or XML parser is required to build
-the website.
+No Python or XML parser is required to build the website.
 
 This is repository documentation. It is absent from the explicit
 `project.render` and `project.resources` lists in `_quarto.yml`, so Quarto

@@ -6,9 +6,6 @@ The Lua script `scripts/publications.lua` reads both YAML files
 at build time and generates `sections/_publications-generated.qmd`; do not edit
 that generated file.
 
-The old `publications.xml` is a historical reference; the website no longer
-reads it. Make additions and corrections in the YAML files.
-
 This document is repository documentation. It is not included in the explicit
 `project.render` or `project.resources` lists in `_quarto.yml`, so Quarto does
 not render it or copy it into the website.
